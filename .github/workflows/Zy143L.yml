@@ -1,4 +1,4 @@
-name: whyour-sync
+name: Zy143L-sync
 on:
   schedule:
     - cron: '1 */3 * * *'
@@ -6,22 +6,23 @@ on:
   watch:
     types: started
   repository_dispatch:
-    types: sync-whyour-hundun
+    types: sync-Zy143L-hundun
 jobs:
   repo-sync:
     env:
       PAT: ${{ secrets.PAT }}
     runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
     steps:
       - uses: actions/checkout@v2
         with:
           persist-credentials: false
 
-      - name: sync whyour-hundun
+      - name: sync Zy143L-hundun
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://github.com/whyour/hundun.git"
+          source_repo: "https://github.com/Zy143L/wskey.git"
           source_branch: "master"
           destination_branch: "hundun"
           github_token: ${{ secrets.PAT }}
