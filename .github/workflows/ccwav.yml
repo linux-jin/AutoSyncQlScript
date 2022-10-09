@@ -6,7 +6,7 @@ on:
   watch:
     types: started
   repository_dispatch:
-    types: sync-ccwav-hundun
+    types: sync-ccwav-ql
 jobs:
   repo-sync:
     env:
@@ -17,11 +17,11 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: sync ccwav-hundun
+      - name: sync ccwav-ql
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
           source_repo: "https://github.com/ccwav/QLScript2.git"
           source_branch: "main"
-          destination_branch: "hundun"
+          destination_branch: "ccwav"
           github_token: ${{ secrets.PAT }}

@@ -6,7 +6,7 @@ on:
   watch:
     types: started
   repository_dispatch:
-    types: sync-KingRan-hundun
+    types: sync-KingRan-ql
 jobs:
   repo-sync:
     env:
@@ -17,11 +17,11 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: sync KingRan-hundun
+      - name: sync KingRan-ql
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
           source_repo: "https://github.com/KingRan/KR.git"
           source_branch: "main"
-          destination_branch: "hundun"
+          destination_branch: "KingRan"
           github_token: ${{ secrets.PAT }}

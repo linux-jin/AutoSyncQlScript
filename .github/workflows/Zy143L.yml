@@ -6,7 +6,7 @@ on:
   watch:
     types: started
   repository_dispatch:
-    types: sync-Zy143L-hundun
+    types: sync-Zy143L-ql
 jobs:
   repo-sync:
     env:
@@ -17,11 +17,11 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: sync Zy143L-hundun
+      - name: sync Zy143L-ql
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
           source_repo: "https://github.com/Zy143L/wskey.git"
           source_branch: "main"
-          destination_branch: "hundun"
+          destination_branch: "Zy143L"
           github_token: ${{ secrets.PAT }}

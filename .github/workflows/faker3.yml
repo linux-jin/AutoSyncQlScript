@@ -6,7 +6,7 @@ on:
   watch:
     types: started
   repository_dispatch:
-    types: sync-faker3-hundun
+    types: sync-faker3-ql
 jobs:
   repo-sync:
     env:
@@ -17,11 +17,11 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: sync faker3-hundun
+      - name: sync faker3-ql
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
           source_repo: "https://github.com/shufflewzc/faker3.git"
           source_branch: "main"
-          destination_branch: "hundun"
+          destination_branch: "faker3"
           github_token: ${{ secrets.PAT }}

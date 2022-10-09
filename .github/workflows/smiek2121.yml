@@ -6,7 +6,7 @@ on:
   watch:
     types: started
   repository_dispatch:
-    types: sync-smiek2121-hundun
+    types: sync-smiek2121-ql
 jobs:
   repo-sync:
     env:
@@ -17,11 +17,11 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: sync smiek2121-hundun
+      - name: sync smiek2121-ql
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
           source_repo: "https://github.com/smiek2121/scripts.git"
           source_branch: "master"
-          destination_branch: "hundun"
+          destination_branch: "smiek2121"
           github_token: ${{ secrets.PAT }}
