@@ -1,4 +1,4 @@
-name: yydspure-sync
+name: gys619-sync
 on:
   schedule:
     - cron: '1 */3 * * *'
@@ -6,23 +6,22 @@ on:
   watch:
     types: started
   repository_dispatch:
-    types: sync-yydspure-ql
+    types: sync-gys619-ql
 jobs:
   repo-sync:
     env:
       PAT: ${{ secrets.PAT }}
     runs-on: ubuntu-latest
-    if: github.event.repository.owner.id == github.event.sender.id
     steps:
       - uses: actions/checkout@v2
         with:
           persist-credentials: false
 
-      - name: sync yydspure-ql
+      - name: sync gys619-ql
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://github.com/okyyds/yydspure.git"
-          source_branch: "master"
-          destination_branch: "yydspure"
+          source_repo: "https://github.com/gys619/jdd.git"
+          source_branch: "main"
+          destination_branch: "gys619"
           github_token: ${{ secrets.PAT }}
