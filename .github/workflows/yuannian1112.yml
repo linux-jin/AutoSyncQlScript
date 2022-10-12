@@ -1,7 +1,7 @@
 name: yuannian1112-sync
 on:
   schedule:
-    - cron: '1 */3 * * *'
+    - cron: '00 40 */20 * *'
   workflow_dispatch:
   watch:
     types: started
