@@ -1,7 +1,7 @@
 name: Zy143L-sync
 on:
   schedule:
-    - cron: '00 40 */22 * *'
+    - cron: '30 9/12 * * *'
   workflow_dispatch:
   watch:
     types: started
