@@ -6,23 +6,23 @@ on:
   watch:
     types: started
   repository_dispatch:
-    types: sync-whyour-hundun
+    types: sync-whyour-qinglong
 jobs:
   repo-sync:
     env:
       PAT: ${{ secrets.PAT }}
     runs-on: ubuntu-latest
-    # if: github.event.repository.owner.id == github.event.sender.id
+    if: github.event.repository.owner.id == github.event.sender.id
     steps:
       - uses: actions/checkout@v2
         with:
           persist-credentials: false
 
-      - name: sync whyour-hundun
+      - name: sync whyour-qinglong
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://github.com/whyour/hundun.git"
+          source_repo: "https://github.com/whyour/qinglong.git"
           source_branch: "master"
           destination_branch: "hundun"
           github_token: ${{ secrets.PAT }}
