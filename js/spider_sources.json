@@ -5,5 +5,12 @@
     "instance": "changZhang20240614",
     "webSite": "https://www.czzy77.com",
     "remark": "部分视频不会解密，不支持搜索"
+  },
+  {
+    "name": "在線之家",
+    "api": "https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/zxzj.js",
+    "instance": "zxzj20240620",
+    "webSite": "https://www.zxzja.com",
+    "remark": "頻繁搜索會觸發風控，建議間隔10秒以上"
   }
 ]
