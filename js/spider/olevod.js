@@ -211,26 +211,6 @@ class olevodClass extends WebApiBase {
         return t.join('')
     }
 
-    combineUrl(url) {
-        if (url === undefined) {
-            return ''
-        }
-        if (url.indexOf(this.webSite) !== -1) {
-            return url
-        }
-        if (url.startsWith('/')) {
-            return this.webSite + url
-        }
-        return this.webSite + '/' + url
-    }
-
-    removeTrailingSlash(str) {
-        if (str.endsWith('/')) {
-            return str.slice(0, -1)
-        }
-        return str
-    }
-
     isIgnoreClassName(className) {
         for (let index = 0; index < this.ignoreClassName.length; index++) {
             const element = this.ignoreClassName[index]
