@@ -12,5 +12,11 @@
     "instance": "zxzj20240620",
     "webSite": "https://www.zxzja.com",
     "remark": "頻繁搜索會觸發風控，建議間隔10秒以上"
+  },
+    "name": "歐樂",
+    "api": "https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/olevod.js",
+    "instance": "olevod20240620",
+    "webSite": "https://www.olevod.tv",
+    "remark": "需海外IP"
   }
 ]

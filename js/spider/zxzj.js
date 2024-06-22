@@ -245,7 +245,7 @@ class zxzjClass extends WebApiBase {
                     let ifrwyData = ifrwy.data
                     backData.error = ifrwy.error
                     if (ifrwyData) {
-                        let resultv2 = ifrwyData.match(/(?<={).+?(?=})/gm)
+                        let resultv2 = ifrwyData.match(/var result_v2 = {(.*?)};/)[1]
                         let data = JSON.parse('{' + resultv2 + '}').data
                         let code = data.split('').reverse()
                         let temp = ''
