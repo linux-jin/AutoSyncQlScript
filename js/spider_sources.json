@@ -19,5 +19,12 @@
         "instance": "olevod20240620",
         "webSite": "https://www.olevod.tv",
         "remark": "需海外IP"
+    },
+    {
+        "name": "燒火電影",
+        "api": "https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/saohuo.js",
+        "instance": "saohuo20240623",
+        "webSite": "https://saohuo.tv",
+        "remark": "不支持搜索"
     }
 ]
