@@ -188,9 +188,11 @@ class hjkkClass extends WebApiBase {
             if (proData) {
                 let document = parse(pro.data)
                 let script = document.querySelector('.myui-player__box script').text
-                console.log(script)
+
                 let url = eval(script.match(/now=(.*);var pn/)[1])
-                console.log(url)
+                if (/\/file\//.test(url)) {
+                    url = url.replace('/file', '')
+                }
 
                 backData.data = url
             }
