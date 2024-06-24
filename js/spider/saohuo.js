@@ -51,7 +51,7 @@ class saohuoClass extends WebApiBase {
                 backData.data = list
             }
         } catch (error) {
-            backData.error = '获取分类失败～' + error
+            backData.error = '获取分类失败～' + error.message
         }
 
         return JSON.stringify(backData)
@@ -92,7 +92,7 @@ class saohuoClass extends WebApiBase {
                 backData.data = videos
             }
         } catch (error) {
-            backData.error = '获取列表失败～'
+            backData.error = '获取列表失败～' + error.message
         }
         return JSON.stringify(backData)
     }
@@ -181,7 +181,7 @@ class saohuoClass extends WebApiBase {
                 backData.data = detModel
             }
         } catch (error) {
-            backData.error = '获取视频详情失败'
+            backData.error = '获取视频详情失败' + error.message
         }
 
         return JSON.stringify(backData)
@@ -236,7 +236,7 @@ class saohuoClass extends WebApiBase {
                 } else backData.error = 'resp is empty'
             }
         } catch (error) {
-            backData.error = error
+            backData.error = error.message
         }
         return JSON.stringify(backData)
     }

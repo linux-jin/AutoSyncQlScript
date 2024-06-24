@@ -35,7 +35,7 @@ class olevodClass extends WebApiBase {
                 backData.data = list
             }
         } catch (e) {
-            backData.error = e
+            backData.error = e.message
         }
 
         return JSON.stringify(backData)
@@ -74,7 +74,7 @@ class olevodClass extends WebApiBase {
                 backData.data = list
             }
         } catch (error) {
-            backData.error = '获取列表失败～' + error
+            backData.error = '获取列表失败～' + error.message
         }
         return JSON.stringify(backData)
     }
@@ -122,7 +122,7 @@ class olevodClass extends WebApiBase {
                 backData.data = detModel
             }
         } catch (error) {
-            backData.error = '获取视频详情失败' + error
+            backData.error = '获取视频详情失败' + error.message
         }
 
         return JSON.stringify(backData)
@@ -175,7 +175,7 @@ class olevodClass extends WebApiBase {
                 backData.data = list
             }
         } catch (error) {
-            backData.error = '获取列表失败～' + error
+            backData.error = '获取列表失败～' + error.message
         }
         return JSON.stringify(backData)
     }

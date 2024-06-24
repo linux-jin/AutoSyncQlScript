@@ -48,7 +48,7 @@ class zxzjClass extends WebApiBase {
                 backData.data = list
             }
         } catch (error) {
-            backData.error = '获取分类失败～' + error
+            backData.error = '获取分类失败～' + error.message
         }
 
         return JSON.stringify(backData)
@@ -93,7 +93,7 @@ class zxzjClass extends WebApiBase {
                 backData.data = videos
             }
         } catch (error) {
-            backData.error = '获取列表失败～'
+            backData.error = '获取列表失败～' + error.message
         }
         return JSON.stringify(backData)
     }
@@ -185,7 +185,7 @@ class zxzjClass extends WebApiBase {
                 backData.data = detModel
             }
         } catch (error) {
-            backData.error = '获取视频详情失败'
+            backData.error = '获取视频详情失败' + error.message
         }
 
         return JSON.stringify(backData)
@@ -260,7 +260,7 @@ class zxzjClass extends WebApiBase {
                 // }
             }
         } catch (error) {
-            backData.error = error
+            backData.error = error.message
         }
         // backData.error = ''
         return JSON.stringify(backData)
@@ -307,7 +307,7 @@ class zxzjClass extends WebApiBase {
                 backData.data = videos
             }
         } catch (e) {
-            backData.error = e
+            backData.error = e.message
         }
 
         return JSON.stringify(backData)

@@ -3,11 +3,15 @@ import { WebApiBase, VideoClass } from '../core/uzCode.js'
 import { parse } from 'node-html-parser'
 // ignore
 
-class hjkkClass extends WebApiBase {
-    webSite = 'https://www.hanjukankan.com'
+class sbbClass extends WebApiBase {
+    key = '素白白'
+    url = 'https://www.subaibaiys.com'
+    siteKey = ''
+    siteType = 0
     headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36'
+        'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1'
     }
+    cookie = {}
     /**
      * 异步获取分类列表的方法。
      * @param {UZArgs} args
@@ -24,7 +28,7 @@ class hjkkClass extends WebApiBase {
             let proData = pro.data
             if (proData) {
                 let document = parse(proData)
-                let allClass = document.querySelectorAll('ul.myui-header__menu a')
+                let allClass = document.querySelectorAll('ul.navlist a')
                 let list = []
                 for (let index = 0; index < allClass.length; index++) {
                     const element = allClass[index]
@@ -34,9 +38,6 @@ class hjkkClass extends WebApiBase {
                     }
                     let type_name = element.text
                     let url = element.attributes['href']
-
-                    url = this.combineUrl(url)
-                    url = url.slice(0, -5)
 
                     if (url.length > 0 && type_name.length > 0) {
                         let videoClass = new VideoClass()
@@ -60,7 +61,7 @@ class hjkkClass extends WebApiBase {
      * @returns {Promise<RepVideoList>}
      */
     async getVideoList(args) {
-        let listUrl = this.removeTrailingSlash(args.url) + '-' + args.page + '.html'
+        let listUrl = this.removeTrailingSlash(args.url) + '/page/' + args.page
         let backData = new RepVideoList()
         try {
             let pro = await req(listUrl, { headers: this.headers })
@@ -68,22 +69,20 @@ class hjkkClass extends WebApiBase {
             let proData = pro.data
             if (proData) {
                 let document = parse(proData)
-                let allVideo = document.querySelectorAll('ul.myui-vodlist li')
+                let allVideo = document.querySelectorAll('.bt_img.mi_ne_kd.mrb li')
                 let videos = []
                 for (let index = 0; index < allVideo.length; index++) {
                     const element = allVideo[index]
-                    let vodUrl = element.querySelector('a.myui-vodlist__thumb')?.attributes['href'] ?? ''
-                    let vodPic = element.querySelector('a.myui-vodlist__thumb')?.attributes['data-original'] ?? ''
-                    let vodName = element.querySelector('a.myui-vodlist__thumb')?.attributes['title'] ?? ''
-                    let vodDiJiJi = element.querySelector('span.pic-tag')?.text
-
-                    vodUrl = this.combineUrl(vodUrl)
+                    let vodUrl = element.querySelector('a')?.attributes['href'] ?? ''
+                    let vodPic = element.querySelector('img.thumb')?.attributes['data-original'] ?? ''
+                    let vodName = element.querySelector('img.thumb')?.attributes['alt'] ?? ''
+                    let vodDiJiJi = element.querySelector('.jidi span')?.text ? element.querySelector('.jidi span')?.text : element.querySelector('.hdinfo')?.text
 
                     let videoDet = new VideoDetail()
                     videoDet.vod_id = vodUrl
                     videoDet.vod_pic = vodPic
                     videoDet.vod_name = vodName
-                    videoDet.vod_remarks = vodDiJiJi
+                    videoDet.vod_remarks = vodDiJiJi.trim()
                     videos.push(videoDet)
                 }
                 backData.data = videos
@@ -108,10 +107,10 @@ class hjkkClass extends WebApiBase {
             let proData = pro.data
             if (proData) {
                 let document = parse(proData)
-                let vod_content = document.querySelector('#jq .tab-content')?.text ?? ''
-                let vod_pic = document.querySelector('.myui-content__thumb img')?.attributes['data-original'] ?? ''
-                let vod_name = document.querySelector('h1.title')?.text ?? ''
-                let detList = document.querySelectorAll('p.data') ?? []
+                let vod_content = document.querySelector('.yp_context')?.text ?? ''
+                let vod_pic = document.querySelector('.dyimg img')?.attributes['src'] ?? ''
+                let vod_name = document.querySelector('.moviedteail_tt h1')?.text ?? ''
+                let detList = document.querySelectorAll('ul.moviedteail_list li') ?? []
                 let vod_year = ''
                 let vod_director = ''
                 let vod_actor = ''
@@ -122,8 +121,8 @@ class hjkkClass extends WebApiBase {
 
                 for (let index = 0; index < detList.length; index++) {
                     const element = detList[index]
-                    if (element.text.includes('分类')) {
-                        type_name = element.text.replace('分类：', '')
+                    if (element.text.includes('年份')) {
+                        vod_year = element.text.replace('年份：', '')
                     } else if (element.text.includes('导演')) {
                         vod_director = element.text.replace('导演：', '')
                     } else if (element.text.includes('主演')) {
@@ -132,21 +131,21 @@ class hjkkClass extends WebApiBase {
                         vod_area = element.text.replace('地区：', '')
                     } else if (element.text.includes('语言')) {
                         vod_lang = element.text.replace('语言：', '')
-                    } else if (element.text.includes('年份')) {
-                        vod_year = element.text.replace('年份：', '')
+                    } else if (element.text.includes('类型')) {
+                        type_name = element.text.replace('类型：', '')
                     } else if (element.text.includes('豆瓣')) {
                         vod_douban_score = element.text.replace('豆瓣：', '')
                     }
                 }
 
-                let juJiDocment = document.querySelector('#playlist1')?.querySelectorAll('li') ?? []
+                let juJiDocment = document.querySelector('.paly_list_btn')?.querySelectorAll('a') ?? []
                 let vod_play_url = ''
                 for (let index = 0; index < juJiDocment.length; index++) {
                     const element = juJiDocment[index]
 
-                    vod_play_url += element.querySelector('a').text
+                    vod_play_url += element.text
                     vod_play_url += '$'
-                    vod_play_url += element.querySelector('a').attributes['href']
+                    vod_play_url += element.attributes['href']
                     vod_play_url += '#'
                 }
 
@@ -158,7 +157,7 @@ class hjkkClass extends WebApiBase {
                 detModel.vod_area = vod_area
                 detModel.vod_lang = vod_lang
                 detModel.vod_douban_score = vod_douban_score
-                detModel.vod_content = vod_content
+                detModel.vod_content = vod_content.trim()
                 detModel.vod_pic = vod_pic
                 detModel.vod_name = vod_name
                 detModel.vod_play_url = vod_play_url
@@ -178,23 +177,45 @@ class hjkkClass extends WebApiBase {
      * @returns {Promise<RepVideoPlayUrl>}
      */
     async getVideoPlayUrl(args) {
-        let backData = {}
-        let reqUrl = this.combineUrl(args.url)
+        let backData = new RepVideoPlayUrl()
+        // let url = 'https://www.subaibaiys.com/v_play/bXZfNTUxNDQtbm1fMQ==.html'
+        let url = args.url
         try {
-            const pro = await req(reqUrl, { headers: this.headers })
-            backData.error = pro.error
-            let proData = pro.data
+            let html = await req(url, { headers: this.headers })
+            let document = parse(html.data)
+            let iframe = document.querySelectorAll('iframe').filter((iframe) => iframe.getAttribute('src').includes('Cloud'))
 
-            if (proData) {
-                let document = parse(pro.data)
-                let script = document.querySelector('.myui-player__box script').text
+            if (0 < iframe.length) {
+                const iframeHtml = (
+                    await req(iframe[0].getAttribute('src'), {
+                        headers: {
+                            Referer: url,
+                            'User-Agent':
+                                'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1'
+                        }
+                    })
+                ).data
+                let code = iframeHtml
+                        .match(/var url = '(.*?)'/)[1]
+                        .split('')
+                        .reverse()
+                        .join(''),
+                    temp = ''
+                for (let i = 0; i < code.length; i += 2) temp += String.fromCharCode(parseInt(code[i] + code[i + 1], 16))
+                const playUrl = temp.substring(0, (temp.length - 7) / 2) + temp.substring((temp.length - 7) / 2 + 7)
 
-                let url = eval(script.match(/now=(.*);var pn/)[1])
-                if (/\/file\//.test(url)) {
-                    url = url.replace('/file', '')
-                }
+                backData.data = playUrl
+            } else {
+                let playUrl = 'error'
 
-                backData.data = url
+                const script = document.querySelectorAll('script')
+                const js = script.find((script) => script.text.includes('window.wp_nonce')).text ?? ''
+                const group = js.match(/(var.*)eval\((\w*\(\w*\))\)/)
+                const md5 = Crypto
+                const result = eval(group[1] + group[2])
+                playUrl = result.match(/url:.*?['"](.*?)['"]/)[1]
+
+                backData.data = playUrl
             }
         } catch (error) {
             backData.error = error.message
@@ -209,7 +230,7 @@ class hjkkClass extends WebApiBase {
      */
     async searchVideo(args) {
         let backData = new RepVideoList()
-        let url = this.removeTrailingSlash(this.webSite) + `/search.php?page=${args.page}&searchword=${args.searchWord}`
+        let url = this.removeTrailingSlash(this.webSite) + `/search?q=${args.searchWord}`
 
         try {
             let resp = await req(url, { headers: this.headers })
@@ -218,22 +239,20 @@ class hjkkClass extends WebApiBase {
 
             if (respData) {
                 let document = parse(respData)
-                let allVideo = document.querySelector('#searchList').querySelectorAll('li')
+                let allVideo = document.querySelector('.search_list').querySelectorAll('li')
                 let videos = []
                 for (let index = 0; index < allVideo.length; index++) {
                     const element = allVideo[index]
-                    let vodUrl = element.querySelector('a.myui-vodlist__thumb')?.attributes['href'] ?? ''
-                    let vodPic = element.querySelector('a.myui-vodlist__thumb')?.attributes['data-original'] ?? ''
-                    let vodName = element.querySelector('a.myui-vodlist__thumb')?.attributes['title'] ?? ''
-                    let vodDiJiJi = element.querySelector('span.pic-tag')?.text
-
-                    vodUrl = this.combineUrl(vodUrl)
+                    let vodUrl = element.querySelector('a')?.attributes['href'] ?? ''
+                    let vodPic = element.querySelector('img.thumb')?.attributes['data-original'] ?? ''
+                    let vodName = element.querySelector('img.thumb')?.attributes['alt'] ?? ''
+                    let vodDiJiJi = element.querySelector('.jidi')?.text ?? ''
 
                     let videoDet = new VideoDetail()
                     videoDet.vod_id = vodUrl
                     videoDet.vod_pic = vodPic
                     videoDet.vod_name = vodName
-                    videoDet.vod_remarks = vodDiJiJi
+                    videoDet.vod_remarks = vodDiJiJi.trim()
                     videos.push(videoDet)
                 }
                 backData.data = videos
@@ -245,7 +264,46 @@ class hjkkClass extends WebApiBase {
         return JSON.stringify(backData)
     }
 
-    ignoreClassName = ['首页', '泰剧', 'APP']
+    async request(reqUrl, referer, mth, data, hd) {
+        let headers = {
+            'User-Agent': this.headers['User-Agent'],
+            Cookie: Object.keys(this.cookie)
+                .map((key) => key + '=' + cookie[key])
+                .join(';')
+        }
+
+        if (referer) {
+            headers.referer = encodeURIComponent(referer)
+        }
+
+        referer = await req(reqUrl, {
+            method: mth || 'get',
+            headers: headers,
+            data: data,
+            postType: mth === 'post' ? 'form' : ''
+        })
+
+        if (referer.headers['set-cookie']) {
+            const cookies = Array.isArray(referer.headers['set-cookie']) ? referer.headers['set-cookie'].join(';') : referer.headers['set-cookie']
+
+            for (const c of cookies.split(';')) {
+                var tmp = c.trim()
+                if (tmp.startsWith('result=')) {
+                    cookie.result = tmp.substring(7)
+                    return request(reqUrl, reqUrl, 'post', { result: cookie.result })
+                }
+                if (tmp.startsWith('esc_search_captcha=1')) {
+                    cookie.esc_search_captcha = 1
+                    delete cookie.result
+                    return request(reqUrl)
+                }
+            }
+        }
+
+        return referer.data
+    }
+
+    ignoreClassName = ['首页', '公告留言']
 
     combineUrl(url) {
         if (url === undefined) {
@@ -277,4 +335,4 @@ class hjkkClass extends WebApiBase {
         return str
     }
 }
-var hjkk20240624 = new hjkkClass()
+var sbb20240624 = new sbbClass()

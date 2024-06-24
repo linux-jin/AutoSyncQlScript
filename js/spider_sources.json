@@ -33,5 +33,12 @@
         "instance": "hjkk20240624",
         "webSite": "https://www.hanjukankan.com",
         "remark": ""
+    },
+    {
+        "name": "素白白",
+        "api": "https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/subaibai.js",
+        "instance": "sbb20240624",
+        "webSite": "https://www.subaibaiys.com",
+        "remark": ""
     }
 ]
