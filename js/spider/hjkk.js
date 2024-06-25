@@ -83,7 +83,7 @@ class hjkkClass extends WebApiBase {
                     videoDet.vod_id = vodUrl
                     videoDet.vod_pic = vodPic
                     videoDet.vod_name = vodName
-                    videoDet.vod_remarks = vodDiJiJi
+                    videoDet.vod_remarks = vodDiJiJi.trim()
                     videos.push(videoDet)
                 }
                 backData.data = videos
@@ -233,7 +233,7 @@ class hjkkClass extends WebApiBase {
                     videoDet.vod_id = vodUrl
                     videoDet.vod_pic = vodPic
                     videoDet.vod_name = vodName
-                    videoDet.vod_remarks = vodDiJiJi
+                    videoDet.vod_remarks = vodDiJiJi.trim()
                     videos.push(videoDet)
                 }
                 backData.data = videos
