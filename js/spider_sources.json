@@ -40,5 +40,12 @@
         "instance": "sbb20240624",
         "webSite": "https://www.subaibaiys.com",
         "remark": ""
+    },
+    {
+        "name": "泥視頻",
+        "api": "https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/nivod.js",
+        "instance": "nivod20240625",
+        "webSite": "https://www.nivod5.com",
+        "remark": "576p，需海外IP"
     }
 ]
