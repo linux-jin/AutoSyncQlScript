@@ -148,16 +148,21 @@ class www1080eeClass extends WebApiBase {
                     }
                 }
 
-                let juJiDocment = document.querySelector('.stui-content__playlist')?.querySelectorAll('a') ?? []
+                let juJiDocment = document.querySelectorAll('.stui-vodlist__head')
 
                 let vod_play_url = ''
                 for (let index = 0; index < juJiDocment.length; index++) {
                     const element = juJiDocment[index]
+                    let play_from = element.querySelector('h3').text ?? ''
+                    let eps = element.querySelectorAll('.stui-content__playlist li')
 
-                    vod_play_url += element.text
-                    vod_play_url += '$'
-                    vod_play_url += element.attributes['href']
-                    vod_play_url += '#'
+                    eps.forEach((e) => {
+                        let ep = e.querySelector('a')
+                        vod_play_url += play_from.trim() + '-' + ep.text
+                        vod_play_url += '$'
+                        vod_play_url += ep.getAttribute('href')
+                        vod_play_url += '#'
+                    })
                 }
 
                 let detModel = new VideoDetail()
