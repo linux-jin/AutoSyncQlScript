@@ -47,5 +47,12 @@
         "instance": "nivod20240625",
         "webSite": "https://www.nivod5.com",
         "remark": "576p，需海外IP"
+    },
+    {
+        "name": "1080ee",
+        "api": "https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/1080ee.js",
+        "instance": "www1080ee20240626",
+        "webSite": "http://www.1080.ee",
+        "remark": ""
     }
 ]
