@@ -54,5 +54,12 @@
         "instance": "www1080ee20240626",
         "webSite": "http://www.1080.ee",
         "remark": ""
+    },
+    {
+        "name": "麻豆社",
+        "api": "https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/madou.js",
+        "instance": "madou20240626",
+        "webSite": "http://madou.club",
+        "remark": ""
     }
 ]
