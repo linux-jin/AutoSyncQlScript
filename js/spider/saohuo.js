@@ -112,7 +112,11 @@ class saohuoClass extends WebApiBase {
             if (proData) {
                 let document = parse(proData)
                 let vod_content = document.querySelector('.p_txt')?.innerHTML.split('<br')[0] ?? ''
-                let vod_pic = document.querySelector('.stui-content__thumb img')?.attributes['data-original'] ?? ''
+                let vod_pic =
+                    document
+                        .querySelector('.m_background')
+                        .getAttribute('style')
+                        .match(/url\((.+)\)/)[1] ?? ''
                 let vod_name = document.querySelector('.v_title')?.text ?? ''
                 let detList = document.querySelector('.v_info_box p')?.text ?? ''
                 let vod_year = ''

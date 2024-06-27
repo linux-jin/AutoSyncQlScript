@@ -61,5 +61,12 @@
         "instance": "madou20240626",
         "webSite": "http://madou.club",
         "remark": ""
+    },
+    {
+        "name": "MISSAV",
+        "api": "https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/missav.js",
+        "instance": "missav20240627",
+        "webSite": "http://missav.com",
+        "remark": ""
     }
 ]

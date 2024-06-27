@@ -3,10 +3,10 @@ import { WebApiBase, VideoClass } from '../core/uzCode.js'
 import { parse } from 'node-html-parser'
 // ignore
 
-class madouClass extends WebApiBase {
-    url = 'https://madou.club'
+class missavClass extends WebApiBase {
+    url = 'https://missav.com'
     headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36'
+        'User-Agent': 'PostmanRuntime/7.39.0'
     }
 
     /**
@@ -20,12 +20,12 @@ class madouClass extends WebApiBase {
         this.webSite = this.removeTrailingSlash(webUrl)
         let backData = new RepVideoClassList()
         try {
-            const pro = await req(webUrl, { headers: this.headers })
+            const pro = await req(webUrl + '/dm24', { headers: this.headers })
             backData.error = pro.error
             let proData = pro.data
             if (proData) {
                 let document = parse(proData)
-                let allClass = document.querySelectorAll('.sitenav a')
+                let allClass = document.querySelectorAll('.relative nav .py-1 a')
                 let list = []
                 for (let index = 0; index < allClass.length; index++) {
                     const element = allClass[index]
@@ -34,16 +34,17 @@ class madouClass extends WebApiBase {
                         continue
                     }
                     let type_name = element.text
-                    let url = element.attributes['href']
+                    let url = element.getAttribute('href') ?? ''
 
                     if (url.length > 0 && type_name.length > 0) {
                         let videoClass = new VideoClass()
                         videoClass.type_id = url
-                        videoClass.type_name = type_name
+                        videoClass.type_name = type_name.trim()
                         list.push(videoClass)
                     }
                 }
-                backData.data = list
+
+                backData.data = list.filter((e) => !e.type_id.includes('bit.ly'))
             }
         } catch (error) {
             backData.error = '获取分类失败～' + error.message
@@ -58,7 +59,7 @@ class madouClass extends WebApiBase {
      * @returns {Promise<RepVideoList>}
      */
     async getVideoList(args) {
-        let listUrl = this.removeTrailingSlash(args.url) + '/page/' + args.page
+        let listUrl = this.removeTrailingSlash(args.url) + '?page=' + args.page
         let backData = new RepVideoList()
         try {
             let pro = await req(listUrl, { headers: this.headers })
@@ -66,14 +67,14 @@ class madouClass extends WebApiBase {
             let proData = pro.data
             if (proData) {
                 let document = parse(proData)
-                let allVideo = document.querySelector('.excerpts-wrapper').querySelectorAll('article')
+                let allVideo = document.querySelector('div.pb-12').querySelectorAll('div.thumbnail')
                 let videos = []
                 for (let index = 0; index < allVideo.length; index++) {
                     const element = allVideo[index]
-                    let vodUrl = element.querySelector('a')?.attributes['href'] ?? ''
+                    let vodUrl = element.querySelector('.my-2 .text-secondary')?.attributes['href'] ?? ''
                     let vodPic = element.querySelector('img')?.attributes['data-src'] ?? ''
-                    let vodName = element.querySelector('h2')?.text ?? ''
-                    let vodDiJiJi = element.querySelector('.post-view')?.text ?? ''
+                    let vodName = element.querySelector('.my-2 .text-secondary')?.text ?? ''
+                    let vodDiJiJi = element.querySelector('span')?.text ?? ''
 
                     let videoDet = {}
                     videoDet.vod_id = vodUrl
@@ -104,16 +105,16 @@ class madouClass extends WebApiBase {
             let proData = pro.data
             if (proData) {
                 let document = parse(proData)
-                let vod_content = ''
-                let vod_pic = document.querySelectorAll('body > script')[0].text.match(/shareimage\s+:\s+'(.+)',/)[1] ?? ''
-                let vod_name = document.querySelector('.article-title')?.text ?? ''
+                let vod_content = document.querySelector('div.mb-4 div.text-secondary')?.text ?? ''
+                let vod_pic = document.querySelector('meta[property="og:image"]')?.getAttribute('content') ?? ''
+                let vod_name = document.querySelector('.mt-4 h1')?.text ?? ''
                 let vod_year = ''
                 let vod_director = ''
                 let vod_actor = ''
                 let vod_area = ''
                 let vod_lang = ''
                 let vod_douban_score = ''
-                let type_name = document.querySelector('.article-tags')?.text ?? ''
+                let type_name = ''
 
                 let detModel = new VideoDetail()
                 detModel.vod_year = vod_year
@@ -124,7 +125,7 @@ class madouClass extends WebApiBase {
                 detModel.vod_lang = vod_lang
                 detModel.vod_douban_score = vod_douban_score
                 detModel.vod_content = vod_content.trim()
-                detModel.vod_pic = 'https://dash.madou.club' + vod_pic
+                detModel.vod_pic = vod_pic
                 detModel.vod_name = vod_name
                 detModel.vod_play_url = `$${webUrl}#`
                 detModel.vod_id = webUrl
@@ -146,22 +147,16 @@ class madouClass extends WebApiBase {
     async getVideoPlayUrl(args) {
         let backData = new RepVideoPlayUrl()
         let url = args.url
+        let m3u8Prefix = 'https://surrit.com/'
+        let m3u8Suffix = '/playlist.m3u8'
         try {
             let html = await req(url, { headers: this.headers })
             backData.error = html.error
-            let document = parse(html.data)
 
-            let w = document.querySelector('.article-content iframe').getAttribute('src')
-            let dash = UZUtils.getHostFromURL(w)
-            let dashResp = (await req(w, { headers: this.headers })).data
-            let dashHtml = parse(dashResp)
-            let html2 = dashHtml.querySelectorAll('body script')[5].text
-            let token = html2.match(/var token = (.+);/)[1]
-            let m3u8 = html2.match(/var m3u8 = (.+);/)[1]
+            let uuid = html.data.match(/sixyik.com\\\/(.+)\\\/seek\\\/_0\.jpg/)[1]
+            let m3u8 = m3u8Prefix + uuid + m3u8Suffix
 
-            let play_url = dash + m3u8 + '?token=' + token
-
-            backData.data = play_url.replace(/'|"/gm, '')
+            backData.data = m3u8
         } catch (error) {
             backData.error = error.message
         }
@@ -175,7 +170,7 @@ class madouClass extends WebApiBase {
      */
     async searchVideo(args) {
         let backData = new RepVideoList()
-        let url = this.removeTrailingSlash(this.webSite) + `/page/${args.page}?s=${args.searchWord}`
+        let url = this.removeTrailingSlash(this.webSite) + `/search/${args.searchWord}?page=${args.page}`
 
         try {
             let pro = await req(url, { headers: this.headers })
@@ -183,14 +178,14 @@ class madouClass extends WebApiBase {
             let proData = pro.data
             if (proData) {
                 let document = parse(proData)
-                let allVideo = document.querySelector('.excerpts-wrapper').querySelectorAll('article')
+                let allVideo = document.querySelector('div.pb-12').querySelectorAll('div.thumbnail')
                 let videos = []
                 for (let index = 0; index < allVideo.length; index++) {
                     const element = allVideo[index]
-                    let vodUrl = element.querySelector('a')?.attributes['href'] ?? ''
+                    let vodUrl = element.querySelector('.my-2 .text-secondary')?.attributes['href'] ?? ''
                     let vodPic = element.querySelector('img')?.attributes['data-src'] ?? ''
-                    let vodName = element.querySelector('h2')?.text ?? ''
-                    let vodDiJiJi = element.querySelector('.post-view')?.text ?? ''
+                    let vodName = element.querySelector('.my-2 .text-secondary')?.text ?? ''
+                    let vodDiJiJi = element.querySelector('span')?.text ?? ''
 
                     let videoDet = {}
                     videoDet.vod_id = vodUrl
@@ -208,7 +203,7 @@ class madouClass extends WebApiBase {
         return JSON.stringify(backData)
     }
 
-    ignoreClassName = ['首页', '其他', '热门标签', '筛选']
+    ignoreClassName = ['色色主播', '我的', '女優', '發行', '類型', '影評', 'VIP', '觀看記錄', '繁體中文']
 
     combineUrl(url) {
         if (url === undefined) {
@@ -240,4 +235,4 @@ class madouClass extends WebApiBase {
         return str
     }
 }
-var madou20240626 = new madouClass()
+var missav20240627 = new missavClass()
