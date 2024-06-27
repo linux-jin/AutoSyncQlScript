@@ -124,7 +124,7 @@ class madouClass extends WebApiBase {
                 detModel.vod_lang = vod_lang
                 detModel.vod_douban_score = vod_douban_score
                 detModel.vod_content = vod_content.trim()
-                detModel.vod_pic = 'https://dash.madou.club' + vod_pic
+                detModel.vod_pic = vod_pic
                 detModel.vod_name = vod_name
                 detModel.vod_play_url = `$${webUrl}#`
                 detModel.vod_id = webUrl
