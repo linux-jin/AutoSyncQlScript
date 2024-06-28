@@ -187,15 +187,19 @@ class bttwoClass extends WebApiBase {
 
             let data = html.data
             if (data) {
-                let text = data.split('window.wp_nonce=')[1].split('eval')[0]
-                let code = text.match(/var .*?=.*?"(.*?)"/)[1]
-                let key = text.match(/var .*?=md5.enc.Utf8.parse\("(.*?)"/)[1]
-                let iv = text.match(/var iv=.*?\((\d+)/)[1]
+                let isPlayable = data.split('window.wp_nonce=')[1]
+                if (isPlayable) {
+                    let text = isPlayable.split('eval')[0]
+                    let code = text.match(/var .*?=.*?"(.*?)"/)[1]
+                    let key = text.match(/var .*?=md5.enc.Utf8.parse\("(.*?)"/)[1]
+                    let iv = text.match(/var iv=.*?\((\d+)/)[1]
 
-                text = this.aesCbcDecode(code, key, iv)
-                let playurl = text.match(/url: "(.*?)"/)[1]
+                    text = this.aesCbcDecode(code, key, iv)
+                    let playurl = text.match(/url: "(.*?)"/)[1]
 
-                backData.data = playurl
+                    backData.data = playurl
+                    // } else backData.error = '該片需兩個BT的VIP會員才能收看'
+                } else backData.data = 'https://bit.ly/3BlS71b'
             } else backData.data = 'https://bit.ly/3BlS71b'
         } catch (error) {
             backData.error = error.message
