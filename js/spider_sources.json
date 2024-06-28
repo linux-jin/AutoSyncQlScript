@@ -56,6 +56,13 @@
         "remark": "站點不穩定，偶有4K"
     },
     {
+        "name": "兩個BT",
+        "api": "https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/bttwo.js",
+        "instance": "bttwo20240628",
+        "webSite": "https://www.bttwoo.com",
+        "remark": ""
+    },
+    {
         "name": "麻豆社",
         "api": "https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/madou.js",
         "instance": "madou20240626",
