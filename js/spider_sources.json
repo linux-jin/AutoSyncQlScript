@@ -53,14 +53,14 @@
         "api": "https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/1080ee.js",
         "instance": "www1080ee20240626",
         "webSite": "http://www.1080.ee",
-        "remark": ""
+        "remark": "站點不穩定，偶有4K"
     },
     {
         "name": "麻豆社",
         "api": "https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/madou.js",
         "instance": "madou20240626",
         "webSite": "http://madou.club",
-        "remark": ""
+        "remark": "需海外IP"
     },
     {
         "name": "MISSAV",
