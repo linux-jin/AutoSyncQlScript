@@ -150,6 +150,7 @@ class www1080eeClass extends WebApiBase {
 
                 let juJiDocment = document.querySelectorAll('.stui-vodlist__head')
 
+                let vod_play_from = ''
                 let vod_play_url = ''
                 for (let index = 0; index < juJiDocment.length; index++) {
                     const element = juJiDocment[index]
@@ -158,11 +159,13 @@ class www1080eeClass extends WebApiBase {
 
                     eps.forEach((e) => {
                         let ep = e.querySelector('a')
-                        vod_play_url += play_from.trim() + '-' + ep.text
+                        vod_play_url += ep.text
                         vod_play_url += '$'
                         vod_play_url += ep.getAttribute('href')
                         vod_play_url += '#'
                     })
+                    vod_play_from += play_from.trim() + '$$$'
+                    vod_play_url += '$$$'
                 }
 
                 let detModel = new VideoDetail()
@@ -178,6 +181,7 @@ class www1080eeClass extends WebApiBase {
                 detModel.vod_name = vod_name
                 detModel.vod_play_url = vod_play_url
                 detModel.vod_id = webUrl
+                detModel.vod_play_from = vod_play_from
 
                 backData.data = detModel
             }

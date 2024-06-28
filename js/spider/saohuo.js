@@ -153,6 +153,7 @@ class saohuoClass extends WebApiBase {
                     })
 
                 let juJiDocment = document.querySelector('#play_link')?.querySelectorAll('li') ?? []
+                let vod_play_from = ''
                 let vod_play_url = ''
                 for (let i = 0; i < juJiDocment.length; i++) {
                     let playLinkList = juJiDocment[i]
@@ -161,12 +162,13 @@ class saohuoClass extends WebApiBase {
 
                     for (let j = playLinks.length - 1; j >= 0; j--) {
                         const element = playLinks[j]
-                        let name = from + '-' + element.text
-                        vod_play_url += name
+                        vod_play_url += element.text
                         vod_play_url += '$'
                         vod_play_url += element.attributes['href']
                         vod_play_url += '#'
                     }
+                    vod_play_from += from.trim() + '$$$'
+                    vod_play_url += '$$$'
                 }
 
                 let detModel = new VideoDetail()
@@ -182,6 +184,8 @@ class saohuoClass extends WebApiBase {
                 detModel.vod_name = vod_name
                 detModel.vod_play_url = vod_play_url
                 detModel.vod_id = webUrl
+                detModel.vod_play_from = vod_play_from
+
                 backData.data = detModel
             }
         } catch (error) {
