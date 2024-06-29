@@ -70,6 +70,13 @@
         "remark": ""
     },
     {
+        "name": "天天影視",
+        "api": "https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/tiantian.js",
+        "instance": "tiantian20240629",
+        "webSite": "http://op.ysdqjs.cn",
+        "remark": ""
+    },
+    {
         "name": "麻豆社",
         "api": "https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/madou.js",
         "instance": "madou20240626",
