@@ -63,6 +63,13 @@
         "remark": ""
     },
     {
+        "name": "新視覺",
+        "api": "https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/6080.js",
+        "instance": "newvision20240629",
+        "webSite": "https://www.6080yy3.com",
+        "remark": ""
+    },
+    {
         "name": "麻豆社",
         "api": "https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/madou.js",
         "instance": "madou20240626",
