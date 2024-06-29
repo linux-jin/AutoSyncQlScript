@@ -8,84 +8,84 @@
     },
     {
         "name": "在線之家",
-        "api": "https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/zxzj.js",
+        "api": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/zxzj.js",
         "instance": "zxzj20240620",
         "webSite": "https://www.zxzja.com",
         "remark": "頻繁搜索會觸發風控，建議間隔10秒以上"
     },
     {
         "name": "歐樂",
-        "api": "https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/olevod.js",
+        "api": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/olevod.js",
         "instance": "olevod20240620",
         "webSite": "https://www.olevod.tv",
         "remark": "需海外IP"
     },
     {
         "name": "燒火電影",
-        "api": "https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/saohuo.js",
+        "api": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/saohuo.js",
         "instance": "saohuo20240623",
         "webSite": "https://saohuo.tv",
         "remark": "不支持搜索"
     },
     {
         "name": "韓劇看看",
-        "api": "https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/hjkk.js",
+        "api": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/hjkk.js",
         "instance": "hjkk20240624",
         "webSite": "https://www.hanjukankan.com",
         "remark": ""
     },
     {
         "name": "素白白",
-        "api": "https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/subaibai.js",
+        "api": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/subaibai.js",
         "instance": "sbb20240624",
         "webSite": "https://www.subaibaiys.com",
         "remark": ""
     },
     {
         "name": "泥視頻",
-        "api": "https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/nivod.js",
+        "api": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/nivod.js",
         "instance": "nivod20240625",
         "webSite": "https://www.nivod5.com",
         "remark": "576p，需海外IP"
     },
     {
         "name": "1080ee",
-        "api": "https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/1080ee.js",
+        "api": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/1080ee.js",
         "instance": "www1080ee20240626",
         "webSite": "http://www.1080.ee",
         "remark": "站點不穩定，偶有4K"
     },
     {
         "name": "兩個BT",
-        "api": "https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/bttwo.js",
+        "api": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/bttwo.js",
         "instance": "bttwo20240628",
         "webSite": "https://www.bttwoo.com",
         "remark": ""
     },
     {
         "name": "新視覺",
-        "api": "https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/6080.js",
+        "api": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/6080.js",
         "instance": "newvision20240629",
         "webSite": "https://www.6080yy3.com",
         "remark": ""
     },
     {
         "name": "天天影視",
-        "api": "https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/tiantian.js",
+        "api": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/tiantian.js",
         "instance": "tiantian20240629",
         "webSite": "http://op.ysdqjs.cn",
         "remark": ""
     },
     {
         "name": "麻豆社",
-        "api": "https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/madou.js",
+        "api": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/madou.js",
         "instance": "madou20240626",
         "webSite": "http://madou.club",
         "remark": "需海外IP"
     },
     {
         "name": "MISSAV",
-        "api": "https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/missav.js",
+        "api": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/missav.js",
         "instance": "missav20240627",
         "webSite": "http://missav.com",
         "remark": ""
