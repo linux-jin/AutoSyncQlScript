@@ -77,17 +77,24 @@
         "remark": ""
     },
     {
+        "name": "蛋蛋劇",
+        "api": "http://192.168.50.136:5500/js/spider/dandanju.js",
+        "instance": "dandanju20240704",
+        "webSite": "https://www.dandanju.tv",
+        "remark": ""
+    },
+    {
         "name": "麻豆社",
         "api": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/madou.js",
         "instance": "madou20240626",
-        "webSite": "http://madou.club",
+        "webSite": "https://madou.club",
         "remark": "需海外IP"
     },
     {
         "name": "MISSAV",
         "api": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/missav.js",
         "instance": "missav20240627",
-        "webSite": "http://missav.com",
+        "webSite": "https://missav.com",
         "remark": ""
     }
 ]
