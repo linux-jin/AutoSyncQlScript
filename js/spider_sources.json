@@ -96,5 +96,12 @@
         "instance": "missav20240627",
         "webSite": "https://missav.com",
         "remark": ""
+    },
+	{
+        "name": "玩偶姐姐",
+        "api": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/hkdoll.js",
+        "instance": "hkdoll20240705",
+        "webSite": "https://hongkongdollvideo.com",
+        "remark": ""
     }
 ]
