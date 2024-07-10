@@ -18,8 +18,9 @@ class zxzjClass extends WebApiBase {
         try {
             const pro = await req(webUrl, {
                 headers: {
-                    'User-Agent': 'Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.91 Mobile Safari/537.36'
-                }
+                    'User-Agent':
+                        'Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.91 Mobile Safari/537.36',
+                },
             })
             backData.error = pro.error
             let proData = pro.data
@@ -65,8 +66,9 @@ class zxzjClass extends WebApiBase {
         try {
             let pro = await req(listUrl, {
                 headers: {
-                    'User-Agent': 'Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.91 Mobile Safari/537.36'
-                }
+                    'User-Agent':
+                        'Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.91 Mobile Safari/537.36',
+                },
             })
             backData.error = pro.error
             let proData = pro.data
@@ -109,8 +111,9 @@ class zxzjClass extends WebApiBase {
             var webUrl = args.url
             let pro = await req(webUrl, {
                 headers: {
-                    'User-Agent': 'Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.91 Mobile Safari/537.36'
-                }
+                    'User-Agent':
+                        'Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.91 Mobile Safari/537.36',
+                },
             })
             backData.error = pro.error
             let proData = pro.data
@@ -203,8 +206,9 @@ class zxzjClass extends WebApiBase {
         try {
             const pro = await req(reqUrl, {
                 headers: {
-                    'User-Agent': 'Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.91 Mobile Safari/537.36'
-                }
+                    'User-Agent':
+                        'Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.91 Mobile Safari/537.36',
+                },
             })
             backData.error = pro.error
             let proData = pro.data
@@ -220,10 +224,10 @@ class zxzjClass extends WebApiBase {
                 let url = player.url
                 let from = player.from
 
-                if (html.encrypt == '1') {
+                if (player.encrypt == '1') {
                     url = decodeURIComponent(url)
                     backData.data = url
-                } else if (html.encrypt == '2') {
+                } else if (player.encrypt == '2') {
                     url = decodeURIComponent(atob(url))
                     backData.data = url
                 }
@@ -234,13 +238,14 @@ class zxzjClass extends WebApiBase {
                 } else {
                     let ifrwy = await req(url, {
                         headers: {
-                            'User-Agent': 'Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.91 Mobile Safari/537.36',
+                            'User-Agent':
+                                'Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.91 Mobile Safari/537.36',
                             Referer: this.webSite,
                             'sec-fetch-mode': 'navigate',
                             'sec-fetch-site': 'cross-site',
                             'sec-fetch-dest': 'iframe',
-                            'upgrade-insecure-requests': 1
-                        }
+                            'upgrade-insecure-requests': 1,
+                        },
                     })
                     let ifrwyData = ifrwy.data
                     backData.error = ifrwy.error
@@ -252,7 +257,9 @@ class zxzjClass extends WebApiBase {
                         for (let i = 0x0; i < code.length; i = i + 0x2) {
                             temp += String.fromCharCode(parseInt(code[i] + code[i + 0x1], 0x10))
                         }
-                        backData.data = temp.substring(0x0, (temp.length - 0x7) / 0x2) + temp.substring((temp.length - 0x7) / 0x2 + 0x7)
+                        backData.data =
+                            temp.substring(0x0, (temp.length - 0x7) / 0x2) +
+                            temp.substring((temp.length - 0x7) / 0x2 + 0x7)
                     }
                 }
                 // } else {
@@ -278,8 +285,9 @@ class zxzjClass extends WebApiBase {
         try {
             let pro = await req(url, {
                 headers: {
-                    'User-Agent': 'Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.91 Mobile Safari/537.36'
-                }
+                    'User-Agent':
+                        'Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.91 Mobile Safari/537.36',
+                },
             })
             backData.error = pro.error
             let proData = pro.data
