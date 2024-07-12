@@ -84,6 +84,13 @@
         "remark": ""
     },
     {
+        "name": "耐看點播",
+        "api": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/nkvod.js",
+        "instance": "nkvod20240712",
+        "webSite": "https://nkvod.com",
+        "remark": ""
+    },
+    {
         "name": "麻豆社",
         "api": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/madou.js",
         "instance": "madou20240626",
@@ -97,7 +104,7 @@
         "webSite": "https://missav.com",
         "remark": ""
     },
-	{
+    {
         "name": "玩偶姐姐",
         "api": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/hkdoll.js",
         "instance": "hkdoll20240705",

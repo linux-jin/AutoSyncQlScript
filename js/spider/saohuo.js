@@ -4,10 +4,15 @@ import { parse } from 'node-html-parser'
 // ignore
 
 class saohuoClass extends WebApiBase {
-    webSite = 'https://saohuo.tv'
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.91 Mobile Safari/537.36'
+    constructor() {
+        super()
+        this.webSite = 'https://saohuo.tv'
+        this.headers = {
+            'User-Agent':
+                'Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.91 Mobile Safari/537.36',
+        }
     }
+
     /**
      * 异步获取分类列表的方法。
      * @param {UZArgs} args
@@ -215,7 +220,7 @@ class saohuoClass extends WebApiBase {
                 let apiurl = iframeUrl ? UZUtils.getHostFromURL(iframeUrl) + '/api.php' : ''
 
                 let resp = await req(iframeUrl, {
-                    headers: this.headers
+                    headers: this.headers,
                 })
                 backData.error = resp.error
                 if (resp.data) {
@@ -229,15 +234,15 @@ class saohuoClass extends WebApiBase {
                         headers: {
                             'Content-Type': 'application/x-www-form-urlencoded',
                             'User-Agent': this.headers['User-Agent'],
-                            Referer: iframeUrl
+                            Referer: iframeUrl,
                         },
                         data: {
                             url: url,
                             t: t,
                             key: key,
                             act: 0,
-                            play: 1
-                        }
+                            play: 1,
+                        },
                     })
                     let purl = presp.data.url
                     backData.data = /http/.test(purl) ? purl : UZUtils.getHostFromURL(iframeUrl) + purl
@@ -256,11 +261,56 @@ class saohuoClass extends WebApiBase {
      */
     async searchVideo(args) {
         let backData = new RepVideoList()
+        let ocrApi = 'https://api.nn.ci/ocr/b64/json'
+        let validate = this.webSite + '/include/vdimgck.php'
+        try {
+            let img = await req(validate, { headers: this.headers })
+
+            let b64 = this.base64Encode(img.data)
+            UZUtils.debugLog(b64)
+            let ocrRes = await req(ocrApi, {
+                method: 'POST',
+                headers: this.headers,
+                data: b64,
+            })
+            let vd = JSON.parse(ocrRes.data).result
+            let searchUrl =
+                this.webSite +
+                '/search.php?scheckAC=check&page=&searchtype=&order=&tid=&area=&year=&letter=&yuyan=&state=&money=&ver=&jq='
+            let searchRes = await req(searchUrl, {
+                method: 'POST',
+                headers: this.headers,
+                data: `searchword=${args.searchWord}&validate=${vd}`,
+            })
+            let _$ = cheerio.load(searchRes.body)
+            let videos = []
+            let allVideo = _$('ul.v_list div.v_img')
+            allVideo.each((index, element) => {
+                let vodUrl = _$(element).find('a').attr('href') || ''
+                let vodPic = _$(element).find('img').attr('data-original') || ''
+                let vodName = _$(element).find('a').attr('title') || ''
+                let vodDiJiJi = _$(element).find('.v_note').text() || ''
+
+                let videoDet = {}
+                videoDet.vod_id = +vodUrl.match(/movie\/(.+)\.html/)[1]
+                videoDet.vod_pic = vodPic
+                videoDet.vod_name = vodName
+                videoDet.vod_remarks = vodDiJiJi.trim()
+                videos.push(videoDet)
+            })
+            backData.data = videos
+        } catch (e) {
+            backData.error = e.message
+        }
         // Search requires verification code
         return JSON.stringify(backData)
     }
 
     ignoreClassName = ['最新', '最热']
+
+    base64Encode(text) {
+        return Crypto.enc.Base64.stringify(Crypto.enc.Utf8.parse(text))
+    }
 
     combineUrl(url) {
         if (url === undefined) {

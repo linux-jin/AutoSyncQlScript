@@ -1,0 +1,9 @@
+[
+    {
+        "name": "耐看點播",
+        "api": "http://192.168.50.136:5500/js/spider/nkvod.js",
+        "instance": "nkvod20240712",
+        "webSite": "https://nkvod.com",
+        "remark": ""
+    }
+]
