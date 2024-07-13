@@ -42,13 +42,6 @@
         "remark": ""
     },
     {
-        "name": "泥視頻",
-        "api": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/nivod.js",
-        "instance": "nivod20240625",
-        "webSite": "https://www.nivod5.com",
-        "remark": "576p，需海外IP"
-    },
-    {
         "name": "1080ee",
         "api": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/1080ee.js",
         "instance": "www1080ee20240626",

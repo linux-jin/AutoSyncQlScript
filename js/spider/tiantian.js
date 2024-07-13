@@ -6,7 +6,8 @@ import { parse } from 'node-html-parser'
 class tiantianClass extends WebApiBase {
     webSite = 'http://op.ysdqjs.cn'
     headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36'
+        'User-Agent':
+            'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36',
     }
     cookie = ''
     parseMap = {}
@@ -55,7 +56,7 @@ class tiantianClass extends WebApiBase {
         const param = {
             type_id: args.url,
             page: args.page,
-            limit: limit
+            limit: limit,
         }
         let backData = new RepVideoList()
         try {
@@ -89,7 +90,7 @@ class tiantianClass extends WebApiBase {
      */
     async getVideoDetail(args) {
         const param = {
-            vod_id: args.url
+            vod_id: args.url,
         }
         let backData = new RepVideoDetail()
         try {
@@ -115,23 +116,25 @@ class tiantianClass extends WebApiBase {
 
                 const playInfo = obj.vod_play_list
                 const playVod = {}
-                _.each(playInfo, (obj) => {
+                playInfo.forEach((obj) => {
                     const sourceName = obj.name
                     let playList = ''
                     const videoInfo = obj.urls
                     const parse = obj.parse_urls
-                    if (!_.isEmpty(parse)) this.parseMap[sourceName] = parse
-                    const vodItems = _.map(videoInfo, (epObj) => {
+                    if (parse && parse.length > 0) this.parseMap[sourceName] = parse
+
+                    const vodItems = videoInfo.map((epObj) => {
                         const epName = epObj.name
                         const playUrl = sourceName + '@@' + epObj.url
                         return epName + '$' + playUrl
                     })
-                    if (_.isEmpty(vodItems)) return
+
+                    if (vodItems.length === 0) return
                     playList = vodItems.join('#')
                     playVod[sourceName] = playList
                 })
-                detModel.vod_play_from = _.keys(playVod).join('$$$')
-                detModel.vod_play_url = _.values(playVod).join('$$$')
+                detModel.vod_play_from = Object.keys(playVod).join('$$$')
+                detModel.vod_play_url = Object.values(playVod).join('$$$')
 
                 backData.data = detModel
             }
@@ -152,14 +155,14 @@ class tiantianClass extends WebApiBase {
         let sourceName = args.url.split('@@')[0]
         let url = args.url.split('@@')[1]
         let parsers = this.parseMap[sourceName]
-        if (!_.isEmpty(parsers)) {
+        if (parsers) {
             for (const parser of parsers) {
-                if (_.isEmpty(parser)) continue
+                if (!parser) continue
                 try {
                     const resp = await this.request(parser + url)
                     backData.error = resp.error
                     const json = resp.data
-                    if (!_.isEmpty(json.url)) {
+                    if (json.url) {
                         backData.data = json.url
                         break
                     } else backData.error = '解析失敗'
@@ -181,7 +184,7 @@ class tiantianClass extends WebApiBase {
         const param = {
             keyword: args.searchWord,
             page: args.page,
-            limit: limit
+            limit: limit,
         }
         let backData = new RepVideoList()
 
@@ -218,17 +221,17 @@ class tiantianClass extends WebApiBase {
         const sign = Crypto.MD5(key + timestamp).toString()
         let defaultData = {
             sign: sign,
-            timestamp: timestamp
+            timestamp: timestamp,
         }
-        const reqData = data ? _.merge(defaultData, data) : defaultData
+        const reqData = data ? Object.assign({}, defaultData, data) : defaultData
         return await this.request(url, 'post', reqData)
     }
 
     async request(reqUrl, method, data) {
         const headers = {
-            'User-Agent': this.headers['User-Agent']
+            'User-Agent': this.headers['User-Agent'],
         }
-        if (!_.isEmpty(this.cookie)) {
+        if (this.cookie) {
             headers['Cookie'] = this.cookie
         }
         const postType = method === 'post' ? 'form-data' : ''
@@ -236,17 +239,19 @@ class tiantianClass extends WebApiBase {
             method: method || 'get',
             headers: headers,
             data: data,
-            postType: postType
+            postType: postType,
         })
         if (res.code === 403) {
             const path = res.data.match(/window\.location\.href ="(.*?)"/)[1]
-            this.cookie = _.isArray(res.headers['set-cookie']) ? res.headers['set-cookie'].join(';') : res.headers['set-cookie']
+            this.cookie = Array.isArray(res.headers['set-cookie'])
+                ? res.headers['set-cookie'].join(';')
+                : res.headers['set-cookie']
             headers['Cookie'] = this.cookie
             res = await req(this.siteUrl + path, {
                 method: method || 'get',
                 headers: headers,
                 data: data,
-                postType: postType
+                postType: postType,
             })
         }
         return res
