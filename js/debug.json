@@ -5,5 +5,12 @@
         "instance": "nkvod20240712",
         "webSite": "https://nkvod.com",
         "remark": ""
+    },
+    {
+        "name": "金牌影院",
+        "api": "http://192.168.50.136:5500/spider/jpyy.js",
+        "instance": "jpyy20240716",
+        "webSite": "https://www.ghw9zwp5.com",
+        "remark": ""
     }
 ]

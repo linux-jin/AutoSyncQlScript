@@ -84,6 +84,13 @@
         "remark": ""
     },
     {
+        "name": "金牌影院",
+        "api": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/jpyy.js",
+        "instance": "jpyy20240716",
+        "webSite": "https://www.ghw9zwp5.com",
+        "remark": ""
+    },
+    {
         "name": "麻豆社",
         "api": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/madou.js",
         "instance": "madou20240626",
