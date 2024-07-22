@@ -8,8 +8,7 @@ class saohuoClass extends WebApiBase {
         super()
         this.webSite = 'https://saohuo.tv'
         this.headers = {
-            'User-Agent':
-                'Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.91 Mobile Safari/537.36',
+            'User-Agent': 'Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.91 Mobile Safari/537.36',
         }
     }
 
@@ -44,10 +43,11 @@ class saohuoClass extends WebApiBase {
                     } else url = element.attributes['href']
 
                     url = this.combineUrl(url)
-                    url = url.slice(0, -5)
+                    // url = url.slice(0, -5)
 
                     if (url.length > 0 && type_name.length > 0) {
                         let videoClass = new VideoClass()
+                        videoClass.hasSubclass = true
                         videoClass.type_id = url
                         videoClass.type_name = type_name
                         list.push(videoClass)
@@ -62,15 +62,45 @@ class saohuoClass extends WebApiBase {
         return JSON.stringify(backData)
     }
 
-    /**
-     * 获取分类视频列表
-     * @param {UZArgs} args
-     * @returns {Promise<RepVideoList>}
-     */
-    async getVideoList(args) {
-        let listUrl = this.removeTrailingSlash(args.url) + '-' + args.page + '.html'
-        let backData = new RepVideoList()
+    async getSubclassList(args) {
+        let backData = new RepVideoSubclassList()
+        backData.data = new VideoSubclass()
+        const url = args.url
         try {
+            const pro = await req(url, { headers: this.headers })
+            backData.error = pro.error
+            let proData = pro.data
+            if (proData) {
+                const $ = cheerio.load(proData)
+                let filter = $('.top_bar a')
+                let filterTitle = new FilterTitle()
+                filterTitle.name = '類型'
+                filterTitle.list = []
+                filter.each((index, element) => {
+                    let name = $(element).text()
+                    let id = $(element)
+                        .attr('href')
+                        .match(/list\/(.*)\.html/)[1]
+                    let filterLab = new FilterLabel()
+                    filterLab.name = name
+                    filterLab.id = id
+                    filterTitle.list.push(filterLab)
+                })
+                backData.data.filter.push(filterTitle)
+            }
+        } catch (error) {
+            backData.error = '获取分类失败～ ' + error
+        }
+        return JSON.stringify(backData)
+    }
+
+    async getSubclassVideoList(args) {
+        let backData = new RepVideoList()
+        // UZUtils.debugLog(args)
+        backData.data = []
+        try {
+            const listUrl = this.removeTrailingSlash(this.webSite) + '/list/' + args.filter[0].id + '-' + args.page + '.html'
+
             let pro = await req(listUrl, { headers: this.headers })
             backData.error = pro.error
             let proData = pro.data
@@ -97,10 +127,51 @@ class saohuoClass extends WebApiBase {
                 backData.data = videos
             }
         } catch (error) {
-            backData.error = '获取列表失败～' + error.message
+            backData.error = '获取视频列表失败～ ' + error
         }
+
         return JSON.stringify(backData)
     }
+
+    // /**
+    //  * 获取分类视频列表
+    //  * @param {UZArgs} args
+    //  * @returns {Promise<RepVideoList>}
+    //  */
+    // async getVideoList(args) {
+    //     let listUrl = this.removeTrailingSlash(args.url) + '-' + args.page + '.html'
+    //     let backData = new RepVideoList()
+    //     try {
+    //         let pro = await req(listUrl, { headers: this.headers })
+    //         backData.error = pro.error
+    //         let proData = pro.data
+    //         if (proData) {
+    //             let document = parse(proData)
+    //             let allVideo = document.querySelectorAll('ul.v_list div.v_img')
+    //             let videos = []
+    //             for (let index = 0; index < allVideo.length; index++) {
+    //                 const element = allVideo[index]
+    //                 let vodUrl = element.querySelector('a')?.attributes['href'] ?? ''
+    //                 let vodPic = element.querySelector('img')?.attributes['data-original'] ?? ''
+    //                 let vodName = element.querySelector('a')?.attributes['title'] ?? ''
+    //                 let vodDiJiJi = element.querySelector('.v_note')?.text
+
+    //                 vodUrl = this.combineUrl(vodUrl)
+
+    //                 let videoDet = new VideoDetail()
+    //                 videoDet.vod_id = vodUrl
+    //                 videoDet.vod_pic = vodPic
+    //                 videoDet.vod_name = vodName
+    //                 videoDet.vod_remarks = vodDiJiJi
+    //                 videos.push(videoDet)
+    //             }
+    //             backData.data = videos
+    //         }
+    //     } catch (error) {
+    //         backData.error = '获取列表失败～' + error.message
+    //     }
+    //     return JSON.stringify(backData)
+    // }
 
     /**
      * 获取视频详情
@@ -274,9 +345,7 @@ class saohuoClass extends WebApiBase {
                 data: b64,
             })
             let vd = JSON.parse(ocrRes.data).result
-            let searchUrl =
-                this.webSite +
-                '/search.php?scheckAC=check&page=&searchtype=&order=&tid=&area=&year=&letter=&yuyan=&state=&money=&ver=&jq='
+            let searchUrl = this.webSite + '/search.php?scheckAC=check&page=&searchtype=&order=&tid=&area=&year=&letter=&yuyan=&state=&money=&ver=&jq='
             let searchRes = await req(searchUrl, {
                 method: 'POST',
                 headers: this.headers,

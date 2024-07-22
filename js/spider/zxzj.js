@@ -18,8 +18,7 @@ class zxzjClass extends WebApiBase {
         try {
             const pro = await req(webUrl, {
                 headers: {
-                    'User-Agent':
-                        'Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.91 Mobile Safari/537.36',
+                    'User-Agent': 'Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.91 Mobile Safari/537.36',
                 },
             })
             backData.error = pro.error
@@ -37,7 +36,7 @@ class zxzjClass extends WebApiBase {
                     var type_name = element.text
                     var url = element.attributes['href']
                     url = this.combineUrl(url)
-                    url = url.slice(0, -5)
+                    // url = url.slice(0, -5)
 
                     if (url.length > 0 && type_name.length > 0) {
                         var videoClass = new VideoClass()
@@ -55,6 +54,128 @@ class zxzjClass extends WebApiBase {
         return JSON.stringify(backData)
     }
 
+    // async getSubclassList(args) {
+    //     var backData = new RepVideoSubclassList()
+    //     backData.data = new VideoSubclass()
+    //     // const id = args.url
+    //     try {
+    //         // var url = UZUtils.removeTrailingSlash(this.webSite) + '/show/' + id + '------1.html'
+    //         let url = args.url
+    //         const pro = await req(url)
+    //         backData.error = pro.error
+    //         let proData = pro.data
+    //         if (proData) {
+    //             var document = parse(proData)
+    //             var filterTitleList = document.querySelectorAll('#screenbox ul') ?? []
+    //             for (let i = 0; i < filterTitleList.length; i++) {
+    //                 const element = filterTitleList[i]
+    //                 const title = element.querySelector('li span').text
+    //                 const items = element.querySelectorAll('.filter-item') ?? []
+    //                 // 2-惊悚-中国香港-英语-2022-1-1
+    //                 // 分类-类型-地区-语言-年代-排序-页码
+    //                 var filterTitle = new FilterTitle()
+    //                 filterTitle.name = title.replace(':', '')
+    //                 filterTitle.list = []
+    //                 for (let j = 0; j < items.length; j++) {
+    //                     const item = items[j]
+    //                     const name = item.text
+    //                     const path = item.attributes['href'] ?? ''
+    //                     const regex = /\/show\/(.*?)\.html/
+    //                     const match = path.match(regex)
+    //                     const parsStr = match ? match[1] : null
+    //                     if (parsStr) {
+    //                         const parList = parsStr.split('-')
+    //                         const id = parList[i + 1]
+    //                         var filterLab = new FilterLabel()
+    //                         filterLab.name = name
+    //                         filterLab.id = id
+    //                         filterTitle.list.push(filterLab)
+    //                     }
+    //                 }
+
+    //                 backData.data.filter.push(filterTitle)
+    //             }
+    //             if (id === 6 || id === '6') {
+    //                 // 短剧
+    //                 if (backData.data.filter.length > 0) {
+    //                     const list = backData.data.filter[0].list
+    //                     var classList = []
+    //                     for (let index = 0; index < list.length; index++) {
+    //                         const element = list[index]
+    //                         var subclass = new VideoClass()
+    //                         subclass.type_id = element.id
+    //                         subclass.type_name = element.name
+    //                         classList.push(subclass)
+    //                     }
+    //                     backData.data.filter = []
+    //                     backData.data.class = classList
+    //                 }
+    //             }
+    //         }
+    //     } catch (error) {
+    //         backData.error = '获取分类失败～ ' + error
+    //     }
+    //     return JSON.stringify(backData)
+    // }
+    // /**
+    //  * 获取二级分类视频列表 或 筛选视频列表
+    //  * @param {UZSubclassVideoListArgs} args
+    //  * @returns {@Promise<JSON.stringify(new RepVideoList())>}
+    //  */
+    // async getSubclassVideoList(args) {
+    //     var backData = new RepVideoList()
+    //     backData.data = []
+    //     try {
+    //         var pList = [args.mainClassId]
+    //         if (args.filter.length > 0) {
+    //             // 筛选
+    //             for (let index = 0; index < args.filter.length; index++) {
+    //                 const element = args.filter[index]
+    //                 pList.push(element.id)
+    //             }
+    //         } else {
+    //             pList.push(args.subclassId)
+    //             for (let index = 0; index < 4; index++) {
+    //                 pList.push('')
+    //             }
+    //         }
+    //         pList.push(args.page)
+    //         var path = pList.join('-')
+    //         const url = UZUtils.removeTrailingSlash(this.webSite) + '/show/' + path + '.html'
+
+    //         const pro = await req(url)
+    //         backData.error = pro.error
+    //         let proData = pro.data
+    //         if (proData) {
+    //             var document = parse(proData)
+    //             var allVideo = document.querySelectorAll('div.module-item') ?? []
+    //             var videos = []
+    //             for (let index = 0; index < allVideo.length; index++) {
+    //                 const element = allVideo[index]
+    //                 var vodUrl = element.querySelector('a')?.attributes['href'] ?? ''
+    //                 var avaImg = document.querySelector('img.user-avatar-img')?.attributes['src'] ?? ''
+    //                 var path = element.querySelector('img')?.attributes['data-original'] ?? ''
+    //                 var vodPic = UZUtils.getHostFromURL(avaImg) + path
+    //                 var vodName = element.querySelector('img')?.attributes['title'] ?? ''
+    //                 var vod_remarks = element.querySelector('div.v-item-bottom > span')?.text ?? element.querySelector('div.v-item-top-left > span')?.text
+    //                 if (vodUrl && vodPic && vodName) {
+    //                     var video = new VideoDetail()
+    //                     video.vod_id = vodUrl
+    //                     video.vod_pic = vodPic
+    //                     video.vod_name = vodName
+    //                     video.vod_remarks = vod_remarks
+    //                     videos.push(video)
+    //                 }
+    //             }
+    //             backData.data = videos
+    //         }
+    //     } catch (error) {
+    //         backData.error = '获取视频列表失败～ ' + error
+    //     }
+
+    //     return JSON.stringify(backData)
+    // }
+
     /**
      * 获取分类视频列表
      * @param {UZArgs} args
@@ -66,8 +187,7 @@ class zxzjClass extends WebApiBase {
         try {
             let pro = await req(listUrl, {
                 headers: {
-                    'User-Agent':
-                        'Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.91 Mobile Safari/537.36',
+                    'User-Agent': 'Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.91 Mobile Safari/537.36',
                 },
             })
             backData.error = pro.error
@@ -111,8 +231,7 @@ class zxzjClass extends WebApiBase {
             var webUrl = args.url
             let pro = await req(webUrl, {
                 headers: {
-                    'User-Agent':
-                        'Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.91 Mobile Safari/537.36',
+                    'User-Agent': 'Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.91 Mobile Safari/537.36',
                 },
             })
             backData.error = pro.error
@@ -206,8 +325,7 @@ class zxzjClass extends WebApiBase {
         try {
             const pro = await req(reqUrl, {
                 headers: {
-                    'User-Agent':
-                        'Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.91 Mobile Safari/537.36',
+                    'User-Agent': 'Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.91 Mobile Safari/537.36',
                 },
             })
             backData.error = pro.error
@@ -257,9 +375,7 @@ class zxzjClass extends WebApiBase {
                         for (let i = 0x0; i < code.length; i = i + 0x2) {
                             temp += String.fromCharCode(parseInt(code[i] + code[i + 0x1], 0x10))
                         }
-                        backData.data =
-                            temp.substring(0x0, (temp.length - 0x7) / 0x2) +
-                            temp.substring((temp.length - 0x7) / 0x2 + 0x7)
+                        backData.data = temp.substring(0x0, (temp.length - 0x7) / 0x2) + temp.substring((temp.length - 0x7) / 0x2 + 0x7)
                     }
                 }
                 // } else {
@@ -285,8 +401,7 @@ class zxzjClass extends WebApiBase {
         try {
             let pro = await req(url, {
                 headers: {
-                    'User-Agent':
-                        'Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.91 Mobile Safari/537.36',
+                    'User-Agent': 'Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.91 Mobile Safari/537.36',
                 },
             })
             backData.error = pro.error
