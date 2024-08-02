@@ -93,7 +93,7 @@
     {
         "name": "4k-av",
         "api": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/4kav.js",
-        "instance": "4kav20240705",
+        "instance": "www4kav20240705",
         "webSite": "https://4k-av.com",
         "remark": ""
     },
