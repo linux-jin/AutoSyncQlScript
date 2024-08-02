@@ -200,7 +200,7 @@ class jpyyClass extends WebApiBase {
         const parts = args.url.match(/vod\/play\/(.*)\/sid\/(.*)/)
         const id = parts[1]
         const sid = parts[2]
-        let reqUrl = `${this.webSite}/api/mw-movie/anonymous/video/episode/url?id=${id}&nid=${sid}`
+        let reqUrl = `${this.webSite}/api/mw-movie/anonymous/v1/video/episode/url?id=${id}&nid=${sid}`
 
         try {
             const signKey = this.base64Decode('Y2I4MDg1MjliYWU2YjZiZTQ1ZWNmYWIyOWE0ODg5YmM=')
@@ -222,7 +222,7 @@ class jpyyClass extends WebApiBase {
             backData.error = pro.error
             let proData = pro.data
             if (proData) {
-                let playUrl = proData.data
+                let playUrl = proData.data.playUrl
                 backData.data = playUrl
                 backData.headers = this.headers
             }
