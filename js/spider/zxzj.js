@@ -35,13 +35,15 @@ class zxzjClass extends WebApiBase {
                     }
                     var type_name = element.text
                     var url = element.attributes['href']
-                    url = this.combineUrl(url)
-                    // url = url.slice(0, -5)
 
                     if (url.length > 0 && type_name.length > 0) {
                         var videoClass = new VideoClass()
                         videoClass.type_id = url
                         videoClass.type_name = type_name
+                        videoClass.hasSubclass = true
+                        if (type_name.indexOf('泰剧') != -1) {
+                            videoClass.hasSubclass = false
+                        }
                         list.push(videoClass)
                     }
                 }
@@ -54,127 +56,94 @@ class zxzjClass extends WebApiBase {
         return JSON.stringify(backData)
     }
 
-    // async getSubclassList(args) {
-    //     var backData = new RepVideoSubclassList()
-    //     backData.data = new VideoSubclass()
-    //     // const id = args.url
-    //     try {
-    //         // var url = UZUtils.removeTrailingSlash(this.webSite) + '/show/' + id + '------1.html'
-    //         let url = args.url
-    //         const pro = await req(url)
-    //         backData.error = pro.error
-    //         let proData = pro.data
-    //         if (proData) {
-    //             var document = parse(proData)
-    //             var filterTitleList = document.querySelectorAll('#screenbox ul') ?? []
-    //             for (let i = 0; i < filterTitleList.length; i++) {
-    //                 const element = filterTitleList[i]
-    //                 const title = element.querySelector('li span').text
-    //                 const items = element.querySelectorAll('.filter-item') ?? []
-    //                 // 2-惊悚-中国香港-英语-2022-1-1
-    //                 // 分类-类型-地区-语言-年代-排序-页码
-    //                 var filterTitle = new FilterTitle()
-    //                 filterTitle.name = title.replace(':', '')
-    //                 filterTitle.list = []
-    //                 for (let j = 0; j < items.length; j++) {
-    //                     const item = items[j]
-    //                     const name = item.text
-    //                     const path = item.attributes['href'] ?? ''
-    //                     const regex = /\/show\/(.*?)\.html/
-    //                     const match = path.match(regex)
-    //                     const parsStr = match ? match[1] : null
-    //                     if (parsStr) {
-    //                         const parList = parsStr.split('-')
-    //                         const id = parList[i + 1]
-    //                         var filterLab = new FilterLabel()
-    //                         filterLab.name = name
-    //                         filterLab.id = id
-    //                         filterTitle.list.push(filterLab)
-    //                     }
-    //                 }
+    async getSubclassList(args) {
+        var backData = new RepVideoSubclassList()
+        backData.data = new VideoSubclass()
+        var id = this.extractFirstNumber(args.url)
+        try {
+            var url = UZUtils.removeTrailingSlash(this.webSite) + args.url
+            const pro = await req(url)
+            backData.error = pro.error
+            let proData = pro.data
+            if (proData) {
+                var document = parse(proData)
+                var filterTitleList = document.querySelectorAll('#screenbox ul') ?? []
 
-    //                 backData.data.filter.push(filterTitle)
-    //             }
-    //             if (id === 6 || id === '6') {
-    //                 // 短剧
-    //                 if (backData.data.filter.length > 0) {
-    //                     const list = backData.data.filter[0].list
-    //                     var classList = []
-    //                     for (let index = 0; index < list.length; index++) {
-    //                         const element = list[index]
-    //                         var subclass = new VideoClass()
-    //                         subclass.type_id = element.id
-    //                         subclass.type_name = element.name
-    //                         classList.push(subclass)
-    //                     }
-    //                     backData.data.filter = []
-    //                     backData.data.class = classList
-    //                 }
-    //             }
-    //         }
-    //     } catch (error) {
-    //         backData.error = '获取分类失败～ ' + error
-    //     }
-    //     return JSON.stringify(backData)
-    // }
-    // /**
-    //  * 获取二级分类视频列表 或 筛选视频列表
-    //  * @param {UZSubclassVideoListArgs} args
-    //  * @returns {@Promise<JSON.stringify(new RepVideoList())>}
-    //  */
-    // async getSubclassVideoList(args) {
-    //     var backData = new RepVideoList()
-    //     backData.data = []
-    //     try {
-    //         var pList = [args.mainClassId]
-    //         if (args.filter.length > 0) {
-    //             // 筛选
-    //             for (let index = 0; index < args.filter.length; index++) {
-    //                 const element = args.filter[index]
-    //                 pList.push(element.id)
-    //             }
-    //         } else {
-    //             pList.push(args.subclassId)
-    //             for (let index = 0; index < 4; index++) {
-    //                 pList.push('')
-    //             }
-    //         }
-    //         pList.push(args.page)
-    //         var path = pList.join('-')
-    //         const url = UZUtils.removeTrailingSlash(this.webSite) + '/show/' + path + '.html'
+                for (let i = 0; i < filterTitleList.length; i++) {
+                    const element = filterTitleList[i]
+                    const title = element.querySelector('li span').text
+                    const items = element.querySelectorAll('li a') ?? []
+                    if (title.indexOf('剧情') === -1) {
+                        continue
+                    }
+                    var filterTitle = new FilterTitle()
+                    filterTitle.name = title.replace('：', '').replace('按', '')
+                    filterTitle.list = []
 
-    //         const pro = await req(url)
-    //         backData.error = pro.error
-    //         let proData = pro.data
-    //         if (proData) {
-    //             var document = parse(proData)
-    //             var allVideo = document.querySelectorAll('div.module-item') ?? []
-    //             var videos = []
-    //             for (let index = 0; index < allVideo.length; index++) {
-    //                 const element = allVideo[index]
-    //                 var vodUrl = element.querySelector('a')?.attributes['href'] ?? ''
-    //                 var avaImg = document.querySelector('img.user-avatar-img')?.attributes['src'] ?? ''
-    //                 var path = element.querySelector('img')?.attributes['data-original'] ?? ''
-    //                 var vodPic = UZUtils.getHostFromURL(avaImg) + path
-    //                 var vodName = element.querySelector('img')?.attributes['title'] ?? ''
-    //                 var vod_remarks = element.querySelector('div.v-item-bottom > span')?.text ?? element.querySelector('div.v-item-top-left > span')?.text
-    //                 if (vodUrl && vodPic && vodName) {
-    //                     var video = new VideoDetail()
-    //                     video.vod_id = vodUrl
-    //                     video.vod_pic = vodPic
-    //                     video.vod_name = vodName
-    //                     video.vod_remarks = vod_remarks
-    //                     videos.push(video)
-    //                 }
-    //             }
-    //             backData.data = videos
-    //         }
-    //     } catch (error) {
-    //         backData.error = '获取视频列表失败～ ' + error
-    //     }
+                    for (let j = 0; j < items.length; j++) {
+                        const item = items[j]
+                        const name = item.text
+                        if (name && name.length > 0) {
+                            var filterLab = new FilterLabel()
+                            filterLab.name = name
+                            filterLab.id = name
+                            filterTitle.list.push(filterLab)
+                        }
+                    }
+                    backData.data.filter.push(filterTitle)
+                }
+            }
+        } catch (error) {
+            backData.error = '获取分类失败～ ' + error
+        }
+        return JSON.stringify(backData)
+    }
+    /**
+     * 获取二级分类视频列表 或 筛选视频列表
+     * @param {UZSubclassVideoListArgs} args
+     * @returns {@Promise<JSON.stringify(new RepVideoList())>}
+     */
+    async getSubclassVideoList(args) {
+        var backData = new RepVideoList()
+        backData.data = []
+        try {
+            var mainClassId = this.extractFirstNumber(args.mainClassId)
 
-    //     return JSON.stringify(backData)
-    // }
+            // 1---喜剧-----2---
+            var path = '/vodshow/' + mainClassId + '---' + args.filter[0].id + '-----' + args.page + '---.html'
+            const url = UZUtils.removeTrailingSlash(this.webSite) + path
+
+            const pro = await req(url)
+            backData.error = pro.error
+            let proData = pro.data
+            if (proData) {
+                var document = parse(proData)
+                let allVideo = document.querySelectorAll('ul.stui-vodlist > li')
+                let videos = []
+                for (let index = 0; index < allVideo.length; index++) {
+                    const element = allVideo[index]
+                    let vodUrl = element.querySelector('a.stui-vodlist__thumb')?.attributes['href'] ?? ''
+                    let vodPic = element.querySelector('a.stui-vodlist__thumb')?.attributes['data-original'] ?? ''
+                    let vodName = element.querySelector('a.stui-vodlist__thumb')?.attributes['title'] ?? ''
+                    let vodDiJiJi = element.querySelector('span.pic-text')?.text
+
+                    vodUrl = this.combineUrl(vodUrl)
+
+                    let videoDet = new VideoDetail()
+                    videoDet.vod_id = vodUrl
+                    videoDet.vod_pic = vodPic
+                    videoDet.vod_name = vodName
+                    videoDet.vod_remarks = vodDiJiJi
+                    videos.push(videoDet)
+                }
+                backData.data = videos
+            }
+        } catch (error) {
+            backData.error = '获取视频列表失败～ ' + error
+        }
+
+        return JSON.stringify(backData)
+    }
 
     /**
      * 获取分类视频列表
@@ -182,7 +151,7 @@ class zxzjClass extends WebApiBase {
      * @returns {Promise<RepVideoList>}
      */
     async getVideoList(args) {
-        let listUrl = this.removeTrailingSlash(args.url) + '-' + args.page + '.html'
+        let listUrl = UZUtils.removeTrailingSlash(this.webSite) + '/list/' + this.extractFirstNumber(args.url) + '-' + args.page + '.html'
         let backData = new RepVideoList()
         try {
             let pro = await req(listUrl, {
@@ -466,6 +435,11 @@ class zxzjClass extends WebApiBase {
             return str.slice(0, -1)
         }
         return str
+    }
+
+    extractFirstNumber(str) {
+        let match = str.match(/\d+/)
+        return match ? Number(match[0]) : null
     }
 }
 var zxzj20240620 = new zxzjClass()
