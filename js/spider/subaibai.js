@@ -9,7 +9,8 @@ class sbbClass extends WebApiBase {
     siteKey = ''
     siteType = 0
     headers = {
-        'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1'
+        'User-Agent':
+            'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
     }
     cookie = {}
     /**
@@ -76,7 +77,9 @@ class sbbClass extends WebApiBase {
                     let vodUrl = element.querySelector('a')?.attributes['href'] ?? ''
                     let vodPic = element.querySelector('img.thumb')?.attributes['data-original'] ?? ''
                     let vodName = element.querySelector('img.thumb')?.attributes['alt'] ?? ''
-                    let vodDiJiJi = element.querySelector('.jidi span')?.text ? element.querySelector('.jidi span')?.text : element.querySelector('.hdinfo')?.text
+                    let vodDiJiJi = element.querySelector('.jidi span')?.text
+                        ? element.querySelector('.jidi span')?.text
+                        : element.querySelector('.hdinfo')?.text
 
                     let videoDet = new VideoDetail()
                     videoDet.vod_id = vodUrl
@@ -191,8 +194,8 @@ class sbbClass extends WebApiBase {
                         headers: {
                             Referer: url,
                             'User-Agent':
-                                'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1'
-                        }
+                                'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+                        },
                     })
                 ).data
                 let code = iframeHtml
@@ -230,8 +233,7 @@ class sbbClass extends WebApiBase {
      */
     async searchVideo(args) {
         let backData = new RepVideoList()
-        let url = this.removeTrailingSlash(this.webSite) + `/search?q=${args.searchWord}`
-
+        let url = this.removeTrailingSlash(this.webSite) + `/page/${args.page}?s=${args.searchWord}`
         try {
             let resp = await req(url, { headers: this.headers })
             backData.error = resp.error
@@ -269,7 +271,7 @@ class sbbClass extends WebApiBase {
             'User-Agent': this.headers['User-Agent'],
             Cookie: Object.keys(this.cookie)
                 .map((key) => key + '=' + cookie[key])
-                .join(';')
+                .join(';'),
         }
 
         if (referer) {
@@ -280,7 +282,7 @@ class sbbClass extends WebApiBase {
             method: mth || 'get',
             headers: headers,
             data: data,
-            postType: mth === 'post' ? 'form' : ''
+            postType: mth === 'post' ? 'form' : '',
         })
 
         if (referer.headers['set-cookie']) {
