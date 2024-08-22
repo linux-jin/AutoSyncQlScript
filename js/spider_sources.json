@@ -98,6 +98,13 @@
         "remark": ""
     },
     {
+        "name": "瓜子影視",
+        "api": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/gzys.js",
+        "instance": "gzys20240822",
+        "webSite": "https://api.zaqohu.com",
+        "remark": "不支持搜索"
+    },
+    {
         "name": "麻豆社",
         "api": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/madou.js",
         "instance": "madou20240626",

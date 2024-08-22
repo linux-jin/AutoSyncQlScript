@@ -72,7 +72,7 @@ class saohuoClass extends WebApiBase {
             let proData = pro.data
             if (proData) {
                 const $ = cheerio.load(proData)
-                let filter = $('.top_bar a')
+                let filter = $('.mini_type a')
                 let filterTitle = new FilterTitle()
                 filterTitle.name = '類型'
                 filterTitle.list = []
