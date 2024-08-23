@@ -26,23 +26,112 @@ class jcyClass extends WebApiBase {
                 {
                     type_id: '1',
                     type_name: '日漫',
+                    hasSubclass: true,
                 },
                 {
                     type_id: '2',
                     type_name: '国漫',
+                    hasSubclass: true,
                 },
                 {
                     type_id: '26',
                     type_name: '动漫电影',
+                    hasSubclass: true,
                 },
                 {
                     type_id: '3',
                     type_name: '其他动漫',
+                    hasSubclass: true,
                 },
             ]
             backData.data = classes
         } catch (error) {
             backData.error = '获取分类失败～' + error.message
+        }
+
+        return JSON.stringify(backData)
+    }
+
+    async getSubclassList(args) {
+        let backData = new RepVideoSubclassList()
+        backData.data = new VideoSubclass()
+        const id = args.url
+        try {
+            let SubclassUrl = `http://212.64.45.238:8090/app/channel/${id}`
+            let pro = await $.request(SubclassUrl, 'GET')
+            backData.error = pro.error
+            let proData = pro.data
+            if (proData) {
+                // const data = proData.split('.')
+                // const rsa_enkey = data[0]
+                // const aes_entxt = data[1]
+                // const key = rsaDecrypt(rsa_enkey)
+                // const iv = [...key].reverse().join('')
+                // const decrypted = aes_decrypt(aes_entxt, key, iv)
+                const decrypted = this.decryptBody(proData)
+                const json = JSON.parse(decrypted.match(/\{.*\}/))
+
+                function createFilterTitle(name, items, mapFunc) {
+                    let filterTitle = new FilterTitle()
+                    filterTitle.name = name
+                    name === '排序' ? (filterTitle.list = items) : (filterTitle.list = [{ name: '全部', id: '' }, ...items.map(mapFunc)])
+                    return filterTitle
+                }
+
+                const types = json.data.types
+                const years = json.data.years
+
+                let typeFilter = createFilterTitle('類型', types, (e) => ({ name: e, id: e }))
+                let yearsFilter = createFilterTitle('年份', years, (e) => ({ name: e, id: e }))
+                let sortFilter = createFilterTitle(
+                    '排序',
+                    [
+                        { name: '最新', id: 'addtime' },
+                        { name: '最熱', id: 'hits' },
+                        { name: '高分', id: 'gold' },
+                    ],
+                    (e) => e
+                )
+
+                backData.data.filter.push(typeFilter, yearsFilter, sortFilter)
+            }
+        } catch (error) {
+            backData.error = '获取分类失败～ ' + error
+        }
+        return JSON.stringify(backData)
+    }
+
+    async getSubclassVideoList(args) {
+        let backData = new RepVideoList()
+        backData.data = []
+        try {
+            let [{ id: type }, { id: year }, { id: sort }] = args.filter
+            let url = `${this.webSite}/list?channel=${args.mainClassId}&sort=${sort}&type=${type}&area=&year=${year}&limit=30&page=${args.page}`
+
+            let pro = await $.request(url, 'GET')
+            backData.error = pro.error
+            let proData = pro.data
+            if (proData) {
+                const decrypted = this.decryptBody(proData)
+                let videos = []
+                const id = decrypted.match(/"id":(\d+)/g)
+                const name = decrypted.match(/"name":"([^"]*)"/g)
+                const pic = decrypted.match(/"pic":"([^"]*)"/g)
+                const remarks = decrypted.match(/"continu":"([^"]*)"/g)
+                for (const i in id) {
+                    let video = new VideoDetail()
+                    video.vod_id = id[i].replace('"id":', '')
+                    video.vod_name = name[i].replace('"name":', '').replace(/"/g, '')
+                    video.vod_pic = pic[i].replace('"pic":', '').replace(/"/g, '')
+                    video.vod_remarks = remarks[i].replace('"continu":', '').replace(/"/g, '')
+
+                    videos.push(video)
+                }
+
+                backData.data = videos
+            }
+        } catch (error) {
+            backData.error = '获取视频列表失败～ ' + error
         }
 
         return JSON.stringify(backData)
@@ -62,13 +151,7 @@ class jcyClass extends WebApiBase {
             backData.error = pro.error
             let proData = pro.data
             if (proData) {
-                const data = proData.split('.')
-                const rsa_enkey = data[0]
-                const aes_entxt = data[1]
-                const key = rsaDecrypt(rsa_enkey)
-                $.log('key = ' + key)
-                const iv = [...key].reverse().join('')
-                const decrypted = aes_decrypt(aes_entxt, key, iv)
+                const decrypted = this.decryptBody(proData)
                 let videos = []
                 const id = decrypted.match(/"id":(\d+)/g)
                 const name = decrypted.match(/"name":"([^"]*)"/g)
@@ -106,13 +189,7 @@ class jcyClass extends WebApiBase {
             backData.error = pro.error
             let proData = pro.data
             if (proData) {
-                const data = proData.split('.')
-                const rsa_enkey = data[0]
-                const aes_entxt = data[1]
-                const key = rsaDecrypt(rsa_enkey)
-                const iv = [...key].reverse().join('')
-                const decrypted = aes_decrypt(aes_entxt, key, iv)
-                $.log(decrypted)
+                const decrypted = this.decryptBody(proData)
                 let vod_content = decrypted.match(/"content":"([^"]*)"/)[1] || ''
                 let vod_pic = decrypted.match(/"pic":"([^"]*)"/)[1] || ''
                 let vod_name = decrypted.match(/"name":"([^"]*)"/)[1] || ''
@@ -172,12 +249,7 @@ class jcyClass extends WebApiBase {
             let proData = pro.data
 
             if (proData) {
-                const data = proData.split('.')
-                const rsa_enkey = data[0]
-                const aes_entxt = data[1]
-                const key = rsaDecrypt(rsa_enkey)
-                const iv = [...key].reverse().join('')
-                const decrypted = aes_decrypt(aes_entxt, key, iv)
+                const decrypted = this.decryptBody(proData)
                 const parse = decrypted.match(/[a-zA-Z]+:\/\/[^\s].*url=/)[0]
                 const url_encode = decrypted.match(/"url":"([^"]*)"/)[1]
                 const t = Math.floor(Date.now() / 1000)
@@ -208,12 +280,7 @@ class jcyClass extends WebApiBase {
             backData.error = pro.error
             let proData = pro.data
             if (proData) {
-                const data = proData.split('.')
-                const rsa_enkey = data[0]
-                const aes_entxt = data[1]
-                const key = rsaDecrypt(rsa_enkey)
-                const iv = [...key].reverse().join('')
-                const decrypted = aes_decrypt(aes_entxt, key, iv)
+                const decrypted = this.decryptBody(proData)
                 let videos = []
                 const id = decrypted.match(/"id":(\d+)/g)
                 const name = decrypted.match(/"name":"([^"]*)"/g)
@@ -235,6 +302,16 @@ class jcyClass extends WebApiBase {
             backData.error = '获取列表失败～' + error.message
         }
         return JSON.stringify(backData)
+    }
+
+    decryptBody(body) {
+        const data = body.split('.')
+        const rsa_enkey = data[0]
+        const aes_entxt = data[1]
+        const key = rsaDecrypt(rsa_enkey)
+        const iv = [...key].reverse().join('')
+        const decrypted = aes_decrypt(aes_entxt, key, iv)
+        return decrypted
     }
 }
 let jcy20240823 = new jcyClass()
