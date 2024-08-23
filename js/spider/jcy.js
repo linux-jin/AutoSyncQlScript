@@ -202,22 +202,31 @@ class jcyClass extends WebApiBase {
     async searchVideo(args) {
         let backData = new RepVideoList()
         try {
-            let listUrl = `${this.webSite}/index.php/vod/search/page/${args.page}/wd/${args.searchWord}.html`
+            let listUrl = `${this.webSite}/search?key=${args.searchWord}&limit=25&page=${args.page}`
 
             let pro = await $.request(listUrl, 'GET')
             backData.error = pro.error
             let proData = pro.data
             if (proData) {
-                const _$ = cheerio.load(proData)
+                const data = proData.split('.')
+                const rsa_enkey = data[0]
+                const aes_entxt = data[1]
+                const key = rsaDecrypt(rsa_enkey)
+                const iv = [...key].reverse().join('')
+                const decrypted = aes_decrypt(aes_entxt, key, iv)
                 let videos = []
-                for (const item of _$('.public-list-box')) {
-                    const a = _$(item).find('a')[0]
-                    const img = _$(item).find('img')[0]
-                    videos.push({
-                        vod_id: a.attr('href'),
-                        vod_name: img.attr('alt').replace('封面图', ''),
-                        vod_pic: img.attr('data-src'),
-                    })
+                const id = decrypted.match(/"id":(\d+)/g)
+                const name = decrypted.match(/"name":"([^"]*)"/g)
+                const pic = decrypted.match(/"pic":"([^"]*)"/g)
+                const remarks = decrypted.match(/"continu":"([^"]*)"/g)
+                for (const i in id) {
+                    let video = new VideoDetail()
+                    video.vod_id = id[i].replace('"id":', '')
+                    video.vod_name = name[i].replace('"name":', '').replace(/"/g, '')
+                    video.vod_pic = pic[i].replace('"pic":', '').replace(/"/g, '')
+                    video.vod_remarks = remarks[i].replace('"continu":', '').replace(/"/g, '')
+
+                    videos.push(video)
                 }
 
                 backData.data = videos
