@@ -17,8 +17,8 @@ class olevodClass extends WebApiBase {
         try {
             let pro = await req(url, {
                 headers: {
-                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36'
-                }
+                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36',
+                },
             })
             backData.error = pro.error
             let proData = pro.data
@@ -52,8 +52,8 @@ class olevodClass extends WebApiBase {
         try {
             let pro = await req(listUrl, {
                 headers: {
-                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36'
-                }
+                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36',
+                },
             })
             backData.error = pro.error
             let proData = pro.data
@@ -90,8 +90,8 @@ class olevodClass extends WebApiBase {
             let url = `https://api.olelive.com/v1/pub/vod/detail/${args.url}/true?_vv=${this.signature()}`
             let pro = await req(url, {
                 headers: {
-                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36'
-                }
+                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36',
+                },
             })
             backData.error = pro.error
             let obj = pro.data.data
@@ -137,6 +137,9 @@ class olevodClass extends WebApiBase {
         let backData = new RepVideoPlayUrl()
 
         backData.data = args.url
+        backData.headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36',
+        }
         return JSON.stringify(backData)
     }
 
@@ -151,8 +154,8 @@ class olevodClass extends WebApiBase {
         try {
             let pro = await req(url, {
                 headers: {
-                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36'
-                }
+                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36',
+                },
             })
             backData.error = pro.error
             let proData = pro.data
