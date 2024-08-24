@@ -35,7 +35,6 @@ class yjysClass extends WebApiBase {
     async getSubclassList(args) {
         let backData = new RepVideoSubclassList()
         backData.data = new VideoSubclass()
-        const id = args.url
         try {
             let url = UZUtils.removeTrailingSlash(this.webSite) + `/s/all`
             const pro = await req(url, { headers: { 'User-Agent': this.UA, Cookie: this.cookie } })
