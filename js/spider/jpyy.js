@@ -118,7 +118,7 @@ class jpyyClass extends WebApiBase {
                     .map(async (index, element) => {
                         let id = $(element).find('a').attr('href').split('/')[2]
                         let pic = await this.getImg(id)
-                        let name = $(element).find('div.title').text()
+                        let name = $(element).find('.info-title-box div.title span').text()
 
                         let video = new VideoDetail()
                         video.vod_id = id
