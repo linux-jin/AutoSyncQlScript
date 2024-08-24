@@ -112,6 +112,13 @@
         "remark": ""
     },
     {
+        "name": "緣覺影視",
+        "api": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/yjys.js",
+        "instance": "yjys20240824",
+        "webSite": "https://www.yjys02.com",
+        "remark": ""
+    },
+    {
         "name": "麻豆社",
         "api": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/madou.js",
         "instance": "madou20240626",
