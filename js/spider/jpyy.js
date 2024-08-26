@@ -264,8 +264,8 @@ class jpyyClass extends WebApiBase {
                     video.vod_remarks = vod_element.vodVersion
                     videos.push(video)
                 }
-                backData.data = videos
             }
+            backData.data = videos
         } catch (e) {
             backData.error = e.message
         }
