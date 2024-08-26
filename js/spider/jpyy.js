@@ -240,32 +240,37 @@ class jpyyClass extends WebApiBase {
 
     async searchVideo(args) {
         let backData = new RepVideoList()
-        let searchUrl = `${UZUtils.removeTrailingSlash(this.webSite)}/vod/search/${args.searchWord}`
         try {
-            let searchRes = await req(searchUrl, { headers: this.headers })
-            backData.error = searchRes.error
-            let body = searchRes.data
+            let searchUrl = `${UZUtils.removeTrailingSlash(this.webSite)}/vod/search/${args.searchWord}`
+            let pro = await req(searchUrl, { headers: this.headers })
+            backData.error = pro.error
+            let body = pro.data
             if (body) {
                 let $ = cheerio.load(body)
                 let videos = []
-                let json = {}
-                for (const script of $('script')) {
-                    if ($(script).text().indexOf('操作成功') > -1) {
-                        json = JSON.parse(eval(_$(script).text().replaceAll('self.__next_f.push(', '').replaceAll(')', ''))[1].replaceAll('6:', ''))
+                let data = ''
+                $('script').each((index, element) => {
+                    if ($(element).text().indexOf('操作成功') > -1) {
+                        data = $(element)
+                            .text()
+                            .replace(/self\.__next_f\.push\(|\)|\\/g, '')
                     }
-                }
-                let vodJson = json[3].data.data.result
+                })
+                let ids = data.match(/"vodId":\d+/gm)
+                let name = data.match(/"vodName":"([^"]*)/gm)
+                let pics = data.match(/"vodPic":"([^"]*)/gm)
+                let remarks = data.match(/"vodRemarks":"([^"]*)/gm)
 
-                for (const vod_element of vodJson.list) {
-                    let video = new VideoDetail()
-                    video.vod_id = vod_element.vodId
-                    video.vod_name = vod_element.vodName
-                    video.vod_pic = vod_element.vodPic
-                    video.vod_remarks = vod_element.vodVersion
+                ids.forEach((item, index) => {
+                    let video = {}
+                    video.vod_id = item.replace('"vodId":', '')
+                    video.vod_name = name[index].replace('"vodName":', '').replace('"', '')
+                    video.vod_pic = pics[index].replace('"vodPic":', '').replace('"', '')
+                    video.vod_remarks = remarks[index].replace('"vodRemarks":', '').replace('"', '')
                     videos.push(video)
-                }
+                })
+                backData.data = videos
             }
-            backData.data = videos
         } catch (e) {
             backData.error = e.message
         }
