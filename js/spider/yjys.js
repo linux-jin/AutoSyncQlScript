@@ -18,8 +18,13 @@ class yjysClass extends WebApiBase {
             if (proData) {
                 let classes = [
                     {
+                        type_id: '0',
+                        type_name: '电影',
+                        hasSubclass: true,
+                    },
+                    {
                         type_id: '1',
-                        type_name: '',
+                        type_name: '电视剧',
                         hasSubclass: true,
                     },
                 ]
@@ -46,6 +51,7 @@ class yjysClass extends WebApiBase {
                 allFilterBox.each((index, element) => {
                     let name = $(element).find('dt').text().replace('：', '')
                     let items = $(element).find('dd > a')
+                    if (name === '资源分类') return
 
                     let filterTitle = new FilterTitle()
                     filterTitle.name = name
@@ -79,7 +85,7 @@ class yjysClass extends WebApiBase {
             // 類型不是查詢參數，從數組中取出
             let type = args.filter[1]
             args.filter.splice(1, 1)
-            let params = []
+            let params = [`type=${args.mainClassId}`]
             args.filter.forEach((e, _) => {
                 let id = e.id
                 params.push(id)
