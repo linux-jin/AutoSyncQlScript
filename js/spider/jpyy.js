@@ -112,24 +112,22 @@ class jpyyClass extends WebApiBase {
             let proData = pro.data
             if (proData) {
                 const $ = cheerio.load(proData)
-                const allVideo = $('.movie-ul > div')
                 let videos = []
-                let promises = allVideo
-                    .map(async (index, element) => {
-                        let id = $(element).find('a').attr('href').split('/')[2]
-                        let pic = await this.getImg(id)
-                        let name = $(element).find('.info-title-box div.title span').text()
+                for (const script of $('script')) {
+                    if ($(script).text().indexOf('操作成功') > -1) {
+                        let json = JSON.parse(eval($(script).text().replaceAll('self.__next_f.push(', '').replaceAll(')', ''))[1].replaceAll('6:', ''))
+                        let vodJson = json[3]['videoList'].data
+                        for (const vod_element of vodJson.list) {
+                            let video = new VideoDetail()
+                            video.vod_id = vod_element.vodId
+                            video.vod_name = vod_element.vodName
+                            video.vod_pic = vod_element.vodPic
+                            video.vod_remarks = vod_element.vodVersion
+                            videos.push(video)
+                        }
+                    }
+                }
 
-                        let video = new VideoDetail()
-                        video.vod_id = id
-                        video.vod_name = name
-                        video.vod_pic = pic
-                        video.vod_remarks = $(element).find('.card-img .bottom > div').eq(0).text() || ''
-                        return video
-                    })
-                    .get()
-
-                videos = await Promise.all(promises)
                 backData.data = videos
             }
         } catch (error) {
@@ -141,23 +139,30 @@ class jpyyClass extends WebApiBase {
 
     async getVideoDetail(args) {
         let backData = new RepVideoDetail()
-        const webUrl = this.webSite + `/detail/${args.url}`
+        const webUrl = UZUtils.removeTrailingSlash(this.webSite) + `/detail/${args.url}`
         try {
             const pro = await req(webUrl, { headers: this.headers })
             backData.error = pro.error
             const proData = pro.data
             if (proData) {
                 const $ = cheerio.load(proData)
-                let vod_content = $('.wrapper_more_text').text()
-                let vod_pic = await this.getImg(args.url)
-                let vod_name = $('h1.title').text()
+                let json = {}
+                for (const script of $('script')) {
+                    if ($(script).text().indexOf('操作成功') > -1) {
+                        json = JSON.parse(eval($(script).text().replaceAll('self.__next_f.push(', '').replaceAll(')', ''))[1].replaceAll('6:', ''))
+                    }
+                }
+                let vodJson = json[3].data.data
+                let vod_content = vodJson.vodBlurb || ''
+                let vod_pic = vodJson.vodPic
+                let vod_name = vodJson.vodName
                 // let detList = document.querySelectorAll('ewave-content__detail p.data')
-                let vod_year = ''
-                let vod_director = $('.director').eq(0).text().replace('导演:', '') || ''
-                let vod_actor = $('.director').eq(1).text().replace('主演:', '') || ''
-                let vod_area = ''
-                let vod_lang = ''
-                let vod_douban_score = ''
+                let vod_year = vodJson.vodYear
+                let vod_director = vodJson.vodDirector
+                let vod_actor = vodJson.vodActor
+                let vod_area = vodJson.vodArea
+                let vod_lang = vodJson.vodLang
+                let vod_douban_score = vodJson.vodScore
                 let type_name = ''
 
                 let juJiDocment = $('div[class^="detail__PlayListBox"]').find('div.listitem')
@@ -200,7 +205,7 @@ class jpyyClass extends WebApiBase {
         const parts = args.url.match(/vod\/play\/(.*)\/sid\/(.*)/)
         const id = parts[1]
         const sid = parts[2]
-        let reqUrl = `${this.webSite}/api/mw-movie/anonymous/v1/video/episode/url?id=${id}&nid=${sid}`
+        let reqUrl = `${UZUtils.removeTrailingSlash(this.webSite)}/api/mw-movie/anonymous/v1/video/episode/url?id=${id}&nid=${sid}`
 
         try {
             const signKey = this.base64Decode('Y2I4MDg1MjliYWU2YjZiZTQ1ZWNmYWIyOWE0ODg5YmM=')
@@ -235,41 +240,36 @@ class jpyyClass extends WebApiBase {
 
     async searchVideo(args) {
         let backData = new RepVideoList()
-        let searchUrl = `https://api.zeqaht.com/api.php/provide/vod?ac=detail&wd=${args.searchWord}&pg=${args.page}`
+        let searchUrl = `${UZUtils.removeTrailingSlash(this.webSite)}/vod/search/${args.searchWord}`
         try {
             let searchRes = await req(searchUrl, { headers: this.headers })
             backData.error = searchRes.error
             let body = searchRes.data
             if (body) {
-                let allVideo = JSON.parse(body).list
+                let $ = cheerio.load(body)
                 let videos = []
-                allVideo.forEach((e) => {
-                    let vodUrl = e.vod_id
-                    let vodPic = e.vod_pic
-                    let vodName = e.vod_name
-                    let vodDiJiJi = e.vod_remarks || ''
+                let json = {}
+                for (const script of $('script')) {
+                    if ($(script).text().indexOf('操作成功') > -1) {
+                        json = JSON.parse(eval($(script).text().replaceAll('self.__next_f.push(', '').replaceAll(')', ''))[1].replaceAll('6:', ''))
+                    }
+                }
+                let vodJson = json[3].data.data.result
 
-                    let videoDet = new VideoDetail()
-                    videoDet.vod_id = vodUrl
-                    videoDet.vod_pic = vodPic
-                    videoDet.vod_name = vodName
-                    videoDet.vod_remarks = vodDiJiJi
-
-                    videos.push(videoDet)
-                })
+                for (const vod_element of vodJson.list) {
+                    let vodShort = new VodShort()
+                    vodShort.vod_id = vod_element.vodId
+                    vodShort.vod_name = vod_element.vodName
+                    vodShort.vod_pic = vod_element.vodPic
+                    vodShort.vod_remarks = vod_element.vodVersion
+                    videos.push(vodShort)
+                }
                 backData.data = videos
             }
         } catch (e) {
             backData.error = e.message
         }
         return JSON.stringify(backData)
-    }
-
-    async getImg(id) {
-        let url = `https://api.zeqaht.com/api.php/provide/vod?ac=detail&ids=${id}`
-        let res = await req(url)
-        let img = JSON.parse(res.data).list[0].vod_pic
-        return img
     }
 
     base64Decode(text) {
