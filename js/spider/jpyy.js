@@ -259,12 +259,12 @@ class jpyyClass extends WebApiBase {
                 // let vodJson = json[3].data.data.result
 
                 for (const vod_element of list) {
-                    let vodShort = new VodShort()
-                    vodShort.vod_id = vod_element.vodId
-                    vodShort.vod_name = vod_element.vodName
-                    vodShort.vod_pic = vod_element.vodPic
-                    vodShort.vod_remarks = vod_element.vodVersion
-                    videos.push(vodShort)
+                    let video = new VideoDetail()
+                    video.vod_id = vod_element.vodId
+                    video.vod_name = vod_element.vodName
+                    video.vod_pic = vod_element.vodPic
+                    video.vod_remarks = vod_element.vodVersion
+                    videos.push(video)
                 }
                 backData.data = videos
             }
