@@ -83,7 +83,7 @@ class yjysClass extends WebApiBase {
         backData.data = []
         try {
             // 類型不是查詢參數，從數組中取出
-            let type = args.filter[1]
+            let type = args.filter[0]
             args.filter.splice(1, 1)
             let params = [`type=${args.mainClassId}`]
             args.filter.forEach((e, _) => {
