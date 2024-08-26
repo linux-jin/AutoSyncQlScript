@@ -4,13 +4,16 @@ import { parse } from 'node-html-parser'
 // ignore
 
 class tiantianClass extends WebApiBase {
-    webSite = 'http://op.ysdqjs.cn'
-    headers = {
-        'User-Agent':
-            'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36',
+    constructor() {
+        super()
+        this.webSite = 'http://op.ysdqjs.cn'
+        this.headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36',
+        }
+        this.cookie = ''
+        this.extendObj = { extend: '類型', area: '地區', year: '年份' }
+        this.parseMap = {}
     }
-    cookie = ''
-    parseMap = {}
 
     /**
      * 异步获取分类列表的方法。
@@ -34,6 +37,7 @@ class tiantianClass extends WebApiBase {
                     let videoClass = new VideoClass()
                     videoClass.type_id = type_id
                     videoClass.type_name = type_name
+                    videoClass.hasSubclass = true
                     classes.push(videoClass)
                 }
             }
@@ -43,6 +47,82 @@ class tiantianClass extends WebApiBase {
             backData.error = '获取分类失败～' + error.message
         }
 
+        return JSON.stringify(backData)
+    }
+
+    async getSubclassList(args) {
+        let backData = new RepVideoSubclassList()
+        backData.data = new VideoSubclass()
+        try {
+            let res = await this.postData(this.webSite + '/v2/type/top_type')
+            backData.error = res.error
+            let proData = res.data
+            if (proData) {
+                let list = proData.data.list
+                list.forEach((e) => {
+                    let type_id = e.type_id.toString()
+                    if (type_id === args.url) {
+                        let extend_list = []
+                        Object.keys(e).forEach((key) => {
+                            if (Array.isArray(e[key])) {
+                                UZUtils.debugLog(this.extendObj[key])
+                                if (this.extendObj[key]) {
+                                    let extend_dic = new FilterTitle()
+                                    extend_dic.name = this.extendObj[key]
+                                    extend_dic.list = []
+                                    let add_year_status = false
+                                    for (const extend_data of e[key]) {
+                                        if (key === 'year') {
+                                            if (!e[key].includes('2024') && extend_data !== '全部' && !add_year_status) {
+                                                extend_dic['list'].push({ name: '2024', id: key + '@@@2024' })
+                                                add_year_status = true
+                                            }
+                                        }
+                                        if (extend_data.length > 0) {
+                                            extend_dic['list'].push({ name: extend_data, id: key + '@@@' + extend_data })
+                                        }
+                                    }
+                                    if (extend_dic['list'].length > 1) {
+                                        extend_list.push(extend_dic)
+                                    }
+                                }
+                            }
+                        })
+                        backData.data.filter = extend_list
+                    }
+                })
+            }
+        } catch (error) {
+            backData.error = '获取分类失败～ ' + error
+        }
+        return JSON.stringify(backData)
+    }
+
+    async getSubclassVideoList(args) {
+        const limit = 12
+        const param = this.generateParam(args.mainClassId, args.page, args.filter, limit)
+        let backData = new RepVideoList()
+        try {
+            let res = await this.postData(this.webSite + '/v2/home/type_search', param)
+            backData.error = res.error
+            let resJson = res.data
+            if (resJson) {
+                let allVideo = resJson.data.list
+                let videos = []
+                allVideo.forEach((e) => {
+                    let videoDet = {}
+                    videoDet.vod_id = e.vod_id
+                    videoDet.vod_pic = e.vod_pic
+                    videoDet.vod_name = e.vod_name
+                    videoDet.vod_remarks = e.vod_remarks
+                    videos.push(videoDet)
+                })
+
+                backData.data = videos
+            }
+        } catch (e) {
+            backData.error = '获取列表失败～' + e.message
+        }
         return JSON.stringify(backData)
     }
 
@@ -243,9 +323,7 @@ class tiantianClass extends WebApiBase {
         })
         if (res.code === 403) {
             const path = res.data.match(/window\.location\.href ="(.*?)"/)[1]
-            this.cookie = Array.isArray(res.headers['set-cookie'])
-                ? res.headers['set-cookie'].join(';')
-                : res.headers['set-cookie']
+            this.cookie = Array.isArray(res.headers['set-cookie']) ? res.headers['set-cookie'].join(';') : res.headers['set-cookie']
             headers['Cookie'] = this.cookie
             res = await req(this.siteUrl + path, {
                 method: method || 'get',
@@ -257,26 +335,31 @@ class tiantianClass extends WebApiBase {
         return res
     }
 
-    // generateParam(tid, pg, extend, limit) {
-    //     const param = {
-    //         type_id: tid,
-    //         page: pg,
-    //         limit: limit
-    //     }
-    //     if (extend['extend'] !== undefined && extend['extend'] !== '全部') {
-    //         param.class = extend['extend']
-    //     }
-    //     if (extend['area'] !== undefined && extend['area'] !== '全部') {
-    //         param.area = extend.area
-    //     }
-    //     if (extend['lang'] !== undefined && extend['lang'] !== '全部') {
-    //         param.lang = extend.lang
-    //     }
-    //     if (extend['year'] !== undefined && extend['year'] !== '全部') {
-    //         param.year = extend.year
-    //     }
-    //     return param
-    // }
+    generateParam(tid, pg, extend, limit) {
+        const param = {
+            type_id: tid,
+            page: pg,
+            limit: limit,
+        }
+        extend.forEach((e) => {
+            let id = e.id.split('@@@')[0]
+            let name = e.name
+            if (id === 'extend' && name !== '全部') {
+                param.class = name
+            }
+            if (id === 'area' && name !== '全部') {
+                param.area = name
+            }
+            if (id === 'lang' && name !== '全部') {
+                param.lang = name
+            }
+            if (id === 'year' && name !== '全部') {
+                param.year = name
+            }
+        })
+
+        return param
+    }
 
     formatContent(content) {
         return content
