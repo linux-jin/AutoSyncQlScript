@@ -248,17 +248,15 @@ class jpyyClass extends WebApiBase {
             if (body) {
                 let $ = cheerio.load(body)
                 let videos = []
-                let list = []
+                let json = {}
                 for (const script of $('script')) {
                     if ($(script).text().indexOf('操作成功') > -1) {
-                        let start = script.indexOf('list":[{"vodId')
-                        let end = script.indexOf(']}}},')
-                        list = eval(script.substring(start + 6, end + 1))
+                        json = JSON.parse(eval(_$(script).text().replaceAll('self.__next_f.push(', '').replaceAll(')', ''))[1].replaceAll('6:', ''))
                     }
                 }
-                // let vodJson = json[3].data.data.result
+                let vodJson = json[3].data.data.result
 
-                for (const vod_element of list) {
+                for (const vod_element of vodJson.list) {
                     let video = new VideoDetail()
                     video.vod_id = vod_element.vodId
                     video.vod_name = vod_element.vodName
