@@ -7,6 +7,31 @@ class jcyClass extends WebApiBase {
         this.headers = {
             'User-Agent': 'Dart/2.17 (dart:io)',
         }
+        this.jwt = ''
+    }
+
+    async login() {
+        let login = 'http://212.64.45.238:8090/app/users/login'
+        let options = {
+            method: 'POST',
+            headers: {
+                'User-Agent': 'Dart/2.17 (dart:io)',
+                'Accept-Encoding': 'gzip, deflate',
+                Accept: 'application/json, text/plain, */*',
+                'content-type': 'application/json; charset=utf-8',
+                'x-version': '2020-09-17',
+                appid: '4150439554430529',
+                ts: '1724873836902',
+                authentication:
+                    'NHHqFspFXhfOBgNVq/MHfpPR/Q1mMa2irP1bTT/2GDlzhBMCWJCJqgjdBY2GjOmYPj2YeTMkGwPD2XWVZYfkS60A56Hx88p3R/pR0ngmReD2atkGqj/Tez3Bi8NZ9rnqWl/bMrHfaCrGWswVrXoQNA==',
+            },
+            data: 'zqqmGopIFOM6cwugrvvi7F/0jO7KUvX+Hno2zlZjtT01ih0pLk0C7KkRFwp/27sddVHqSEvKMqhdcCrTyCVcQB9Ne64WaU0/ULyJsrfwhxNTsnpd/A+2qPVg0FhIG9ctIMSdcrIW4wgJW0nOZeE82ctePwXe4PzPDgOmf0Zp5MmdCgYTgkQqbncfZsD4lrWplt1acG/Zlr0sQEzEU8ORiwoot2Ixzo2byNQnKl7Xo8h9bVVBicEw50yiwjywxDeKouhEfmFxIOSdV6BH1/TCR91TxPfQU5u6sMT5Cdx0bkyaJ0jBw6Mxm++D+K1Pe47hMCvaTgxavaYdChfwBivmxQ==.VLsEN9z/yeMQLl3b+SAcqGY9v4x8EHdVpOIjxqc/PioGG6NDq7+WVT7n3xdKpIeb0M5E2NMArqDoP1zLYwUY9dgiOd07/qRXnclwl6SZIFGUET9MTmfr4D/2DavwfWGJ4ilHRbh4UDAlz1ss22PX0w==',
+        }
+
+        let res = await req(login, options)
+        let decrypted = this.decryptBody(res.data)
+        let jwt = decrypted.split('token":"')[1].split('"')[0]
+        this.jwt = jwt
     }
 
     /**
@@ -15,6 +40,7 @@ class jcyClass extends WebApiBase {
      * @returns {Promise<RepVideoClassList>}
      */
     async getClassList(args) {
+        await this.login()
         let webUrl = args.url
         // 如果通过首页获取分类的话，可以将对象内部的首页更新
         this.webSite = UZUtils.removeTrailingSlash(webUrl)
@@ -58,16 +84,10 @@ class jcyClass extends WebApiBase {
         const id = args.url
         try {
             let SubclassUrl = `http://212.64.45.238:8090/app/channel/${id}`
-            let pro = await $.request(SubclassUrl, 'GET')
+            let pro = await $.request(SubclassUrl, 'GET', this.jwt)
             backData.error = pro.error
             let proData = pro.data
             if (proData) {
-                // const data = proData.split('.')
-                // const rsa_enkey = data[0]
-                // const aes_entxt = data[1]
-                // const key = rsaDecrypt(rsa_enkey)
-                // const iv = [...key].reverse().join('')
-                // const decrypted = aes_decrypt(aes_entxt, key, iv)
                 const decrypted = this.decryptBody(proData)
                 const json = JSON.parse(decrypted.match(/\{.*\}/))
 
@@ -108,7 +128,7 @@ class jcyClass extends WebApiBase {
             let [{ id: type }, { id: year }, { id: sort }] = args.filter
             let url = `${this.webSite}/list?channel=${args.mainClassId}&sort=${sort}&type=${type}&area=&year=${year}&limit=30&page=${args.page}`
 
-            let pro = await $.request(url, 'GET')
+            let pro = await $.request(url, 'GET', this.jwt)
             backData.error = pro.error
             let proData = pro.data
             if (proData) {
@@ -147,7 +167,7 @@ class jcyClass extends WebApiBase {
         try {
             let listUrl = `${this.webSite}/list?channel=${args.url}&sort=addtime&type&area&year&limit=30&page=${args.page}`
 
-            let pro = await $.request(listUrl, 'GET')
+            let pro = await $.request(listUrl, 'GET', this.jwt)
             backData.error = pro.error
             let proData = pro.data
             if (proData) {
@@ -185,7 +205,7 @@ class jcyClass extends WebApiBase {
         let backData = new RepVideoDetail()
         try {
             let webUrl = `${this.webSite}/detail?id=${args.url}`
-            let pro = await $.request(webUrl, 'GET')
+            let pro = await $.request(webUrl, 'GET', this.jwt)
             backData.error = pro.error
             let proData = pro.data
             if (proData) {
@@ -244,12 +264,14 @@ class jcyClass extends WebApiBase {
         let reqUrl = args.url
 
         try {
-            const pro = await $.request(reqUrl, 'POST')
+            const pro = await $.request(reqUrl, 'POST', this.jwt)
             backData.error = pro.error
             let proData = pro.data
 
             if (proData) {
                 const decrypted = this.decryptBody(proData)
+                $.log(decrypted)
+
                 const parse = decrypted.match(/[a-zA-Z]+:\/\/[^\s].*url=/)[0]
                 const url_encode = decrypted.match(/"url":"([^"]*)"/)[1]
                 const t = Math.floor(Date.now() / 1000)
@@ -276,7 +298,7 @@ class jcyClass extends WebApiBase {
         try {
             let listUrl = `${this.webSite}/search?key=${args.searchWord}&limit=25&page=${args.page}`
 
-            let pro = await $.request(listUrl, 'GET')
+            let pro = await $.request(listUrl, 'GET', this.jwt)
             backData.error = pro.error
             let proData = pro.data
             if (proData) {
@@ -368,7 +390,7 @@ function createUtils() {
             return UZUtils.debugLog(content)
         }
 
-        async request(reqUrl, mt) {
+        async request(reqUrl, mt, token) {
             let config = {
                 method: mt,
                 headers: {
@@ -377,9 +399,10 @@ function createUtils() {
                     Accept: 'application/json, text/plain, */*',
                     'x-version': '2020-09-17',
                     appid: '4150439554430529',
-                    ts: '1722357692434',
+                    ts: '1724873836902',
+                    'x-token': token,
                     authentication:
-                        '/3pyiNjlAh8MXUdwrdkvfs+hUlrKcv2QVrlmCoPPL5nfGxWwHJ3OFUJpdgWYzaUBPIskqplgdB8WSPkozigXVg9bFGzqYKPMrXVztpVqzWY9S3WvOOLYNh1OuXbrl5Otmy21nP0XnDP++08/ApFPcg==',
+                        'NHHqFspFXhfOBgNVq/MHfpPR/Q1mMa2irP1bTT/2GDlzhBMCWJCJqgjdBY2GjOmYPj2YeTMkGwPD2XWVZYfkS60A56Hx88p3R/pR0ngmReD2atkGqj/Tez3Bi8NZ9rnqWl/bMrHfaCrGWswVrXoQNA==',
                 },
             }
             let res = await req(reqUrl, config)
