@@ -1,7 +1,7 @@
 class xpgClass extends WebApiBase {
     constructor() {
         super()
-        this.webSite = 'http://tipu.xjqxz.top'
+        this.webSite = 'http://item.xpgtv.xyz'
         this.UA = 'okhttp/3.12.11'
         this.ignoreClassName = ['直播']
     }

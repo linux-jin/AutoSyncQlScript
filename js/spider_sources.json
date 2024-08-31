@@ -119,6 +119,13 @@
         "remark": ""
     },
     {
+        "name": "老白聽書",
+        "api": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/laobai.js",
+        "instance": "laobai20240831",
+        "webSite": "https://apk-lb-json.fodexin.com",
+        "remark": ""
+    },
+    {
         "name": "麻豆社",
         "api": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/madou.js",
         "instance": "madou20240626",
