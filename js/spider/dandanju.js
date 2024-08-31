@@ -8,8 +8,7 @@ class dandanjuClass extends WebApiBase {
         super()
         this.webSite = 'https://www.dandanju.tv'
         this.headers = {
-            'User-Agent':
-                'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
         }
         this.ignoreClassName = ['发布页面']
     }
@@ -284,9 +283,7 @@ class dandanjuClass extends WebApiBase {
                     if (jx.includes('mgplayer')) {
                         let jxres = (await req('https://www.mgplayer.cc/parse/config.php?vid=' + url)).data
                         let first = jxres.data.urls[0].list[0].playlink
-                        let parse = (
-                            await req('https://www.mgplayer.cc/parse/parse.php?vid=' + first, { headers: this.headers })
-                        ).data
+                        let parse = (await req('https://www.mgplayer.cc/parse/parse.php?vid=' + first, { headers: this.headers })).data
                         backData.data = parse.data.url
                     } else {
                         let jxres = (await req(jx + url, { headers: this.headers })).data
@@ -305,6 +302,148 @@ class dandanjuClass extends WebApiBase {
                             ).data
                             // UZUtils.debugLog(_0x45893a(JSON.parse(apiRes).data.url))
                             backData.data = _0x45893a(JSON.parse(apiRes).data.url)
+                        }
+                        function _0x23e231() {
+                            this._keyStr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='
+                            this.encode = function (_0x53bdd1) {
+                                var _0x4def44 = ''
+                                var _0x256094, _0x2c8e63, _0x1870f9, _0x180168, _0x10912d, _0x334431, _0x133a8c
+                                var _0x5a3b7e = 0
+                                _0x53bdd1 = this._utf8_encode(_0x53bdd1)
+                                while (_0x5a3b7e < _0x53bdd1.length) {
+                                    _0x256094 = _0x53bdd1.charCodeAt(_0x5a3b7e++)
+                                    _0x2c8e63 = _0x53bdd1.charCodeAt(_0x5a3b7e++)
+                                    _0x1870f9 = _0x53bdd1.charCodeAt(_0x5a3b7e++)
+                                    _0x180168 = _0x256094 >> 2
+                                    _0x10912d = ((_0x256094 & 3) << 4) | (_0x2c8e63 >> 4)
+                                    _0x334431 = ((_0x2c8e63 & 15) << 2) | (_0x1870f9 >> 6)
+                                    _0x133a8c = _0x1870f9 & 63
+                                    if (isNaN(_0x2c8e63)) {
+                                        _0x334431 = _0x133a8c = 64
+                                    } else {
+                                        if (isNaN(_0x1870f9)) {
+                                            _0x133a8c = 64
+                                        }
+                                    }
+                                    _0x4def44 =
+                                        _0x4def44 +
+                                        this._keyStr.charAt(_0x180168) +
+                                        this._keyStr.charAt(_0x10912d) +
+                                        this._keyStr.charAt(_0x334431) +
+                                        this._keyStr.charAt(_0x133a8c)
+                                }
+                                return _0x4def44
+                            }
+                            this.decode = function (_0x10ac7a) {
+                                var _0x11a4e4 = ''
+                                var _0x238b4f, _0x1cdc90, _0x33dfd0
+                                var _0x17a111, _0x23e04b, _0x5ae908, _0x1bbdcf
+                                var _0x1b3294 = 0
+                                _0x10ac7a = _0x10ac7a.replace(/[^A-Za-z0-9\+\/\=]/g, '')
+                                while (_0x1b3294 < _0x10ac7a.length) {
+                                    _0x17a111 = this._keyStr.indexOf(_0x10ac7a.charAt(_0x1b3294++))
+                                    _0x23e04b = this._keyStr.indexOf(_0x10ac7a.charAt(_0x1b3294++))
+                                    _0x5ae908 = this._keyStr.indexOf(_0x10ac7a.charAt(_0x1b3294++))
+                                    _0x1bbdcf = this._keyStr.indexOf(_0x10ac7a.charAt(_0x1b3294++))
+                                    _0x238b4f = (_0x17a111 << 2) | (_0x23e04b >> 4)
+                                    _0x1cdc90 = ((_0x23e04b & 15) << 4) | (_0x5ae908 >> 2)
+                                    _0x33dfd0 = ((_0x5ae908 & 3) << 6) | _0x1bbdcf
+                                    _0x11a4e4 = _0x11a4e4 + String.fromCharCode(_0x238b4f)
+                                    _0x5ae908 != 64 && (_0x11a4e4 = _0x11a4e4 + String.fromCharCode(_0x1cdc90))
+                                    _0x1bbdcf != 64 && (_0x11a4e4 = _0x11a4e4 + String.fromCharCode(_0x33dfd0))
+                                }
+                                _0x11a4e4 = this._utf8_decode(_0x11a4e4)
+                                return _0x11a4e4
+                            }
+                            this._utf8_encode = function (_0x189009) {
+                                _0x189009 = _0x189009.replace(/\r\n/g, '\n')
+                                var _0x5ae804 = ''
+                                for (var _0x576a5a = 0; _0x576a5a < _0x189009.length; _0x576a5a++) {
+                                    var _0x39e19c = _0x189009.charCodeAt(_0x576a5a)
+                                    if (_0x39e19c < 128) _0x5ae804 += String.fromCharCode(_0x39e19c)
+                                    else {
+                                        if (_0x39e19c > 127 && _0x39e19c < 2048)
+                                            (_0x5ae804 += String.fromCharCode((_0x39e19c >> 6) | 192)),
+                                                (_0x5ae804 += String.fromCharCode((_0x39e19c & 63) | 128))
+                                        else {
+                                            _0x5ae804 += String.fromCharCode((_0x39e19c >> 12) | 224)
+                                            _0x5ae804 += String.fromCharCode(((_0x39e19c >> 6) & 63) | 128)
+                                            _0x5ae804 += String.fromCharCode((_0x39e19c & 63) | 128)
+                                        }
+                                    }
+                                }
+                                return _0x5ae804
+                            }
+                            this._utf8_decode = function (_0x5c4c02) {
+                                var _0x5b1fc3 = ''
+                                var _0x2fc8f9 = 0
+                                var _0x8d257d = 0
+                                var c2 = 0
+                                while (_0x2fc8f9 < _0x5c4c02.length) {
+                                    _0x8d257d = _0x5c4c02.charCodeAt(_0x2fc8f9)
+                                    if (_0x8d257d < 128) (_0x5b1fc3 += String.fromCharCode(_0x8d257d)), _0x2fc8f9++
+                                    else
+                                        _0x8d257d > 191 && _0x8d257d < 224
+                                            ? ((c2 = _0x5c4c02.charCodeAt(_0x2fc8f9 + 1)),
+                                              (_0x5b1fc3 += String.fromCharCode(((_0x8d257d & 31) << 6) | (c2 & 63))),
+                                              (_0x2fc8f9 += 2))
+                                            : ((c2 = _0x5c4c02.charCodeAt(_0x2fc8f9 + 1)),
+                                              (c3 = _0x5c4c02.charCodeAt(_0x2fc8f9 + 2)),
+                                              (_0x5b1fc3 += String.fromCharCode(((_0x8d257d & 15) << 12) | ((c2 & 63) << 6) | (c3 & 63))),
+                                              (_0x2fc8f9 += 3))
+                                }
+                                return _0x5b1fc3
+                            }
+                        }
+                        function _0x45893a(_0x1f9239) {
+                            var _0x5a670a = new _0x23e231()
+                            var _0x1f9239 = _0x57bd6f(_0x1f9239)
+                            var _0x477fb0 = _0x1f9239.split('/')
+                            var _0x32fed5 = ''
+                            for (var _0x5bd392 = 0; _0x5bd392 < _0x477fb0.length; _0x5bd392++) {
+                                var _0x8660f2 = _0x5bd392 + 1 == _0x477fb0.length ? '' : '/'
+                                if (_0x5bd392 == 0 || _0x5bd392 == 1) {
+                                } else _0x32fed5 += _0x477fb0[_0x5bd392] + _0x8660f2
+                            }
+                            var _0xb9d4c2 = _0x5a670a.decode(_0x32fed5)
+                            var _0x5efa1c = _0x48763b(JSON.parse(_0x5a670a.decode(_0x477fb0[1])), JSON.parse(_0x5a670a.decode(_0x477fb0[0])), _0xb9d4c2)
+                            return _0x5efa1c
+                        }
+                        function _0x57bd6f(_0x5cfc18) {
+                            var _0x37ada0 = new _0x23e231()
+                            // key = md5('test')
+                            let key = Crypto.MD5('test').toString()
+                            _0x5cfc18 = _0x37ada0.decode(_0x5cfc18)
+                            let len = key.length
+                            let code = ''
+                            for (let i = 0; i < _0x5cfc18.length; i++) {
+                                let k = i % len
+                                code += String.fromCharCode(_0x5cfc18.charCodeAt(i) ^ key.charCodeAt(k))
+                            }
+                            return _0x37ada0.decode(code)
+                        }
+                        function _0x48763b(_0xb0fa99, _0x40e89b, _0x4e6c62) {
+                            var _0x2eb71d = '',
+                                _0x1748c3 = _0xb0fa99,
+                                _0x393e8 = _0x40e89b,
+                                _0x14c36e = _0x4e6c62.split('')
+                            for (var _0xb8969c = 0; _0xb8969c < _0x14c36e.length; _0xb8969c++) {
+                                var _0xb2d1d4 = _0x14c36e[_0xb8969c],
+                                    _0x165ee7 = /^[a-zA-Z]+$/.test(_0xb2d1d4)
+                                if (_0x165ee7 && _0x5628fd(_0x393e8, _0xb2d1d4)) {
+                                    _0x2eb71d += _0x393e8[_0x1748c3.indexOf(_0xb2d1d4)]
+                                } else _0x2eb71d += _0xb2d1d4
+                            }
+                            return _0x2eb71d
+                        }
+
+                        function _0x5628fd(_0x39cc58, _0x574adf) {
+                            for (var _0x26d409 = 0; _0x26d409 < _0x39cc58.length; _0x26d409++) {
+                                if (_0x574adf === _0x39cc58[_0x26d409]) {
+                                    return true
+                                }
+                            }
+                            return false
                         }
                     }
                 }
@@ -357,152 +496,3 @@ class dandanjuClass extends WebApiBase {
     }
 }
 let dandanju20240704 = new dandanjuClass()
-
-function _0x45893a(_0x1f9239) {
-    var _0x5a670a = new _0x23e231()
-    var _0x1f9239 = _0x57bd6f(_0x1f9239)
-    var _0x477fb0 = _0x1f9239.split('/')
-    var _0x32fed5 = ''
-    for (var _0x5bd392 = 0; _0x5bd392 < _0x477fb0.length; _0x5bd392++) {
-        var _0x8660f2 = _0x5bd392 + 1 == _0x477fb0.length ? '' : '/'
-        if (_0x5bd392 == 0 || _0x5bd392 == 1) {
-        } else _0x32fed5 += _0x477fb0[_0x5bd392] + _0x8660f2
-    }
-    var _0xb9d4c2 = _0x5a670a.decode(_0x32fed5)
-    var _0x5efa1c = _0x48763b(
-        JSON.parse(_0x5a670a.decode(_0x477fb0[1])),
-        JSON.parse(_0x5a670a.decode(_0x477fb0[0])),
-        _0xb9d4c2
-    )
-    return _0x5efa1c
-}
-
-function _0x23e231() {
-    _keyStr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='
-    this.encode = function (_0x53bdd1) {
-        var _0x4def44 = ''
-        var _0x256094, _0x2c8e63, _0x1870f9, _0x180168, _0x10912d, _0x334431, _0x133a8c
-        var _0x5a3b7e = 0
-        _0x53bdd1 = _utf8_encode(_0x53bdd1)
-        while (_0x5a3b7e < _0x53bdd1.length) {
-            _0x256094 = _0x53bdd1.charCodeAt(_0x5a3b7e++)
-            _0x2c8e63 = _0x53bdd1.charCodeAt(_0x5a3b7e++)
-            _0x1870f9 = _0x53bdd1.charCodeAt(_0x5a3b7e++)
-            _0x180168 = _0x256094 >> 2
-            _0x10912d = ((_0x256094 & 3) << 4) | (_0x2c8e63 >> 4)
-            _0x334431 = ((_0x2c8e63 & 15) << 2) | (_0x1870f9 >> 6)
-            _0x133a8c = _0x1870f9 & 63
-            if (isNaN(_0x2c8e63)) {
-                _0x334431 = _0x133a8c = 64
-            } else {
-                if (isNaN(_0x1870f9)) {
-                    _0x133a8c = 64
-                }
-            }
-            _0x4def44 =
-                _0x4def44 +
-                _keyStr.charAt(_0x180168) +
-                _keyStr.charAt(_0x10912d) +
-                _keyStr.charAt(_0x334431) +
-                _keyStr.charAt(_0x133a8c)
-        }
-        return _0x4def44
-    }
-    this.decode = function (_0x10ac7a) {
-        var _0x11a4e4 = ''
-        var _0x238b4f, _0x1cdc90, _0x33dfd0
-        var _0x17a111, _0x23e04b, _0x5ae908, _0x1bbdcf
-        var _0x1b3294 = 0
-        _0x10ac7a = _0x10ac7a.replace(/[^A-Za-z0-9\+\/\=]/g, '')
-        while (_0x1b3294 < _0x10ac7a.length) {
-            _0x17a111 = _keyStr.indexOf(_0x10ac7a.charAt(_0x1b3294++))
-            _0x23e04b = _keyStr.indexOf(_0x10ac7a.charAt(_0x1b3294++))
-            _0x5ae908 = _keyStr.indexOf(_0x10ac7a.charAt(_0x1b3294++))
-            _0x1bbdcf = _keyStr.indexOf(_0x10ac7a.charAt(_0x1b3294++))
-            _0x238b4f = (_0x17a111 << 2) | (_0x23e04b >> 4)
-            _0x1cdc90 = ((_0x23e04b & 15) << 4) | (_0x5ae908 >> 2)
-            _0x33dfd0 = ((_0x5ae908 & 3) << 6) | _0x1bbdcf
-            _0x11a4e4 = _0x11a4e4 + String.fromCharCode(_0x238b4f)
-            _0x5ae908 != 64 && (_0x11a4e4 = _0x11a4e4 + String.fromCharCode(_0x1cdc90))
-            _0x1bbdcf != 64 && (_0x11a4e4 = _0x11a4e4 + String.fromCharCode(_0x33dfd0))
-        }
-        _0x11a4e4 = _utf8_decode(_0x11a4e4)
-        return _0x11a4e4
-    }
-    _utf8_encode = function (_0x189009) {
-        _0x189009 = _0x189009.replace(/\r\n/g, '\n')
-        var _0x5ae804 = ''
-        for (var _0x576a5a = 0; _0x576a5a < _0x189009.length; _0x576a5a++) {
-            var _0x39e19c = _0x189009.charCodeAt(_0x576a5a)
-            if (_0x39e19c < 128) _0x5ae804 += String.fromCharCode(_0x39e19c)
-            else {
-                if (_0x39e19c > 127 && _0x39e19c < 2048)
-                    (_0x5ae804 += String.fromCharCode((_0x39e19c >> 6) | 192)),
-                        (_0x5ae804 += String.fromCharCode((_0x39e19c & 63) | 128))
-                else {
-                    _0x5ae804 += String.fromCharCode((_0x39e19c >> 12) | 224)
-                    _0x5ae804 += String.fromCharCode(((_0x39e19c >> 6) & 63) | 128)
-                    _0x5ae804 += String.fromCharCode((_0x39e19c & 63) | 128)
-                }
-            }
-        }
-        return _0x5ae804
-    }
-    _utf8_decode = function (_0x5c4c02) {
-        var _0x5b1fc3 = ''
-        var _0x2fc8f9 = 0
-        var _0x8d257d = (c1 = c2 = 0)
-        while (_0x2fc8f9 < _0x5c4c02.length) {
-            _0x8d257d = _0x5c4c02.charCodeAt(_0x2fc8f9)
-            if (_0x8d257d < 128) (_0x5b1fc3 += String.fromCharCode(_0x8d257d)), _0x2fc8f9++
-            else
-                _0x8d257d > 191 && _0x8d257d < 224
-                    ? ((c2 = _0x5c4c02.charCodeAt(_0x2fc8f9 + 1)),
-                      (_0x5b1fc3 += String.fromCharCode(((_0x8d257d & 31) << 6) | (c2 & 63))),
-                      (_0x2fc8f9 += 2))
-                    : ((c2 = _0x5c4c02.charCodeAt(_0x2fc8f9 + 1)),
-                      (c3 = _0x5c4c02.charCodeAt(_0x2fc8f9 + 2)),
-                      (_0x5b1fc3 += String.fromCharCode(((_0x8d257d & 15) << 12) | ((c2 & 63) << 6) | (c3 & 63))),
-                      (_0x2fc8f9 += 3))
-        }
-        return _0x5b1fc3
-    }
-}
-
-function _0x57bd6f(_0x5cfc18) {
-    var _0x37ada0 = new _0x23e231()
-    // key = md5('test')
-    key = Crypto.MD5('test').toString()
-    _0x5cfc18 = _0x37ada0.decode(_0x5cfc18)
-    len = key.length
-    code = ''
-    for (i = 0; i < _0x5cfc18.length; i++) {
-        k = i % len
-        code += String.fromCharCode(_0x5cfc18.charCodeAt(i) ^ key.charCodeAt(k))
-    }
-    return _0x37ada0.decode(code)
-}
-
-function _0x48763b(_0xb0fa99, _0x40e89b, _0x4e6c62) {
-    var _0x2eb71d = '',
-        _0x1748c3 = _0xb0fa99,
-        _0x393e8 = _0x40e89b,
-        _0x14c36e = _0x4e6c62.split('')
-    for (var _0xb8969c = 0; _0xb8969c < _0x14c36e.length; _0xb8969c++) {
-        var _0xb2d1d4 = _0x14c36e[_0xb8969c],
-            _0x165ee7 = /^[a-zA-Z]+$/.test(_0xb2d1d4)
-        if (_0x165ee7 && _0x5628fd(_0x393e8, _0xb2d1d4)) {
-            _0x2eb71d += _0x393e8[_0x1748c3.indexOf(_0xb2d1d4)]
-        } else _0x2eb71d += _0xb2d1d4
-    }
-    return _0x2eb71d
-}
-
-function _0x5628fd(_0x39cc58, _0x574adf) {
-    for (var _0x26d409 = 0; _0x26d409 < _0x39cc58.length; _0x26d409++) {
-        if (_0x574adf === _0x39cc58[_0x26d409]) {
-            return true
-        }
-    }
-    return false
-}
