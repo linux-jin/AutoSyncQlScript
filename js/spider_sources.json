@@ -140,6 +140,13 @@
         "remark": ""
     },
     {
+        "name": "Jable",
+        "api": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/jable.js",
+        "instance": "jable20240831",
+        "webSite": "https://jable.tv",
+        "remark": ""
+    },
+    {
         "name": "玩偶姐姐",
         "api": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/hkdoll.js",
         "instance": "hkdoll20240705",
