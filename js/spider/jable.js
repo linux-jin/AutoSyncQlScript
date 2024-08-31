@@ -4,7 +4,6 @@ class jableClass extends WebApiBase {
         this.webSite = 'https://jable.tv'
         this.headers = {
             'User-Agent': 'PostmanRuntime/7.39.1',
-            'Postman-Token': 'c2602692-1a05-4bb0-93cd-270afad97e87',
             'Accept-language': 'zh-TW,zh-Hant;q=0.9',
         }
         this.cookie = ''
