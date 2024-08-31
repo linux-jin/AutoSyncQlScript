@@ -7,6 +7,7 @@ class jableClass extends WebApiBase {
             'Postman-Token': 'c2602692-1a05-4bb0-93cd-270afad97e87',
             'Accept-language': 'zh-TW,zh-Hant;q=0.9',
         }
+        this.cookie = ''
     }
 
     async getClassList(args) {
@@ -15,7 +16,9 @@ class jableClass extends WebApiBase {
         let backData = new RepVideoClassList()
         try {
             const pro = await req(webUrl, { headers: this.headers })
-            backData.error = 'null'
+            backData.error = pro.error
+            let cookie = pro.headers['set-cookie']
+            this.cookie = cookie
             const proData = pro.data
             // UZUtils.debugLog(proData)
             if (proData) {
@@ -50,9 +53,11 @@ class jableClass extends WebApiBase {
         backData.data = new VideoSubclass()
         const url = args.url
         try {
+            let headers = this.headers
+            headers.cookie = this.cookie
             let filter = []
             if (url.includes('categories')) {
-                const pro = await req(url, { headers: this.headers })
+                const pro = await req(url, { headers: headers })
                 backData.error = pro.error
                 const $ = cheerio.load(pro.data)
                 let list = []
@@ -88,6 +93,8 @@ class jableClass extends WebApiBase {
         let backData = new RepVideoList()
         backData.data = []
         try {
+            let headers = this.headers
+            headers.cookie = this.cookie
             let [{ id }] = args.filter
             let url = ''
             if (id.includes('categories')) {
@@ -96,7 +103,7 @@ class jableClass extends WebApiBase {
                 url = id + `&from=${args.page}&_=${Date.now()}`
             }
 
-            const pro = await req(url, { headers: this.headers })
+            const pro = await req(url, { headers: headers })
             backData.error = pro.error
             let proData = pro.data
             if (proData) {
@@ -129,9 +136,11 @@ class jableClass extends WebApiBase {
     async getVideoList(args) {
         let backData = new RepVideoList()
         try {
+            let headers = this.headers
+            headers.cookie = this.cookie
             let videos = []
             if (args.url === this.webSite) {
-                const pro = await req(args.url, { headers: this.headers })
+                const pro = await req(args.url, { headers: headers })
                 backData.error = pro.error
                 const $ = cheerio.load(pro.data)
                 const lastSection = $('#site-content .container section:last')
@@ -175,7 +184,9 @@ class jableClass extends WebApiBase {
         let backData = new RepVideoDetail()
         const webUrl = args.url
         try {
-            const pro = await req(webUrl, { headers: this.headers })
+            let headers = this.headers
+            headers.cookie = this.cookie
+            const pro = await req(webUrl, { headers: headers })
             backData.error = pro.error
             const proData = pro.data
             if (proData) {
@@ -203,7 +214,7 @@ class jableClass extends WebApiBase {
         let backData = new RepVideoPlayUrl()
         try {
             backData.data = args.url
-            // backData.headers = this.headers
+            backData.headers = this.headers
         } catch (e) {
             UZUtils.debugLog(e)
             backData.error = e.message
@@ -214,10 +225,12 @@ class jableClass extends WebApiBase {
     async searchVideo(args) {
         let backData = new RepVideoList()
         try {
+            let headers = this.headers
+            headers.cookie = this.cookie
             let url = `${this.webSite}/search/${args.searchWord}/?mode=async&function=get_block&block_id=list_videos_videos_list_search_result&q=${
                 args.searchWord
             }&sort_by=&from=${args.page}&_=${Date.now()}`
-            const pro = await req(url, { headers: this.headers })
+            const pro = await req(url, { headers: headers })
             backData.error = pro.error
             const $ = cheerio.load(pro.data)
             let videos = []
