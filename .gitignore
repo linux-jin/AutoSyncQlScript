@@ -9,3 +9,5 @@ Thumbs.db
 .DS_Store
 /js/node_modules
 /js/test
+js/package-lock.json
+js/package.json
