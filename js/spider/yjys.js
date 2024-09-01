@@ -213,8 +213,18 @@ class yjysClass extends WebApiBase {
                 let sg = encrypted.ciphertext.toString(Crypto.enc.Hex).toUpperCase()
                 let lines = this.webSite + '/lines?t=' + t + '&sg=' + sg + '&pid=' + pid
                 let res = await req(lines, { headers: { 'User-Agent': this.UA, Cookie: this.cookie } })
+
                 if (res.data.data.url3) {
                     backData.data = res.data.data.url3.split(',')[0]
+                } else if (res.data.data.tos) {
+                    let url = `${this.webSite}/god/${pid}?type=1`
+                    let res = await req(url, {
+                        method: 'post',
+                        headers: { 'User-Agent': this.UA, 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+                        data: `t=${t}&sg=${key}&verifyCode=888`,
+                    })
+                    let playUrl = JSON.parse(res.data).url
+                    backData.data = playUrl
                 } else if (res.data.data.m3u8) {
                     let url = res.data.data.m3u8.replace('https://www.bde4.cc', this.webSite)
                     UZUtils.debugLog('url = ' + url)
@@ -242,34 +252,6 @@ class yjysClass extends WebApiBase {
                     })
                     let data = pic.data
                     let playUrl = dealM3u8(data)
-                    backData.data = playUrl
-                } else if (res.data.data.tos) {
-                    function base64ToHex(_0xbb7b1b) {
-                        const _0x46a7e4 = Crypto.enc.Utf8.stringify(Crypto.enc.Base64.parse(_0xbb7b1b))
-                        let _0x55ac97 = ''
-                        for (let _0x22b567 = 0; _0x22b567 < _0x46a7e4.length; _0x22b567++) {
-                            const _0x43d22f = _0x46a7e4.charCodeAt(_0x22b567).toString(16)
-                            _0x55ac97 += _0x43d22f.length === 2 ? _0x43d22f : '0' + _0x43d22f
-                        }
-                        return _0x55ac97.toUpperCase()
-                    }
-                    t = new Date().getTime()
-                    key = Crypto.enc.Utf8.parse(
-                        Crypto.MD5(pid + '-' + t)
-                            .toString()
-                            .substring(0, 16)
-                    )
-                    encrypted = Crypto.AES.encrypt(pid + '-' + t, key, {
-                        mode: Crypto.mode.ECB,
-                        padding: Crypto.pad.Pkcs7,
-                    })
-                    let geturl = `${this.webSite}/god/${pid}?type=1`
-                    let getres = await req(geturl, {
-                        method: 'post',
-                        headers: { 'User-Agent': this.UA },
-                        data: { t: t.toString(), sg: base64ToHex(key), verifyCode: '888' },
-                    })
-                    let playUrl = getres.data.url
                     backData.data = playUrl
                 }
                 backData.headers = { 'User-Agent': this.UA }
