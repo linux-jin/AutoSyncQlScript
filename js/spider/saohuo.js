@@ -9,6 +9,7 @@ class saohuoClass extends WebApiBase {
         this.webSite = 'https://saohuo.tv'
         this.headers = {
             'User-Agent': 'Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.91 Mobile Safari/537.36',
+            Cookie: 'PHPSESSID=oe6prf46idn97gmd7j5gffka39',
         }
     }
 
@@ -24,6 +25,8 @@ class saohuoClass extends WebApiBase {
         var backData = new RepVideoClassList()
         try {
             const pro = await req(webUrl, { headers: this.headers })
+            // let cookie = pro.headers['set-cookie']
+            // this.headers.cookie = cookie
             backData.error = pro.error
             let proData = pro.data
             if (proData) {
@@ -192,7 +195,7 @@ class saohuoClass extends WebApiBase {
                     document
                         .querySelector('.m_background')
                         .getAttribute('style')
-                        .match(/url\((.+)\)/)[1] ?? ''
+                        .match(/url\((.+)\)/)[1] || ''
                 let vod_name = document.querySelector('.v_title')?.text ?? ''
                 let detList = document.querySelector('.v_info_box p')?.text ?? ''
                 let vod_year = ''
@@ -334,11 +337,22 @@ class saohuoClass extends WebApiBase {
         let backData = new RepVideoList()
         let ocrApi = 'https://api.nn.ci/ocr/b64/json'
         let validate = this.webSite + '/include/vdimgck.php'
+        let search = `${this.webSite}/search.php?searchword=${encodeURIComponent(args.searchWord)}`
         try {
-            let img = await req(validate, { headers: this.headers })
+            function arrayBufferToBase64(arrayBuffer) {
+                let uint8Array = new Uint8Array(arrayBuffer)
+                let wordArray = Crypto.lib.WordArray.create(uint8Array)
+                let base64String = Crypto.enc.Base64.stringify(wordArray)
 
-            let b64 = this.base64Encode(img.data)
-            UZUtils.debugLog(b64)
+                return base64String
+            }
+            // let init = await req(search, { headers: this.headers })
+            let img = await req(validate, {
+                headers: this.headers,
+                responseType: 'arraybuffer',
+            })
+
+            let b64 = arrayBufferToBase64(img.data)
             let ocrRes = await req(ocrApi, {
                 method: 'POST',
                 headers: this.headers,
@@ -348,10 +362,15 @@ class saohuoClass extends WebApiBase {
             let searchUrl = this.webSite + '/search.php?scheckAC=check&page=&searchtype=&order=&tid=&area=&year=&letter=&yuyan=&state=&money=&ver=&jq='
             let searchRes = await req(searchUrl, {
                 method: 'POST',
-                headers: this.headers,
-                data: `searchword=${args.searchWord}&validate=${vd}`,
+                headers: {
+                    'user-agent': this.headers['User-Agent'],
+                    cookie: this.headers.Cookie,
+                    // referer: search,
+                    'content-type': 'application/x-www-form-urlencoded',
+                },
+                data: `validate=${vd.toUpperCase()}&searchword=${encodeURIComponent(args.searchWord)}`,
             })
-            let _$ = cheerio.load(searchRes.body)
+            let _$ = cheerio.load(searchRes.data)
             let videos = []
             let allVideo = _$('ul.v_list div.v_img')
             allVideo.each((index, element) => {
@@ -361,7 +380,7 @@ class saohuoClass extends WebApiBase {
                 let vodDiJiJi = _$(element).find('.v_note').text() || ''
 
                 let videoDet = {}
-                videoDet.vod_id = +vodUrl.match(/movie\/(.+)\.html/)[1]
+                videoDet.vod_id = this.webSite + vodUrl
                 videoDet.vod_pic = vodPic
                 videoDet.vod_name = vodName
                 videoDet.vod_remarks = vodDiJiJi.trim()
@@ -371,11 +390,10 @@ class saohuoClass extends WebApiBase {
         } catch (e) {
             backData.error = e.message
         }
-        // Search requires verification code
         return JSON.stringify(backData)
     }
 
-    ignoreClassName = ['最新', '最热']
+    ignoreClassName = ['最近更新', '排行榜']
 
     base64Encode(text) {
         return Crypto.enc.Base64.stringify(Crypto.enc.Utf8.parse(text))
