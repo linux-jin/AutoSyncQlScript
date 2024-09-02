@@ -122,7 +122,7 @@ class jpyyClass extends WebApiBase {
                             video.vod_id = vod_element.vodId
                             video.vod_name = vod_element.vodName
                             video.vod_pic = vod_element.vodPic
-                            video.vod_remarks = vod_element.vodVersion
+                            video.vod_remarks = vod_element.vodRemarks || vod_element.vodVersion
                             videos.push(video)
                         }
                     }
