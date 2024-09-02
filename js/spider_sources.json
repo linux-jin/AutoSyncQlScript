@@ -25,7 +25,7 @@
         "api": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/saohuo.js",
         "instance": "saohuo20240623",
         "webSite": "https://saohuo.tv",
-        "remark": "不支持搜索"
+        "remark": ""
     },
     {
         "name": "韓劇看看",
