@@ -157,14 +157,15 @@ class dandanjuClass extends WebApiBase {
             backData.error = pro.error
             let proData = pro.data
             if (proData) {
+                const $ = cheerio.load(proData)
                 let document = parse(proData)
-                let vod_content = document.querySelector('#desc p')?.text ?? ''
+                let vod_content = $('#desc p').html().split('<br>')[2].split('：')[1].replace('</b>', '').trim() || ''
                 let vod_pic = document.querySelector('.ewave-content__thumb img').getAttribute('data-original') ?? ''
                 let vod_name = document.querySelector('h1.title')?.text ?? ''
-                let detList = document.querySelectorAll('ewave-content__detail p.data')
+                let detList = document.querySelectorAll('.ewave-content__detail p.data')
                 let vod_year = ''
-                let vod_director = ''
-                let vod_actor = ''
+                let vod_director = $('.ewave-content__detail p.data').eq(2).text().replace('导演：', '')
+                let vod_actor = $('.ewave-content__detail p.data').eq(1).text().replace('主演：', '')
                 let vod_area = ''
                 let vod_lang = ''
                 let vod_douban_score = ''
@@ -178,24 +179,24 @@ class dandanjuClass extends WebApiBase {
                     } else newDetList.push(e.text)
                 })
 
-                for (let index = 0; index < newDetList.length; index++) {
-                    const element = newDetList[index].trim()
-                    if (element.includes('年份')) {
-                        vod_year = element.replace('年份：', '')
-                    } else if (element.includes('导演')) {
-                        vod_director = element.replace('导演：', '')
-                    } else if (element.includes('主演')) {
-                        vod_actor = element.replace('主演：', '')
-                    } else if (element.includes('地区')) {
-                        vod_area = element.replace('地区：', '')
-                    } else if (element.includes('语言')) {
-                        vod_lang = element.replace('语言：', '')
-                    } else if (element.includes('类型')) {
-                        type_name = element.replace('类型：', '')
-                    } else if (element.includes('豆瓣')) {
-                        vod_douban_score = element.replace('豆瓣：', '')
-                    }
-                }
+                // for (let index = 0; index < newDetList.length; index++) {
+                //     const element = newDetList[index].trim()
+                //     if (element.includes('年份')) {
+                //         vod_year = element.replace('年份：', '')
+                //     } else if (element.includes('导演')) {
+                //         vod_director = element.replace('导演：', '')
+                //     } else if (element.includes('主演')) {
+                //         vod_actor = element.replace('主演：', '')
+                //     } else if (element.includes('地区')) {
+                //         vod_area = element.replace('地区：', '')
+                //     } else if (element.includes('语言')) {
+                //         vod_lang = element.replace('语言：', '')
+                //     } else if (element.includes('类型')) {
+                //         type_name = element.replace('类型：', '')
+                //     } else if (element.includes('豆瓣')) {
+                //         vod_douban_score = element.replace('豆瓣：', '')
+                //     }
+                // }
 
                 let vod_play_from = []
                 document.querySelectorAll('.ewave-pannel__head .playlist-slide ul li a').forEach((e) => {
@@ -461,7 +462,82 @@ class dandanjuClass extends WebApiBase {
      */
     async searchVideo(args) {
         let backData = new RepVideoList()
-        // Search requires verification code
+        let ocrApi = 'https://api.nn.ci/ocr/b64/json'
+        let url = `${this.webSite}/search/-------------.html`
+        let validate = `${this.webSite}/index.php/verify/index.html?`
+        let checkUrl = `${this.webSite}/index.php/ajax/verify_check?type=search&verify=`
+        try {
+            function arrayBufferToBase64(arrayBuffer) {
+                let uint8Array = new Uint8Array(arrayBuffer)
+                let wordArray = Crypto.lib.WordArray.create(uint8Array)
+                let base64String = Crypto.enc.Base64.stringify(wordArray)
+
+                return base64String
+            }
+            function sleep(ms) {
+                return new Promise((resolve) => setTimeout(resolve, ms))
+            }
+            // get cookie
+            let cookieRequest = await req(url, {
+                method: 'POST',
+                headers: {
+                    'User-Agent': this.headers['User-Agent'],
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                data: `wd=${encodeURIComponent(args.searchWord)}`,
+            })
+            let cookie = cookieRequest.headers['set-cookie'][0].match(/(PHPSESSID=.*;)/)[0]
+            // get img
+            let imgRes = await req(validate, {
+                headers: {
+                    'User-Agent': this.headers['User-Agent'],
+                    Cookie: cookie,
+                },
+                responseType: 'arraybuffer',
+            })
+            let b64 = arrayBufferToBase64(imgRes.data)
+            // ocr
+            let ocrRes = await req(ocrApi, {
+                method: 'POST',
+                headers: this.headers,
+                data: b64,
+            })
+            let vd = JSON.parse(ocrRes.data).result
+            // check
+            let checkRes = await req(checkUrl + vd, {
+                headers: {
+                    'User-Agent': this.headers['User-Agent'],
+                    Cookie: cookie,
+                },
+            })
+            if (checkRes.data.msg === 'ok') {
+                // 等兩秒再搜，太快會觸發風控
+                await sleep(2000)
+                let searchRequest = await req(url, {
+                    method: 'POST',
+                    headers: {
+                        'User-Agent': this.headers['User-Agent'],
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                        Cookie: cookie,
+                    },
+                    data: `wd=${encodeURIComponent(args.searchWord)}`,
+                })
+                let $ = cheerio.load(searchRequest.data)
+                let allVideo = $('.ewave-vodlist__media > li')
+                let videos = []
+                allVideo.each((_, index) => {
+                    let videoDet = new VideoDetail()
+                    videoDet.vod_id = this.webSite + $(index).find('a.ewave-vodlist__thumb').attr('href')
+                    videoDet.vod_pic = $(index).find('a.ewave-vodlist__thumb').attr('data-original')
+                    videoDet.vod_name = $(index).find('h3.title a').text()
+                    videoDet.vod_remarks = $(index).find('span.pic-text.text-right').text()
+                    videos.push(videoDet)
+                })
+                backData.data = videos
+            }
+        } catch (e) {
+            backData.error = e
+        }
         return JSON.stringify(backData)
     }
 

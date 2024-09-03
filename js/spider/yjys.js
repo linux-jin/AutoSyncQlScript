@@ -12,7 +12,7 @@ class yjysClass extends WebApiBase {
         let backData = new RepVideoClassList()
         try {
             const pro = await req(webUrl + '/zzzzz', { headers: { 'User-Agent': this.UA } })
-            this.cookie = pro.headers['set-cookie']
+            this.cookie = pro.headers['set-cookie'][0]
             backData.error = pro.error
             const proData = pro.data
             if (proData) {
@@ -272,9 +272,42 @@ class yjysClass extends WebApiBase {
 
     async searchVideo(args) {
         let backData = new RepVideoList()
+        let ocrApi = 'https://api.nn.ci/ocr/b64/json'
+        let url = `${this.webSite}/search/${encodeURIComponent(args.searchWord)}`
+        let validate = `${this.webSite}/search/verifyCode?t=` + new Date().getTime()
         // 搜尋需要圖形驗證碼
         try {
-            backData.data = []
+            function arrayBufferToBase64(arrayBuffer) {
+                let uint8Array = new Uint8Array(arrayBuffer)
+                let wordArray = Crypto.lib.WordArray.create(uint8Array)
+                let base64String = Crypto.enc.Base64.stringify(wordArray)
+
+                return base64String
+            }
+            // get cookie
+            let cookieRequest = await req(url, {
+                headers: {
+                    'User-Agent': this.UA,
+                },
+            })
+            let cookie = cookieRequest.headers['set-cookie'][0].match(/(JSESSIONID=.*);/)[0]
+            // get img
+            let imgRes = await req(validate, {
+                headers: {
+                    'User-Agent': this.UA,
+                    Cookie: cookie,
+                },
+                responseType: 'arraybuffer',
+            })
+            let b64 = arrayBufferToBase64(imgRes.data)
+            // ocr
+            let ocrRes = await req(ocrApi, {
+                method: 'POST',
+                headers: this.headers,
+                data: b64,
+            })
+            let vd = JSON.parse(ocrRes.data).result
+            UZUtils.debugLog(vd)
         } catch (e) {
             backData.error = e.message
         }

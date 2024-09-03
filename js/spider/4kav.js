@@ -228,7 +228,7 @@ class www4kavClass extends WebApiBase {
     async searchVideo(args) {
         let backData = new RepVideoList()
         try {
-            let listUrl = args.url + `/s?q=${args.searchWord}`
+            let listUrl = this.webSite + `/s?q=${args.searchWord}`
 
             let pro = await req(listUrl, { headers: this.headers })
             backData.error = pro.error
