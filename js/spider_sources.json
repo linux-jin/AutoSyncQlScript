@@ -108,7 +108,7 @@
         "name": "囧次元",
         "api": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/jcy.js",
         "instance": "jcy20240823",
-        "webSite": "http://212.64.45.238:8090/app/video",
+        "webSite": "http://212.64.45.238:8090",
         "remark": ""
     },
     {
