@@ -1,7 +1,7 @@
 class jcyClass extends WebApiBase {
     constructor() {
         super()
-        this.webSite = 'http://212.64.45.238:8090/app/video'
+        this.webSite = 'http://212.64.45.238:8090'
         this.headers = {
             'User-Agent': 'Dart/2.17 (dart:io)',
         }
@@ -10,7 +10,7 @@ class jcyClass extends WebApiBase {
     }
 
     async login() {
-        let login = 'http://212.64.45.238:8090/app/users/login'
+        let login = `${this.webSite}/app/users/login`
         let options = {
             method: 'POST',
             headers: {
@@ -82,7 +82,7 @@ class jcyClass extends WebApiBase {
         backData.data = new VideoSubclass()
         const id = args.url
         try {
-            let SubclassUrl = `http://212.64.45.238:8090/app/channel/${id}`
+            let SubclassUrl = `${this.webSite}/app/channel/${id}`
             let pro = await this.$.request(SubclassUrl, 'GET', this.jwt)
             backData.error = pro.error
             let proData = pro.data
@@ -125,7 +125,7 @@ class jcyClass extends WebApiBase {
         backData.data = []
         try {
             let [{ id: type }, { id: year }, { id: sort }] = args.filter
-            let url = `${this.webSite}/list?channel=${args.mainClassId}&sort=${sort}&type=${type}&area=&year=${year}&limit=30&page=${args.page}`
+            let url = `${this.webSite}/app/video/list?channel=${args.mainClassId}&sort=${sort}&type=${type}&area=&year=${year}&limit=30&page=${args.page}`
 
             let pro = await this.$.request(url, 'GET', this.jwt)
             backData.error = pro.error
@@ -164,7 +164,7 @@ class jcyClass extends WebApiBase {
     async getVideoList(args) {
         let backData = new RepVideoList()
         try {
-            let listUrl = `${this.webSite}/list?channel=${args.url}&sort=addtime&type&area&year&limit=30&page=${args.page}`
+            let listUrl = `${this.webSite}/app/video/list?channel=${args.url}&sort=addtime&type&area&year&limit=30&page=${args.page}`
 
             let pro = await this.$.request(listUrl, 'GET', this.jwt)
             backData.error = pro.error
@@ -203,7 +203,7 @@ class jcyClass extends WebApiBase {
     async getVideoDetail(args) {
         let backData = new RepVideoDetail()
         try {
-            let webUrl = `${this.webSite}/detail?id=${args.url}`
+            let webUrl = `${this.webSite}/app/video/detail?id=${args.url}`
             let pro = await this.$.request(webUrl, 'GET', this.jwt)
             backData.error = pro.error
             let proData = pro.data
@@ -226,7 +226,7 @@ class jcyClass extends WebApiBase {
                 const type = decrypted.match(/"play":"([^"]*)"/)[1]
                 for (const i in tabs) {
                     const form = tabs[i].replace(/"/g, '')
-                    const link = 'http://212.64.45.238:8090/app/video/play?id=' + args.url + '&play=' + type + '&part=' + encodeURIComponent(form)
+                    const link = `${this.webSite}/app/video/play?id=` + args.url + '&play=' + type + '&part=' + encodeURIComponent(form)
                     vod_play_url.push(form + '$' + link)
                 }
 
@@ -295,7 +295,7 @@ class jcyClass extends WebApiBase {
     async searchVideo(args) {
         let backData = new RepVideoList()
         try {
-            let listUrl = `${this.webSite}/search?key=${args.searchWord}&limit=25&page=${args.page}`
+            let listUrl = `${this.webSite}/app/video/search?key=${args.searchWord}&limit=25&page=${args.page}`
 
             let pro = await this.$.request(listUrl, 'GET', this.jwt)
             backData.error = pro.error
