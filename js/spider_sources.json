@@ -119,6 +119,13 @@
         "remark": ""
     },
     {
+        "name": "奇優影院",
+        "api": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/qiyou.js",
+        "instance": "qiyou20240904",
+        "webSite": "http://www.qiyoudy4.com",
+        "remark": ""
+    },
+    {
         "name": "老白聽書",
         "api": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/laobai.js",
         "instance": "laobai20240831",
