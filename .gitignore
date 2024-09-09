@@ -11,3 +11,4 @@ Thumbs.db
 /js/test
 js/package-lock.json
 js/package.json
+js/.vscode

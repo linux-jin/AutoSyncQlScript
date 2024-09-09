@@ -159,5 +159,12 @@
         "instance": "hkdoll20240705",
         "webSite": "https://hongkongdollvideo.com",
         "remark": ""
+    },
+    {
+        "name": "Netflav",
+        "api": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/netflav.js",
+        "instance": "netflav20240905",
+        "webSite": "https://www.netflav.com",
+        "remark": ""
     }
 ]
