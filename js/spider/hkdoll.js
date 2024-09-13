@@ -8,8 +8,7 @@ class hkdollClass extends WebApiBase {
         super()
         this.webSite = 'https://hongkongdollvideo.com'
         this.headers = {
-            'User-Agent':
-                'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
         }
         this.ignoreClassName = ['亚洲成人视频']
     }
@@ -163,20 +162,30 @@ class hkdollClass extends WebApiBase {
             let proData = pro.data
 
             if (proData) {
-                let obj = proData.match(/<script type="application\/ld\+json">(.*?)<\/script>/)[1]
-                let eurl = JSON.parse(obj).embedUrl
+                // let obj = proData.match(/<script type="application\/ld\+json">(.*?)<\/script>/)[1]
+                // let eurl = JSON.parse(obj).embedUrl
 
-                let video_id = reqUrl.match(/video\/([a-f0-9]{16}).html/)[1]
-                let video_arg = eurl.match(/embed\/([a-f0-9]{20,})/)[1]
+                // let video_id = reqUrl.match(/video\/([a-f0-9]{16}).html/)[1]
+                // let video_arg = eurl.match(/embed\/([a-f0-9]{20,})/)[1]
+                // let timestamp = video_arg.substr(-10)
+
+                // let eres = await req(eurl, { headers: this.headers })
+                // let userInteraction = JSON.parse(eres.data.match(/r userInteraction=(.*);/)[1])
+                // let key = base64Encode((video_id + '-' + timestamp.toString()).split('').reverse().join('')).replaceAll(
+                //     '=',
+                //     ''
+                // )
+                // let videoSrc = strDecode(userInteraction.sb, key)
+                const $ = cheerio.load(proData)
+                const script = $('.video-player-container script').text()
+                const playConfig = JSON.parse(script.match(/CONFIG__=(.*?);/)[1])
+                let video_id = url.match(/\/video\/([0-9a-f]+)\.html/)[1]
+                let embedUrl = playConfig.embedURL
+                let video_arg = embedUrl.match(/.*?\/([a-f0-9]{20,})$/)[1]
                 let timestamp = video_arg.substr(-10)
+                let key = base64Encode((video_id + '-' + timestamp.toString()).split('').reverse().join('')).replaceAll('=', '')
 
-                let eres = await req(eurl, { headers: this.headers })
-                let userInteraction = JSON.parse(eres.data.match(/r userInteraction=(.*);/)[1])
-                let key = base64Encode((video_id + '-' + timestamp.toString()).split('').reverse().join('')).replaceAll(
-                    '=',
-                    ''
-                )
-                let videoSrc = strDecode(userInteraction.sb, key)
+                let videoSrc = strDecode(playConfig.arg, key)
 
                 function strDecode(string, key) {
                     string = base64Decode(string)
