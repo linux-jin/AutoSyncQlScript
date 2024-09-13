@@ -179,7 +179,7 @@ class hkdollClass extends WebApiBase {
                 const $ = cheerio.load(proData)
                 const script = $('.video-player-container script').text()
                 const playConfig = JSON.parse(script.match(/CONFIG__=(.*?);/)[1])
-                let video_id = url.match(/\/video\/([0-9a-f]+)\.html/)[1]
+                let video_id = reqUrl.match(/\/video\/([0-9a-f]+)\.html/)[1]
                 let embedUrl = playConfig.embedURL
                 let video_arg = embedUrl.match(/.*?\/([a-f0-9]{20,})$/)[1]
                 let timestamp = video_arg.substr(-10)
