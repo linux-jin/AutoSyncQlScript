@@ -126,6 +126,13 @@
         "remark": ""
     },
     {
+        "name": "嗨劇網",
+        "api": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/haiju.js",
+        "instance": "haiju20240917",
+        "webSite": "https://www.haiju.vip",
+        "remark": ""
+    },
+    {
         "name": "老白聽書",
         "api": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/laobai.js",
         "instance": "laobai20240831",
