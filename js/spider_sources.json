@@ -133,6 +133,13 @@
         "remark": ""
     },
     {
+        "name": "短劇天堂",
+        "api": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/duanjutt.js",
+        "instance": "duanjutt20240922",
+        "webSite": "https://duanjutt.tv",
+        "remark": "搜索間隔不能小於10秒"
+    },
+    {
         "name": "老白聽書",
         "api": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/yswag/uzVideo/main/js/spider/laobai.js",
         "instance": "laobai20240831",
