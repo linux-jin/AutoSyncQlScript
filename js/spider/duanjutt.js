@@ -162,7 +162,7 @@ class duanjuttClass extends WebApiBase {
                     const href = $(element).find('a.myui-vodlist__thumb').attr('href')
                     const title = $(element).find('h4.title').text()
                     let cover = $(element).find('a.myui-vodlist__thumb').attr('data-original')
-                    if (!cover.startsWith('http')) pic = this.webSite + pic
+                    if (!cover.startsWith('http')) cover = this.webSite + cover
                     const subTitle = $(element).find('.pic-text').text()
                     let videoDet = new VideoDetail()
                     videoDet.vod_id = href
