@@ -8,7 +8,7 @@ class ChangZhang20240614 extends WebApiBase {
     constructor() {
         super()
         this.host = 'https://www.cz01.vip'
-        this.webSite = 'https://www.czzy77.com'
+        this.webSite = 'https://czzy.top'
         this.headers = {
             'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
         }
@@ -33,9 +33,9 @@ class ChangZhang20240614 extends WebApiBase {
      * @returns {Promise<RepVideoClassList>}
      */
     async getClassList(args) {
-        // let webUrl = args.url
-        let webUrl = await this.getNewSiteDomain()
-        UZUtils.debugLog('webUrl = ' + webUrl)
+        let webUrl = args.url
+        // let webUrl = await this.getNewSiteDomain()
+        // UZUtils.debugLog('webUrl = ' + webUrl)
         // 如果通过首页获取分类的话，可以将对象内部的首页更新
         this.webSite = UZUtils.removeTrailingSlash(webUrl)
         var backData = new RepVideoClassList()
