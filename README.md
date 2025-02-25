@@ -22,14 +22,14 @@ https://gh.llkk.cc/https://github.com/shidahuilang/shuyuan/blob/shuyuan/%E5%A4%A
 https://gh.llkk.cc/https://raw.githubusercontent.com/shidahuilang/shuyuan/refs/heads/shuyuan/%E5%A4%A7%E7%81%B0%E7%8B%BC%E7%9B%8A%E8%BE%BE2.0.yds
 ```
 
-**自动更新时间** 2025-02-25 18:04:37 CST+0800
+**自动更新时间** 2025-02-25 18:30:19 CST+0800
 #### 🚩 最新阅读书源修复-每隔3天自动更新一次（安卓阅读3.0+读不舍手+千阅+源阅读+花火阅读通用）
 #### 🚩 获取后的书源会自动效验
 
 <!-- 更新位置开始 -->
 | 阅读源总数 | 有效书源数 | 无效书源数 | 重复书源数 |
 |------------|------------|------------|--------------|
-| <span style="color:green;">354</span> | <span style="color:blue;">217</span> | <span style="color:red;">137</span> | <span style="color:orange;">1</span> |
+| <span style="color:green;">354</span> | <span style="color:blue;">209</span> | <span style="color:red;">145</span> | <span style="color:orange;">1</span> |
 <!-- 更新位置结束 -->
 ![shuyuan.png](icons/shuyuan.png)
 #### 🚩 效验书源链接
@@ -50,7 +50,7 @@ https://gh.llkk.cc/https://raw.githubusercontent.com/shidahuilang/shuyuan/shuyua
 
 #### 🚩 香色闺阁-每隔3天自动更新一次
 
-**自动更新时间** 2025-02-25 18:04:37 CST+0800
+**自动更新时间** 2025-02-25 18:30:19 CST+0800
  ``` bash
 https://gh.llkk.cc/https://raw.githubusercontent.com/shidahuilang/shuyuan/shuyuan/sourceModelList.xbs
  ``` 
