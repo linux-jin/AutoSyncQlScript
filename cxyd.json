@@ -15,7 +15,7 @@
             "name": "$.book_name"
         },
         "weight": 60,
-        "loginUrl": "https://api.langge.cf/login",
+        "loginUrl": "http://vip.langge.cf:45800/login",
         "searchUrl": "/search?title={{key}}&tab=小说&source=全部",
         "ruleSearch": {
             "author": "$.author",
@@ -49,7 +49,7 @@
         },
         "loginUi": "",
         "jsLib": "",
-        "bookSourceUrl": "https://api.langge.cf",
+        "bookSourceUrl": "http://vip.langge.cf:45800",
         "lastUpdateTime": 1739242113550,
         "customOrder": 0,
         "bookSourceType": 0,
