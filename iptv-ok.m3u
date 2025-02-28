@@ -1285,23 +1285,21 @@ http://1.94.31.214:35455/huya/29465858
 http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202501102359/app_2/_definst_/ls_2.stream/chunklist.m3u8
 #EXTINF:-1 group-title="卫视台" tvg-id="青海卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/青海卫视.png" t-time="104" v-w="0" v-h="0", 青海卫视
 http://stream.qhbtv.com/qhws/sd/live.m3u8?_upt=b5620d3a1736518083
-#EXTINF:-1 group-title="游戏" tvg-id="null" tvg-name="null" tvg-logo="https://epg.iill.top/logo/哔哩哔哩.png" t-time="744" v-w="0" v-h="0", B站热门赛事
+#EXTINF:-1 group-title="游戏" tvg-id="null" tvg-name="null" tvg-logo="https://epg.iill.top/logo/哔哩哔哩.png" t-time="1655" v-w="0" v-h="0", B站热门赛事
 http://dns.yiandrive.com:15907/bilibili/10
-#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="441" v-w="0" v-h="0", 强森电影
+#EXTINF:-1 group-title="卫视台" tvg-id="null" tvg-name="厦门卫视" tvg-logo="https://live.fanmingming.cn/tv/厦门卫视.png" t-time="119" v-w="0" v-h="0", 厦门卫视
+http://220.164.192.48:50085/tsfile/live/1004_1.m3u8
+#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="499" v-w="0" v-h="0", 强森电影
 http://1.94.31.214:35455/huya/21059581
-#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/电视剧.png" t-time="497" v-w="0" v-h="0", 西游记
+#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/电视剧.png" t-time="168" v-w="0" v-h="0", 西游记
 http://1.94.31.214:35455/huya/26355861
-#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="916" v-w="0" v-h="0", 重庆卫视
+#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="543" v-w="0" v-h="0", 重庆卫视
 http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202501112305/app_2/_definst_/ls_2.stream/chunklist.m3u8
-#EXTINF:-1 group-title="卫视台" tvg-id="江西卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/江西卫视.png" t-time="1405" v-w="0" v-h="0", 江西卫视
-https://yun-live.jxtvcn.com.cn/live-jxtv/tv_jxtv1.m3u8?source=pc&t=173661156526305&token=5efaf49632e500fd1e31a5285d1450b9
-#EXTINF:-1 group-title="卫视台" tvg-id="青海卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/青海卫视.png" t-time="60" v-w="0" v-h="0", 青海卫视
-http://stream.qhbtv.com/qhws/sd/live.m3u8?_upt=3da499b91736608121
-#EXTINF:-1 group-title="地方台" tvg-id="湖南娱乐频道" tvg-name="null" tvg-logo="http://tv.haoqu99.com/d/file/2015/0417/20150417125630263.jpg" t-time="995" v-w="0" v-h="0", 湖南娱乐频道
-http://phoneqq.qing.mgtv.com/nn_live/nn_x64/dWlwPTEwMy4zOS4yMjYuMTAwJnFpZD0mY2RuZXhfaWQ9cXFfcGhvbmVfbGl2ZSZzPWQ1NzViODU3YWM2YmUyZjgxNGNmY2VjNGViNWE3MWM4JnVpZD0mdXVpZD00MmRmODE0MDEyOGQ2ZTY0OTFkZTYzYWRiYTliOTk3My02NzI3ZTI2NCZ2PTImYXM9MCZlcz0xNzM2NzA1NzQ5/HNYLMPP360.m3u8
 #EXTINF:-1 group-title="卫视台" tvg-id="青海卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/青海卫视.png" t-time="49" v-w="0" v-h="0", 青海卫视
+http://stream.qhbtv.com/qhws/sd/live.m3u8?_upt=3da499b91736608121
+#EXTINF:-1 group-title="卫视台" tvg-id="青海卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/青海卫视.png" t-time="38" v-w="0" v-h="0", 青海卫视
 http://stream.qhbtv.com/qhws/sd/live.m3u8?_upt=318990531736697612
-#EXTINF:-1 group-title="卫视台" tvg-id="青海卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/青海卫视.png" t-time="46" v-w="0" v-h="0", 青海卫视
+#EXTINF:-1 group-title="卫视台" tvg-id="青海卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/青海卫视.png" t-time="40" v-w="0" v-h="0", 青海卫视
 http://stream.qhbtv.com/qhws/sd/live.m3u8?_upt=bb2fa1c51736786036
 #EXTINF:-1 group-title="央视台" tvg-id="CCTV2" tvg-name="CCTV2" tvg-logo="https://live.fanmingming.cn/tv/CCTV2.png" t-time="238" v-w="0" v-h="0", CCTV-2
 http://[2409:8087:1a01:df::406f]:80/wh7f454c46tw1241164675_1575082505/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226540/index.m3u8?icpid=88888888&RTS=1713968070&from=4&hms_devid=692&prioritypopid=4&online=1713968070&vqe=3
