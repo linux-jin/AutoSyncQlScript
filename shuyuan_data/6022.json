@@ -1,0 +1,58 @@
+[
+  {
+    "bookSourceComment": "//2025.3.1 ◎夜泽川◎",
+    "bookSourceGroup": "网络,自制",
+    "bookSourceName": "好文书屋",
+    "bookSourceType": 0,
+    "bookSourceUrl": "http://hotxww.com/",
+    "customOrder": 102,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "[{\"title\":\"玄幻魔法\",\"url\":\"/sort/xuanhuan/{{page}}/\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.4}},{\"title\":\"武侠修真\",\"url\":\"/sort/wuxia/{{page}}/\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.4}},{\"title\":\"都市言情\",\"url\":\"/sort/dushi/{{page}}/\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.4}},{\"title\":\"历史军事\",\"url\":\"/sort/lishi/{{page}}/\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.4}},{\"title\":\"科幻灵异\",\"url\":\"/sort/kehuan/{{page}}/\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.4}},{\"title\":\"游戏竞技\",\"url\":\"/sort/youxi/{{page}}/\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.4}},{\"title\":\"女生耽美\",\"url\":\"/sort/nvsheng/{{page}}/\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.4}},{\"title\":\"其他类型\",\"url\":\"/sort/qita/{{page}}/\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.4}}]",
+    "header": "{\"User-Agent\": \"Mozilla/5.0 (Linux; Android 9) Mobile Safari/537.36\"}",
+    "lastUpdateTime": "1740876655698",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "@get:{a}",
+      "coverUrl": "@get:{i}",
+      "init": "@put:{n:\"[property$=book_name]@content\",\na:\"[property$=author]@content\",\nt:\"[property~=category|status]@content\",\nl:\"[property$=lastest_chapter_name]@content\",\ni:\"[property$=image]@content\",\no:\"#bookintro@html\",\ng:\"[property$=update_time]@content\"\n}",
+      "intro": "@get:{o}",
+      "kind": "@get:{t}",
+      "lastChapter": "@get:{l}◎@get:{g}",
+      "name": "@get:{n}",
+      "tocUrl": ""
+    },
+    "ruleContent": {
+      "content": "#TextContent@html##本站采用Cookie技术.*|\\(本章完\\)|.*CTRL\\+D键保存.*",
+      "nextContentUrl": "#next_url@href||text.下一页@href"
+    },
+    "ruleExplore": {
+      "author": ".book_other@span.0@text",
+      "bookList": "#sitebox > dl",
+      "bookUrl": "a.0@href",
+      "coverUrl": "img@data-original",
+      "intro": ".book_des@text",
+      "kind": ".book_other@span.1@text",
+      "name": "h3 a@text",
+      "wordCount": "span.-1@text"
+    },
+    "ruleSearch": {
+      "author": ".book_other@span.0@text",
+      "bookList": "#nr",
+      "bookUrl": "a.0@href",
+      "coverUrl": "img@data-original",
+      "intro": ".book_des@text",
+      "kind": ".book_other@span.1@text",
+      "name": "h3 a@text",
+      "wordCount": "span.-1@text"
+    },
+    "ruleToc": {
+      "chapterList": "#chapterList a",
+      "chapterName": "text",
+      "chapterUrl": "href"
+    },
+    "searchUrl": "{{cookie.removeCookie(source.getKey())}}/search/,{\n  \"body\": \"searchkey={{key}}\",\n  \"method\": \"POST\"\n}",
+    "weight": 0
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "bookSourceComment": "无法搜索，只能用发现。\nby天天的鸟蛋蛋 2025/3/3",
+    "bookSourceGroup": "发现源",
+    "bookSourceName": "386小说",
+    "bookSourceType": 0,
+    "bookSourceUrl": "http://m.xs386.com",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "[\n  {\n    \"title\":\"都市言情\",\n    \"url\":\"/class/1_{{page}}/\",\n    \"style\":{\n      \"layout_flexGrow\":1,\n      \"layout_flexBasisPercent\":0.4\n    }\n  },\n  {\n    \"title\":\"历史军事\",\n    \"url\":\"/class/2_{{page}}/\",\n    \"style\":{\n      \"layout_flexGrow\":1,\n      \"layout_flexBasisPercent\":0.4\n    }\n  },\n  {\n    \"title\":\"玄幻奇幻\",\n    \"url\":\"/class/3_{{page}}/\",\n    \"style\":{\n      \"layout_flexGrow\":1,\n      \"layout_flexBasisPercent\":0.4\n    }\n  },\n  {\n    \"title\":\"武侠修真\",\n    \"url\":\"/class/4_{{page}}/\",\n    \"style\":{\n      \"layout_flexGrow\":1,\n      \"layout_flexBasisPercent\":0.4\n    }\n  },\n  {\n    \"title\":\"女生纯爱\",\n    \"url\":\"/class/11_{{page}}/\",\n    \"style\":{\n      \"layout_flexGrow\":1,\n      \"layout_flexBasisPercent\":0.4\n    }\n  },\n  {\n    \"title\":\"科幻网游\",\n    \"url\":\"/class/7_{{page}}/\",\n    \"style\":{\n      \"layout_flexGrow\":1,\n      \"layout_flexBasisPercent\":0.4\n    }\n  },\n  {\n    \"title\":\"悬疑灵异\",\n    \"url\":\"/class/9_{{page}}/\",\n    \"style\":{\n      \"layout_flexGrow\":1,\n      \"layout_flexBasisPercent\":0.4\n    }\n  }\n]",
+    "lastUpdateTime": "1741019344177",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "ul:nth-child(1) > li:nth-child(3)@text",
+      "coverUrl": "img@src",
+      "intro": ".jianjie@text",
+      "kind": "ul:nth-child(1) > li:nth-child(2)@text&&ul:nth-child(1) > li:nth-child(4)@text&&##.*：",
+      "lastChapter": "ul:nth-child(1) a@text",
+      "name": "ul:nth-child(1) > li:nth-child(1)@text",
+      "tocUrl": "text.查看全部章节@href"
+    },
+    "ruleContent": {
+      "content": "#nr@html",
+      "nextContentUrl": "text.下一@href"
+    },
+    "ruleExplore": {
+      "author": "a.2@text",
+      "bookList": "ul@li",
+      "bookUrl": "a.1@href",
+      "kind": "a.0@text##\\[|\\]",
+      "name": "a.1@text"
+    },
+    "ruleSearch": [],
+    "ruleToc": {
+      "chapterList": "li:nth-child(n+1)>a!-1",
+      "chapterName": "text",
+      "chapterUrl": "href",
+      "nextTocUrl": "span:nth-child(2)@text\n@js:\nid=baseUrl.match(/https\\:\\/\\/m\\.xs386\\.com\\/(\\d+)\\_1/)[1];\nvar resultStr = result && result.length > 0 ? result[0] : \"\";\nvar match = resultStr.match(/\\d+\\/(\\d+)/);\nvar n = match && match[1] ? parseInt(match[1], 10) : 1; \nvar list = [];\nfor (var i = 1; i <= n; i++) {\n    list.push(\"https://m.xs386.com/\"+id+\"_\"+ i+\"/\" ); \n}\nlist;"
+    },
+    "weight": 0
+  }
+]
