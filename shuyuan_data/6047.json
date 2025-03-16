@@ -1,0 +1,62 @@
+[
+  {
+    "bookSourceComment": "//by天天的鸟蛋蛋\n//by等等补全发现。",
+    "bookSourceGroup": "",
+    "bookSourceName": "📖 我爱读者",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.52dzxy.com/",
+    "bookUrlPattern": "",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "百科知识::https://www.52dzxy.com/bkzs/all.html\n父母必读::/fmbd/all.html\n新民周刊::/xmzk/all.html\n第一财经::/dycj/all.html\n南风窗::/nfc/all.html\n环球人物::/hqrw/all.html\n轻兵器::/qbq/all.html\n知识就是力量::/zsjsll/all.html\n中小学心理健康教育::/zxxxljkjy/all.html\n中国经济周刊::/zgjjzk/all.html\n证券市场周刊::/zqsczk/all.html\n股市动态分析::/gsdtfx/all.html\n财经::/caijing/all.html\n婚姻与家庭::/hyyjtxqdb/all.html\n南方人物周刊::/nfrwzk/all.html\n中国新闻周刊::/zgxwzk/all.html\n看世界::/ksj/all.html\n阅读时代::/ydsd/all.html\n格言校园版::/gyxyb/all.html\n海外文摘::/hwwz/all.html\n思维与智慧::/swyzhsby/all.html\n青年文摘::/qnwz/all.html\n今日文摘::/jrwz/all.html",
+    "header": "",
+    "lastUpdateTime": "1742097464252",
+    "loginUrl": "",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "",
+      "canReName": "1",
+      "coverUrl": "img@src",
+      "init": "<js>\na=java.getString(\"text.更多@href\")\njava.log(a)\nresult</js>",
+      "intro": "",
+      "kind": "",
+      "lastChapter": "",
+      "name": "h1@text"
+    },
+    "ruleContent": {
+      "content": ".article-title@text&&.author@html&&.article-content@html##我爱读者校园网",
+      "imageStyle": "FULL",
+      "nextContentUrl": ""
+    },
+    "ruleExplore": {
+      "bookList": ".magazine-grid@.magazine-item@a",
+      "bookUrl": "href",
+      "coverUrl": "",
+      "intro": "",
+      "kind": "",
+      "lastChapter": "",
+      "name": "text"
+    },
+    "ruleSearch": {
+      "bookList": "",
+      "bookUrl": "",
+      "coverUrl": "",
+      "intro": "",
+      "kind": "",
+      "lastChapter": "",
+      "name": ""
+    },
+    "ruleToc": {
+      "chapterList": "<js>var JsDom = Packages.org.jsoup.Jsoup;\nvar Document = Packages.org.jsoup.nodes.Document;\nvar Element = Packages.org.jsoup.nodes.Element;\n\n\nvar document = JsDom.parse(src);\n\nvar result = [];\n\nvar sections = document.select(\".catalog-container > .catalog-section\");\nsections.forEach(function(section) {\n    var vol = section.select(\".catalog-section-title\").text();\n    var articles = section.select(\".article-list > .article-item > .article-title > a\");\n    articles.forEach(function(article) {\n        var url = article.attr(\"href\");\n        var text = article.text();\n        result.push({\n            \"url\": url,\n            \"text\": text,\n            \"vol\": vol\n        });\n    });\n});\n\nresult;\n</js>",
+      "chapterName": "text",
+      "chapterUrl": "url",
+      "isVolume": "",
+      "nextTocUrl": "",
+      "updateTime": "vol"
+    },
+    "searchUrl": "",
+    "weight": 0
+  }
+]
