@@ -1,0 +1,58 @@
+[
+  {
+    "bookSourceComment": "",
+    "bookSourceGroup": "",
+    "bookSourceName": "过期杂志",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.52dzxy.com/",
+    "bookUrlPattern": "",
+    "customOrder": -99973,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "exploreUrl": "百科知识::https://www.52dzxy.com/bkzs/all.html\n父母必读::https://www.52dzxy.com/fmbd/all.html\n新民周刊::https://www.52dzxy.com/xmzk/all.html\n第一财经::https://www.52dzxy.com/dycj/all.html\n南风窗::https://www.52dzxy.com/nfc/all.html\n环球人物::https://www.52dzxy.com/hqrw/all.html\n轻兵器::https://www.52dzxy.com/qbq/all.html\n知识就是力量::https://www.52dzxy.com/zsjsll/all.html\n中小学心理健康教育::https://www.52dzxy.com/zxxxljkjy/all.html\n中国经济周刊::https://www.52dzxy.com/zgjjzk/all.html\n证券市场周刊::https://www.52dzxy.com/zqsczk/all.html\n股市状态分析::https://www.52dzxy.com/gsdtfx/all.html\n财经::https://www.52dzxy.com/caijing/all.html\n婚姻与家庭·性情读本::https://www.52dzxy.com/hyyjtxqdb/all.html\n南方人物周刊::https://www.52dzxy.com/nfrwzk/all.html\n中国新闻周刊::https://www.52dzxy.com/zgxwzk/all.html\n看世界::https://www.52dzxy.com/ksj/all.html\n阅读时代::https://www.52dzxy.com/ydsd/all.html\n格言·校园版::https://www.52dzxy.com/gyxyb/all.html\n海外文摘::https://www.52dzxy.com/hwwz/all.html\n思维与智慧·上半月::https://www.52dzxy.com/swyzhsby/all.html\n青年文摘::https://www.52dzxy.com/qnwz/all.html\n今日文摘::https://www.52dzxy.com/jrwz/all.html",
+    "header": "{\"User-Agent\": \"Mozilla/5.0 (Linux; Android 9; MIX 2 Build/PKQ1.190118.001; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/80.0.3987.99 Mobile Safari/537.36\"}",
+    "lastUpdateTime": "1742502572404",
+    "loginUrl": "",
+    "respondTime": 835,
+    "ruleBookInfo": {
+      "author": "",
+      "coverUrl": ".sidebar@img@src",
+      "intro": "",
+      "kind": "",
+      "lastChapter": "",
+      "name": ""
+    },
+    "ruleContent": {
+      "content": "tag.p@html##我爱读者校园网",
+      "nextContentUrl": ""
+    },
+    "ruleExplore": {
+      "bookList": ".magazine-grid .magazine-item",
+      "bookUrl": "a@href",
+      "coverUrl": "",
+      "intro": "",
+      "kind": "",
+      "lastChapter": "",
+      "name": "a@text"
+    },
+    "ruleSearch": {
+      "bookList": ".magazine-grid .magazine-item",
+      "bookUrl": "a@href",
+      "coverUrl": "",
+      "intro": "",
+      "kind": "",
+      "lastChapter": "",
+      "name": "a@text##更多..."
+    },
+    "ruleToc": {
+      "chapterList": ".catalog-section-title,.article-title a||.maglistbox dt,.maglistbox dl dd a",
+      "chapterName": "text",
+      "chapterUrl": "href",
+      "isVolume": ".catalog-section-title@text||span@text",
+      "nextTocUrl": ""
+    },
+    "searchUrl": "#",
+    "weight": 0
+  }
+]

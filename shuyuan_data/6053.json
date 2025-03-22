@@ -1,0 +1,66 @@
+[
+  {
+    "bookSourceComment": "",
+    "bookSourceGroup": "-自制,✨极速",
+    "bookSourceName": "齐鲁文学(修复正文下一页)",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.qiluwx.com#测试",
+    "bookUrlPattern": "",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": false,
+    "exploreUrl": "",
+    "header": "{\n\t\"x-requested-with\": \"XMLHttpRequest\",\n\t\"User-Agent\": \"Mozilla/5.0 (Linux; Android 10; SK) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Mobile Safari/537.36\"\n}",
+    "lastUpdateTime": "1742533907861",
+    "loginUrl": "",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "[property$=og:novel:author]@content",
+      "coverUrl": "[property$=og:image]@content",
+      "downloadUrls": ".addbookcase@href",
+      "init": "",
+      "intro": "[property$=og:description]@content",
+      "kind": "[property$=og:novel:category]@content&&[property$=og:novel:status]@content&&[property$=og:novel:update_time]@content",
+      "lastChapter": "[property$=og:novel:latest_chapter_name]@content",
+      "name": "[property$=og:title]@content",
+      "tocUrl": "[property$=og:url]@content@js:result.replace(\"_\",\"/\")",
+      "wordCount": ".visible-xs.1@text##字数："
+    },
+    "ruleContent": {
+      "content": "#booktxt@html##<script[^>]*>.*?</script>",
+      "imageStyle": "",
+      "nextContentUrl": "<js>\n(function(){\n    // 使用正则检测分页标签\n    const hasNextLink = /<a\\s+rel=\\\"next\\\"\\s+class=\\\"next\\\"[^>]*>下—页<\\/a>/i.test(result);\n    if (!hasNextLink) return '';\n    \n    try {\n        // 动态生成分页URL（适配数字型URL）\n        let url = baseUrl;\n        const pageMatch = url.match(/(\\d+)(?:_(\\d+))?\\.html$/);\n        if (!pageMatch) return '';\n        \n        const [_, baseId, currentPage] = pageMatch;\n        const pageNum = currentPage ? parseInt(currentPage) : 1;\n        \n        // 安全限制（最大3页）\n        if (pageNum > 2) return ''; // 第3页后停止\n        \n        // 生成新URL（如 /123_2.html → /123_3.html）\n        return url.replace(/(\\d+)(?:_(\\d+))?\\.html$/, `${baseId}_${pageNum + 1}.html`);\n    } catch(e) {\n        return '';\n    }\n})()\n</js>",
+      "replaceRegex": "##(请记住.*?域名|最新章节！|请收藏本站)"
+    },
+    "ruleExplore": {
+      "author": "",
+      "bookList": "",
+      "bookUrl": "",
+      "intro": "",
+      "kind": "",
+      "lastChapter": "",
+      "name": ""
+    },
+    "ruleSearch": {
+      "author": ".btm@a@title",
+      "bookList": "#hotcontent@.item",
+      "bookUrl": "a@href@js:try{var r=String(result);r.charAt(0)==='/'?r:'/'+r}catch(e){'/'}",
+      "checkKeyWord": "副本需要我这样的人才",
+      "coverUrl": ".lazy@src",
+      "intro": "dl@dd@text",
+      "kind": ".blue@text",
+      "lastChapter": "",
+      "name": "dt@a@text",
+      "wordCount": ".orange@text"
+    },
+    "ruleToc": {
+      "chapterList": "#content_1@a",
+      "chapterName": "tag.a@text",
+      "chapterUrl": "tag.a@href@js:try{var u=String(result);u.indexOf('/')===0?u:'/'+u}catch(e){'/'}",
+      "nextTocUrl": "text.下一页@href@js:try{var p=String(result);p.substring(0,1)==='/'?p:'/'+p}catch(e){''}"
+    },
+    "searchUrl": "{{cookie.removeCookie(source.getKey())}}\nhttps://www.qiluwx.com/search/,{\n  \"body\": \"keyword={{key}}\",\n  \"method\": \"POST\"\n}",
+    "weight": 0
+  }
+]

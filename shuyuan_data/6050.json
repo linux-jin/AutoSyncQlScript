@@ -1,0 +1,59 @@
+[
+  {
+    "bookSourceComment": "",
+    "bookSourceGroup": "",
+    "bookSourceName": "下片小说",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://book.xiepp.cc",
+    "bookUrlPattern": "https://book.xiepp.cc/xs/\\d+/",
+    "customOrder": -99973,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "exploreUrl": "全部::/sort/{{page}}/\n玄幻::/sort/1/{{page}}/\n武侠::/sort/2/{{page}}/\n都市::/sort/3/{{page}}/\n历史::/sort/4/{{page}}/\n穿越::/sort/5/{{page}}/\n游戏::/sort/6/{{page}}/\n科幻::/sort/7/{{page}}/\n同人::/sort/8/{{page}}/\n社会::/sort/9/{{page}}/\n综合::/sort/10/{{page}}/\n女生::/sort/11/{{page}}/",
+    "header": "{\"User-Agent\": \"Mozilla/5.0 (Linux; Android 9; MIX 2 Build/PKQ1.190118.001; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/80.0.3987.99 Mobile Safari/537.36\"}",
+    "lastUpdateTime": "1742501722531",
+    "respondTime": 15560,
+    "ruleBookInfo": {
+      "author": ".novel_info_title@i@a@text",
+      "coverUrl": ".novel_info_main@img@src",
+      "init": "",
+      "intro": ".intro@text",
+      "kind": "p@span.0@text",
+      "lastChapter": ".flex.to100@a@text",
+      "name": ".novel_info_title@h1dtext"
+    },
+    "ruleContent": {
+      "content": "#article@html",
+      "nextContentUrl": "#next_url@href"
+    },
+    "ruleExplore": {
+      "author": ".li_bottom@a@text",
+      "bookList": ".flex li",
+      "bookUrl": ".w100@a.0@href",
+      "coverUrl": ".lazy@data-original",
+      "intro": ".indent@text",
+      "kind": ".li_bottom@em.1@text",
+      "name": "h2@text"
+    },
+    "ruleSearch": {
+      "author": "p.0@text##\\s.*",
+      "bookList": ".flex li",
+      "bookUrl": ".img_span@a@href",
+      "checkKeyWord": "",
+      "coverUrl": ".img_span@img@data-original",
+      "intro": "p.1@text",
+      "kind": ".img_span@text",
+      "lastChapter": "p.2@text",
+      "name": "h3@text",
+      "wordCount": ""
+    },
+    "ruleToc": {
+      "chapterList": "#ul_all_chapters li a",
+      "chapterName": "text",
+      "chapterUrl": "href"
+    },
+    "searchUrl": "/search/,{\n'method': 'POST',\n'body': 'searchkey={{key}}&searchtype=all'\n}",
+    "weight": 0
+  }
+]
