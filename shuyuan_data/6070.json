@@ -1,0 +1,64 @@
+[
+  {
+    "bookSourceComment": "",
+    "bookSourceGroup": "",
+    "bookSourceName": "引力圈【只能搜索作者】",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://app.unifans.io/feed",
+    "bookUrlPattern": ".*/getCollectionDetail.*collectionId=.*",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "exploreUrl": "21点牌的合集::https://api.unifans.io/common/getCollections?domainName=21dianpai&_t={{Date.now()}}",
+    "lastUpdateTime": "1742832107305",
+    "loginUi": "\n\n[\n    {\n        name: \"邮箱\",\n        type: \"text\"\n    },\n    {\n        name: \"密码\",\n        type: \"password\"\n    }\n]",
+    "loginUrl": "<js>\nfunction login(){\n\temail = source.getLoginInfoMap().get(\"邮箱\");\n\tpwd = source.getLoginInfoMap().get(\"密码\");\n\turl = \"https://api.unifans.io/account/login\";\n\tbody = {\n          \"boundMailbox\": String(email),\n          \"password\": String(pwd)\n         }\n\tpost = {\n\t\t\"method\":\"POST\",\n\t\t\"body\":JSON.stringify(body)\n\t\t   }\n\turl = url+\",\"+JSON.stringify(post);\n\ttoken = JSON.parse(java.ajax(url)).data.token;\n\tauthorization = \"hgq \"+token;\n authorization = {\n \t\"authorization\":String(authorization)\n \t}\t; \n \tsource.putLoginHeader(JSON.stringify(authorization));\n\t}\n</js>",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "$.data.collection.nickName",
+      "canReName": "",
+      "coverUrl": "$.data.collection.picture",
+      "init": "<js>\nif(!/&_t=/.test(baseUrl)){\nresult = \tjava.ajax(baseUrl+\"&_t={{Date.now()}}\")\n\t}\nresult\n</js>",
+      "intro": "<js>\nif(/getPersonalInfo/.test(baseUrl)){\n\tresult =java.getString(\"$.data.description\")+`\\n----------\\n{{$.data.homeName}}的合集::https://api.unifans.io/common/getCollections?domainName={{$.data.domainName}}&_t={\\{Date.now()}}`\n\t}else{\n\t\tresult = java.getString(\"$.data.collection.comment\")\n\t\t}\n</js>",
+      "kind": "",
+      "lastChapter": "",
+      "name": "$.data.collection.name",
+      "tocUrl": "<js>\nif(/getPersonalInfo/.test(baseUrl)){\n\tresult = \"https://api.unifans.io/common/getCollections?domainName={{$.data.domainName}}&_t={{Date.now()}}\"\n\t}else if(/getCollectionDetail/.test(baseUrl)){\n\t\tresult = \"https://api.unifans.io/creator/getPostsByCollection?collectionId={{$.data.collection._id}}&skip=0&limit=500&order=0&_t={{Date.now()}}\"\n\t\t}\n</js>"
+    },
+    "ruleContent": {
+      "content": "<js>\nif(/data:postId/.test(baseUrl)){\npostid = \tjava.base64Decode(baseUrl.match(/base64,(.*?),/)[1]);\n\tresult = JSON.parse(book.customVariable)[postid];\n\t}else if(/getCollectionDetail/.test(baseUrl)){\n\t\tif(book.durChapterIndex === chapter.index){\n\t\t\turl = \"https://api.unifans.io/creator/getCollectionDetail?collectionId={{$.data.collection._id}}&_t=\"+Date.now();\n\t\ttitle = \"{{$.data.collection.name}}\";\n\t\turl = \"legado://import/addToBookshelf?src=\"+encodeURIComponent(url);\n\t\tjava.log(url)\n\t\tscript = `data:text/html;charset=utf-8,\n\t\t<html>\n\t\t<title>《${title}》加入书架</title>\n\t\t<p style=\"font-size:60px\"><img src=\"{{$.data.collection.picture}}\" style=\"max-width: 300px; max-height: 400px\">\n\t\t\n\t\t简介：${java.getString(\"$.data.collection.comment\")}</p>\n\t\t<p style=\"text-align: center;\"><a href=\"${url}\" style=\"font-size:50px;\">跳转加入书架</a></p>\n\t\t\n\t\t</html>\n\t\t<script>\n        window.onload = function () {\n            window.location.href = '${url}';\n        };\n    </script>`;\n\t\tjava.startBrowser(script,\"《\"+title+\"》\")\n\t\t\n\t\t}\n\t\nresult=\"❗️刷新本章节，跳转本书详情页\\n\"+'简介：'+java.getString(\"$.data.collection.comment\")+\"\\n\"+'<img src=\"{{$.data.collection.picture}}\">'\n\t\t}\n\tresult\n</js>\n\n##\\<img src\\=\"\"\\>",
+      "imageStyle": "FULL",
+      "replaceRegex": "##Powered by Froala Editor"
+    },
+    "ruleExplore": {
+      "author": "",
+      "bookList": "$.data.collections[*]",
+      "bookUrl": "https://api.unifans.io/creator/getCollectionDetail?collectionId={{$._id}}&_t={{Date.now()}}",
+      "coverUrl": "$.picture",
+      "intro": "$.previewText&&$.comment",
+      "kind": "",
+      "name": "$.name"
+    },
+    "ruleSearch": {
+      "author": "",
+      "bookList": "$.data.result[*]",
+      "bookUrl": "https://api.unifans.io/common/getPersonalInfo?domainName={{$.domainName}}&_t={{Date.now()}}",
+      "checkKeyWord": "https://api.unifans.io/creator/getCollectionDetail?collectionId=d3a821eb7794dc9416f67e00a2a78877&_t=1742562370747",
+      "coverUrl": "$.avatar",
+      "intro": "$.creatingDes",
+      "kind": "",
+      "name": "$.nickName"
+    },
+    "ruleToc": {
+      "chapterList": "-$.data.collections[*]||$.data.posts[*]\n<js>\nif(/getPostsByCollection/.test(baseUrl)){\nlist = result.toArray();\njson = {}\nfor(i in list){\n\ttext = String(java.getString(\"$.text\",list[i])).replace(/<\\/*span.*?>| style=\".*?\"/g,'');\n\timg ='<img src=\"'+ java.getString(\"$..address\",list[i])+'\">';\n\t\thtml = text+\"\\n\"+img;\n\t  postid = java.getString(\"$.postId\",list[i]);\n\t  json[postid] = html;\n\t}\n\tbook.putCustomVariable(JSON.stringify(json));\n\tresult = result==\"[]\"?`[{name:\"无目录\"}]`:result\n\t}else if(/getCollections/.test(baseUrl)){\n\t\tresult = result==\"[]\"?`[{name:\"无合集\"}]`:result\n\t\t}\nresult\n</js>\n$.[*]",
+      "chapterName": "$.name||$.title",
+      "chapterUrl": "<js>\nif(/getCollections/.test(baseUrl)){\n\tresult = \"https://api.unifans.io/creator/getCollectionDetail?collectionId={{$._id}}&_t={{Date.now()}}\";\n\t}else if(/getPostsByCollection/.test(baseUrl)){\n\ttext = String(java.getString(\"$.text\")).replace(/<\\/*span.*?>| style=\".*?\"/g,'');\n\timg ='<img src=\"'+ java.getString(\"$..address\")+'\">';\n\t\thtml = text+\"\\n\"+img;\n\t\tresult = `data:postId;base64,${java.base64Encode(\"{{$.postId}}\")},{\"type\":\"\"}`;\n\t\t//cache.put(result,text+\"\\n\"+img);\n\t\tresult\n\t\t}\n</js>",
+      "formatJs": "",
+      "isVip": "$.locked",
+      "updateTime": "💰{{$.sponsorScheme[0].fee}} 目录总数：{{$.postCount}}\n<js>\ntime=\"{{$.updateTime}}\"?java.timeFormat(\"{{$.updateTime}}000\"):\"\"\nresult=time+\" \"+result;\nresult = result.replace(/💰 |目录总数：$/g,'')\n.replace(/💰0(?![.\\d])/g,'');\n</js>"
+    },
+    "searchUrl": "https://api.unifans.io/common/searchNickDomainName,{\n\t'method':'POST',\n\t'body':'{\"search\":\"{{key}}\",\"searchType\":\"creator\",\"skip\":0,\"limit\":500}'\n\t}",
+    "weight": 0
+  }
+]
