@@ -1,0 +1,40 @@
+[
+  {
+    "ruleSearch": {
+      "checkKeyWord": "我的",
+      "bookList": ".item:nth-child(n+1)",
+      "name": "a:nth-child(2)@text",
+      "author": "span@text",
+      "intro": "dd@text",
+      "coverUrl": "img@src",
+      "bookUrl": "a:nth-child(2)@href"
+    },
+    "ruleBookInfo": {
+      "name": ".top > h1@text",
+      "author": "p:nth-child(1) > a@text",
+      "wordCount": "p:nth-child(6) > span@text",
+      "lastChapter": ".section-box:nth-child(2) li:nth-child(1) > a@text",
+      "intro": ".desc@text",
+      "coverUrl": "img@src"
+    },
+    "ruleToc": {
+      "chapterList": ".section-box:nth-child(4) li",
+      "chapterName": "a@text",
+      "chapterUrl": "a@href",
+      "nextTocUrl": ".index-container-btn:nth-child(3)@href"
+    },
+    "ruleContent": {
+      "content": "#content@text",
+      "title": ".title@text",
+      "nextContentUrl": ".m-bottom-opt > #next_url@href"
+    },
+    "ruleReview": [],
+    "ruleExplore": [],
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.wanglisong.com/",
+    "bookSourceName": "顶点文学",
+    "searchUrl": "https://www.sososhu.com/?q={{key}}&site=wanglisong&Submit=%E6%90%9C%E7%B4%A2",
+    "enabled": false,
+    "lastUpdateTime": "1743050629695"
+  }
+]
