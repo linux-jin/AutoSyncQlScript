@@ -246,61 +246,6 @@
     "weight": 60
   },
   {
-    "bookSourceComment": "//2024.4.14制作by:yolo",
-    "bookSourceGroup": "Yolo",
-    "bookSourceName": "无限小说",
-    "bookSourceType": 0,
-    "bookSourceUrl": "http://www.txt97.org",
-    "customOrder": 58,
-    "enabled": false,
-    "enabledCookieJar": false,
-    "enabledExplore": false,
-    "exploreUrl": "[{\"title\":\"首页\",\"url\":\"/\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":1}},{\"title\":\"武侠\",\"url\":\"/html/wuxiaxianxia/list_{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},{\"title\":\"言情\",\"url\":\"/html/yanqing/list_{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},{\"title\":\"玄幻\",\"url\":\"/html/xuanhuan/list_{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},{\"title\":\"都市\",\"url\":\"/html/dushi/list_{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},{\"title\":\"穿越\",\"url\":\"/html/chuanyue/list_{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},{\"title\":\"科幻\",\"url\":\"/html/kehuanxiaoshuo/list_{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},{\"title\":\"网游\",\"url\":\"/html/wangyou/list_{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},{\"title\":\"同人\",\"url\":\"/html/tongren/list_{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},{\"title\":\"历史\",\"url\":\"/html/lishi/list_{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},{\"title\":\"惊悚\",\"url\":\"/html/jingsong/list_{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},{\"title\":\"重生\",\"url\":\"/html/chongsheng/list_{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},{\"title\":\"耽美\",\"url\":\"/html/danmei/list_{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}}]",
-    "header": "",
-    "lastUpdateTime": "1742730005528",
-    "respondTime": 2691,
-    "ruleBookInfo": {
-      "author": "[property=\"og:novel:author\"]@content",
-      "init": "meta",
-      "intro": "[property=\"og:description\"]@content",
-      "kind": "[property=\"og:novel:category\"]@content",
-      "lastChapter": "[property=\"og:novel:lastest_chapter_name\"]@content",
-      "name": "[property=\"og:title\"]@content"
-    },
-    "ruleContent": {
-      "content": ".content@html",
-      "nextContentUrl": "text.下一页@href"
-    },
-    "ruleExplore": {
-      "author": ".li_bottom@a@text",
-      "bookList": ".flex li",
-      "bookUrl": "a@href",
-      "coverUrl": "img@src",
-      "intro": ".indent@text",
-      "kind": ".img_span@span@text",
-      "name": "h2@text",
-      "wordCount": ".orange@text"
-    },
-    "ruleSearch": {
-      "author": "p.0@html##<\\/i>(.+)<span##$1###",
-      "bookList": ".searchresult",
-      "bookUrl": "a@href",
-      "coverUrl": ".lazy@data-original",
-      "intro": ".searchresult_p@text",
-      "kind": ".img_span@span@text",
-      "lastChapter": "p.-1@text",
-      "name": "h3@text",
-      "wordCount": ".s_gray@html##\\>(.+)\\&n##$1###"
-    },
-    "ruleToc": {
-      "chapterList": "#ul_all_chapters li a",
-      "chapterName": "text",
-      "chapterUrl": "href"
-    },
-    "searchUrl": "{{cookie.removeCookie(source.getKey())}}/search07.html?searchkey={{key}}&searchtype=all",
-    "weight": 0
-  },
-  {
     "bookSourceComment": "┍　　　说明　　　作者：洛娅橙　　┒\n├────────────────┤\n│①书源默认优化正文加载，可能会导│\n│致下载书籍异常，在该登录界面点击│\n│启用下载即可。　　　　　　　　　│\n│②登录界面开启同步书架功能，在详│\n│情页下拉刷新两次或书架刷新，会自│\n│动同步至网站书架。　　　　　　　│\n│③支持屏蔽书籍为黑名单，之后在搜│\n│索和发现不再显示屏蔽后的书籍。误│\n│点时，可再次点击进行恢复。　　　│\n│④输出名单到日志需要在软件其它设│\n│置里开启记录日志功能。　　　　　│\n├────────────────┤\n│　　　　　　　　　　　　　　　　│\n│请使用阅读最新测试版导入该书源　│\n└────────────────┘\n┍　　　　书源作者：洛娅橙　　　　┒\n├───┬────────────┤\n│！免责│本书源只提供代码进行技术│\n│！声明│交流，请于２４小时后删除│\n├───┴────────────┤\n│可在书源登录界面进行登录　　　　│\n│书籍变量可用来进行交互，详情查看│\n│相应界面的变量说明　　　　　　　│\n└────────────────┘\n___________________________________________\n八叉发布页：https://8xsk.org\nip地址查看：https://iplark.com",
     "bookSourceGroup": "🙈,八叉",
     "bookSourceName": "🌈八叉书库",
