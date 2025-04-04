@@ -1,0 +1,36 @@
+[
+  {
+    "bookSourceComment": "なな酱ゃ帮忙正文图片解密\n情无羁帮忙解决了正文是图片和纯字的判断if else \n壬二酸于2025.4.1 ",
+    "bookSourceName": "国学汉籍",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.gxhj.com/",
+    "customOrder": 2,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "lastUpdateTime": "1743601394456",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "lastChapter": "class.lst8@tag.li.-1@text",
+      "name": "class.breadcrumb@tag.ul@tag.li.2@text"
+    },
+    "ruleContent": {
+      "content": "<js>\nif (src.match(/imlist/)){\nvar imlist = src.match(/var imlist=\"([^\"]+)\"/)[1];\nvar imgpath = src.match(/var imgpath=\"([^\"]+)\"/)[1];\n\nvar img = imlist.split(\",\")\n  .map(function(filename) {\n    return '<img src=\"' + imgpath + filename.trim() + '\">';\n  })\n  .join(\"\\n\");\n\nimg\n}else {\na=java.getString('class.mcon@tag.p.0@html')\n\t}\n</js>",
+      "nextContentUrl": ""
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "bookList": " class.lst6@tag.li",
+      "bookUrl": "tag.a@href",
+      "checkKeyWord": "學易記;九卷, 首一卷",
+      "name": "tag.a@text"
+    },
+    "ruleToc": {
+      "chapterList": "class.lst8@tag.li||class.lst9@tag.li",
+      "chapterName": "tag.a@text",
+      "chapterUrl": "tag.a@href\n\n"
+    },
+    "searchUrl": "/search/?keyword={{key}}",
+    "weight": 0
+  }
+]
