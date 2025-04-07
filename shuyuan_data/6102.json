@@ -1,0 +1,58 @@
+[
+  {
+    "bookSourceComment": "∥2024.11.27◎GEd520◎",
+    "bookSourceGroup": "写源",
+    "bookSourceName": "源社区出品-【🧾悠久小说】",
+    "bookSourceType": 0,
+    "bookSourceUrl": "http://wap.ujxsw.net/",
+    "bookUrlPattern": "http:\\/\\/wap\\.ujxsw\\.net\\/book\\/\\d+\\/",
+    "customOrder": 398,
+    "enabled": false,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "\n[{\"title\":\"全部🏷分类\",\"url\":\"\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":1}},\n{\"title\":\"玄幻奇幻\",\"url\":\"/xuanhuan/{{page}}/\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"仙侠修真\",\"url\":\"/wuxia/{{page}}/\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"都市青春\",\"url\":\"/dushi/{{page}}/\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"历史穿越\",\"url\":\"/lishi/{{page}}/\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"游戏动漫\",\"url\":\"/youxi/{{page}}/\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"科幻灵异\",\"url\":\"/kehuan/{{page}}/\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"女生言情\",\"url\":\"/yanqing/{{page}}/\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"全本完结\",\"url\":\"/full/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"排行榜🏷\",\"url\":\"\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":1}},\n{\"title\":\"点击榜\",\"url\":\"/top/allvisit_{{page}}/\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"收藏榜\",\"url\":\"/top/goodnum_{{page}}/\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"推荐榜\",\"url\":\"/top/allvote_{{page}}/\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"最新小说\",\"url\":\"/top/postdate_{{page}}/\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"最近更新\",\"url\":\"/top/lastupdate_{{page}}/\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"字数排行\",\"url\":\"/top/size_{{page}}/\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}}]",
+    "header": "{'User-Agent':'Mozilla/5.0 (Linux; Android 14; V2304A; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/123.0.6312.118 Mobile Safari/537.36',\n\"Referer\":\"http://wap.ujxsw.net/\"}",
+    "lastUpdateTime": "1744002858497",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "p.2@text",
+      "coverUrl": "img.0@src",
+      "kind": "p.3@a@text",
+      "lastChapter": "p.7@a@text",
+      "name": "h2@a@text",
+      "tocUrl": "text.章节目录@href",
+      "wordCount": "p.4@text##状态："
+    },
+    "ruleContent": {
+      "content": "#nr1@html",
+      "nextContentUrl": "text.下一页@href",
+      "replaceRegex": "##最新网址.*|第(.*?)章.*|.*免费小说.*|.*看书不迷路.*|.*方便阅读.*|.*免费下载.*|.*点击下一页.*"
+    },
+    "ruleExplore": {
+      "author": ".author@text",
+      "bookList": ".bookbox",
+      "bookUrl": "h4@a@href",
+      "coverUrl": "img@src",
+      "kind": ".intro_line@text##时间：",
+      "lastChapter": ".update@a@text",
+      "name": "h4@a@text"
+    },
+    "ruleSearch": {
+      "author": ".author@a@text",
+      "bookList": ".bookbox",
+      "bookUrl": "h4@a@href",
+      "coverUrl": "img@src",
+      "intro": "",
+      "lastChapter": ".intro_line@a@text",
+      "name": "h4@a@text",
+      "wordCount": ".cat@text##时间："
+    },
+    "ruleToc": {
+      "chapterList": "#chapterList@li",
+      "chapterName": "a@text",
+      "chapterUrl": "a@href"
+    },
+    "searchUrl": "/searchbooks.php,{\n \"body\": \"searchkey={{key}}&submit=\",\n \"method\": \"POST\"\n}",
+    "weight": 0
+  }
+]
