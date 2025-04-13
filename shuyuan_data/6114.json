@@ -1,0 +1,53 @@
+[
+  {
+    "bookSourceName": "牛颜小说网",
+    "bookSourceGroup": "📖 小说",
+    "bookSourceUrl": "https://www.niuyan123.link",
+    "loginUrl": "",
+    "enabled": true,
+    "enabledExplore": true,
+    "charset": "UTF-8",
+    "exploreUrl": "",
+    "ruleSearch": {
+      "title": "div.book-item h3@text",
+      "author": "div.book-item p.author@text",
+      "coverUrl": "div.book-item img@src",
+      "desc": "div.book-item p.desc@text",
+      "detailUrl": "div.book-item h3 a@href",
+      "method": "GET",
+      "bookList": "div.book-item",
+      "searchUrl": "/search/?keyword=${key}"
+    },
+    "ruleBookInfo": {
+      "title": "h1.book-title@text",
+      "author": "div.book-info p:contains(作者)@text##作者：",
+      "coverUrl": "div.book-img img@src",
+      "intro": "div.book-intro@text",
+      "lastChapter": "div.book-info p:contains(最新) a@text",
+      "updateTime": "div.book-info p:contains(更新)@text##更新：",
+      "status": "div.book-info p:contains(状态)@text##状态："
+    },
+    "ruleToc": {
+      "chapterList": "ul.chapter-list li",
+      "chapterName": "a@text",
+      "chapterUrl": "a@href",
+      "method": "GET",
+      "nextTocUrl": "a:contains(下一页)@href",
+      "preview": false,
+      "reverse": false
+    },
+    "ruleContent": {
+      "content": "div.content@html##广告",
+      "filter": [
+        "div.ads@remove",
+        "script@remove"
+      ],
+      "method": "GET",
+      "replaceRegex": "\\s*牛颜小说网\\s*"
+    },
+    "header": {
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+    },
+    "lastUpdateTime": "1744345137980"
+  }
+]

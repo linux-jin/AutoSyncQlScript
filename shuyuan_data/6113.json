@@ -1,0 +1,59 @@
+[
+  {
+    "bookSourceComment": "//By情无羁25.04.09，频繁访问会被禁止访问",
+    "bookSourceGroup": "",
+    "bookSourceName": "金刚小说",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://m.jgxs.org/",
+    "bookUrlPattern": "",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "exploreUrl": "@js:\nvar result = [];\njava.toast(\"🔥正在刷新列表,请稍等！\");\nvar push = (title, url, size) => result.push({\n    \"title\": title,\n    \"url\": url,\n    \"style\": {\n        \"layout_flexGrow\": 1,\n        \"layout_flexBasisPercent\": size\n    }\n});\nvar baseUrl = \"https://m.jgxs.org/shuku/\";\nvar tag = java.ajax(baseUrl);\nif (tag) {\n    var a = org.jsoup.Jsoup.parse(tag).select(\".box-wrap .cate-selector ul li a\");\n    push(\"🔥分类小说🔥\", null, 1);\n    for (var i in a) {\n        var title = a[i].text();\n        var url = a[i].attr(\"href\");\n        var size = 0.25;\n        title = String(title).replace(/\\s/g, \"\");\n        url = String(url).replace(/\\/1/,'/{{page}}');      \n        push(title, url, size);\n  }\n\n} else {\n  java.toast(\"🤔列表刷新失败！！！\");     \n} \nJSON.stringify(result);",
+    "header": "@js:\nJSON.stringify({\n\"accept-language\": \"zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7\",\n\"accept\": \"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9\",\n\"user-agent\": \"Mozilla/5.0 (Linux; Android 10; MI 8 Build/QKQ1.190828.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/83.0.4103.101 Mobile Safari/537.36\",\n\"cookie\": \"8bw_t=6;8bw_cdn=https%3A%2F%2F154.202.52.103%3A63456%2Fxcdn3%2F;8bw_ac=r8534;8bwlatest=5qhg;8bwhs=8EM7JmH5gVEUEtm;8bwr8534=5;pec=suhzcn-7dca7539;c8a=31f4e298\"\n})",
+    "lastUpdateTime": "1744337399627",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "@get:{a}",
+      "coverUrl": "@get:{c}",
+      "init": "@put:{n:\"[property$=book_name]@content\",\na:\"[property$=author]@content\",\nk:\"[property~=category|status|update_time]@content\",\nl:\"[property$=latest_chapter_name]@content\",\ni:\"[property$=description]@content\",\nc:\"[property$=image]@content\",\nt:\"text.目录@href\"}",
+      "intro": "@get:{i}",
+      "kind": "@get:{k}",
+      "lastChapter": "@get:{l}",
+      "name": "@get:{n}",
+      "tocUrl": "@get:{t}"
+    },
+    "ruleContent": {
+      "content": "@js:\nurl=\"https:\"+result.match(/initTxt\\(\"([^\"]+)\",\"[^\"]+\"\\)/)[1];\nr=String(java.ajax(url).match(/_txt_call\\(([\\s\\S]+\\})\\)/)[1]);\nvar r = eval('(' + r + ')');\n\t\t\t\tif(r.content!=null){\t\t\t\t\n      var e = r.replace;\n\t\t\t\tfor (var n in e) {\n\t\t\t\t\tvar i = new RegExp(e[n], \"ig\");\n\t\t\t\t\tr.content = r.content.replace(i, n)\n\t\t\t\t}\n\t\t\t\tresult=r.content\n\t\t\t\t\t}else{result=\"章节加载失败，或者内容正在手打中，请稍后访问~\"}"
+    },
+    "ruleExplore": {
+      "author": "p.1@text",
+      "bookList": ".list-item",
+      "bookUrl": "a.0@href",
+      "coverUrl": "img@data-lazy",
+      "intro": "",
+      "kind": "p.-1@ownText##\\/",
+      "lastChapter": "",
+      "name": "p.0@ownText"
+    },
+    "ruleSearch": {
+      "author": "a.1@text",
+      "bookList": ".search-card",
+      "bookUrl": "a.0@href",
+      "intro": ".sc-content@text",
+      "kind": "span.-1@text",
+      "lastChapter": "span.-2@text",
+      "name": "a.0@text",
+      "wordCount": ""
+    },
+    "ruleToc": {
+      "chapterList": ".chapter-list li a",
+      "chapterName": "text",
+      "chapterUrl": "href",
+      "nextTocUrl": "text.下页@href"
+    },
+    "searchUrl": "<js>\ncookie.removeCookie(source.key)\nurl=\"https://m.jgxs.org/search/\";\nc=`,{\"method\": \"post\",\"body\":\"keyword=${key}\"}`;\nurl=url+c\n</js>",
+    "weight": 0
+  }
+]
