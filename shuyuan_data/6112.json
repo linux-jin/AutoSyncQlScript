@@ -1,18 +1,18 @@
 [
   {
-    "bookSourceComment": "let banben=\"0.0.2\";",
+    "bookSourceComment": "let banben=\"0.0.3\";",
     "bookSourceGroup": "🎶,wyy",
     "bookSourceName": "🌈网易云音乐",
     "bookSourceType": 1,
     "bookSourceUrl": "https://网易云音乐.luoyacheng.ip-ddns.com",
     "concurrentRate": "5/1000",
-    "customOrder": 14,
+    "customOrder": 18,
     "enabled": true,
     "enabledCookieJar": true,
-    "enabledExplore": true,
+    "enabledExplore": false,
     "header": "@js:\n(()=>{\n\treturn gethd();\n})();",
     "jsLib": "s_c_ua = `'Microsoft Edge';v='131', 'Chromium';v='131', 'Not_A Brand';v='24'`;\ns_c_ua_m = '?1';\ns_c_ua_p =  `'Android'`;\ncache_c = 'max-age=0';\na_l = 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7';\n\nfunction gethd(url='',ck='') {\n\tlet u_a=this.java.getWebViewUA();\n\tlet headers = {\n\t\t  \t'User-Agent': u_a,\n\t\t  'sec-ch-ua': s_c_ua,\n    \t 'sec-ch-ua-mobile': s_c_ua_m,\n     \t'sec-ch-ua-platform': s_c_ua_p,\n     \t'cache-control': cache_c,\n     \t'accept-language': a_l\n    \t }\nif (ck!='') headers['cookie']=ck;\nif (url=='') return JSON.stringify(headers);\nelse return url + ',' + JSON.stringify({'headers':headers});\n};\n",
-    "lastUpdateTime": "1744277326368",
+    "lastUpdateTime": "1744922831035",
     "respondTime": 180000,
     "ruleBookInfo": {
       "coverUrl": ""
@@ -24,7 +24,7 @@
     "ruleSearch": {
       "author": "$.artist@js:result.replaceAll('\\n','/')",
       "bookList": "$.[*]",
-      "bookUrl": "$.url_id@js:\n`http:data:;base64,${java.base64Encode(result)},{'type':''}`",
+      "bookUrl": "$.url_id@js:\n`data:;base64,${java.base64Encode(result)},{'type':''}`",
       "checkKeyWord": "我记得",
       "coverUrl": "$.pic_id@js:\nlet url=source.get('picu'+result);\nif (url=='') {\nlet r=java.ajax(`https://music.cpp-prog.com/api.php,{\t\"method\": \"post\",\n\t\"body\": \"types=pic&id=${result}&source=netease\"\n}`)\nurl=java.getString('$.url',r);\nsource.put('picu'+result, url);\n}\nurl",
       "intro": "",
