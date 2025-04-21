@@ -22,7 +22,7 @@ https://raw.githubusercontent.com/shidahuilang/shuyuan/refs/heads/shuyuan/azyd.j
 ```
 https://raw.githubusercontent.com/shidahuilang/shuyuan/refs/heads/shuyuan/cxyd.json
 ```
-#### 🚩 🍅 番茄融合香色闺阁书源：看书、听书、漫画、短剧
+#### 🚩 🍅 番茄融合香色闺阁书源：看书、听书、漫画、短剧（正文页面站点登录即可）
 ```
 https://github.com/shidahuilang/shuyuan/blob/shuyuan/%E5%A4%A7%E7%81%B0%E7%8B%BC%E8%9E%8D%E5%90%882.0.xbs
 ```
