@@ -7937,7 +7937,7 @@ http://[2409:8087:7008:20::a]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/322
 http://[2409:8087:1a01:df::7005]/ottrrs.hl.chinamobile.com/PLTV/2/224/3221226439/2.m3u8
 #EXTINF:-1 group-title="卫视台" tvg-id="null" tvg-name="安多卫视" tvg-logo="https://live.fanmingming.cn/tv/安多卫视.png" t-time="" v-w="0" v-h="0", 安多卫视
 http://[2409:8087:1a01:df::7005]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225659/index.m3u8
-#EXTINF:-1 group-title="卫视台" tvg-id="null" tvg-name="厦门卫视" tvg-logo="https://live.fanmingming.cn/tv/厦门卫视.png" t-time="616" v-w="0" v-h="0", 厦门卫视
+#EXTINF:-1 group-title="卫视台" tvg-id="null" tvg-name="厦门卫视" tvg-logo="https://live.fanmingming.cn/tv/厦门卫视.png" t-time="643" v-w="0" v-h="0", 厦门卫视
 http://220.164.192.48:50085/tsfile/live/1004_1.m3u8
 #EXTINF:-1 group-title="卫视台" tvg-id="null" tvg-name="康巴卫视" tvg-logo="https://live.fanmingming.cn/tv/康巴卫视.png" t-time="" v-w="0" v-h="0", 康巴卫视
 http://[2409:8087:1a01:df::7005]/ottrrs.hl.chinamobile.com/PLTV/2/224/3221225660/2.m3u8
@@ -7969,7 +7969,7 @@ http://phonehw.qing.mgtv.com/nn_live/nn_x64/dWlwPTEwMy4zOS4yMjYuMTAwJnFpZD0mY2Ru
 http://phonetx.qing.mgtv.com/nn_live/nn_x64/dWlwPTEwMy4zOS4yMjYuMTAwJnFpZD0mY2RuZXhfaWQ9dHhfcGhvbmVfbGl2ZSZzPTUyNWE2MjU4NGVmMWI2OTMxZTM0YmQyNDVhYzIzY2IyJnVpZD0mdXVpZD1iNzgxODA3NGU4YmZiMGE0Y2NlYjI2Y2IxOGVkYjM4YS02NzI3ZTI2NCZ2PTImYXM9MCZlcz0xNzM2NjI1MzMw/CSXWMPP360.m3u8
 #EXTINF:-1 group-title="卫视台" tvg-id="浙江卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/浙江卫视.png" t-time="" v-w="0" v-h="0", 浙江卫视
 https://zhfivel02.cztv.com/channel01/720p.m3u8?auth_key=1736610786-f9e84be12d8b51a4cb49ec437609d96c-0-a76f1705501247fdaca3cd6641716045
-#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="385" v-w="0" v-h="0", 重庆卫视
+#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="298" v-w="0" v-h="0", 重庆卫视
 http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202501112305/app_2/_definst_/ls_2.stream/chunklist.m3u8
 #EXTINF:-1 group-title="卫视台" tvg-id="江西卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/江西卫视.png" t-time="" v-w="0" v-h="0", 江西卫视
 https://yun-live.jxtvcn.com.cn/live-jxtv/tv_jxtv1.m3u8?source=pc&t=173661156526305&token=5efaf49632e500fd1e31a5285d1450b9
@@ -7981,7 +7981,7 @@ http://stream.snrtv.com/sxbc-star-bilyMY.m3u8
 https://tv.vtibet.cn/live/h701F9MpxzPDyE.m3u8?secret=8ec974e455fa4db7d213d8a4fdbf77b6&time=67829718
 #EXTINF:-1 group-title="卫视台" tvg-id="海南卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/海南卫视.png" t-time="" v-w="0" v-h="0", 海南卫视
 https://live2.hnntv.cn/srs/tv/lywsgq.m3u8?_upt=33557bb71736615714
-#EXTINF:-1 group-title="卫视台" tvg-id="青海卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/青海卫视.png" t-time="37" v-w="0" v-h="0", 青海卫视
+#EXTINF:-1 group-title="卫视台" tvg-id="青海卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/青海卫视.png" t-time="36" v-w="0" v-h="0", 青海卫视
 http://stream.qhbtv.com/qhws/sd/live.m3u8?_upt=3da499b91736608121
 #EXTINF:-1 group-title="卫视台" tvg-id="北京卫视" tvg-name="北京卫视" tvg-logo="null" t-time="" v-w="0" v-h="0", 北京卫视
 http://[2409:8087:7008:20::4]/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221225796/1.m3u8
@@ -8059,7 +8059,7 @@ http://stream.snrtv.com/sxbc-star-aEGOPV.m3u8
 https://tv.vtibet.cn/live/h701F9MpxzPDyE.m3u8?secret=51fa468e2e51c8d97e8411c9476ce66c&time=6783e892
 #EXTINF:-1 group-title="卫视台" tvg-id="海南卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/海南卫视.png" t-time="" v-w="0" v-h="0", 海南卫视
 http://58.222.30.156/hlslive-tx-cdn.ysp.cctv.cn/ysp/2024055601.m3u8
-#EXTINF:-1 group-title="卫视台" tvg-id="青海卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/青海卫视.png" t-time="50" v-w="0" v-h="0", 青海卫视
+#EXTINF:-1 group-title="卫视台" tvg-id="青海卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/青海卫视.png" t-time="111" v-w="0" v-h="0", 青海卫视
 http://stream.qhbtv.com/qhws/sd/live.m3u8?_upt=318990531736697612
 #EXTINF:-1 group-title="央视台" tvg-id="null" tvg-name="兵器科技" tvg-logo="https://gitee.com/suxuang/epglogo/raw/master/cctv/CCTVbqkj.png" t-time="" v-w="0" v-h="0", CCTV-兵器科技
 http://[2409:8087:7008:20::c]:80/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226975/index.m3u8
@@ -8157,7 +8157,7 @@ http://phonetx.qing.mgtv.com/nn_live/nn_x64/dWlwPTEwMy4zOS4yMjYuMTAwJnFpZD0mY2Ru
 http://stream.snrtv.com/sxbc-star-mpquyQ.m3u8
 #EXTINF:-1 group-title="卫视台" tvg-id="西藏卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/西藏卫视.png" t-time="" v-w="0" v-h="0", 西藏卫视
 https://tv.vtibet.cn/live/h701F9MpxzPDyE.m3u8?secret=c54260281a759d6b93735b074f31077a&time=67853a1c
-#EXTINF:-1 group-title="卫视台" tvg-id="青海卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/青海卫视.png" t-time="135" v-w="0" v-h="0", 青海卫视
+#EXTINF:-1 group-title="卫视台" tvg-id="青海卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/青海卫视.png" t-time="44" v-w="0" v-h="0", 青海卫视
 http://stream.qhbtv.com/qhws/sd/live.m3u8?_upt=bb2fa1c51736786036
 #EXTINF:-1 group-title="4K" tvg-id="纯享4K" tvg-name="纯享4K" tvg-logo="https://epg.iill.top/logo/纯享4K.png" t-time="" v-w="0" v-h="0", 纯享·4K
 http://[2409:8087:5e00:24::2d]:6610/000000001000/1/1000000004000011651/index.m3u8?channel-id=ystenlive&Contentid=1000000004000011651&livemode=1&stbId=YanG-1989
