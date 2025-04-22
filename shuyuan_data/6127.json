@@ -1,0 +1,46 @@
+[
+  {
+    "bookSourceComment": "by阿鬼",
+    "bookSourceGroup": "[頻道所求]",
+    "bookSourceName": "格格党小說网[搜索暫時關閉]",
+    "bookSourceType": 0,
+    "bookSourceUrl": "http://www.ggds.cc/",
+    "bookUrlPattern": "http?://www.ggds.cc/xs/.+\\.html",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "exploreUrl": "✧✧✧✧✧✧常规分类✧✧✧✧✧✧\n玄幻修真::/1_{{page}}.html\n都市商战::/2_{{page}}.html\n历史军事::/3_{{page}}.html\n网游科幻::/4_{{page}}.html\n悬疑推理::/5_{{page}}.html\n穿越架空::/6_{{page}}.html\n古典言情::/7_{{page}}.html\n现代言情::/8_{{page}}.html\n衍生同人::/9_{{page}}.html\n综合其他::/10_{{page}}.html",
+    "header": "",
+    "lastUpdateTime": "1745158321670",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "@get:{a}",
+      "coverUrl": "@get:{i}",
+      "init": "@put:{n:\".bname@text\",\na:\".b21@h3[0]@text\",\nc:\".b21@h3[1]@text\",\nl:\".chapterlist[0]@li[0]@a@text\",\nd:\".b22@text\",\ni:\".binfo2_l@img@src\"}",
+      "intro": "@get:{d}##.*：",
+      "kind": "@get:{c}",
+      "lastChapter": "@get:{l}",
+      "name": "@get:{n}",
+      "wordCount": ""
+    },
+    "ruleContent": {
+      "content": "#ctxt@p[!-1]@html"
+    },
+    "ruleExplore": {
+      "author": "span@text##作者：",
+      "bookList": ".retui2 dd",
+      "bookUrl": "a@href",
+      "coverUrl": ".rt_left@img@src",
+      "intro": "p@text",
+      "name": "h3@text"
+    },
+    "ruleSearch": [],
+    "ruleToc": {
+      "chapterList": ".chapterlist[1]@li a",
+      "chapterName": "text",
+      "chapterUrl": "href##$##,{\"webView\": true}"
+    },
+    "weight": 0
+  }
+]
