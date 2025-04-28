@@ -1,0 +1,38 @@
+[
+  {
+    "bookSourceComment": "//2025.4.16 by.◎辞晨◎",
+    "bookSourceGroup": "写源",
+    "bookSourceName": "MANHUA18",
+    "bookSourceType": 2,
+    "bookSourceUrl": "https://manhwa18.cc/",
+    "customOrder": 34,
+    "enabled": false,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "@js:\nsort=[];\npush=(title,url,type1,type2)=>sort.push({\n\t\ttitle: title,\n\t\turl: url,\n\t\tstyle: {\n\t\t\t\tlayout_flexGrow: type1,\n\t\t\t\tlayout_flexBasisPercent: type2\n\t\t\t}\n\t});\npush(\"All Webtoons\",`https://manhwa18.cc/webtoons/{{page}}`,1,0.39)\npush(\"Manhwa Raw\",`https://manhwa18.cc/raw/{{page}}`, 1, 0.39);\npush(\"18+ Content\",`https://manhwa18.cc/webtoon-genre/adult/{{page}}`, 1, 0.39);\npush(\"Completed\",`https://manhwa18.cc/completed/{{page}}`, 1, 0.39);\n\n//java.log(JSON.stringify(sort))\nJSON.stringify(sort)",
+    "lastUpdateTime": "1745603462684",
+    "respondTime": 180000,
+    "ruleBookInfo": [],
+    "ruleContent": {
+      "content": "img@data-src\n<js>\nlet headers = JSON.stringify({\"headers\":{\"Referer\":baseUrl}});\nresult.split('\\n').map(x=>`<img src=\"${x},${headers}\">`).join('\\n');\n</js>"
+    },
+    "ruleExplore": {
+      "bookList": ""
+    },
+    "ruleSearch": {
+      "bookList": ".manga-lists@.bsx",
+      "bookUrl": "h3@a@href",
+      "coverUrl": "img@data-src",
+      "kind": "{{@@span.0@text}},{{@@.item-rate@span@text}},{{@@.chapter-item@span@text}}",
+      "name": "h3@a@text"
+    },
+    "ruleToc": {
+      "chapterList": "-#chapterlist@li",
+      "chapterName": "a@text",
+      "chapterUrl": "a@href",
+      "isVolume": "https://manhwa18.cc/api/check-bookmark?manga_id=1730"
+    },
+    "searchUrl": "/search?q={{key}}",
+    "weight": 0
+  }
+]
