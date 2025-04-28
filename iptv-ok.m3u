@@ -1011,27 +1011,27 @@ https://english-livebkali.cgtn.com/live/encgtn_0.m3u8
 http://p.ytelc.com/m3u8.html?id=http://cc-ynbit-wszhibo.ifengli.com:2000/live/shdfws-hd/2500.m3u8?innersid=6998114529464369318
 #EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="147" v-w="0" v-h="0", 重庆卫视
 http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202501082337/app_2/_definst_/ls_2.stream/chunklist.m3u8
-#EXTINF:-1 group-title="港澳台" tvg-id="澳视澳门" tvg-name="澳视澳门" tvg-logo="https://gitee.com/suxuang/epglogo/raw/master/gangaotai/Aoshi1.png" t-time="2760" v-w="0" v-h="0", 澳视澳门
+#EXTINF:-1 group-title="港澳台" tvg-id="澳视澳门" tvg-name="澳视澳门" tvg-logo="https://gitee.com/suxuang/epglogo/raw/master/gangaotai/Aoshi1.png" t-time="3044" v-w="0" v-h="0", 澳视澳门
 http://cdn.132.us.kg/live/asam/stream.m3u8
-#EXTINF:-1 group-title="港澳台" tvg-id="澳亚卫视" tvg-name="澳亚卫视" tvg-logo="https://gitee.com/suxuang/epglogo/raw/master/gangaotai/Aoya.png" t-time="451" v-w="0" v-h="0", 澳亚卫视
+#EXTINF:-1 group-title="港澳台" tvg-id="澳亚卫视" tvg-name="澳亚卫视" tvg-logo="https://gitee.com/suxuang/epglogo/raw/master/gangaotai/Aoya.png" t-time="601" v-w="0" v-h="0", 澳亚卫视
 http://cdn.132.us.kg/live/as/stream.m3u8
-#EXTINF:-1 group-title="港澳台" tvg-id="TVB翡翠台" tvg-name="翡翠台" tvg-logo="https://live.fanmingming.com/tv/翡翠台.png" t-time="447" v-w="0" v-h="0", TVB翡翠台 4K
+#EXTINF:-1 group-title="港澳台" tvg-id="TVB翡翠台" tvg-name="翡翠台" tvg-logo="https://live.fanmingming.com/tv/翡翠台.png" t-time="345" v-w="0" v-h="0", TVB翡翠台 4K
 http://cdn.132.us.kg/live/fct4k/stream.m3u8
-#EXTINF:-1 group-title="港澳台" tvg-id="TVBJ1" tvg-name="TVBJ1" tvg-logo="https://gitee.com/suxuang/logo/raw/master/logo/TVBJ1.png" t-time="1189" v-w="0" v-h="0", TVB J1
+#EXTINF:-1 group-title="港澳台" tvg-id="TVBJ1" tvg-name="TVBJ1" tvg-logo="https://gitee.com/suxuang/logo/raw/master/logo/TVBJ1.png" t-time="1984" v-w="0" v-h="0", TVB J1
 http://cdn3.132.us.kg/live/j1/stream.m3u8
-#EXTINF:-1 group-title="港澳台" tvg-id="TVBJ2" tvg-name="TVBJ2" tvg-logo="https://gitee.com/suxuang/TVlogo/raw/main/img/TVB3.png" t-time="731" v-w="0" v-h="0", TVB J2
+#EXTINF:-1 group-title="港澳台" tvg-id="TVBJ2" tvg-name="TVBJ2" tvg-logo="https://gitee.com/suxuang/TVlogo/raw/main/img/TVB3.png" t-time="345" v-w="0" v-h="0", TVB J2
 http://cdn.132.us.kg/live/tvbp/stream.m3u8
-#EXTINF:-1 group-title="港澳台" tvg-id="null" tvg-name="美亚电影" tvg-logo="null" t-time="1605" v-w="0" v-h="0", 美亚电影台
+#EXTINF:-1 group-title="港澳台" tvg-id="null" tvg-name="美亚电影" tvg-logo="null" t-time="1861" v-w="0" v-h="0", 美亚电影台
 http://php.jdshipin.com:8880/TVOD/iptv.php?id=meiya
-#EXTINF:-1 group-title="港澳台" tvg-id="null" tvg-name="HOY" tvg-logo="null" t-time="2302" v-w="0" v-h="0", HOY TV
+#EXTINF:-1 group-title="港澳台" tvg-id="null" tvg-name="HOY" tvg-logo="null" t-time="1198" v-w="0" v-h="0", HOY TV
 http://cdn.132.us.kg/live/hoy/stream.m3u8
-#EXTINF:-1 group-title="港澳台" tvg-id="null" tvg-name="null" tvg-logo="null" t-time="375" v-w="0" v-h="0", 凤凰中文
+#EXTINF:-1 group-title="港澳台" tvg-id="null" tvg-name="null" tvg-logo="null" t-time="353" v-w="0" v-h="0", 凤凰中文
 http://cdn.132.us.kg/live/fhzw/stream.m3u8
-#EXTINF:-1 group-title="港澳台" tvg-id="null" tvg-name="null" tvg-logo="null" t-time="332" v-w="0" v-h="0", 凤凰资讯
+#EXTINF:-1 group-title="港澳台" tvg-id="null" tvg-name="null" tvg-logo="null" t-time="395" v-w="0" v-h="0", 凤凰资讯
 http://cdn3.132.us.kg/live/fhzx/stream.m3u8
-#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="135" v-w="0" v-h="0", 重庆卫视
+#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="404" v-w="0" v-h="0", 重庆卫视
 http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202501092234/app_2/_definst_/ls_2.stream/chunklist.m3u8
-#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="251" v-w="0" v-h="0", 重庆卫视
+#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="107" v-w="0" v-h="0", 重庆卫视
 http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202501102359/app_2/_definst_/ls_2.stream/chunklist.m3u8
 #EXTINF:-1 group-title="卫视台" tvg-id="null" tvg-name="厦门卫视" tvg-logo="https://live.fanmingming.cn/tv/厦门卫视.png" t-time="319" v-w="0" v-h="0", 厦门卫视
 http://220.164.192.48:50085/tsfile/live/1004_1.m3u8
