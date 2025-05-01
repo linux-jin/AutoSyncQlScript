@@ -1,0 +1,52 @@
+[
+  {
+    "bookSourceComment": "//无名25.04.30\n//部分节点过不了CF",
+    "bookSourceGroup": "源社区,飞机",
+    "bookSourceName": "小說網85novel",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.85novel.com",
+    "concurrentRate": "2000",
+    "customOrder": 1,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "header": "{\n\"User-Agent\": \"Mozilla/5.0 (Linux; Android 14; 2312DRAABC) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Mobile Safari/537.36\"\n}",
+    "lastUpdateTime": "1746020098065",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "{{book.author}}",
+      "coverUrl": "{{book.coverUrl}}",
+      "intro": "{{book.intro}}",
+      "kind": "{{book.kind}}",
+      "lastChapter": "li.flex.items-center.0@a@text",
+      "name": "{{book.name}}",
+      "tocUrl": "",
+      "wordCount": ".text-base-700[-1]@span.0@text"
+    },
+    "ruleContent": {
+      "content": "div.flex.flex-col.gap-5.pb-12.relative@html@js:java.t2s(result)"
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "author": "span.0@text##✍ ##",
+      "bookList": "<js>\nif(result.match(/Just a moment.../)){\n\txb=(baseUrl)+\",\"+JSON.stringify({\n\t\t\"headers\":{\n\t\t\t\"User-Agent\": \"Mozilla/5.0 (Linux; Android 14; 2312DRAABC) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Mobile Safari/537.36\"\n}})\njava.startBrowserAwait(xb,\"验证\")\nresult=java.ajax(xb)\n\t}\n\tresult\n</js>\ndiv.flex.flex-col.gap-2",
+      "bookUrl": "a.0@href@js:result+',{webView:“true”}'",
+      "checkKeyWord": "",
+      "coverUrl": "img@src",
+      "intro": "p@text",
+      "kind": "span[2:3]@text",
+      "lastChapter": "a.-1@text",
+      "name": "h3@text",
+      "wordCount": "span.4@text"
+    },
+    "ruleToc": {
+      "chapterList": "<js>\nvar datax = null;\nvar allChapters = [];\nvar finalJsonOutput = null;\nvar inputString = baseUrl;\nvar parts = inputString.split(',');\nvar url = parts[0].trim();\ntry {\n    var xDataRegex = /x-data=\"[^\"]*Login\\(\\d+,\\s*'([^']+)'/;\n    var match = result.match(xDataRegex);\n    if (match && match[1]) {\n        datax = match[1];\n    } else {\n        java.log(\"未能从源码中匹配并提取到 x-data token\");\n        throw new Error(\"XSRF token not found\"); // Token 是必须的\n    }\n    var urlWithXsrf = url + \"?_xsrf=\" + encodeURIComponent(datax);\n    var cookie = \"85_ID=\" + java.getCookie(url, \"85_ID\");\n    var baseHeaders = {\n        \"User-Agent\": \"Mozilla/5.0 (Linux; Android 14; 2312DRAABC) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Mobile Safari/537.36\",\n        \"Content-Type\": \"application/json;charset=UTF-8\",\n        \"Referer\": url,\n        \"Accept\": \"application/json, text/plain\",\n        \"Cookie\": cookie\n    };\n    var slices = [];\n    var selectContentRegex = /<select class=\"[^\"]*select-primary[^\"]*\"[^>]*>([\\s\\S]*?)<\\/select>/;\n    var selectMatch = result.match(selectContentRegex);\n    if (selectMatch && selectMatch[1]) {\n        var optionsHtml = selectMatch[1];\n        var sliceRegex = /(\\d+)\\s*~\\s*(\\d+)/g;\n        var sliceMatch;\n        while ((sliceMatch = sliceRegex.exec(optionsHtml)) !== null) {\n            var start = parseInt(sliceMatch[1], 10);\n            var end = parseInt(sliceMatch[2], 10);\n            if (!isNaN(start) && !isNaN(end)) {\n                slices.push([start, end]);\n            }\n        }\n    }\n    if (slices.length === 0) {\n        java.log(\"未能提取到任何章节 Slice，将尝试获取默认范围 [1, 200]\");\n        slices = [\n            [1, 200]\n        ];\n    }\n    java.log(\"将要处理的 Slices: \" + JSON.stringify(slices));\n    for (var i = 0; i < slices.length; i++) {\n        var currentSlice = slices[i];\n        // java.log(\"准备获取 Slice: \" + currentSlice.join(' ~ '));\n        var maxAttempts = 3;\n        var success = false;\n        for (var attempt = 1; attempt <= maxAttempts; attempt++) {\n            java.log(\"尝试获取 Slice \" + currentSlice.join('~') + \" (第 \" + attempt + \"/\" + maxAttempts + \" 次)\");\n            var jsonString = null;\n            try {\n                var bodyPayload = {\n                    \"action\": \"chapters\",\n                    \"slice\": currentSlice\n                };\n                var op = {\n                    \"body\": JSON.stringify(bodyPayload),\n                    \"method\": \"post\",\n                    \"headers\": baseHeaders\n                };\n                var requestString = urlWithXsrf + \",\" + JSON.stringify(op);\n                jsonString = java.ajax(requestString);\n                if (jsonString && (jsonString.trim().startsWith('{') || jsonString.trim().startsWith('['))) {\n                    var jsonObject = JSON.parse(jsonString);\n                    if (jsonObject && jsonObject.result && Array.isArray(jsonObject.result.chapters)) {\n                        var fetchedCount = jsonObject.result.chapters.length;\n                        allChapters = allChapters.concat(jsonObject.result.chapters);\n                        // java.log(\"成功获取 Slice \" + currentSlice.join('~') + \" (第 \" + attempt + \" 次尝试): 本次获取 \" + fetchedCount + \" 章, 累计 \" + allChapters.length + \" 章\");\n                        java.log(\"成功获取 Slice \" + currentSlice.join('~') + \" (第 \" + attempt + \" 次尝试)\");\n                        success = true;\n                        break;\n                    } else {\n                        java.log(\"第 \" + attempt + \" 次尝试: Slice \" + currentSlice.join('-') + \" 的 JSON 响应格式不正确或未包含 chapters 数组: \" + jsonString.substring(0, 200));\n                    }\n                } else {\n                    java.log(\"第 \" + attempt + \" 次尝试: Slice \" + currentSlice.join('-') + \" 返回的不是有效的 JSON: \" + jsonString.substring(0, 200));\n                    java.log(\"Slice \" + currentSlice.join('-') + \" Raw Response (Attempt \" + attempt + \"): \" + jsonString);\n                }\n            } catch (ajaxOrParseError) {\n                java.log(\"第 \" + attempt + \" 次尝试获取或解析 Slice \" + currentSlice.join('-') + \" 时出错: \" + ajaxOrParseError);\n            }\n            if (!success && attempt < maxAttempts) {\n                var retryDelay = 4000;\n                java.log(\"等待 \" + retryDelay + \"ms 后重试...\");\n\n                Packages.java.lang.Thread.sleep(retryDelay);\n            } else if (!success && attempt === maxAttempts) {\n\n                java.log(\"已达到最大尝试次数 (\" + maxAttempts + \")，放弃获取 Slice 重新搜索过下cf试试\" + currentSlice.join('~'));\n            }\n        }\n        if (i < slices.length - 1) {\n            java.log(\"等待2500ms\");\n            Packages.java.lang.Thread.sleep(2500);\n        }\n    }\n    var combinedResult = {\n        \"code\": 0,\n        \"result\": {\n            \"code\": 1,\n            \"chapters\": allChapters\n        }\n    };\n    finalJsonOutput = JSON.stringify(combinedResult);\n\n} catch (e) {\n    java.log(\"处理目录 JS 规则时发生顶层错误: \" + e);\n    finalJsonOutput = null;\n}\nresult = finalJsonOutput; \n</js>\n$.result.chapters",
+      "chapterName": "$.ChapterName",
+      "chapterUrl": "$.ChapterUrl##(.*?)/(.*?)##https://www.85novel.com/book/$1/$2",
+      "nextTocUrl": "",
+      "preUpdateJs": ""
+    },
+    "searchUrl": "https://www.85novel.com/search?k={{key}}&page={{page}}",
+    "weight": 0
+  }
+]

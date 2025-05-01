@@ -1,0 +1,49 @@
+[
+  {
+    "bookSourceComment": "//无名25.04.29",
+    "bookSourceGroup": "源社区",
+    "bookSourceName": "玫瑰jygfa",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.jygfa.com",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "header": "{\n\t\"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36\",\n\t\"referer\":\"https://www.jygfa.com\"\n\t}",
+    "lastUpdateTime": "1745938918665",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "a.0@text",
+      "coverUrl": "img@src",
+      "init": ".bookinfo",
+      "intro": ".bookintromore@text",
+      "kind": "{{book.kind}}",
+      "lastChapter": ".bookchapter@text",
+      "name": "h1@text",
+      "tocUrl": "id.showmore01"
+    },
+    "ruleContent": {
+      "content": "id.TextContent@p@text"
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "author": ".author[0]@a@text",
+      "bookList": ".bookbox",
+      "bookUrl": ".bookname@a@href@js:result+',{webView:“true”}'",
+      "checkKeyWord": "仙逆",
+      "coverUrl": "img@data-original",
+      "intro": ".update@textNodes",
+      "kind": ".author[1]@text",
+      "lastChapter": ".cat@a@text",
+      "name": ".bookname@text"
+    },
+    "ruleToc": {
+      "chapterList": "id.chapter",
+      "chapterName": "text",
+      "chapterUrl": "a@href@js:result+',{webView:“true”}'",
+      "nextTocUrl": ""
+    },
+    "searchUrl": "/search.php?searchkey={{key}}&action=login&submit=",
+    "weight": 0
+  }
+]
