@@ -1,0 +1,58 @@
+[
+  {
+    "bookSourceComment": "//无名25.05.02修，需要魔法。\n//24.12",
+    "bookSourceGroup": "源社区,飞机",
+    "bookSourceName": "和圖書",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.hetubook.com",
+    "bookUrlPattern": "",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "@js: var result = [];\njava.toast(\"🔥动态获取发现中……\");\nvar push=(title,url,size)=>result.push({\n  \t\"title\": title,\n  \t\"url\": url,\n  \t\"style\": {\n   \"layout_flexGrow\": 1,\n   \"layout_flexBasisPercent\": size\n   }\n });\nvar tag = java.ajax(\"https://www.hetubook.com/book/index.php\")\n\nif(tag.match(/Just a moment/)){\n\txb=\"https://www.hetubook.com/book/index.php\"+\",\"+JSON.stringify({\n\t\t\"headers\":{\n  \"User-Agent\": \"Mozilla/5.0 (Linux; Android 14; 2312DRAABC) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Mobile Safari/537.36\",\n  \"webView\": true\n}})\n\tcookie.removeCookie(source.bookSourceUrl)\njava.startBrowserAwait(xb,\"www.hetubook.com\")\ntag=java.ajax(xb)\n\t}\nif (tag) {\nb=org.jsoup.Jsoup.parse(tag).select(\".catalog a\");\npush(\"全部\",null,1)\n    for(i in b){\n        title=b[i].text()\n        url=b[i].attr(\"href\")\n        size=0.25\n        if (url.endsWith(\"index.php\")) {\n            url=\"/book/\"+url+\"?page=1\"\n            url=String(url).replace(\"1\",\"{{page}}\")\n            push(title,url,size)\n        } else {\n            url=\"/book/\"+url+\"&page=1\"\n            url=String(url).replace(\"1\",\"{{page}}\")\n            push(title,url,size)\n    }};\npush(\"已完結\",null,1)\n    for(i2 in b){\n        title=b[i2].text()\n        url=b[i2].attr(\"href\")\n        size=0.25\n        if (url.endsWith(\"index.php\")) {\n            url=\"/book/\"+url+\"?state=2&page=1\"\n            url=String(url).replace(\"1\",\"{{page}}\")\n            push(title,url,size)\n        } else {\n            url=\"/book/\"+url+\"&state=2&page=1\"\n            url=String(url).replace(\"1\",\"{{page}}\")\n            push(title,url,size)\n    }};\npush(\"連載中\",null,1)\n    for(i in b){\n        title=b[i].text()\n        url=b[i].attr(\"href\")\n        size=0.25\n        if (url.endsWith(\"index.php\")) {\n            url=\"/book/\"+url+\"?state=1&page=1\"\n            url=String(url).replace(/1$/,\"{{page}}\")\n            push(title,url,size)\n        } else {\n            url=\"/book/\"+url+\"&state=1&page=1\"\n            url=String(url).replace(/1$/,\"{{page}}\")\n            push(title,url,size)\n    }}}\nJSON.stringify(result);",
+    "header": "{\"User-Agent\": \"Mozilla/5.0 (Linux; Android 14; 2312DRAABC) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Mobile Safari/537.36\",\n\"Referer\":\"https://www.hetubook.com\"}",
+    "lastUpdateTime": "1746118728064",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "a[0]@text@js:java.t2s(result)",
+      "coverUrl": "img@src",
+      "init": "id.left",
+      "intro": ".intro@text@js:java.t2s(result)",
+      "kind": "div:containsOwn(類別：)@text##類別：@js:java.t2s(result)",
+      "lastChapter": "id.dir@a[-1]@text@js:java.t2s(result)",
+      "name": "h2@text@js:java.t2s(result)",
+      "tocUrl": "",
+      "wordCount": ".book_info.finish > div:nth-of-type(3)@text##字數：@js:java.t2s(result)"
+    },
+    "ruleContent": {
+      "content": "//div[@id='content']/div/text()@js:java.t2s(result)",
+      "webJs": ""
+    },
+    "ruleExplore": {
+      "author": "span[1]@text@js:java.t2s(result)",
+      "bookList": "<js>\nif(result.match(/Just a moment/)){\n\txb=(baseUrl)+\",\"+JSON.stringify({\n\t\t\"headers\":{\n  \"User-Agent\": \"Mozilla/5.0 (Linux; Android 14; 2312DRAABC) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Mobile Safari/537.36\",\n  \"webView\": true\n}})\n\tcookie.removeCookie(source.bookSourceUrl)\njava.startBrowserAwait(xb,\"www.hetubook.com\")\nresult=java.ajax(xb)\n\t}\n\tresult\n</js>\nid.list@li",
+      "bookUrl": ".name@a@href",
+      "coverUrl": "img@src",
+      "intro": ".intro@text@js:java.t2s(result)",
+      "kind": "span[0]@text@js:java.t2s(result)",
+      "name": ".name@text@js:java.t2s(result)"
+    },
+    "ruleSearch": {
+      "author": "span[0]@text##/|/@js:java.t2s(result)",
+      "bookList": "<js>\nif(result.match(/Just a moment/)){\nvar x=java.get(\"url\")\ncookie.removeCookie(source.bookSourceUrl)\njava.startBrowserAwait(x,\"www.hetubook.com\")\nresult=java.ajax(x)\n\t}\n\tresult\n</js>\n.list@dd",
+      "bookUrl": "a[1]@href",
+      "checkKeyWord": "我的",
+      "coverUrl": "img@src",
+      "intro": ".intro@text@js:java.t2s(result)",
+      "name": "a[1]@text@js:java.t2s(result)"
+    },
+    "ruleToc": {
+      "chapterList": "id.dir@dd@a",
+      "chapterName": "text@js:java.t2s(result)",
+      "chapterUrl": "href##$##,\n{\"webView\":true}"
+    },
+    "searchUrl": "@js:\njava.put(\"url\",String(source.bookSourceUrl+\"/search/?keyword=\"+key+\",\"+JSON.stringify({\n\t\t\"headers\":{\n\t\t\t  \"User-Agent\": \"Mozilla/5.0 (Linux; Android 14; 2312DRAABC) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Mobile Safari/537.36\",\n\t\t\t\"Referer\":\"https://www.hetubook.com/search/?keyword=%E6%88%91%E7%9A%84\"\n\t\t\t  }\n})))",
+    "weight": 0
+  }
+]
