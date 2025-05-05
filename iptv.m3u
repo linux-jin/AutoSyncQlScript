@@ -5313,11 +5313,11 @@ http://[2409:8087:74d6:22::7]:6410/270000001128/9900000066/index.m3u8?
 http://[2409:8087:5e00:24::1e]:6060/000000001000/1000000002000011619/index.m3u8?
 #EXTINF:-1 group-title="卫视台" tvg-id="null" tvg-name="山东教育" tvg-logo="https://live.fanmingming.cn/tv/山东教育.png" t-time="" v-w="0" v-h="0", 山东教育
 http://[2409:8087:74d6:22::7]:6410/270000001128/9900000067/index.m3u8?
-#EXTINF:-1 group-title="数字台" tvg-id="CHC1" tvg-name="CHC影迷电影" tvg-logo="https://gitee.com/suxuang/epglogo/raw/master/shuzi/CHC4.png" t-time="216" v-w="0" v-h="0", CHC影迷电影
+#EXTINF:-1 group-title="数字台" tvg-id="CHC1" tvg-name="CHC影迷电影" tvg-logo="https://gitee.com/suxuang/epglogo/raw/master/shuzi/CHC4.png" t-time="241" v-w="0" v-h="0", CHC影迷电影
 https://ali.hlspull.yximgs.com/live/diyp_chcyingmi.flv
-#EXTINF:-1 group-title="数字台" tvg-id="CHC2" tvg-name="CHC家庭影院" tvg-logo="https://gitee.com/suxuang/epglogo/raw/master/shuzi/CHC2.png" t-time="176" v-w="0" v-h="0", CHC家庭影院
+#EXTINF:-1 group-title="数字台" tvg-id="CHC2" tvg-name="CHC家庭影院" tvg-logo="https://gitee.com/suxuang/epglogo/raw/master/shuzi/CHC2.png" t-time="488" v-w="0" v-h="0", CHC家庭影院
 https://ali.hlspull.yximgs.com/live/diyp_chcjiating.flv
-#EXTINF:-1 group-title="数字台" tvg-id="CHC3" tvg-name="CHC动作电影" tvg-logo="https://gitee.com/suxuang/epglogo/raw/master/shuzi/CHC3.png" t-time="172" v-w="0" v-h="0", CHC动作电影
+#EXTINF:-1 group-title="数字台" tvg-id="CHC3" tvg-name="CHC动作电影" tvg-logo="https://gitee.com/suxuang/epglogo/raw/master/shuzi/CHC3.png" t-time="180" v-w="0" v-h="0", CHC动作电影
 https://ali.hlspull.yximgs.com/live/diyp_chcdongzuo.flv
 #EXTINF:-1 group-title="记录" tvg-id="149" tvg-name="求索纪录" tvg-logo="https://gitee.com/suxuang/epglogo/raw/master/shuzi/Qiusuo1.png" t-time="" v-w="0" v-h="0", 求索纪录
 http://[2409:8087:5e08:24::17]:6610/000000001000/2000000004000000010/index.m3u8?stbId=3&livemode=1&HlsProfileId=&channel-id=hnbblive&Contentid=2000000004000000010&IASHttpSessionId=OTT19019320240419154124000281
@@ -5327,7 +5327,7 @@ http://[2409:8087:5e08:24::17]:6610/000000001000/2000000004000000011/index.m3u8?
 http://[2409:8087:5e08:24::17]:6610/000000001000/2000000004000000008/index.m3u8?stbId=3&livemode=1&HlsProfileId=&channel-id=hnbblive&Contentid=2000000004000000008&IASHttpSessionId=OTT19019320240419154124000281
 #EXTINF:-1 group-title="记录" tvg-id="184" tvg-name="求索动物" tvg-logo="https://gitee.com/suxuang/epglogo/raw/master/shuzi/Qiusuo3.png" t-time="" v-w="0" v-h="0", 求索动物
 http://[2409:8087:5e08:24::17]:6610/000000001000/2000000004000000009/index.m3u8?stbId=3&livemode=1&HlsProfileId=&channel-id=hnbblive&Contentid=2000000004000000009&IASHttpSessionId=OTT19019320240419154124000281
-#EXTINF:-1 group-title="数字台" tvg-id="新视觉" tvg-name="新视觉" tvg-logo="https://gitee.com/suxuang/TVlogo/raw/main/img/xsj.png" t-time="74" v-w="0" v-h="0", 新视觉HD
+#EXTINF:-1 group-title="数字台" tvg-id="新视觉" tvg-name="新视觉" tvg-logo="https://gitee.com/suxuang/TVlogo/raw/main/img/xsj.png" t-time="73" v-w="0" v-h="0", 新视觉HD
 http://120.76.248.139/live/bfgd/4200000249.m3u8
 #EXTINF:-1 group-title="数字台" tvg-id="劲爆体育" tvg-name="劲爆体育" tvg-logo="https://gitee.com/suxuang/epglogo/raw/master/shuzi/jbty.png" t-time="" v-w="0" v-h="0", 劲爆体育
 http://[2409:8087:5e08:24::17]:6610/000000001000/2000000002000000008/index.m3u8?stbId=3&livemode=1&HlsProfileId=&channel-id=hnbblive&Contentid=2000000002000000008&IASHttpSessionId=OTT19019320240419154124000281
@@ -5357,9 +5357,9 @@ http://kxrj.site:12581/665/fh.php?id=fhzw
 http://kxrj.site:12581/665/fh.php?id=fhzx
 #EXTINF:-1 group-title="港澳台" tvg-id="null" tvg-name="凤凰香港" tvg-logo="https://live.fanmingming.com/tv/凤凰卫视香港台.png" t-time="" v-w="0" v-h="0", 凤凰香港
 http://kxrj.site:12581/665/fh.php?id=fhhk
-#EXTINF:-1 group-title="港澳台" tvg-id="TVB翡翠台" tvg-name="翡翠台" tvg-logo="https://live.fanmingming.com/tv/翡翠台.png" t-time="2707" v-w="0" v-h="0", TVB翡翠台
+#EXTINF:-1 group-title="港澳台" tvg-id="TVB翡翠台" tvg-name="翡翠台" tvg-logo="https://live.fanmingming.com/tv/翡翠台.png" t-time="1843" v-w="0" v-h="0", TVB翡翠台
 http://php.jdshipin.com/TVOD/iptv.php?id=fct3
-#EXTINF:-1 group-title="港澳台" tvg-id="TVB翡翠台" tvg-name="翡翠台" tvg-logo="https://live.fanmingming.com/tv/翡翠台.png" t-time="1232" v-w="0" v-h="0", TVB翡翠台 4K
+#EXTINF:-1 group-title="港澳台" tvg-id="TVB翡翠台" tvg-name="翡翠台" tvg-logo="https://live.fanmingming.com/tv/翡翠台.png" t-time="925" v-w="0" v-h="0", TVB翡翠台 4K
 http://php.jdshipin.com/TVOD/iptv.php?id=fct4
 #EXTINF:-1 group-title="港澳台" tvg-id="null" tvg-name="纬来体育台" tvg-logo="https://live.fanmingming.com/tv/纬来体育台.png" t-time="" v-w="0" v-h="0", 纬来体育台
 http://aktv.top/AKTV/live/aktv3/null-1/AKTV.m3u8
