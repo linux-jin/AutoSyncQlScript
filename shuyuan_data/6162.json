@@ -1,0 +1,41 @@
+[
+  {
+    "bookSourceComment": "2025/5/6\nby天天的鸟蛋蛋",
+    "bookSourceName": "来漫画",
+    "bookSourceType": 2,
+    "bookSourceUrl": "https://m.laimanhua.org/",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "lastUpdateTime": "1746566290956",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "coverUrl": ".dramaDetail_bookCover@img@src",
+      "intro": ".adm-ellipsis@text",
+      "kind": ".dramaDetail_tagsBox@a@text",
+      "lastChapter": ".drama_newchapter@a@text",
+      "name": ".dramaDetail_bookName@text"
+    },
+    "ruleContent": {
+      "content": "<js>\nfunction decode(bytes, key, iv, mode) {\n    return java.createSymmetricCrypto(\n        mode || \"aes/cbc/pkcs7padding\",\n        key,\n        iv\n    ).decryptStr(bytes)\n}\n\na = result.match(/var tpl_path = '.*', params = '(.*)';/)[1];\n\nd = decode(\n    a,\n    \"9S8$vJnU2ANeSRoF\",\n    a.slice(0,16)\n)\nm = d.match(/{\".*/)[0]\nmList = java.getString(\"$.images[*]\",m)\nmList.split('\\n').map(x => `<img src=\"${x}\">`).join('\\n');\n</js>"
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "author": "",
+      "bookList": ".MTagBookList_tagBookBox@.MTagBookList_tagBookItem",
+      "bookUrl": "a@href",
+      "coverUrl": "img@src",
+      "intro": ".MTagBookList_intro@text",
+      "kind": ".MTagBookList_tagsBox@a@text",
+      "name": ".MTagBookList_bookName@text"
+    },
+    "ruleToc": {
+      "chapterList": ".CatalogList_content@li@a",
+      "chapterName": "text",
+      "chapterUrl": "href"
+    },
+    "searchUrl": "https://m.laimanhua.org/index.php/search?key={{key}}<,/{{page}}>",
+    "weight": 0
+  }
+]

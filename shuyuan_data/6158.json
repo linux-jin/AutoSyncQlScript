@@ -1,0 +1,45 @@
+[
+  {
+    "bookSourceComment": "2025/5/4\nby天天的鸟蛋蛋  \nby 静白 正文解密",
+    "bookSourceGroup": "",
+    "bookSourceName": "风车漫画",
+    "bookSourceType": 2,
+    "bookSourceUrl": "https://www.fengchemh.com",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "漫画大全::/category/\n国产漫画::/category/list/1\n日本漫画::/category/list/2\n韩国漫画::/category/list/3\n欧美漫画::/category/list/4",
+    "jsLib": "",
+    "lastUpdateTime": "1746359443321",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": ".info@.row@span.1@text",
+      "coverUrl": ".pic@img@src",
+      "intro": "{{@@.info@span,h1@html}}\n简介：\n{{@@.more-box@.pt-10@html}}",
+      "kind": ".info@.row@span.2:3@text##.*：|\\s##,",
+      "lastChapter": ".info@.row@span.-1@a@text",
+      "name": ".info@h1@text"
+    },
+    "ruleContent": {
+      "content": "<js>\nfunction decode(bytes, key, iv, mode) {\n    return java.createSymmetricCrypto(\n        mode || \"aes/cbc/pkcs7padding\",\n        key,\n        iv\n    ).decryptStr(bytes)\n}\n\na = result.match(/var tpl_path = '.*', params = '(.*)';/)[1];\n\nd = decode(\n    a,\n    \"9S8$vJnU2ANeSRoF\",\n    a.slice(0,16)\n)\nm = d.match(/{\".*/)[0]\nmList = java.getString(\"$.images[*]\",m)\nmList.split('\\n').map(x => `<img src=\"${x}\">`).join('\\n');\n</js>",
+      "webJs": ""
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "bookList": ".row@li",
+      "bookUrl": "a@href",
+      "checkKeyWord": "https://www.fengchemh.com/comic/dz0aW19Pk3",
+      "coverUrl": ".img-wrapper@data-background\n",
+      "lastChapter": "p@text",
+      "name": "h3@text"
+    },
+    "ruleToc": {
+      "chapterList": "#ewave-playlist-1@li@a",
+      "chapterName": "text",
+      "chapterUrl": "href"
+    },
+    "searchUrl": "<js>\nvar timestamp = new Date().getTime();\njava.log(timestamp);\n\nr=`https://www.fengchemh.com/index.php/search?key=${key}&verify=1&pcode={{java.getVerificationCode('https://www.fengchemh.com/api/code')}}&_=${timestamp}`\nr;\n</js>",
+    "weight": 0
+  }
+]

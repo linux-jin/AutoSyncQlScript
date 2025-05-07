@@ -1,71 +1,5 @@
 [
   {
-    "bookSourceComment": "\n使用登录功能切换模式和域名，切换后需手动刷新\n\n刷新方法：长按跳出菜单 --> 点击刷新",
-    "bookSourceGroup": "🔞",
-    "bookSourceName": "UAA 修改版",
-    "bookSourceType": 0,
-    "bookSourceUrl": "https://www.uaa.com##主域名，需要梯子",
-    "customOrder": 21,
-    "enabled": true,
-    "enabledCookieJar": true,
-    "enabledExplore": true,
-    "exploreUrl": "@js:\nvar discoveryData = {\n  novel: {\n    topTitle: \"🔖小说专区🔖\",\n    order: [\"最新上架\", \"最近更新\", \"最多观看\", \"最多收藏\"],\n    cateTitle: \"🏷小说分类🏷\",\n    cate: [\"都市\", \"校园\", \"乱伦\", \"玄幻\", \"系统\", \"穿越\", \"武侠\", \"奇幻\", \"乡村\", \"历史\", \"明星\", \"科幻\", \"同人\"],\n    tagTitle: \"🏷标签🏷\",\n    tag: [\"1v1\", \"BE\", \"Futa\", \"HE\", \"NP\", \"NTL\", \"NTR\", \"SM\", \"暗黑\", \"百合\", \"变装\", \"病娇\", \"产奶\", \"痴女\", \"触手\", \"纯爱\", \"粗口\", \"催眠\", \"耽美\", \"道具\", \"调教\", \"反差\", \"父女\", \"复仇\", \"改造\", \"搞笑\", \"公媳\", \"狗血\", \"骨科\", \"好文笔\", \"后宫\", \"监禁\", \"交换伴侣\"]\n  },\n  audio: {\n    topTitle: \"🔖听书专区🔖\",\n    cateTitle: \"🏷听书分类🏷\",\n    cate: [\"有声小说\", \"淫词艳曲\", \"激情骚麦\", \"寸止训练\"],\n    authorTitle: \"🏷作者标签🏷\",\n    authors: [\"小苮儿\", \"曼曼\", \"点心\", \"小窈\", \"小咪\", \"戴逸\", \"雅朵\", \"小野猫\", \"步非烟\", \"小瑶\", \"姽狐\", \"芯媛\", \"小美\", \"浅浅\", \"沙拉\", \"萱妹\", \"Rain\", \"南征\", \"小筝\", \"小琳\", \"林三岁\", \"叶倩彤\", \"秋水\", \"Mini姐\", \"戴猫耳的大魔王\", \"源源\", \"青梅\", \"嫣然\", \"小爽\", \"大宝\", \"Rainnight.雨\", \"小颦\", \"楪祈\", \"小一熟了吗\", \"小晶晶软糖\", \"李二狗\", \"绝色\", \"梦瑶\", \"紫洛\", \"小晴\", \"想睡觉\", \"宋恩\", \"小优\", \"墨白\", \"小媚\", \"魅惑\", \"鹿梧\", \"偷听\", \"狐姬\", \"柳瑶\"],\n    rankTitle: \"🏷排行榜🏷\",\n    rank: [\"周榜\", \"月榜\", \"年榜\", \"热门\"]\n  },\n  comic: {\n    topTitle: \"🔖漫画专区🔖\",\n    area: [\"全部\", \"日本\", \"韩漫\"],\n    cate: [\"短篇\", \"单本\", \"同人\", \"剧情\", \"校园\", \"爱情\", \"BL\", \"奇幻\", \"调教\", \"乱伦\"],\n    status: [\"全部\", \"已完结\", \"连载中\"],\n    tag: {\n      \"全部彩色\": \"\",\n      \"女主\": \"orientation=2\",\n      \"原创首发\": \"source=1\"\n    },\n    rankTitle: \"🏷排行榜🏷\",\n    rank: [\"周榜\", \"月榜\", \"年榜\", \"收藏\"]\n  },\n  video: {\n    topTitle: \"🔖视频专区🔖\",\n    order: [, \"最新排行\", , \"观看排行\", \"收藏排行\"], // 不要删除多余逗号\n    cate: [\"国产视频\", \"日本AV\", \"H动漫\"],\n    tagTitle: \"🏷标签🏷\",\n    tag: [\"自拍偷拍\", \"主播福利\", \"丝袜网袜\", \"泳装水着\", \"JK制服\", \"女仆\", \"吊带袜\", \"兔女郎\", \"少女萝莉\", \"白虎\", \"苗条\", \"美腿美脚\", \"美臀\", \"熟女\", \"巨乳\", \"颜射\", \"肛交\", \"潮吹\", \"口交\", \"69\", \"乳交\", \"内射中出\", \"捆绑调教\", \"痴女痴汉\", \"强奸轮奸\", \"3P群交\", \"奇异催眠\", \"出轨\", \"NTR\", \"医生护士\", \"空中女郎\", \"未亡人\", \"老师校园\", \"人妻主妇\", \"OL\", \"姐姐妹妹\", \"母亲女儿\", \"TS人妖\", \"女高中生\"]\n  }\n}\n\n\nlet type = String(source.getVariable())?.split(\",\")?.[0] || 0;\njava.toast(\"type：\"+type)\nlet list = [];\nconst typeSort = [\n  \"novel\",\n  \"comic\",\n  \"video\",\n  \"audio\"\n ]\n\nconst push = (title, url, type1, type2) => {\n  list.push({\n    title: title,\n    url: url,\n    style: {\n      layout_flexGrow: type1,\n      layout_flexBasisPercent: type2\n    }\n  });\n};\n\nlet { novel, audio, comic, video } = discoveryData;\nif (typeSort[type] === \"novel\") {\n  let url = `{{getUrl()}}api/novel/app/novel/search?`;\n  push(novel.topTitle, null, 1, 1);\n  novel.order.forEach((order, i) => {\n    push(order, `${url}page={{page}}&size=20&orderType=${i + 1}`, 1, 0.35);\n  });\n  push(novel.cateTitle, null, 1, 1);\n  novel.cate.forEach(cat => {\n    push(cat, `${url}category=${cat}&page={{page}}&size=20`, 1, 0.25);\n  });\n  push(novel.tagTitle, null, 1, 1);\n  novel.tag.forEach(tag => {\n    push(tag, `${url}includeTags=${tag}&page={{page}}&size=20`, 1, 0.25);\n  });\n}\nelse if (typeSort[type] === \"audio\") {\n  push(audio.topTitle, null, 1, 1);\n  push(audio.cateTitle, null, 1, 1);\n  audio.cate.forEach(cat => {\n    push(cat, `{{getUrl()}}api/audio/app/audio/search?category=${cat}&page={{page}}&size=25`, 1, 0.4);\n  });\n  push(audio.authorTitle, null, 1, 1);\n  audio.authors.forEach(author => {\n    push(author, `{{getUrl()}}api/audio/app/audio/search?author=${author}&sort=3&searchType=1&page={{page}}&size=25`, 1, 0.25);\n  });\n  push(audio.rankTitle, null, 1, 1);\n  audio.rank.forEach((rank, i) => {\n    push(rank, `{{getUrl()}}api/audio/app/audio/rank?page={{page}}&type=${i + 1}&size=25`, 1, 0.4);\n  });\n}\nelse if (typeSort[type] === \"comic\") {\n  let url = `{{getUrl()}}api/comic/app/comic/search?`;\n  push(comic.topTitle, null, 1, 1);\n  comic.area.forEach((area, arigin) => {\n    push(area, `${url}origin=${arigin || \"\"}&page={{page}}&size=25`, 1, 0.39);\n  });\n  comic.cate.forEach(cat => {\n    push(cat, `${url}category=${cat}&page={{page}}&size=25`, 1, 0.25);\n  });\n  const finished = [\"\", 1, 0];\n  comic.status.forEach((status, i) => {\n    push(status, `${url}finished=${finished[i]}&page={{page}}&size=25`, 1, 0.39);\n  });\n  for (let [tag, value] of Object.entries(comic.tag)) {\n    push(tag, `${url}${value}&page={{page}}&size=25`, 1, 0.25);\n  }\n  push(comic.rankTitle, null, 1, 1);\n  comic.rank.forEach((rank, i) => {\n    push(rank, `{{getUrl()}}api/comic/app/comic/rank?page={{page}}&type=${i + 1}&size=25`, 1, 0.25);\n  });\n}\nelse if (typeSort[type] === \"video\") {\n  let url = `{{getUrl()}}api/video/app/video/search?`;\n  push(video.topTitle, null, 1, 1);\n  for (let i = 0; i < video.order.length; i++) {\n    let order = video.order[i];\n    if (!order) continue;\n    push(order, `${url}category=&orderType=${i}&page={{page}}&searchType=1&size=40`, 1, 0.25);\n  };\n  video.cate.forEach((cat, index) => {\n    push(cat, `${url}orderType=1&origin=${index + 1}&page={{page}}&searchType=1&size=40`, 1, 0.25);\n  });\n  push(video.tagTitle, null, 1, 1);\n  video.tag.forEach(tag => {\n    push(tag, `${url}tag=${tag}&page={{page}}&searchType=1&size=40`, 1, 0.25);\n  });\n}\nelse {\n\t java.toast(\"类型出错，请用登录功能重新选择类型！！！\")\n}\n\nJSON.stringify(list, null, 2)",
-    "header": "@js:\nJSON.stringify({\n  'User-Agent': \"Mozilla/5.0 (Linux; Android 15; V2304A Build/AP3A.240905.015.A2; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/132.0.6834.163 Mobile Safari/537.36\",\n  'sec-ch-ua-platform': \"\\\"Android\\\"\",\n  'origin': getUrl(),\n  'x-requested-with': \"cn.mujiankeji.mbrowser\",\n  'Referer': getUrl(),\n  'Accept-language': \"zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7\"\n})",
-    "jsLib": "var host = [\n  \"https://www.uaa001.com/\",\n  \"https://www.uaa002.com/\",\n\t\"https://www.uaa003.com/\",\n\t\"https://www.uaa004.com/\",\n\t\"https://www.uaa005.com/\",\n\t\"https://www.uaa202410.com/\"\n]\n\nfunction getUrl() {\n\t let v = String(this.source.getVariable());\n  let code = v.split(\",\")[1] || 0;\n  return host[code]\n}\n\nvar ua = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0';",
-    "lastUpdateTime": "1745846299577",
-    "loginUi": "[\n{\n\"name\": \"🔺登　录🔺\",\n\"type\": \"button\",\n\"action\": \"login(true)\",\n\"style\": {\n\"layout_flexGrow\": 1,\n\"layout_flexBasisPercent\": 0.39\n}\n},\n{\n        \"name\":  \"  退出登录  \",\n        \"type\": \"button\",\n        \"action\": \"logout()\"\n      },\n{\n\"name\": \"⚙️ 当前模式 ⚙️\",\n\"type\": \"button\",\n\"action\": \"K()\",\n\"style\": {\n\"layout_flexGrow\": 1,\n\"layout_flexBasisPercent\": 1\n}\n},\n{\n\"name\": \"❗小说❗\",\n\"type\": \"button\",\n\"action\": \"M(0)\",\n\"style\": {\n\"layout_flexGrow\": 1,\n\"layout_flexBasisPercent\": 0.39\n}\n},\n{\n\"name\": \"❗漫画❗\",\n\"type\": \"button\",\n\"action\": \"M(1)\",\n\"style\": {\n\"layout_flexGrow\": 1,\n\"layout_flexBasisPercent\": 0.39\n}\n},\n{\n\"name\": \"❗视频❗\",\n\"type\": \"button\",\n\"action\": \"M(2)\",\n\"style\": {\n\"layout_flexGrow\": 1,\n\"layout_flexBasisPercent\": 0.39\n}\n},\n{\n\"name\": \"❗听书❗\",\n\"type\": \"button\",\n\"action\": \"M(3)\",\n\"style\": {\n\"layout_flexGrow\": 1,\n\"layout_flexBasisPercent\": 0.39\n}\n},\n{\n\"name\":\"❗ ⚙️ 当前 域名 ⚙️ ❗\",\n\"type\":\"button\",\n\"action\":\"H()\",\n\"style\": {\n\"layout_flexGrow\": 1,\n\"layout_flexBasisPercent\": 1\n}\n},\n{\n\"name\":\"0⃣️\",\n\"type\":\"button\",\n\"action\":\"A(0)\",\n\"style\": {\n\"layout_flexGrow\": 1,\n\"layout_flexBasisPercent\": 0.29\n}\n\n},\n{\n\"name\":\"1⃣️\",\n\"type\":\"button\",\n\"action\":\"A(1)\",\n\"style\": {\n\"layout_flexGrow\": 1,\n\"layout_flexBasisPercent\": 0.29\n}\n\n},\n{\n\"name\":\"2⃣️\",\n\"type\":\"button\",\n\"action\":\"A(2)\",\n\"style\": {\n\"layout_flexGrow\": 1,\n\"layout_flexBasisPercent\": 0.29\n}\n\n},\n{\n\"name\":\"3⃣️\",\n\"type\":\"button\",\n\"action\":\"A(3)\",\n\"style\": {\n\"layout_flexGrow\": 1,\n\"layout_flexBasisPercent\": 0.25\n}\n\n},\n{\n\"name\":\"4⃣️\",\n\"type\":\"button\",\n\"action\":\"A(4)\",\n\"style\": {\n\"layout_flexGrow\": 1,\n\"layout_flexBasisPercent\": 0.25\n}\n\n},\n{\n\"name\":\"5⃣️\",\n\"type\":\"button\",\n\"action\":\"A(5)\",\n\"style\": {\n\"layout_flexGrow\": 1,\n\"layout_flexBasisPercent\": 0.25\n}\n}\n]       ",
-    "loginUrl": "//登录\nfunction login() {\n\t  let url = getUrl();\n   let cookies = this.cookie.getCookie(url) || this.java.getCookie(url)\n   if (cookies && cookies != \"\") {\n     java.toast(\"\\n请不要重复登录，请先退出登录！\")\n     return false\n   }\n   try {\n     java.startBrowserAwait(url, \"登录\")\n   } catch (e) {\n     java.toast(e)\n   }\n   cookies = cookie.getCookie(url)\n   if (!cookies || cookies == \"\") {\n     java.toast(\"登录失败！\")\n     return false\n   }\n   java.toast(\"登录成功！\")\n   return true\n}\n\n//退出登录\nfunction logout() {\n   cookie.removeCookie(getUrl());\n   let cookies = cookie.getCookie(url)\n   if (cookies && cookies != \"\") {\n     java.toast(\"退出登录失败！\")\n     return false\n   }\n   java.toast(\"成功退出登录！\")\n   return true\n}\n\n var mode = [\"❗小说模式❗\",\"❗漫画模式❗\",\"❗视频模式❗\",\"❗听书模式❗\"]\n \n //显示当前模式\nvar K = () => {\n  let v = String(source.getVariable()).split(\",\");\n  let x = v[0] || 0;\n  java.toast(\"\\n\" + mode[x])\n}\n \n //设置模式\nvar M = (x) => {\n  let v = String(source.getVariable()).split(\",\");\n  v[0] = x;\n  source.setVariable(v.join(\",\"));\n  java.toast(`\\n成功设置\\n${mode[x]}`)\n}\n\n//显示当前域名\nvar H = () => {\n  let v = String(source.getVariable()).split(\",\");\n  let x = v[1] || 0;\n\t java.toast(`\\n当前域名:【${x}】\\n${getUrl()}`)\n}\n\n//设置域名\nvar A = (x) => {\n  let v = String(source.getVariable()).split(\",\");\n  v[1] = x;\n\t source.setVariable(v.join(\",\"));\n\t java.toast(`\\n当前域名:【${v[1]}】\\n${getUrl()}`)\n}",
-    "respondTime": 180000,
-    "ruleBookInfo": {
-      "author": "author",
-      "init": "<js>\nlet v = String(source.getVariable()).split(\",\");\nlet x = v[2];\n if (baseUrl.match(/novel/)){\nname=`{{@@class.novel_box@class.info_box@tag.h1.0@text}}`\nauthor=`{{@@class.novel_box@class.info_box@class.item.1@a@text}}`\nkind=`{{book.kind}}`\nword=`{{book.wordCount}}`\nlast=`{{@@class.novel_box@class.info_box@class.item.0@text##最新：}}`\n\ntry {\n    const response = java.ajax(`{{getUrl()}}api/novel/app/novel/comments?novelId=@get:{bid}&sortType=1&page=${x}&rows=5`);\n    const jsonData = JSON.parse(response);\n    const logOutput = jsonData.data.map(comment => {\n        const cleanNickName = comment.updateTime.replace(/T/g,'  ').replace(/\\..*/g, '');\n        // 根据分数生成星星显示\n        const generateStars = (score) => {\n            let starCount = Math.min(Math.floor(score / 2), 5);\n            let stars = '';\n            for (let i = 0; i < 5; i++) {\n                stars += i < starCount? '★' : '☆';\n            }\n            return stars;\n        };\n        const starDisplay = generateStars(comment.score);\n        return `\n  [${cleanNickName}]  ${comment.createTimeFormat}\n⛄【${comment.nickName}】:👍🏻${comment.score} ${starDisplay}\n ${comment.content}\n \\n&shy;\n \n`;\n    }).join('\\n');\n    //java.log(logOutput);\n} catch (error) {\n    const errorLog = {\n        [SyntaxError.name]: '数据解析失败: ',\n        default: 'AJAX请求失败: '\n    }[error.name || 'default'] + error.message;\n    java.log(errorLog);\n}\ninfo = `&nbsp;\n📖 书名：{{@@class.novel_box@class.info_box@tag.h1.0@text}}\n👤 作者：{{@@class.novel_box@class.info_box@class.item.1@a@text}}\n📜 篇幅：{{@@class.props_box@tag.ul@li.1@text}}\n🔖 标签：{{@@class.tag_box@li[0:-3]@a@text##\\n}}\n🗿 肉量：{{@@class.props_box@ul@li.0@text}}\n✏  评分：{{@@class.score_box@span@text}}\n🕰 最新：{{@@class.novel_box@class.info_box@class.item.0@text##最新：}}\n👁 观看：{{@@class.props_box@ul@li.2@text}}\n❤️ 收藏：{{@@class.props_box@ul@li.3@text}}\n🏷 简介：{{@@class.ellipsis@text##小说简介：}}`;\nintro=info+`\\n&shy;\\n【✨评论✨】最新\\n&shy;${logOutput}`\ninfo=logOutput?intro:info\n}else if(baseUrl.match(/comic/)){\n\tname=`{{book.name}}`\n\t\tauthor=`{{book.author}}`\n\t\tkind=`{{book.kind}}`\n\t\tword=``\n\t\tlast=``\n\t\tinfo=`&nbsp;\n📖 书名：{{book.name}}\n👤 作者：{{book.author}}\n🏷 简介：{{book.intro}}`;\n\n\t}else if (baseUrl.match(/video/)) {\n\t\tname=`{{$.model.title}}`\n\t\tauthor=`{{$.model.keywords}}`\n\t\tkind=`{{$..tags}}`\n\t\tword=``\n\t\tlast=``\n\t\tinfo=`{{$..brief}}`\n\t\t}else if (baseUrl.match(/audio/)) {\n   name=`{{$.model.title}}`\n\t\tauthor=`{{$.model.authors}}`\n\t\tkind=`{{java.getString('.finished')==1?\"完结\":\"连载\"}},{{$..categories}}`\n\t\tword=``\n\t\tlast=`{{$..latestUpdate}}`\n\t\tinfo=`{{$..brief}}`\n}\ndata = {\n    name: name,\n    author: author,\n    kind: kind,\n    word:word,\n    last: last,\n    info: info\n};\n\nJSON.stringify(data);\n</js>",
-      "intro": "info",
-      "kind": "kind##\\###,",
-      "lastChapter": "last",
-      "name": "name",
-      "wordCount": "word"
-    },
-    "ruleContent": {
-      "content": "<js>\nif (baseUrl.match(/novel/)){\nvar document = org.jsoup.Jsoup.parse(result);\nvar limit_box = document.select(\"div.limit_code_box\");\nif (result['match'](/正文内容已隐藏/)) {\n    java['toast']('\\n❗❗❗【抱歉，系统检测到访问异常，请输入验证码!】👻');\n    java.startBrowser(baseUrl,'验证')\n      }\nif (limit_box.hasClass(\"hide\")) {\n  \tdocument.select(\"div.line\");\n }}\nelse if(baseUrl.match(/comic/)){\tresult=java.getString(\"#content@img@src\");\nresult.split('\\n').map(x=>`<img src=\"${x}\">`).join('\\n');\n\t}else if(baseUrl.match(/video/)){\n\t\tif (book['durChapterIndex'] == chapter['index']) {\n        b64 = java['base64Encode'](`\n    <html>\n    <head>\n        <meta name=\"viewport\" content=\"width=device-width\">\n        <style>\n            body {\n                margin: 0;\n                font-family: Arial, sans-serif;\n                background: linear-gradient(135deg, #ece9e6, #ffffff);\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n                justify-content: flex-start;\n                padding: 20px;\n            }\n            .container {\n                width: 100%;\n                max-width: 800px;\n                background: #fff;\n                border-radius: 10px;\n                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\n                overflow: hidden;\n                margin-bottom: 20px;\n            }\n            h3 {\n                margin: 0;\n                padding: 10px 20px;\n                font-size: 0.9em;\n                background: #333;\n                color: #fff;\n                border-radius: 10px 10px 0 0;\n            }\n            .video-container {\n                width: 100%;\n                background: #000;\n                position: relative;\n            }\n            video {\n                width: 100%;\n                height: auto;\n                display: block;\n            }\n            .info-container {\n                padding: 20px;\n            }\n            .info-container p {\n                margin: 10px 0;\n                color: #555;\n            }\n            .info-container p span {\n                font-weight: bold;\n                color: #000;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <h3>{{$.model.title}}</h3>\n            <div class=\"video-container\">\n                <video id=\"video\" src=\"{{$.model.url}}\" poster=\"{{$.model.coverUrl}}\" controls></video>\n            </div>\n        </div>\n        <div class=\"info-container\">\n            <p>⌚️ 时长：<span>{{$.model.durationFormat}}</span></p>\n            <p>📆 日期：<span>{{$.model.onlineTime##T|.000.*## }}</span></p>\n            <p>🎥 播放：<span>{{$.model.viewCount}}次</span></p>\n            <p>📩 收藏：<span>{{$.model.collectCount}}</span></p>\n            <p>🕵 片商：<span>{{$.model.authors}}</span></p>\n            <p>👤 上传：<span>{{$.model.uploader}}</span></p>\n            <p>🔖 标签：<span>{{$.model.categories}},{{$.model.tags}}</span></p>\n            <p>🏷 简介：<span>{{$.model.brief}}</span></p>\n        </div>\n        <script>\n            // 获取视频元素\n            const video = document.getElementById('video');\n            let touchStartX = 0;\n            let touchStartY = 0;\n            let touchStartTime = 0;\n            let isLongPress = false;\n\n            // 滑动快进\n            video.addEventListener('touchstart', (e) => {\n                touchStartX = e.touches[0].clientX;\n                touchStartY = e.touches[0].clientY;\n                touchStartTime = Date.now();\n                isLongPress = false;\n            });\n\n            video.addEventListener('touchmove', (e) => {\n                const deltaX = e.touches[0].clientX - touchStartX;\n                const deltaY = e.touches[0].clientY - touchStartY;\n\n                // 如果是水平滑动，且未进入长按状态\n                if (Math.abs(deltaX) > Math.abs(deltaY) && !isLongPress) {\n                    const duration = video.duration;\n                    const seekTime = video.currentTime + (deltaX / 50); // 每滑动100px快进1秒\n                    video.currentTime = Math.min(Math.max(seekTime, 0), duration);\n                }\n                e.preventDefault(); // 防止默认行为（如页面滚动）\n            });\n\n            // 长按快进\n            video.addEventListener('touchend', (e) => {\n                const touchEndTime = Date.now();\n                const touchDuration = touchEndTime - touchStartTime;\n\n                // 如果长按时间超过500ms，进入长按快进状态\n                if (touchDuration > 500) {\n                    isLongPress = true;\n\n                    // 在长按状态下，根据滑动距离快进\n                    const deltaX = e.changedTouches[0].clientX - touchStartX;\n                    const duration = video.duration;\n                    const seekTime = video.currentTime + (deltaX / 100); // 每滑动100px快进1秒\n                    video.currentTime = Math.min(Math.max(seekTime, 0), duration);\n                } else {\n                    isLongPress = false;\n                }\n            });\n        </script>\n    </body>\n    </html>\n`);\n        dataUrl = 'data:text/html;base64,' + b64;\n        java['startBrowser'](dataUrl, title);\n        java['toast']('正在加载视频\\n视频加载较慢，请耐心等待');\n    }\n    '【刷新正文】播放\\n✅直链:\\n' + `{{$.model.url}}`;\n\n\t\t}else if (baseUrl.match(/audio/)) {\njava.getString('{$.model.url}')\n}\n</js>",
-      "title": "",
-      "webJs": ""
-    },
-    "ruleExplore": {
-      "author": "$.authors",
-      "bookList": "$.model.data||$.model",
-      "bookUrl": "<js>\n if (baseUrl.match(/novel/)){\n'{{getUrl()}}novel/intro?id={{$.id}}'\n}else if (baseUrl.match(/comic/)) {\n\t'{{getUrl()}}comic/intro?id={{$.id}}'\n\t}else if (baseUrl.match(/video/)) {\n'{{getUrl()}}api/video/app/video/intro?force=false&id={{$.id}}&viewId='+new Date().getTime() + Math.round(Math.random() * (9999 - 1000) + 1000)\n\t\t}else if (baseUrl.match(/audio/)) {\n'{{getUrl()}}api/audio/app/audio/intro?id={{$.id}}'\n}\n</js>",
-      "coverUrl": "$.coverUrl",
-      "intro": "$.brief##原作：",
-      "kind": "{{$.finished##0##连载}}\n{{$.pornRateDesc##\\((.*)\\)##$1###}}\n{{$.categories}}##1##完结",
-      "lastChapter": "$.latestUpdate",
-      "name": "$.title&&@put:{bid:$.id}",
-      "wordCount": "$.wordCount"
-    },
-    "ruleSearch": {
-      "author": "$.authors",
-      "bookList": "<js>\njava.setContent(cache.get('urlss') );\ncache.delete('urlss');\nresult=java.getElements('$.model.data')\nresult\n</js>",
-      "bookUrl": "<js>\nlet v = String(source.getVariable()).split(\",\");\nlet x = v[0];\n if (x==0){\n'{{getUrl()}}novel/intro?id={{$.id}}'\n}else if (x==1) {\n\t'{{getUrl()}}comic/intro?id={{$.id}}'\n\t}else if (x==2) {\n'{{getUrl()}}api/video/app/video/intro?force=false&id={{$.id}}&viewId='+new Date().getTime() + Math.round(Math.random() * (9999 - 1000) + 1000)\n\t\t}else if (x==3) {\n'{{getUrl()}}api/audio/app/audio/intro?id={{$.id}}'\n}\n</js>",
-      "checkKeyWord": "",
-      "coverUrl": "$.coverUrl",
-      "intro": "$.brief##原作：",
-      "kind": "{{$.finished##0##连载}}\n{{$.pornRateDesc##\\((.*)\\)##$1###}}\n{{$.categories}}##1##完结",
-      "lastChapter": "$.latestUpdate",
-      "name": "$.title&&@put:{bid:$.id}",
-      "wordCount": "$.wordCount"
-    },
-    "ruleToc": {
-      "chapterList": "<js>\n if (baseUrl.match(/novel/)){\n\tbook.type = 8;\n //java.toast('当前为小说模式🧾'); \n var data = [];\nvar list = java.getElements(\".catalog_ul li\");\nvar n = src.match(/catalog_ul[^\\(]+.*-n.*(\\d+)\\)/) ? parseInt(src.match(/catalog_ul[^\\(]+.*-n.*(\\d+)\\)/)[1]) : 0;\nvar m = list.length;\nvar k = /menu/.test(list) && /展开章节/.test(list) ? 1 : 0;\n//java.log(n+'/'+m+'/'+k);\nfor (i in list) {\n    if (i >= m - n - k) {break}\n    var list_i = /img/.test(list[i].select(\"span\")[0]) ? list[i].select(\"span\")[0] : list[i].select(\"a\");\n    data.push({\n        title: String(list_i.text()).replace(book.name, \"\").replace(/^\\s+|\\snew/g, \"\"),\n        link: /img/.test(list[i].select(\"span\")[0]) ? \"\" : `${getUrl()}${list[i].select(\"a\").attr(\"href\")}`,\n        time: /img/.test(list[i].select(\"span\")[0])  ? \"\" : String(list[i].select(\"span\").text()).replace(/游客/g,'✨').replace(/币/g,'💰').replace(/new\\s/g,''),\n        vol: /img/.test(list[i].select(\"span\")[0]) ? true : false,\n        vip: /币/.test(list[i].select(\"span\")[0]) ? true : false\n    });\n}\ndata;\n }else if (baseUrl.match(/comic/)) {\n\tbook.type = 64;\n //java.toast('当前为漫画模式🧾'); \n var data=[]\nvar list = java.getElements(\".catalog_ul li\");\nvar n = src.match(/catalog_ul[^\\(]+.*-n.*(\\d+)\\)/) ? parseInt(src.match(/catalog_ul[^\\(]+.*-n.*(\\d+)\\)/)[1]) : 0;\nvar m = list.length;\nvar k = /menu/.test(list) && /展开章节/.test(list) ? 1 : 0;\n//java.log(n+'/'+m+'/'+k);\nfor (i in list) {\n    if (i >= m - n - k) {break}\n    var list_i = /img/.test(list[i].select(\"span\")[0]) ? list[i].select(\"span\")[0] : list[i].select(\"a\");\n    data.push({\n        title: String(list_i.text()).replace(book.name, \"\").replace(/^\\s+|\\snew/g, \"\"),\n        link: /img/.test(list[i].select(\"span\")[0]) ? \"\" : `${getUrl()}${list[i].select(\"a\").attr(\"href\")}`,\n        time: /img/.test(list[i].select(\"span\")[0])  ? \"\" : String(list[i].select(\"span\").text()).replace(/游客/g,'✨').replace(/币/g,'💰').replace(/new\\s/g,''),\n        vol: /img/.test(list[i].select(\"span\")[0]) ? true : false,\n        vip: /币/.test(list[i].select(\"span\")[0]) ? true : false\n    });\n}\ndata;\n\t}else if (baseUrl.match(/video/)) {\n    book.type = 8;\n    //java.toast('当前为视频模式🧾');\n  var data = []\n    name=java.getString('{$..title}')\n    href=`${getUrl()}api/video/app/video/intro?force=false&id=`+java.getString('{$.model.id}')+`&viewId=` + Date.now() + Math.round(Math.random() * (9999 - 1000) + 1000);\n\n data.push({\n    \ttitle:name,\n    \tlink:href\t  \t\t\n    });\n data\n  }else if (baseUrl.match(/audio/)) {\n    book.type = 32;\n    //java.toast('当前为听书模式🧾');\n    var data = []\n    name=java.getString('{$..title}')\n    href=`${getUrl()}api/audio/app/audio/chapter?force=false&id=`+java.getString('{$..latestReadChapterId}')+`&offset=0&viewId=` + Date.now() + Math.round(Math.random() * (9999 - 1000) + 1000);\n data.push({\n    \ttitle:name,\n    \tlink:href\t  \t\t\n    });\n    \n data\n}\n </js>",
-      "chapterName": "title",
-      "chapterUrl": "link",
-      "isVip": "vip",
-      "isVolume": "vol",
-      "updateTime": "time"
-    },
-    "searchUrl": "<js>\n let v = String(source.getVariable()).split(\",\");\n let x = v[0];\nlet url = getUrl();\nlet ss;\nlet uri = `${url}api/novel/app/novel/search?category=&excludeTags=&keyword=${key}&orderType=0&page=${page}&searchType=1&size=40`; //默认搜索小说\n\ntry {\n\tif (x == 0){\n\turl +=\t`api/novel/app/novel/search?category=&excludeTags=&keyword=${key}&orderType=0&page=${page}&searchType=1&size=40`\n\tss = java.get(url,{\t'user-agent': ua});\n\t\t\t\t}else if (x == 1) {\nurl +=\t`api/comic/app/comic/search?keyword=${key}&orderType=1&page=${page}&searchType=1&size=40`\nss = java.get(url,{\t'user-agent': ua});\n     }else if (x == 2 ) {\nurl +=\t`api/video/app/video/search?keyword=${key}&orderType=1&page=${page}&searchType=1&size=40`\nss = java.get(url,{\t'user-agent': ua});\n\t   \t}else if (x == 3 ) {\nurl +=\t`api/audio/app/audio/search?category=&keyword={{encodeURIComponent(key)}}&orderType=0&page=${page}&searchType=1&size=42`\nss = java.get(url,{\t'user-agent': ua});\n}\njava.log(ss.ss.statusCode())\njava.log(String(Object.keys(ss)))\nlet code = ss.statusCode();\nif (code==302||code==301) {\n\turi=ss.header(\"location\");\n\t}\n\telse if (code == 200) {\n\tcache.put('urlss', ss.body());\n\t\t}else if (code == 502) {\n\t\tjava.toast('\\n'+'👻ip被拉黑了👻')\n}\n\t}catch(err) {\n\t\tjava.log('💔访问出错💔')\n\t\tjava.log(String(err))\n\t\tjava.toast('\\n💔访问出错，更换域名💔')\n\t}\n\turi;\n</js>",
-    "variableComment": "设置模式和域名\n！！！建议在登录功能中设置！！！\n\n模式选择：\n小说：0\n漫画：1\n视频：2\n听书：3\n\n域名：0~5\n\n填入数字，用英文逗号隔开",
-    "weight": 0
-  },
-  {
     "bookSourceComment": "//无名25.04.30\n//部分节点过不了CF",
     "bookSourceGroup": "源社区,飞机",
     "bookSourceName": "小說網85novel",
@@ -176,6 +110,49 @@
     "weight": 0
   },
   {
+    "bookSourceComment": "2025/5/4\nby天天的鸟蛋蛋  \nby 静白 正文解密",
+    "bookSourceGroup": "",
+    "bookSourceName": "风车漫画",
+    "bookSourceType": 2,
+    "bookSourceUrl": "https://www.fengchemh.com",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "漫画大全::/category/\n国产漫画::/category/list/1\n日本漫画::/category/list/2\n韩国漫画::/category/list/3\n欧美漫画::/category/list/4",
+    "jsLib": "",
+    "lastUpdateTime": "1746359443321",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": ".info@.row@span.1@text",
+      "coverUrl": ".pic@img@src",
+      "intro": "{{@@.info@span,h1@html}}\n简介：\n{{@@.more-box@.pt-10@html}}",
+      "kind": ".info@.row@span.2:3@text##.*：|\\s##,",
+      "lastChapter": ".info@.row@span.-1@a@text",
+      "name": ".info@h1@text"
+    },
+    "ruleContent": {
+      "content": "<js>\nfunction decode(bytes, key, iv, mode) {\n    return java.createSymmetricCrypto(\n        mode || \"aes/cbc/pkcs7padding\",\n        key,\n        iv\n    ).decryptStr(bytes)\n}\n\na = result.match(/var tpl_path = '.*', params = '(.*)';/)[1];\n\nd = decode(\n    a,\n    \"9S8$vJnU2ANeSRoF\",\n    a.slice(0,16)\n)\nm = d.match(/{\".*/)[0]\nmList = java.getString(\"$.images[*]\",m)\nmList.split('\\n').map(x => `<img src=\"${x}\">`).join('\\n');\n</js>",
+      "webJs": ""
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "bookList": ".row@li",
+      "bookUrl": "a@href",
+      "checkKeyWord": "https://www.fengchemh.com/comic/dz0aW19Pk3",
+      "coverUrl": ".img-wrapper@data-background\n",
+      "lastChapter": "p@text",
+      "name": "h3@text"
+    },
+    "ruleToc": {
+      "chapterList": "#ewave-playlist-1@li@a",
+      "chapterName": "text",
+      "chapterUrl": "href"
+    },
+    "searchUrl": "<js>\nvar timestamp = new Date().getTime();\njava.log(timestamp);\n\nr=`https://www.fengchemh.com/index.php/search?key=${key}&verify=1&pcode={{java.getVerificationCode('https://www.fengchemh.com/api/code')}}&_=${timestamp}`\nr;\n</js>",
+    "weight": 0
+  },
+  {
     "bookSourceComment": "\n\n可下载可在线观看,下载需要改成【文件】\n@天天的鸟蛋蛋：修复搜索\n原来的源只能用【发现】，\n我发现手机版能【搜索】，\n电脑版【搜索】找不到【列表】，\n于是就用手机版的【搜索】顶替电脑版的【搜索】。\n2025/3/5 更新优化搜索加入搜索下一页 优化，发现",
     "bookSourceGroup": "下载,在线,💐 女频,搜索失效",
     "bookSourceName": "💐 爱久久小说",
@@ -235,6 +212,55 @@
       "formatJs": ""
     },
     "searchUrl": "https://m.jjjxsw.com/e/search/index.php,{\n  \"body\": \"show=writer%2Ctitle&keyboard={{key}}&Submit22=%E6%90%9C%E7%B4%A2\",\n  \"method\": \"POST\"\n}\n@js:\njava.webView(null,baseUrl,null)\nurl=String(result).replace(\"{{key}}\",key);\nso=java.connect(url).raw().request().url();\nString(so).replace(/\\d+.html?$/, \"{{page-1}}.html\");",
+    "weight": 0
+  },
+  {
+    "bookSourceComment": "//无名25.05.04，源社区群友解决加密",
+    "bookSourceGroup": "源社区",
+    "bookSourceName": "新书阁",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.xinshuge.xyz",
+    "bookUrlPattern": "https://www.xinshuge.xyz",
+    "concurrentRate": "",
+    "customOrder": 1,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "header": "{\"User-Agent\": \"Mozilla/5.0 (Linux; Android 14; 2312DRAABC) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Mobile Safari/537.36\"}",
+    "lastUpdateTime": "1746355238136",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "p.0@text",
+      "coverUrl": "img@src@js:result = \"https://www.xinshuge.xyz\" + result",
+      "init": ".detail-box",
+      "intro": ".desc@text",
+      "kind": "p[1,2,3]@text##类别：##",
+      "name": "h1@text",
+      "tocUrl": ""
+    },
+    "ruleContent": {
+      "content": "<js>\nvar doc = result;\njava.log(\"----\" + baseUrl);\nvar finalContent = \"\"; \ntry {\n    var contentText = \"\";\n    \n    \n    if (doc) {\n        var contentElement = org.jsoup.Jsoup.parse(doc).select(\".content\");\n        if (contentElement) {\n            contentText = contentElement.text().trim();\n        } else {\n            contentText = \"\";\n        }\n    } else {\n        // throw new Error(\"HTML parsing failed\");\n        contentText = \"【无法解析HTML】\"; \n    }\n    // 解密\n    var decryptedText = \"\";\n    var atob = function(val) {\n        try {\n            return String(java.base64Decode(val, \"ISO-8859-1\"));\n        } catch (e) {\n            // java.log(\"Base64 解码失败 for: \" + val + \", Error: \" + e);\n            return \"\";\n        }\n    };\n    function _0x5472bc(_0x29b0fa) {\n        return _0x29b0fa.slice().reverse();\n    }\n    function _0x17ef6d(aR) {\n        var _0xe4c1a0 = '';\n        try {\n            for (var _0x15efce = 0; _0x15efce < aR.length; _0x15efce++) {\n                _0xe4c1a0 += String.fromCharCode(aR[_0x15efce]);\n            }\n            return decodeURIComponent(escape(_0xe4c1a0));\n        } catch(e) {\n            // java.log(\"字节转字符串或 decodeURIComponent 出错: \" + e);\n            return _0xe4c1a0;\n        }\n    }\n    function _0x325420(encodedData, encodedKey) {\n        try {\n            var keyBytesRaw = atob(encodedKey).split('').map(c => c.charCodeAt(0));\n            if (!keyBytesRaw || keyBytesRaw.length === 0) throw new Error(\"解码后的密钥为空\");\n            var keyBytesProcessed = _0x5472bc(keyBytesRaw);\n            if (!keyBytesProcessed || keyBytesProcessed.length === 0) throw new Error(\"处理后的密钥为空\");\n\n            var dataBytesRaw = atob(encodedData).split('').map(c => c.charCodeAt(0));\n            if (!dataBytesRaw) throw new Error(\"解码后的数据为空\");\n\n            var decryptedBytes = dataBytesRaw.map((byte, index) => byte ^ keyBytesProcessed[index % keyBytesProcessed.length]);\n            return _0x17ef6d(decryptedBytes);\n        } catch (e) {\n            // java.log(\"解密函数 _0x325420 内部错误: \" + e);\n            return \"【解密过程出错】\"; // 返回错误指示\n        }\n    }\n    var paramRegex = /await\\s+_0x\\w+\\('(.+?)','(.+?)'\\)/;\n    var ar = result.match(paramRegex);\n    if (ar && ar[1] && ar[2]) {\n        var encodedDataParam = ar[1];\n        var encodedKeyParam = ar[2];\n        // java.log(\"提取到加密参数，准备解密...\");\n        // --- 调用解密函数 ---\n        decryptedText = _0x325420(encodedDataParam, encodedKeyParam);\n        // java.log(\"解密后文本长度: \" + decryptedText.length);\n    } else {\n        java.log(\"未能从 HTML 中用正则匹配到解密所需的参数\");\n        decryptedText = \"【未能提取加密参数】\"; // 设置错误提示\n    }\n\n    // --- 拼接结果\n    finalContent = contentText + \"\\n\\n\" + decryptedText; \n\n} catch (e) {\n    java.log(\"错误: \" + e);\n    finalContent = \"【规则执行出错: \" + e + \"】\"; // 在最终输出中包含错误信息\n}\nresult = finalContent; \n</js>",
+      "imageStyle": "",
+      "nextContentUrl": "<js>\nvar nextChapterUrl = null; \ntry {    \n    var doc = result;\n    if (!doc) {        \n        throw new Error(\"HTML 解析失败\"); \n    }        \n    var nextLink = org.jsoup.Jsoup.parse(doc).select(\"a:containsOwn(下─章)\");\n    if (nextLink) {        \n        var onclickValue = nextLink.attr(\"onclick\");\n        if (onclickValue) {                        \n            var idRegex = /location\\.href='([^']+)\\.idx'/;\n            var idMatch = onclickValue.match(idRegex);\n            if (idMatch && idMatch[1]) {\n                var chapterIdPart = idMatch[1];                 \n                var checkRegex = /_\\d+$/; \n                if (checkRegex.test(chapterIdPart)) {                                      \n                    var newFileName = chapterIdPart + \".html\";                                        \n                    var lastSlashRegex = /\\/[^/]*$/;\n                    if (typeof baseUrl === 'string') {                        \n                        nextChapterUrl = baseUrl.replace(lastSlashRegex, \"/\" + newFileName);\n                        \n                    }\n                }\n            }\n        }\n    }\n} catch (e) {    \n    nextChapterUrl = null; \n}\nresult = nextChapterUrl;\n</js>",
+      "replaceRegex": "##抱歉，章节内容加载错误，未能成功加载章节内容或刷新页面。|Sorry, there was an error loading the chapter content. We were unable to successfully load the chapter or refresh the page.|抱歉，章節內容載入錯誤，未能成功載入章節內容或重新整理頁面。|本章节部分内容加载错误，请正常浏览，重新载入或刷新当前网页|www.xinshuge.xyz |本章未完，点击下一章继续阅读|新书阁|www.xinshuge.xyz|https://www.xinshuge.xyz|第\\w+章.*\\(\\d+\\/\\d+\\)"
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "author": ".b1@text",
+      "bookList": "<js>\nif(result.match(/Just a/)){\n\txb=(baseUrl)+\",\"+JSON.stringify({\n\t\t\"headers\":{\n\t\t\t\"User-Agent\": \"Mozilla/5.0 (Linux; Android 14; 2312DRAABC) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Mobile Safari/537.36\"\n}})\ncookie.removeCookie(source.bookSourceUrl)\njava.startBrowserAwait(xb,\"验证\")\nresult=java.ajax(xb)\n\t}\n\tresult\n\t</js>\n\nclass.txt-pic-list txt-list-row5@li",
+      "bookUrl": "a@href@js:result+',{webView:“true”}'",
+      "checkKeyWord": "斗罗",
+      "intro": ".desc@text",
+      "kind": ".b2,.b3@text",
+      "name": "class.h1@text"
+    },
+    "ruleToc": {
+      "chapterList": ".section-list[1]@li",
+      "chapterName": "text",
+      "chapterUrl": "a@href@js:result = \"https://www.xinshuge.xyz\" + result +',{webView:“true”}'",
+      "nextTocUrl": "text.下─页@href@js:java.log(result)"
+    },
+    "searchUrl": "/search/{{key}}.html",
     "weight": 0
   },
   {
@@ -450,85 +476,6 @@
     "weight": 0
   },
   {
-    "bookSourceComment": "",
-    "bookSourceGroup": "校验可用",
-    "bookSourceName": "大文学②",
-    "bookSourceType": 0,
-    "bookSourceUrl": "https://www.ssdzgj.com/",
-    "customOrder": 77,
-    "enabled": true,
-    "enabledCookieJar": false,
-    "enabledExplore": true,
-    "lastUpdateTime": "1745836096198",
-    "respondTime": 4992,
-    "ruleBookInfo": {
-      "author": "[property=og:novel:author]@content",
-      "coverUrl": "[property=og:image]@content",
-      "intro": "[property=og:description]@content",
-      "kind": "[property=og:novel:update_time]@content&&\n[property=og:novel:category]@content&&\n[property=og:novel:status]@content",
-      "lastChapter": "[property=og:novel:latest_chapter_name]@content##免费章节 |正文卷 |正文 |VIP章节 ",
-      "name": "[property=og:novel:book_name]@content##|\\（.*|\\(.*|免费阅读|全文.*阅读|最新章节|小说|笔趣阁|免费.*"
-    },
-    "ruleContent": {
-      "content": "id.htmlContent@p@html##推荐下.*更新快！|推荐一个.*com ！|广个告.*离线朗读！|广个告.*更新快！|.*咪.*咪.*阅.*读.*"
-    },
-    "ruleExplore": [],
-    "ruleReview": [],
-    "ruleSearch": {
-      "author": "$.author",
-      "bookList": "$..search[*]",
-      "bookUrl": "{{$.book_list_url}}",
-      "checkKeyWord": "",
-      "coverUrl": "{{$.cover}}",
-      "intro": "$.intro",
-      "kind": "{{$.uptime}}\n{{$.cate_name}}\n{{$.status_str}}",
-      "lastChapter": "$.latest_chapter_name",
-      "name": "$.book_name"
-    },
-    "ruleToc": {
-      "chapterList": "id.at@tag.td@a",
-      "chapterName": "text",
-      "chapterUrl": "href"
-    },
-    "searchUrl": "/api/search?q={{key}}",
-    "weight": 0
-  },
-  {
-    "ruleSearch": {
-      "bookList": "class.txt-list txt-list-row5@li!0",
-      "name": "a.0@text",
-      "author": "class.s1@text",
-      "lastChapter": "a.1@text",
-      "bookUrl": "a.0@href"
-    },
-    "ruleBookInfo": {
-      "name": "class.top@tag.h1@text",
-      "author": "class.top@a.0@text",
-      "lastChapter": "class.top@a.2@text",
-      "coverUrl": "class.m-desc xs-show@tag.p.0@text"
-    },
-    "ruleToc": {
-      "chapterList": "class.section-list fix.1@li",
-      "chapterName": "a.0@text",
-      "chapterUrl": "a.0@href",
-      "nextTocUrl": "class.listpage@class.right@tag.a@href"
-    },
-    "ruleContent": {
-      "content": ".content@p@text",
-      "title": "class.title@text",
-      "nextContentUrl": "id.next_url.0@href"
-    },
-    "ruleReview": [],
-    "ruleExplore": [],
-    "bookSourceType": 0,
-    "searchUrl": "{{url=source.getKey();\ncookie.removeCookie(url)}}/search,{\n  \"body\": \"searchkey={{key}}\",\n  \"method\": \"POST\"\n}",
-    "bookSourceUrl": "https://www.xbiqu6.com/",
-    "bookSourceName": "笔趣阁",
-    "header": "{\"User-Agent\": \"Mozilla/5.0 (Linux; Android 9) Mobile Safari/537.36\"}",
-    "enabled": true,
-    "lastUpdateTime": "1745738535317"
-  },
-  {
     "ruleContent": {
       "content": "#chapterContent p@textNodes"
     },
@@ -576,6 +523,83 @@
     "bookSourceGroup": "🐣R18小说"
   },
   {
+    "ruleSearch": {
+      "bookList": "class.block.[0:-1]",
+      "name": "class.block_txt@tag.h2@tag.a@text",
+      "author": "class.block_txt@tag.p.3@text",
+      "kind": "class.block_txt@tag.p.2@text",
+      "lastChapter": "class.block_txt@tag.p.4@tag.a@text",
+      "bookUrl": "class.block_txt@tag.h2@tag.a@href",
+      "coverUrl": "class.block_img@tag.img@src"
+    },
+    "ruleBookInfo": {
+      "name": "class.block_txt2@h2@a@text",
+      "author": "class.block_txt2@p.2@text",
+      "kind": "class.block_txt2@p.3@a@text",
+      "lastChapter": "class.block_txt2@p.6 @a@text",
+      "coverUrl": "class.block_img2@tag.img@src",
+      "tocUrl": "class.book_more@a@href",
+      "intro": "class.intro_info@text"
+    },
+    "ruleToc": {
+      "chapterList": "class.book_last@dd",
+      "chapterName": "tag.a@text",
+      "chapterUrl": "tag.a@href",
+      "nextTocUrl": "class.right.0@a@href"
+    },
+    "ruleContent": {
+      "content": "id.nr1@text",
+      "nextContentUrl": "id.pb_next.0@href"
+    },
+    "ruleReview": [],
+    "ruleExplore": [],
+    "bookSourceType": 0,
+    "bookSourceUrl": "http://wap.qiqixs.info/",
+    "bookSourceName": "平板电子书网",
+    "searchUrl": "search.php,{\n  \"body\": \"searchkey={{key}}\",\n  \"method\": \"POST\"\n}",
+    "enabled": true,
+    "lastUpdateTime": "1746522688265"
+  },
+  {
+    "bookSourceComment": "2025/5/6\nby天天的鸟蛋蛋",
+    "bookSourceName": "来漫画",
+    "bookSourceType": 2,
+    "bookSourceUrl": "https://m.laimanhua.org/",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "lastUpdateTime": "1746566290956",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "coverUrl": ".dramaDetail_bookCover@img@src",
+      "intro": ".adm-ellipsis@text",
+      "kind": ".dramaDetail_tagsBox@a@text",
+      "lastChapter": ".drama_newchapter@a@text",
+      "name": ".dramaDetail_bookName@text"
+    },
+    "ruleContent": {
+      "content": "<js>\nfunction decode(bytes, key, iv, mode) {\n    return java.createSymmetricCrypto(\n        mode || \"aes/cbc/pkcs7padding\",\n        key,\n        iv\n    ).decryptStr(bytes)\n}\n\na = result.match(/var tpl_path = '.*', params = '(.*)';/)[1];\n\nd = decode(\n    a,\n    \"9S8$vJnU2ANeSRoF\",\n    a.slice(0,16)\n)\nm = d.match(/{\".*/)[0]\nmList = java.getString(\"$.images[*]\",m)\nmList.split('\\n').map(x => `<img src=\"${x}\">`).join('\\n');\n</js>"
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "author": "",
+      "bookList": ".MTagBookList_tagBookBox@.MTagBookList_tagBookItem",
+      "bookUrl": "a@href",
+      "coverUrl": "img@src",
+      "intro": ".MTagBookList_intro@text",
+      "kind": ".MTagBookList_tagsBox@a@text",
+      "name": ".MTagBookList_bookName@text"
+    },
+    "ruleToc": {
+      "chapterList": ".CatalogList_content@li@a",
+      "chapterName": "text",
+      "chapterUrl": "href"
+    },
+    "searchUrl": "https://m.laimanhua.org/index.php/search?key={{key}}<,/{{page}}>",
+    "weight": 0
+  },
+  {
     "bookSourceComment": "coolapk@芜恙",
     "bookSourceGroup": "有声",
     "bookSourceName": "幻听网",
@@ -613,6 +637,64 @@
       "chapterUrl": "//@href@js:result+',{webView:“true”}'"
     },
     "searchUrl": "/search.asp,{\n  \"charset\": \"gb2312\",\n  \"method\": \"POST\",\n  \"body\": \"searchword={{key}}\"\n}",
+    "weight": 0
+  },
+  {
+    "bookSourceComment": "//无名2025.05.04\n//@js:\nif(result.match(/精彩内容/)){\n\txb=(baseUrl)+\",\"+JSON.stringify({\n\t\t\"headers\":{\n\t\t\t\"User-Agent\": \"Mozilla/5.0 (Linux; Android 14; 2312DRAABC) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Mobile Safari/537.36\"\n}})\nresult=java.ajax(xb)\njava.log(\"1\")\n\t}\n\tresult\n",
+    "bookSourceGroup": "源社区",
+    "bookSourceName": "笔趣阁233",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.mfxs0.cn",
+    "bookUrlPattern": "https://www.mfxs0.cn",
+    "concurrentRate": "2000",
+    "customOrder": 2,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "exploreUrl": "[{\"title\":\"全本小说\",\"url\":\"/?pbcode/quanben/{{page}}/\",\"style\":{\"layout_flexBasisPercent\":0.24,\"layout_flexGrow\":0.32}},{\"title\":\"全站书库\",\"url\":\"/?pbcode/shuku/{{page}}/\",\"style\":{\"layout_flexBasisPercent\":0.24,\"layout_flexGrow\":0.32}},{\"title\":\"热门推荐\",\"url\":\"/?pbcode/tuijian/{{page}}/\",\"style\":{\"layout_flexBasisPercent\":0.24,\"layout_flexGrow\":0.32}},{\"title\":\"奇幻·玄幻\",\"url\":\"/?11_{{page}}/\",\"style\":{\"layout_flexBasisPercent\":0.24,\"layout_flexGrow\":0.32}},{\"title\":\"武侠·仙侠\",\"url\":\"/?22_{{page}}/\",\"style\":{\"layout_flexBasisPercent\":0.24,\"layout_flexGrow\":0.32}},{\"title\":\"都市·青春\",\"url\":\"/?33_{{page}}/\",\"style\":{\"layout_flexBasisPercent\":0.24,\"layout_flexGrow\":0.32}},{\"title\":\"历史·穿越\",\"url\":\"/?44_{{page}}/\",\"style\":{\"layout_flexBasisPercent\":0.24,\"layout_flexGrow\":0.32}},{\"title\":\"游戏·竞技\",\"url\":\"/?55_{{page}}/\",\"style\":{\"layout_flexBasisPercent\":0.24,\"layout_flexGrow\":0.32}},{\"title\":\"科幻·灵异\",\"url\":\"/?66_{{page}}/\",\"style\":{\"layout_flexBasisPercent\":0.24,\"layout_flexGrow\":0.32}},{\"title\":\"轻·小说\",\"url\":\"/?67_{{page}}/\",\"style\":{\"layout_flexBasisPercent\":0.24,\"layout_flexGrow\":0.32}},{\"title\":\"其他\",\"url\":\"/?68_{{page}}/\",\"style\":{\"layout_flexBasisPercent\":0.24,\"layout_flexGrow\":0.32}}]",
+    "header": "{\"User-Agent\": \"Mozilla/5.0 (Linux; Android 14; 2312DRAOBC) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Mobile Safari/537.36\"}",
+    "lastUpdateTime": "1746355271770",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": ".cs@a.1@text##作者：",
+      "coverUrl": "{{book.coverUrl}}",
+      "init": ".box2[0]",
+      "intro": ".box@text",
+      "kind": ".cs@a.0@text##类型：",
+      "lastChapter": ".new@text##最新更新章节：##",
+      "name": "h1@text##《(.*)》##$1",
+      "tocUrl": "id.booklistBox@href",
+      "wordCount": "{{book.wordCount}}"
+    },
+    "ruleContent": {
+      "content": "id.bodybox@html",
+      "sourceRegex": ""
+    },
+    "ruleExplore": {
+      "author": "a.1@text",
+      "bookList": ".hot-img",
+      "bookUrl": "a.0@href",
+      "coverUrl": "a.0@img@crs@src",
+      "intro": "p@text",
+      "name": "h2@text",
+      "wordCount": "text##(.*?)(\\d+(\\.\\d+)?万?字)(.*)##$2"
+    },
+    "ruleSearch": {
+      "author": "a.2@text",
+      "bookList": ".hot-img",
+      "bookUrl": "a.0@href",
+      "checkKeyWord": "斗破",
+      "coverUrl": "a.0@img@crs@src",
+      "intro": "p@text",
+      "name": "h2@text",
+      "wordCount": "text##(.*?)(\\d+(\\.\\d+)?万?字)(.*)##$2"
+    },
+    "ruleToc": {
+      "chapterList": "id.booklistBox@li",
+      "chapterName": "text",
+      "chapterUrl": "a@href##(www)@js:result +',{webView:“true”}'"
+    },
+    "searchUrl": "/?pbcode/so/{{key}}/{{page}}/",
     "weight": 0
   },
   {
@@ -677,6 +759,49 @@
     },
     "searchUrl": "<js>\nlet base_url = getArguments(source.getVariable(),'server',String(source.bookSourceComment));\nlet key2 = '';\ntry {\n\tkey2 = String(cookie.getCookie(base_url)) || String(java.getCookie(base_url));\n\tkey2 = getKey(key2);\n        } catch (e) {key2='';}\n\n\nlet media;\nlet sources = getArguments(source.getVariable(),'source',String(source.bookSourceComment));\nif (String(key).startsWith(\"m:\")||String(key).startsWith(\"m：\")) {\n  media = \"漫画\"\n  key = key.slice(2)\n  }else if (String(key).startsWith(\"t:\")||String(key).startsWith(\"t：\")) {\n  media = \"听书\"\n  key = key.slice(2)\n} else if (String(key).startsWith(\"d:\")||String(key).startsWith(\"d：\")) {\n  media = \"短剧\"\n  key = key.slice(2)\n} else if (String(key).startsWith(\"x:\")||String(key).startsWith(\"x：\"))  {\n\tmedia = \"小说\"\n  key = key.slice(2)\n\t} else {\n\tmedia = getArguments(source.getVariable(),'media',String(source.bookSourceComment));\n\t}\nif (key.includes('@')) {\n  const parts = key.split('@');\n  key = parts[0];\n  sources = parts[1] || sources;\n}\n\t`${base_url}/search?title=${key}&tab=${media}&source=${sources}&key=${key2}`\n</js>",
     "weight": 60
+  },
+  {
+    "bookSourceComment": "",
+    "bookSourceName": "书斋阁",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.shuzhaige.com",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "exploreUrl": "古典文学::/gudianwenxue/{{page==1?'':'index_'+page+'.html'}}\n世界名著::/shijiemingzhu/{{page==1?'':'index_'+page+'.html'}}\n影视原著::/yingshi/{{page==1?'':'index_'+page+'.html'}}",
+    "header": "{\n  \"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36\"\n}",
+    "lastUpdateTime": "1746384338684",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "[property=\"og:novel:author\"]@content",
+      "coverUrl": "[property=\"og:image\"]@content",
+      "intro": "[property=\"og:description\"]@content",
+      "kind": "[property~=category|status|update_time]@content",
+      "lastChapter": "[property~=las?test_chapter_name]@content",
+      "name": "[property=\"og:novel:book_name\"]@content",
+      "tocUrl": ""
+    },
+    "ruleContent": {
+      "content": "#content@p@textNodes",
+      "replaceRegex": "##马上记住书斋阁.*|,如果被U.*"
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "author": ".col-xs-4@text",
+      "bookList": "class.table table-striped table-hover@tr!0",
+      "bookUrl": ".col-xs-8@a@href",
+      "kind": ".hidden-xs.1@text",
+      "lastChapter": ".hidden-xs.0@text",
+      "name": ".col-xs-8@text"
+    },
+    "ruleToc": {
+      "chapterList": ".line3 a",
+      "chapterName": "text",
+      "chapterUrl": "href"
+    },
+    "searchUrl": "/e/search/index.php,{\n  \"body\": \"tbname=bookname&show=title,writer&tempid=1&keyboard={{key}}\",\n  \"method\": \"POST\"\n}",
+    "weight": 0
   },
   {
     "bookSourceComment": "\n搜索已废！阿鬼小改了一下！！",
