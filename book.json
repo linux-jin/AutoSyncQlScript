@@ -427,66 +427,6 @@
     "weight": 0
   },
   {
-    "bookSourceComment": "//无名25.05.01修\n//25.05.02用电脑ua解决搜索下一页，验证成功跳转后请重新搜索",
-    "bookSourceGroup": "源社区",
-    "bookSourceName": "篱笆好文学",
-    "bookSourceType": 0,
-    "bookSourceUrl": "https://www.libahao.com/",
-    "bookUrlPattern": "",
-    "concurrentRate": "",
-    "coverDecodeJs": "",
-    "customOrder": 3,
-    "enabled": true,
-    "enabledCookieJar": true,
-    "enabledExplore": true,
-    "exploreUrl": "",
-    "header": "{\"User-Agent\": \"Mozilla/5.0 (Linux; Android 14; 2312DRAADC) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Mobile Safari/537.36\"}",
-    "lastUpdateTime": "1746180515869",
-    "loginCheckJs": "",
-    "respondTime": 180000,
-    "ruleBookInfo": {
-      "author": "[property=\"og:novel:author\"]@content",
-      "coverUrl": "img@src",
-      "intro": "[property=\"og:description\"]@content",
-      "kind": "[property~=category|status|update_time]@content",
-      "lastChapter": "[property~=las?test_chapter_name]@content",
-      "name": "[property=\"og:novel:book_name\"]@content",
-      "tocUrl": ""
-    },
-    "ruleContent": {
-      "content": ".chapter-content@html",
-      "nextContentUrl": "text.下一页@href"
-    },
-    "ruleExplore": {
-      "author": "",
-      "bookList": "",
-      "bookUrl": "",
-      "coverUrl": "",
-      "intro": "",
-      "name": ""
-    },
-    "ruleSearch": {
-      "author": "$.author",
-      "bookList": "<js>\nif(result.match(/百度安全验证/)){\n\txb=(baseUrl)+\",\"+JSON.stringify({\n\t\t\"headers\":{\n\t\t\t\"User-Agent\": \"Mozilla/5.0 (X11; Linux x86 64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36\"\n}})\njava.startBrowserAwait(xb,\"验证\")\nresult=java.ajax(xb)\n\t}\n\nvar bookList = [];\nvar finalJsonOutput = null;\ntry {\n    var doc = result;\n    if (!doc) {\n        throw new Error(\"无法解析 HTML\");\n    }\n    var containers = org.jsoup.Jsoup.parse(doc).select(\"div.c-container.result-op, div.c-container.result\");\n    java.log(\"找到 \" + containers.size() + \" 个\");\n    for (var i = 0; i < containers.size(); i++) {\n        var container = containers.get(i);\n        var book = {};\n        if (container.hasClass(\"result-op\")) {            \n            java.log(\"处理第 \" + (i + 1) + \" 个 (result-op)\");            \n            book.bookUrl = container.attr(\"mu\") || null;             \n            var nameElement = container.selectFirst(\"a\");\n            if (nameElement) {\n                var nameText = nameElement.text().trim();\n                book.name = (nameText) ? nameText : \"未找到\";\n                if (!nameText) {\n                    //java.log(\"未找到书名，a 标签内容: \" + nameElement.outerHtml());\n                }\n            } else {\n                book.name = \"未找到\";\n                //java.log(\"未找到书名对应的 a 标签\");\n            }            \n            var authorElement = container.selectFirst(\"span\");\n            if (authorElement) {\n                var authorText = authorElement.text().trim();\n                var prefix = \"作者： \"; \n                if (authorText.includes(prefix)) {\n                    book.author = authorText.substring(prefix.length).trim();\n                } else {\n                    book.author = \"未找到\";\n                    //java.log(\"作者信息未找到或格式不符: \" + authorElement.outerHtml());\n                }\n            } else {\n                book.author = \"未找到\";\n                //java.log(\"未找到作者对应的 span 标签\");\n            }            \n            var introElement = container.selectFirst(\"div.text_2NOr6\");\n            var introText = null;\n            if (introElement) {\n                introText = introElement.text().trim();\n                book.intro = introText;                 \n                book.kind = null; \n                if (!introText.startsWith(\"简介:\")) {\n                    var kindPrefix = \"类别:\";\n                    var kindIndex = introText.indexOf(kindPrefix);\n                    if (kindIndex !== -1) {\n                        var kindTemp = introText.substring(kindIndex + kindPrefix.length).trim();\n                        var chapterPrefix = \"最新章节\"; \n                        var chapterIndex = kindTemp.indexOf(chapterPrefix);\n                        if (chapterIndex !== -1) {\n                            book.kind = kindTemp.substring(0, chapterIndex).trim(); \n                        } else {\n                            book.kind = kindTemp; \n                        }\n                    } else {\n                        //java.log(\"未在 intro 文本中找到 '类别:' 用于提取 kind: \" + introText);\n                    }\n                } else {\n                    //java.log(\"intro 文本以 '简介:' 开头，kind 设为 null\");\n                }\n            } else {\n                book.intro = null; \n                book.kind = null;\n                //java.log(\"未找到 intro/kind 对应的 div.text_2NOr6 标签\");\n            }            \n            var allAElements = container.select(\"a\");\n            if (allAElements.size() >= 2) {\n                book.lastChapter = allAElements.get(allAElements.size() - 2).text().trim();\n            } else {\n                book.lastChapter = null; \n                //java.log(\"a 标签数量不足，无法提取倒数第二个作为 lastChapter\");\n            }\n        } else if (container.hasClass(\"result\")) {            \n            java.log(\"处理第 \" + (i + 1) + \" (result)\");            \n            book.bookUrl = container.attr(\"mu\") || null;            \n            var nameElement = container.selectFirst(\"a\");\n            if (nameElement) {\n                var nameText = nameElement.text().trim();\n                book.name = (nameText) ? nameText : \"未找到\";\n                if (!nameText) {\n                   //java.log(\"未找到书名，a 标签内容: \" + nameElement.outerHtml());\n                }\n            } else {\n                book.name = \"未找到\";\n                //java.log(\"未找到书名对应的 a 标签\");\n            }            \n            var contentRightElement = container.selectFirst(\".content-right_1THTn\");\n            if (contentRightElement) {\n                var fullText = contentRightElement.text().trim();\n                book.intro = fullText;                 \n                book.author = null; \n                var authorPrefix = \"作者:\"; \n                var authorIndex = fullText.indexOf(authorPrefix);\n                var kindSeparator = \"类别\"; \n                var kindIndexForAuthor = fullText.indexOf(kindSeparator);\n                if (authorIndex !== -1) { \n                    var startIndex = authorIndex + authorPrefix.length;\n                    var endIndex = (kindIndexForAuthor !== -1 && kindIndexForAuthor > authorIndex) ? kindIndexForAuthor : fullText.length;\n                    book.author = fullText.substring(startIndex, endIndex).trim();\n                } else {\n                    //java.log(\"未在 .content-right_1THTn 中找到 '作者:'\");\n                }                \n                book.kind = null; \n                var kindPrefix = \"类别:\"; \n                var kindIndex = fullText.indexOf(kindPrefix);\n                var chapterSeparator = \"最新章节\"; \n                var chapterIndexForKind = fullText.indexOf(chapterSeparator);\n                if (kindIndex !== -1) { \n                    var startIndex = kindIndex + kindPrefix.length;\n                    var endIndex = (chapterIndexForKind !== -1 && chapterIndexForKind > kindIndex) ? chapterIndexForKind : fullText.length;\n                    book.kind = fullText.substring(startIndex, endIndex).trim();\n                } else {\n                    //java.log(\"未在 .content-right_1THTn 中找到 '类别:'\");\n                }                \n                book.lastChapter = null; \n                var chapterPrefix = \"最新章节:\"; \n                var chapterIndex = fullText.indexOf(chapterPrefix);\n                var updateSeparator = \"最新更新\"; \n                var updateIndex = fullText.indexOf(updateSeparator);\n\n                if (chapterIndex !== -1) { \n                    var startIndex = chapterIndex + chapterPrefix.length;\n                    var endIndex = (updateIndex !== -1 && updateIndex > chapterIndex) ? updateIndex : fullText.length;\n                    book.lastChapter = fullText.substring(startIndex, endIndex).trim();\n                } else {\n                    //java.log(\"未在 .content-right_1THTn 中找到 '最新章节:'\");\n                }\n            } else {                \n                book.author = null;\n                book.kind = null;\n                book.lastChapter = null;\n                book.intro = null;\n                //java.log(\"未找到 .content-right_1THTn 元素\");\n            }\n        } else {\n            //java.log(\"跳过未知类型的容器: \" + container.outerHtml().substring(0, 100));\n            continue; \n        }        \n        bookList.push(book);\n    }\n    var finalResult = {\n        bookList: bookList \n    };\n    finalJsonOutput = JSON.stringify(finalResult);\n} catch (e) {\n    java.log(\"错误: \" + e);\n    finalJsonOutput = JSON.stringify({\n        bookList: []\n    }); \n}\nresult = finalJsonOutput;\n</js>\n$.bookList",
-      "bookUrl": "$.bookUrl@js:result+',{webView:“true”}'",
-      "checkKeyWord": "斗破苍穹",
-      "coverUrl": "",
-      "intro": "$.intro",
-      "kind": "$.kind",
-      "lastChapter": "$.liastChapter",
-      "name": "$.name",
-      "wordCount": ""
-    },
-    "ruleToc": {
-      "chapterList": ".chapter-list.1@li",
-      "chapterName": "a@text",
-      "chapterUrl": "a@href@js:result = \"https://m.libahao.com\" + result"
-    },
-    "searchUrl": "https://www.baidu.com/s?wd=site%3Awww.libahao.com + %20{{key}}&pn={{(page - 1) * 10}},{\n    \"headers\": {\"User-Agent\": \"Mozilla/5.0 (X11; Linux x86 64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36\"},\n    \"webView\": true\n}",
-    "variableComment": "",
-    "weight": 0
-  },
-  {
     "bookSourceComment": "//使用需要改包名(现在不用了),魔法\n//❗如果你打算去除所有书源信息并公开的话，那不好意思，服务器随时关停，搜索缺书现象请反馈\n//By情无羁(yesui.me)25.01.25修改部分规则,个人用法：点登录后选择强制保持站点然后打钩，搜索后过cf盾显示列表为0后重新搜索即可\n25.02.16修改部分规则，修改发现规则\n25.02.20修复封面\n25.03.04完善规则\n25.03.13绕过me域名验证\n25.03.26完善发现(感谢Buding)\n25.03.30修复封面\n25.04.08修复封面\n25.05.08搜索免cf盾(有缺老书现象,可以先添加网址,然后反馈给制作者)\n靈狐 制，可拷贝书源，更改源URL当不同源用\n书架书籍与源URL绑定，如站点变动可在登录里自定义站点来避免重新添加书架\n24-05-13 修复乱序\n24-06-04 发现与更多模板支持\n理论支持全部69网站使用，发现若错乱请刷新\n24-07-02 支持更多模板，部分站点只有排行榜，暂不予适配发现\n24-07-13 目录排序，支持无标记正文排序，支持设置源变量改变搜索、发现\n24-07-18 发现支持筛选、单页，源变量设置可改变所有页面，优化正文标题净化\n24-09-18 支持移除目录重复条目，详情页添加标签，移除正文解密、排序，登录进行源站相关设置（强制保持：强制替换站点为当前站点），添加过cf盾\n24-09-20 避免因Cookie丢失导致页面被缓存无法过盾，可设置封面为69默认封面\n24-09-21 添加新的封面链接，加入随机UA功能\n24-09-28 修复站点目录，发现添加最近更新（如果有），封面修复改良\nhttps://www.69shu.cx\nhttps://www.69shuba.pro\nhttps://www.69yuedu.net\nhttps://69shuba.cx\nhttps://69shu.ac",
     "bookSourceGroup": "",
     "bookSourceName": "原69主站",
