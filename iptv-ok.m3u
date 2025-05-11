@@ -1339,170 +1339,126 @@ http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202502032311/app_2/_
 http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202502042235/app_2/_definst_/ls_2.stream/chunklist.m3u8
 #EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="92" v-w="0" v-h="0", 重庆卫视
 http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202502060001/app_2/_definst_/ls_2.stream/chunklist.m3u8
-#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="637" v-w="0" v-h="0", 重庆卫视
+#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="275" v-w="0" v-h="0", 重庆卫视
 http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202502062250/app_2/_definst_/ls_2.stream/chunklist.m3u8
-#EXTINF:-1 group-title="儿童" tvg-id="null" tvg-name="null" tvg-logo="https://live.fanmingming.cn/tv/新动漫.png" t-time="997" v-w="0" v-h="0", 新动漫
+#EXTINF:-1 group-title="儿童" tvg-id="null" tvg-name="null" tvg-logo="https://live.fanmingming.cn/tv/新动漫.png" t-time="748" v-w="0" v-h="0", 新动漫
 http://nas.hssvm.com:8888/udp/225.1.1.216:5002
-#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://gh.tryxd.cn/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="124" v-w="0" v-h="0", 神乐华语影院
+#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://gh.tryxd.cn/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="109" v-w="0" v-h="0", 神乐华语影院
 http://tc-tct.douyucdn2.cn/dyliveflv1a/85894rmovieChow_4000.xs?wsAuth=ba1c90644d5727f7eff2d821807aceb6&token=web-h5-90270207-85894-853ec75fcb0c6ecaca17aa65580152fde64a0f1c44c269f0&logo=0&expire=0&did=d1bae13724faf6e93becdd6000021601&origin=hw
-#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://gh.tryxd.cn/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="89" v-w="0" v-h="0", 小鬼华语影院
+#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://gh.tryxd.cn/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="82" v-w="0" v-h="0", 小鬼华语影院
 http://tc-tct.douyucdn2.cn/dyliveflv1a/3928r9p0BHMDG_2000.xs?wsAuth=3c48b706fe90d736d90b5622adfc09d2&token=web-h5-0-3928-15d95fcfde11a749199abfc5ac7bdee6727c6402febadfb8&logo=0&expire=0&did=24482b48b98804f2b0a5b17400041701
-#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="135" v-w="0" v-h="0", 重庆卫视
+#EXTINF:-1 group-title="地方台" tvg-id="长沙新闻频道" tvg-name="null" tvg-logo="http://tv.haoqu99.com/d/file/2021/0215/small7ff3d34c5627b5c263817abeff70e23d.gif" t-time="769" v-w="0" v-h="0", 长沙新闻频道
+http://phoneqq.qing.mgtv.com/nn_live/nn_x64/dWlwPTEwMy4zOS4yMjYuMTAwJnFpZD0mY2RuZXhfaWQ9cXFfcGhvbmVfbGl2ZSZzPTliMzI3Nzc4YjhhMTZlMzRmN2FlYWMxYTU3Zjc5MjI3JnVpZD0mdXVpZD1hMTQ1MDI4MmI5ZGU0MGIwMDBkMjA4ZmFlMzBhZGFjNy02NzI3ZTI2NCZ2PTImYXM9MCZlcz0xNzM5Mjk4NTIz/CSXWMPP360.m3u8
+#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="209" v-w="0" v-h="0", 重庆卫视
 http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202502112306/app_2/_definst_/ls_2.stream/chunklist.m3u8
-#EXTINF:-1 group-title="地方台" tvg-id="null" tvg-name="null" tvg-logo="null" t-time="138" v-w="0" v-h="0", 乐山新闻综合
+#EXTINF:-1 group-title="地方台" tvg-id="null" tvg-name="null" tvg-logo="null" t-time="194" v-w="0" v-h="0", 乐山新闻综合
 http://m3u8file.lstv.org.cn/nmip-media/channellive/channel1/playlist.m3u8
-#EXTINF:-1 group-title="地方台" tvg-id="null" tvg-name="null" tvg-logo="null" t-time="103" v-w="0" v-h="0", 乐至综合
+#EXTINF:-1 group-title="地方台" tvg-id="null" tvg-name="null" tvg-logo="null" t-time="95" v-w="0" v-h="0", 乐至综合
 http://175.155.106.72:89/live1/live1.m3u8?zsicd
-#EXTINF:-1 group-title="地方台" tvg-id="null" tvg-name="null" tvg-logo="null" t-time="195" v-w="0" v-h="0", 利州综合
+#EXTINF:-1 group-title="地方台" tvg-id="null" tvg-name="null" tvg-logo="null" t-time="200" v-w="0" v-h="0", 利州综合
 http://tvfile.lzgbdst.com/nmip-media/channellive/channel106876/playlist.m3u8?zsicd
-#EXTINF:-1 group-title="地方台" tvg-id="null" tvg-name="null" tvg-logo="null" t-time="409" v-w="0" v-h="0", 剑阁综合
+#EXTINF:-1 group-title="地方台" tvg-id="null" tvg-name="null" tvg-logo="null" t-time="331" v-w="0" v-h="0", 剑阁综合
 https://m3u8.channel.dzsm.com/nmip-media/channellive/channel105549/playlist.m3u8
-#EXTINF:-1 group-title="地方台" tvg-id="苏州新闻综合" tvg-name="苏州新闻综合" tvg-logo="https://gitee.com/suxuang/epglogo/raw/master/jiangsu/Suzhou1.png" t-time="159" v-w="0" v-h="0", 苏州新闻综合
+#EXTINF:-1 group-title="地方台" tvg-id="苏州新闻综合" tvg-name="苏州新闻综合" tvg-logo="https://gitee.com/suxuang/epglogo/raw/master/jiangsu/Suzhou1.png" t-time="464" v-w="0" v-h="0", 苏州新闻综合
 https://live-auth.51kandianshi.com/szgd/csztv1.m3u8
-#EXTINF:-1 group-title="地方台" tvg-id="苏州社会经济" tvg-name="苏州社会经济" tvg-logo="https://gitee.com/suxuang/epglogo/raw/master/jiangsu/Suzhou2.png" t-time="79" v-w="0" v-h="0", 苏州社会经济
+#EXTINF:-1 group-title="地方台" tvg-id="苏州社会经济" tvg-name="苏州社会经济" tvg-logo="https://gitee.com/suxuang/epglogo/raw/master/jiangsu/Suzhou2.png" t-time="115" v-w="0" v-h="0", 苏州社会经济
 https://live-auth.51kandianshi.com/szgd/csztv2.m3u8
-#EXTINF:-1 group-title="地方台" tvg-id="苏州文化生活" tvg-name="苏州文化生活" tvg-logo="https://gitee.com/suxuang/epglogo/raw/master/jiangsu/Suzhou3.png" t-time="120" v-w="0" v-h="0", 苏州文化生活
+#EXTINF:-1 group-title="地方台" tvg-id="苏州文化生活" tvg-name="苏州文化生活" tvg-logo="https://gitee.com/suxuang/epglogo/raw/master/jiangsu/Suzhou3.png" t-time="86" v-w="0" v-h="0", 苏州文化生活
 https://live-auth.51kandianshi.com/szgd/csztv3.m3u8
-#EXTINF:-1 group-title="地方台" tvg-id="苏州生活资讯" tvg-name="苏州生活资讯" tvg-logo="https://gitee.com/suxuang/epglogo/raw/master/jiangsu/Suzhou5.png" t-time="89" v-w="0" v-h="0", 苏州生活资讯
+#EXTINF:-1 group-title="地方台" tvg-id="苏州生活资讯" tvg-name="苏州生活资讯" tvg-logo="https://gitee.com/suxuang/epglogo/raw/master/jiangsu/Suzhou5.png" t-time="175" v-w="0" v-h="0", 苏州生活资讯
 https://live-auth.51kandianshi.com/szgd/csztv5.m3u8
-#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="66" v-w="0" v-h="0", 重庆卫视
-http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202502122242/app_2/_definst_/ls_2.stream/chunklist.m3u8
-#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="97" v-w="0" v-h="0", 重庆卫视
-http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202502132356/app_2/_definst_/ls_2.stream/chunklist.m3u8
-#EXTINF:-1 group-title="央视台" tvg-id="CCTV-5+" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/CCTV5.png" t-time="132" v-w="0" v-h="0", CCTV-5
-https://ldcctvwbcdks.v.kcdnvip.com/ldcctvwbcd/cdrmldcctv5plus_1/index.m3u8?BR=td&region=shanghai
-#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="101" v-w="0" v-h="0", 重庆卫视
-http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202502150006/app_2/_definst_/ls_2.stream/chunklist.m3u8
-#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="92" v-w="0" v-h="0", 重庆卫视
-http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202502152008/app_2/_definst_/ls_2.stream/chunklist.m3u8
-#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="98" v-w="0" v-h="0", 重庆卫视
-http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202502162357/app_2/_definst_/ls_2.stream/chunklist.m3u8
-#EXTINF:-1 group-title="港澳台" tvg-id="null" tvg-name="港台电视31" tvg-logo="https://live.fanmingming.com/tv/港台电视31.png" t-time="4758" v-w="0" v-h="0", 港台电视31
-http://php.jdshipin.com:8880/TVOD/iptv.php?id=rthk31
-#EXTINF:-1 group-title="港澳台" tvg-id="null" tvg-name="港台电视32" tvg-logo="https://live.fanmingming.com/tv/港台电视32.png" t-time="3110" v-w="0" v-h="0", 港台电视32
-http://php.jdshipin.com:8880/TVOD/iptv.php?id=rthk32
-#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="105" v-w="0" v-h="0", 重庆卫视
-http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202502172259/app_2/_definst_/ls_2.stream/chunklist.m3u8
-#EXTINF:-1 group-title="央视台" tvg-id="CCTV16" tvg-name="CCTV16" tvg-logo="https://live.fanmingming.cn/tv/CCTV16.png" t-time="246" v-w="0" v-h="0", CCTV-16
-http://www.lizhinas.top:1009/rtp/239.252.220.237:5140
-#EXTINF:-1 group-title="央视台" tvg-id="cctv4k" tvg-name="cctv4k" tvg-logo="https://live.zbds.top/logo/CCTV4K.png" t-time="57" v-w="0" v-h="0", CCTV-4K
-http://www.lizhinas.top:1009/rtp/239.252.220.244:5140
-#EXTINF:-1 group-title="港澳台" tvg-id="TVB无线新闻" tvg-name="无线新闻" tvg-logo="https://live.fanmingming.cn/tv/无线新闻台.png" t-time="1711" v-w="0" v-h="0", TVB无线新闻
-http://php.jdshipin.com:8880/smt.php?id=inews_twn
-#EXTINF:-1 group-title="港澳台" tvg-id="台视新闻" tvg-name="台视新闻" tvg-logo="https://live.fanmingming.cn/tv/台视新闻.png" t-time="124" v-w="0" v-h="0", 台视新闻
-http://222.128.55.152:9080/live/ts.m3u8
-#EXTINF:-1 group-title="港澳台" tvg-id="中天新闻" tvg-name="中天新闻" tvg-logo="https://gitee.com/suxuang/TVlogo/raw/main/img/CTI2.png" t-time="114" v-w="0" v-h="0", 中天新闻
-http://222.128.55.152:9080/live/fc.m3u8
-#EXTINF:-1 group-title="港澳台" tvg-id="寰宇新闻" tvg-name="寰宇新闻" tvg-logo="https://gitee.com/suxuang/TVlogo/raw/main/img/Global2.png" t-time="112" v-w="0" v-h="0", 寰宇新闻
-http://222.128.55.152:9080/live/hy.m3u8
-#EXTINF:-1 group-title="港澳台" tvg-id="东森新闻" tvg-name="东森新闻" tvg-logo="https://gh.tryxd.cn/raw.githubusercontent.com/suxuang/myIPTV/main/tvlog/EBCNews.png" t-time="230" v-w="0" v-h="0", 东森新闻
-https://stream1.freetv.fun/dong-sen-xin-wen-1.m3u8
-#EXTINF:-1 group-title="港澳台" tvg-id="民视新闻台" tvg-name="民视新闻台" tvg-logo="https://live.fanmingming.cn/tv/民视新闻台.png" t-time="323" v-w="0" v-h="0", 民视新闻台
-http://38.64.72.148:80/hls/modn/list/4012/chunklist1.m3u8
-#EXTINF:-1 group-title="港澳台" tvg-id="null" tvg-name="人间卫视" tvg-logo="https://gitee.com/suxuang/TVlogo/raw/main/img/BLTV.png" t-time="164" v-w="0" v-h="0", 人间卫视
-http://61.216.67.119:1935/bltvhd/bltv1/chunklist_w1266569526.m3u
-#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="68" v-w="0" v-h="0", 重庆卫视
-http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202502182237/app_2/_definst_/ls_2.stream/chunklist.m3u8
-#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="89" v-w="0" v-h="0", 重庆卫视
-http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202502200006/app_2/_definst_/ls_2.stream/chunklist.m3u8
-#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="68" v-w="0" v-h="0", 重庆卫视
-http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202502210005/app_2/_definst_/ls_2.stream/chunklist.m3u8
-#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="73" v-w="0" v-h="0", 重庆卫视
-http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202502212353/app_2/_definst_/ls_2.stream/chunklist.m3u8
-#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="86" v-w="0" v-h="0", 重庆卫视
-http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202502222251/app_2/_definst_/ls_2.stream/chunklist.m3u8
-#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="164" v-w="0" v-h="0", 重庆卫视
-http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202502240006/app_2/_definst_/ls_2.stream/chunklist.m3u8
-#EXTINF:-1 group-title="港澳台" tvg-id="TVB翡翠台" tvg-name="翡翠台" tvg-logo="https://live.fanmingming.cn/tv/翡翠台.png" t-time="12831" v-w="0" v-h="0", TVB翡翠台 1080P
-http://php.jdshipin.com:8880/TVOD/iptv.php?id=fct3
-#EXTINF:-1 group-title="港澳台" tvg-id="TVB翡翠台" tvg-name="翡翠台" tvg-logo="https://live.fanmingming.cn/tv/翡翠台.png" t-time="1331" v-w="0" v-h="0", TVB翡翠台（备用）
-http://php.jdshipin.com:8880/TVOD/iptv.php?id=fct
-#EXTINF:-1 group-title="港澳台" tvg-id="TVBJ2" tvg-name="TVBJ2" tvg-logo="https://gitee.com/suxuang/TVlogo/raw/main/img/TVB3.png" t-time="3264" v-w="0" v-h="0", TVB J2
-https://stream1.freetv.fun/tvb-j2-2.ctv
-#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="95" v-w="0" v-h="0", 重庆卫视
-http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202502242354/app_2/_definst_/ls_2.stream/chunklist.m3u8
 #EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="96" v-w="0" v-h="0", 重庆卫视
+http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202502122242/app_2/_definst_/ls_2.stream/chunklist.m3u8
+#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="104" v-w="0" v-h="0", 重庆卫视
+http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202502132356/app_2/_definst_/ls_2.stream/chunklist.m3u8
+#EXTINF:-1 group-title="央视台" tvg-id="CCTV-5+" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/CCTV5.png" t-time="170" v-w="0" v-h="0", CCTV-5
+https://ldcctvwbcdks.v.kcdnvip.com/ldcctvwbcd/cdrmldcctv5plus_1/index.m3u8?BR=td&region=shanghai
+#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="96" v-w="0" v-h="0", 重庆卫视
+http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202502150006/app_2/_definst_/ls_2.stream/chunklist.m3u8
+#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="107" v-w="0" v-h="0", 重庆卫视
+http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202502152008/app_2/_definst_/ls_2.stream/chunklist.m3u8
+#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="94" v-w="0" v-h="0", 重庆卫视
+http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202502162357/app_2/_definst_/ls_2.stream/chunklist.m3u8
+#EXTINF:-1 group-title="港澳台" tvg-id="null" tvg-name="港台电视31" tvg-logo="https://live.fanmingming.com/tv/港台电视31.png" t-time="2023" v-w="0" v-h="0", 港台电视31
+http://php.jdshipin.com:8880/TVOD/iptv.php?id=rthk31
+#EXTINF:-1 group-title="港澳台" tvg-id="null" tvg-name="港台电视32" tvg-logo="https://live.fanmingming.com/tv/港台电视32.png" t-time="1051" v-w="0" v-h="0", 港台电视32
+http://php.jdshipin.com:8880/TVOD/iptv.php?id=rthk32
+#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="99" v-w="0" v-h="0", 重庆卫视
+http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202502172259/app_2/_definst_/ls_2.stream/chunklist.m3u8
+#EXTINF:-1 group-title="央视台" tvg-id="CCTV16" tvg-name="CCTV16" tvg-logo="https://live.fanmingming.cn/tv/CCTV16.png" t-time="340" v-w="0" v-h="0", CCTV-16
+http://www.lizhinas.top:1009/rtp/239.252.220.237:5140
+#EXTINF:-1 group-title="央视台" tvg-id="cctv4k" tvg-name="cctv4k" tvg-logo="https://live.zbds.top/logo/CCTV4K.png" t-time="45" v-w="0" v-h="0", CCTV-4K
+http://www.lizhinas.top:1009/rtp/239.252.220.244:5140
+#EXTINF:-1 group-title="港澳台" tvg-id="TVB无线新闻" tvg-name="无线新闻" tvg-logo="https://live.fanmingming.cn/tv/无线新闻台.png" t-time="2340" v-w="0" v-h="0", TVB无线新闻
+http://php.jdshipin.com:8880/smt.php?id=inews_twn
+#EXTINF:-1 group-title="港澳台" tvg-id="台视新闻" tvg-name="台视新闻" tvg-logo="https://live.fanmingming.cn/tv/台视新闻.png" t-time="104" v-w="0" v-h="0", 台视新闻
+http://222.128.55.152:9080/live/ts.m3u8
+#EXTINF:-1 group-title="港澳台" tvg-id="中天新闻" tvg-name="中天新闻" tvg-logo="https://gitee.com/suxuang/TVlogo/raw/main/img/CTI2.png" t-time="155" v-w="0" v-h="0", 中天新闻
+http://222.128.55.152:9080/live/fc.m3u8
+#EXTINF:-1 group-title="港澳台" tvg-id="寰宇新闻" tvg-name="寰宇新闻" tvg-logo="https://gitee.com/suxuang/TVlogo/raw/main/img/Global2.png" t-time="124" v-w="0" v-h="0", 寰宇新闻
+http://222.128.55.152:9080/live/hy.m3u8
+#EXTINF:-1 group-title="港澳台" tvg-id="民视新闻台" tvg-name="民视新闻台" tvg-logo="https://live.fanmingming.cn/tv/民视新闻台.png" t-time="354" v-w="0" v-h="0", 民视新闻台
+http://38.64.72.148:80/hls/modn/list/4012/chunklist1.m3u8
+#EXTINF:-1 group-title="港澳台" tvg-id="null" tvg-name="人间卫视" tvg-logo="https://gitee.com/suxuang/TVlogo/raw/main/img/BLTV.png" t-time="159" v-w="0" v-h="0", 人间卫视
+http://61.216.67.119:1935/bltvhd/bltv1/chunklist_w1266569526.m3u
+#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="94" v-w="0" v-h="0", 重庆卫视
+http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202502182237/app_2/_definst_/ls_2.stream/chunklist.m3u8
+#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="98" v-w="0" v-h="0", 重庆卫视
+http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202502200006/app_2/_definst_/ls_2.stream/chunklist.m3u8
+#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="94" v-w="0" v-h="0", 重庆卫视
+http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202502210005/app_2/_definst_/ls_2.stream/chunklist.m3u8
+#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="337" v-w="0" v-h="0", 重庆卫视
+http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202502212353/app_2/_definst_/ls_2.stream/chunklist.m3u8
+#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="107" v-w="0" v-h="0", 重庆卫视
+http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202502222251/app_2/_definst_/ls_2.stream/chunklist.m3u8
+#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="74" v-w="0" v-h="0", 重庆卫视
+http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202502240006/app_2/_definst_/ls_2.stream/chunklist.m3u8
+#EXTINF:-1 group-title="港澳台" tvg-id="TVB翡翠台" tvg-name="翡翠台" tvg-logo="https://live.fanmingming.cn/tv/翡翠台.png" t-time="1284" v-w="0" v-h="0", TVB翡翠台 1080P
+http://php.jdshipin.com:8880/TVOD/iptv.php?id=fct3
+#EXTINF:-1 group-title="港澳台" tvg-id="TVB翡翠台" tvg-name="翡翠台" tvg-logo="https://live.fanmingming.cn/tv/翡翠台.png" t-time="992" v-w="0" v-h="0", TVB翡翠台（备用）
+http://php.jdshipin.com:8880/TVOD/iptv.php?id=fct
+#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="102" v-w="0" v-h="0", 重庆卫视
+http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202502242354/app_2/_definst_/ls_2.stream/chunklist.m3u8
+#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="103" v-w="0" v-h="0", 重庆卫视
 http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202502250405/app_2/_definst_/ls_2.stream/chunklist.m3u8
-#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="92" v-w="0" v-h="0", 重庆卫视
+#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="89" v-w="0" v-h="0", 重庆卫视
 http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202502262250/app_2/_definst_/ls_2.stream/chunklist.m3u8
 #EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="106" v-w="0" v-h="0", 重庆卫视
 http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202502272216/app_2/_definst_/ls_2.stream/chunklist.m3u8
-#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="100" v-w="0" v-h="0", 重庆卫视
+#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="109" v-w="0" v-h="0", 重庆卫视
 http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202502282206/app_2/_definst_/ls_2.stream/chunklist.m3u8
-#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="92" v-w="0" v-h="0", 重庆卫视
+#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="145" v-w="0" v-h="0", 重庆卫视
 http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202503012355/app_2/_definst_/ls_2.stream/chunklist.m3u8
-#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="96" v-w="0" v-h="0", 重庆卫视
+#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="102" v-w="0" v-h="0", 重庆卫视
 http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202503030102/app_2/_definst_/ls_2.stream/chunklist.m3u8
-#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="64" v-w="0" v-h="0", 重庆卫视
+#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="108" v-w="0" v-h="0", 重庆卫视
 http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202503032354/app_2/_definst_/ls_2.stream/chunklist.m3u8
-#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="710" v-w="0" v-h="0", 重庆卫视
+#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="102" v-w="0" v-h="0", 重庆卫视
+http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202503042322/app_2/_definst_/ls_2.stream/chunklist.m3u8
+#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="96" v-w="0" v-h="0", 重庆卫视
 http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202503060100/app_2/_definst_/ls_2.stream/chunklist.m3u8
-#EXTINF:-1 group-title="港澳台" tvg-id="明珠台" tvg-name="明珠台" tvg-logo="https://gitee.com/suxuang/TVlogo/raw/main/img/TVB2.png" t-time="411" v-w="0" v-h="0", TVB明珠台
+#EXTINF:-1 group-title="港澳台" tvg-id="明珠台" tvg-name="明珠台" tvg-logo="https://gitee.com/suxuang/TVlogo/raw/main/img/TVB2.png" t-time="2285" v-w="0" v-h="0", TVB明珠台
 http://php.jdshipin.com/TVOD/iptv.php?id=mzt
-#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="100" v-w="0" v-h="0", 重庆卫视
+#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="107" v-w="0" v-h="0", 重庆卫视
 http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202503062350/app_2/_definst_/ls_2.stream/chunklist.m3u8
-#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="124" v-w="0" v-h="0", 重庆卫视
+#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="96" v-w="0" v-h="0", 重庆卫视
 http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202503080105/app_2/_definst_/ls_2.stream/chunklist.m3u8
-#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="139" v-w="0" v-h="0", 重庆卫视
+#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="98" v-w="0" v-h="0", 重庆卫视
 http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202503082301/app_2/_definst_/ls_2.stream/chunklist.m3u8
-#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="104" v-w="0" v-h="0", 重庆卫视
+#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="100" v-w="0" v-h="0", 重庆卫视
 http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202503092205/app_2/_definst_/ls_2.stream/chunklist.m3u8
-#EXTINF:-1 group-title="港澳台" tvg-id="TVB翡翠台" tvg-name="翡翠台" tvg-logo="https://live.fanmingming.cn/tv/翡翠台.png" t-time="275" v-w="0" v-h="0", TVB翡翠台 4K
+#EXTINF:-1 group-title="港澳台" tvg-id="TVB翡翠台" tvg-name="翡翠台" tvg-logo="https://live.fanmingming.cn/tv/翡翠台.png" t-time="286" v-w="0" v-h="0", TVB翡翠台 4K
 https://stream1.freetv.fun/fei-cui-8.m3u8
-#EXTINF:-1 group-title="港澳台" tvg-id="TVBPlus" tvg-name="TVBPlus" tvg-logo="https://isus.cc/share/logo/TVBPlus.png" t-time="621" v-w="0" v-h="0", TVB Plus（备用）
+#EXTINF:-1 group-title="港澳台" tvg-id="TVBPlus" tvg-name="TVBPlus" tvg-logo="https://isus.cc/share/logo/TVBPlus.png" t-time="615" v-w="0" v-h="0", TVB Plus（备用）
 https://stream1.freetv.fun/tvb-plus-9.m3u8
-#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="118" v-w="0" v-h="0", 重庆卫视
+#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="159" v-w="0" v-h="0", 重庆卫视
 http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202503102350/app_2/_definst_/ls_2.stream/chunklist.m3u8
-#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="239" v-w="0" v-h="0", 重庆卫视
+#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="174" v-w="0" v-h="0", 重庆卫视
 http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202503112231/app_2/_definst_/ls_2.stream/chunklist.m3u8
-#EXTINF:-1 group-title="港澳台" tvg-id="null" tvg-name="凤凰中文" tvg-logo="https://live.fanmingming.cn/tv/凤凰卫视中文台.png" t-time="775" v-w="0" v-h="0", 凤凰中文
-http://aktv_stream1.m16tv.cfd/stream/aktv/null-3/AKTV.m3u8
-#EXTINF:-1 group-title="港澳台" tvg-id="null" tvg-name="凤凰资讯" tvg-logo="https://live.fanmingming.cn/tv/凤凰卫视资讯台.png" t-time="165" v-w="0" v-h="0", 凤凰资讯
-http://aktv_stream1.m16tv.cfd/stream/aktv/null-4/AKTV.m3u8
-#EXTINF:-1 group-title="港澳台" tvg-id="null" tvg-name="凤凰香港" tvg-logo="https://live.fanmingming.cn/tv/凤凰卫视香港台.png" t-time="172" v-w="0" v-h="0", 凤凰香港
-http://aktv_stream1.m16tv.cfd/stream/aktv/null-5/AKTV.m3u8
-#EXTINF:-1 group-title="港澳台" tvg-id="null" tvg-name="28" tvg-logo="https://live.fanmingming.cn/tv/28" t-time="180" v-w="0" v-h="0", 28 AI 智慧赛马
-http://aktv_stream1.m16tv.cfd/stream/aktv/28ai/AKTV.m3u8
-#EXTINF:-1 group-title="港澳台" tvg-id="null" tvg-name="Channel" tvg-logo="https://live.fanmingming.cn/tv/Channel" t-time="171" v-w="0" v-h="0", Channel U HD
-http://aktv_stream1.m16tv.cfd/stream/aktv/channeluhd/AKTV.m3u8
-#EXTINF:-1 group-title="港澳台" tvg-id="null" tvg-name="TVBS-新闻台" tvg-logo="https://live.fanmingming.cn/tv/TVBS-新闻台.png" t-time="184" v-w="0" v-h="0", TVBS-新闻台
-http://aktv_stream1.m16tv.cfd/stream/aktv/tvbs-1/AKTV.m3u8
-#EXTINF:-1 group-title="港澳台" tvg-id="null" tvg-name="寰宇新闻台" tvg-logo="https://live.fanmingming.cn/tv/寰宇新闻台.png" t-time="172" v-w="0" v-h="0", 寰宇新闻台
-http://aktv_stream1.m16tv.cfd/stream/aktv/null-7/AKTV.m3u8
-#EXTINF:-1 group-title="港澳台" tvg-id="null" tvg-name="翡翠台" tvg-logo="https://live.fanmingming.cn/tv/翡翠台.png" t-time="185" v-w="0" v-h="0", 翡翠台
-http://aktv_stream1.m16tv.cfd/stream/aktv/null/AKTV.m3u8
-#EXTINF:-1 group-title="港澳台" tvg-id="null" tvg-name="无线新闻台(北美)" tvg-logo="https://live.fanmingming.cn/tv/无线新闻台(北美).png" t-time="178" v-w="0" v-h="0", 无线新闻台(北美)
-http://aktv_stream1.m16tv.cfd/stream/aktv2/null-1/AKTV.m3u8
-#EXTINF:-1 group-title="港澳台" tvg-id="null" tvg-name="KIX" tvg-logo="https://live.fanmingming.cn/tv/KIX.png" t-time="175" v-w="0" v-h="0", KIX
-http://aktv_stream1.m16tv.cfd/stream/aktv3/kix/AKTV.m3u8
-#EXTINF:-1 group-title="港澳台" tvg-id="null" tvg-name="Nick" tvg-logo="https://live.fanmingming.cn/tv/Nick" t-time="180" v-w="0" v-h="0", Nick Jr
-http://aktv_stream1.m16tv.cfd/stream/aktv3/nickjr/AKTV.m3u8
-#EXTINF:-1 group-title="港澳台" tvg-id="null" tvg-name="东方卫视国际频道" tvg-logo="https://live.fanmingming.cn/tv/东方卫视国际频道.png" t-time="181" v-w="0" v-h="0", 东方卫视国际频道
-http://aktv_stream1.m16tv.cfd/stream/aktv3/null/AKTV.m3u8
-#EXTINF:-1 group-title="历年春晚" tvg-id="春晚2025" tvg-name="春晚2025" tvg-logo="https://img.whalenas.com:283/file/cw.png" t-time="134" v-w="0" v-h="0", 春晚2025
+#EXTINF:-1 group-title="历年春晚" tvg-id="春晚2025" tvg-name="春晚2025" tvg-logo="https://img.whalenas.com:283/file/cw.png" t-time="387" v-w="0" v-h="0", 春晚2025
 https://res.cctvnews.cctv.com/video/3005/record/cctv/merge1/133396667284143308839013005/8fbd6180bdef4da19f6155cf6b4652e1-4.m3u8
-#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="94" v-w="0" v-h="0", 重庆卫视
+#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="231" v-w="0" v-h="0", 重庆卫视
 http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202503122338/app_2/_definst_/ls_2.stream/chunklist.m3u8
-#EXTINF:-1 group-title="港澳台" tvg-id="null" tvg-name="Love_The_Planet" tvg-logo="https://live.fanmingming.cn/tv/Love_The_Planet.png" t-time="172" v-w="0" v-h="0", Love_The_Planet
-http://aktv_stream1.m16tv.cfd/stream/aktv2/lovetheplanet/AKTV.m3u8
-#EXTINF:-1 group-title="港澳台" tvg-id="null" tvg-name="Channel" tvg-logo="https://live.fanmingming.cn/tv/Channel" t-time="587" v-w="0" v-h="0", Channel 5
-http://aktv_stream1.m16tv.cfd/stream/astro_a1/ch1/AKTV.m3u8
-#EXTINF:-1 group-title="港澳台" tvg-id="null" tvg-name="Channel" tvg-logo="https://live.fanmingming.cn/tv/Channel" t-time="166" v-w="0" v-h="0", Channel U
-http://aktv_stream1.m16tv.cfd/stream/astro_a1/ch3/AKTV.m3u8
-#EXTINF:-1 group-title="港澳台" tvg-id="null" tvg-name="NBA" tvg-logo="https://live.fanmingming.cn/tv/NBA" t-time="174" v-w="0" v-h="0", NBA TV
-http://aktv_stream1.m16tv.cfd/stream/astro_a1/ch84/AKTV.m3u8
-#EXTINF:-1 group-title="港澳台" tvg-id="null" tvg-name="曼聯電視頻道" tvg-logo="https://live.fanmingming.cn/tv/曼聯電視頻道.png" t-time="174" v-w="0" v-h="0", 曼聯電視頻道
-http://aktv_stream1.m16tv.cfd/stream/astro_a1/ch87/AKTV.m3u8
-#EXTINF:-1 group-title="港澳台" tvg-id="null" tvg-name="中視" tvg-logo="https://live.fanmingming.cn/tv/中視.png" t-time="170" v-w="0" v-h="0", 中視
-http://aktv_stream1.m16tv.cfd/stream/taiwan/null-4/AKTV.m3u8
-#EXTINF:-1 group-title="港澳台" tvg-id="null" tvg-name="東森新聞台" tvg-logo="https://live.fanmingming.cn/tv/東森新聞台.png" t-time="174" v-w="0" v-h="0", 東森新聞台
-http://aktv_stream1.m16tv.cfd/stream/taiwan/null-10/AKTV.m3u8
-#EXTINF:-1 group-title="港澳台" tvg-id="null" tvg-name="民視綜藝台" tvg-logo="https://live.fanmingming.cn/tv/民視綜藝台.png" t-time="178" v-w="0" v-h="0", 民視綜藝台
-http://aktv_stream1.m16tv.cfd/stream/taiwan/null-16/AKTV.m3u8
-#EXTINF:-1 group-title="港澳台" tvg-id="null" tvg-name="Astro" tvg-logo="https://live.fanmingming.cn/tv/Astro" t-time="175" v-w="0" v-h="0", Astro Football
-http://aktv_stream1.m16tv.cfd/stream/tuntun/astrofootball/AKTV.m3u8
-#EXTINF:-1 group-title="港澳台" tvg-id="null" tvg-name="Disney" tvg-logo="https://live.fanmingming.cn/tv/Disney" t-time="175" v-w="0" v-h="0", Disney XD
-http://aktv_stream1.m16tv.cfd/stream/tuntun/disneyxd/AKTV.m3u8
 #EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="102" v-w="0" v-h="0", 重庆卫视
 http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202503132226/app_2/_definst_/ls_2.stream/chunklist.m3u8
 #EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="107" v-w="0" v-h="0", 重庆卫视
