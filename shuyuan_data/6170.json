@@ -1,0 +1,52 @@
+[
+  {
+    "bookSourceComment": "",
+    "bookSourceGroup": "🔞小说",
+    "bookSourceName": "NTRseqing小说(就是楼下的奇怪小说，修复搜索)",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.aahhss.com/",
+    "customOrder": -43359,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "exploreUrl": "@js:\nArray.prototype.add = function (title, url, flexBasis) {\n  return this.push({\n    title,\n    url,\n    style: {\n      \"layout_flexGrow\": 1,\n      \"layout_flexShrink\": 1,\n      \"layout_alignSelf\": \"auto\",\n      \"layout_flexBasisPercent\": flexBasis,\n      \"layout_wrapBefore\": false\n    }\n  })\n}\n\nfunction generateCategories (arr, str, url) {\n\t return str.split(\"\\n\").map(x => {\n\t \t  let [title, value] = x.split(\"::\")\n\t \t  url = url.replace(/\\$\\w+/, value)\n\t \t  return arr.add(title, url, 0.25)\n\t \t})\n}\n\nlet catString = \"都市::18\\n都市激情::3\\n家庭乱伦::2\\n奇幻::19\\n同人::23\\n校园春色::1\\n东方玄幻::7\\n校园::21\\n乱伦::20\\n穿越重生::6\\n同人改编::4\\n玄幻::16\"\nlet tagString = \"调教::7\\n剧情::2\\n制服::53\\n熟女::6\\n人妻::9\\n丝袜::39\\n榨精::67\\nNTR::56\\n后宫::14\\n凌辱::58\\n爽文::15\\n反差::5\"\nlet rankStr = \"人气排行::hot\\n收藏排行::collect\\n热门全本::wanben\\n肉量排行::pornrate\\n评分排行::score\\n最新小说::new\"\n\nlet catUrl = \"/category/$cat/{{page-1}}\"\nlet tagUrl = \"/tag/$tag/{{page-1}}\"\nlet rankUrl = \"/top/$rank/index<,_{{page}}>.html\"\n\nlet list = []\nlist.add(\"分类\", null, 1)\ngenerateCategories(list, catString, catUrl)\nlist.add(\"标签\", null, 1)\ngenerateCategories(list, tagString, tagUrl)\nlist.add(\"排行榜\", null, 1)\ngenerateCategories(list, rankStr, rankUrl)\nJSON.stringify(list)",
+    "lastUpdateTime": "1746958999285",
+    "respondTime": 102603,
+    "ruleBookInfo": {
+      "author": ".authors@dd@text",
+      "coverUrl": "[property=\"og:image\"]@content",
+      "intro": ".book-desc@textNodes",
+      "kind": ".tag@a@text",
+      "lastChapter": ".new@dd@text",
+      "name": ".txt@h1@text",
+      "wordCount": ".wordcount@dd@text"
+    },
+    "ruleContent": {
+      "content": "#content@p@textNodes"
+    },
+    "ruleExplore": {
+      "bookList": ".book-like > a",
+      "bookUrl": "a@href",
+      "coverUrl": "img@src",
+      "intro": "span@text",
+      "name": "h4@text"
+    },
+    "ruleSearch": {
+      "author": "",
+      "bookList": ".grid-item",
+      "bookUrl": "h3 a@href##http.*com##https://www.aahhss.com",
+      "coverUrl": "img@src##http.*file##https://static.aahhss.com/file",
+      "intro": "",
+      "kind": "",
+      "lastChapter": "",
+      "name": "h3 a@text"
+    },
+    "ruleToc": {
+      "chapterList": ".book-chapter@a",
+      "chapterName": "text",
+      "chapterUrl": "href"
+    },
+    "searchUrl": "https://www.aakkrr.com/book/{{key}}/{{page}}",
+    "weight": 0
+  }
+]
