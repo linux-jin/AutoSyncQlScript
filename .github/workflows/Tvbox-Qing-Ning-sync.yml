@@ -1,12 +1,12 @@
-name: yuannian1112-sync
+name: Tvbox-Qing-Ning-sync
 on:
   schedule:
-    - cron: '30 7/12 * * *'
+    - cron: '20 2/12 * * *'
   workflow_dispatch:
   watch:
     types: started
   repository_dispatch:
-    types: sync-yuannian1112-ql
+    types: sync-Tvbox-Qing-Ning-GithubSync
 jobs:
   repo-sync:
     env:
@@ -18,11 +18,11 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: sync yuannian1112-ql
+      - name: sync Tvbox-Qing-Ning-GithubSync
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://github.com/yuannian1112/jd_scripts.git"
+          source_repo: "https://github.com/Zhou-Li-Bin/Tvbox-QingNing.git"
           source_branch: "main"
-          destination_branch: "yuannian1112"
+          destination_branch: "Tvbox-Qing-Ning"
           github_token: ${{ secrets.PAT }}
