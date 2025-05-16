@@ -22,7 +22,7 @@ jobs:
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://github.com/linux-jin/IPTV.git"
+          source_repo: "https://github.com/linux-jin/MyIPTV.git"
           source_branch: "Tvbox-Moexin"
           destination_branch: "Tvbox-Moexin"
           github_token: ${{ secrets.PAT }}
