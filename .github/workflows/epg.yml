@@ -25,6 +25,6 @@ jobs:
 
     - name: Push changes
       run: |
-        git push origin main
+        git push origin Tvbox-Kakaxi
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
