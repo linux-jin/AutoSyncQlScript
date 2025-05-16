@@ -60054,6 +60054,9 @@
 	<programme channel="黑莓动画" start="20250516082800 +0800" stop="20250516093400 +0800">
 		<title lang="zh">狐妖小红娘b7月红2</title>
 	</programme>
+	<programme channel="黑莓动画" start="20250516093400 +0800" stop="20250516111200 +0800">
+		<title lang="zh">01_假面骑士令和第一世代（日语版）</title>
+	</programme>
 	<channel id="黑莓电影">
 		<display-name lang="zh">黑莓电影</display-name>
 	</channel>
@@ -60074,6 +60077,9 @@
 	</programme>
 	<programme channel="黑莓电影" start="20250516081600 +0800" stop="20250516094200 +0800">
 		<title lang="zh">米果的秋天</title>
+	</programme>
+	<programme channel="黑莓电影" start="20250516094200 +0800" stop="20250516110500 +0800">
+		<title lang="zh">重案行动之连环凶杀</title>
 	</programme>
 	<channel id="黑龙江卫视">
 		<display-name lang="zh">黑龙江卫视</display-name>
@@ -60543,6 +60549,9 @@
 	<programme channel="newtv精品大剧" start="20250516085400 +0800" stop="20250516093900 +0800">
 		<title lang="zh">49_天龙八部</title>
 	</programme>
+	<programme channel="newtv精品大剧" start="20250516093900 +0800" stop="20250516104200 +0800">
+		<title lang="zh">50_天龙八部</title>
+	</programme>
 	<channel id="newtv精品纪录">
 		<display-name lang="zh">NEWTV精品纪录</display-name>
 	</channel>
@@ -60576,6 +60585,9 @@
 	<programme channel="newtv精品纪录" start="20250516085400 +0800" stop="20250516093800 +0800">
 		<title lang="zh">老姆登村——坐在云端看世界（20230804）</title>
 	</programme>
+	<programme channel="newtv精品纪录" start="20250516093800 +0800" stop="20250516102200 +0800">
+		<title lang="zh">柏桥——千年荔乡 甜美家园（20230805）</title>
+	</programme>
 	<channel id="newtv古装剧场">
 		<display-name lang="zh">NEWTV古装剧场</display-name>
 	</channel>
@@ -60608,6 +60620,9 @@
 	</programme>
 	<programme channel="newtv古装剧场" start="20250516085300 +0800" stop="20250516094100 +0800">
 		<title lang="zh">贝卡罗莱L-a-甘磷酸胆碱复合粉-渠道（右）</title>
+	</programme>
+	<programme channel="newtv古装剧场" start="20250516094100 +0800" stop="20250516102800 +0800">
+		<title lang="zh">40_神隐</title>
 	</programme>
 	<channel id="newtv军旅剧场">
 		<display-name lang="zh">NEWTV军旅剧场</display-name>
@@ -60741,6 +60756,9 @@
 	<programme channel="newtv爱情喜剧" start="20250516065800 +0800" stop="20250516093700 +0800">
 		<title lang="zh">寻觅之境</title>
 	</programme>
+	<programme channel="newtv爱情喜剧" start="20250516093700 +0800" stop="20250516104000 +0800">
+		<title lang="zh">18_公诉</title>
+	</programme>
 	<channel id="newtv动作电影">
 		<display-name lang="zh">NEWTV动作电影</display-name>
 	</channel>
@@ -60803,6 +60821,9 @@
 	</programme>
 	<programme channel="newtv怡伴健康" start="20250516085700 +0800" stop="20250516093900 +0800">
 		<title lang="zh">重返现场的嫌疑人</title>
+	</programme>
+	<programme channel="newtv怡伴健康" start="20250516093900 +0800" stop="20250516095000 +0800">
+		<title lang="zh">相声《北京的旋律》 表演：李涵 迟永志</title>
 	</programme>
 	<channel id="newtv潮妈辣婆">
 		<display-name lang="zh">NEWTV潮妈辣婆</display-name>
@@ -60893,6 +60914,9 @@
 	</programme>
 	<programme channel="newtv军事评论" start="20250516092400 +0800" stop="20250516094300 +0800">
 		<title lang="zh">军工足迹 3</title>
+	</programme>
+	<programme channel="newtv军事评论" start="20250516094300 +0800" stop="20250516100500 +0800">
+		<title lang="zh">浩浩凌云志</title>
 	</programme>
 	<channel id="newtv炫舞未来">
 		<display-name lang="zh">NEWTV炫舞未来</display-name>
@@ -61004,6 +61028,9 @@
 	</programme>
 	<programme channel="newtv金牌综艺" start="20250516074900 +0800" stop="20250516094600 +0800">
 		<title lang="zh">星光大道（2024）</title>
+	</programme>
+	<programme channel="newtv金牌综艺" start="20250516094600 +0800" stop="20250516134200 +0800">
+		<title lang="zh">德云斗笑社 第2季</title>
 	</programme>
 	<channel id="newtv精品体育">
 		<display-name lang="zh">NEWTV精品体育</display-name>
