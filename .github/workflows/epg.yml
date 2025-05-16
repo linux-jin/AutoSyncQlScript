@@ -1,4 +1,4 @@
-name: EPG Fetcher
+name: Tvbox-Kakaxi-Update
 
 on:
   workflow_dispatch:
