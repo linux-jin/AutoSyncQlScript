@@ -23,6 +23,6 @@ jobs:
         if: env.PAT
         with:
           source_repo: "https://github.com/Moexin/IPTV.git"
-          source_branch: "file"
+          source_branch: "Files"
           destination_branch: "Tvbox-Moexin"
           github_token: ${{ secrets.PAT }}
