@@ -1,6 +1,9 @@
 name: EPG Fetcher
 
 on:
+  workflow_dispatch:
+  watch:
+    types: started
   schedule:
     - cron: '0 */6 * * *'
 
