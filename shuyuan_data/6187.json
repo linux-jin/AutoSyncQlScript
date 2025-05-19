@@ -1,0 +1,43 @@
+[
+  {
+    "bookSourceComment": "by天天的鸟蛋蛋\nby关耳 替换规则正则表达式",
+    "bookSourceName": "二三中文",
+    "bookSourceType": 0,
+    "bookSourceUrl": "http://wap.ersanxs.info",
+    "bookUrlPattern": "http://wap.ersanxs.info/skxs/\\d+/",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "lastUpdateTime": "1747558137385",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": ".author@text",
+      "coverUrl": ".synopsisArea_detail@img@src",
+      "intro": ".review@html",
+      "kind": ".synopsisArea_detail@p.1:2:4@text##.*：",
+      "name": "h1@text",
+      "tocUrl": "text.查看完整目录@href"
+    },
+    "ruleContent": {
+      "content": "#chaptercontent@textNodes",
+      "nextContentUrl": "text.下一页@href",
+      "replaceRegex": "##\\s*(.*?\\(第\\d+/\\d+页\\)|.*本章未?完.*)\\s*"
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "author": "span@text##\\/",
+      "bookList": ".result@li",
+      "bookUrl": "a.1@href",
+      "kind": "a.0@text##\\[|\\]|\\s",
+      "name": "a.1@text"
+    },
+    "ruleToc": {
+      "chapterList": "#chapterlist p:nth-child(n+3) > a",
+      "chapterName": "text",
+      "chapterUrl": "href"
+    },
+    "searchUrl": "/s.php?keyword={{key}}",
+    "weight": 0
+  }
+]
