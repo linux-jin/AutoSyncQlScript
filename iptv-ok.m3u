@@ -777,195 +777,199 @@ http://www.52sw.top:678/play/huya.php?id=11352944
 http://www.52sw.top:678/play/huya.php?id=11342384
 #EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="147" v-w="0" v-h="0", 重庆卫视
 http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202412032225/app_2/_definst_/ls_2.stream/chunklist.m3u8
-#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="96" v-w="0" v-h="0", 重庆卫视
+#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/重庆卫视.png" t-time="93" v-w="0" v-h="0", 重庆卫视
 http://p.ytelc.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202412052053/app_2/_definst_/ls_2.stream/chunklist.m3u8
-#EXTINF:-1 group-title="央视台" tvg-id="CCTV-9" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/CCTV9.png" t-time="2049" v-w="0" v-h="0", CCTV-9
+#EXTINF:-1 group-title="央视台" tvg-id="CCTV-9" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/CCTV9.png" t-time="2729" v-w="0" v-h="0", CCTV-9
 https://www.nettvpro.xyz/player/videojs.php?url=http://117.161.12.116/live/program/live/cctv9hd8m/8000000/mnf.m3u8
-#EXTINF:-1 group-title="央视台" tvg-id="CCTV-4" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/CCTV4.png" t-time="814" v-w="0" v-h="0", CCTV-4
+#EXTINF:-1 group-title="央视台" tvg-id="CCTV-4" tvg-name="null" tvg-logo="https://live.fanmingming.com/tv/CCTV4.png" t-time="565" v-w="0" v-h="0", CCTV-4
 https://www.nettvpro.xyz/player/videojs.php?url=http://117.161.12.116/live/program/live/cctv4hd8m/8000000/mnf.m3u8
-#EXTINF:-1 group-title="儿童" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/七龙珠.png" t-time="1567" v-w="0" v-h="0", 七龙珠
+#EXTINF:-1 group-title="儿童" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/七龙珠.png" t-time="958" v-w="0" v-h="0", 七龙珠
 http://www.52sw.top:678/play/huya.php?id=11601966
-#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="356" v-w="0" v-h="0", 周星驰电影
+#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="1122" v-w="0" v-h="0", 周星驰电影
 http://www.52sw.top:678/play/huya.php?id=11342412
-#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="475" v-w="0" v-h="0", 林正英电影
+#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="526" v-w="0" v-h="0", 林正英电影
 http://www.52sw.top:678/play/huya.php?id=11342421
-#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="93" v-w="0" v-h="0", 倩女幽魂妖魔道
+#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="108" v-w="0" v-h="0", 倩女幽魂妖魔道
 http://jsmov2.a.yximgs.com/bs3/video-hls/5232901391302199073_hlsb.m3u8
-#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="56" v-w="0" v-h="0", 倩女幽魂人间道
+#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="67" v-w="0" v-h="0", 倩女幽魂人间道
 http://jsmov2.a.yximgs.com/bs3/video-hls/5250634317044855747_hlsb.m3u8
-#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="47" v-w="0" v-h="0", 倩女幽魂道道道
+#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="52" v-w="0" v-h="0", 倩女幽魂道道道
 http://jsmov2.a.yximgs.com/bs3/video-hls/5216294367991385255_hlsb.m3u8
-#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="1179" v-w="0" v-h="0", 人在囧途
+#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="926" v-w="0" v-h="0", 人在囧途
 https://vip.ffzy-play.com/20221018/1953_2d6ba500/index.m3u8
-#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="431" v-w="0" v-h="0", 人在囧途之泰囧
+#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="444" v-w="0" v-h="0", 人在囧途之泰囧
 https://vip.ffzy-play.com/20221018/1951_47e1adc8/index.m3u8
-#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="819" v-w="0" v-h="0", 人在囧途之港囧
+#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="806" v-w="0" v-h="0", 人在囧途之港囧
 https://vip.ffzy-play7.com/20230112/11082_fde1a94d/index.m3u8
-#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="764" v-w="0" v-h="0", 拆弹专家1
+#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="812" v-w="0" v-h="0", 拆弹专家1
 https://vip.ffzy-online.com/20221015/719_80ff87c2/index.m3u8
-#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="356" v-w="0" v-h="0", 拆弹专家2
+#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="399" v-w="0" v-h="0", 拆弹专家2
 https://vip.ffzy-online.com/20221015/722_e32c42bc/index.m3u8
-#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="11194" v-w="0" v-h="0", 寒战
+#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="1080" v-w="0" v-h="0", 寒战
 https://vip.ffzy-play6.com/20221019/157_bf0740ee/index.m3u8
-#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="1323" v-w="0" v-h="0", 我不是药神
+#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="10996" v-w="0" v-h="0", 我不是药神
 https://vip.ffzy-play1.com/20221018/478_c3afed66/index.m3u8
-#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="193" v-w="0" v-h="0", 让子弹飞
+#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="181" v-w="0" v-h="0", 让子弹飞
 https://vip.ffzy-play7.com/20230116/11563_b9f44814/index.m3u8
-#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="74" v-w="0" v-h="0", 龙门飞甲
+#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="72" v-w="0" v-h="0", 龙门飞甲
 http://jsmov2.a.yximgs.com/bs3/video-hls/5203346449046555193_hlsb.m3u8
-#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/神探狄仁杰.png" t-time="1436" v-w="0" v-h="0", 神探狄仁杰第一部
+#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/神探狄仁杰.png" t-time="823" v-w="0" v-h="0", 神探狄仁杰第一部
 http://www.52sw.top:678/play/huya.php?id=11352958
-#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/神探狄仁杰3.png" t-time="620" v-w="0" v-h="0", 神探狄仁杰第三部
+#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/神探狄仁杰3.png" t-time="1037" v-w="0" v-h="0", 神探狄仁杰第三部
 http://www.52sw.top:678/play/huya.php?id=11342425
-#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/爱情公寓.png" t-time="768" v-w="0" v-h="0", 爱情公寓
+#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/爱情公寓.png" t-time="748" v-w="0" v-h="0", 爱情公寓
 http://www.52sw.top:678/play/huya.php?id=11336726
-#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/倚天屠龙记苏有朋.png" t-time="3060" v-w="0" v-h="0", 倚天屠龙记
+#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/倚天屠龙记苏有朋.png" t-time="3510" v-w="0" v-h="0", 倚天屠龙记
 http://huanqiuzhibo.cn/manifest/huya.php?id=11342403
-#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/铁齿铜牙纪晓岚.png" t-time="1326" v-w="0" v-h="0", 铁齿铜牙纪晓岚
+#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/铁齿铜牙纪晓岚.png" t-time="1320" v-w="0" v-h="0", 铁齿铜牙纪晓岚
 http://huanqiuzhibo.cn/manifest/huya.php?id=11342396
-#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/亮剑.png" t-time="1391" v-w="0" v-h="0", 亮剑
+#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/亮剑.png" t-time="1013" v-w="0" v-h="0", 亮剑
 http://huanqiuzhibo.cn/manifest/huya.php?id=30080238
-#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/士兵突击.png" t-time="2703" v-w="0" v-h="0", 士兵突击
+#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/士兵突击.png" t-time="3771" v-w="0" v-h="0", 士兵突击
 http://huanqiuzhibo.cn/manifest/huya.php?id=11342430
-#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/康熙王朝.png" t-time="6506" v-w="0" v-h="0", 康熙王朝
+#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/康熙王朝.png" t-time="7749" v-w="0" v-h="0", 康熙王朝
 http://huanqiuzhibo.cn/manifest/huya.php?id=11352940
-#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/精绝古城.png" t-time="3425" v-w="0" v-h="0", 鬼吹灯之精绝古城
+#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/精绝古城.png" t-time="3670" v-w="0" v-h="0", 鬼吹灯之精绝古城
 http://huanqiuzhibo.cn/manifest/huya.php?id=11352871
-#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/怒晴湘西.png" t-time="7728" v-w="0" v-h="0", 鬼吹灯之怒晴湘西
+#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/怒晴湘西.png" t-time="7090" v-w="0" v-h="0", 鬼吹灯之怒晴湘西
 http://huanqiuzhibo.cn/manifest/huya.php?id=11602075
-#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/龙岭迷窟.png" t-time="7197" v-w="0" v-h="0", 鬼吹灯之龙岭迷窟
+#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/龙岭迷窟.png" t-time="6495" v-w="0" v-h="0", 鬼吹灯之龙岭迷窟
 http://huanqiuzhibo.cn/manifest/huya.php?id=29465863
-#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/云南虫谷.png" t-time="1330" v-w="0" v-h="0", 鬼吹灯之云南虫谷
+#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/云南虫谷.png" t-time="1347" v-w="0" v-h="0", 鬼吹灯之云南虫谷
 http://huanqiuzhibo.cn/manifest/huya.php?id=11352898
-#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/笑傲江湖.png" t-time="6808" v-w="0" v-h="0", 笑傲江湖
+#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/笑傲江湖.png" t-time="7737" v-w="0" v-h="0", 笑傲江湖
 http://huanqiuzhibo.cn/manifest/huya.php?id=26355790
-#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/雪豹.png" t-time="1810" v-w="0" v-h="0", 雪豹
+#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/雪豹.png" t-time="1112" v-w="0" v-h="0", 雪豹
 http://huanqiuzhibo.cn/manifest/huya.php?id=29580970
-#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/陈情令.png" t-time="1543" v-w="0" v-h="0", 陈情令
+#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/陈情令.png" t-time="1588" v-w="0" v-h="0", 陈情令
 http://huanqiuzhibo.cn/manifest/huya.php?id=29465862
-#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/庆余年.png" t-time="1059" v-w="0" v-h="0", 庆余年
+#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/庆余年.png" t-time="8104" v-w="0" v-h="0", 庆余年
 http://huanqiuzhibo.cn/manifest/huya.php?id=11352960
-#EXTINF:-1 group-title="数字台" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/埋堆堆.png" t-time="1629" v-w="0" v-h="0", 楚汉骄雄
+#EXTINF:-1 group-title="数字台" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/埋堆堆.png" t-time="1098" v-w="0" v-h="0", 楚汉骄雄
 http://huanqiuzhibo.cn/manifest/huya.php?id=23740156
-#EXTINF:-1 group-title="数字台" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/埋堆堆.png" t-time="1562" v-w="0" v-h="0", 鹿鼎记
+#EXTINF:-1 group-title="数字台" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/埋堆堆.png" t-time="4362" v-w="0" v-h="0", 鹿鼎记
 http://huanqiuzhibo.cn/manifest/huya.php?id=23865080
-#EXTINF:-1 group-title="数字台" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/埋堆堆.png" t-time="1142" v-w="0" v-h="0", 寻秦记
+#EXTINF:-1 group-title="数字台" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/埋堆堆.png" t-time="1263" v-w="0" v-h="0", 寻秦记
 http://huanqiuzhibo.cn/manifest/huya.php?id=23864973
-#EXTINF:-1 group-title="数字台" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/埋堆堆.png" t-time="942" v-w="0" v-h="0", 大唐双龙传
+#EXTINF:-1 group-title="数字台" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/埋堆堆.png" t-time="1623" v-w="0" v-h="0", 大唐双龙传
 http://huanqiuzhibo.cn/manifest/huya.php?id=23728674
-#EXTINF:-1 group-title="数字台" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/埋堆堆.png" t-time="7643" v-w="0" v-h="0", 神雕侠侣
+#EXTINF:-1 group-title="数字台" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/埋堆堆.png" t-time="7510" v-w="0" v-h="0", 神雕侠侣
 http://huanqiuzhibo.cn/manifest/huya.php?id=23865171
-#EXTINF:-1 group-title="数字台" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/埋堆堆.png" t-time="1288" v-w="0" v-h="0", 射雕英雄传
+#EXTINF:-1 group-title="数字台" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/埋堆堆.png" t-time="3777" v-w="0" v-h="0", 射雕英雄传
 http://huanqiuzhibo.cn/manifest/huya.php?id=23824164
-#EXTINF:-1 group-title="数字台" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/埋堆堆.png" t-time="1424" v-w="0" v-h="0", 笑傲江湖
+#EXTINF:-1 group-title="数字台" tvg-id="null" tvg-name="null" tvg-logo="https://ghp.ci/raw.githubusercontent.com/suxuang/myIPTV/main/img/埋堆堆.png" t-time="1438" v-w="0" v-h="0", 笑傲江湖
 http://huanqiuzhibo.cn/manifest/huya.php?id=23865142
-#EXTINF:-1 group-title="4K" tvg-id="Loupe" tvg-name="Loupe" tvg-logo="https://epg.iill.top/logo/Loupe4K.png" t-time="1242" v-w="0" v-h="0", Loupe 4K视觉
+#EXTINF:-1 group-title="4K" tvg-id="Loupe" tvg-name="Loupe" tvg-logo="https://epg.iill.top/logo/Loupe4K.png" t-time="682" v-w="0" v-h="0", Loupe 4K视觉
 https://d2dw21aq0j0l5c.cloudfront.net/playlist_3840x2160.m3u8
-#EXTINF:-1 group-title="4K" tvg-id="null" tvg-name="null" tvg-logo="https://epg.iill.top/logo/FashionTV.png" t-time="6666" v-w="0" v-h="0", Fashion 4K时尚
+#EXTINF:-1 group-title="4K" tvg-id="null" tvg-name="null" tvg-logo="https://epg.iill.top/logo/FashionTV.png" t-time="1270" v-w="0" v-h="0", Fashion 4K时尚
 https://fash2043.cloudycdn.services/slive/ftv_ftv_4k_hevc_73d_42080_default_466_hls.smil/playlist.m3u8
-#EXTINF:-1 group-title="卫视台" tvg-id="重庆卫视" tvg-name="重庆卫视" tvg-logo="" t-time="275" v-w="0" v-h="0", 重庆卫视
-http://[2409:8087:5e00:24::1e]:6060/000000001000/1000000001000001096/1.m3u8
-#EXTINF:-1 group-title="数字台" tvg-id="天元围棋" tvg-name="天元围棋" tvg-logo="https://gitee.com/suxuang/epglogo/raw/master/shuzi/tywq.png" t-time="252" v-w="0" v-h="0", 天元围棋
+#EXTINF:-1 group-title="数字台" tvg-id="天元围棋" tvg-name="天元围棋" tvg-logo="https://gitee.com/suxuang/epglogo/raw/master/shuzi/tywq.png" t-time="158" v-w="0" v-h="0", 天元围棋
 http://wouu.net:9977/udp/239.93.42.55:5140
-#EXTINF:-1 group-title="港澳台" tvg-id="纬来精采" tvg-name="纬来精采台" tvg-logo="https://gitee.com/suxuang/epglogo/raw/master/gangaotai/Weilai7.png" t-time="139" v-w="0" v-h="0", 纬来精采
+#EXTINF:-1 group-title="港澳台" tvg-id="纬来精采" tvg-name="纬来精采台" tvg-logo="https://gitee.com/suxuang/epglogo/raw/master/gangaotai/Weilai7.png" t-time="166" v-w="0" v-h="0", 纬来精采
 http://61.221.215.25:8800/hls/48/index.m3u8
-#EXTINF:-1 group-title="港澳台" tvg-id="null" tvg-name="龙华电影" tvg-logo="https://gitee.com/suxuang/TVlogo/raw/main/img/LTV1.png" t-time="2323" v-w="0" v-h="0", 龙华电影
+#EXTINF:-1 group-title="港澳台" tvg-id="null" tvg-name="龙华电影" tvg-logo="https://gitee.com/suxuang/TVlogo/raw/main/img/LTV1.png" t-time="1727" v-w="0" v-h="0", 龙华电影
 https://stream1.freetv.fun/1178a02eb676ee58293691fdc19fed767b2dc61d866c1fee41447a8503ec0253.m3u8
-#EXTINF:-1 group-title="儿童" tvg-id="null" tvg-name="null" tvg-logo="null" t-time="1177" v-w="0" v-h="0", 哆啦A梦
+#EXTINF:-1 group-title="儿童" tvg-id="null" tvg-name="null" tvg-logo="null" t-time="1184" v-w="0" v-h="0", 哆啦A梦
 http://huanqiuzhibo.cn/manifest/huya.php?id=11601963
-#EXTINF:-1 group-title="儿童" tvg-id="null" tvg-name="null" tvg-logo="null" t-time="1548" v-w="0" v-h="0", 猫和老鼠
+#EXTINF:-1 group-title="儿童" tvg-id="null" tvg-name="null" tvg-logo="null" t-time="969" v-w="0" v-h="0", 猫和老鼠
 http://huanqiuzhibo.cn/manifest/huya.php?id=11352879
-#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="1221" v-w="0" v-h="0", 周星驰电影
+#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="1040" v-w="0" v-h="0", 周星驰电影
 http://huanqiuzhibo.cn/manifest/huya.php?id=11342412
-#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="6960" v-w="0" v-h="0", 刘德华电影
+#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="1411" v-w="0" v-h="0", 林正英电影
+http://huanqiuzhibo.cn/manifest/huya.php?id=11342421
+#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="7932" v-w="0" v-h="0", 刘德华电影
 http://huanqiuzhibo.cn/manifest/huya.php?id=11342424
-#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="6852" v-w="0" v-h="0", 古天乐电影
+#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="7387" v-w="0" v-h="0", 古天乐电影
 http://huanqiuzhibo.cn/manifest/huya.php?id=29982675
-#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="3787" v-w="0" v-h="0", 李连杰电影
+#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="3071" v-w="0" v-h="0", 李连杰电影
 http://huanqiuzhibo.cn/manifest/huya.php?id=11342390
-#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="3297" v-w="0" v-h="0", 甄子丹电影
+#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="1177" v-w="0" v-h="0", 甄子丹电影
 http://huanqiuzhibo.cn/manifest/huya.php?id=11352935
-#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="6896" v-w="0" v-h="0", 狄仁杰系列
+#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="7686" v-w="0" v-h="0", 狄仁杰系列
 http://huanqiuzhibo.cn/manifest/huya.php?id=30080229
-#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="4372" v-w="0" v-h="0", 沈腾电影
+#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="1507" v-w="0" v-h="0", 沈腾电影
 http://huanqiuzhibo.cn/manifest/huya.php?id=11601968
-#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="1069" v-w="0" v-h="0", 黄渤电影
+#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="1274" v-w="0" v-h="0", 黄渤电影
 http://huanqiuzhibo.cn/manifest/huya.php?id=11352876
-#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="4544" v-w="0" v-h="0", 强森电影
+#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="1167" v-w="0" v-h="0", 强森电影
 http://huanqiuzhibo.cn/manifest/huya.php?id=21059581
-#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="7690" v-w="0" v-h="0", 王晶电影
+#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="1066" v-w="0" v-h="0", 王晶电影
 http://huanqiuzhibo.cn/manifest/huya.php?id=11602058
-#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="1348" v-w="0" v-h="0", 功夫电影
+#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="1564" v-w="0" v-h="0", 功夫电影
 http://huanqiuzhibo.cn/manifest/huya.php?id=11352941
-#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="1008" v-w="0" v-h="0", 贺岁电影
+#EXTINF:-1 group-title="电影" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/电影.png" t-time="1107" v-w="0" v-h="0", 贺岁电影
 http://huanqiuzhibo.cn/manifest/huya.php?id=11601986
-#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/延禧攻略.png" t-time="1622" v-w="0" v-h="0", 延禧攻略
+#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/延禧攻略.png" t-time="1452" v-w="0" v-h="0", 延禧攻略
 http://huanqiuzhibo.cn/manifest/huya.php?id=26355864
-#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/新三国.png" t-time="2896" v-w="0" v-h="0", 新三国
+#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/新三国.png" t-time="1295" v-w="0" v-h="0", 新三国
 http://huanqiuzhibo.cn/manifest/huya.php?id=11352944
-#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/新三国.png" t-time="5169" v-w="0" v-h="0", 新三国（备用）
+#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/新三国.png" t-time="8778" v-w="0" v-h="0", 新三国（备用）
 http://live.metshop.top/huya/11352944
-#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/新水浒.png" t-time="6769" v-w="0" v-h="0", 新水浒传
+#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/新水浒.png" t-time="1148" v-w="0" v-h="0", 新水浒传
 http://huanqiuzhibo.cn/manifest/huya.php?id=11342384
-#EXTINF:-1 group-title="电视剧" tvg-id="三国演义" tvg-name="三国演义" tvg-logo="" t-time="5551" v-w="0" v-h="0", 三国演义
+#EXTINF:-1 group-title="电视剧" tvg-id="三国演义" tvg-name="三国演义" tvg-logo="" t-time="2863" v-w="0" v-h="0", 三国演义
 http://live.metshop.top/huya/11602081
-#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/神探狄仁杰.png" t-time="3399" v-w="0" v-h="0", 神探狄仁杰第一部
+#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/神探狄仁杰.png" t-time="2536" v-w="0" v-h="0", 神探狄仁杰第一部
 http://huanqiuzhibo.cn/manifest/huya.php?id=11352958
-#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/神探狄仁杰3.png" t-time="5033" v-w="0" v-h="0", 神探狄仁杰第三部
+#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/神探狄仁杰3.png" t-time="5553" v-w="0" v-h="0", 神探狄仁杰第三部
 http://huanqiuzhibo.cn/manifest/huya.php?id=11342425
-#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/爱情公寓.png" t-time="1386" v-w="0" v-h="0", 爱情公寓
+#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/爱情公寓.png" t-time="1257" v-w="0" v-h="0", 爱情公寓
 http://huanqiuzhibo.cn/manifest/huya.php?id=11336726
-#EXTINF:-1 group-title="数字台" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/埋堆堆.png" t-time="2968" v-w="0" v-h="0", 刑事侦缉档案
+#EXTINF:-1 group-title="数字台" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/埋堆堆.png" t-time="1057" v-w="0" v-h="0", 刑事侦缉档案
 http://huanqiuzhibo.cn/manifest/huya.php?id=23734169
-#EXTINF:-1 group-title="数字台" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/埋堆堆.png" t-time="3218" v-w="0" v-h="0", 法政先锋
+#EXTINF:-1 group-title="数字台" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/埋堆堆.png" t-time="1367" v-w="0" v-h="0", 法政先锋
 http://huanqiuzhibo.cn/manifest/huya.php?id=23863804
-#EXTINF:-1 group-title="数字台" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/埋堆堆.png" t-time="1200" v-w="0" v-h="0", 陀枪师姐
+#EXTINF:-1 group-title="数字台" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/埋堆堆.png" t-time="1335" v-w="0" v-h="0", 陀枪师姐
 http://huanqiuzhibo.cn/manifest/huya.php?id=23860039
-#EXTINF:-1 group-title="数字台" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/埋堆堆.png" t-time="1219" v-w="0" v-h="0", 鉴证实录
+#EXTINF:-1 group-title="数字台" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/埋堆堆.png" t-time="5012" v-w="0" v-h="0", 鉴证实录
 http://huanqiuzhibo.cn/manifest/huya.php?id=23903183
-#EXTINF:-1 group-title="数字台" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/埋堆堆.png" t-time="1254" v-w="0" v-h="0", 金枝欲孽
+#EXTINF:-1 group-title="数字台" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/埋堆堆.png" t-time="1056" v-w="0" v-h="0", 金枝欲孽
 http://huanqiuzhibo.cn/manifest/huya.php?id=23865036
-#EXTINF:-1 group-title="数字台" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/埋堆堆.png" t-time="4492" v-w="0" v-h="0", 扫黄先锋
+#EXTINF:-1 group-title="数字台" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/埋堆堆.png" t-time="3128" v-w="0" v-h="0", 扫黄先锋
 http://huanqiuzhibo.cn/manifest/huya.php?id=23903196
-#EXTINF:-1 group-title="数字台" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/埋堆堆.png" t-time="1376" v-w="0" v-h="0", 妙手仁心
+#EXTINF:-1 group-title="数字台" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/埋堆堆.png" t-time="5847" v-w="0" v-h="0", 妙手仁心
 http://huanqiuzhibo.cn/manifest/huya.php?id=23829543
-#EXTINF:-1 group-title="数字台" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/埋堆堆.png" t-time="3852" v-w="0" v-h="0", 大时代
+#EXTINF:-1 group-title="数字台" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/埋堆堆.png" t-time="4025" v-w="0" v-h="0", 大时代
 http://huanqiuzhibo.cn/manifest/huya.php?id=23865161
-#EXTINF:-1 group-title="数字台" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/埋堆堆.png" t-time="7197" v-w="0" v-h="0", 野蛮亲家
+#EXTINF:-1 group-title="数字台" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/埋堆堆.png" t-time="8019" v-w="0" v-h="0", 野蛮亲家
 http://huanqiuzhibo.cn/manifest/huya.php?id=23863796
-#EXTINF:-1 group-title="数字台" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/埋堆堆.png" t-time="1080" v-w="0" v-h="0", 笑看风云
+#EXTINF:-1 group-title="数字台" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/埋堆堆.png" t-time="1023" v-w="0" v-h="0", 笑看风云
 http://huanqiuzhibo.cn/manifest/huya.php?id=23865058
-#EXTINF:-1 group-title="国际台" tvg-id="RT05" tvg-name="RT" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/tvlog/RT塞尔维亚.png" t-time="2158" v-w="0" v-h="0", RT Balkan （塞尔维亚语）
+#EXTINF:-1 group-title="国际台" tvg-id="RT05" tvg-name="RT" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/tvlog/RT塞尔维亚.png" t-time="3385" v-w="0" v-h="0", RT Balkan （塞尔维亚语）
 https://rt-srb.rttv.com/dvr/rtbalkan/playlist_4500Kb.m3u8
-#EXTINF:-1 group-title="国际台" tvg-id="RT07" tvg-name="RT" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/tvlog/RTDoc.png" t-time="2369" v-w="0" v-h="0", RT Doc-Русский（俄语纪录）
+#EXTINF:-1 group-title="国际台" tvg-id="RT07" tvg-name="RT" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/tvlog/RTDoc.png" t-time="1599" v-w="0" v-h="0", RT Doc-Русский（俄语纪录）
 https://rt-doc.rttv.com/dvr/rtdru/rtdru1080.m3u8
-#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/延禧攻略.png" t-time="5483" v-w="0" v-h="0", 延禧攻略
-http://live.metshop.top/huya/26355864
-#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/新水浒.png" t-time="808" v-w="0" v-h="0", 新水浒传
+#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/新水浒.png" t-time="2930" v-w="0" v-h="0", 新水浒传
 http://live.metshop.top/huya/11342384
-#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/神探狄仁杰.png" t-time="3399" v-w="0" v-h="0", 神探狄仁杰第一部
+#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/神探狄仁杰.png" t-time="4493" v-w="0" v-h="0", 神探狄仁杰第一部
 http://live.metshop.top/huya/11352958
-#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/神探狄仁杰3.png" t-time="3745" v-w="0" v-h="0", 神探狄仁杰第三部
+#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/神探狄仁杰3.png" t-time="8220" v-w="0" v-h="0", 神探狄仁杰第三部
 http://live.metshop.top/huya/11342425
-#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/爱情公寓.png" t-time="7862" v-w="0" v-h="0", 爱情公寓
+#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/爱情公寓.png" t-time="5196" v-w="0" v-h="0", 爱情公寓
 http://live.metshop.top/huya/11336726
-#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/士兵突击.png" t-time="3037" v-w="0" v-h="0", 士兵突击
+#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/倚天屠龙记苏有朋.png" t-time="5899" v-w="0" v-h="0", 倚天屠龙记
+http://live.metshop.top/huya/11342403
+#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/铁齿铜牙纪晓岚.png" t-time="2894" v-w="0" v-h="0", 铁齿铜牙纪晓岚
+http://live.metshop.top/huya/11342396
+#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/亮剑.png" t-time="2646" v-w="0" v-h="0", 亮剑
+http://live.metshop.top/huya/30080238
+#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/士兵突击.png" t-time="7224" v-w="0" v-h="0", 士兵突击
 http://live.metshop.top/huya/11342430
-#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/康熙王朝.png" t-time="4477" v-w="0" v-h="0", 康熙王朝
+#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/康熙王朝.png" t-time="9905" v-w="0" v-h="0", 康熙王朝
 http://live.metshop.top/huya/11352940
-#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/怒晴湘西.png" t-time="2522" v-w="0" v-h="0", 鬼吹灯之怒晴湘西
-http://live.metshop.top/huya/11602075
-#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/龙岭迷窟.png" t-time="2524" v-w="0" v-h="0", 鬼吹灯之龙岭迷窟
+#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/精绝古城.png" t-time="10924" v-w="0" v-h="0", 鬼吹灯之精绝古城
+http://live.metshop.top/huya/11352871
+#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/龙岭迷窟.png" t-time="2808" v-w="0" v-h="0", 鬼吹灯之龙岭迷窟
 http://live.metshop.top/huya/29465863
-#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/云南虫谷.png" t-time="2624" v-w="0" v-h="0", 鬼吹灯之云南虫谷
+#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/云南虫谷.png" t-time="4690" v-w="0" v-h="0", 鬼吹灯之云南虫谷
 http://live.metshop.top/huya/11352898
-#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/笑傲江湖.png" t-time="2426" v-w="0" v-h="0", 笑傲江湖
+#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/笑傲江湖.png" t-time="4635" v-w="0" v-h="0", 笑傲江湖
 http://live.metshop.top/huya/26355790
-#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/神雕侠侣.png" t-time="3207" v-w="0" v-h="0", 神雕侠侣
+#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/神雕侠侣.png" t-time="4095" v-w="0" v-h="0", 神雕侠侣
 http://live.metshop.top/huya/11352964
-#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/雪豹.png" t-time="3610" v-w="0" v-h="0", 雪豹
+#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/雪豹.png" t-time="2670" v-w="0" v-h="0", 雪豹
 http://live.metshop.top/huya/29580970
-#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/陈情令.png" t-time="3760" v-w="0" v-h="0", 陈情令
+#EXTINF:-1 group-title="电视剧" tvg-id="null" tvg-name="null" tvg-logo="https://gh-proxy.com/raw.githubusercontent.com/suxuang/myIPTV/main/img/陈情令.png" t-time="5211" v-w="0" v-h="0", 陈情令
 http://live.metshop.top/huya/29465862
 #EXTINF:-1 group-title="数字台" tvg-id="CHC1" tvg-name="CHC影迷电影" tvg-logo="https://gitee.com/suxuang/epglogo/raw/master/shuzi/CHC4.png" t-time="250" v-w="0" v-h="0", CHC影迷电影
 https://ali.hlspull.yximgs.com/live/diyp_chcyingmi.flv
