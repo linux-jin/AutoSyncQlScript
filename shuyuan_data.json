@@ -51,35 +51,130 @@
     "weight": 0
   },
   {
-    "bookSourceName": "4K图",
-    "bookSourceType": 2,
-    "bookSourceUrl": "https://ntgzi.xxtt.ink/",
+    "bookSourceComment": "需登录\n如果文章有更新，要先更新目录，在刷新正文\n\n\n标签::https://api.unifans.io/common/getPostsByHashTag?skip={{(page-1)*10}}&limit=10&hashTag=标签名&_t=={{Date.now()}}",
+    "bookSourceName": "引力圈【只能搜索作者】",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://app.unifans.io/feed",
+    "bookUrlPattern": ".*/getCollectionDetail.*collectionId=.*",
     "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "标签::https://api.unifans.io/common/getPostsByHashTag?skip={{(page-1)*10}}&limit=10&hashTag=高H&_t=={{Date.now()}}\n\n21点牌::data:getPersonalInfo;base64,{{java.base64Encode(\"domainName=21dianpai&_t=\"+Date.now())}},{\"type\":\"\"}\n\nAlphamie::data:getPersonalInfo;base64,{{java.base64Encode(\"domainName=y1250082324&_t=\"+Date.now())}},{\"type\":\"\"}",
+    "lastUpdateTime": "1748086714529",
+    "loginUi": "[\n    {\n        name: \"邮箱\",\n        type: \"text\"\n    },\n    {\n        name: \"密码\",\n        type: \"password\"\n    }\n]",
+    "loginUrl": "<js>\nfunction login(){\n\temail = source.getLoginInfoMap().get(\"邮箱\");\n\tpwd = source.getLoginInfoMap().get(\"密码\");\n\turl = \"https://api.unifans.io/account/login\";\n\tbody = {\n          \"boundMailbox\": String(email),\n          \"password\": String(pwd)\n         }\n\tpost = {\n\t\t\"method\":\"POST\",\n\t\t\"body\":JSON.stringify(body)\n\t\t   }\n\turl = url+\",\"+JSON.stringify(post);\n\ttoken = JSON.parse(java.ajax(url)).data.token;\n\tauthorization = \"hgq \"+token;\n authorization = {\n \t\"authorization\":String(authorization)\n \t}\t; \n \tsource.putLoginHeader(JSON.stringify(authorization));\n\t}\n</js>",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "$.data.collection.nickName",
+      "coverUrl": "$.data.collection.picture",
+      "init": "<js>\nif(!/&_t=/.test(baseUrl) && !/data:getOne/.test(baseUrl)){\nresult = \tjava.ajax(baseUrl+\"&_t={{Date.now()}}\")\n\t}\nresult\n</js>",
+      "intro": "<js>\nif(/getPersonalInfo/.test(baseUrl)){\n\tresult =java.getString(\"$.data.description\")+`\\n-----复制下面文字粘贴至发现地址-----\\n{{$.data.homeName}}::data:getPersonalInfo;base64,{\\{java.base64Encode(\"domainName={{$.data.domainName}}&_t=\"+Date.now())}\\},{\"type\":\"\"}`\n\t}else{\n\t\tresult = java.getString(\"$.data.collection.comment\")\n\t\t}\n</js>",
+      "name": "$.data.collection.name",
+      "tocUrl": "<js>\nif(/getPersonalInfo/.test(baseUrl)){\n\tresult = `data:getPersonalInfo;base64,${java.base64Encode(\"domainName={{$.data.domainName}}\")},{\"type\":\"\"}`;\n\t}else if(/getCollectionDetail/.test(baseUrl)){\n\t\tresult = \"https://api.unifans.io/creator/getPostsByCollection?collectionId={{$.data.collection._id}}&skip=0&limit=500&order=0&_t={{Date.now()}}\"\n\t\t}\n</js>"
+    },
+    "ruleContent": {
+      "content": "<js>\nif(/data:postId/.test(baseUrl)){\npostid = \tjava.hexDecodeToString(result)\n\tresult = JSON.parse(book.customVariable)[postid];\n\t}else if(/getCollectionDetail/.test(baseUrl)){\n\t\tif(book.durChapterIndex === chapter.index){\n\t\t\turl = \"https://api.unifans.io/creator/getCollectionDetail?collectionId={{$.data.collection._id}}&_t=\"+Date.now();\n\t\ttitle = \"{{$.data.collection.name}}\";\n\t\turl = \"legado://import/addToBookshelf?src=\"+encodeURIComponent(url);\n\t\thtml = `<!DOCTYPE html>\n<html>\n<head>\n    <title>《${title}》加入书架</title>\n    <style>\n        body {\n            font-family: 'Microsoft YaHei', sans-serif;\n            background-color: #f5f5f5;\n            margin: 0;\n            padding: 20px;\n            display: flex;\n            flex-direction: column;\n            align-items: center;\n            min-height: 100vh;\n        }\n        .book-container {\n            background-color: white;\n            border-radius: 12px;\n            box-shadow: 0 4px 12px rgba(0,0,0,0.1);\n            padding: 40px;\n            max-width: 900px;\n            width: 90%;\n            text-align: center;\n            margin-bottom: 30px;\n        }\n        .book-cover {\n            min-width: 60%;  /* 图片更大 */\n            min-height: 40%; /* 图片更高 */\n            border-radius: 8px;\n            box-shadow: 0 2px 8px rgba(0,0,0,0.2);\n            margin-bottom: 30px;\n            object-fit: contain;\n        }\n        .book-title {\n            font-size: 56px;  /* 标题更大 */\n            color: #333;\n            margin-bottom: 25px;\n            font-weight: bold;\n        }\n        .book-description {\n            font-size: 50px;  /* 简介文字更大 */\n            color: #555;\n            line-height: 1.6;\n            text-align: left;\n            padding: 0 20px;\n            margin-bottom: 30px;\n        }\n        .action-button {\n            display: inline-block;\n            background-color: #4285f4;\n            color: white;\n            text-decoration: none;\n            font-size: 40px;  /* 按钮文字更大 */\n            padding: 16px 40px; /* 按钮更大 */\n            border-radius: 30px;\n            margin-top: 30px;\n            transition: all 0.3s ease;\n            box-shadow: 0 2px 5px rgba(66,133,244,0.3);\n        }\n        .action-button:hover {\n            background-color: #3367d6;\n            transform: translateY(-2px);\n            box-shadow: 0 4px 8px rgba(66,133,244,0.3);\n        }\n    </style>\n</head>\n<body>\n    <div class=\"book-container\">\n        <div class=\"book-title\">《${title}》</div>\n        <img src=\"{{$.data.collection.picture}}\" class=\"book-cover\">\n        <div class=\"book-description\">\n            简介：${java.getString(\"$.data.collection.comment\")}\n        </div>\n        <a href=\"${url}\" class=\"action-button\">加入书架</a>\n    </div>\n\n    <script>\n        window.onload = function () {\n            window.location.href = '${url}';\n        };\n    </script>\n</body>\n</html>\n`;\n\t\t\n\t\t\n\t\t\n\t\tscript = `data:text/html;charset=utf-8,${encodeURIComponent(html)}`;\n\t\tjava.startBrowser(script,\"《\"+title+\"》\")\n\t\t\n\t\t}\n\t\nresult=\"❗️刷新本章节，跳转本书详情页\\n\"+'简介：'+java.getString(\"$.data.collection.comment\")+\"\\n\"+'<img src=\"{{$.data.collection.picture}}\">'\n\t\t}else if(/getOne/.test(baseUrl)){\n\t\t\tresult = String(book.intro).replace(/img src/g,'<img src')\n\t\t\t}\n\tresult\n</js>\n\n##\\<img src\\=\"\"\\>",
+      "imageStyle": "FULL",
+      "replaceRegex": "##Powered by Froala Editor"
+    },
+    "ruleExplore": {
+      "author": "$.creatorName",
+      "bookList": "<js>\nif(/localhost/.test(baseUrl)){\n\t\nlet list = [];\n\ndomid = java.hexDecodeToString(result);\n\n\t\t合集链接 = \"https://api.unifans.io/common/getCollections?\"+domid;\n\t\t\n\t合集 = \tString(java.ajax(合集链接));\n\tjava.setContent(合集);\n\tlist = java.getElements(\"$.data.collections[*]\").toArray();\n\n\t\t主页链接 = \"https://api.unifans.io/creator/posts?\"+domid+\"&skip=0&limit=1000&order=1\";\n\t主页 = \tString(java.ajax(主页链接));\n\t\tjava.setContent(主页);\n\t\t主页list = java.getElements(\"$.data.posts[*]\").toArray().sort((a, b) => {\n    const hasAName = a.collectionDetails[0]?.name != null;\n    const hasBName = b.collectionDetails[0]?.name != null;\n    return hasAName - hasBName ;\n});\n\t\tlist = list.concat(主页list)\n\tresult = list.length?JSON.stringify(list):`[{name:\"无内容\"}]`;\n\t}\n\tresult\n</js>\n$.data.posts[*]||$.[*]",
+      "bookUrl": "<js>\n\tif(\"{{$.name}}\"!==\"\"){\n\t\tresult = \"https://api.unifans.io/creator/getCollectionDetail?collectionId={{$._id}}&_t={{Date.now()}}\";\n\t\t}else if(\"{{$.title}}\"!==\"\"){\n\t\t\tresult = `data:getOne;base64,${java.base64Encode(\"{{$.postId}}\")},{\"type\":\"\"}`;\n\t\t\t}\n</js>",
+      "coverUrl": "$.picture",
+      "intro": "@js:\nintro = java.getString(\"$.previewText&&$.comment\");\ntext = String(java.getString(\"$.text\")).replace(/<\\/*span.*?>| style=\".*?\"/g,'');\nimg ='img src=\"'+ java.getString(\"$..address\")+'\">';\nhtml = text+\"\\n\"+img.replace(/img src=\"\">/g,'');\nintro+\"\\n\"+html;",
+      "kind": "@js:\n\"{{$.locked}}\"==\"true\"?\"🔒\":\"\"",
+      "name": "{{$.name||$.title}}",
+      "wordCount": "{{$.collectionDetails[*].name}}"
+    },
+    "ruleSearch": {
+      "bookList": "$.data.result[*]",
+      "bookUrl": "https://api.unifans.io/common/getPersonalInfo?domainName={{$.domainName}}&_t={{Date.now()}}",
+      "checkKeyWord": "++data:getPersonalInfo;base64,ZG9tYWluTmFtZT1ndWExMjM0NTY=,{\"type\":\"\"}",
+      "coverUrl": "$.avatar",
+      "intro": "$.creatingDes",
+      "name": "$.nickName"
+    },
+    "ruleToc": {
+      "chapterList": "<js>\nlet list;\nfunction putContent(list){\n\tlet json = {}\nfor(i in list){\n\ttext = String(java.getString(\"$.text\",list[i])).replace(/<\\/*span.*?>| style=\".*?\"/g,'').replace(/{{HOST}\\}/g,'https://bucket-prod.unifans.io');\n\t\n\timg =String(java.getString(\"$..address\",list[i])).split('\\n').map(x=>'<img src=\"'+x+'\">').join(\"\\n\");\n\n\t\thtml = text+\"\\n\"+img.replace(/<img src=\"\"/g,'');\n\n\t  postid = java.getString(\"$.postId\",list[i]);\n\t  json[postid] = html;\n\t}\n\tbook.putCustomVariable(JSON.stringify(json));\n\t}\n\nif(/getPostsByCollection/.test(baseUrl)){\nlist = java.getElements(\"$.data.posts[*]\").toArray().sort((a, b) => a.createTime - b.createTime);\nputContent(list)\n\tresult = list.length?JSON.stringify(list):`[{name:\"无目录\"}]`\n\t}else if(/getPersonalInfo/.test(baseUrl)){\n\t\tdomid = java.hexDecodeToString(result);\n\t\t合集链接 = \"https://api.unifans.io/common/getCollections?\"+domid+\"&_t={{Date.now()}}\";\n\t合集 = \tString(java.ajax(合集链接));\n\tjava.setContent(合集);\n\tlist = java.getElements(\"$.data.collections[*]\").toArray();\n\t\t\n\t\t主页链接 = \"https://api.unifans.io/creator/posts?\"+domid+\"&skip=0&limit=1000&order=1&_t={{Date.now()}}\"\n\t主页 = \tString(java.ajax(主页链接));\n\t\tjava.setContent(主页);\n\t\t主页list = java.getElements(\"$.data.posts[*]\").toArray().sort((a, b) => {\n    const getName = (item) => item.collectionDetails?.[0]?.name ?? null;\n\n    const nameA = getName(a);\n    const nameB = getName(b);\n\n    if (nameA === null && nameB !== null) return -1;\n    if (nameA !== null && nameB === null) return 1;\n\n    // 按 createTime 升序排列（旧的在前）\n    return a.createTime - b.createTime;\n});\n\n\t\tputContent(主页list)\n\t\tlist = list.concat(主页list)\n\tresult = list.length?JSON.stringify(list):`[{name:\"无内容\"}]`\n\t\t}else if(/getOne/.test(baseUrl)){\n\t\t\tresult = `[{name:\"${book.name}\"}]`\n\t\t\t}\n</js>\n$.[*]",
+      "chapterName": "$.name||$.title",
+      "chapterUrl": "<js>\nif(/getPersonalInfo/.test(baseUrl)){\nif(String(java.getString(\"$.name\"))!==\"\"){\n\t\t\t\tresult = \"https://api.unifans.io/creator/getCollectionDetail?collectionId={{$._id}}&_t=\"+Date.now();\n\t\t}else if(String(java.getString(\"$.title\"))!==\"\"){\n\t\t\t\tresult = `data:postId;base64,${java.base64Encode(\"{{$.postId}}\")},{\"type\":\"\"}`;\n\t\t\t}\n}\telse if(/getPostsByCollection/.test(baseUrl)){\n\tresult = `data:postId;base64,${java.base64Encode(\"{{$.postId}}\")},{\"type\":\"unifansContent\"}`;\n\t}\n</js>",
+      "isVip": "$.locked",
+      "updateTime": "💰{{$.sponsorScheme[0].fee}} 目录总数：{{$.postCount}} 所属合集：{{$.collectionDetails[*].name}}\n<js>\ntime=\"{{$.updateTime}}\"?java.timeFormat(\"{{$.updateTime}}000\"):\"\"\nresult=time+\" \"+result;\nresult = result\n.replace(/所属合集：$/g,'')\n.replace(/(?:💰|目录总数：)(?!\\d)/g,'')\n.replace(/💰0(?![.\\d])/g,'');\n</js>"
+    },
+    "searchUrl": "https://api.unifans.io/common/searchNickDomainName,{\n\t'method':'POST',\n\t'body':'{\"search\":\"{{key}}\",\"searchType\":\"creator\",\"skip\":0,\"limit\":500}'\n\t}",
+    "weight": 0
+  },
+  {
+    "bookSourceComment": "",
+    "bookSourceGroup": "🍿 日常,🎊 常用,🎨 漫画",
+    "bookSourceName": "🎨热辣漫画💞",
+    "bookSourceType": 2,
+    "bookSourceUrl": "https://mapi.hotmangasd.com",
+    "bookUrlPattern": "https://.*/api/v3/comic2/.*_update=.*",
+    "customOrder": 118,
     "enabled": true,
     "enabledCookieJar": false,
     "enabledExplore": true,
-    "lastUpdateTime": "1747405038246",
+    "exploreUrl": "<js>\neval(String(Reload('https://qyyuapi.com/sy/js/热辣漫画/exploreUrl.js')));\n</js>",
+    "header": "<js>\nvar Proxy = Map('代理：').split(\",\");\nheaders={\n    \"User-Agent\": \"COPY/999.9.9\",\n    \"proxy\": Proxy.some(value => parseInt(value, 10) == parseInt(Get('ci0'), 10)) ? '' : Proxy[0],\n}\ncache.put(java.md5Encode16(Get('url') + \"headers\"),JSON.stringify(headers));\nJSON.stringify(headers);\n</js>",
+    "jsLib": "{\"热辣漫画\":\"https://qyyuapi.com/sy/js/热辣漫画/jsLib.js\"}",
+    "lastUpdateTime": "1747920958253",
+    "loginUi": "[\n  { name: \"代理：\", type: \"text\" },\n  { name: \"账号：\", type: \"text\" },\n  { name: \"密码：\", type: \"password\" },\n  {\n    name: \"💡　　 账　　 号　　 登　　 录　　 💡\",\n    type: \"button\",\n    action: \"Login()\",\n    style: {layout_flexGrow: 1, layout_flexBasisPercent: 1}\n  },\n  { name: \"查看当前\", type: \"button\", action: \"look(0)\", style: {layout_flexGrow: 1, layout_flexBasisPercent: 0.25} },\n  { name: \"查看历史\", type: \"button\", action: \"look(1)\", style: {layout_flexGrow: 1, layout_flexBasisPercent: 0.25} },\n  { name: \"恢复默认\", type: \"button\", action: \"test(0)\", style: {layout_flexGrow: 1, layout_flexBasisPercent: 0.25} },\n  { name: \"繁体搜索\", type: \"button\", action: \"search_TC()\", style: {layout_flexGrow: 1, layout_flexBasisPercent: 0.25} },\n  { name: \"繁简转换\", type: \"button\", action: \"TC_to_SC()\", style: {layout_flexGrow: 1, layout_flexBasisPercent: 0.25} },\n  { name: \"目录整理\", type: \"button\", action: \"settle()\", style: {layout_flexGrow: 1, layout_flexBasisPercent: 0.25} },\n\n  { name: \"༺ˇ»`ʚ  点击切换源站  ɞ´«ˇ༻\", type: \"button\", style: {layout_flexGrow: 1, layout_flexBasisPercent: 1} },\n  { name: \"①热辣漫画❶\", type: \"button\", action: \"$(1)\", style: {layout_flexGrow: 1, layout_flexBasisPercent: 0.45} },\n  { name: \"②热辣漫画❷\", type: \"button\", action: \"$(2)\", style: {layout_flexGrow: 1, layout_flexBasisPercent: 0.45} },\n  { name: \"③热辣漫画❸\", type: \"button\", action: \"$(3)\", style: {layout_flexGrow: 1, layout_flexBasisPercent: 0.45} },\n  { name: \"④热辣漫画❹\", type: \"button\", action: \"$(4)\", style: {layout_flexGrow: 1, layout_flexBasisPercent: 0.45} },\n  { name: \"⑤热辣漫画❺\", type: \"button\", action: \"$(5)\", style: {layout_flexGrow: 1, layout_flexBasisPercent: 0.45} },\n  { name: \"⑥热辣漫画❻\", type: \"button\", action: \"$(6)\", style: {layout_flexGrow: 1, layout_flexBasisPercent: 0.45} },\n  { name: \"⑦热辣漫画❼\", type: \"button\", action: \"$(7)\", style: {layout_flexGrow: 1, layout_flexBasisPercent: 0.45} },\n  { name: \"⑧热辣漫画❽\", type: \"button\", action: \"$(8)\", style: {layout_flexGrow: 1, layout_flexBasisPercent: 0.45} },\n\n  { name: \"༺ˇ»`ʚ  点击切换分类  ɞ´«ˇ༻\", type: \"button\", style: {layout_flexGrow: 1, layout_flexBasisPercent: 1} },\n  { name: \"全部\", type: \"button\", action: \"o(0)\", style: {layout_flexGrow: 1, layout_flexBasisPercent: 0.25} },\n  { name: \"日本\", type: \"button\", action: \"o(1)\", style: {layout_flexGrow: 1, layout_flexBasisPercent: 0.25} },\n  { name: \"韩国\", type: \"button\", action: \"o(2)\", style: {layout_flexGrow: 1, layout_flexBasisPercent: 0.25} },\n  { name: \"欧美\", type: \"button\", action: \"o(3)\", style: {layout_flexGrow: 1, layout_flexBasisPercent: 0.25} },\n  { name: \"完结\", type: \"button\", action: \"o(4)\", style: {layout_flexGrow: 1, layout_flexBasisPercent: 0.25} },\n  { name: \"\", type: \"button\", style: {layout_flexGrow: 1, layout_flexBasisPercent: 0.25} },\n\n  { name: \"༺ˇ»`ʚ  点击切换排序  ɞ´«ˇ༻\", type: \"button\", style: {layout_flexGrow: 1, layout_flexBasisPercent: 1} },\n  { name: \"热门人气\", type: \"button\", action: \"p(0)\", style: {layout_flexGrow: 1, layout_flexBasisPercent: 0.45} },\n  { name: \"更新时间\", type: \"button\", action: \"p(1)\", style: {layout_flexGrow: 1, layout_flexBasisPercent: 0.45} },\n\n  { name: \"页数：\", type: \"text\" },\n\n  {\n    name: \"清除网站Cookie缓存\",\n    type: \"button\",\n    action: \"deleteCookie()\",\n    style: {layout_flexGrow: 1, layout_flexBasisPercent: 1}\n  },\n\n  { name: \"清除远程代码标识\", type: \"button\", action: \"DeleteYckey()\", style: {layout_flexGrow: 1, layout_flexBasisPercent: 1} },\n\n  {\n    name: \"💡　　 源　　 站　　 打　　 印　　 💡\",\n    type: \"button\",\n    action: \"test()\",\n    style: {layout_flexGrow: 1, layout_flexBasisPercent: 1}\n  }\n]",
+    "loginUrl": "eval(String(Reload('https://qyyuapi.com/sy/js/热辣漫画/loginUrl.js')));",
     "respondTime": 180000,
     "ruleBookInfo": {
-      "name": "tag.h3@text"
+      "author": "author",
+      "canReName": "reName",
+      "coverUrl": "cover",
+      "downloadUrls": "durl",
+      "init": "<js>\neval(String(Reload('https://qyyuapi.com/sy/js/热辣漫画/ruleBookInfo.js')));\n</js>",
+      "intro": "intro",
+      "kind": "kind",
+      "lastChapter": "latest",
+      "name": "name",
+      "tocUrl": "url",
+      "wordCount": "word"
     },
     "ruleContent": {
-      "content": "id.basicExample@html",
-      "nextContentUrl": ""
+      "content": "<js>\neval(String(Reload('https://qyyuapi.com/sy/js/热辣漫画/ruleContent.js')));\n</js>",
+      "imageStyle": "FULL"
     },
-    "ruleExplore": [],
+    "ruleExplore": {
+      "author": "author",
+      "bookList": "<js>\neval(String(Reload('https://qyyuapi.com/sy/js/热辣漫画/ruleExplore.js')));\n</js>",
+      "bookUrl": "url",
+      "coverUrl": "cover",
+      "intro": "intro",
+      "kind": "kind",
+      "lastChapter": "latest",
+      "name": "name",
+      "wordCount": "word"
+    },
     "ruleSearch": {
-      "bookList": "class.is-layout-flow wp-block-query is-style-default@tag.li",
-      "bookUrl": "tag.a@href",
-      "coverUrl": "id.lazyImage@src",
-      "name": "tag.h2@text"
+      "author": "author",
+      "bookList": "<js>\neval(String(Reload('https://qyyuapi.com/sy/js/热辣漫画/ruleSearch.js')));\n</js>",
+      "bookUrl": "url",
+      "checkKeyWord": "秘密",
+      "coverUrl": "cover",
+      "intro": "intro",
+      "kind": "kind",
+      "lastChapter": "latest",
+      "name": "name",
+      "wordCount": "word"
     },
     "ruleToc": {
-      "chapterList": "tag.h3",
-      "chapterName": ".text",
-      "chapterUrl": "tag.a@href"
+      "chapterList": "<js>\neval(String(Reload('https://qyyuapi.com/sy/js/热辣漫画/ruleToc.js')));\n</js>",
+      "chapterName": "title",
+      "chapterUrl": "link",
+      "isVolume": "",
+      "nextTocUrl": "@js:\nvar num = Math.floor(java.get(\"total\") / 500); \nvar res = String(baseUrl).match(/(.*offset=)\\d+(.*)/) || ['',''];\nvar data = [];\nfor(i = 1;i <= num; i++){\n    data.push(res[1] + (i*500) + res[2]);\n}\ndata;",
+      "preUpdateJs": "if (!String(book.bookUrl).includes(Get('url'))) {\n    book.bookUrl = String(book.bookUrl).replace(/.*\\/\\/[^\\/]+/, Get('url'));\n    book.tocUrl = String(book.tocUrl).replace(/.*\\/\\/[^\\/]+/, Get('url'));\n    java.refreshTocUrl();\n}",
+      "updateTime": "time"
     },
-    "searchUrl": "https://ntgzi.xxtt.ink/search/{{key}}<,/page/{{page}}>",
+    "searchUrl": "<js>\neval(String(Reload('https://qyyuapi.com/sy/js/热辣漫画/searchUrl.js')));\n</js>",
+    "variableComment": "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",
     "weight": 0
   },
   {
@@ -177,91 +272,6 @@
     "weight": 0
   },
   {
-    "bookSourceComment": "",
-    "bookSourceName": "🔞📱顶通漫画",
-    "bookSourceId": "顶通漫画",
-    "bookSourceType": 2,
-    "bookSourceUrl": "https://toptoon01.xyz",
-    "bookSourceCoverUrl": "https://twassets.akamaized.net/www_v1/img/app_icon/favicon-96x96.png",
-    "header": null,
-    "customOrder": 1,
-    "from": 1,
-    "sourceOrigin": "clipboard",
-    "enabled": true,
-    "enabledCookieJar": false,
-    "enabledExplore": true,
-    "enabledReview": false,
-    "exploreType": null,
-    "exploreUrl": "连载中::/weekly/?page={{page}}&&已完结::/complete/?page={{page}}",
-    "lastUpdateTime": "1747321871931",
-    "respondTime": 8535,
-    "bookSourceStyle": {
-      "colors": [
-        "#ffffff",
-        "#ffffff"
-      ],
-      "size": 1
-    },
-    "ruleBookInfo": {
-      "author": "",
-      "coverUrl": "class.img-box>img@syrc",
-      "intro": "",
-      "kind": "",
-      "lastChapter": "class.f-red@text",
-      "name": "class.style-title@text",
-      "tocUrl": "{{baseUrl}}"
-    },
-    "ruleContent": {
-      "content": "class.lazy@data-original",
-      "replaceRegex": "",
-      "nextContentUrl": "",
-      "contentParseUrl": null,
-      "waitTocs": null,
-      "comicUrlJsDealer": null,
-      "provider": null,
-      "contentDecodeParam": "",
-      "jsFunc": ""
-    },
-    "ruleExplore": {
-      "jsonContent": null,
-      "author": "class.txt-ov@text##(.*)##作者:$1###",
-      "bookList": "class.row3>li",
-      "bookUrl": "a@href",
-      "coverUrl": "img@src",
-      "intro": "class.f-gray@text##(.*)##简介:$1###",
-      "name": "a@title",
-      "display": null,
-      "type": null,
-      "lastChapter": "span.date@text||span.info>a@text",
-      "kind": "p.txtItme[1]@text"
-    },
-    "ruleReview": [],
-    "ruleSearch": {
-      "jsonContent": null,
-      "author": "class.txt-ov@text##(.*)##作者:$1###",
-      "bookList": "class.row3>li",
-      "bookUrl": "a@href",
-      "coverUrl": "img@src",
-      "intro": "class.f-gray@text##(.*)##简介:$1###",
-      "name": "a@title",
-      "display": null,
-      "type": null,
-      "lastChapter": "span.date@text||span.info>a@text",
-      "kind": "p.txtItme[1]@text"
-    },
-    "ruleToc": {
-      "jsonContent": null,
-      "chapterList": "class.ul-36>li",
-      "chapterName": "a@text",
-      "chapterUrl": "a@href",
-      "nextTocUrl": null,
-      "contentDecodeParam": null,
-      "jsFunc": null
-    },
-    "searchUrl": "/txsearch.html?&search={{key}}",
-    "localName": null
-  },
-  {
     "bookSourceComment": "@小新\n@🍟\n20250405\n20250507调整\nBuding大佬帮忙调整",
     "bookSourceGroup": "1自写",
     "bookSourceName": "咕咕",
@@ -352,53 +362,57 @@
     "weight": 0
   },
   {
-    "bookSourceGroup": "音乐",
-    "bookSourceName": "时代音乐网",
-    "bookSourceType": 1,
-    "bookSourceUrl": "http://www.78497.com/",
-    "customOrder": 1,
+    "bookSourceComment": "//2025.5.20 ◎夜泽川◎",
+    "bookSourceName": "猕猴桃漫画",
+    "bookSourceType": 2,
+    "bookSourceUrl": "https://www.mhtmh.com",
+    "customOrder": 97,
     "enabled": true,
     "enabledCookieJar": true,
     "enabledExplore": true,
-    "exploreUrl": "@js:\neval(String(source.variableComment))\n\nconst host = \"http://www.78497.com\"\nconst list = []\n\n // 添加榜单标题\n  list.add(\"榜单\", null, 1, 1)\n  // 添加榜单单内容\n  list.add(\"热门榜单\", \"https://m.baidu.com/#top1\", 1, 0.4)\n  list.add(\"特色音乐\", \"https://m.baidu.com/#top2\", 1, 0.4)\n  \ncategories.forEach(category => {\n  let items = category.data.requestFilters.split(\"\\n\")\n  \n  // 添加歌单标题\n  list.add(category.title, null, 0, 1)\n  \n  // 添加歌单内容\n  items.forEach(item => {\n    let [title, id] = item.split(\"::\")\n    let url = host + category.urlTemplate.replace(\"$id\", id)\n    list.add(title, url, 0, 0.29)\n  })\n})\n\nJSON.stringify(list)",
-    "header": "{\"User-Agent\":\"Mozilla/5.0 (Linux; U; Android 9; zh-cn; MIX 2S Build/PKQ1.180729.001) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/100.0.4896.127 Mobile Safari/537.36 XiaoMi/MiuiBrowser/16.7.35 swan-mibrowser\"}",
-    "jsLib": "",
-    "lastUpdateTime": "1747303276571",
-    "loginUrl": "/",
+    "exploreUrl": "@js:\nvar result = [];\nvar push = (title, tag, size) => result.push({\n    title: title,\n    url: \"/api/v1/json/cate\" + \",\" + JSON.stringify({\n  \"body\": `{\\\"page\\\":{\\\"page\\\":{{page}},\\\"pageSize\\\":10},\\\"category\\\":\\\"comic\\\",\\\"sort\\\":0,\\\"comic\\\":{\\\"status\\\":-1,\\\"day\\\":0,\\\"tag\\\":\\\"${tag}\\\"},\\\"video\\\":{\\\"year\\\":0,\\\"typeId\\\":0,\\\"typeId1\\\":0,\\\"area\\\":\\\"\\\",\\\"lang\\\":\\\"\\\",\\\"status\\\":-1,\\\"day\\\":0},\\\"novel\\\":{\\\"status\\\":-1,\\\"day\\\":0,\\\"sortId\\\":0}}`,\n  \"method\": \"POST\"\n}),\n    style: {\n        layout_flexGrow: 1,\n        layout_flexBasisPercent: size\n    }\n});\nvar tags = org.jsoup.Jsoup.parse(java.ajax(source.key + '/cate')).select('.tag-container a');\nfor (let i in tags) {\n\tlet size = i == 0 ? 1 : 0.25;\tpush(tags[i].text(),tags[i].attr('data-value'),size);\n}\nJSON.stringify(result);",
+    "header": "{\"User-Agent\":\"Mozilla/5.0 (Linux; Android 9) Mobile Safari/537.36\"}",
+    "lastUpdateTime": "1747972847015",
     "respondTime": 180000,
     "ruleBookInfo": {
-      "coverUrl": "[property=\"og:image\"]@content",
-      "intro": "@js:\nconst list = java.getElements(\".play_list li\").toArray();\nfor (let i = 0; i < list.length; i++) {\n    let item = list[i];\n    let title = item.select(\".url\").text().trim();\n    let size = item.select(\".size\").text().trim();\n    list[i] = `\\u3000\\u3000${i + 1}. ${title}  ${size}`;\n}\n\nlist.join(\"\\n\");"
+      "author": "$.author",
+      "coverUrl": "$.cover",
+      "init": "$.data",
+      "intro": "$.intro",
+      "kind": "$.tags",
+      "name": "$.title",
+      "tocUrl": "https://www.mhtmh.com/api/v1/json/comic/chapter?comicId={$.id}&page=1&pageSize=20"
     },
     "ruleContent": {
-      "content": "@js:\nfunction player(type, id){\n    const url =  \"http://www.78497.com/style/js/play.php,\";\n    const options = {\n      body: `type=${type}&id=${id}`,\n      headers:{\n        \"Content-Type\":\"application/x-www-form-urlencoded\",\n        \"Referer\":\"http://www.78497.com\",\n        \"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0\"\n     },\n    method: \"POST\"\n  }\n  return this.java.ajax(url+JSON.stringify(options))\n}\n\nconst code = result.match(/lkid.*?;(player.*?);/)?.[1];\nJSON.parse(eval(code)).url",
-      "sourceRegex": "",
-      "title": ""
+      "content": "@js:var imglist = JSON.parse(src).data.images\nresult = imglist.map(x => `<img src=\"${x.url}\">`).join('\\n');",
+      "imageStyle": "FULL",
+      "nextContentUrl": "@js:var pageList = [];\nvar page = Math.ceil(JSON.parse(src).data.pagination.total / 60);\nfor (let i = 2;i <= page;i++) {\npageList.push(baseUrl.replace(\"page=1\",`page=${i}`));\n}\npageList;"
     },
     "ruleExplore": {
-      "bookList": "@js:\nconst push = (arr, str, url) => {\n  str.split(\"\\n\").forEach(item => {\n  \t  let [title, id] = item.split(\"::\")\n  \t  arr.push(`<li class=\"name\"><a href=\"${url.replace('$id', id)}\">${title}</a></li>`)\n  \t})\n}\n\nconst top1 = \"酷狗飙升榜::kugou\\nTOP排行榜::top\\n抖音热歌榜::douyin\\n快手热歌榜::kuaishou\\nDJ热歌榜::djtop\\n音乐分享榜::share\\n内地排行榜::ndtop\\n香港排行榜::hktop\\n台湾排行榜::twtop\\n欧美排行榜::ustop\\n韩国排行榜::krtop\";\nconst top2 = \"ACG新歌榜::newacg\\n电音热歌榜::dytop\\n综艺新歌榜::newzy\\n说唱先锋榜::sctop\\n影视金曲榜::ystop\\n粤语金曲榜::yytop\\n欧美金曲榜::omtop\\n音乐人原创榜::kkyc\\n酷狗雷达榜::leida\\n80后热歌榜::blhot\\n90后热歌榜::jlhot\";\n\nconst bookList = [];\nconst host = \"http://www.78497.com\"\nconst topUrl = host + \"/list/$id.html\";\nif(/#top1/.test(baseUrl)){\n  push(bookList, top1, topUrl)\n} else if(/#top2/.test(baseUrl)){\n  push(bookList, top2, topUrl)\n} else {\n  let lst = java.getElements(\".lkpic_list li,.singer_list li\")\n  for(let i = 0; i < lst.size(); i++){\n  \t  bookList.push(lst.get(i).html())\n  \t}\n}\n\nbookList",
-      "bookUrl": ".name a@href",
-      "coverUrl": "img@src",
-      "intro": "",
-      "name": ".name a@text"
+      "author": "$.author",
+      "bookList": "$.data",
+      "bookUrl": "https://www.mhtmh.com/api/v1/json/comic/{{$.url##(\\d+)##$1###}}",
+      "coverUrl": "$.pic",
+      "intro": "$.intro",
+      "kind": "$.tags",
+      "name": "$.title"
     },
     "ruleSearch": {
-      "bookList": "html",
-      "bookUrl": "{{baseUrl}}",
-      "checkKeyWord": "起风了",
-      "coverUrl": ".play_list img.0@src",
-      "intro": "@js:\nconst doc = org.jsoup.Jsoup.parse(result);\nconst list = doc.select(\".play_list li\").toArray();\nfor (let i = 0; i < list.length; i++) {\n    let item = list[i];\n    let title = item.select(\".url\").text().trim();\n    let size = item.select(\".size\").text().trim();\n    list[i] = `${i + 1}. ${title}  ${size}`;\n}\n\nlist.join(\"\\n\");",
-      "name": "title@text##搜索结果.*"
+      "author": "$.author",
+      "bookList": "$.data.list[*]",
+      "bookUrl": "https://www.mhtmh.com/api/v1/json/comic/{$.id}",
+      "coverUrl": "$.cover",
+      "intro": "$.description",
+      "kind": "$.tags",
+      "name": "$.title"
     },
     "ruleToc": {
-      "chapterList": ".play_list li",
-      "chapterName": ".url@title||.url@text##mp3下载",
-      "chapterUrl": ".url@href",
-      "nextTocUrl": "text.下一页@href@js:\n(() => {\n  let url = result[0]\n  let count = 3;\n  let num = url?.match(/\\/(\\d)\\.html/)?.[1] || 10000;\n  return num <= count ? url : null;\n})()",
-      "updateTime": ".size@text"
+      "chapterList": "$.data[*]",
+      "chapterName": "$.title",
+      "chapterUrl": "https://www.mhtmh.com/api/v1/comic/image/{$.id}?page=1&page_size=60",
+      "nextTocUrl": "@js:var pageList = [];\nvar page = Math.ceil(JSON.parse(src).pagination.total / 20);\nfor (let i = 2;i <= page;i++) {\npageList.push(baseUrl.replace(\"page=1\",`page=${i}`));\n}\npageList;"
     },
-    "searchUrl": "/so.php?wd={{key}}&page={{page}}",
-    "variableComment": "// 注意！以下内容不了解不要轻易改动\nArray.prototype.add = function (title, url, flexGrow, flexBasis) {\n  return this.push({\n    title,\n    url,\n    style: {\n      \"layout_flexGrow\": flexGrow,\n      \"layout_flexBasisPercent\": flexBasis\n    }\n  })\n}\n\n// 从益达移植过来的更多键\nvar hot = {\"requestFilters\":\"热门歌单::hot\\n推荐歌单::index\\n国语经典::jyjd\\n睡前推荐::sqtj\\n纯音精选::cyjx\\n运动必备::ydbb\\n网络伤感::wlsg\\n店铺精选::dpjx\\n流行专区::lxzq\\n电子专区::dyzq\\n摇滚专区::ygzq\"}\nvar times = {\"requestFilters\":\"Soul专区::soul\\n民谣专区::myzq\\nDJ歌曲::djgq\\n古典专区::gdzq\\n乡村专区::xczq\\n爵士专区::jszq\\n70后::qlhou\\n80后::blhou\\n90后::jlhou\\n00后::llhou\"}\nvar singers = {\"requestFilters\":\"华语歌手::huayu\\n韩国歌手::hanguo\\n日本歌手::ribrn\\n欧美歌手::oumei\\n其他::other\"}\nvar group = {\"requestFilters\":\"男歌手::male\\n女歌手::girl\\n乐队组合::band\"}\n\n//分类配置信息\nvar categories = [\n  {\n    title: \"热门歌单\",\n    data: hot,\n    urlTemplate: \"/gdlist/$id/{{page}}.html\"\n  },\n  {\n    title: \"年代歌单\",\n    data: times,\n    urlTemplate: \"/gdlist/$id/{{page}}.html\"\n  },\n  {\n    title: \"歌手分类\",\n    data: singers,\n    urlTemplate: \"/singers/$id/index/{{page}}.html\"\n  },\n  {\n    title: \"歌手组合\",\n    data: group,\n    urlTemplate: \"/singers/huayu/$id/{{page}}.html\"\n  }\n]",
+    "searchUrl": "/api/v1/json/search?keyword={{key}}&type=mh&page={{page}}&pageSize=20",
     "weight": 0
   },
   {
@@ -442,53 +456,74 @@
     "weight": 0
   },
   {
-    "bookSourceComment": "辣文小说：https://www.aaqqcc.com\nntr色情小说：https://www.aahhss.com\n中文成人小说网：https://www.aaccnn.com\nh18小说网：https://www.sseegg.com",
-    "bookSourceGroup": "🙈,寻欢",
-    "bookSourceName": "🌈寻欢小说",
-    "bookSourceType": 0,
-    "bookSourceUrl": "https://寻欢小说2.luoyacheng.ip-ddns.com",
-    "customOrder": 2,
+    "bookSourceComment": "",
+    "bookSourceGroup": "🍿 日常,🎊 常用,🎨 漫画",
+    "bookSourceName": "🎨拷贝漫画💞",
+    "bookSourceType": 2,
+    "bookSourceUrl": "https://www.copymanga.site",
+    "bookUrlPattern": "https://.*/api/v3/comic2/.*in_mainland.*",
+    "customOrder": 117,
     "enabled": true,
     "enabledCookieJar": false,
     "enabledExplore": true,
-    "exploreUrl": "@js:\nlet banben=\"1.0.3\";\neval((eval(java.importScript(lycurl)+'')[0].exploreUrl||'').replace('@js:',''));",
-    "header": "@js:\neval(((cache.getFromMemory('xhycy')||(eval(java.readTxtFile(java.md5Encode16(lycurl)+'.json')+'')||[{}])[0]).header||'').replace('@js:',''));",
-    "jsLib": "function gets(x, r) {\nreturn r==undefined?\nthis.java.getString(x)+'':\nPackages.io.legado.app.model.analyzeRule.AnalyzeRule().getString(x,r)+'';}\nfunction gete(x, r) {\nreturn r==undefined?\nthis.java.getElement(x): Packages.io.legado.app.model.analyzeRule.AnalyzeRule().setContent(r).getElement(x);}\nfunction gengxin(){\nconst {java, source} = this;\n\tlet url0='https://gitee.com/lyc486/yuedu2/commits/main/书源/寻欢小说/xvhs.json?browser_history=0&page=1&per=4';\n\tlet rr0=java.get(url0,{'User-Agent': 'Mozilla/5.0 (Linux; Android 14)','X-Requested-With': 'XMLHttpRequest'}).body();\n\tlet \tgxlrr = com.jayway.jsonpath.JsonPath.read(rr0, '$.list[0:4].title');\n\tlet [gxlr, gxlr2, gxlr3, gxlr4] = gxlrr;\n\tlet banben =   String(source.exploreUrl).match(/let banben=\"([\\d\\.]+)\"/)[1];\n\tgxlr=String(gxlr).split(/^([^\\-]+)-/);\n\tgxlr[0]=='' ? '' : gxlr=['','0',gxlr[0]];\n\tlet gxts;\n\tif (gxlr[1]>banben){gxts=['更新','0,140,186'];}\n\telse {gxts= ['导入','76,175,80'];};\n\tlet htm = `<html>\n<head>\n<title>更新</title>\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<style>\ntable {\n\ttext-align: center;\n\tmargin: 2em auto 0 auto;\n\t}\nth span{font-size: 1.2em;}\n.ann {\n\tdisplay: flex;\n\tjustify-content: center;\n\talign-items: center;\n\theight: 50vh;\n\t}\nbutton {\n\tbackground-color: rgb(${gxts[1]});\n\tcolor: white;\n\tborder: none;\n\tborder-radius: 4px;\n\theight: 6vh;\n\twidth: 30vw;\n\toverflow: hidden;\n\t}\nbutton span {\n  cursor: pointer;\n  display: inline-block;\n  position: relative;\n  transition: 0.4s;\n}\nbutton span:after {\n  content: '>';\n  position: absolute;\n  opacity: 0;\n  top: 0;\n  right: 30px;\n  transition: 0.2s;\n}\nbutton:active span {\n  padding-right: 20px;\n}\nbutton:active span:after {\n  opacity: 1;\n  right: -40px;\n}\n</style>\n</head>\n<body>\n<table border=\"1\" cellspacing=\"0\">\n<th colspan=\"2\">最新日志：<span>${gxlr[2]}</span></th>\n<tr>\n<td>仓库版本：${gxlr[1]}</td>\n<td>本地版本：${banben}</td>\n</tr>\n<tr>\n<td colspan=\"2\" style=\"text-align: left;\">往期日志：${gxlr2}<br>　　　　　${gxlr3}<br>　　　　　${gxlr4}</td>\n</tr>\n</table>\n<div class=\"ann\">\n<a href=\"legado://import/importonline?src=https://gitee.com/lyc486/yuedu2/raw/main/书源/寻欢小说/xvhs.json\">\n<button><span>${gxts[0]}</span></button>\n</a>\n</div>\n<a href=\"legado://import/importonline?src=https://cdn.jsdelivr.net/gh/Luoyacheng/yuedu@main/书源/寻欢小说/xvhs.json\" style=\"font-size: 10px;\">备用链接</a>\n</body>\n</html>`;\nif(typeof this.book=='undefined'||gxts[0]=='更新') java.startBrowser(`data:text/html;base64,${java.base64Encode(htm)}`,'更新');\r\n}\nvar lycurl=((h)=>{\nfor (var i=0,s='';i<h.length;i+=2) s+=String.fromCharCode(parseInt(h.substr(i,2),16));return s;})('68747470733A2F2F67697465652E636F6D2F6C79633438362F7975656475322F7261772F6D61696E2F2545342542392541362545362542412539302F2545352541462542422545362541432541322545352542302538462545382541462542342F79792F787679632E6A736F6E');",
-    "lastUpdateTime": "1747391349732",
-    "loginCheckJs": "let r=cache.getFromMemory('xhycy');\nif (!r) {\nMath.random()<0.3&&java.downloadFile(lycurl);\nr=eval(java.readTxtFile(java.md5Encode16(lycurl)+'.json')+'')[0];\nr&&cache.putMemory('xhycy',r);}\neval(r.loginCheckJs||'result');",
-    "loginUi": "[\n {\n\t\"name\": \"网站地址\",\n\t\"type\": \"text\"\n\t},\n {\n\t\"name\": \"更新远程代码\",\n\t\"type\": \"button\",\n\t\"action\": \"gxin()\",\n\t\"style\": {\n\t\t\"layout_flexGrow\": 1,\n\t\t\"layout_flexBasisPercent\": -1}\n\t},\n {\n\t\"name\": \"更新书源本体\",\n\t\"type\": \"button\",\n\t\"action\": \"gengxin()\",\n\t\"style\": {\n\t\t\"layout_flexGrow\": 1,\n\t\t\"layout_flexBasisPercent\": -1}\n\t},\n {\n\t\"name\": \"用户名\",\n\t\"type\": \"text\"\n\t},\n {\n\t\"name\": \"密码\",\n\t\"type\": \"password\"\n\t},\n {\n\t\"name\": \"💍网站\",\n\t\"type\": \"button\",\n\t\"action\": \"web()\",\n\t\"style\": {\n\t\t\"layout_flexGrow\": 0,\n\t\t\"layout_flexBasisPercent\": -1,\n\t\t\"layout_wrapBefore\": true}\n\t},\n {\n\t\"name\": \"🔺登　录🔺\",\n\t\"type\": \"button\",\n\t\"action\": \"Login()\",\n\t\"style\": {\n\t\t\"layout_flexGrow\": 1,\n\t\t\"layout_flexBasisPercent\": -1}\n\t},\n {\n\t\"name\": \"♤登出\",\n\t\"type\": \"button\",\n\t\"action\": \"re()\",\n\t\"style\": {\n\t\t\"layout_flexGrow\": 0,\n\t\t\"layout_flexBasisPercent\": -1}\n\t}\n]",
-    "loginUrl": "eval(eval(java.importScript(lycurl)+'')[0].loginUrl);",
+    "exploreUrl": "<js>\neval(String(Reload('https://qyyuapi.com/sy/js/拷贝漫画/exploreUrl.js')));\n</js>",
+    "header": "<js>\nvar Proxy = Map('代理：').split(\",\");\nheaders={\n    \"User-Agent\": \"COPY/999.9.9\",\n    \"proxy\": Proxy.some(value => parseInt(value, 10) == parseInt(Get('ci0'), 10)) ? '' : Proxy[0],\n}\ncache.put(java.md5Encode16(Get('url') + \"headers\"),JSON.stringify(headers));\nJSON.stringify(headers);\n</js>",
+    "jsLib": "{\"拷贝漫画\":\"https://qyyuapi.com/sy/js/拷贝漫画/jsLib.js\"}",
+    "lastUpdateTime": "1747921004412",
+    "loginUi": "[\n  { name: \"代理：\", type: \"text\" },\n  { name: \"账号：\", type: \"text\" },\n  { name: \"密码：\", type: \"password\" },\n  {\n    name: \"💡　　 账　　 号　　 登　　 录　　 💡\",\n    type: \"button\",\n    action: \"Login()\",\n    style: {layout_flexGrow: 1, layout_flexBasisPercent: 1}\n  },\n  { name: \"查看当前\", type: \"button\", action: \"look(0)\", style: {layout_flexGrow: 1, layout_flexBasisPercent: 0.25} },\n  { name: \"查看历史\", type: \"button\", action: \"look(1)\", style: {layout_flexGrow: 1, layout_flexBasisPercent: 0.25} },\n  { name: \"恢复默认\", type: \"button\", action: \"test(0)\", style: {layout_flexGrow: 1, layout_flexBasisPercent: 0.25} },\n  { name: \"繁体搜索\", type: \"button\", action: \"search_TC()\", style: {layout_flexGrow: 1, layout_flexBasisPercent: 0.25} },\n  { name: \"繁简转换\", type: \"button\", action: \"TC_to_SC()\", style: {layout_flexGrow: 1, layout_flexBasisPercent: 0.25} },\n  { name: \"目录整理\", type: \"button\", action: \"settle()\", style: {layout_flexGrow: 1, layout_flexBasisPercent: 0.25} },\n\n  { name: \"༺ˇ»`ʚ  点击切换源站  ɞ´«ˇ༻\", type: \"button\", style: {layout_flexGrow: 1, layout_flexBasisPercent: 1} },\n  { name: \"①拷贝漫画❶\", type: \"button\", action: \"$(1)\", style: {layout_flexGrow: 1, layout_flexBasisPercent: 0.45} },\n  { name: \"②拷贝漫画❷\", type: \"button\", action: \"$(2)\", style: {layout_flexGrow: 1, layout_flexBasisPercent: 0.45} },\n  { name: \"③拷贝漫画❸\", type: \"button\", action: \"$(3)\", style: {layout_flexGrow: 1, layout_flexBasisPercent: 0.45} },\n  { name: \"④拷贝漫画❹\", type: \"button\", action: \"$(4)\", style: {layout_flexGrow: 1, layout_flexBasisPercent: 0.45} },\n\n  { name: \"༺ˇ»`ʚ  点击切换分类  ɞ´«ˇ༻\", type: \"button\", style: {layout_flexGrow: 1, layout_flexBasisPercent: 1} },\n  { name: \"全部\", type: \"button\", action: \"o(0)\", style: {layout_flexGrow: 1, layout_flexBasisPercent: 0.25} },\n  { name: \"日本\", type: \"button\", action: \"o(1)\", style: {layout_flexGrow: 1, layout_flexBasisPercent: 0.25} },\n  { name: \"韩国\", type: \"button\", action: \"o(2)\", style: {layout_flexGrow: 1, layout_flexBasisPercent: 0.25} },\n  { name: \"欧美\", type: \"button\", action: \"o(3)\", style: {layout_flexGrow: 1, layout_flexBasisPercent: 0.25} },\n  { name: \"完结\", type: \"button\", action: \"o(4)\", style: {layout_flexGrow: 1, layout_flexBasisPercent: 0.25} },\n  { name: \"\", type: \"button\", style: {layout_flexGrow: 1, layout_flexBasisPercent: 0.25} },\n\n  { name: \"༺ˇ»`ʚ  点击切换排序  ɞ´«ˇ༻\", type: \"button\", style: {layout_flexGrow: 1, layout_flexBasisPercent: 1} },\n  { name: \"热门人气\", type: \"button\", action: \"p(0)\", style: {layout_flexGrow: 1, layout_flexBasisPercent: 0.45} },\n  { name: \"更新时间\", type: \"button\", action: \"p(1)\", style: {layout_flexGrow: 1, layout_flexBasisPercent: 0.45} },\n\n  { name: \"页数：\", type: \"text\" },\n\n  {\n    name: \"清除网站Cookie缓存\",\n    type: \"button\",\n    action: \"deleteCookie()\",\n    style: {layout_flexGrow: 1, layout_flexBasisPercent: 1}\n  },\n\n  { name: \"清除远程代码标识\", type: \"button\", action: \"DeleteYckey()\", style: {layout_flexGrow: 1, layout_flexBasisPercent: 1} },\n\n  {\n    name: \"💡　　 源　　 站　　 打　　 印　　 💡\",\n    type: \"button\",\n    action: \"test()\",\n    style: {layout_flexGrow: 1, layout_flexBasisPercent: 1}\n  }\n]",
+    "loginUrl": "eval(String(Reload('https://qyyuapi.com/sy/js/拷贝漫画/loginUrl.js')));",
     "respondTime": 180000,
     "ruleBookInfo": {
-      "author": "@js:\ngets(cache.getFromMemory('xhycy').ruleBookInfo.author)",
-      "canReName": "1",
-      "coverUrl": "@js:\ngets(cache.getFromMemory('xhycy').ruleBookInfo.coverUrl)",
-      "init": "@js:\neval((cache.getFromMemory('xhycy').ruleBookInfo.init||'').replace('@js:','')||'result');",
-      "intro": "@js:\ngets(cache.getFromMemory('xhycy').ruleBookInfo.intro)",
-      "kind": "@js:\ngets(cache.getFromMemory('xhycy').ruleBookInfo.kind)",
-      "lastChapter": "@js:\ngets(cache.getFromMemory('xhycy').ruleBookInfo.lastChapter)",
-      "name": "@js:\ngets(cache.getFromMemory('xhycy').ruleBookInfo.name)",
-      "wordCount": "@js:\ngets(cache.getFromMemory('xhycy').ruleBookInfo.wordCount)"
+      "author": "author",
+      "canReName": "reName",
+      "coverUrl": "cover",
+      "downloadUrls": "durl",
+      "init": "<js>\neval(String(Reload('https://qyyuapi.com/sy/js/拷贝漫画/ruleBookInfo.js')));\n</js>",
+      "intro": "intro",
+      "kind": "kind",
+      "lastChapter": "latest",
+      "name": "name",
+      "tocUrl": "url",
+      "wordCount": "word"
     },
     "ruleContent": {
-      "content": "@js:\nlet r=cache.getFromMemory('xhycy');\nif (!r) {\nr=eval(java.readTxtFile(java.md5Encode16(lycurl)+'.json')+'')[0];cache.putMemory('xhycy',r);}\ngets(r.ruleContent.content);",
-      "replaceRegex": "{{(cache.getFromMemory('xhycy').ruleContent.replaceRegex||'##lyc₄₈₆##').replaceAll('\\\\\\\\','\\\\')}}"
+      "content": "<js>\neval(String(Reload('https://qyyuapi.com/sy/js/拷贝漫画/ruleContent.js')));\n</js>",
+      "imageStyle": "FULL"
     },
-    "ruleExplore": [],
+    "ruleExplore": {
+      "author": "author",
+      "bookList": "<js>\neval(String(Reload('https://qyyuapi.com/sy/js/拷贝漫画/ruleExplore.js')));\n</js>",
+      "bookUrl": "url",
+      "coverUrl": "cover",
+      "intro": "intro",
+      "kind": "kind",
+      "lastChapter": "latest",
+      "name": "name",
+      "wordCount": "word"
+    },
     "ruleSearch": {
-      "author": "@js:\ngets(cache.getFromMemory('xhycy').ruleSearch.author)",
-      "bookList": "@js:\ngete(cache.getFromMemory('xhycy').ruleSearch.bookList)",
-      "bookUrl": "@js:\ngets(cache.getFromMemory('xhycy').ruleSearch.bookUrl)",
-      "coverUrl": "@js:\ngets(cache.getFromMemory('xhycy').ruleSearch.coverUrl)",
-      "name": "@js:\ngets(cache.getFromMemory('xhycy').ruleSearch.name)"
+      "author": "author",
+      "bookList": "<js>\neval(String(Reload('https://qyyuapi.com/sy/js/拷贝漫画/ruleSearch.js')));\n</js>",
+      "bookUrl": "url",
+      "checkKeyWord": "秘密",
+      "coverUrl": "cover",
+      "intro": "intro",
+      "kind": "kind",
+      "lastChapter": "latest",
+      "name": "name",
+      "wordCount": "word"
     },
     "ruleToc": {
-      "chapterList": "@js:\ngete(cache.getFromMemory('xhycy').ruleToc.chapterList)",
-      "chapterName": "text",
-      "chapterUrl": "href",
-      "preUpdateJs": "let r=cache.getFromMemory('xhycy');\nif (!r) {\nr=eval(java.readTxtFile(java.md5Encode16(lycurl)+'.json')+'')[0];cache.putMemory('xhycy',r);}\neval(r.ruleToc.preUpdateJs||'');"
+      "chapterList": "<js>\neval(String(Reload('https://qyyuapi.com/sy/js/拷贝漫画/ruleToc.js')));\n</js>",
+      "chapterName": "title",
+      "chapterUrl": "link",
+      "isVolume": "",
+      "nextTocUrl": "@js:\nvar num = Math.floor(java.get(\"total\") / 500); \nvar res = String(baseUrl).match(/(.*offset=)\\d+(.*)/) || ['',''];\nvar data = [];\nfor(i = 1;i <= num; i++){\n    data.push(res[1] + (i*500) + res[2]);\n}\ndata;",
+      "preUpdateJs": "if (!String(book.bookUrl).includes(Get('url'))) {\n    book.bookUrl = String(book.bookUrl).replace(/.*\\/\\/[^\\/]+/, Get('url'));\n    book.tocUrl = String(book.tocUrl).replace(/.*\\/\\/[^\\/]+/, Get('url'));\n    java.refreshTocUrl();\n}",
+      "updateTime": "time"
     },
-    "searchUrl": "<js>\neval(java.importScript(lycurl)+'')[0].searchUrl\n</js>",
+    "searchUrl": "<js>\neval(String(Reload('https://qyyuapi.com/sy/js/拷贝漫画/searchUrl.js')));\n</js>",
+    "variableComment": "JspHXCgzmq549cSvxZRk3XQlGo/FAf5UYOCBr9cEjUvuQPm6gkVOfbKqM5kCCPowDXJkiSRSa3npJPxd9vxKh3cMNvD1zWkrw4ju5caIY4nxOyT73azNVhhjJZjyz/ebHvYW8WL3jcWxqxmNG6krxvli7namCa0q6ODFeq24oEdko9o6Qp4abnH7CJftdjfn6wuSjWOHcv24gGCqJw4SAAmrFhFTTu5N1/yBmdA/FoFdXzVCmh2O7QuWCNXEFEvtqz/dxjI8B6IAvPH5ODSHyJK4S1EmxkBS2KulmuqCT2aDz6rJyZNvlzxUKRZTZDpuhW1k7t9LEvq1mTbfzdhHTSUJeKpWwCLeVq0vUQi7hX6pIpxSPMWsKBl+WMzv/puLxTaIYB8le4S26dkr2hV2bGH3pA5YCkYUScdfILxk5JAGQ4QGx6B0jUjw0g1As4m9xlu3aXTAeop8NkfCtnPkaGqBNz5Jy8n9Dsb9YyaTRE01Sq2WGuErTpnYTaYDsFukJL3Oq071kZl65uglkJOlJyI8LMAZfXnykL7kV69T94fNpfR7l5B+PMUuV2leXpXCCpnf/g+EazBuR8T/LtV+2hhbC3WJ4NSmBmaUkg2iTWCSK2h+e7NfC4EW3MMwuRVyyx0zaQn+ISAjDUzWX0Ur7M8EZdnLkuDi1+eZUo69QfZJxsJ8r8KA32ZtRwkY/dGFWKg4m7zvhyYv7rJyry69F7t7JSwXGIuHVQPbQw6QHKdZxLa+ezvVp1Q/61gbbPagg8W9Mu53Yc+pVacX0KwmL1MGkuKr4KO5qms0VgYSa3QFZmAGx8jTD15sEi2/xHL3a6CocecafGqk/wEhOqH7v32Hb1YH5bn3yPu6rS04JuL3BPItX5A7zXS4aYYxAs947WePVDyHzjLiQ3oa0SH1SeSKTmE0iG49y0/Ax/oa7/msubM0ftQ2gT9IsiihS+vrJl4zakaofQpS4/wLyzhnkZnRqyKi1+gtSgamdpAk9mlxw8pRXVmzHz/ZpmYrDUF/G/QD/eWZBmhix1/PcsII40ZgH1JAL1MB0wiLcgzIb+wKrMF8InipVarKjO5I7g8B8FZlZIzI0x0Vs/Q89PL1K1BZzdABtjC90uKv1/C3qpqZCdIv2GDULGBuvTPF/ecI+eEEVXq9NixLDICgad8nRtgaMoWgmYs9sSFYTH0QBUH5wIywwj39SaIqbPOloxIXlCOiir8hn+H/UBvr3a+CXDWYW4dmrSmgZDyqkGS6YWZ4yZrNVafYpp/qSKxy4K7gmFd7/ZqWFof2gcB5g24NybX1RUPfHIFxN/ysVoSoT1yTWIk626cHvaHri2YEkFfIjW7eoGPdYGFgpRx4HWp3C0qxRkhlza+2lL6RtJ/8OSiNbt6gY91gYWClHHgdancL+uLudIDEb1vEi4ZYtG8hYgPKV7DQq93WxBAfxvcM3DrGCMIxxIrf+EHut6MPlC1zJBTYztLpRlGbVLS6zm6Cv2GO5SAnWfP3mCZI/q4bTvtMsLescwns2aDGoDmPqfPw8n35isSaWZVOBpqZ4iBzN2DTSSXWxh6cuYEf3a1ENcL5IdAdTfgRA7uxE9BaC5gGt+JxeROKLlrGeTnLY1Mnz4d2xjVgbWvjlbr+WTFUB+sWnfEDTO4DbqzC9OSPckfI0NkbLr6hmQOJKW8BgL5Bso1u3qBj3WBhYKUceB1qdwsr+mYQvrwrIdLAB5P+1iARwaRe2urUZj3Sozyioue60Z/OdvivGX9o1GwPMvrg1yjRT0Mb0qVRlxwguhOMPLd4FRImpfUCc7V+c+Wcgj+0Vln0H/ZkU3YzRajhjChY1NrcoK2SzU0g6F2bfnNgtZnI+KEB/rwKm/EVJOQxkSOejCJytwNWkC0FaI0878s29/xmKK9050nsASFlK2zkX0EGd/nsiY13XmuQek466CYdhAIEnBo+q4UixhbU++sBCesu8Hs+tlyVb7XtPqWMRBQL6d5AdJbgRJMo3fTIhd8456JKkGHS48fX3+Wt1W8V9MgzScsAepxOoejBGyZpYV9SCcejsdq3IvIj1hmz5N9JclBP/ZxCOit4B8snxcquR3hGnlH+zBWIMNrBAtCxXAnN6xv9w21+nXxcO2a71dfqjONkCD7wnhZFTw7rSqMxeaziU2R1nFfLViU4Jx9/mgY7wPvhGEb6znE2gL4/q9oH0/tEPQO3Z+GxLClgT33Wki5tAxXY27BSshBJHJKEXSOJnuZBsFA+EGrEeihjl+ArGV3J+NWNDVB0ALk0asGkSK/kpMItEdIBEOL1w3fO3i1LLIfLC037Wu0sYLa9Xde2WX+4XxBTuYExwGrytBU84oceQTP5zwAtfHTIdeJdcYzXmFf8/9ZPN0Dpak0Bgyn6idAn/OAe8FRD/veW6XhI/73hX2RaPCSql/D1Rcroxfjg5qS0lfRUlNLwjnI0LXMm2+FiTwKpZSnXiAhuQ+C5V5Sanb8yHuKsbujBTptax3yOgt0oJ+PCFxogGLAwNFyJCdVAydZkbPcB/USN32OpHG2LyKMuR1rU63JERcWPbA4AuYsSFBgJQ+sdQXCJcKXAUv9JtTYuV0nSQalNeeXgI/Umyjmk968FAsFGGSCfYsQoOeli4Q3fpIB1IGBYerFYzsXws3Rk90xdLN3ufeiHA2nzeGSF3yW60vnBMsRyB5Z2IgEdyzFT1kI5+VH42ND9pzcFXd+77s8IkDPe2OoOnZF6kBv1umvn/TIy5XggU7Z31fFezMIup9CR7k/4DVkCNW1b2gq/v8Y7itV6AkJFmn5gpqvo0KZmrpW6cLmsYJDXYhJHQ5HspNLvQi55RjcGTx2xxwtVaarIUeBLxiLEu0L2DXWtHBG1S2JEI6Mv13omP6NuJ+xuWxFL18zmXMlCGE0k61pCqTg66rWRwClOV9OhGJiIumdt6QZTtiJ0e8jJ/W+ph/s8WXqLYFRfwxrlCp64D9ndDg7rREwXw1XC0fTaLSRfMQbjU+wwqedyJ3sudOq/ECKJ5su8SOlIFVzVz4cEy8ApvPvU+GohGdqo75G/xoOuDjhT6AC8e2vRhz/zRErlEMzxHFeBu01dRFIEzZCHKmnbHr/velB/by+DNdhqDn6t80GA0DMs1oopJezS1/rh3/ZuOzkB1jTzz377VEtKmwJduhLrCtOGVeJg2ybxSBmH1TFSNF/My97FY2wl2mVbwU9KHRDy97p0Lnf6gjjtEFTljwjS5O55EOvuKqsFJVD4q7MtE9hO+JssVEHnU1KmQse/TR8psSlWRsM8rqREnrnK31530LngZA6WeNqPdoVwa4oMpns4bhT1DZgmmftVumEhi12U7cOVg+tjPMgkmyb93M7Nh7ElpX1ErN906r8QIonmy7xI6UgVXNXPhwTLwCm8+9T4aiEZ2qjvkVgouhIN6I39YXCEje7daewecpvVIf7doFhM8M2QplDB3pwrTGgdeaKOR0lMDcjckzGqY/MNnxVWB/z0TyhFWVW1XYNqEy6u3fWglSK94EEZZFzgsVh2QUthDyzUP2MpMzSzuh1+v50kuQegrmdQn9Ou56X9xXvqcfvDr6saCA6JqZj8i6a3D9TX9Ricyc2ujkRZBPKWVeBAvmh0EjC1NHhJeQ/W7qBIBy/eq5tIC1wIOuMvJ14uC9mnuQ9y7DCUGSfsoa+7t1a8TUryw43GU371XWXgvqPKgRssseNQ7FdzlBYfNOhdVw1hVUnSsR1FhPd2N+YLCO3cb+/ix52hlAXDeML77m9XU2H4pMImJd2fNFpDGvGYV8qPFMUstez8l/xzHSUqVvzZNYfMry1reCpPdv3uYzysQ1CazuZ+ufbISIvzSeVrfYl5ki4zscOCdb0OyISYQyYEXC9o9GVdM8mJcbfadcgyis8zx2IThfAmf2alvk0dVHPvlz7kwujX7HY2dPIpid0hXBty62Sgp493T9xQxbG044qDnjgPqYONj90RgDNCtk6D6R2f1LvwgftMSBsBX0H/2PG++caoUILXKuV+Q/v7opTykYv8P/nAKwR/ykxp57f5/eZFz6Y6uGchv34Dx1oO5emwahdckf+VZ241APULfvoamaPbs4iWXV11MZ952nWwb1Io+PMdqTx0xjmn53x4FgRfHIV9opXJpxAYuqiBkamyKhb2t2z0YbpxhMkAPkBOfjG/akvuhMy9EAFvRuynoTg/WZKWf9v2mlCX57PL+6l4eJczAIT1fBJbAD+zJ+piryYx1nBVBq2Hu9mgt4ZVvJph2QiX+djpjvXimcpv+uqzPeNJsksLLUvSsiqXSPpUfrqxI24SNt9pSo+9vIQJqkmnr+HSTUnPPtrLKfiFJbkVFimUeKB7mmOMuWM9Kfc7+WQr87Nu0dP67Fd93pnL88wDUN3ETXbBGciQLMgXrC0XGXDZNop5zSC+AuTAmew9aNdKuWYTH0vCwqg0CSk0RCSsTbFbkYvG+k+aOxqPjJ8cEjLz1GjhZBwTK8vMA2R4roK0VBbJ3geI19Y8fYZHUw61u4HorlYRi/NFd4pRNQFyfDPSMj4feGo5rTOaqPCrfYsxtwgoDDIUJJgSyIc3lqDVlA+0eE5am9XjEAtB5MNx4/ahcuyAckjlN9gaorNk61PdInD5EknE3C53ZHHWNDGxDeG30ZVEB5//TRbeXe3nme/eQu1OVrv3vLVjcJ70vVc+a9tQMdSg6wypcMyVsvt5qGzm1i9rcXgrdtzguWOx1A1eMHK8T6DuI8RYg/ybfyoH2UBaas2PHYcreoq1UKM7k86p7GOFSZ2p62uHmiHGwBWXURSONGjAhsVlGjpKxPQVykOos6sX+evrZ4wV+mIxMwCHPyujpF1vexNYYfCAXm0H1g1EXLPGctvR/eJqdCbgBof6JS7fzjt9uhjl7RxnYYqDICbF7KVucqKkIr8MYPHs0/42HJwlNiBODEQVdPRAd0lhfmn/Xrc9YjFuwTqkJm0J+qayOTCOEva03iN+0Q5av0frNOQ7RXysZPhT2oO2auprsKl94wlz93HcedwL394/qhqzEp+49NERDLu+7KTdPfGJia6BOSANIp/FOf70ZEgzEqKLwvN0tPoF/nVwTQvwFwoxBiryl72m6uJ9QsmT60swGgUAyk/6OEYSlkXkjWfBdegvboTytTrohJRU5PbK04tRT35U5EUjQn6SQ/U7YSZ82ciaw1GVpJfJeZtr551Rj0EYso8TqRwZY9fQMHxpczB6axOhUECrZgzW87ghq/FT4WJPAqllKdeICG5D4LlXlL4GKIC+IHgco7iRzo8Pb3AzUg0Jw2t4VTNsFXkaOFn5TWbvv4751BV2GArccbiwqjIq5F5ijim+/N2c/gOFo3Q7qJhg2C9EdaI7oLxGDYcDuxeNbv7ZyMG9DXP7plvUpendmzoqLkHDuJD+fid5oIDvRfxrUXjsIUXiNDWBurofl+USYT+Dx7lQYY0+zQyyFqqraMO18GzfhiHSlAEB4A8liKyzP0Ug5CA/fiSyuW9B3zXIKwD5X5GiakSXmwz/4xixTlLQHj5RDgp25gTRy2b9cizaZgoU9UNJBC2zv+kXXkIyXFRhZ/LcfppY+bHsSsX6nAeO45f40A4vf/FyRxJjmi8eCXWBAwn7hCS/F9Q1nwGSfryas5Knj1PgCkEN045GEFCqBsxJKWAXFVcQisxcCzocZVOTzWu6RM5D7IrzWpvV4xALQeTDceP2oXLsgHP77RjfmYogCRMCyi4nYZh1Pw4ijnDcWf6FIepGsknWapSceO9TMA31+t+S4O2L0lJ1hoDmVcQ54XAy3kE2h/JuKaIEz5qsMkZpIveCBR2j5ChxQO2vKwHkL9t5imcygPTd8dVRapsGAnubwEKDclp4Qhh5uV1rxd8xtB99MUo5ag+UvbND1+0GpRaQF+09boQTvw9G7xk6IyKlXvzO+7VHyyvBC98TGGYTBd+wXz64S6TIsruwJg9tI2AxbSKVNbak9KF6l1YwblfHdnjIBGcf6lQyg1d0BsnimpEwcQVeagPor+mMYdnonzIYv3PexFxs+20E2FWQeWBT9Xb1pAj4t1eObEk8gbp9tj+bYKEXmZDQDdJp9xTr11QRR+YhQfkIf65w8taCknmFJlh3Q3NnhR7FqH8ugv/xyJnuOQ+7iCEafzVujsxfHNCO/VMwOkchrFb8SAagCwLRLuxkuWAmYwWhk9kdS//g+KdGtyPjl8nDhRMbVXjBE8XhX+6KHfHd84kdc4z9QORwjcZW+hLTQyKa7ysjxMe4IKLB7nIBeGlJxL1guMkFsJiDXrghmTJwH6RkpwDHSM9X1pTLlELRjVwH1Vm9a28CfCfRwGbx+4Ati1yEJ+XwNjmwnIhDecC3Jq+lFkBH/B93ZxaHn3r/Mob3qlOxodNAZumzoTmwL7sXZMRBw3rVDwR20t+BRlIVCS2f8D6AS+CNemsbHbQfU2RNHNOdjrys0VUPpAO8Af92LOPraPLhZu6okUGXBQ6JgPo5/zDFtDnY/U1MA4HtvvmW2dheuY8luUf73eZ/nQTJWoRJwKYgAQFiSXaaaaqraMO18GzfhiHSlAEB4A8liKyzP0Ug5CA/fiSyuW9B3zXIKwD5X5GiakSXmwz/43mEdGX1rH0L/4k9c30Qk0gV/SqqXECT3LgZCGCI2bi+cUWdtXXREaa+4+WKSglfySILv8oXUNND9aaTZBPbA8g=",
     "weight": 0
   }
 ]
