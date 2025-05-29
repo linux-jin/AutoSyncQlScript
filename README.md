@@ -11,7 +11,7 @@
 - AppFlex香色闺阁 [视频安装教程](https://m.bilibili.com/video/BV1Ap5xzeEZp?buvid=XX1513F1A6B023DEA52BDE909C516677A32C6&from_spmid=dt.space-dt.video.0&is_story_h5=false&mid=nAD513qeAumJfcSSsFjeOA%3D%3D&p=1&plat_id=116&share_from=ugc&share_medium=android&share_plat=android&share_session_id=b42fa7ba-e311-4cb1-a99b-f7d12d26f78b&share_source=WEIXIN&share_tag=s_i&spmid=united.player-video-detail.0.0&timestamp=1745238613&unique_k=Gb4G4mV&up_id=275649236) [图文安装教程](https://cloudmantoub.online/89/)
 #### 🚩 🍅 番茄融合 用心读书：番茄，七猫，得间，塔读，QQ，小米，熊猫，起点(69/笔趣阁)，喜马拉雅，看书，听书）：ios商店搜索用心读书，用这个邀请码可以优惠10元 HCC0kl0j
 ```
-https://raw.githubusercontent.com/shidahuilang/shuyuan/refs/heads/shuyuan/%E5%A4%A7%E7%81%B0%E7%8B%BC%E8%9E%8D%E5%90%882.0.mrs
+https://raw.githubusercontent.com/shidahuilang/shuyuan/refs/heads/shuyuan/%E5%A4%A7%E7%81%B0%E7%8B%BC%E8%9E%8D%E5%90%882.1.mrs
 ```
 #### 🚩 🍅 番茄融合 阅读/源阅：番茄，七猫，得间，塔读，QQ，小米，熊猫，起点(69/笔趣阁)，喜马拉雅、看书听书漫画短剧书源）：
 ```
@@ -23,11 +23,11 @@ https://raw.githubusercontent.com/shidahuilang/shuyuan/refs/heads/shuyuan/cxyd.j
 ```
 #### 🚩 🍅 番茄融合香色闺阁书源：看书、听书、漫画、短剧（正文页面右上角站点登录即可）
 ```
-https://github.com/shidahuilang/shuyuan/blob/shuyuan/%E5%A4%A7%E7%81%B0%E7%8B%BC%E8%9E%8D%E5%90%882.0.xbs
+https://github.com/shidahuilang/shuyuan/blob/shuyuan/%E5%A4%A7%E7%81%B0%E7%8B%BC%E8%9E%8D%E5%90%882.1.xbs
 ```
 #### 🚩 🍅 番茄融合益达书源：看书、听书、漫画、短剧
 ```
-https://raw.githubusercontent.com/shidahuilang/shuyuan/refs/heads/shuyuan/%E5%A4%A7%E7%81%B0%E7%8B%BC%E7%9B%8A%E8%BE%BE2.0.yds
+https://raw.githubusercontent.com/shidahuilang/shuyuan/refs/heads/shuyuan/%E5%A4%A7%E7%81%B0%E7%8B%BC%E8%9E%8D%E5%90%882.1.yds
 ```
 
 **自动更新时间** 2025-05-28 18:31:19 CST+0800
