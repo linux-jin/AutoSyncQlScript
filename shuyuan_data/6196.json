@@ -1,58 +1,67 @@
 [
   {
-    "ruleSearch": {
-      "checkKeyWord": "我的",
-      "bookList": "@css:.section1.inner ul li",
-      "name": "@css:h3 a@text",
-      "bookUrl": "@css:.book-img a@href||https://spudnovel.com",
-      "author": "@css:.book-info p.author:contains(作者：)@text##作者：##\u0001",
-      "kind": "@css:.book-info p.author span.type a@text[0]",
-      "wordCount": "@css:.book-info p.author span.author:first-child@text##\\\\d+",
-      "intro": "@css:.book-info p[style='float: left;']@text",
-      "coverUrl": "@css:.book-img img@src||https://spudnovel.com"
-    },
+    "bookSourceComment": "luckparool/2025.5.27",
+    "bookSourceGroup": "页面简洁、干净、爽朗，所有小说免费",
+    "bookSourceName": "🌈土豆小说网",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://spudnovel.com",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "[\n    {\n        \"title\": \"男生频道\",\n        \"url\": \" /site/list?sex=2&page={{page}}\"\n    },\n    {\n        \"title\": \"女生频道\",\n        \"url\": \" /site/list?sex=0&page={{page}}\"\n    },\n    {\n        \"title\": \"全本小说\",\n        \"url\": \" /site/list?finish=1&page={{page}}\"\n    },\n    {\n        \"title\": \"连载小说\",\n        \"url\": \" /site/list?finish=0&page={{page}}\"\n    },\n    {\n        \"title\": \"双男主\",\n        \"url\": \" /site/list?cid=475&page={{page}}\"\n    },\n    {\n        \"title\": \"双女主\",\n        \"url\": \" /site/list?cid=580&page={{page}}\"\n    },\n    {\n        \"title\": \"宫斗宅斗\",\n        \"url\": \" /site/list?cid=376&page={{page}}\"\n    },\n    {\n        \"title\": \"都市日常\",\n        \"url\": \" /site/list?cid=385&page={{page}}\"\n    },\n    {\n        \"title\": \"悬疑脑洞\",\n        \"url\": \" /site/list?cid=332&page={{page}}\"\n    },\n    {\n        \"title\": \"都市高武\",\n        \"url\": \" /site/list?cid=338&page={{page}}\"\n    },\n    {\n        \"title\": \"豪门总裁\",\n        \"url\": \" /site/list?cid=371&page={{page}}\"\n    },\n    {\n        \"title\": \"星光璀璨\",\n        \"url\": \" /site/list?cid=343&page={{page}}\"\n    },\n    {\n        \"title\": \"玄幻脑洞\",\n        \"url\": \" /site/list?cid=355&page={{page}}\"\n    },\n    {\n        \"title\": \"传统玄幻\",\n        \"url\": \" /site/list?cid=363&page={{page}}\"\n    },\n    {\n        \"title\": \"悬疑恋爱\",\n        \"url\": \" /site/list?cid=366&page={{page}}\"\n    },\n    {\n        \"title\": \"奇幻仙侠\",\n        \"url\": \" /site/list?cid=381&page={{page}}\"\n    },\n    {\n        \"title\": \"都市种田\",\n        \"url\": \" /site/list?cid=387&page={{page}}\"\n    },\n    {\n        \"title\": \"青春甜宠\",\n        \"url\": \" /site/list?cid=391&page={{page}}\"\n    },\n    {\n        \"title\": \"都市脑洞\",\n        \"url\": \" /site/list?cid=395&page={{page}}\"\n    },\n    {\n        \"title\": \"女频衍生\",\n        \"url\": \" /site/list?cid=397&page={{page}}\"\n    },\n    {\n        \"title\": \"科幻末世\",\n        \"url\": \" /site/list?cid=405&page={{page}}\"\n    },\n    {\n        \"title\": \"悬疑灵异\",\n        \"url\": \" /site/list?cid=410&page={{page}}\"\n    },\n    {\n        \"title\": \"古言脑洞\",\n        \"url\": \" /site/list?cid=413&page={{page}}\"\n    },\n    {\n        \"title\": \"年代\",\n        \"url\": \" /site/list?cid=414&page={{page}}\"\n    },\n    {\n        \"title\": \"玄幻言情\",\n        \"url\": \" /site/list?cid=418&page={{page}}\"\n    },\n    {\n        \"title\": \"现言脑洞\",\n        \"url\": \" /site/list?cid=421&page={{page}}\"\n    },\n    {\n        \"title\": \"都市修真\",\n        \"url\": \" /site/list?cid=428&page={{page}}\"\n    },\n    {\n        \"title\": \"医术\",\n        \"url\": \" /site/list?cid=430&page={{page}}\"\n    },\n    {\n        \"title\": \"游戏体育\",\n        \"url\": \" /site/list?cid=433&page={{page}}\"\n    },\n    {\n        \"title\": \"都市生活\",\n        \"url\": \" /site/list?cid=437&page={{page}}\"\n    },\n    {\n        \"title\": \"动漫衍生\",\n        \"url\": \" /site/list?cid=449&page={{page}}\"\n    },\n    {\n        \"title\": \"男频衍生\",\n        \"url\": \" /site/list?cid=454&page={{page}}\"\n    },\n    {\n        \"title\": \"快穿\",\n        \"url\": \" /site/list?cid=457&page={{page}}\"\n    },\n    {\n        \"title\": \"种田\",\n        \"url\": \" /site/list?cid=460&page={{page}}\"\n    },\n    {\n        \"title\": \"历史脑洞\",\n        \"url\": \" /site/list?cid=461&page={{page}}\"\n    },\n    {\n        \"title\": \"历史古代\",\n        \"url\": \" /site/list?cid=465&page={{page}}\"\n    },\n    {\n        \"title\": \"纯爱\",\n        \"url\": \" /site/list?cid=477&page={{page}}\"\n    },\n    {\n        \"title\": \"职场婚恋\",\n        \"url\": \" /site/list?cid=498&page={{page}}\"\n    },\n    {\n        \"title\": \"战神赘婿\",\n        \"url\": \" /site/list?cid=545&page={{page}}\"\n    },\n    {\n        \"title\": \"民国言情\",\n        \"url\": \" /site/list?cid=561&page={{page}}\"\n    },\n    {\n        \"title\": \"先婚后爱\",\n        \"url\": \" /site/list?cid=567&page={{page}}\"\n    }\n]",
+    "header": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_5_0 like Mac OS X) ApplesWebsKits/605.1.15 (KHTML, like Gecko) CriOS/136.0.7103.91 Mobile/15E148 Safari/604.1",
+    "lastUpdateTime": "1748570095128",
+    "loginUi": "",
+    "loginUrl": "https://spudnovel.com/site/login",
+    "respondTime": 180000,
     "ruleBookInfo": {
       "author": "@css:.book-detail-info p:contains(作者：)@text##作者：##\u0001",
-      "name": "@css:.book-detail-info h2@text",
-      "wordCount": "@css:.book-detail-info p:contains(字数：)@text##字数：##\u0001",
+      "coverUrl": "@css:.book-img img@src",
       "intro": "@css:.intro@text",
+      "kind": "@css:.tag-box a@text",
+      "lastChapter": "@css:.book-detail-info p:contains(最新：)@text##最新：##\u0001",
+      "name": "@css:.book-detail-info h2@text",
       "tocUrl": "",
-      "coverUrl": "@css:.book-img img@src"
+      "wordCount": "@css:.book-detail-info p:contains(字数：)@text##字数：##\u0001"
+    },
+    "ruleContent": {
+      "content": "@css:.entry-content p@textNodes##\\\\s*",
+      "nextContentUrl": "@css:nav.nav-single a[rel=next]@href",
+      "title": "@css:.single-header .title@text"
+    },
+    "ruleExplore": {
+      "author": "@css:.book-info p.author:contains(作者：)@text##作者：##\u0001",
+      "bookList": "@css:.section1.inner ul li",
+      "bookUrl": "@css:.book-img a@href||https://spudnovel.com",
+      "coverUrl": "@css:.book-img img@src||https://spudnovel.com",
+      "intro": "@css:.book-info p[style='float: left;']@text",
+      "kind": "@css:.type a@text",
+      "name": "@css:h3 a@text",
+      "wordCount": "@css:.book-info p.author span.author:first-child@text##\\\\d+"
+    },
+    "ruleSearch": {
+      "author": "@css:.book-info p.author:contains(作者：)@text##作者：##\u0001",
+      "bookList": "@css:.section1.inner ul li",
+      "bookUrl": "@css:.book-img a@href||https://spudnovel.com",
+      "checkKeyWord": "我的",
+      "coverUrl": "@css:.book-img img@src||https://spudnovel.com",
+      "intro": "@css:.book-info p[style='float: left;']@text",
+      "kind": "@css:.type a@text",
+      "lastChapter": "@css:.book-info p.author:contains(最新：)@text##最新：##\u0001",
+      "name": "@css:h3 a@text",
+      "wordCount": "@css:.book-info p.author span.author:first-child@text##\\\\d+"
     },
     "ruleToc": {
       "chapterList": "@css:.book-catalog.inner.mt20:has(h3) ul li",
       "chapterName": "tag.a@text",
       "chapterUrl": "tag.a@href||https://spudnovel.com",
+      "isPay": "false",
       "isVip": "false",
-      "isPay": "false"
+      "isVolume": ""
     },
-    "ruleContent": {
-      "title": "@css:.single-header .title@text",
-      "content": "@css:.entry-content p@textNodes##\\\\s*",
-      "nextContentUrl": "@css:nav.nav-single a[rel=next]@href"
-    },
-    "ruleReview": [],
-    "ruleExplore": {
-      "name": "@css:h3 a@text",
-      "author": "@css:.book-info p.author:contains(作者：)@text##作者：##\u0001",
-      "bookList": "@css:.section1.inner ul li",
-      "wordCount": "@css:.book-info p.author span.author:first-child@text##\\\\d+",
-      "intro": "@css:.book-info p[style='float: left;']@text",
-      "coverUrl": "@css:.book-img img@src||https://spudnovel.com",
-      "bookUrl": "@css:.book-img a@href||https://spudnovel.com"
-    },
-    "bookSourceType": 0,
-    "bookSourceUrl": "https://spudnovel.com",
-    "bookSourceName": "🌈土豆小说网",
-    "header": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0",
     "searchUrl": "/site/list?q={{key}}",
-    "bookSourceComment": "luckparool/2025.5.27",
-    "exploreUrl": "[\n    {\n        \"title\": \"男生频道\",\n        \"url\": \" /site/list?sex=2&page={{page}}\"\n    },\n    {\n        \"title\": \"女生频道\",\n        \"url\": \" /site/list?sex=0&page={{page}}\"\n    },\n    {\n        \"title\": \"全本小说\",\n        \"url\": \" /site/list?finish=1&page={{page}}\"\n    },\n    {\n        \"title\": \"连载小说\",\n        \"url\": \" /site/list?finish=0&page={{page}}\"\n    },\n    {\n        \"title\": \"双男主\",\n        \"url\": \" /site/list?cid=475&page={{page}}\"\n    },\n    {\n        \"title\": \"双女主\",\n        \"url\": \" /site/list?cid=580&page={{page}}\"\n    },\n    {\n        \"title\": \"宫斗宅斗\",\n        \"url\": \" /site/list?cid=376&page={{page}}\"\n    },\n    {\n        \"title\": \"都市日常\",\n        \"url\": \" /site/list?cid=385&page={{page}}\"\n    },\n    {\n        \"title\": \"悬疑脑洞\",\n        \"url\": \" /site/list?cid=332&page={{page}}\"\n    },\n    {\n        \"title\": \"都市高武\",\n        \"url\": \" /site/list?cid=338&page={{page}}\"\n    },\n    {\n        \"title\": \"豪门总裁\",\n        \"url\": \" /site/list?cid=371&page={{page}}\"\n    },\n    {\n        \"title\": \"星光璀璨\",\n        \"url\": \" /site/list?cid=343&page={{page}}\"\n    },\n    {\n        \"title\": \"玄幻脑洞\",\n        \"url\": \" /site/list?cid=355&page={{page}}\"\n    },\n    {\n        \"title\": \"传统玄幻\",\n        \"url\": \" /site/list?cid=363&page={{page}}\"\n    },\n    {\n        \"title\": \"悬疑恋爱\",\n        \"url\": \" /site/list?cid=366&page={{page}}\"\n    },\n    {\n        \"title\": \"奇幻仙侠\",\n        \"url\": \" /site/list?cid=381&page={{page}}\"\n    },\n    {\n        \"title\": \"都市种田\",\n        \"url\": \" /site/list?cid=387&page={{page}}\"\n    },\n    {\n        \"title\": \"青春甜宠\",\n        \"url\": \" /site/list?cid=391&page={{page}}\"\n    },\n    {\n        \"title\": \"都市脑洞\",\n        \"url\": \" /site/list?cid=395&page={{page}}\"\n    },\n    {\n        \"title\": \"女频衍生\",\n        \"url\": \" /site/list?cid=397&page={{page}}\"\n    },\n    {\n        \"title\": \"科幻末世\",\n        \"url\": \" /site/list?cid=405&page={{page}}\"\n    },\n    {\n        \"title\": \"悬疑灵异\",\n        \"url\": \" /site/list?cid=410&page={{page}}\"\n    },\n    {\n        \"title\": \"古言脑洞\",\n        \"url\": \" /site/list?cid=413&page={{page}}\"\n    },\n    {\n        \"title\": \"年代\",\n        \"url\": \" /site/list?cid=414&page={{page}}\"\n    },\n    {\n        \"title\": \"玄幻言情\",\n        \"url\": \" /site/list?cid=418&page={{page}}\"\n    },\n    {\n        \"title\": \"现言脑洞\",\n        \"url\": \" /site/list?cid=421&page={{page}}\"\n    },\n    {\n        \"title\": \"都市修真\",\n        \"url\": \" /site/list?cid=428&page={{page}}\"\n    },\n    {\n        \"title\": \"医术\",\n        \"url\": \" /site/list?cid=430&page={{page}}\"\n    },\n    {\n        \"title\": \"游戏体育\",\n        \"url\": \" /site/list?cid=433&page={{page}}\"\n    },\n    {\n        \"title\": \"都市生活\",\n        \"url\": \" /site/list?cid=437&page={{page}}\"\n    },\n    {\n        \"title\": \"动漫衍生\",\n        \"url\": \" /site/list?cid=449&page={{page}}\"\n    },\n    {\n        \"title\": \"男频衍生\",\n        \"url\": \" /site/list?cid=454&page={{page}}\"\n    },\n    {\n        \"title\": \"快穿\",\n        \"url\": \" /site/list?cid=457&page={{page}}\"\n    },\n    {\n        \"title\": \"种田\",\n        \"url\": \" /site/list?cid=460&page={{page}}\"\n    },\n    {\n        \"title\": \"历史脑洞\",\n        \"url\": \" /site/list?cid=461&page={{page}}\"\n    },\n    {\n        \"title\": \"历史古代\",\n        \"url\": \" /site/list?cid=465&page={{page}}\"\n    },\n    {\n        \"title\": \"纯爱\",\n        \"url\": \" /site/list?cid=477&page={{page}}\"\n    },\n    {\n        \"title\": \"职场婚恋\",\n        \"url\": \" /site/list?cid=498&page={{page}}\"\n    },\n    {\n        \"title\": \"战神赘婿\",\n        \"url\": \" /site/list?cid=545&page={{page}}\"\n    },\n    {\n        \"title\": \"民国言情\",\n        \"url\": \" /site/list?cid=561&page={{page}}\"\n    },\n    {\n        \"title\": \"先婚后爱\",\n        \"url\": \" /site/list?cid=567&page={{page}}\"\n    }\n]",
-    "loginUi": "",
-    "loginUrl": "https://spudnovel.com/site/login",
-    "bookSourceGroup": "页面简洁、干净、爽朗，所有小说免费",
-    "enabled": true,
-    "enabledExplore": true,
-    "lastUpdateTime": "1748345070993"
+    "weight": 0,
+    "concurrentRate": "1000"
   }
 ]

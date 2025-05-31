@@ -1,0 +1,61 @@
+[
+  {
+    "bookSourceComment": "by阿鬼\n\n流量浏览！\n\nPS：此源莫要去检验，容易检验成网站失效！其实可以正常搜索和发现，只是加载慢而已！",
+    "bookSourceGroup": "★POST请求,★海棠书屋,★请勿检验",
+    "bookSourceName": "🔞海棠书屋sxgzjs",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://m.sxgzjs.com/",
+    "bookUrlPattern": "https://m.sxgzjs.com/book/\\d+/",
+    "customOrder": 149,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "exploreUrl": "玄幻小说::/sort/1-{{page}}.html\n修真小说::/sort/2-{{page}}.html\n都市小说::/sort/3-{{page}}.html\n穿越小说::/sort/4-{{page}}.html\n网游小说::/sort/5-{{page}}.html\n科幻小说::/sort/6-{{page}}.html\n其他小说::/sort/7-{{page}}.html",
+    "header": "{\"referer\": \"{{source.getKey()}}/\",\n\"x-requested-with\": \"mark.via\",\n\"accept-language\": \"zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7\",\n\"user-agent\": \"Mozilla/5.0 (Linux; Android 10; PACM00 Build/QP1A.190711.020) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.5359.79 Mobile Safari/537.36\"}",
+    "lastUpdateTime": "1748496440810",
+    "loginUrl": "https://m.sxgzjs.com/login.php",
+    "respondTime": 195396,
+    "ruleBookInfo": {
+      "author": "[property$=author]@content",
+      "coverUrl": "[property$=img]@content||[property$=image]@content",
+      "intro": "[property$=description]@content##【展开.*|[\\s]* ",
+      "kind": "[property$=category]@content",
+      "lastChapter": "[property$=latest_chapter_name]@content||[property$=lastest_chapter_name]@content",
+      "name": "[property$=book_name]@content",
+      "tocUrl": "text.查看所有章节@href||",
+      "wordCount": "[property$=status]@content&&[property$=update_time]@content"
+    },
+    "ruleContent": {
+      "content": ".novelcontent@html",
+      "nextContentUrl": "text.下一页@href",
+      "replaceRegex": "##\\s\\w+.*。\\s*|\\s*\\<本章.*请点击.*\\>\\s*"
+    },
+    "ruleExplore": {
+      "author": ".p4@a@text",
+      "bookList": ".fl_list@.tt",
+      "bookUrl": "a@href",
+      "coverUrl": ".left@img@src",
+      "intro": ".p5@text",
+      "kind": ".p2@text",
+      "name": ".p1@text",
+      "wordCount": ".p3@text"
+    },
+    "ruleSearch": {
+      "author": "a[2]@text",
+      "bookList": ".search_list",
+      "bookUrl": "a@href",
+      "checkKeyWord": "https://m.sxgzjs.com/161/161371/",
+      "kind": "a[1]@text",
+      "name": "a[0]@text"
+    },
+    "ruleToc": {
+      "chapterList": ".info_chapters@.p2[!0]@li a",
+      "chapterName": "text",
+      "chapterUrl": "href",
+      "nextTocUrl": "option@value",
+      "preUpdateJs": "Java.refreshTocUrl()"
+    },
+    "searchUrl": "/s.php,{\n  \"body\": \"s={{key}}&type=articlename\",\n  \"charset\": \"GBK\",\n  \"method\": \"POST\"\n}",
+    "weight": 0
+  }
+]

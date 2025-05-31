@@ -1,0 +1,46 @@
+[
+  {
+    "ruleSearch": {
+      "checkKeyWord": "吾",
+      "bookList": "@css:.d-grid.books>.book.d-flex.shadow-sm",
+      "name": "@css:.fw-bold span@text",
+      "author": "@css:.small a@text",
+      "intro": "@css:.description@text",
+      "coverUrl": "@css:.cover img@src",
+      "bookUrl": "@css:a:eq(0)@href",
+      "wordCount": "@css:.small ul>li:eq(0)>strong@text"
+    },
+    "ruleBookInfo": {
+      "name": "@css:h3@text",
+      "author": "@css:.list-inline-item.tags>a>strong@text",
+      "wordCount": "@css:#book-status>li:eq(0)>strong@text",
+      "intro": "@css:.description@text",
+      "coverUrl": "@css:.mb-xl-0.text-center>img@src"
+    },
+    "ruleToc": {
+      "chapterList": "@css:.chapters>div",
+      "chapterName": "@css:span@text",
+      "chapterUrl": "@css:a@href"
+    },
+    "ruleContent": {
+      "title": "@css:h1@text",
+      "content": "@css:.px-sm-1>p@text"
+    },
+    "ruleReview": [],
+    "ruleExplore": {
+      "bookList": "@css:.d-grid.books>.book.d-flex.shadow-sm",
+      "name": "@css:.fw-bold span@text",
+      "author": "@css:.small a@text",
+      "intro": "@css:.description@text",
+      "coverUrl": "@css:.cover img@src",
+      "bookUrl": "@css:a:eq(0)@href"
+    },
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.noveltri.com/zh-cn/",
+    "bookSourceName": "三叠书阁-简",
+    "searchUrl": "/zh-cn/search?q={{key}}",
+    "loginUrl": "/zh-cn/login",
+    "exploreUrl": "[\n\t{\n\t\t\"title\": \"军事\",\n\t\t\"url\": \"/zh-cn/books/00665ea48045cae8/{{page}}.html\"\n\t},\n\t{\n\t\t\"title\": \"科幻\",\n\t\t\"url\": \"/zh-cn/books/3d1cf010525917f5/{{page}}.html\"\n\t},\n\t{\n\t\t\"title\": \"悬疑\",\n\t\t\"url\": \"/zh-cn/books/49351f5c638a0f4b/{{page}}.html\"\n\t},\n\t{\n\t\t\"title\": \"奇幻\",\n\t\t\"url\": \"/zh-cn/books/5cd491c4b6059c42/{{page}}.html\"\n\t},\n\t{\n\t\t\"title\": \"奇幻\",\n\t\t\"url\": \"/zh-cn/books/5cd491c4b6059c42/{{page}}.html\"\n\t},\n\t{\n\t\t\"title\": \"现实\",\n\t\t\"url\": \"/zh-cn/books/836efeeee8d039a2/{{page}}.html\"\n\t},\n\t{\n\t\t\"title\": \"仙侠\",\n\t\t\"url\": \"/zh-cn/books/931aa81eea548ac7/{{page}}.html\"\n\t},\n\t{\n\t\t\"title\": \"武侠\",\n\t\t\"url\": \"/zh-cn/books/a7079140f6bc0d3a/{{page}}.html\"\n\t},\n\t{\n\t\t\"title\": \"玄幻\",\n\t\t\"url\": \"/zh-cn/books/dfb8801fe374e4a6/{{page}}.html\"\n\t},\n\t{\n\t\t\"title\": \"都市\",\n\t\t\"url\": \"/zh-cn/books/ed28f072d2dbeb5c/{{page}}.html\"\n\t},\n\t{\n\t\t\"title\": \"同人\",\n\t\t\"url\": \"/zh-cn/tag/同人/{{page}}.html\"\n\t},\n\t{\n\t\t\"title\": \"女生\",\n\t\t\"url\": \"/zh-cn/tag/女生/{{page}}.html\"\n\t},\n\t{\n\t\t\"title\": \"其它\",\n\t\t\"url\": \"/zh-cn/books/53ed7a5242711031/{{page}}.html\"\n\t}\n]\n",
+    "lastUpdateTime": "1748494689180"
+  }
+]
