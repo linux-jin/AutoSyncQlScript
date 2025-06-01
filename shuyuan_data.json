@@ -50,6 +50,56 @@
     "weight": 0
   },
   {
+    "bookSourceGroup": "18+",
+    "bookSourceName": "八叉书库",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://733330.xyz/",
+    "concurrentRate": "30",
+    "customOrder": 1,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "exploreUrl": "[{\"title\":\"最新入库\",\"url\":\"/top/postdate/{{page}}.html\",\"style\":{\"layout_flexBasisPercent\":0.3,\"layout_flexGrow\":1}},\n{\"title\":\"完本作品\",\"url\":\"/modules/article/articlefilter.php?isfull=5&order=lastupdate&page={{page}}\",\"style\":{\"layout_flexBasisPercent\":0.3,\"layout_flexGrow\":1}},\n{\"title\":\"编辑推荐\",\"url\":\"/top/toptime/{{page}}.html\",\"style\":{\"layout_flexBasisPercent\":0.3,\"layout_flexGrow\":1}},\n{\"title\":\"最近更新\",\"url\":\"/modules/article/articlefilter.php?order=lastupdate&page={{page}}\",\"style\":{\"layout_flexBasisPercent\":0.3,\"layout_flexGrow\":1}},\n{\"title\":\"🏷️长篇分类\",\"url\":\"/sort/7/{{page}}.html\",\"style\":{\"layout_flexBasisPercent\":1}},\n{\"title\":\"都市激情\",\"url\":\"/modules/article/articlefilter.php?order=lastupdate&sortid=7&typeid=701&page={{page}}\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.3}},\n{\"title\":\"扒灰乱伦\",\"url\":\"/modules/article/articlefilter.php?order=lastupdate&sortid=7&typeid=702&page={{page}}\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.3}},\n{\"title\":\"情色武侠\",\"url\":\"/modules/article/articlefilter.php?order=lastupdate&sortid=7&typeid=703&page={{page}}\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.3}},\n{\"title\":\"绿帽情怀\",\"url\":\"/modules/article/articlefilter.php?order=lastupdate&sortid=7&typeid=704&page={{page}}\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.3}},\n{\"title\":\"混乱修仙\",\"url\":\"/modules/article/articlefilter.php?order=lastupdate&sortid=7&typeid=705&page={{page}}\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.3}},\n{\"title\":\"调教养成\",\"url\":\"/modules/article/articlefilter.php?order=lastupdate&sortid=7&typeid=706&page={{page}}\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.3}},\n{\"title\":\"🏷️点击榜\",\"url\":\"\",\"style\":{\"layout_flexBasisPercent\":1}},\n{\"title\":\"周点击\",\"url\":\"/top/weekvisit/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"月点击\",\"url\":\"/top/monthvisit/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"总点击\",\"url\":\"/top/allvisit/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"🏷️推荐榜\",\"url\":\"\",\"style\":{\"layout_flexBasisPercent\":1}},\n{\"title\":\"周推荐\",\"url\":\"/top/weekvote/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n{\"title\":\"月推荐\",\"url\":\"/top/monthvote/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n{\"title\":\"总推荐\",\"url\":\"/top/allvote/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}}]",
+    "lastUpdateTime": "1748746702404",
+    "loginUrl": "https://733330.xyz/login.php",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "//p[@class='gray fss']/text()[1]",
+      "coverUrl": "//img[@class=\"cover_l\"]/@src",
+      "intro": "&nbsp;\n📖 简介：\n{{//div[@id='introa']/text()}}\n---------------------------\n🤔 评论：\n{{//ul[@class='ullist']//p}}",
+      "kind": "//p[@class=\"gray fss\"]/a/text()",
+      "lastChapter": "//div[@class='c_row nw']/a/text()",
+      "name": "//div[@class=\"row_textl\"]/h4/text()##《|》",
+      "tocUrl": ".more@href",
+      "wordCount": "//p[@class='gray fss']/text()[6]##.*\\| ##"
+    },
+    "ruleContent": {
+      "content": "<js>\nlet html = result;\nlet jsUrl = html.match(/<script[^>]+src=\"(https:\\/\\/js\\.8xsk\\.org\\/[^\"]+)\"/)?.[1];\n\nlet jsCode = java.ajax(jsUrl);\n\nlet raw = jsCode.match(/document\\.write\\((.+?)\\);/)?.[1];\n\nif (!raw) {\n  result = \"未找到正文内容\";\n} else {\n  raw = raw.replace(/^['\"]|['\"]$/g, \"\");  // 去掉引号\n\n  let text;\n  try {\n    text = decodeURIComponent(unescape(raw));  // 解码中文\n  } catch (e) {\n    text = raw;\n  }\n\n  // 清洗 HTML 标签\n  text = text.replace(/<br\\s*\\/?>/gi, \"\\n\").replace(/<[^>]+>/g, \"\");\n\n  result = text.trim();  // 设置 result 为正文\n}\n</js>"
+    },
+    "ruleExplore": {
+      "author": "/span[@class=\"gray fss\"]/text()##/",
+      "bookList": "id.jieqi_page_contents@a.db.nw",
+      "bookUrl": "@href",
+      "name": "@text##/.*"
+    },
+    "ruleSearch": {
+      "author": "//div[@class=\"row_text\"]/p[1]/text()[1]##\\ \\|.*",
+      "bookList": "id.jieqi_page_contents@.c_row.cf",
+      "bookUrl": ".db.cf@href",
+      "coverUrl": ".cover_m@src",
+      "intro": "//div[@class=\"row_text\"]/p/text()##.*\\|",
+      "name": "//div[@class=\"row_text\"]/h4//text()##\\n"
+    },
+    "ruleToc": {
+      "chapterList": "#jieqi_page_contents@dd",
+      "chapterName": "tag.a@text",
+      "chapterUrl": "tag.a@href",
+      "nextTocUrl": "text.下一页@href"
+    },
+    "searchUrl": "/modules/article/search.php?searchtype=all&searchkey={{key}}&page={{page}}",
+    "weight": 0
+  },
+  {
     "bookSourceComment": "每隔八小时访问一遍签到（使用的时候访问）\n点击“登录”自定义发现\n更改过发现要刷新本书源才会生效\n\n❗️注意事项:\n1、请不要退出晋江app的账号，只要点了退出，或者在其他地方登录了，都要重新抓token。\n2、更新token，书籍就要更新目录。\n3、【抓包token登录】和【账号登录】二选一，【抓包token登录】的优先级高些，填了【抓包token登录】，就是按【抓包token登录的值】登录\n\n4、登录步骤【设备保护关闭的状态下】：\n①填写好账号密码，点击“邮箱验证码”或者“手机验证码”\n②填写好验证码，点击“邮箱登录”或者“手机登录”\n③想要确认是否成功可以在登录UI里点右上角三点，查看登录头token里是否有值。\n④如果弹出提示“请校检验证码”，可尝试填入上一次发送给你验证码。\n\n5、如果邮箱和手机号无法登录，可能是需要过滑动验证码，可尝试先在晋江app里登录一遍后，再在阅读里登录，❗️还是不行就只能抓包token，填写在“抓包token登录”处。",
     "bookSourceGroup": "①🔰  正版,②🌸  常用",
     "bookSourceName": "🏷晋江文学",
@@ -360,6 +410,50 @@
     },
     "searchUrl": "<js>\neval(String(source.loginUrl));\nnn = String(source.getVariable()).replace(/\\/$/,'');\nlet url = `${nn}/modules/article/search.php`;\nlet url2='data:;base64,QQ,{\"type\":\"bx\"}';\ntry {\n\tif (key.startsWith('书名：') ) {\n\t\turl += `?searchkey=${key.substr(3)}&searchtype=articlename&page=${page}`;\n\t\t\tss = java.get(url,{\t'user-agent': ua});\n\t\t}\n\t\t\n\t\telse if (key.startsWith('作者：') ) {\n\t\turl += `?searchkey=${key.substr(3)}&searchtype=author&page=${page}`\n\t\t\tss = java.get(url,{\t'user-agent': ua});\n\t\t}\n\t\t\n\t\telse if (key.startsWith('标签：') ) {\n\t\turl += `?searchkey=${key.substr(3)}&searchtype=keywords&page=${page}`;\n\t\t\tss = java.get(url,{\t'user-agent': ua});\n\t\t}\n\t\t\n\t\telse if (page == 1) {\n\t\tftsm();\n\t\tlet body = `searchtype=all&searchkey=${key}&act=search&submit=`;\n\tss = java.post(url,body,{\t'User-Agent': ua});\n    \t\n\t}\n\t\n\telse {\n\t\turl +=\t`?searchkey=${key}&searchtype=all&page=${page}`;\n\tss = java.get(url,{\t'user-agent': ua});\n\t}\n\nlet code = ss.statusCode();\nif (code==302||code==301) {\n\t//重定向\n\turl2=ss.header(\"location\");\n\tlet i=url2.includes(encodeURI(url).replace(/^http.{4}[^\\/]+\\//,''));\n\tif (i) {\n\tlet durl=url2.match(/^http.{4}[^\\/]+\\//,'')[0];\n\tsource.setVariable(durl);\n\tjava.longToast('\\n源地址已更新为新地址：\\n'+durl);\n\tjava.log('\\n源地址已更新为新地址：\\n'+durl);}\n\t}\nelse if (code == 200) {\n\tcache.put('8xss1', ss.body());\n\t}\nelse if (code == 520) {\n\tjava.toast(\"💔IP被拉黑\");\n\t}\nelse {\n\tjava.toast(\"💔搜索响应码异常\");\n\t}\n\n\n} catch(err) {\n\turl2 =\turl+`?searchkey=${key}&searchtype=all&page=${page}`;\n\tjava.log('搜索异常：'+err+'\\n备用方案：'+url2);\n\tcache.put('8xbl1', source.getVariable());\n\tsource.setVariable('');\n\t}\nurl2\n</js>",
     "variableComment": "♦源变量：\n　 当前书源使用的网址\n　 可点击发现页版本号手动刷新\n\n♦书籍变量：\n　 ①填写  🔒 并刷新，关闭本书评论显示\n　 ②填写“目录”并刷新，强制刷新目录\n　 ③填写分数并刷新，使用分数进行评分\n　 ④填写其它并刷新，内容作为评论发送\n分数格式示意“1分”“2分”…“10分”\n\n㊟默认详情页检测到有更新内容时才会刷新目录\n\n！注意区分源变量和书籍变量\n",
+    "weight": 0
+  },
+  {
+    "bookSourceComment": "25.06.01：补充，优化\n25.05.31：修复目录列表乱序，修复获取不到章节url以及章节名字\n\n原地址  海棠搜书：https://www.haitangsoushu.com\nhttps://www.shenyeso.net\n \n备用地址①：https://www.gosealib.com\n备用地址②：https://www.mylanhai.org\n备用地址③：https://www.letsboox.com\n备用地址④：https://www.jumpsea.cc",
+    "bookSourceGroup": "🔥 其他",
+    "bookSourceName": "📖 蓝海搜书",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.lanlanbo.com/",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "exploreUrl": "说明：自己可以添加搜索的关键词：  \nH文 ::/s/H/{{page}}/\n父子::/s/父子/{{page}}/\n兄弟::/s/兄弟/{{page}}/\n年上::/s/年上/{{page}}/\n校园::/s/校园/{{page}}/\n B E ::/s/BE/{{page}}/\n出轨::/s/出轨/{{page}}/\n生子::/s/生子/{{page}}/\n年下::/s/年下/{{page}}/\n双性::/s/双性/{{page}}/\nABO::/s/ABO/{{page}}/\n强强::/s/强强/{{page}}/\n哥哥::/s/哥哥/{{page}}/\n反攻::/s/反攻/{{page}}/\n人兽::/s/人兽/{{page}}/\n强制::/s/强制/{{page}}/\n掰弯::/s/掰弯/{{page}}/\npo18::/s/PO18/{{page}}/\n NP ::/s/np/{{page}}/\n言情::/s/言情/{{page}}/\n耽美::/s/耽美/{{page}}/\n同人::/s/同人/{{page}}/\n综合::/s/综合/{{page}}/\n都市::/s/都市/{{page}}/\n现言::/s/现言/{{page}}/\n古言::/s/古言/{{page}}/\n轻文::/s/轻小说/{{page}}/\n原创::/s/原创小说/{{page}}/\n科幻::/s/科幻/{{page}}/\n仙侠::/s/仙侠/{{page}}/\n奇幻::/s/奇幻/{{page}}/\n玄幻::/s/玄幻/{{page}}/\n衍生::/s/同人衍生/{{page}}/\n网游::/s/网游/{{page}}/\n悬疑::/s/悬疑/{{page}}/\n古代::/s/古代/{{page}}/\n现代::/s/现代/{{page}}/\n男性::/s/男男/{{page}}/\n女性::/s/女女/{{page}}/\n励志::/s/励志/{{page}}/\n清水::/s/清水/{{page}}/\n甜文::/s/甜文/{{page}}/\n职场::/s/职场/{{page}}/\n种田::/s/种田/{{page}}/\n1V1::/s/1V1/{{page}}/\n腹黑::/s/腹黑/{{page}}/\n美人::/s/美人/{{page}}/\n B L ::/s/BL/{{page}}/\n同性::/s/同性/{{page}}/\n百合::/s/百合/{{page}}/\n爽文::/s/爽文/{{page}}/\n狗血::/s/狗血/{{page}}/\n文娱::/s/娱乐圈/{{page}}/\n快穿::/s/快穿/{{page}}/\n网王::/s/网王/{{page}}/\n H P::/s/HP/{{page}}/",
+    "lastUpdateTime": "1748731019725",
+    "respondTime": 5906,
+    "ruleBookInfo": {
+      "author": ".author@text",
+      "coverUrl": ".BGsectionOne-top-left@img@src",
+      "intro": ".BGsectionTwo-bottom@text<js>\nlist=java.getElements(\"@@class.BGsectionThree-content@li\").toArray();\nintro=java.getElements('#intro').html();\nhref='';text='';\nfor(i in list){\nhref=href+list[i].select('a:eq(1)').attr('href')+'\\n';\ntext=text+'【'+i+'】'+list[i].html()+'\\n';\n}\njava.put('list',href);\nxu=(book.getVariable(\"custom\")==null||book.getVariable(\"custom\")==\"\")?\"0\":book.getVariable(\"custom\");\nlaiyuan='当前来源【'+xu+'】';\nresult='（换源列表（点击设置书籍变量，输入序号，确认后刷新，可更改对应的源，默认为0））【换源列表】：\\n'+text+'\\n'+laiyuan+'\\n————————————\\n'+intro\n</js>\n##更新 .*",
+      "kind": ".category@text&&.time@text##.*：",
+      "lastChapter": ".newestChapter@text##.*：",
+      "name": ".title@text",
+      "tocUrl": "@js:\nlist=java.get('list').split('\\n');\nintro=String(book.intro);\ncustomIntro=intro.match(/来源【(\\d+)】/)[1];\nresult=list[customIntro]"
+    },
+    "ruleContent": {
+      "content": "@js:\nfunction d(a, b) {\n            b = java.md5Encode(b);\n            var d = b.substring(0, 16);\n            var e = b.substring(16);\n            return    java.aesBase64DecodeToString(a,e,\"AES/CBC/PKCS5padding\",d)}\n            \neval(result.match(/(d\\(\"[\\s\\S]+?\"\\))\\);/)[1])"
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "author": "a.1@text",
+      "bookList": ".SHsectionThree-middle p",
+      "bookUrl": "a.0@href",
+      "checkKeyWord": "我的",
+      "coverUrl": "@js:'https://img.bookscdn.com/nocover.jpg'",
+      "kind": "a.2@text",
+      "name": "a.0@text##《|》"
+    },
+    "ruleToc": {
+      "chapterList": "class.BCsectionTwo-top-chapter\n@js:(function(){\n\t// data属性配置项\n    var orderAttrs = ['data-x', 'data-nmb', 'data-tmd','data-ido'];\n    \n    //排序方式判断\n    var originalOrder;\n    try {\n        originalOrder = JSON.parse(src.match(/originalOrder\\s*=\\s*([.+?])/)[1]);\n    } catch(e) { java.log(\"⚠️ originalOrder 解析失败\"); }\n\n//开始排序\n    result.sort(function(a, b){\n        if(originalOrder) {\n            return originalOrder[result.indexOf(a)] - originalOrder[result.indexOf(b)];\n        }\n        for(var attr of orderAttrs) {\n            let va = parseInt(a.attr(attr));\n            let vb = parseInt(b.attr(attr));\n            if (!isNaN(va) && !isNaN(vb)) return va - vb;\n        }\n        return 0;\n    });\n\n//输出结果\n    return result.stream().map(e => e.select(\"a\").first()).filter(e => e != null).toList();\n})()",
+      "chapterName": "uc-title||abc-title||data-xsb||data-real||fk-title||data-idn||title||text",
+      "chapterUrl": "data-sb||data-link||data-dsb||data-idu||data-url||href\n@js:(function(){\n    try {\n        return (/^[A-Za-z0-9+/]+={0,2}$/.test(result) && result.length % 4 === 0)\n            ? java.base64Decode(result)\n            : result;\n    } catch(e) {\n        return result;\n    }\n})()",
+      "nextTocUrl": "text.下一页@href||#next@href"
+    },
+    "searchUrl": "/s/{{key}}/{{page}}/",
     "weight": 0
   },
   {
