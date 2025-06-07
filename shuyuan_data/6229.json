@@ -1,0 +1,68 @@
+[
+  {
+    "bookSourceComment": "By_聆听月与悦 . 25.5\n\n-*书旗免费小说的网页版，正文需要付费才能观看\n-*付费💎    免费💮",
+    "bookSourceGroup": "月月书源",
+    "bookSourceName": "🍒书旗小说",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.shuqi.com/",
+    "bookUrlPattern": "https://www.shuqi.com/book/\\d+.html",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "[\n    {\n        \"title\": \"💮        分类        💮\",\n        \"url\": \"\",\n        \"style\": {\n            \"layout_flexGrow\": 0,\n            \"layout_flexBasisPercent\": 1\n        }\n    },\n    {\n        \"title\": \"全部\",\n        \"url\": \"/store?&sz=0&page={{page}}\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"男频\",\n        \"url\": \"/store?&sz=1&page={{page}}\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"女频\",\n        \"url\": \"/store?&sz=2&page={{page}}\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"不限\",\n        \"url\": \"/store?sz=0&fc=0&wd=10&tm=0&st=0&page={{page}}\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"30万以下\",\n        \"url\": \"/store?sz=0&fc=0&wd=11&tm=0&st=0&page={{page}}\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"30万~50万\",\n        \"url\": \"/store?sz=0&fc=0&wd=12&tm=0&st=0&page={{page}}\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"50万~100万\",\n        \"url\": \"/store?sz=0&fc=0&wd=13&tm=0&st=0&page={{page}}\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"100万~200万\",\n        \"url\": \"/store?sz=0&fc=0&wd=14&tm=0&st=0&page={{page}}\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"200万以上\",\n        \"url\": \"/store?sz=0&fc=0&wd=15&tm=0&st=0&page={{page}}\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"不限\",\n        \"url\": \"/store?sz=0&fc=0&wd=10&tm=0&st=0&page={{page}}\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"3天内\",\n        \"url\": \"/store?sz=0&fc=0&wd=10&tm=3&st=0&page={{page}}\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"7天内\",\n        \"url\": \"/store?sz=0&fc=0&wd=10&tm=7&st=0&page={{page}}\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"半个月内\",\n        \"url\": \"/store?sz=0&fc=0&wd=10&tm=15&st=0&page={{page}}\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"一个月内\",\n        \"url\": \"/store?sz=0&fc=0&wd=10&tm=30&st=0&page={{page}}\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"不限\",\n        \"url\": \"/store?sz=0&fc=0&wd=10&tm=0&st=0&page={{page}}\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"连载\",\n        \"url\": \"/store?sz=0&fc=0&wd=10&tm=0&st=1&page={{page}}\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"完结\",\n        \"url\": \"/store?sz=0&fc=0&wd=10&tm=0&st=2&page={{page}}\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"都市\",\n        \"url\": \"/store?sz=0&fc=7&wd=10&tm=0&st=0&page={{page}}\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"社会生活\",\n        \"url\": \"/store?sz=0&fc=15&wd=10&tm=0&st=0&page={{page}}\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"玄幻\",\n        \"url\": \"/store?sz=0&fc=29&wd=10&tm=0&st=0&page={{page}}\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"科幻\",\n        \"url\": \"/store?sz=0&fc=34%2C102&wd=10&tm=0&st=0&page={{page}}\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"悬疑\",\n        \"url\": \"/store?sz=0&fc=41%2C108&wd=10&tm=0&st=0&page={{page}}\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"历史\",\n        \"url\": \"/store?sz=0&fc=45&wd=10&tm=0&st=0&page={{page}}\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"体育\",\n        \"url\": \"/store?sz=0&fc=54&wd=10&tm=0&st=0&page={{page}}\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"武侠\",\n        \"url\": \"/store?sz=0&fc=58&wd=10&tm=0&st=0&page={{page}}\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"游戏\",\n        \"url\": \"/store?sz=0&fc=63&wd=10&tm=0&st=0&page={{page}}\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"仙侠\",\n        \"url\": \"/store?sz=0&fc=67%2C98&wd=10&tm=0&st=0&page={{page}}\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"同人\",\n        \"url\": \"/store?sz=0&fc=71&wd=10&tm=0&st=0&page={{page}}\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"现代言情\",\n        \"url\": \"/store?sz=0&fc=76&wd=10&tm=0&st=0&page={{page}}\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"古代言情\",\n        \"url\": \"/store?sz=0&fc=86&wd=10&tm=0&st=0&page={{page}}\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"玄幻言情\",\n        \"url\": \"/store?sz=0&fc=94&wd=10&tm=0&st=0&page={{page}}\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"幻想言情\",\n        \"url\": \"/store?sz=0&fc=122&wd=10&tm=0&st=0&page={{page}}\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"浪漫青春\",\n        \"url\": \"/store?sz=0&fc=127&wd=10&tm=0&st=0&page={{page}}\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    }\n]",
+    "header": "{\n\"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36\"\n}",
+    "lastUpdateTime": "1749181329342",
+    "loginCheckJs": "",
+    "loginUi": "",
+    "loginUrl": "https://www.shuqi.com/",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "div.bauthor > a@text",
+      "coverUrl": "div.view > img@src",
+      "intro": "&nbsp;&nbsp;\n📕书        名：{{@css:span.bname@text}}\n✏️作        者：{{@css:div.bauthor > a@text}}{{'\\n'+'​'}}\n🔖类        型：{{@@class.lastchapter clear@li.0@text}}\n🎐状        态：{{@@class.lastchapter clear@li.2@text}}\n📄字        数：{{@@class.lastchapter clear@li.1@text}}\n🔥热        度：{{@css:span.bhot@text##热度：}}{{'\\n'+'​'}}\n⏳更新情况：{{@@class.lastchapter@li.-1@text##[更新：]*}}{{'\\n'+'​'}}\n🏷 相关标签：{{@css:div.tags@text}}{{'\\n'+'​'}}\n📜简介：{{@@class.bookDesc@text}}{{'\\n'+'​'}}\n📍{{@css:div.disclaimers@text}}\n",
+      "kind": "div.tags@text&&div.lastchapter > li.0@text",
+      "lastChapter": "div.lastchapter > li.-1@text##更新：",
+      "name": "span.bname@text",
+      "tocUrl": "class.operates clear@li.1@a@href||text.目录@href",
+      "wordCount": "div.lastchapter > li.1@text"
+    },
+    "ruleContent": {
+      "content": "class.chapter-content@html",
+      "payAction": "java.toast(\"请登录账号并购买本章节！\")\njava.startBrowserAwait(baseUrl, \"登录\")",
+      "replaceRegex": "",
+      "title": ""
+    },
+    "ruleExplore": {
+      "author": "class.store-tag@a@text##作者：",
+      "bookList": "ul.store-ul > li",
+      "bookUrl": "a.2@href",
+      "coverUrl": "img.cover@src",
+      "intro": "p.store-des@text",
+      "kind": "class.store-tag@span@text",
+      "name": "h3@text"
+    },
+    "ruleSearch": {
+      "author": "div.bauthor@text||p.book-autor@text",
+      "bookList": "div.matchbook > div.view||ul.clearfix > li",
+      "bookUrl": "a.cover@href||a.book-cover@href",
+      "checkKeyWord": "嫡女重生，惹上暴君逃不掉",
+      "coverUrl": "a.cover > img@src||a.book-cover > img@src",
+      "intro": "p.bookDesc > span@text||p.book-newc@text",
+      "kind": "div.tag@text||div.category@text",
+      "name": "class.bookTitle@text||li@class.ellipsis@text",
+      "wordCount": ".lastchapter@li.1@text"
+    },
+    "ruleToc": {
+      "chapterList": "@css:\ndiv.chapterbox > table > tbody > tr,\ndiv.chapterbox > table > tbody > tr > td,\ndiv.chapterbox > div.vol_name\n@js:\nlist = [];\n$ = result;\nfor (i in $) {\n    if (/vol_name/.test(String($[i]))) {\n        text = \"🏮 ↓ 〖\" + String($[i].text()) + \"〗 ↓ 🏮\";\n        list.push({\n            text: text,\n            volume: true\n        });\n    } else {  \n        $[i].select(\"td\").forEach(a => {     \n            vip = /a/.test(a.select(\"i\"));\n            text = a.select(\"a\").text();\n            href = a.select(\"a\").attr(\"href\");\n            if (vip) {\n                symbol = \"💎\";\n            } else {\n                symbol = \"💮\";\n            }\n            title = symbol + \"〖\" + text + \"〗\" + symbol;\n            url = `${href},{\"webView\":true}`\n            list.push({   \n                title: title,\n                isVip: vip,\n                url: url\n            });\n        });\n    }\n}\nlist",
+      "chapterName": "title",
+      "chapterUrl": "url",
+      "isVip": "isVip",
+      "isVolume": "volume",
+      "preUpdateJs": ""
+    },
+    "searchUrl": "https://www.shuqi.com/search?keyword={{key}}&page={{page}}",
+    "variableComment": "",
+    "weight": 0
+  }
+]

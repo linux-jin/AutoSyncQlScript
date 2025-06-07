@@ -1,0 +1,57 @@
+[
+  {
+    "bookSourceComment": "By_聆听月与悦 . 2025.5.2\n\n//发现只写了一半，需要的话可以按这个格式自行补齐，我实在是懒得肝了",
+    "bookSourceGroup": "月月书源",
+    "bookSourceName": "🍒小说虎",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.xshbook.com/",
+    "bookUrlPattern": "https\\://www.xshbook.com/\\d+/",
+    "customOrder": 25,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": false,
+    "exploreUrl": "[{\"title\": \"💮                  首页                  💮\",\"url\": \"https://www.xshbook.com/\",\n\"style\": {\"layout_flexGrow\": 0,\n\"layout_flexBasisPercent\": 1\n}},\n{\"title\": \"💮                  男生                  💮\",\"url\": \"\",\n\"style\": {\"layout_flexGrow\": 0,\n\"layout_flexBasisPercent\": 1\n}},\n{\"title\": \"玄幻\",\"url\": \"/fenlei/1/{{page}}/\",\n\"style\": {\"layout_flexGrow\": 1,\n\"layout_flexBasisPercent\": 0.29\n}},\n{\"title\": \"奇幻\",\"url\": \"/fenlei/2/{{page}}/\",\n\"style\": {\"layout_flexGrow\": 1,\n\"layout_flexBasisPercent\": 0.29\n}},\n{\"title\": \"武侠\",\"url\": \"/fenlei/4/{{page}}/\",\n\"style\": {\"layout_flexGrow\": 1,\n\"layout_flexBasisPercent\": 0.29\n}},\n{\"title\": \"仙侠\",\"url\": \"/fenlei/4/{{page}}/\",\n\"style\": {\"layout_flexGrow\": 1,\n\"layout_flexBasisPercent\": 0.29\n}},\n{\"title\": \"都市\",\"url\": \"/fenlei/5/{{page}}/\",\n\"style\": {\"layout_flexGrow\": 1,\n\"layout_flexBasisPercent\": 0.29\n}},\n{\"title\": \"军事\",\"url\": \"/fenlei/6/{{page}}/\",\n\"style\": {\"layout_flexGrow\": 1,\n\"layout_flexBasisPercent\": 0.29\n}},\n{\"title\": \"历史\",\"url\": \"/fenlei/7/{{page}}/\",\n\"style\": {\"layout_flexGrow\": 1,\n\"layout_flexBasisPercent\": 0.29\n}},\n{\"title\": \"游戏\",\"url\": \"/fenlei/8/{{page}}/\",\n\"style\": {\"layout_flexGrow\": 1,\n\"layout_flexBasisPercent\": 0.29\n}},\n{\"title\": \"竞技\",\"url\": \"/fenlei/9/{{page}}/\",\n\"style\": {\"layout_flexGrow\": 1,\n\"layout_flexBasisPercent\": 0.29\n}},\n{\"title\": \"科幻\",\"url\": \"/fenlei/10/{{page}}/\",\n\"style\": {\"layout_flexGrow\": 1,\n\"layout_flexBasisPercent\": 0.29\n}},\n{\"title\": \"悬疑\",\"url\": \"/fenlei/11/{{page}}/\",\n\"style\": {\"layout_flexGrow\": 1,\n\"layout_flexBasisPercent\": 0.29\n}}]",
+    "lastUpdateTime": "1749181581232",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "id.info@p.0@text##作者：",
+      "coverUrl": "id.fmimg@img@src",
+      "intro": "&nbsp;&nbsp;\n💮最新章节：{{@@id.info@p.2@text}} | {{@@id.info@p.1@text}}{{'\\n'+'​'}}\n📜简      介：{{@@id.intro@text}}##[最后更新\\:]*",
+      "kind": "class.con_top@a.1@text",
+      "lastChapter": "{{@@id.info@p.2@text}}{{@@id.info@p.1@text}}##[最后更新\\:]*",
+      "name": "id.info@h1@text"
+    },
+    "ruleContent": {
+      "content": "class.content@p!0@text",
+      "nextContentUrl": "text.下一章@href",
+      "replaceRegex": "@js:\ncontent = result.replace(/手机直接访问:m\\.xshbook\\.com|记不住网址，可以百度搜索:【[^】]*】/g, '');"
+    },
+    "ruleExplore": {
+      "author": "{{@@class.s4@text}}{{@@dl@dt@text}}##{{@@dl@dt@a@text}}|[\\/ 著：]*",
+      "bookList": "class.l@class.item&&class.novelslist@class.content&&class.l@ul@li&&class.item",
+      "bookUrl": "class.image@a@href||class.s2@a@href",
+      "coverUrl": "class.s2@a@href||class.image@a@href<js>\nvar id = result.match(/(\\d+)\\/?$/)[1];\nvar iid = parseInt(id/1000);\n'http://www.xshbook.com/images/'+iid+'/'+id+'/'+id+'s.jpg';\n</js>",
+      "intro": "dl@dd@text",
+      "kind": "{{@@class.content@h2@text}}{{@@class.s1@text##[\\[\\]]*}}",
+      "lastChapter": "{{@@class.s3@text}}更新时间：{{@@class.s5@text}}",
+      "name": "dl@dt@a@text||class.s2@text",
+      "wordCount": ""
+    },
+    "ruleSearch": {
+      "author": "dl@dt@span@text",
+      "bookList": "class.item",
+      "bookUrl": "class.image@a@href",
+      "checkKeyWord": "酒剑仙：醉躺小师妹，震惊宗门",
+      "coverUrl": "class.image@a@img@src",
+      "intro": "dl@dd@text",
+      "name": "dl@dt@a@text"
+    },
+    "ruleToc": {
+      "chapterList": "id.list@dl@dd",
+      "chapterName": "dd@text",
+      "chapterUrl": "dd@a@href"
+    },
+    "searchUrl": "https://www.sososhu.com/?q={{key}}&site=xshbook,{\n  \"webView\": true\n}",
+    "weight": 0
+  }
+]

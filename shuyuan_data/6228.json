@@ -1,0 +1,68 @@
+[
+  {
+    "bookSourceComment": "By_聆听月与悦 . \n\n*-应该是一个女频为主的源\n*-免费榜暂不可用\n*-嗯……要登录的话先把下面的请求头去掉，登录之后再放回去",
+    "bookSourceGroup": "月月书源",
+    "bookSourceName": "🌸豆花",
+    "bookSourceType": 0,
+    "bookSourceUrl": "祝大家天天开心啊",
+    "concurrentRate": "",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "[\n{\"title\": \"💮        免费        💮\",\"url\": \"\",\n\"style\": {\"layout_flexGrow\": 0,\n\"layout_flexBasisPercent\": 1\n}},\n{\"title\": \"💮        排行榜        💮\",\"url\": \"\",\n\"style\": {\"layout_flexGrow\": 0,\n\"layout_flexBasisPercent\": 1\n}},\n{\"title\": \"         畅销榜       \",\"url\": \"http://api.douhuawenxue.com/albums/items?id=1375&last=&size=12\",\n\"style\": {\"layout_flexGrow\": 1,\n\"layout_flexBasisPercent\": 0.29\n}},\n{\"title\": \"        周榜        \",\"url\": \"http://api.douhuawenxue.com/albums/items?id\\u003d1375\",\n\"style\": {\"layout_flexGrow\": 1,\n\"layout_flexBasisPercent\": 0.29\n}},\n{\"title\": \"        月榜        \",\"url\": \"http://api.douhuawenxue.com/albums/items?id\\u003d1906\",\n\"style\": {\"layout_flexGrow\": 1,\n\"layout_flexBasisPercent\": 0.29\n}},\n{\"title\": \"        总榜        \",\"url\": \"http://api.douhuawenxue.com/albums/items?id\\u003d1907\",\n\"style\": {\"layout_flexGrow\": 1,\n\"layout_flexBasisPercent\": 0.29\n}},\n{\"title\": \"        更新榜        \",\"url\": \"http://api.douhuawenxue.com/albums/items?id\\u003d1377\",\n\"style\": {\"layout_flexGrow\": 1,\n\"layout_flexBasisPercent\": 0.29\n}},\n{\"title\": \"        菊花榜        \",\"url\": \"http://api.douhuawenxue.com/albums/items?id\\u003d1378\",\n\"style\": {\"layout_flexGrow\": 1,\n\"layout_flexBasisPercent\": 0.29\n}},\n{\"title\": \"    总字数榜(耽美)    \",\"url\": \"http://api.douhuawenxue.com/albums/items?id\\u003d1186\",\n\"style\": {\"layout_flexGrow\": 1,\n\"layout_flexBasisPercent\": 0.29\n}},\n{\"title\": \"💮        分享榜        💮\",\"url\": \"\",\n\"style\": {\"layout_flexGrow\": 0,\n\"layout_flexBasisPercent\": 1\n}},\n{\"title\": \"        周榜        \",\"url\": \"http://api.douhuawenxue.com/albums/items?id\\u003d1644\",\n\"style\": {\"layout_flexGrow\": 1,\n\"layout_flexBasisPercent\": 0.29\n}},\n{\"title\": \"        月榜        \",\"url\": \"http://api.douhuawenxue.com/albums/items?id\\u003d1643\",\n\"style\": {\"layout_flexGrow\": 1,\n\"layout_flexBasisPercent\": 0.29\n}},\n{\"title\": \"💮      文评榜      💮\",\"url\": \"\",\n\"style\": {\"layout_flexGrow\": 0,\n\"layout_flexBasisPercent\": 1\n}},\n{\"title\": \"        总榜        \",\"url\": \"http://api.douhuawenxue.com/albums/items?id\\u003d1779\",\n\"style\": {\"layout_flexGrow\": 1,\n\"layout_flexBasisPercent\": 0.29\n}},\n{\"title\": \"        月榜        \",\"url\": \"http://api.douhuawenxue.com/albums/items?id\\u003d1783\",\n\"style\": {\"layout_flexGrow\": 1,\n\"layout_flexBasisPercent\": 0.29\n}},\n{\"title\": \"        打赏榜        \",\"url\": \"http://api.douhuawenxue.com/albums/items?id\\u003d1376\",\n\"style\": {\"layout_flexGrow\": 1,\n\"layout_flexBasisPercent\": 0.29\n}},\n{\"title\": \"        占位        \",\"url\": \"示\",\n\"style\": {\"layout_flexGrow\": 1,\n\"layout_flexBasisPercent\": 0.29\n}}\n]",
+    "header": "<js>\nvar header = getHeaders();\nheader\n</js>",
+    "jsLib": "function getHost() {\n\treturn \"http://api.douhuawenxue.com\"\n\t}\n\t\nfunction getHeaders() {\n\tvar Hseders = `{\n\"user-agent\": \"okhttp/3.12.10\",\n\"Content-Type\": \"application/json\",\n\"Cache-Control\": \"no-cache\",\n\"Accept-Encoding\": \"gzip\",\n\"Host\": \"api.douhuawenxue.com\",\n\"Connection\": \"Keep-Alive\",\n\"Accept\": \"application/json\",\n\"Cookie\": \"aid=3; av=10.18.0; ch=xiaomi; os=Android-10; md=GM1917; wh=1260*2632\"\n}`;\nreturn Hseders\n\t}",
+    "lastUpdateTime": "1749181267980",
+    "loginUi": "",
+    "loginUrl": "https://www.douhuawenxue.com/login",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "$.author",
+      "coverUrl": "$.with_image_w||$.images.imgUrl||$.images.path",
+      "init": "<js>\nvar book_id = java.hexDecodeToString(result);\n//java.log(book_id);\nvar url = getHost() + \"/topic/novel?topic_id=\" + book_id;\nvar info = java.ajax(url);\ninfo\n</js>\n$.data.topic",
+      "intro": "&nbsp;&nbsp;\n📕书名：{{$.title}}\n✏️作者：{{$.author}}{{'\\n'+'​'}}\n👥主角：{{$.sexual_name1}} {{$.sexual_name2}}{{'\\n'+'​'}}\n🏷标签：{{$.tags.*.name##\\n## }}\n💰价格：{{$.end_price}}{{'\\n'+'​'}}\n🌹鲜花：{{$.flowerCount}}{{'\\n'+'​'}}\n🔖美文：{{$.recommend_text}}{{'\\n'+'​'}}\n⏳最后更新：{{$.end_price_update}}{{'\\n'+'​'}}\n📜简      介 ：{{$.des##\\r}}\n📃评      论 ：\n{{$.praisers[0].nickname}}：{{$.praisers[0].user_signature}}\n{{$.praisers[1].nickname}}：{{$.praisers[1].user_signature}}",
+      "kind": "$.tags.*.name",
+      "lastChapter": "",
+      "name": "$.title",
+      "tocUrl": "<js>\nvar book_id = java.getString(\"id\");\nvar data = {\n\ttype: \"douhua\"\n\t};\nvar type = JSON.stringify(data);\nvar url = java.base64Encode(book_id);\nvar chaper = `data:;base64,${url},${type}`;\nchaper\n</js>",
+      "wordCount": "{{$.flowerCount}}字"
+    },
+    "ruleContent": {
+      "content": "<js>\nvar book_id = java.hexDecodeToString(result);\nvar url = getHost() + \"/index.php/post/view/\" + book_id + \"?with_ids=1&type=read\";\nvar content = java.ajax(url);\nvar json = JSON.parse(content);\nvar vip = json.data.detail.need_pay;\n//java.log(vip)\nvar isVIP = \"true\";\nvar noVIP = \"false\";\nif (vip==false) {\n\tvar Content = json.data.detail.content;\n\t} else {\n\tvar text = json.data.detail.des;\n\tvar mesage = \"本章为VIP章节，请购买后阅读！\";\n\tvar mes = \"本章为会员章节，请登录并购买！！\";\n\tvar Content = `${mesage}\\n【试读：】\\n${text}`;\n\tjava.toast(mes);\n\t}\nContent\n</js>",
+      "payAction": "var book_id = java.hexDecodeToString(result);\nvar url = \"https://www.douhuawenxue.com/chapter/\" + book_id;\njava.toast(\"请登录账号并购买本章节！\");\njava.startBrowserAwait(url, \"登录\");",
+      "title": "$.title\n@js:\nvar name = java.t2s(result);\nname"
+    },
+    "ruleExplore": {
+      "author": "$.author",
+      "bookList": "$.data.items",
+      "bookUrl": "<js>\nvar book_id = java.getString(\"id\");\nvar data = {\n\ttype: \"douhua\"\n\t};\nvar type = JSON.stringify(data);\nvar url = java.base64Encode(book_id);\nvar info = `data:;base64,${url},${type}`;\ninfo\n</js>",
+      "coverUrl": "$.with_image_w",
+      "intro": "$.des",
+      "name": "$.title",
+      "wordCount": "$.length"
+    },
+    "ruleSearch": {
+      "author": "$.author||$.user.name",
+      "bookList": "$.data[*]",
+      "bookUrl": "<js>\nvar book_id = java.getString(\"id\");\nvar data = {\n\ttype: \"douhua\"\n\t};\nvar type = JSON.stringify(data);\nvar url = java.base64Encode(book_id);\nvar info = `data:;base64,${url},${type}`;\ninfo\n</js>",
+      "checkKeyWord": "剧情已崩「快穿」",
+      "coverUrl": "$.with_image_w||$.images.imgUrl||$.images.path",
+      "intro": "{{$.recommend_text}}\n{{$.des}}",
+      "kind": "$.tags.*.name",
+      "lastChapter": "$.update_time",
+      "name": "$.title",
+      "wordCount": "{{$.length}}字"
+    },
+    "ruleToc": {
+      "chapterList": "<js>\nvar book_id = java.hexDecodeToString(result);\nvar url = getHost() + \"/index.php/novel/chapter_list?novel_id=\" + book_id;\n//java.log(url)\nvar Chapers = java.ajax(url);\nChapers\n</js>\n$.data.list[*]",
+      "chapterName": "$.title\n@js:\nvar name = java.t2s(result);\nname",
+      "chapterUrl": "<js>\nvar book_id = java.getString(\"id\");\nvar data = {\n\ttype: \"douhua\"\n\t};\nvar type = JSON.stringify(data);\nvar url = java.base64Encode(book_id);\nvar content = `data:;base64,${url},${type}`;\ncontent\n</js>",
+      "isPay": "$.need_pay",
+      "isVip": "$.vip",
+      "updateTime": "{{$.add_time}} | {{$.length}}字"
+    },
+    "searchUrl": "<js>\nvar api = getHost();\nvar page = (page-1)*20;\nvar action = \"/search/content?keyword=\" + key + \"&start=\" + page + \"&rows=20&types=18&order=&is_finished=&vip=&single_page=0\";\nvar url = api + action;\nurl\n</js>",
+    "weight": 0
+  }
+]

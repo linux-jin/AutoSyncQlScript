@@ -1,0 +1,50 @@
+[
+  {
+    "bookSourceComment": "By_聆听月与悦 . 25.5.4\n+可以试着点击右上角修改源变量中的action值可更换服务器\n+注意填到\"\"中\n\n+服务器地址：\n=>qbmfxs.com\n=>1qxs.com\n=>1qxs.com\n=>2vdu.com\n=>0xs.net\n=>goboo.cc",
+    "bookSourceGroup": "月月书源",
+    "bookSourceName": "🍒程袁书吧",
+    "bookSourceType": 0,
+    "bookSourceUrl": "祝你们天天开心",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": false,
+    "header": "<js>\n  let defaultVariable = \n  \t{\n    \"action\": \"\"\n  }\n  let variable = source.getVariable();\n  if(variable != \"\" && variable != null){\n    try{\n      variable = JSON.parse(variable);\n    } catch(err) {\n      java.log(err);\n      variable = defaultVariable;\n      source.variable = JSON.stringify(defaultVariable);\n      java.toast(\"请按照规则修改源变量，已重置源变量！\")\n    }\n  } else {\n    variable = defaultVariable;\n    source.variable = JSON.stringify(defaultVariable);\n  }\n</js>",
+    "lastUpdateTime": "1749181465434",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "class.name@span@text##著",
+      "coverUrl": "img@src\n@js:\nvar defaultVariable = {\n    \"action\": \"\"\n  }  \nvar variable = source.getVariable();\n  if(variable != \"\" && variable != null){\n    try{\n      variable = JSON.parse(variable);\n    } catch(err) {\n      java.log(err);\n      variable = defaultVariable;\n    }\n  }\nif(variable.action != \"\" && variable.action != null && variable.action != undefined){\n        var cover = \"https://\" + variable.action + result;\n        var r = `当前服务器：\\nvariable.action`;\n        java.toast(r);\n   } else {\n        var cover  = \"https://www.qbmfxs.com\" + result;\n        java.toast(\"当前使用默认服务器地址，如果无法获取请更换！\")\n      }\ncover",
+      "intro": "{{@@class.description@html}}##推荐地址：.*",
+      "kind": "{{@@class.label.0@span.0@text}}{{@@class.label.1@span.0@a@text}}{{@@class.label.1@span.1@a@text}}",
+      "lastChapter": "{{@@class.label.2@span.1@text}}{{@@class.label.2@span.2@text}}",
+      "name": "class.name@h1@text",
+      "tocUrl": "text.查看完整目录@href",
+      "wordCount": "class.label.0@span.1@text##[字数：]*"
+    },
+    "ruleContent": {
+      "content": "class.content@p!0:-1@text",
+      "nextContentUrl": "@js:if((r=java.getStringList((nx=java.get(\"next\"))+\"a:matches(第二[頁页]|下[一\\\\s]*[頁页]):not([href~=^javascript:|^#])@href||a:matches(下[一\\\\s]*[篇章回节節话話]):not([href~=^javascript:|^#])@href||a[href~=[_-]\\\\d+(/|\\\\.[a-z]+)?$]:has(i,img):not(:matches(\\\\S),[href~=^javascript:|^#])@href\")).size()){\nif(~String(book.tocUrl+(nextChapterUrl||'')).indexOf(r=String(r.get(r.size()-1)))||~r.indexOf(nextChapterUrl||String(book.tocUrl).replace(/.+(?=_\\d+\\/$)/,'')))r=null\n}else r=null;\nif(r){if(nx!='')chapter.putVariable(\"next\",(n=r.replace(/\\d+(?=[^\\d]*$)/,it=>+it+1))==r?'':'a[href=\"'+n+'\"]@href||');\nr+java.get(\"动\")}"
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "author": ".author@text",
+      "bookList": "ul > li",
+      "bookUrl": "div.image > a@href",
+      "checkKeyWord": "太奶托梦喊我回家后，灵气复苏了",
+      "coverUrl": "div.image > a > img@src",
+      "intro": "li > div.book > div.desc.line_3@text",
+      "kind": ".msg@text",
+      "name": ".name@text"
+    },
+    "ruleToc": {
+      "chapterList": "ul > li",
+      "chapterName": "li > a@text",
+      "chapterUrl": "li > a@href",
+      "nextTocUrl": "@js:java.get(\"页\")"
+    },
+    "searchUrl": "@js:\nvar defaultVariable = {\n    \"action\": \"\"\n  }  \nvar variable = source.getVariable();\n  if(variable != \"\" && variable != null){\n    try{\n      variable = JSON.parse(variable);\n    } catch(err) {\n      java.log(err);\n      variable = defaultVariable;\n    }\n  }\nif(variable.action != \"\" && variable.action != null && variable.action != undefined){\n        var action = \"https://\" + variable.action + \"/search.html?kw=\" + key;\n        var r = `当前服务器：\\n${variable.action}`;\n        java.toast(r);\n   } else {\n        var action  = \"https://www.qbmfxs.com/search.html?kw=\" + key;\n        java.toast(\"当前使用默认服务器地址，如果无法获取请更换！\")\n      }\naction",
+    "variableComment": "By_聆听月与悦 . 25.5.4\n+*修改源变量中的action值可更换服务器\n+*注意填到\"\"中\n\n+*服务器地址：\n=> qbmfxs.com\n=> 1qxs.com\n=> 1qxs.com\n=> 2vdu.com\n=> 0xs.net\n=> goboo.cc\n\n*如有空格请手动删除",
+    "weight": 0
+  }
+]
