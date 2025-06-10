@@ -1,0 +1,40 @@
+[
+  {
+    "bookSourceComment": "自制，和另一版本的52书库比起来能搜到的书多一点，女性向多一些",
+    "bookSourceName": "52书库1",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.52shukuw.cc",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "lastUpdateTime": "1749400049331",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "tocUrl": "ul.catalog@li"
+    },
+    "ruleContent": {
+      "content": "div.book_con p@text",
+      "nextContentUrl": "div.page a:contains(下一页)@href",
+      "replaceRegex": "",
+      "title": "h1.art_tit@text"
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "author": "h2 a@text##.*作者：",
+      "bookList": "ul.list@li",
+      "bookUrl": "h2 a@href",
+      "checkKeyWord": "",
+      "coverUrl": "small span a@text",
+      "kind": "",
+      "name": "h2 a@text"
+    },
+    "ruleToc": {
+      "chapterList": "ul.catalog li",
+      "chapterName": "a@text",
+      "chapterUrl": "a@href"
+    },
+    "searchUrl": "https://www.52shukuw.cc/sousuo/search.php?q={{key}}",
+    "weight": 0
+  }
+]

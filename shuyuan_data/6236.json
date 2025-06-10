@@ -1,0 +1,46 @@
+[
+  {
+    "bookSourceComment": "//2025.6.8 ◎夜泽川◎",
+    "bookSourceGroup": "网络",
+    "bookSourceName": "笔趣阁bv",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.bvquge.com",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "@js:\nvar result = [];\nvar push = (title, url, size) => result.push({\n    title: title,\n    url: url,\n    style: {\n        layout_flexGrow: 1,\n        layout_flexBasisPercent: size\n    }\n});\norg.jsoup.Jsoup.parse(java.ajax(source.key)).select('.menu a').toArray().forEach((e, index) => {\n\tindex == 1 ? push(\"状态\", null, 1) : index == 3 ? push(\"分类\", null, 1) : \"\";\n  let url = String(e.attr('href')).replace(/$/, \"<,/{{page}}>\");\n  let size = index == 0 ? 0 : 0.45;\n       push(e.text(), url, size);\n});\nJSON.stringify(result);",
+    "header": "{\"User-Agent\":\"Mozilla/5.0 (Linux; Android 9) Mobile Safari/537.36\"}",
+    "lastUpdateTime": "1749366960311",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "a[href~=zuozhe]@text",
+      "coverUrl": ".bookdetail img@src",
+      "intro": ".des@text",
+      "kind": ".booktext p@ownText",
+      "lastChapter": ".newest h3@text",
+      "name": "h1@text"
+    },
+    "ruleContent": {
+      "content": ".con@html##{{chapter.title}}|.*中途有事离开.*接着观看！.*|.*\\(本章完\\).*",
+      "nextContentUrl": ".prenext@a.-1@href"
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "author": "a[href~=zuozhe]@text",
+      "bookList": ".item",
+      "bookUrl": "a.0@href",
+      "coverUrl": "img@src",
+      "kind": "span@text&&i.0@text",
+      "lastChapter": "li.0@a@text",
+      "name": "h3 a@text"
+    },
+    "ruleToc": {
+      "chapterList": "#list a",
+      "chapterName": "text",
+      "chapterUrl": "href"
+    },
+    "searchUrl": "/so/{{key}}",
+    "weight": 0
+  }
+]
