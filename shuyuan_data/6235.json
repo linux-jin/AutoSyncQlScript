@@ -1,38 +1,31 @@
 [
   {
-    "bookSourceGroup": "duxia",
-    "bookSourceName": "读下小说",
+    "bookSourceName": "读下小说网 可乐小说",
     "bookSourceType": 0,
     "bookSourceUrl": "https://www.duxiaxsw.com",
-    "bookUrlPattern": "https://www.duxiaxsw.com/book/.-*html",
     "customOrder": 0,
     "enabled": true,
     "enabledCookieJar": true,
     "enabledExplore": true,
-    "lastUpdateTime": "1749327130447",
+    "lastUpdateTime": "1749569870918",
     "respondTime": 180000,
     "ruleBookInfo": {
-      "author": "tag.a@href.0@text",
+      "author": "tag.a@href@text.0",
       "coverUrl": "tag.img@src",
-      "init": "",
-      "intro": "b@text",
+      "intro": "b",
       "lastChapter": "class.chapterlist.0@text",
       "name": "class.title@text",
-      "tocUrl": "class.chapterlist.0@href"
+      "tocUrl": "class.chapterlist.0"
     },
     "ruleContent": {
       "content": "id.ad@text",
-      "nextContentUrl": "href.html@href",
-      "title": "a@text"
+      "nextContentUrl": "href.html",
+      "title": "tag.a.0@text"
     },
-    "ruleExplore": {
-      "bookUrl": "https://www.rrssk.com/keywords-.*.html"
-    },
+    "ruleExplore": [],
     "ruleSearch": {
       "author": "class.dlS.0@text",
       "bookList": "li",
-      "bookUrl": "https://www.rrssk.com/keywords-.*.html",
-      "checkKeyWord": "",
       "coverUrl": "tag.img@src",
       "intro": "class.intro@text",
       "kind": "class.dlS.1@text",
@@ -40,10 +33,9 @@
       "name": "class.name font18@text"
     },
     "ruleToc": {
-      "chapterList": "$.chapterlist",
-      "chapterName": "$.chapterlist",
-      "chapterUrl": "",
-      "preUpdateJs": "$.data"
+      "chapterList": "a",
+      "chapterName": "",
+      "chapterUrl": ""
     },
     "searchUrl": "https://www.rrssk.com/keywords-{{key}}.html",
     "weight": 0

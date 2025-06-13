@@ -1,0 +1,41 @@
+[
+  {
+    "bookSourceGroup": "✍🏻自制",
+    "bookSourceName": "森林文学",
+    "bookSourceType": 0,
+    "bookSourceUrl": "http://23.224.242.55/",
+    "customOrder": 9,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "lastUpdateTime": "1749730677597",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "coverUrl": "class.imgbox@img@src",
+      "intro": "&nbsp;&nbsp;\n📕书名：{{@css:body>div.container>div.row-section>div.layout-col1>h2@text##最新章节.*|.*正文}}\n✏️作者：{{@css:body>div.container>div.row-detail>div.layout-col1>div.detail-box>div.info>div.top>div.fix>p@text##类别.*|状态.*|动作.*|最后更新.*|作者：|最新章节.*}}\n⏳更新时间：{{@@div.info>div.top>div.fix>p.4@text##最后更新：}}\n💡最新章节：{{@@div.info>div.top>div.fix>p.5@text##最新章节：}}\n🏷相关标签：{{@@div.info>div.top>div.fix>p.2@text##状态：}}|类别：{{@@div.info>div.top>div.fix>p.1@text##类别：}}\n📜简介：{{@css:body>div.container>div.row-detail>div.layout-col1>div.detail-box>div.xs-show@text##简介\\:}}"
+    },
+    "ruleContent": {
+      "content": "id.content@textNodes",
+      "nextContentUrl": "text.下一页@href",
+      "replaceRegex": "##.*\\(第\\d+/\\d+页\\)|（本章未完，请点击下一页继续阅读）",
+      "title": "class.title@text"
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "author": "@span.3@text",
+      "bookList": "class.txt-list txt-list-row5@li!0",
+      "bookUrl": "@span.1@a@href",
+      "kind": "@span.0@text##\\[|\\]",
+      "lastChapter": "@span.2@text",
+      "name": "@span.1@text"
+    },
+    "ruleToc": {
+      "chapterList": "class.section-list fix@li",
+      "chapterName": "@a@text",
+      "chapterUrl": "@a@href",
+      "nextTocUrl": "class.onclick@href"
+    },
+    "searchUrl": "http://23.224.242.55/ar.php?keyWord={{key}}",
+    "weight": 0
+  }
+]

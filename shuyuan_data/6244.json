@@ -1,0 +1,55 @@
+[
+  {
+    "bookSourceComment": "By_七七\n\n2025.6.11",
+    "bookSourceGroup": "七七书源",
+    "bookSourceName": "🌈笔趣Y",
+    "bookSourceType": 0,
+    "bookSourceUrl": "http://www.biquy.com",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "[\n    {\n        \"title\": \"        分类        \",\n        \"url\": \"\",\n        \"style\": {\n            \"layout_flexGrow\": 0,\n            \"layout_flexBasisPercent\": 1\n        }\n    },\n    {\n        \"title\": \"玄幻\",\n        \"url\": \"/category/xuanhuan/{{page}}.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"修真\",\n        \"url\": \"/category/xiuzhen/{{page}}.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"都市\",\n        \"url\": \"/category/dushi/{{page}}.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"历史\",\n        \"url\": \"/category/lishi/{{page}}.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"网游\",\n        \"url\": \"/category/wangyou/{{page}}.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"科幻\",\n        \"url\": \"/category/kehuan/{{page}}.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"悬疑\",\n        \"url\": \"/category/xuanyi/{{page}}.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"同人\",\n        \"url\": \"/category/tongren/{{page}}.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"轻小说\",\n        \"url\": \"/category/qing/{{page}}.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"女生\",\n        \"url\": \"/category/nvsheng/{{page}}.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"短篇\",\n        \"url\": \"/category/duanpian/{{page}}.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"其他\",\n        \"url\": \"/category/qita/{{page}}.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"        排行榜        \",\n        \"url\": \"\",\n        \"style\": {\n            \"layout_flexGrow\": 0,\n            \"layout_flexBasisPercent\": 1\n        }\n    },\n    {\n        \"title\": \"总点击榜\",\n        \"url\": \"/top/allvisit/{{page}}.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"月点击榜\",\n        \"url\": \"/top/monthvisit/{{page}}.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"周点击榜\",\n        \"url\": \"/top/weekvisit/{{page}}.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"日点击榜\",\n        \"url\": \"/top/dayvisit/{{page}}.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"推荐数榜\",\n        \"url\": \"/top/vote/{{page}}.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"收藏数榜\",\n        \"url\": \"/top/mark/{{page}}.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"下载数榜\",\n        \"url\": \"/top/down/{{page}}.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"评论数榜\",\n        \"url\": \"/top/comment/{{page}}.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n    {\n        \"title\": \"评分榜\",\n        \"url\": \"/top/star_score/{{page}}.html\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.29\n        }\n    },\n   {\n        \"title\": \"        最新入库        \",\n        \"url\": \"/top/postdate/{{page}}.html\",\n        \"style\": {\n            \"layout_flexGrow\": 0,\n            \"layout_flexBasisPercent\": 1\n        }\n    }\n]",
+    "lastUpdateTime": "1749639370554",
+    "loginUrl": "http://m.biquy.com",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": ".novelinfo-l li:nth-child(1) > a@text",
+      "coverUrl": ".novelinfo-r > img@src",
+      "intro": "p@text",
+      "kind": ".novelinfo-l li:nth-child(2) > a@text",
+      "lastChapter": ".novelinfo-l li:nth-child(6) > a@text",
+      "name": "h1@text",
+      "tocUrl": ".dirlist@href"
+    },
+    "ruleContent": {
+      "content": "p@text"
+    },
+    "ruleExplore": {
+      "author": "span:nth-child(2) > a@text",
+      "bookList": "li",
+      "bookUrl": ".novelname@href",
+      "coverUrl": "img@src",
+      "intro": ".intro@text",
+      "lastChapter": ".last > a@text",
+      "name": ".novelname@text"
+    },
+    "ruleSearch": {
+      "author": "span:nth-child(2) > a@text",
+      "bookList": "li",
+      "bookUrl": ".novelname@href",
+      "coverUrl": "img@src",
+      "intro": ".intro@text",
+      "kind": "",
+      "lastChapter": ".last > a@text",
+      "name": ".novelname@text"
+    },
+    "ruleToc": {
+      "chapterList": ".dirlist > li",
+      "chapterName": "a@text",
+      "chapterUrl": "a@href"
+    },
+    "searchUrl": "http://www.biquy.com/search/result.html?searchkey={{key}}",
+    "weight": 0
+  }
+]
