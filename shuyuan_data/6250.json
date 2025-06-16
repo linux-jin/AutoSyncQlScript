@@ -1,0 +1,49 @@
+[
+  {
+    "bookSourceComment": "需登录，只显示主题楼内容",
+    "bookSourceName": "豆瓣小组",
+    "bookSourceType": 0,
+    "bookSourceUrl": "豆瓣小组",
+    "concurrentRate": "1500",
+    "customOrder": 3,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "善意的竞争小组::https://www.douban.com/group/751019/discussion?start={{(page-1)*25}}\n\n夕山燕归的日记::https://www.douban.com/people/286958691/notes?start={{(page-1)*10}}&type=note",
+    "lastUpdateTime": "1749972518546",
+    "loginUrl": "https://www.douban.com",
+    "respondTime": 180000,
+    "ruleBookInfo": [],
+    "ruleContent": {
+      "content": "<js>\nif(/data:/.test(baseUrl)){\nurl = String(java.hexDecodeToString(result)).replace(/douban:/,'https:');\nresult = String(java.ajax(url));\n}\nresult = result.replace(\n  /<div class=\"rich-content topic-richtext\">([\\s\\S]+?)<\\/div>/g,\n  function(match, innerContent) {\n    var modifiedContent = innerContent.replace(/\\n+/g, \"</p><p data-align=\\\"left\\\">\");  \n    return `<div class=\"rich-content topic-richtext\">${modifiedContent}</div>`;\n  }\n);\njava.setContent(result);\nresult = String(java.getString(\"@@class.rich-content topic-richtext.0@html||id.link-report@html\"));\nvideo = String(java.getString(\"@@tag.video@src\"));\nif(video){\n\tresult = result+\"音视频链接：\"+video+\"\\n❗️刷新正文跳转播放音视频\"\n\t}\n\tresult\n</js>",
+      "imageStyle": "FULL",
+      "payAction": "<js>\nJSON.stringify([{\n\ttitle:book.name\n\t}])\n</js>\n$.[*]",
+      "replaceRegex": "##<img src=\".*?\">\\s*.*?\\d+个成员\\s*"
+    },
+    "ruleExplore": {
+      "author": ".title+td@text",
+      "bookList": "class.olt@tr[!0:5]||class.result||class.note-container||tag.div.1",
+      "bookUrl": "data:donban;base64,{{java.base64Encode(java.getString(\"@data-url||tag.a.0@href\"))}},{\"type\":\"\"}",
+      "intro": "时间:{{@@class.time@text}}{{@@class.info@text}}{{@@class.pub-date@text}}<br/>{{@@class.note@html}}",
+      "name": "class.title@a@title||h3@text||tag.div@text@js:java.put(\"tit\",result)"
+    },
+    "ruleSearch": {
+      "author": "{{java.getString(\"$.target.owner.type\")==\"user\"?java.getString(\"$.target.owner.name\"):java.getString(\"$.target.card_subtitle\")}}##\\s.*|\\{.*",
+      "bookList": "$..[?(@.target_type=='topic' || @.target_type=='note' || @.target_type=='user')]",
+      "bookUrl": "<js>\nif(java.getString(\"$.type_name\")==\"用户\"){\n\tresult = java.getString(\"$.target.url\")+\"notes\"\n\t}else{\n\t\tresult = `data:donban;base64,${java.base64Encode(java.getString(\"$.target.uri\"))},{\"type\":\"\"}`\n\t\t}\n</js>",
+      "coverUrl": "$.avatar",
+      "intro": "&emsp;&emsp;{{$.target.abstract}}\n<js>\nlet type_name = java.getString(\"$.type_name\");\nlet tishi = \"---复制下面文字添加至发现规则--\";\n\nif(type_name==\"用户\" || type_name==\"日记\"){\n\tresult = result + `\\n&lrm;\\n${tishi}\\n&lrm;\\n${java.getString(\"$.target.name||$.target.owner.name\")}的日记::${java.getString(\"$.target.url||$.target.owner.url\")}notes?start={{(page-1)*10}\\}&type=note`\n\t\n\t}else if(type_name==\"讨论\"){\n\t\tresult = result + `\\n&lrm;\\n🔰所属小组:${java.getString(\"$.target.owner.name\")}\\n${tishi}\\n&lrm;\\n${java.getString(\"$.target.owner.name\")}::https://www.douban.com/group/${java.getString(\"$.target.owner.id\")}/discussion?start={{(page-1)*25}\\}`\n\t\t\n\t\t}\n</js>",
+      "kind": "$.type_name",
+      "name": "$.target.title||$.target.name||$..title"
+    },
+    "ruleToc": {
+      "chapterList": "<js>\nif(/data:/.test(baseUrl)){\n\tresult = \"<h3>\"+book.name+\"</h3>\"\n\t}\nresult\n</js>\nclass.note-container||tag.h3",
+      "chapterName": "h3@text",
+      "chapterUrl": "@data-url",
+      "nextTocUrl": "@js:\nif(!/data:|start=10/.test(baseUrl)){\nlet page = Number(/span class=\"next\">/.test(result)?result.match(/>(\\d+)<\\/a>\\s+<span class=\"next\">/)[1]:0);\npage = page>10?10:page;\nlist = [];\nfor(i=2;i<=2;i++){\n\tlist.push(baseUrl+\"?start=\"+(i-1)*10+\"&type=note\")\n\t}\nlist\n}",
+      "updateTime": "class.pub-date@text"
+    },
+    "searchUrl": "https://m.douban.com/rexxar/api/v2/search?q={{key}}&type=&loc_id=&start={{(page-1)*10}}&count=10&sort=relevance&ck=5SkZ,{\"headers\":{\n\t\"referer\":\"https://www.douban.com/search?source=suggest&q={{java.encodeURI(key)}}\"\n\t}}",
+    "weight": 0
+  }
+]
