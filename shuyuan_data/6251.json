@@ -1,0 +1,52 @@
+[
+  {
+    "bookSourceComment": "2025/6/18\nby天天的鸟蛋蛋\n正文 by世界 by柚屿",
+    "bookSourceName": "哔哩轻",
+    "bookSourceType": 0,
+    "bookSourceUrl": "哔哩轻",
+    "concurrentRate": "5000",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "header": "{\n    \"Upgrade-Insecure-Requests\": \"1\",\n    \"Accept\": \"*/*\",\n    \"Accept-Language\": \"zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7\",\n    \"Cookie\": \"night=1\",\n    \"User-Agent\": \"Mozilla/5.0 (Linux; Android 10; yolo) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.2987.108 Mobile Safari/537.36\" \n}",
+    "jsLib": "var bilinovel=\"https://www.bilinovel.com/\"\nvar bilimanga=\"https://www.bilimanga.net/\"\nvar headers_bilinovel  =JSON.stringify({\n    \"Upgrade-Insecure-Requests\": \"1\",\n    \"Accept\": \"*/*\",\n    \"Accept-Language\": \"zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7\",\n    \"Cookie\": \"night=1\",\n    \"Referer\": bilinovel,\n    \"User-Agent\": \"Mozilla/5.0 (Linux; Android 10; yolo) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.2987.108 Mobile Safari/537.36\" \n})\nvar headers_bilimanga =JSON.stringify({\n    \"Upgrade-Insecure-Requests\": \"1\",\n    \"Accept\": \"*/*\",\n    \"Accept-Language\": \"zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7\",\n    \"Cookie\": \"night=1\",\n    \"Referer\": bilimanga,\n    \"User-Agent\": \"Mozilla/5.0 (Linux; Android 10; yolo) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.2987.108 Mobile Safari/537.36\" \n})\nfunction b64Url(str) {\n    const { java } = this\n    return `data:;base64,${java.base64Encode(str)},{\"type\":\"bilimanga\"}`; \n}",
+    "lastUpdateTime": "1750299791139",
+    "loginCheckJs": "if (result.body().match(/Just a moment/)) {\n\t  let url = java.ruleUrl;\n\t  java.startBrowserAwait(url, \"验证\");\n\t  result = java.connect(url);\n}\nresult",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": ".book-rand-a@text##著@js:java.t2s(result)",
+      "coverUrl": ".module-item-cover@img@src@js:java.t2s(result)",
+      "intro": "<br>\n分类：{{@.book-meta.0:1@textNodes##\\s##，}}{{book.kind}}\n{{@.book-meta.3@text}}\n~~~\n简介：\n{{@content@text##(^|[。！？─]+[」”」）】]?)##$1<br>}}##,##，@js:java.t2s(result)",
+      "kind": "{{@.tag-small-group@em@text##\\s##,}}@js:java.t2s(result)",
+      "name": ".book-layout@h1@text@js:java.t2s(result)",
+      "tocUrl": "text.开始阅读@href||text.開始閱讀@href",
+      "wordCount": "{{@.book-meta.1@text##\\|.*}}##{{book.kind}}@js:java.t2s(result)"
+    },
+    "ruleContent": {
+      "content": "<js>\nlet url = baseUrl;\nlet Thread = Packages.java.lang.Thread;\n\n// 灰色章节处理\nif (/data/.test(url)) {\n  burl = java.hexDecodeToString(result);\n  if (/baidu.com/.test(burl)) {\n    pre = burl.replace(\"baidu\", \"bilinovel\");\n    url = source.getKey() + java.ajax(pre).match(/prevpage=\"([^\"]+)\"/)[1]; \n    Thread.sleep(1000);\n    java.setContent(src = java.ajax(url));\n  } else {\n  nex = burl.replace(\"cn.bing\", \"www.bilinovel\");\n  \tdo {\n    next = \"Error 1015\";\n    while (next == \"Error 1015\") {\n        Thread.sleep(3000);\n        next = String(java.ajax(nex));\n        if (next != \"Error 1015\") { break; }\n    }\n    nex = source.getKey() + next.match(/nextpage=\"([^\"]+)\"/)[1]; \n    /_\\d+\\.html/.test(nex) ? flag = true : flag = false;\n  } while (flag);\n  url = nex;\n  java.setContent(src = java.ajax(url));\n  }\n}\n// java.log(result)\n\n// 处理页面错误\nif (String(result).match(/1015|503/)) {\n  Thread.sleep(5000);\n  java.setContent(src = java.ajax(url));\n}\n\n// 处理设备检测 \nif(String(result).match(/反馈设备详细信息|不支持/gi)) {\n  // java.log(cookie.getCookie(url));\n  cookie.replaceCookie(url, java.webView(null, url, \"document.cookie\"));\n  Thread.sleep(1000);\n  java.setContent(src = java.ajax(url));\n}\n\nvar src = org.jsoup.Jsoup.parse(src)\nvar h = src.select('[id*=content]>*:not(script):not(.cgo)')\nif (h == \"\") {\n   Thread.sleep(2000)\n   var src = org.jsoup.Jsoup.parse(java.ajax(baseUrl))\n   var h = src.select('[id*=content]>*:not(script):not(.cgo)')\n}\n\n// var st = java.getString('script@html');\nvar st = java.getString('style@html')\n\nif (/woff2/.test(st)) {\n    rule = st.match(/#acontent\\s+p\\s*([^,]+)/)[1];\n    selector = `p${rule}`;\n    c = h.select(selector).text();\n    var f1 = java.queryTTF('https://fastly.jsdelivr.net/gh/yolo52/Yuedu@main/read.ttf');\n    var f2 = java.queryTTF('https://fastly.jsdelivr.net/gh/yolo52/Yuedu@main/bili.ttf');\n    var res = java.replaceFont(c, f1, f2, true);\n    h = String(h).replace(c, res);\n}\n/*备用，实际不需要\nfunction getComic(str) {\n  mat = String(str).match(/<img src.*>/g)\n  if (!mat) return \"\";\n  let html = ''\n  for (i of mat) {\n    html += `<img src=\"${i.match(/data-src=\"(.*?)\"/)[1]}\">\\n`\n  }\n  return html\n}\nh = getComic(h)\n*/\n String(h).replace(/\\s*<\\/?shirika>\\s*/g, '')\njava.log(book.type)\n \nif(book.type==8){\n\tvar options = {\"headers\": {\"User-Agent\": \"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36\",  \"Referer\": bilinovel}};\n\toptions=JSON.stringify(options);\n    var content=java.getString(\"p@text\",h);\nvar img=java.getString(\"img@data-src\",h);\n    java.log(content);\n    \n    var img_data = img.split('\\n').filter(url => url.trim() !== '');\n    var imgTags = img_data.map(item => '<img src=\"' + item + ',' + options + '\">').join('\\n');\n    var result=content + imgTags;    \n\t \t}else {\n\t \t\tvar img=java.getString(\"img@data-src\",h);\n    var options = {\"headers\": {\n    'authority': 'i.motiezw.com',\n    'accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8',\n    'accept-language': 'zh-CN,zh;q=0.9',\n    'cache-control': 'no-cache',\n    'pragma': 'no-cache',\n    'referer': 'https://www.bilimanga.net/',\n    'sec-ch-ua': '\"Not)A;Brand\";v=\"24\", \"Chromium\";v=\"116\"',\n    'sec-ch-ua-mobile': '?1',\n    'sec-ch-ua-platform': '\"Android\"',\n    'sec-fetch-dest': 'image',\n    'sec-fetch-mode': 'no-cors',\n    'sec-fetch-site': 'cross-site',\n    'user-agent': 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Mobile Safari/537.36',\n}};\n    options=JSON.stringify(options);\n    \n    var img_data = img.split('\\n').filter(url => url.trim() !== '');\n    var imgTags = img_data.map(item => '<img src=\"' + item + ',' +  options + '\">').join('\\n');\n    var result= imgTags;\n    }\nresult\n\n</js>",
+      "imageStyle": "FULL",
+      "nextContentUrl": "##var nextpage=\"([^\"]+)\"##$1###\n@js:\nvar res = source.key + result;\nvar next = /_\\d+\\.html/.test(res) ? res : \"\";\nString(next)",
+      "replaceRegex": "##((?<=[\\u4e00-\\u9fa5“‘「（，])\\s+)?<!--\\s*\\（继续下一页\\）\\s*-->\\s*|((?<=[\\u4e00-\\u9fa5“‘「（，])\\s+)?\\（本章未完\\）\\s*"
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "author": ".book-author@text@js:java.t2s(result)",
+      "bookList": ".book-ol@.book-li",
+      "bookUrl": "a@href",
+      "checkKeyWord": "我的@漫画",
+      "coverUrl": "img@data-src@js:java.t2s(result)",
+      "intro": ".book-desc@text@js:java.t2s(result)",
+      "kind": "{{@.corner@text}}分,{{@.tag-small-group@em@text##\\s##,}}@js:java.t2s(result)",
+      "name": ".book-title@text@js:java.t2s(result)"
+    },
+    "ruleToc": {
+      "chapterList": "<js>\nvar detail = result.match(/.*detail\\/.*/);\nif (detail) {\n     book.type=64     \n} else {\n\t\t  book.type=8  \n\t  }\n\t\tjava.log(book.type)   \nvar JsDom = Packages.org.jsoup.Jsoup;\nvar Document = Packages.org.jsoup.nodes.Document;\nvar Element = Packages.org.jsoup.nodes.Element;\nvar document = JsDom.parse(src);\n\nvar result = [];\n\nvar volumes = document.select(\".catalog-volume\");\nfor (var i = 0; i < volumes.size(); i++) {\n    var volElement = volumes.get(i);\n    \n   \n    var volTitle = \"\";\n    var volBar = volElement.select(\".chapter-bar\").first();\n    if (volBar) {\n        volTitle = volBar.text().trim();\n    }\n    \n   \n    var chapters = volElement.select(\".chapter-li\");\n    for (var j = 0; j < chapters.size(); j++) {\n        var chapter = chapters.get(j);\n        var link = chapter.select(\"a\").first();\n        \n        if (link) {\n            var entry = {\n                \"text\": link.text().trim(),\n                \"url\": link.attr(\"href\").trim(),\n                \"vol\": volTitle\n            };\n            result.push(entry);\n        }\n    }\n}\n\nresult;</js>",
+      "chapterName": "text",
+      "chapterUrl": "url",
+      "updateTime": "vol"
+    },
+    "searchUrl": "<js>\nfunction processKey() {\n  var pattern = /(?:\\s+)?@(小说|漫画)(?:\\s+)?$/;\n  var match = key.match(pattern);\n   let originalType = 0;\n  if (match) {\n      key = key.replace(pattern, \"\").trim();\n      originalType = match[1] === \"漫画\" ? 1 : 0;\n  }\n   return {\n   \ttext: key,\n    type: originalType\n  };\n}\nvar result = processKey(); \n\nvar keyxmode=result.type;\n//java.log(keyxmode);\nif(keyxmode == 0){\n    java.log(\"当前为小说模式\");\n    \n    page==1?\n'https://www.bilinovel.com/search.html?searchkey='+result.text+',{\"headers\": {\"referer\": \"https://www.bilinovel.com/search.html\"}}'\n:\n\n'https://www.bilinovel.com/search/'+result.text+'_{{page}}.html,{\"headers\": {\"referer\": \"${bilinovel}search.html\"}}'\n    \n}else{\n    java.log(\"当前为漫画模式模式\");\n    page==1?\n'https://www.bilimanga.net/search.html?searchkey='+result.text+',{\"headers\": {\"referer\": \"https://www.bilimanga.net/search.html\"}}'\n:\n\n'https://www.bilimanga.net/search/'+result.text+'_{{page}}.html,{\"headers\": {\"referer\": \"https://www.bilimanga.net/search.html\"}}'\n    \n}\n</js>",
+    "weight": 0
+  }
+]

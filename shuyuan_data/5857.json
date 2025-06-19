@@ -1,0 +1,50 @@
+[
+  {
+    "bookSourceName": "得奇小说",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.deqixs.com",
+    "bookUrlPattern": "https://www.deqixs.com/xiaoshuo/\\d+/",
+    "concurrentRate": "function getSearchOpt() {\n\t var { java, key } = this\n\t key = key ? java.put(\"key\", key) : java.get(\"key\")\n\t return  \",\" + JSON.stringify(\n\t \t  {\n\t \t  \t  \"charset\": \"GBK\",\n\t \t  \t  \"method\": \"POST\",\n\t \t  \t  \"body\": `searchkey=${key}&searchtype=all`\n\t \t  \t}\n\t \t)\n}",
+    "customOrder": -92829,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "exploreUrl": "[{\"title\":\"最近更新\",\"url\":\"https://www.deqixs.com/xiaoshuo/1-{{page}}.html\",\"style\":{\"layout_flexBasisPercent\":0.4,\"layout_flexGrow\":1}},{\"title\":\"热门小说\",\"url\":\"https://www.deqixs.com/xiaoshuo/2-{{page}}.html\",\"style\":{\"layout_flexBasisPercent\":0.4,\"layout_flexGrow\":1}}]",
+    "header": "@js:\nJSON.stringify({\n  \"User-Agent\": \"Mozilla/5.0 (Linux; Android 12; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36\",\n  \"Referer\": baseUrl\n})",
+    "lastUpdateTime": "1750279116715",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": ".itemtxt@p.1@text",
+      "coverUrl": ".item@img@src@js:result=\"https:\"+result",
+      "init": "",
+      "intro": "class.des bb.0@text",
+      "kind": ".itemtxt@p.0@span[0,1,2]@text&&.itemtxt@ul@li.0@i@text",
+      "lastChapter": ".itemtxt@ul@li.0@text",
+      "name": "h1@a@text",
+      "wordCount": "h1@i@text"
+    },
+    "ruleContent": {
+      "content": ".con@p@html",
+      "nextContentUrl": "text.下一页@href",
+      "replaceRegex": "##\\s*({{ book.durChapterTitle }}|.*作者：.*|\\(本章完\\)|PS：.*求推荐！|PS：.*求收藏！|感谢.*打赏.*|感谢.*推荐票.*|感谢.*月票.*|（.*月票.*）|（为大家的.*票加更.*）|第二更在.*|为防止采集.*支持！|网址：deqixs\\.com|必应.*说网|55\\..{3}.*|\\(\\s*\\)|如果您.*观看！|（看完.*阅读！.*）|loadAdv.*)\\s*"
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "author": "p.1@text",
+      "bookList": "@js:\npath = '.item';\nu=java.get('url');\nc=java.getElement(path);\nif (!c.length && result.includes('no-js')) {\n  cookie.removeCookie(source.getKey());\n  res = java.startBrowserAwait(u,'ver')\n  java.setContent(res.body())\n  java.getElement(path);\n}",
+      "bookUrl": "h3@a@href",
+      "coverUrl": "img@src",
+      "kind": "p.0@span[0,1,2]@text&&ul@li.0@i@text",
+      "lastChapter": "ul@li.0@a@text",
+      "name": "h3@a@text"
+    },
+    "ruleToc": {
+      "chapterList": "#list li a",
+      "chapterName": "text",
+      "chapterUrl": "href##$##,{'webView': true}",
+      "nextTocUrl": "text.下一页@href"
+    },
+    "searchUrl": "@js:\nurl = '/tag/?key={{key}}';\noption={\"body\":\"keyword=\"+key,\"method\":\"POST\"};\noption.headers={\"User-Agent\":\"Mozilla/5.0 (Linux; Android 12; Nexus 5X Build/NRD90M); wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/96.0.4664.104 Mobile Safari/537.36\"};\njava.put('url',String(url+','+JSON.stringify(option)))",
+    "weight": 0
+  }
+]
