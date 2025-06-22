@@ -1,0 +1,55 @@
+[
+  {
+    "bookSourceComment": "25.6.20",
+    "bookSourceGroup": "人机验证",
+    "bookSourceName": "文字谷",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://m.wenzigu.cc/",
+    "customOrder": 1,
+    "enabled": false,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "@js:\n\nvar sort=[],\npush=(title,surl,size)=>sort.push({\n    title: title,\n    url: surl,\n    style: {\n      layout_flexGrow: 1,\n      layout_flexBasisPercent: size,\n     }\n  });\n\nkind=[\"༺ˇ»`ʚ分类ɞ´«ˇ༻\",\"玄幻魔法\",\n\"仙侠修真\",\"都市言情\",\"历史军事\",\n\"网游竞技\",\"科幻小说\",\"恐怖灵异\",\"其他类型\"];\nkind.map((title,i)=>{\n\tlink=`wensort_${i}_{{page}}.html`;\n\tif(i==0){\n\t\tsize=1\n\t\t}else{size=0.25}\n\tpush(title,link,size)\n\t});\n\npush(\"最近更新\",\"wenallbook_{{page}}.html\",0.25,0.25);\n\n\npush(\"༺ˇ»`ʚ排行榜ɞ´«ˇ༻\",null,1,1);\n\n\n[[\"日点击榜\",\"dayvisit\"],[\"周点击榜\",\"weekvisit\"],[\"月点击榜\",\"monthvisit\"],[\"总点击榜\",\"allvisit\"],[\"总收藏榜\",\"goodnum\"],[\"字数排行\",\"size\"],[\"日推荐榜\",\"dayvote\"],[\"周推荐榜\",\"weekvote\"],[\"月推荐榜\",\"monthvote\"],[\"总推荐榜\",\"allvote\"],[\"最新入库\",\"postdate\"],[\"最近更新\",\"lastupdate\"]].map([title,uri]=>push(title, `wentop_${uri}_{{page}}.html`, 0.25));\n\n\n\n\n\nJSON.stringify(sort);",
+    "header": "{\"User-Agent\": \"Mozilla/5.0 (Linux; U; Android 10; zh-cn; MI CC 11)  AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/100.0.4896.127 Mobile Safari/537.36 XiaoMi/MiuiBrowser/18.1.8 swan-mibrowser\"}",
+    "lastUpdateTime": "1750423014931",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "[property$=author]@content",
+      "coverUrl": "[property$=image]@content",
+      "intro": "🕰  更新时间：\n{{@@[property$=update_time]@content##T.*}}\n📜  内容简介：\n{{//p[@style=\"all:unset;display:inline;clear:right;line-height:1.5;text-indent:2em;color:#666;\"]/text()}}##(^|[。！？……；]+[”」）】]?)##$1<br>",
+      "kind": "[property~=category|status|update_time]@content##T.*",
+      "lastChapter": "{{@@[property$=chapter_name]@content##正文卷.|正文.|VIP卷.|默认卷.|卷_|VIP章节.|免费章节.|章节目录.|最新章节.|[\\(（【].*?[求含理更谢乐发推票盟补加字].*?[】）\\)]}}•{{@@[property$=update_time]@content##T.*}}\n@js:result\n.replace(\"••\",\"\")\n.replace(/^(\\d+).第/,'第')\n.replace(/^(\\d+)[、．]第.+章/,'第$1章')\n.replace(/^(\\d+)、\\d+、/,'第$1章 ')\n.replace(/^(\\d+)、\\d+/,'第$1章')\n.replace(/^(\\d+)、/,'第$1章 ')\n.replace(/^(第.+章)\\s?第.+章/,'$1')\n.replace(/第\\s(.+)\\s章/,'第$1章')\n.replace(/.*(chapter|Chapter)\\s?(\\d+)\\s?/,'$1 $2 ')\n.replace(/\\(.+\\)/,'')\n.replace(/\\[|。/,'')\n.replace(/第([零一二两三四五六七八九十百千]+)章/g,java.toNumChapter(result))\n##(章)([^\\s]+)(\\s·)##$1 $2$3",
+      "name": "[property$=book_name]@content",
+      "tocUrl": "text.目录列表@href"
+    },
+    "ruleContent": {
+      "content": "#content@p@text",
+      "nextContentUrl": ".next@href",
+      "replaceRegex": "##{{book.name}}第.*章.*"
+    },
+    "ruleExplore": {
+      "author": "li@textNodes##\\(\\d+.*\\)",
+      "bookList": ".ph_list@ul@li",
+      "bookUrl": "a@href",
+      "coverUrl": "a@href\n@js:\nvar id=result.match(/\\d+/);\nvar iid=parseInt(id/1000);\n`https://m.wenzigu.cc/files/article/image/${iid}/${id}/${id}s.jpg`",
+      "kind": "li@textNodes##.*\\(|\\)",
+      "name": "strong@text"
+    },
+    "ruleSearch": {
+      "author": "a.1@text",
+      "bookList": "<js>\nif (result.match(/Just a moment/)) {\n\tcookie.removeCookie(baseUrl);\n\tjava.startBrowserAwait(baseUrl,\"验证\");\n\tresult=java.ajax(baseUrl);\n}\nresult;\n</js>\n.searchcon@ul",
+      "bookUrl": "##\\,\\'(.*)\\'\\)\\;##https://m.wenzigu.cc$1###",
+      "checkKeyWord": "我的训练家模拟器",
+      "coverUrl": "{{@@##\\,\\'(.*)\\'\\)\\;##https://m.wenzigu.cc$1###}}\n@js:\nvar id=result.match(/\\d+/);\nvar iid=parseInt(id/1000);\n`https://m.wenzigu.cc/files/article/image/${iid}/${id}/${id}s.jpg`",
+      "kind": "{{@@span.-1@text}}\n{{@@.lastupdate@textNodes##\\(|\\)|\\s.*}}",
+      "name": "h3@a@text"
+    },
+    "ruleToc": {
+      "chapterList": "#listchapter@dd@a",
+      "chapterName": "text",
+      "chapterUrl": "href"
+    },
+    "searchUrl": "modules/article/search.php?searchkey={{key}}&type=articlename&submit=搜索",
+    "weight": 0
+  }
+]

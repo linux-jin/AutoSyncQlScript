@@ -1,0 +1,48 @@
+[
+  {
+    "bookSourceComment": "25.4.27",
+    "bookSourceGroup": "🍒精选❶",
+    "bookSourceName": "🍒笔趣阁",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.bvquge.com/",
+    "customOrder": 63,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "exploreUrl": "@js:\n\nvar sort=[],\npush=(title,surl,size)=>sort.push({\n    title: title,\n    url: surl,\n    style: {\n      layout_flexGrow: 1,\n      layout_flexBasisPercent: size,\n     }\n  });\n\npush(\"༺ˇ»`ʚ排行榜ɞ´«ˇ༻\",null,1,1);\n\n[[\"玄幻小说\",\"xuanhuan\"],[\"仙侠小说\",\"xianxia\"],[\"都市小说\",\"dushi\"],[\"历史小说\",\"lishi\"],[\"科幻小说\",\"kehuan\"],[\"轻小说\",\"qing\"],[\"悬疑小说\",\"xuanyi\"],[\"奇幻小说\",\"qihuan\"],[\"游戏小说\",\"youxi\"],[\"诸天无限\",\"zhutianwuxian\"],[\"军事小说\",\"junshi\"],[\"武侠小说\",\"wuxia\"],[\"体育小说\",\"tiyu\"],[\"穿越小说\",\"chuanyue\"],[\"言情小说\",\"yanqing\"]].map([title,uri]=>push(title, `paihang/${uri}-{{page}}`, 0.25));\n\n\n\npush(\"༺ˇ»`ʚ最近更新ɞ´«ˇ༻\",null,1,1);\n\n\n[[\"玄幻小说\",\"xuanhuan\"],[\"仙侠小说\",\"xianxia\"],[\"都市小说\",\"dushi\"],[\"历史小说\",\"lishi\"],[\"科幻小说\",\"kehuan\"],[\"轻小说\",\"qing\"],[\"悬疑小说\",\"xuanyi\"],[\"奇幻小说\",\"qihuan\"],[\"游戏小说\",\"youxi\"],[\"诸天无限\",\"zhutianwuxian\"],[\"军事小说\",\"junshi\"],[\"武侠小说\",\"wuxia\"],[\"体育小说\",\"tiyu\"],[\"穿越小说\",\"chuanyue\"],[\"言情小说\",\"yanqing\"]].map([title,uri]=>push(title, `${uri}<,/{{page}}>`, 0.25));\n\n\n\npush(\"༺ˇ»`ʚ完本小说ɞ´«ˇ༻\",null,1,1);\n\n\n\n[[\"玄幻小说\",\"xuanhuan\"],[\"仙侠小说\",\"xianxia\"],[\"都市小说\",\"dushi\"],[\"历史小说\",\"lishi\"],[\"科幻小说\",\"kehuan\"],[\"轻小说\",\"qing\"],[\"悬疑小说\",\"xuanyi\"],[\"奇幻小说\",\"qihuan\"],[\"游戏小说\",\"youxi\"],[\"诸天无限\",\"zhutianwuxian\"],[\"军事小说\",\"junshi\"],[\"武侠小说\",\"wuxia\"],[\"体育小说\",\"tiyu\"],[\"穿越小说\",\"chuanyue\"],[\"言情小说\",\"yanqing\"]].map([title,uri]=>push(title, `wanjie/${uri}-{{page}}`, 0.25));\n\n\n\n\n\n\nJSON.stringify(sort);",
+    "lastUpdateTime": "1750423575996",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "##作者：([^<]+)<##$1###",
+      "coverUrl": ".bookdetail@img@src",
+      "intro": "&nbsp;\n🕰  更新：{{@@.booktxt@p.-1@text##更新：|\\s.*}}\n👤  阅读：{{@@##阅读：([^<]+)<##$1###}}\n📜  简介：\n{{@@.des@html}}\n{{\"\\n\"+\"​\"}}\n❤️  猜你喜欢：\n{{@@class.list clear@li@a.1@text}}\n📖  新章抢先看：\n{{@@.newest@a.1@html}}",
+      "kind": "{{@@##状态：([^<]+)<##$1###}}\n{{@@##类别：([^<]+)<##$1###}}\n{{@@.booktxt@p.-1@text##更新：|\\s.*}}",
+      "lastChapter": "{{@@.newest@h3@text##正文卷.|正文.|VIP卷.|默认卷.|卷_|VIP章节.|免费章节.|章节目录.|最新章节.|[\\(（【].*?[求含理更谢乐发推票盟补加字].*?[】）\\)]}}•{{@@.booktxt@p.-1@text##更新：|\\s.*}}\n@js:result\n.replace(\"••\",\"\")\n.replace(/^(\\d+).第/,'第')\n.replace(/^(\\d+)[、．]第.+章/,'第$1章')\n.replace(/^(\\d+)、\\d+、/,'第$1章 ')\n.replace(/^(\\d+)、\\d+/,'第$1章')\n.replace(/^(\\d+)、/,'第$1章 ')\n.replace(/^(第.+章)\\s?第.+章/,'$1')\n.replace(/第\\s(.+)\\s章/,'第$1章')\n.replace(/.*(chapter|Chapter)\\s?(\\d+)\\s?/,'$1 $2 ')\n.replace(/\\(.+\\)/,'')\n.replace(/\\[|。/,'')\n.replace(/第([零一二两三四五六七八九十百千]+)章/g,java.toNumChapter(result))\n##(章)([^\\s]+)(\\s·)##$1 $2$3",
+      "name": ".booktxt@h1@text"
+    },
+    "ruleContent": {
+      "content": ".con@p@html",
+      "nextContentUrl": "text.下一页@href",
+      "replaceRegex": "##如果您中途有事离开.*接着观看.|\\(\\s*\\)|.本章完.|第.*章.*|本作品由.*整理上传.*"
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "author": "##作者：([^<]+)<##$1###",
+      "bookList": ".item",
+      "bookUrl": "a.0@href",
+      "checkKeyWord": "我的模拟长生路",
+      "coverUrl": "img@src",
+      "kind": "{{@@span@text}}\n{{@@i.1@text}}",
+      "lastChapter": "{{@@li.0@a@text##正文卷.|正文.|VIP卷.|默认卷.|卷_|VIP章节.|免费章节.|章节目录.|最新章节.|[\\(（【].*?[求含理更谢乐发推票盟补加字].*?[】）\\)]}}•{{@@i.1@text}}\n@js:result\n.replace(\"••\",\"\")\n.replace(/^(\\d+).第/,'第')\n.replace(/^(\\d+)[、．]第.+章/,'第$1章')\n.replace(/^(\\d+)、\\d+、/,'第$1章 ')\n.replace(/^(\\d+)、\\d+/,'第$1章')\n.replace(/^(\\d+)、/,'第$1章 ')\n.replace(/^(第.+章)\\s?第.+章/,'$1')\n.replace(/第\\s(.+)\\s章/,'第$1章')\n.replace(/.*(chapter|Chapter)\\s?(\\d+)\\s?/,'$1 $2 ')\n.replace(/\\(.+\\)/,'')\n.replace(/\\[|。/,'')\n.replace(/第([零一二两三四五六七八九十百千]+)章/g,java.toNumChapter(result))\n##(章)([^\\s]+)(\\s·)##$1 $2$3",
+      "name": "h3@a@text"
+    },
+    "ruleToc": {
+      "chapterList": "#list@li@a",
+      "chapterName": "text##^\\d+.|(章\\D*)\\d*\\.?##$1",
+      "chapterUrl": "href",
+      "nextTocUrl": "text.下一页@href"
+    },
+    "searchUrl": "so/{{key}}",
+    "weight": 0
+  }
+]

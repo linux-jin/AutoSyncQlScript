@@ -1,0 +1,56 @@
+[
+  {
+    "bookSourceComment": "25.4.20",
+    "bookSourceGroup": "🍒精选❶",
+    "bookSourceName": "🍒PO文屋",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://m.popofree.com/",
+    "customOrder": 65,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "exploreUrl": "@js:\n\nvar sort=[],\npush=(title,surl,size)=>sort.push({\n    title: title,\n    url: surl,\n    style: {\n      layout_flexGrow: 1,\n      layout_flexBasisPercent: size,\n     }\n  });\n\n\npush(\"༺ˇ»`ʚ排行榜ɞ´«ˇ༻\",null,1);\n\n[[\"总排行榜\",\"allvisit\"],[\"总推荐榜\",\"allvote\"],[\"月排行榜\",\"monthvisit\"],[\"月推荐榜\",\"monthvote\"],[\"周排行榜\",\"weekvisit\"],[\"周推荐榜\",\"weekvote\"],[\"最新入库\",\"postdate\"],[\"最近更新\",\"lastupdate\"],[\"转载更新\",\"masterupdate\"],[\"总收藏榜\",\"goodnum\"],[\"------\"],[\"字数排行\",\"size\"]].map([title,uri]=>push(title, `https://www.popofree.com/top/${uri}_{{page}}/`,  0.25));\n\n\n\n\n\nvar xiaoyu=[\"༺ˇ»`ʚ全部ɞ´«ˇ༻\",\"玄幻\",\n\"修真\",\"言情\",\"武侠\",\n\"都市\",\"科幻\",\"网游\",\n\"恐怖\",\"耽美\",\"历史\",\"高辣文\",\"同人\",\"腹黑\",\"种田文\",\"高干文\",\"其他\",\"百合\"];\nxiaoyu.map((title,i)=>{\n\tlink=`wapsort/${i}_{{page}}.html`;\n\tif(i==0){\n\t\tsize=1\n\t\t}else{size=0.25}\n\tpush(title,link,size)\n\t});\n\npush(\"全本\",\"https://www.popofree.com/modules/article/articlelist.php?fullflag=1&page={{page}}\",0.25);\n\n\n\n\n\n\nJSON.stringify(sort);",
+    "header": "{\"User-Agent\": \"Mozilla/5.0 (Linux; Android 9) Mobile Safari/537.36\"}",
+    "lastUpdateTime": "1750423638165",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": ".article_info_td@h2@text",
+      "coverUrl": "{{baseUrl}}\n@js:\nvar id=result.match(/\\d+/);\nvar iid=parseInt(id/1000);\n`https://img.popofree.com/image/${iid}/${id}/${id}s.jpg`",
+      "intro": "<p>\n🕰  更新时间：{{@@.article_info_td@time@text}}\n\n🌟  总点击：{{@@##总点击：([^<]+)<##$1###}}\n\n⭐️  月点击：{{@@##周点击：([^<]+)<##$1###}}\n\n✨  日点击：{{@@##日点击：([^<]+)<##$1###}}\n\n📜  简介：\n{{@@[style=\"padding:5px;font-size:12px;color:#666; line-height:auto\"]@pre@text##(^|[。！……；]+[”」）】]?)##$1<br>}}##《{{book.name}}》",
+      "kind": "{{@@td.article_info_td@a.0@text}}\n{{@@.article_info_td@time@text}}",
+      "lastChapter": "{{@@td.article_info_td@a.1@text##正文卷.|正文.|VIP卷.|默认卷.|卷_|VIP章节.|免费章节.|章节目录.|最新章节.|[\\(（【].*?[求含理更谢乐发推票盟补加字].*?[】）\\)]}}•{{@@.article_info_td@time@text}}\n@js:result\n.replace(\"••\",\"\")\n.replace(/^(\\d+).第/,'第')\n.replace(/^(\\d+)[、．]第.+章/,'第$1章')\n.replace(/^(\\d+)、\\d+、/,'第$1章 ')\n.replace(/^(\\d+)、\\d+/,'第$1章')\n.replace(/^(\\d+)、/,'第$1章 ')\n.replace(/^(第.+章)\\s?第.+章/,'$1')\n.replace(/第\\s(.+)\\s章/,'第$1章')\n.replace(/.*(chapter|Chapter)\\s?(\\d+)\\s?/,'$1 $2 ')\n.replace(/\\(.+\\)/,'')\n.replace(/\\[|。/,'')\n.replace(/第([零一二两三四五六七八九十百千]+)章/g,java.toNumChapter(result))\n##(章)([^\\s]+)(\\s·)##$1 $2$3",
+      "name": "[style=\"background:none;\"]@text",
+      "tocUrl": "a[style=\"color:red;\"]@href"
+    },
+    "ruleContent": {
+      "content": "#nr1@html",
+      "replaceRegex": "##\\s*.本章完.\\s*|^\\s*{{String(chapter.title).replace(/^\\d\\./,'($0)?')}}\\s*|第.*章.*|.*第.*章.*|（\\s\\d+\\s）$"
+    },
+    "ruleExplore": {
+      "author": "strong@text||.l03@text||.title@span@text##作者：",
+      "bookList": ".common-bookele||#articlelist@ul.1@li||#alistbox",
+      "bookUrl": "a.1@href##www.(.*)read(.*)/##m.$1novel$2.html",
+      "coverUrl": "a.1@href\n@js:\nvar id=result.match(/\\d+/);\nvar iid=parseInt(id/1000);\n`https://img.popofree.com/image/${iid}/${id}/${id}s.jpg`",
+      "intro": "span.abstract@a@text||.intro@text##《{{book.name}}》...",
+      "kind": ".l01@text&&.l07@text&&.lastupdate@time@text",
+      "lastChapter": ".l04@text##正文卷.|正文.|VIP卷.|默认卷.|卷_|VIP章节.|免费章节.|章节目录.|最新章节.|[\\(（【].*?[求含理更谢乐发推票盟补加字].*?[】）\\)]|{{book.name}}\n@js:result\n.replace(\"••\",\"\")\n.replace(/^(\\d+).第/,'第')\n.replace(/^(\\d+)[、．]第.+章/,'第$1章')\n.replace(/^(\\d+)、\\d+、/,'第$1章 ')\n.replace(/^(\\d+)、\\d+/,'第$1章')\n.replace(/^(\\d+)、/,'第$1章 ')\n.replace(/^(第.+章)\\s?第.+章/,'$1')\n.replace(/第\\s(.+)\\s章/,'第$1章')\n.replace(/.*(chapter|Chapter)\\s?(\\d+)\\s?/,'$1 $2 ')\n.replace(/\\(.+\\)/,'')\n.replace(/\\[|。/,'')\n.replace(/第([零一二两三四五六七八九十百千]+)章/g,java.toNumChapter(result))\n##(章)([^\\s]+)(\\s·)##$1 $2$3",
+      "name": "h3@a@text||.l02@a.1@text||h2@a@text##《|》"
+    },
+    "ruleSearch": {
+      "author": "p.0@strong@text",
+      "bookList": "div.common-bookele",
+      "bookUrl": "a.0@href",
+      "checkKeyWord": "我的模拟长生路",
+      "coverUrl": "a.0@href\n@js:\nvar id=result.match(/\\d+/);\nvar iid=parseInt(id/1000);\n`https://img.popofree.com/image/${iid}/${id}/${id}s.jpg`",
+      "kind": "p.1@text##栏目：",
+      "name": ".articlename@text"
+    },
+    "ruleToc": {
+      "chapterList": "div[style=\"overflow: hidden;margin-bottom:10px;\"]@ul@li!-1@a",
+      "chapterName": "text##^\\d+.|(章\\D*)\\d*\\.?##$1",
+      "chapterUrl": "href"
+    },
+    "searchUrl": "s.php,{\n  \"body\": \"type=articlename&s={{key}}\",\n  \"method\": \"POST\"\n}",
+    "weight": 0
+  }
+]

@@ -1,0 +1,46 @@
+[
+  {
+    "bookSourceComment": "//2025.6.19 by.◎辞晨◎\n//js库",
+    "bookSourceGroup": "写源",
+    "bookSourceName": "蛙漫漫画",
+    "bookSourceType": 2,
+    "bookSourceUrl": "https://www.manwamh.com/",
+    "customOrder": -39,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "@js:\nsort=[];\npush=(title,url,type1,type2)=>sort.push({\n\t\ttitle: title,\n\t\turl: url,\n\t\tstyle: {\n\t\t\t\tlayout_flexGrow: type1,\n\t\t\t\tlayout_flexBasisPercent: type2\n\t\t\t}\n\t});\nD=org.jsoup.Jsoup.parse(java.ajax(\"https://www.manwamh.com/category\"))\npush(\"全部🔖分类\",``,1,1)\t\nD.select(\"#area a\").forEach(n=>{\n\tli=n.select(\"a\")\n\tpush(li.text(),`${li.attr(\"href\")}/page/{{page}}`,1,0.39)\n\t})\t\t\nD.select(\"#theme a\").forEach(t=>{\n\t\tpush(t.text(),`${t.attr(\"href\")}/page/{{page}}`,1,0.25)\t\n\t\t});\nD.select(\"#state a\").forEach(n=>{\n\tli=n.select(\"a\")\n\tpush(li.text(),`${li.attr(\"href\")}/page/{{page}}`,1,0.39)\n});\n//java.log(JSON.stringify(sort))\nJSON.stringify(sort)",
+    "header": "@js:\nJSON.stringify({\n  'User-Agent': \"Mozilla/5.0 (Linux; Android 15; V2304A Build/AP3A.240905.015.A2; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/132.0.6834.163 Mobile Safari/537.36\",\n  'sec-ch-ua-platform': \"\\\"Android\\\"\",\n  'origin': baseUrl,\n  'x-requested-with': \"cn.mujiankeji.mbrowser\",\n  'Referer': baseUrl,\n  'Accept-language': \"zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7\"\n})",
+    "jsLib": "{\"crypto\":\"https://cdn.bootcss.com/crypto-js/3.1.9-1/crypto-js.min.js\"}",
+    "lastUpdateTime": "1750473501186",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "h2@text",
+      "coverUrl": "img@src",
+      "intro": "p.0@text",
+      "kind": "{{@@.tag.0:1@text}},{{@@em@text}}",
+      "lastChapter": "span@a.0@text",
+      "name": "h1.1@text"
+    },
+    "ruleContent": {
+      "content": "<js>\nparams = result.match(/params = '([^']+)'/)[1];\nfunction decryptEncryptedData(encryptedData) {\n  const encryptedDataWithIV = CryptoJS.enc.Base64.parse(encryptedData);\n  const iv = CryptoJS.lib.WordArray.create(encryptedDataWithIV.words.slice(0, 16));\n  const encryptedBytes = encryptedDataWithIV.words.slice(4);\n  const encryptedHex = CryptoJS.enc.Hex.stringify(CryptoJS.lib.WordArray.create(encryptedBytes));\n  const keyUtf8 = CryptoJS.enc.Utf8.parse(\"5V&RoR%Jf@pJPydF\");\n  const decrypted = CryptoJS.AES.decrypt(\n    { ciphertext: CryptoJS.enc.Hex.parse(encryptedHex) },\n    keyUtf8,\n    { iv: iv }\n  );\n  const decryptedText = decrypted.toString(CryptoJS.enc.Utf8);\n\n  return decryptedText;\n}\nimg = String(decryptEncryptedData(params)).replace(/\\\\|\\\"/g,'').replace(/.*\\[(.*)\\].*/g,'$1').replace(/\\,/g,'\\n')\nlet url=\"https://six.mhpic.net\";\nresult=img.split('\\n').map(x=>`<img src=\"${url}${x}\">`).join('\\n');\n</js>",
+      "imageStyle": "FULL"
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "bookList": ".comics-card",
+      "bookUrl": "a@href",
+      "coverUrl": ".cover@data-original",
+      "kind": ".tab@text",
+      "lastChapter": "small@text",
+      "name": "h3@text"
+    },
+    "ruleToc": {
+      "chapterList": "<js>\nif(String(result).match(/查看全部/)){\njava.getElements('#chapter-items@a')\n}else{\t java.getElements('.l-box.1@.pure-g.0@a[-1:0]')\n}\n</js>",
+      "chapterName": "text",
+      "chapterUrl": "href"
+    },
+    "searchUrl": "/search?q={{encodeURI(key)}}",
+    "weight": 0
+  }
+]
