@@ -1,0 +1,44 @@
+[
+  {
+    "searchUrl": "/zh_hant/s.php,{\n  \"body\": \"searchkey={{key}}&searchtype=articlename\",\n  \"method\": \"POST\"\n}",
+    "lastUpdateTime": "1750688761292",
+    "ruleToc": {
+      "chapterList": "id.chapterList@class.lazyrender",
+      "chapterName": "a@text",
+      "chapterUrl": "a@href"
+    },
+    "ruleSearch": {
+      "checkKeyWord": "分家后",
+      "bookList": "id.sitebox@dl",
+      "bookUrl": "@dd@h3@a@href",
+      "coverUrl": "@dt@a@img@src",
+      "kind": "@dt@span@text",
+      "name": "@dd@h3@a@text",
+      "author": "",
+      "intro": ".book_des@text",
+      "lastChapter": ".book_other@a@text"
+    },
+    "bookSourceUrl": "https://www.drxsw.com/",
+    "bookSourceType": 0,
+    "bookSourceName": "冬日小说网",
+    "bookSourceGroup": "yvonne",
+    "ruleContent": {
+      "content": "id.TextContent@html",
+      "title": "id.mlfy_main_text@h1@text"
+    },
+    "ruleBookInfo": {
+      "author": ".d_title@span@text",
+      "intro": "id.bookintro@p@text",
+      "init": "",
+      "name": ".d_title@h1@text",
+      "kind": "",
+      "wordCount": "",
+      "lastChapter": "",
+      "coverUrl": "id.bookimg@img@src",
+      "tocUrl": "id.chapterList",
+      "downloadUrls": "",
+      "canReName": ""
+    },
+    "exploreUrl": "玄幻小说::/zh_hant/xuanhuan/{{page}}/\n武侠小说::/zh_hant/wuxia/{{page}}/\n都市小说::/zh_hant/dushi/{{page}}/\n历史小说::/zh_hant/lishi/{{page}}/\n游戏小说::/zh_hant/youxi/{{page}}/\n科幻小说::/zh_hant/kehuan/{{page}}/\n恐怖小说::/zh_hant/kongbu/{{page}}/\n其他小说::/zh_hant/qita/{{page}}/"
+  }
+]

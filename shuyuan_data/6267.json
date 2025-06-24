@@ -1,0 +1,44 @@
+[
+  {
+    "bookSourceComment": "2025/6/24\nby天天的鸟蛋蛋 正文解密无需webView",
+    "bookSourceName": "全本小说quanben",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.quanben.io",
+    "customOrder": 2,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "玄幻::/c/xuanhuan_{{page}}.html\n都市::/c/dushi_{{page}}.html\n言情::/c/yanqing_{{page}}.html\n穿越::/c/chuanyue_{{page}}.html\n青春::/c/qingchun_{{page}}.html\n仙侠::/c/xianxia_{{page}}.html\n灵异::/c/lingyi_{{page}}.html\n悬疑::/c/xuanyi_{{page}}.html\n历史::/c/lishi_{{page}}.html\n军事::/c/junshi_{{page}}.html\n游戏::/c/youxi_{{page}}.html\n竞技::/c/jingji_{{page}}.html\n科幻::/c/kehuan_{{page}}.html\n职场::/c/zhichang_{{page}}.html\n官场::/c/guanchang_{{page}}.html\n现言::/c/xianyan_{{page}}.html\n耽美::/c/danmei_{{page}}.html\n其它::/c/qita_{{page}}.html",
+    "header": "{\"User-Agent\":\"Mozilla/5.0 (Linux; Android 13; OPPO Reno7 5G) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/300.0.0.0 Mobile Safari/537.36 Edg/106.0.1370.42 Firefox/102.0 OPR/68.0.3618.104 Version/13.0 SamsungBrowser/16.0 UCBrowser/13.4.1.1250 QQBrowser/10.5.3739.400 SE 2.X MetaSr 1.0 QIHU 360EE HeyTapBrowser/40.8.30.3 okhttp/4.11.0\"}",
+    "jsLib": "function base64(_str){var staticchars=\"PXhw7UT1B0a9kQDKZsjIASmOezxYG4CHo5Jyfg2b8FLpEvRr3WtVnlqMidu6cN\";var encodechars=\"\";for(var i=0;i<_str.length;i++){var num0=staticchars.indexOf(_str[i]);if(num0==-1){var code=_str[i]}else{var code=staticchars[(num0+3)%62]}var num1=parseInt(Math.random()*62,10);var num2=parseInt(Math.random()*62,10);encodechars+=staticchars[num1]+code+staticchars[num2]}return encodechars}\nfunction s(str) {\n  let arr = [];\n  for (let i = 0; i < str.length; i++) {\n    var r = str.charCodeAt(i);\n    if (r >= 0 && r <= 127) {\n      arr.push('&#' + r + ';');\n    } else {\n      arr.push('&#' + (r - 1) + ';');\n    }\n  }\n  return arr.join('');\n}\nfunction processHTML(html) {\n  var pRegex = /<p\\b[^>]*>.*?<\\/p>/gis;\n  var pTags = html.match(pRegex) || [];  \n  for (let i = 10; i < pTags.length; i++) {\n    if (i === 10 || i === 11) {\n      pTags[i] = pTags[i].replace(/(<p\\b[^>]*>).*?(<\\/p>)/, '$1...$2');\n    } else if (i % 2 === 0) {\n      var contentMatch = pTags[i].match(/<p\\b[^>]*>(.*?)<\\/p>/s);\n      if (contentMatch) {\n        var originalContent = contentMatch[1];\n        var processedContent = s(originalContent);\n        pTags[i] = pTags[i].replace(\n          /<p\\b[^>]*>.*?<\\/p>/s, \n          `<p${pTags[i].match(/<p\\b([^>]*)>/s)?.[1] || ''}>${processedContent}</p>`\n        );\n      }\n    }\n  }\n  var lastIndex = 0;\n  var result = '';\n  const tempHtml = html.replace(pRegex, () => {\n    const replacement = pTags[lastIndex] || '';\n    lastIndex++;\n    return replacement;\n  });\n  return tempHtml;\n}",
+    "lastUpdateTime": "1750725274519",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "[property$=author]@content",
+      "coverUrl": "[property$=image]@content",
+      "intro": "[property$=description]@content",
+      "kind": "[property~=category|status]@content",
+      "name": "[property$=book_name]@content",
+      "tocUrl": "text.章节列表@href"
+    },
+    "ruleContent": {
+      "content": "#content p@html\n<js>\nprocessHTML(result);\n</js>"
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "author": "[itemprop=\"author\"]@text",
+      "bookList": ".box>.row",
+      "bookUrl": "h3@a@href",
+      "coverUrl": "img@src",
+      "intro": "[itemprop=\"description\"]@text",
+      "name": "h3@text"
+    },
+    "ruleToc": {
+      "chapterList": "<js>\nvar r1=java.getString(\".list3.0@html\",src)\nvar r3=java.getString(\".list3.1@html\",src)\nvar callback=src.match(/var callback\\='(.*)';/)[1];\nvar book_id=src.match(/load_more\\('(\\d+)'\\)/)[1];\nvar callback_base64= base64(callback)\nvar head = JSON.stringify({\n  headers: {\n\"Referer\": \"https://www.quanben.io/n/wodenushen/list.html\"\n  }\n});\nvar url=\"https://www.quanben.io/index.php?c=book&a=list.jsonp&callback=\"+callback+\"&book_id=\"+book_id+\"&b=\"+callback_base64+\",\"+head\nvar url_src=java.ajax(url)\n//java.log(url_src)\nvar url_src_match=`${callback}\\((.*)\\)`\njava.log(url_src_match)\nvar url_src_json=url_src.match(url_src_match)[1];\nurl_src_json1=url_src_json.match(/\\((.*)\\)/)[1];\n//java.log(url_src_json1)\nvar url_src_json_data = JSON.parse(url_src_json1);\nvar r2=url_src_json_data.content\nvar r=r1+r2+r3\n//java.log(r)\n//java.log(JSON.stringify(url_src_json_data))\nr;\n</js>\n.list3@li@a",
+      "chapterName": "text",
+      "chapterUrl": "href"
+    },
+    "searchUrl": "/index.php?c=book&a=search&keywords={{key}}",
+    "weight": 0
+  }
+]
