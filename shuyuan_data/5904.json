@@ -1,0 +1,49 @@
+[
+  {
+    "bookSourceComment": "by天天的鸟蛋\nby 壬二酸 \n正文解密，目录下一页by一包薯条 ，河佬，目录下一页修复by天天的鸟蛋蛋\n壬二酸",
+    "bookSourceGroup": "",
+    "bookSourceName": "小说123456789",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://xiaoshuo123456789.com/",
+    "concurrentRate": "",
+    "customOrder": 25,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "exploreUrl": "玄幻::/sort/7/{{page}}/\n武侠::/sort/8/{{page}}/\n都市::/sort/9/{{page}}/\n历史::/sort/10/{{page}}/\n科幻::/sort/12/{{page}}/\n青春::/sort/11/{{page}}/\n恐怖::/sort/13/{{page}}/\n同人::/sort/14/{{page}}/\n综合::/sort/15/{{page}}/",
+    "header": "@js:\nJSON.stringify({\n\t\"User-Agent\": \"Mozilla/5.0 (Linux; Android 12; HarmonyOS; OCE-AN50; HMSCore 6.14.0.322) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.5735.196 HuaweiBrowser/15.0.9.300 Mobile Safari/537.36\",\n\t\"Referer\":baseUrl\n\t})",
+    "lastUpdateTime": "1750930397640",
+    "loginUi": "",
+    "respondTime": 184291,
+    "ruleBookInfo": {
+      "author": "id.info@tag.a.0@text",
+      "lastChapter": "id.info@tag.a.1@text",
+      "name": "id.info@tag.h1@text",
+      "tocUrl": "text.章节目录@href"
+    },
+    "ruleContent": {
+      "content": "<js>\ntry{\nform=java.getElement(\"#article form\")\ntxt=java.getElement(\"#article [class=001] p\")\nwhile (form!=\"\"){\n\tcode=String(java.getString(\"strong@textNodes\",form)).trim()\n\tjava.log(code)\n\tresult=java.ajax(`${baseUrl},{\"body\":\"captcha=${code}\",\"method\":\"POST\"}`)\n\tjava.setContent(result)\n\tform=java.getElement(\"#article form\")\n\t}\nb64=result.match(/atob\\('([^']+)'\\)/)[1]\nif(result.match(/'aes'\\s*===\\s*'aes'/)){\n\tkey=result.match(/CryptoJS\\.enc\\.Base64\\.parse\\('([^']+)'\\)/)[1]\n\t\n\ttxt+=java.createSymmetricCrypto(\"AES/ECB/Pkcs7Padding\", java.base64DecodeToByteArray(key)).decryptStr(b64)\n\t}else{\n\t\ttxt+=java.base64Decode(b64)\n\t\t\n\t\t}\nresult=txt}catch{result=\"\\n这章正文不存在！！！\\n换一章！！！\\n或者\\n换本书！！！\\n或者\\n换源！！！\"}\n</js>\n",
+      "nextContentUrl": "text.下一页@href",
+      "title": "class.bookname@text##（.*?）"
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "author": "tag.a.2@text",
+      "bookList": "class.item",
+      "bookUrl": "tag.a.0@href",
+      "checkKeyWord": "恶魔",
+      "intro": "tag.dd@text",
+      "kind": "class.blue visible-xs@text",
+      "name": "tag.a.1@text",
+      "wordCount": "class.orange visible-xs@text"
+    },
+    "ruleToc": {
+      "chapterList": "id.content_1@a",
+      "chapterName": "text",
+      "chapterUrl": "href",
+      "nextTocUrl": "text.下一页@href||option@value"
+    },
+    "searchUrl": "{{cookie.removeCookie(source.key)}}https://xiaoshuo123456789.com/search/?searchkey={{key}}",
+    "weight": 0
+  }
+]
