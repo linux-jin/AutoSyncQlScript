@@ -16,9 +16,9 @@ https://raw.githubusercontent.com/shidahuilang/shuyuan/refs/heads/shuyuan/%E5%A4
 #### 🚩 🍅 番茄融合 阅读/源阅：番茄，七猫，得间，塔读，QQ，小米，熊猫，起点(69/笔趣阁)，喜马拉雅、看书听书漫画短剧书源：
 
 [安卓阅读app - 大灰狼融媒4.0 (完整版)](https://raw.githubusercontent.com/shidahuilang/shuyuan/refs/heads/shuyuan/%E5%AE%89%E5%8D%93%E9%98%85%E8%AF%BBapp-%E5%A4%A7%E7%81%B0%E7%8B%BC%E8%9E%8D%E5%90%884.0(%E5%AE%8C%E5%85%A8%E7%89%88).json)
-
-**复制链接：** `https://raw.githubusercontent.com/shidahuilang/shuyuan/refs/heads/shuyuan/%E5%AE%89%E5%8D%93%E9%98%85%E8%AF%BBapp-%E5%A4%A7%E7%81%B0%E7%8B%BC%E8%9E%8D%E5%90%884.0(%E5%AE%8C%E5%85%A8%E7%89%88).json`
-
+```
+https://raw.githubusercontent.com/shidahuilang/shuyuan/refs/heads/shuyuan/%E5%AE%89%E5%8D%93%E9%98%85%E8%AF%BBapp-%E5%A4%A7%E7%81%B0%E7%8B%BC%E8%9E%8D%E5%90%884.0(%E5%AE%8C%E5%85%A8%E7%89%88).json
+```
 
 #### 🚩🍅 番茄七猫等IOS书源：（读不舍手+千阅+源阅读+花火阅读）
 ```
