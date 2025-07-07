@@ -1,0 +1,61 @@
+[
+  {
+    "bookSourceComment": "1.需要在书源登录真白萌，才能使用此书源；\n2.章节获取内容失败且前面有🔒的标志，请去真白萌购买此章节，购买后不会去掉🔒，因为实在没找到判定购买的条件，但是刷新正文就有内容了；\n3.我都要登录真白萌购买了，为什么还要用书源！为什么不能在APP里面就能购买？别问，问就是我懒，反正很多书都不需要金币也能看；\n4.真白萌有访问次数限制，一分钟内不能访问太多次，所以别下载，大概率下载不到十章就一直失败；\n5.基本上你一章一章阅读不会出现第3点的问题，如果出现内容失败，自己点一下刷新内容就行了；\n6.现在登录按钮有两个功能了，一个登录，一个更新书源；\n7.待补充；",
+    "bookSourceGroup": "真白萌,轻小说",
+    "bookSourceName": "真白萌(请先登录)",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://masiro.me/admin/",
+    "bookUrlPattern": "",
+    "concurrentRate": "",
+    "customOrder": 1,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "",
+    "header": "{\n    \"Connection\": \"keep-alive\",\n    \"X-Requested-With\": \"XMLHttpRequest\",\n    \"Accept\": \"application/json, text/javascript, */*; q=0.01\",\n    \"Content-Type\": \"application/x-www-form-urlencoded; charset=UTF-8\",\n    \"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0\",\n    \"Referer\": \"https://masiro.me/admin/auth/login\",\n    \"Accept-Language\": \"zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6\"\n}",
+    "jsLib": "function getCookieValue(cookieStr, name) {\n    const regex = new RegExp(`(^| )${name}=([^;]+)`);\n    const match = cookieStr.match(regex);\n    return match ? decodeURIComponent(match[2]) : null;\n}\n\nfunction update() {\n    const {java} = this;\n    let sourceUrl = \"https://gitee.com/Ice-Min/MyBookSource/raw/master/书源/真白萌/真白萌.json\";\n    let importUrl = \"legado://import/importonline?src=\" + sourceUrl;\n\n    let importHtml = `data:text/html;charset=utf-8,<html>\n<head>\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<title>更新书源</title>\n<style>\n.importSource {\n\tdisplay: flex;\n\tjustify-content: center;\n\talign-items: center;\n\theight: 50vh;\n\t}\nbutton {\n\tbackground-color: rgb(100,150,220);\n\tcolor: white;\n\tborder: none;\n\tborder-radius: 4px;\n\theight: 6vh;\n\twidth: 30vw;\n\toverflow: hidden;\n\t}\n</style>\n</head>\n<body><div class=\"importSource\"><a href=\"${importUrl}\"><button>更新书源</button></a></div></body>\n</html>`;\n    java.startBrowser(importHtml, \"更新书源\");\n}",
+    "lastUpdateTime": "1751867577139",
+    "loginUi": "[\n    {\n        \"name\": \"登录\",\n        \"type\": \"button\",\n        \"action\": \"login()\"\n    },\n    {\n        \"name\": \"更新书源\",\n        \"type\": \"button\",\n        \"action\": \"update()\"\n    }\n]",
+    "loginUrl": "function login() {\n    java.startBrowser(\"https://masiro.me/admin/auth/login\", \"真白萌登录\");\n}",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": ".author@a@text",
+      "canReName": "1",
+      "coverUrl": ".mailbox-attachment-icon@img@data-src",
+      "init": "",
+      "intro": "div.brief@html",
+      "kind": "span.label@text",
+      "lastChapter": "a.nw-a@text",
+      "name": "div.novel-title@text",
+      "tocUrl": "@js:\nvar headers = java.get('searchHeaders');\nvar options = {\n    method: \"GET\",\n    headers: headers,\n    webView: true\n};\nvar theBookUrl = baseUrl + \",\" + JSON.stringify(options);\ntheBookUrl;",
+      "wordCount": "div.n-chapters@text"
+    },
+    "ruleContent": {
+      "content": "class.nvl-content@html"
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "author": "author",
+      "bookList": "<js>\n(function() {\n\tvar key = java.get('key');\n\tvar page = java.get('page');\n\tvar cookieHost = java.getCookie(\"https://masiro.me\");\n\n\tvar headers = {\n\t\t\"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0\",\n\t\t\"Referer\": \"https://masiro.me/admin/novels\",\n\t\t\"Connection\": \"keep-alive\",\n\t\t\"Cookie\": cookieHost || \"\",\n\t\t\"X-XSRF-TOKEN\": getCookieValue(cookieHost, \"XSRF-TOKEN\")\n\t};\n\tjava.put('searchHeaders', headers);\n\n\tvar url = \"https://masiro.me/admin/loadMoreNovels?page=\" + page + \n\t\t\t\"&keyword=\" + encodeURIComponent(key) +\n\t\t\t\"&_t=\" + Date.now();\n\n\tvar response = java.get(url, headers);\n\tvar responseData = JSON.parse(response.body());\n\n\tvar resultList = [];\n\n\tif (responseData.code === 1) {\n\t\tresponseData.novels.forEach(function(novel) {\n\t\t\tvar tags = [];\n\t\t\tnovel.tags.forEach(function(tag) {\n\t\t\t\ttags.push(tag.name);\n\t\t\t});\n\n\t\t\tvar translators = [];\n\t\t\tnovel.translators.forEach(function(translator) {\n\t\t\t\ttranslators.push(translator.name);\n\t\t\t});\n\n\t\t\tvar coverUrl = \"https://masiro.me\" + novel.cover_img;\n\n\t\t\tvar novelItem = {\n\t\t\t\tid: novel.id,\n\t\t\t\ttitle: novel.title,\n\t\t\t\tbrief: novel.brief,\n\t\t\t\tauthor: novel.author,\n\t\t\t\tcover: coverUrl,\n\t\t\t\tstatus: novel.status, // 0=连载中, 1=已完结\n\t\t\t\twordCount: novel.words,\n\t\t\t\tupdateTime: novel.updated_at,\n\t\t\t\tlatestChapter: novel.new_up_content,\n\t\t\t\ttags: tags.join(\", \"),\n\t\t\t\ttranslators: translators.join(\", \"),\n\t\t\t\treadCount: novel.read_num,\n\t\t\t\tcollectCount: novel.collect_nums,\n\t\t\t\tlikeCount: novel.thumb_up,\n\t\t\t\tsourceUrl: novel.original\n\t\t\t};\n\t\t\tresultList.push(novelItem);\n\t\t});\n\t} else {\n\t\tjava.log(\"请求失败: \" + (responseData.msg || \"未知错误\"));\n\t}\n\t//java.log(JSON.stringify(resultList));\n\tresult = resultList;\n})();\nresult;\n</js>",
+      "bookUrl": "https://masiro.me/admin/novelView?novel_id={{@json:id}}",
+      "checkKeyWord": "病娇",
+      "coverUrl": "cover",
+      "intro": "brief",
+      "kind": "tags",
+      "lastChapter": "latestChapter",
+      "name": "title",
+      "wordCount": "wordCount"
+    },
+    "ruleToc": {
+      "chapterList": "ul.chapter-ul@.episode-ul>a, li.chapter-box>b",
+      "chapterName": ".episode-box>span:nth-of-type(1)@text||li.chapter-box>b@text",
+      "chapterUrl": "href",
+      "isVip": "@js:\nvar doc = org.jsoup.Jsoup.parse(result);\nvar smallElement = doc.select(\".episode-box > small:first-of-type\").first();\nvar isVIP = (smallElement != null && smallElement.text().trim().length() > 0);\n//var isVIP = smallElement ? smallElement.text().trim().length > 0 : false;\nisVIP;",
+      "isVolume": "li.chapter-box>b@text",
+      "preUpdateJs": "",
+      "updateTime": ".episode-box>span:nth-of-type(2)>span[title]@text"
+    },
+    "searchUrl": "https://masiro.me/admin/loadMoreNovels?page={{page}}&keyword={{key}}\n@js:\njava.put('page', page);java.put('key', key);result;",
+    "weight": 0
+  }
+]

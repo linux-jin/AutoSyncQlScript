@@ -1,0 +1,47 @@
+[
+  {
+    "bookSourceComment": "//2025.6.8",
+    "bookSourceGroup": "网络,自制",
+    "bookSourceName": "笔趣阁5a",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://m.31ec1.lol",
+    "customOrder": 678,
+    "enabled": false,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "[{\"title\":\"分类\",\"url\":\"\",\"style\":{\"layout_flexBasisPercent\": 1,\"layout_flexGrow\": 1}},{\"title\":\"玄幻\",\"url\":\"/json?sortid=1&page={{page}}\",\"style\":{\"layout_flexBasisPercent\": 0.45,\"layout_flexGrow\": 1}},{\"title\":\"武侠\",\"url\":\"/json?sortid=2&page={{page}}\",\"style\":{\"layout_flexBasisPercent\": 0.45,\"layout_flexGrow\": 1}},{\"title\":\"都市\",\"url\":\"/json?sortid=3&page={{page}}\",\"style\":{\"layout_flexBasisPercent\": 0.45,\"layout_flexGrow\": 1}},{\"title\":\"历史\",\"url\":\"/json?sortid=4&page={{page}}\",\"style\":{\"layout_flexBasisPercent\": 0.45,\"layout_flexGrow\": 1}},{\"title\":\"网游\",\"url\":\"/json?sortid=5&page={{page}}\",\"style\":{\"layout_flexBasisPercent\": 0.45,\"layout_flexGrow\": 1}},{\"title\":\"科幻\",\"url\":\"/json?sortid=6&page={{page}}\",\"style\":{\"layout_flexBasisPercent\": 0.45,\"layout_flexGrow\": 1}},{\"title\":\"女生\",\"url\":\"/json?sortid=7&page={{page}}\",\"style\":{\"layout_flexBasisPercent\": 0.45,\"layout_flexGrow\": 1}},{\"title\":\"全本\",\"url\":\"/json?sortid=0&page={{page}}\",\"style\":{\"layout_flexBasisPercent\": 0.45,\"layout_flexGrow\": 1}}]",
+    "header": "{\"User-Agent\":\"Mozilla/5.0 (Linux; Android 9) Mobile Safari/537.36\"}",
+    "lastUpdateTime": "1751759288789",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "@get:{a}",
+      "coverUrl": "@get:{i}",
+      "init": "@put:{\"n\":\"[property$=book_name]@content\",\n\"a\":\"[property$=author]@content\",\n\"t\":\"[property~=category|status]@content\",\n\"l\":\"[property$=latest_chapter_name]@content\",\n\"i\":\"[property$=image]@content\",\n\"o\":\"[property$=description]@content\",\n\"g\":\"[property$=update_time]@content\",\n\"m\":\".book_more a@href\"\n}",
+      "intro": "@get:{o}",
+      "kind": "@get:{t}",
+      "lastChapter": "@get:{l}◎@get:{g}",
+      "name": "@get:{n}",
+      "tocUrl": "@get:{m}"
+    },
+    "ruleContent": {
+      "content": "#chaptercontent@html##\\n*.*请收藏：.*\\n*.*温馨提示.*",
+      "nextContentUrl": "#pb_next@href"
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "author": "$.author",
+      "bookList": "$[*]",
+      "bookUrl": "$.url_list",
+      "coverUrl": "$.url_img",
+      "intro": "$.intro",
+      "name": "$.articlename"
+    },
+    "ruleToc": {
+      "chapterList": ".book_last@a!0",
+      "chapterName": "text",
+      "chapterUrl": "href"
+    },
+    "searchUrl": "/user/search.html?q={{key}}&so=undefined",
+    "weight": 0
+  }
+]
