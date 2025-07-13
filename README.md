@@ -30,14 +30,14 @@ https://github.com/shidahuilang/shuyuan/blob/shuyuan/香色闺阁app-大灰狼�
 https://raw.githubusercontent.com/shidahuilang/shuyuan/refs/heads/shuyuan/%E5%A4%A7%E7%81%B0%E7%8B%BC%E8%9E%8D%E5%90%882.1.yds
 ```
 
-**自动更新时间** 2025-07-13 18:05:24 CST+0800
+**自动更新时间** 2025-07-13 18:31:06 CST+0800
 #### 🚩 最新阅读书源修复-每隔3天自动更新一次（安卓阅读3.0+读不舍手+千阅+源阅读+花火阅读通用）
 #### 🚩 获取后的书源会自动效验
 
 <!-- 更新位置开始 -->
 | 阅读源总数 | 有效书源数 | 无效书源数 | 重复书源数 |
 |------------|------------|------------|--------------|
-| <span style="color:green;">9167</span> | <span style="color:blue;">4998</span> | <span style="color:red;">4169</span> | <span style="color:orange;">1409</span> |
+| <span style="color:green;">6604</span> | <span style="color:blue;">3575</span> | <span style="color:red;">3029</span> | <span style="color:orange;">992</span> |
 <!-- 更新位置结束 -->
 ![shuyuan.png](icons/shuyuan.png)
 #### 🚩 效验书源链接
@@ -58,7 +58,7 @@ https://raw.githubusercontent.com/shidahuilang/shuyuan/shuyuan/tts.json
 
 #### 🚩 香色闺阁-每隔3天自动更新一次
 
-**自动更新时间** 2025-07-13 18:05:24 CST+0800
+**自动更新时间** 2025-07-13 18:31:06 CST+0800
  ``` bash
 https://raw.githubusercontent.com/shidahuilang/shuyuan/shuyuan/sourceModelList.xbs
  ``` 
