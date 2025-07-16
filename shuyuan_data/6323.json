@@ -1,0 +1,57 @@
+[
+  {
+    "bookSourceComment": "┍　　　　书源作者：萌  新　　　　┒\n├───┬────────────┤\n│！免责│本书源只提供代码进行技术│\n│！声明│交流，请于２４小时后删除│\n└────────────────┘\n*如〖http://m.uuwx.la〗\n书源交流群qq610296345\n有问题可以在群里说",
+    "bookSourceGroup": "",
+    "bookSourceName": "UU小說",
+    "bookSourceType": 0,
+    "bookSourceUrl": "UU小說感觉挺好用的！",
+    "bookUrlPattern": "https?://m.uuwx.la/ls/[\\d_/]+",
+    "customOrder": -98919,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "[{\"title\":\"玄幻小说\",\"url\":\"/fenlei-3/{{page}}/\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"武侠小说\",\"url\":\"/fenlei-5/{{page}}/\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"言情小说\",\"url\":\"/fenlei-1/{{page}}/\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"穿越小说\",\"url\":\"/fenlei-6/{{page}}/\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"游戏竞技\",\"url\":\"/fenlei-2/{{page}}/\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"科幻灵异\",\"url\":\"/fenlei-4/{{page}}/\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"综合其他\",\"url\":\"/fenlei-7/{{page}}/\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":1}}]",
+    "header": "{\"User-Agent\": \"Mozilla/5.0 (Linux; Android 9) Mobile Safari/537.36\"}",
+    "lastUpdateTime": "1752654401617",
+    "respondTime": 4542,
+    "ruleBookInfo": {
+      "author": "[property$=author]@content",
+      "coverUrl": "[property$=image]@content",
+      "intro": "[property$=description]@content",
+      "kind": "[property~=category|status|update_time]@content",
+      "lastChapter": "[property$=latest_chapter_name]@content",
+      "name": "[property$=book_name]@content"
+    },
+    "ruleContent": {
+      "content": "#nr1@textNodes##{{try{title}catch(e){\"\"} }}.*\\s*\\(第\\d+.*页\\)\\s*|\\s*.?本章未完.*\\s*",
+      "nextContentUrl": "text.下一@href",
+      "replaceRegex": ""
+    },
+    "ruleExplore": {
+      "author": "ownText##.*\\/",
+      "bookList": ".line",
+      "bookUrl": "a@href",
+      "coverUrl": "@js:\"http://www.uuxs.info/modules/article/images/nocover.jpg\"",
+      "kind": "ownText##\\[|\\].*",
+      "name": "a@text##"
+    },
+    "ruleSearch": {
+      "author": "p.-2@text",
+      "bookList": ".block",
+      "bookUrl": "a.1@href",
+      "checkKeyWord": "侠盗",
+      "coverUrl": "img@src",
+      "kind": "p.-3@text##分类：",
+      "lastChapter": "a.-1@text",
+      "name": "h2@text"
+    },
+    "ruleToc": {
+      "chapterList": "ul.1@li",
+      "chapterName": "a@text",
+      "chapterUrl": "a@href",
+      "nextTocUrl": "{{@@text.下一页@href}}\n{{@@option@value}}"
+    },
+    "searchUrl": "{{cookie.removeCookie(source.getKey())}}\n{{source.bookSourceComment.match(/如〖([^〗]*)〗/)[1]}}/search.php,{\n  \"body\": \"searchkey={{key}}\",\n  \"method\": \"POST\"\n}",
+    "weight": 0
+  }
+]
