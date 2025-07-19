@@ -1,0 +1,51 @@
+[
+  {
+    "bookSourceComment": "//2025.7.11 正文解密 ◎夜泽川◎",
+    "bookSourceGroup": "网络,自制",
+    "bookSourceName": "龙渊书屋",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.lysw1.com",
+    "customOrder": 98,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "exploreUrl": "@js:\nvar result = [];\nvar push = (title, url, size) => result.push({\n  title: title,\n  url: url,\n  style: {\n    layout_flexGrow: 1,\n    layout_flexBasisPercent: size\n  }\n});\nvar tabList = [source.key + \"/tvb/\", source.key + \"/tnt/\"];\njava.ajaxAll(tabList).forEach((response, index) => {\n\tlet isTag = index == 0;\n\tpush(isTag ? \"分类\" : \"排行\", null, 1);\norg.jsoup.Jsoup.parse(response.body()).select('.class .container a').forEach(e => push(e.text(), String(e.attr('href')).replace(/\\d+\\/$/, \"\") + (isTag ? \"{{page}}/\" : \"?page={{page}}\"), 0.25))\n});\nJSON.stringify(result);",
+    "header": "{\"User-Agent\": \"Mozilla/5.0 (Linux; Android 9) Mobile Safari/537.36\"}",
+    "jsLib": "function decrypt(encryptedString) {\n    const { java } = this\n    let encryptedData_ = String(java.base64Decode(encryptedString));\n    let controlNum = parseInt(encryptedData_.slice(8, 11));\n    let text = encryptedData_.slice(controlNum + 11, encryptedData_.length - controlNum);\n     let encryptedData = text.replace(/_/g, \"8L3A+\").replace(/-/g, \"PHA+\");\n     return java.base64Decode(encryptedData);\n}",
+    "lastUpdateTime": "1752812801668",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "@get:{a}",
+      "coverUrl": "@get:{i}",
+      "init": "@put:{\"n\":\"[property$=book_name]@content\",\n\"a\":\"[property$=author]@content\",\n\"t\":\"[property~=category|status]@content\",\n\"l\":\"[property$=latest_chapter_name]@content\",\n\"i\":\"[property$=image]@content\",\n\"o\":\"[property$=description]@content\",\n\"g\":\"[property$=update_time]@content\",\n\"m\":\".btn-primary@href\"\n}",
+      "intro": "@get:{o}",
+      "kind": "@get:{t}",
+      "lastChapter": "@get:{l}◎@get:{g}",
+      "name": "@get:{n}",
+      "tocUrl": "@get:{m}"
+    },
+    "ruleContent": {
+      "content": "#chaptercontent > p@html##.*龙渊书屋.*|本章未完，.*\n@js: \ntry {\n\tmoreContent = src.match(/var\\s*c=['\"]([^'\"]+)/)[1];\nresult = result + decrypt(moreContent);\n} catch (e) {}\nresult;",
+      "nextContentUrl": "#next_url@onclick##'(.*)'##$1###",
+      "replaceRegex": "##{{chapter.title}}"
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "author": ".author@text",
+      "bookList": ".book-coverlist",
+      "bookUrl": "a@href",
+      "coverUrl": "img@data-src",
+      "intro": ".intro@text",
+      "kind": "soan@text",
+      "name": ".name@text"
+    },
+    "ruleToc": {
+      "chapterList": ".panel-chapterlist a",
+      "chapterName": "text",
+      "chapterUrl": "onclick##'(.*)'##$1###",
+      "nextTocUrl": "option@value"
+    },
+    "searchUrl": "/search/?searchkey={{key}}&order=0&page={{page}}",
+    "weight": 0
+  }
+]
