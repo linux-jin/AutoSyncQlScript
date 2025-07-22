@@ -1,0 +1,53 @@
+[
+  {
+    "bookSourceComment": "英雄联盟小说网 (yxlmxsw.com) 2025.7.22",
+    "bookSourceGroup": "小说,竞技",
+    "bookSourceName": "英雄联盟小说网",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://m.yxlmxsw.com",
+    "bookUrlPattern": "https?:\\/\\/m\\.yxlmxsw\\.com\\/\\d+\\/?",
+    "customOrder": 5,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "@js:\nvar result = [];\nvar push = (title, url, size) => result.push({\n    title: title,\n    url: url,\n    style: {\n        layout_flexGrow: 1,\n        layout_flexBasisPercent: size\n    }\n});\n\n[\n    [\"📚 人气推荐\", \"/\"],\n    [\"🔥 热门小说\", \"/rm/weekvisit/\"],\n    [\"👨 男生频道\", \"/?type=boy\"],\n    [\"👩 女生频道\", \"/?type=girl\"],\n    [\"🏆 排行榜\", \"/rm/\"],\n    [\"🏁 完本小说\", \"/qb/\"],\n    [\"📖 书库\", \"/lb/\"]\n].forEach(item => {\n    push(item[0], item[1] + \"{{page}}.html\", item[1] ? 1 : null);\n});\nJSON.stringify(result);",
+    "header": "{\n    \"User-Agent\": \"Mozilla/5.0 (Linux; Android 12) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.61 Mobile Safari/537.36\",\n    \"X-Requested-With\": \"com.kuangxiangciweimao.novel\"\n}",
+    "lastUpdateTime": "1753169027437",
+    "ruleBookInfo": {
+      "author": "meta[property$='author']@content",
+      "coverUrl": "meta[property$='image']@content",
+      "intro": "div.intro@text",
+      "kind": "meta[property$='category']@content",
+      "lastChapter": "meta[property$='latest_chapter_name']@content",
+      "name": "meta[property$='book_name']@content",
+      "tocUrl": "a:contains('开始阅读'), a:contains('目录')@href"
+    },
+    "ruleContent": {
+      "content": "div.content > div.text@textNodes"
+    },
+    "ruleExplore": {
+      "author": "a:last-child:matchesOwn(^\\S+$)@text",
+      "bookList": "ul.cover > li, div.vote",
+      "bookUrl": "a@href",
+      "coverUrl": "img@src",
+      "intro": "a:eq(2)@text",
+      "name": "a > p, p.bookname > a@text"
+    },
+    "ruleSearch": {
+      "author": "a:nth-child(2), a:nth-child(3)@text",
+      "bookList": "ul.cover > li, div.vote",
+      "bookUrl": "a@href",
+      "coverUrl": "img@src",
+      "intro": "a:eq(2)@text",
+      "name": "a > p, p.bookname > a@text"
+    },
+    "ruleToc": {
+      "chapterList": "ul.chapter li",
+      "chapterName": "a@text",
+      "chapterUrl": "a@href",
+      "nextTocUrl": ".page > a:contains('下一页')@href"
+    },
+    "searchUrl": "/so/@@method=POST@@body=searchkey={{key}}",
+    "weight": 0
+  }
+]

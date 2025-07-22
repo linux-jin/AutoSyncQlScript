@@ -1,0 +1,53 @@
+[
+  {
+    "bookSourceComment": "目录乱序，排序规律目前只发现两种情况，用if-else硬写的，有没有大佬能优化一下，可以适应更多情况？万一出现第三种情况就凉拌了",
+    "bookSourceGroup": "小说",
+    "bookSourceName": "完本小说网",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.finalbooks.work",
+    "customOrder": 1,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "exploreUrl": "@js:\nconst item = (title, url, grow=0, basis=0.29) => {\n  return {\n    title,\n    url,\n    style: {\n      \"layout_flexGrow\": grow,\n      \"layout_flexBasisPercent\": basis\n    }\n  }\n}\nconst tags = \"全部::0\\n‍‌‌耽­‌‍­美­‎::1\\n‍‌‌耽­‌‍­美­‎中文::15\\n­‍​­言‍­情‍­‎​::2\\n‎‍‌高​‍辣‌‎‍​​::3\\n‌‍­‎‍百‌‍‌合​‌‍­­::4\\n‎‌​种‌‎­田‍‌‎‌​::8\\n​­腹‌‌­‎­黑‍­::11\\n​­‌‎​高­‍‍‎干​‍‎::10\\n­‎玄‎‍‌­幻‍‌‎::5\\n网游::13\\n修真::9\\n都市::21\\n精品::50\\n杂谈::39\\n情感::38\\n鬼话::40\\n‍‌‎同­‌人​‌::47\\n穿越::49\\n武侠::20\\n历史::42\\n科幻::28\\n舞文::37\\n悬疑::48\\n­­仙‍‌‍‎‌侠​‍::51\\n外国::26\\n文学::24\\n同行::41\\n‎‎奇​‌幻‍‌‌‎‍::44\\n商道::45\\n‎‌军‎​‌事‍​::43\\n其它::7\\n侦探::46\\n传记::27\\n恐怖::22\\n文化::36\\n官场::29\\n网络::23\\n青春::35\\n互联网::33\\n女性::19\\n国学::31\\n逻辑::34\\n儿童::25\\n古典::30\\n创业::32\"\nconst list = tags.split(\"\\n\").map(tag => {\n  const [title, id] = tag.split(\"::\")\n  const url = `/category/${id}/{{page}}.html`\n  return item(title, url)\n})\nJSON.stringify(list)",
+    "header": "{\"Referer\":\"https://www.finalbooks.work/\",\"User-Agent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36\"}",
+    "lastUpdateTime": "1753072016240",
+    "loginUrl": "/",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "[property=\"og:novel:author\"]@content",
+      "coverUrl": "[property=\"og:image\"]@content",
+      "intro": "#intro .BGsectionTwo-bottom@html##简介：",
+      "kind": "[property=\"og:novel:category\"]@content&&\n[property=\"og:novel:status\"]@content&&\n[property=\"og:novel:update_time\"]@content",
+      "name": "[property$=book_name]@content",
+      "tocUrl": "{{baseUrl}}catalog/"
+    },
+    "ruleContent": {
+      "content": "@js:\nfunction d(d, b) {\n  b = java.md5Encode(b)\n  let iv = b.substring(0, 16)\n  let key = b.substring(16)\n  return java.createSymmetricCrypto(\"AES/CBC/PKCS5Padding\", key, iv).decryptStr(d)\n}\n\nfunction html(content){\n  return java.getString(\"p@html\", content)\n}\n\nconst encrypted = result.match(/html\\(d.*;/)[0]\neval(encrypted)"
+    },
+    "ruleExplore": {
+      "author": ".b@text",
+      "bookList": ".sectionTwo-content li&&.CGsectionTwo-right-content-unit",
+      "bookUrl": ".book_img_name a@href&&.title@href",
+      "coverUrl": "img@_src",
+      "intro": "//p[3]/text()",
+      "lastChapter": "//p[4]/text()##最近更新",
+      "name": ".book_img_name a@text&&.title@text"
+    },
+    "ruleSearch": {
+      "author": "//span[3]/a/text()",
+      "bookList": "//div[@class=\"SHsectionThree-middle\"]/p",
+      "bookUrl": "//span[2]/a/@href",
+      "kind": "//span[1]/a/text()",
+      "name": "//span[2]/a/text()"
+    },
+    "ruleToc": {
+      "chapterList": "@js:\nfunction chapterSorted(){\n  const chapters = []\n  let elements = java.getElements(\"li.BCsectionTwo-top-chapter\")\n  for(let i in elements){\n    let li = String(elements[i].outerHtml())\n    let title, url, id;\n    id = String(java.getString(\"li@data-mm5\", li)).trim()\n    if(id){\n      title = java.getString(\"a@data-mm3\", li)\n      url = java.getString(\"a@data-mm4\", li)\n    } else {\n      id = java.getString(\"li@data-mm3\", li)\n      title = java.getString(\"a@data-mm4\", li)\n      url = java.getString(\"a@data-mm5\", li)\n    }\n    url = java.base64Decode(url)\n    chapters.push({id, title, url})\n  }\n  return chapters.sort((a, b) => a.id - b.id)\n}\n\nchapterSorted()",
+      "chapterName": "title",
+      "chapterUrl": "url",
+      "nextTocUrl": "#next@href"
+    },
+    "searchUrl": "/search/{{key}}/{{page}}",
+    "weight": 0
+  }
+]
