@@ -27,7 +27,7 @@ https://github.com/shidahuilang/shuyuan/blob/shuyuan/香色闺阁app-大灰狼�
 ```
 #### 🚩 🍅 番茄融合益达书源：看书、听书、漫画、短剧
 ```
-https://raw.githubusercontent.com/shidahuilang/shuyuan/refs/heads/shuyuan/%E5%A4%A7%E7%81%B0%E7%8B%BC%E8%9E%8D%E5%90%882.1.yds
+https://raw.githubusercontent.com/shidahuilang/shuyuan/refs/heads/shuyuan/你的益达app-大灰狼融合4.0.yds
 ```
 
 **自动更新时间** 2025-07-25 18:32:13 CST+0800
