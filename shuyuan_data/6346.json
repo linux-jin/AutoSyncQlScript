@@ -12,7 +12,7 @@
     "enabledExplore": false,
     "exploreUrl": "全部分类::/novels/class/0.htm\n玄幻魔法::/novels/class/1.htm\n修真武侠::/novels/class/2.htm\n言情小说::/novels/class/3.htm\n历史军事::/novels/class/4.htm\n游戏竞技::/novels/class/5.htm\n科幻空间::/novels/class/6.htm\n悬疑惊悚::/novels/class/7.htm\n同人小说::/novels/class/8.htm\n都市小说::/novels/class/9.htm\n官场职场::/novels/class/10.htm\n穿越时空::/novels/class/11.htm\n青春校园::/novels/class/12.htm\n完本-全部分类::/novels/full/0.htm\n完本-玄幻魔法::/novels/full/1.htm\n完本-修真武侠::/novels/full/2.htm\n完本-言情小说::/novels/full/3.htm\n完本-历史军事::/novels/full/4.htm\n完本-游戏竞技::/novels/full/5.htm\n完本-科幻空间::/novels/full/6.htm\n完本-悬疑惊悚::/novels/full/7.htm\n完本-同人小说::/novels/full/8.htm\n完本-都市小说::/novels/full/9.htm\n完本-官场职场::/novels/full/10.htm\n完本-穿越时空::/novels/full/11.htm\n完本-青春校园::/novels/full/12.htm",
     "header": "{'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0'}",
-    "lastUpdateTime": "1753502864819",
+    "lastUpdateTime": "1753576762335",
     "respondTime": 180000,
     "ruleBookInfo": {
       "author": "//meta[@property='og:novel:author']/@content",
@@ -26,7 +26,7 @@
       "wordCount": "class.booknav2.0@tag.p.2@text##( \\|.+)"
     },
     "ruleContent": {
-      "content": "class.txtnav@textNodes",
+      "content": "<js>\nif(result.match(/Just a moment/)){\ncookie.removeCookie(source.bookSourceUrl)\nvar x=baseUrl;\nvar s=java.startBrowserAwait(x,\"验证\").body()\nresult=s;\n\t}else{\n\t\tresult=result;\n\t\t}\nresult\n</js>class.txtnav@textNodes",
       "replaceRegex": "##\\s*({{ book.durChapterTitle }}|.*作者：.*|\\(本章完\\)|PS：.*求推荐！|PS：.*求收藏！|感谢.*打赏.*|感谢.*推荐票.*|感谢.*月票.*|（.*月票.*）|（为大家的.*票加更.*）|第二更在.*|loadAdv.*)\\s*"
     },
     "ruleExplore": {

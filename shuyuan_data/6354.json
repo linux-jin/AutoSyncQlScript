@@ -1,0 +1,23 @@
+[
+  {
+    "bookSourceName": "天天看小说",
+    "bookSourceUrl": "https://ttk.tw",
+    "loginUrl": "",
+    "searchUrl": "/search?keyword={{key}}",
+    "searchList": "//div[@class='book-list']/div",
+    "searchName": ".//h3/a/text()",
+    "searchAuthor": ".//p[@class='author']/text()",
+    "searchCoverUrl": ".//img/@src",
+    "searchDetailUrl": ".//h3/a/@href",
+    "bookDetailUrl": "{{parseUrl(searchDetailUrl)}}",
+    "chapterList": "//div[@class='chapter-list']/a",
+    "chapterName": "./text()",
+    "chapterUrl": "./@href",
+    "content": "//div[@id='content']//text()",
+    "contentReplace": [
+      "##广告词1##",
+      "##<script.*?>.*?</script>##"
+    ],
+    "lastUpdateTime": "1753654430704"
+  }
+]

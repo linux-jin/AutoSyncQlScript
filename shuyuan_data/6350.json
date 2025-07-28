@@ -1,0 +1,51 @@
+[
+  {
+    "bookSourceComment": "by阿鬼&灵狐\n\n目录列表规则由灵狐大佬提供！！",
+    "bookSourceGroup": "★酷安所求",
+    "bookSourceName": "第三小说网[笔趣模板][🈚发现]",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.d3xsw.com/",
+    "bookUrlPattern": "https?://www.d3xsw.com/\\d+/\\d+/",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "header": "{\n\t\"User-Agent\":\"Mozilla/5.0 (Linux; Android 13; V2148A Build/TP1A.220624.014; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/128.0.6613.146 Mobile Safari/537.36\",\n\t\"Referer\":\"https://www.d3xsw.com/\"\n\t}",
+    "lastUpdateTime": "1753622519871",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "@get:{a}##作者：",
+      "coverUrl": "@get:{i}",
+      "init": "@put:{n:\".xd-qdno-azg6-t6at.novel_title@text\",\na:\".xd-77o4-aedj-7c6n.fix@p[0]@text\",\nc:\".xd-77o4-aedj-7c6n.fix@p[1]@text&&.xd-77o4-aedj-7c6n.fix@p[2]@text&&.xd-77o4-aedj-7c6n.fix@p[4]@text\",\nl:\".xd-77o4-aedj-7c6n.fix@p[5]@a@text\",\nd:\"#m_desc@span[!0]@text\",\ni:\".xd-bpgu-ktwj-wkmk.imgbox@img src\"}",
+      "intro": "@get:{d}##简介：",
+      "kind": "@get:{c}##类别：|状态：|最后更新：",
+      "lastChapter": "@get:{l}",
+      "name": "@get:{n}",
+      "tocUrl": "",
+      "wordCount": ""
+    },
+    "ruleContent": {
+      "content": "#content@html",
+      "nextContentUrl": "text.下一页@href",
+      "replaceRegex": "##\\s本章.*\\s*|\\s举报本章错误.*\\s*"
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "author": ".s4@text",
+      "bookList": ".xd-qglu-4d7z-r5ho",
+      "bookUrl": "a@href",
+      "intro": ".s5@text",
+      "kind": ".s1@text##\\[|\\]",
+      "lastChapter": ".s3@text",
+      "name": ".s2@text"
+    },
+    "ruleToc": {
+      "chapterList": ".section-list.-1@li@a@js:for(i in result){v=result[i];href=v.attr('href');onclick=v.attr('onclick');if(href==''&&onclick!=''){id=onclick.match(/,(.+?)\\)/)[1];v.attr('href', baseUrl+id+'.html')}}result",
+      "chapterName": "text",
+      "chapterUrl": "href",
+      "nextTocUrl": "option@value"
+    },
+    "searchUrl": "/search/,{\n  \"body\": \"type=articlename&searchkey={{key}}\",\n  \"charset\": \"UTF-8\",\n  \"method\": \"POST\"\n}",
+    "weight": 0
+  }
+]
