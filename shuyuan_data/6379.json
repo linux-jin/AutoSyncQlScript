@@ -1,0 +1,46 @@
+[
+  {
+    "bookSourceName": "飞鸟看书",
+    "bookSourceUrl": "https://www.feiniaoks.com",
+    "searchUrl": "/search/?keyword={{key}},,{\"webView\":true,\"timeout\":15000}",
+    "header": {
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
+      "Cookie": "session=valid; ref=bookpage"
+    },
+    "ruleToc": {
+      "chapterList": "css:.grid a, .chapter-list a, a[href*='/fiction/']",
+      "chapterName": "text",
+      "chapterUrl": "@js: (function(href){ return href.startsWith('/') ? 'https://www.feiniaoks.com' + href : 'https://www.feiniaoks.com/fiction/' + book.bookUrl.split('/')[4] + '/' + href })(href)",
+      "webView": true,
+      "webJs": "let lastPos=0; const scroll=()=>{ window.scrollTo(0,lastPos+=500); setTimeout(()=>{ if(lastPos<document.body.scrollHeight*0.8) scroll(); else result; },800) }; scroll();"
+    },
+    "ruleContent": {
+      "content": "css:.chapter-content, #chapter-content, div.chapter@html",
+      "contentReplace": [
+        {
+          "regex": "<(script|style|iframe)[^>]*>.*?</\\1>",
+          "replacement": ""
+        },
+        {
+          "regex": "请收藏.*?飞鸟看书|电报群.*?$",
+          "replacement": ""
+        },
+        {
+          "regex": "<img[^>]*/asset/fonts/[^>]*>",
+          "replacement": ""
+        },
+        {
+          "regex": "<div class=\"ads.*?</div>",
+          "replacement": ""
+        }
+      ],
+      "nextContentUrl": "css:#next@href",
+      "webView": true,
+      "sourceRegex": "(<div[^>]*id=\"chapter-content\"[^>]*>.*?</div>)"
+    },
+    "concurrentRate": "2",
+    "loadWithBaseUrl": true,
+    "explain": "修复重点：1.动态目录加载 2.正文广告过滤 3.章节URL智能补全",
+    "lastUpdateTime": "1753710497638"
+  }
+]
