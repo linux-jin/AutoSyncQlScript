@@ -1,0 +1,46 @@
+[
+  {
+    "bookSourceGroup": "✦优",
+    "bookSourceName": "风行.MU",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://fxxs3.com",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "exploreUrl": "@js:\n//❤️‍🔥列1-7,其他为旧格式\nm=4,h=`a href=\"/list/xuanhuanxiaoshuo_1.html\">玄幻</a></li>\n                <li> <a href=\"/list/xiuzhenxiaoshuo_1.html\">修真</a></li>\n                <li> <a href=\"/list/dushixiaoshuo_1.html\">都市</a></li>\n                <li style=\"\"> <a href=\"/list/chuanyuexiaoshuo_1.html\" style=\"\">穿越</a></li>\n                <li> <a href=\"/list/wangyouxiaoshuo_1.html\">网游</a></li>\n                <li> <a href=\"/list/lishixiaoshuo_1.html\">历史</a></li>\n                <li> <a href=\"/list/duanpianheji_1.html\">短篇</a></li>\n                <li> <a href=\"/list/qitaxiaoshuo_1.html\">其他</a></li>\n                <li><a href=\"/rank/allvisit/\">热门</a></li>`,s=[],\nd=org.jsoup.Jsoup.parse(h),l=d.select(\"a\");l.forEach(i=>{\n\n//❤️‍🔥标题和下一页规则\nt=i.text()\n//.replaceAll(\"(..)..\",\"$1\")\nu=i.attr(\"href\")\n.replaceAll(\"1\\\\.html\",\"{{page}}.html\")\n\n.trim();m>0&&m<8?s.push({title:t,url:u,style:{layout_flexGrow:1,layout_flexBasisPercent:1/m-0.05}}):s.push(t+\"::\"+u)});(m>0&&m<8)?JSON.stringify(s):s.join(\"&&\");",
+    "lastUpdateTime": "1754014907270",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "[property=\"og:novel:author\"]@content",
+      "coverUrl": "[property=\"og:image\"]@content",
+      "intro": "[property=\"og:novel:update_time\"]@content&&\n[property=\"og:description\"]@content@js:'更新时间：'+result",
+      "kind": "[property~=category|status|tags]@content",
+      "lastChapter": "[property~=las?test_chapter_name]@content",
+      "name": "[property=\"og:novel:book_name\"]@content",
+      "tocUrl": ".chapterlist@href"
+    },
+    "ruleContent": {
+      "content": "#booktxt p@text"
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "author": "a.2@text",
+      "bookList": ".item",
+      "bookUrl": "a.0@href",
+      "checkKeyWord": "明克街",
+      "coverUrl": "img@src",
+      "intro": "dd@text",
+      "kind": "em@text",
+      "name": "a.1@text"
+    },
+    "ruleToc": {
+      "chapterList": "#content_1 a",
+      "chapterName": "text",
+      "chapterUrl": "href",
+      "nextTocUrl": "option@value"
+    },
+    "searchUrl": "/search/?searchkey={{key}}",
+    "weight": 0
+  }
+]
