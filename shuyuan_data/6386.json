@@ -1,0 +1,50 @@
+[
+  {
+    "bookSourceName": "🎨漫蛙吧",
+    "bookSourceType": 2,
+    "bookSourceUrl": "https://www.manwaba.com",
+    "customOrder": 3,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "@js:\nvar result = [];\nvar push = (title, url, tag, size) => result.push({\n    title: title,\n    url: `/api${url}` + \",\" + JSON.stringify({\n  \"body\": `{\\\"page\\\":{\\\"page\\\":{{page}},\\\"pageSize\\\":10},\\\"category\\\":\\\"comic\\\",\\\"sort\\\":0,\\\"comic\\\":{\\\"status\\\":-1,\\\"day\\\":0,\\\"tag\\\":\\\"${tag}\\\"},\\\"video\\\":{\\\"year\\\":0,\\\"typeId\\\":0,\\\"typeId1\\\":0,\\\"area\\\":\\\"\\\",\\\"lang\\\":\\\"\\\",\\\"status\\\":-1,\\\"day\\\":0},\\\"novel\\\":{\\\"status\\\":-1,\\\"day\\\":0,\\\"sortId\\\":0}}`,\n  \"method\": \"POST\"\n}),\n    style: {\n        layout_flexGrow: 1,\n        layout_flexBasisPercent: size\n    }\n});\nvar tags = org.jsoup.Jsoup.parse(java.ajax(source.key + '/cate')).select('.tag-container a');\nfor (let i in tags) {\n\tlet size = i == 0 ? 1 : 0.25;\tpush(tags[i].text(),tags[i].attr('href'),tags[i].attr('data-value'),size);\n}\nJSON.stringify(result);",
+    "header": "@js:\nJSON.stringify({\n  \"User-Agent\": \"Mozilla/5.0 (Linux; Android 11; PCHM30 Build/RKQ1.200903.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/131.0.6778.200 Mobile Safari/537.36\",\n  \"accept-language\": \"zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7\"\n})",
+    "jsLib": "function toTime(time) {\n    const date = new Date(time * 1000);\n    const f = date.toLocaleString();\n    return f;\n}",
+    "lastUpdateTime": "1754108276270",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "intro": "@js:'  ' + book.intro;",
+      "kind": "@js:\n    t = java.getString('#updateTime@text');\n    s = java.getString('#status@text');\n    toTime(t) + ',' + s +',' + book.kind;"
+    },
+    "ruleContent": {
+      "content": "#showimgcontent@img@html",
+      "imageStyle": "FULL"
+    },
+    "ruleExplore": {
+      "author": "$.author",
+      "bookList": "$.data",
+      "bookUrl": "$.url",
+      "coverUrl": "$.pic",
+      "intro": "$.intro",
+      "kind": "$.tags",
+      "name": "$.title"
+    },
+    "ruleSearch": {
+      "author": "$.author",
+      "bookList": "$.data.list[*]",
+      "bookUrl": "$.url",
+      "coverUrl": "$.cover",
+      "intro": "$.description",
+      "kind": "$.tags",
+      "name": "$.title"
+    },
+    "ruleToc": {
+      "chapterList": "#chapter-grid-container>a",
+      "chapterName": ".chapter-name@text",
+      "chapterUrl": "href##$##,{\"webView\":true}",
+      "updateTime": "span.-1@text"
+    },
+    "searchUrl": "/api/search?keyword={{key}}&type=mh&page={{page}}&pageSize=20",
+    "weight": 0
+  }
+]

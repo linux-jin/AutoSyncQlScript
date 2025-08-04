@@ -1,0 +1,46 @@
+[
+  {
+    "bookSourceComment": "2025.8.4  自写书源\n8.4 mu改",
+    "bookSourceGroup": "✦优",
+    "bookSourceName": "超凡小说网 -",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.chaofks.com",
+    "customOrder": 1,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "exploreUrl": "[{\"title\":\"◎ 类型 ◎\",\"url\":\"\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":1}},{\"title\":\"玄幻\",\"url\":\"/category/1/1/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},{\"title\":\"武侠\",\"url\":\"/category/2/1/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},{\"title\":\"都市\",\"url\":\"/category/3/1/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},{\"title\":\"历史\",\"url\":\"/category/4/1/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},{\"title\":\"科幻\",\"url\":\"/category/5/1/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},{\"title\":\"游戏\",\"url\":\"/category/6/1/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},{\"title\":\"其他\",\"url\":\"/category/7/1/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},{\"title\":\"女生\",\"url\":\"/category/8/1/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},{\"title\":\"言情\",\"url\":\"/category/9/1/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},{\"title\":\"◎ 排行 ◎\",\"url\":\"\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":1}},{\"title\":\"总排行\",\"url\":\"/rank/allvisit/\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},{\"title\":\"月排行\",\"url\":\"/rank/monthvisit/\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},{\"title\":\"周排行\",\"url\":\"/rank/weekvisit/\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},{\"title\":\"日排行\",\"url\":\"/rank/dayvisit/\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},{\"title\":\"总收藏\",\"url\":\"/rank/goodnum/\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},{\"title\":\"总推荐\",\"url\":\"/rank/allvote/\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}}]",
+    "lastUpdateTime": "1754282208843",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "[property=\"og:novel:author\"]@content",
+      "coverUrl": "[property=\"og:image\"]@content",
+      "intro": "[property=\"og:novel:update_time\"]@content&&\n[property=\"og:description\"]@content@js:'更新时间：'+result",
+      "kind": "[property~=category|status|tags]@content",
+      "lastChapter": "[property~=las?test_chapter_name]@content",
+      "name": "[property=\"og:novel:book_name\"]@content",
+      "tocUrl": "[property=\"og:novel:read_url\"]@content##(/\\d+)/?##/booklist$1.html###"
+    },
+    "ruleContent": {
+      "content": "<js>\nvar bes = result.match(/PHA\\+[A-Za-z0-9+\\/]+={0,2}/g);\nvar txt;\nif (!bes) {\n    java.webView(null, baseUrl, null);\n    txt = java.getString(\"#booktxt@html\");\n    java.longToast(\"解密失败\");\n} else {\n    txt = bes.map(b => String(java.base64Decode(b))).join('\\n');\n}\ntxt;\n</js>",
+      "nextContentUrl": "h1@ownText##(\\d+)[)）]$##$1###\n<js>\nArray.from(\n    { length: Number(result[0]) - 1 },\n    (_, i) => baseUrl.replace(/\\.html/g, '_' + (i + 2) + '.html')\n)\n</js>"
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "author": ".btm@a@title",
+      "bookList": "#hotcontent@.item@dl",
+      "bookUrl": "a.0@href",
+      "intro": "dd@html",
+      "kind": ".blue@text",
+      "name": "dt@a@title"
+    },
+    "ruleToc": {
+      "chapterList": "#list@dl@a:has(dd)",
+      "chapterName": "text",
+      "chapterUrl": "href",
+      "nextTocUrl": "option@value"
+    },
+    "searchUrl": "/search.html?searchkey={{key}}",
+    "weight": 0
+  }
+]
