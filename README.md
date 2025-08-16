@@ -30,7 +30,7 @@ https://github.com/shidahuilang/shuyuan/blob/shuyuan/香色闺阁app-大灰狼�
 https://raw.githubusercontent.com/shidahuilang/shuyuan/refs/heads/shuyuan/你的益达app-大灰狼融合4.0.yds
 ```
 
-**自动更新时间** 2025-08-13 18:31:39 CST+0800
+**自动更新时间** 2025-08-16 18:05:32 CST+0800
 #### 🚩 最新阅读书源修复-每隔3天自动更新一次（安卓阅读3.0+读不舍手+千阅+源阅读+花火阅读通用）
 #### 🚩 获取后的书源会自动效验
 
@@ -58,7 +58,7 @@ https://raw.githubusercontent.com/shidahuilang/shuyuan/shuyuan/tts.json
 
 #### 🚩 香色闺阁-每隔3天自动更新一次
 
-**自动更新时间** 2025-08-13 18:31:39 CST+0800
+**自动更新时间** 2025-08-16 18:05:32 CST+0800
  ``` bash
 https://raw.githubusercontent.com/shidahuilang/shuyuan/shuyuan/sourceModelList.xbs
  ``` 
