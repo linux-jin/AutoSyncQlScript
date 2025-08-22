@@ -1,0 +1,39 @@
+[
+  {
+    "bookSourceComment": "同站：\n禁书之家 https://www.jinshuzhijia.com",
+    "bookSourceGroup": "⑶🔞  束冠",
+    "bookSourceName": "🚭 相思阁",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.xsbook.top",
+    "customOrder": -232,
+    "enabled": false,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "                                  全  部                                   ::/index.php/book/category/tags/0<,/page/{{page}}>\n  最新  ::/index.php/book/category/order/addtime<,/page/{{page}}>\n  连载  ::/index.php/book/category/order/addtime/finish/1<,/page/{{page}}>\n  完结  ::/index.php/book/category/order/addtime/finish/2<,/page/{{page}}>\n  古典  ::/index.php/book/category/tags/1<,/page/{{page}}>\n  都市  ::/index.php/book/category/tags/2<,/page/{{page}}>\n  武侠  ::/index.php/book/category/tags/3<,/page/{{page}}>\n  历史  ::/index.php/book/category/tags/4<,/page/{{page}}>\n  乡土  ::/index.php/book/category/tags/5<,/page/{{page}}>\n  言情  ::/index.php/book/category/tags/6<,/page/{{page}}>\n  耽美  ::/index.php/book/category/tags/7<,/page/{{page}}>\n  校园  ::/index.php/book/category/tags/8<,/page/{{page}}>\n  玄幻  ::/index.php/book/category/tags/9<,/page/{{page}}>\n  官场  ::/index.php/book/category/tags/10<,/page/{{page}}>\n  女尊  ::/index.php/book/category/tags/11<,/page/{{page}}>\n  穿越  ::/index.php/book/category/tags/12<,/page/{{page}}>\n  惊悚  ::/index.php/book/category/tags/13<,/page/{{page}}>\n  同人  ::/index.php/book/category/tags/14<,/page/{{page}}>\n  网游  ::/index.php/book/category/tags/15<,/page/{{page}}>\n  异能  ::/index.php/book/category/tags/16<,/page/{{page}}>\n  仙侠  ::/index.php/book/category/tags/17<,/page/{{page}}>",
+    "header": "{\n\t\"User-Agents\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.5938.92 Safari/537.36\",\n \"Referer\": \"{{baseUrl}}\"\n}",
+    "lastUpdateTime": "1755760644184",
+    "respondTime": 1054,
+    "ruleBookInfo": [],
+    "ruleContent": {
+      "content": ".tjc-cot@html"
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "author": ".inf2 span.0@text",
+      "bookList": ".tjshu li",
+      "bookUrl": "a@href",
+      "checkKeyWord": "",
+      "coverUrl": ".photo img@src",
+      "intro": ".decs@text",
+      "kind": ".inf2 span.1@text",
+      "name": ".name@text"
+    },
+    "ruleToc": {
+      "chapterList": "#chapterlsit li",
+      "chapterName": "a@text",
+      "chapterUrl": "a@href"
+    },
+    "searchUrl": "/index.php/book/search?key={{key}}",
+    "weight": 0
+  }
+]
