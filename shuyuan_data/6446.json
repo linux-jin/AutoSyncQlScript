@@ -1,0 +1,53 @@
+[
+  {
+    "bookSourceComment": "可免费看UAA小说，但最新三章节需要VIP才能看",
+    "bookSourceGroup": "自用",
+    "bookSourceName": "夜读阁",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.yeduge.com",
+    "customOrder": -1,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "[{\"title\":\"历史\",\"url\":\"/cat/7/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},{\"title\":\"穿越\",\"url\":\"/cat/14/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},{\"title\":\"同人\",\"url\":\"/cat/21/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},{\"title\":\"武侠\",\"url\":\"/cat/28/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},{\"title\":\"校园\",\"url\":\"/cat/35/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},{\"title\":\"都市\",\"url\":\"/cat/42/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},{\"title\":\"乱伦\",\"url\":\"/cat/49/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},{\"title\":\"科幻\",\"url\":\"/cat/56/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},{\"title\":\"奇幻\",\"url\":\"/cat/63/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},{\"title\":\"玄幻\",\"url\":\"/cat/70/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},{\"title\":\"系统\",\"url\":\"/cat/77/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},{\"title\":\"乡村\",\"url\":\"/cat/84/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},{\"title\":\"异能\",\"url\":\"/cat/91/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},{\"title\":\"明星\",\"url\":\"/cat/98/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},{\"title\":\"贤者\",\"url\":\"/cat/105/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},{\"title\":\"贤者小说\",\"url\":\"/cat/112/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}}]",
+    "lastUpdateTime": "1755943082061",
+    "loginUi": "[\n    {\n        \"name\": \"账号\",\n        \"type\": \"text\"\n    },\n    {\n        \"name\": \"密码\",\n        \"type\": \"password\"\n    },\n    {\n        \"name\": \"登录\",\n        \"type\": \"button\",\n        \"action\": \"login()\",\n        \"style\":{\n        \t\"layout_flexGrow\":1,\n        \"layout_flexBasisPercent\":0.2\n        }\n    },\n    {\n    \t   \"name\":\"注册\",\n    \t   \"type\": \"button\",\n    \t   \"action\": \"register()\",\n    \t   \"style\":{\n    \t   \t\"layout_flexGrow\":1,\n    \t   \t\"layout_flexBasisPercent\":0.2\n    \t   \t}\n    \t} \n]",
+    "loginUrl": "info=source.getLoginInfoMap();\n\nfunction login() {\n    var url = \"https://www.yeduge.com/api/login.php\";\n    var headers = {\n  \"body\":`username=${info.get(\"账号\")}&password=${info.get(\"密码\")}`,\n  \"method\": \"POST\"\n}\n data=java.ajax(url+\",\"+JSON.stringify(headers));\n    data.includes(\"true\")?java.longToast(\"登陆成功\"):java.longToast((JSON.parse(data)).message)\n}\nfunction register() {\n\tvar url = \"https://www.yeduge.com/api/register.php\";\n    var headers = {\n  \"body\": `username=${info.get(\"账号\")}&password=${info.get(\"密码\")}`,\n  \"method\": \"POST\"\n}\n data=java.ajax(url+\",\"+JSON.stringify(headers));\n    data.includes(\"true\")?java.longToast(\"注册成功\"):java.longToast((JSON.parse(data)).message)\n\t}",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": ".info@p.0@text",
+      "coverUrl": ".cover@img@src",
+      "intro": ".desc@text",
+      "kind": ".info@p.2@text##分类：",
+      "lastChapter": "class.right@text",
+      "name": ".info@h1@text"
+    },
+    "ruleContent": {
+      "content": ".content@all"
+    },
+    "ruleExplore": {
+      "author": "span@text",
+      "bookList": "class.novel-list@a",
+      "bookUrl": "a@href",
+      "coverUrl": "img@data-src",
+      "name": "h4@text"
+    },
+    "ruleSearch": {
+      "author": "class.author@text",
+      "bookList": "section",
+      "bookUrl": "a@href",
+      "checkKeyWord": "淫书生",
+      "coverUrl": "img@src",
+      "intro": "class.desc@text",
+      "name": "class.title@text"
+    },
+    "ruleToc": {
+      "chapterList": ".chapter-list@a",
+      "chapterName": "h4@text",
+      "chapterUrl": "href",
+      "isVip": "small@text<js>result==\"VIP\"</js>"
+    },
+    "searchUrl": "https://www.yeduge.com/search/?q={{key}}&page={page}}",
+    "weight": 0
+  }
+]
