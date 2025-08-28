@@ -1,0 +1,43 @@
+[
+  {
+    "bookSourceGroup": "图片源练手",
+    "bookSourceName": "漫蛙",
+    "bookSourceType": 2,
+    "bookSourceUrl": "https://www.manwaku.com/",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "header": "{  \"User-Agent\": \"Mozilla/5.0 (Linux; Android 8.1.0; JKM-AL00b Build/HUAWEIJKM-AL00b; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044807 Mobile Safari/537.36\"}",
+    "lastUpdateTime": "1756300420628",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": ".comic-meta a>span@text",
+      "coverUrl": "",
+      "kind": ".comic-tags-more>a:nth-child(1)>span@text",
+      "name": ".comic-info h2@text"
+    },
+    "ruleContent": {
+      "content": "$..url<js>\nresult.split('\\n').map(x=>`<img src=\"${x}\">`).join('\\n');\n</js>",
+      "title": ""
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "author": "$.author",
+      "bookList": "$.data.list",
+      "bookUrl": "$.url",
+      "checkKeyWord": "鬼灭之刃",
+      "coverUrl": "$.cover",
+      "intro": "",
+      "kind": "$.tags",
+      "name": "$.title"
+    },
+    "ruleToc": {
+      "chapterList": "#chapter-grid-container a",
+      "chapterName": "@data-title",
+      "chapterUrl": "@href@js:a=result.split(\"/\")[3];b=`https://www.manwaku.com/api/comic/image/${a}?count=true`"
+    },
+    "searchUrl": "/api/search?type=mh&page={{page}}&pageSize=20&keyword={{key}}",
+    "weight": 0
+  }
+]

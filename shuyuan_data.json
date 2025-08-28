@@ -1,5 +1,151 @@
 [
   {
+    "bookSourceComment": "┍　　　　书源作者：萌  新　　　　┒\n├───┬────────────┤\n│！免责│本书源只提供代码进行技术│\n│！声明│交流，请于２４小时后删除│\n├────────────────┤\n│　　　　　　　　　　　　　　　　│\n│·    交流群　  610296345    ·  │\n└────────────────┘",
+    "bookSourceGroup": "自写的",
+    "bookSourceName": "书林文学",
+    "bookSourceType": 0,
+    "bookSourceUrl": "http://www.shu009.com",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "[{\"title\":\"💮     全     部     💮\",\"url\":\"/sort/{{page}}/\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":1}},{\"title\":\"玄幻\",\"url\":\"/sort/1/{{page}}/\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":null}},{\"title\":\"修真\",\"url\":\"/sort/2/{{page}}/\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":null}},{\"title\":\"都市\",\"url\":\"/sort/3/{{page}}/\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":null}},{\"title\":\"历史\",\"url\":\"/sort/4/{{page}}/\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":null}},{\"title\":\"网游\",\"url\":\"/sort/5/{{page}}/\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":null}},{\"title\":\"科幻\",\"url\":\"/sort/6/{{page}}/\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":null}},{\"title\":\"耽美\",\"url\":\"/sort/7/{{page}}/\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":null}},{\"title\":\"综合\",\"url\":\"/sort/8/{{page}}/\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":null}}]",
+    "lastUpdateTime": "1756120006290",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": ".author span a@text",
+      "kind": ".category span@text",
+      "lastChapter": ".newestChapter span a@text||.r@text",
+      "name": ".BGsectionOne-top-right p.0@text",
+      "tocUrl": ".BGsectionOne-bottom ul li.1@a@href||text.章节目录@href",
+      "wordCount": ".time span@text"
+    },
+    "ruleContent": {
+      "content": "#content@textNodes"
+    },
+    "ruleExplore": {
+      "author": "p.1@span@a@text",
+      "bookList": ".CGsectionTwo-right-content-unit ",
+      "bookUrl": ".title@href||.read@href",
+      "lastChapter": "p.3@a@text",
+      "name": "p.0@a@text"
+    },
+    "ruleSearch": {
+      "author": "span.2@a@text",
+      "bookList": ".SHsectionThree-middle p ",
+      "bookUrl": "span.1@a@href",
+      "checkKeyWord": "故事",
+      "kind": "span.0@a@text",
+      "name": "span.1@a@text"
+    },
+    "ruleToc": {
+      "chapterList": ".BCsectionTwo-top-chapter a",
+      "chapterName": "text",
+      "chapterUrl": "href",
+      "nextTocUrl": "option@value||text.下一页@href"
+    },
+    "searchUrl": "/search/,{\n  \"body\": \"searchkey={{key}}&searchtype=all&submit=\",\n  \"charset\": \"UTF-8\",\n  \"method\": \"POST\"\n}",
+    "weight": 0
+  },
+  {
+    "bookSourceGroup": "图片源练手",
+    "bookSourceName": "漫蛙",
+    "bookSourceType": 2,
+    "bookSourceUrl": "https://www.manwaku.com/",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "header": "{  \"User-Agent\": \"Mozilla/5.0 (Linux; Android 8.1.0; JKM-AL00b Build/HUAWEIJKM-AL00b; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044807 Mobile Safari/537.36\"}",
+    "lastUpdateTime": "1756300420628",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": ".comic-meta a>span@text",
+      "coverUrl": "",
+      "kind": ".comic-tags-more>a:nth-child(1)>span@text",
+      "name": ".comic-info h2@text"
+    },
+    "ruleContent": {
+      "content": "$..url<js>\nresult.split('\\n').map(x=>`<img src=\"${x}\">`).join('\\n');\n</js>",
+      "title": ""
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "author": "$.author",
+      "bookList": "$.data.list",
+      "bookUrl": "$.url",
+      "checkKeyWord": "鬼灭之刃",
+      "coverUrl": "$.cover",
+      "intro": "",
+      "kind": "$.tags",
+      "name": "$.title"
+    },
+    "ruleToc": {
+      "chapterList": "#chapter-grid-container a",
+      "chapterName": "@data-title",
+      "chapterUrl": "@href@js:a=result.split(\"/\")[3];b=`https://www.manwaku.com/api/comic/image/${a}?count=true`"
+    },
+    "searchUrl": "/api/search?type=mh&page={{page}}&pageSize=20&keyword={{key}}",
+    "weight": 0
+  },
+  {
+    "bookSourceComment": "'https://www.mhtmh.org\n'https://www.mhtmh.com\n'https://www.manwaku.com\n'https://www.mwmw.cc\n//建议注册或登录使用\n//随机注册也可以\n//\t注册或登录后请重新刷新发现\n//❗免责声明：  \n本工具/代码/内容仅供学习交流使用，严禁用于任何非法用途。使用者应严格遵守所在国家或地区的法律法规，任何因滥用或违规使用导致的后果均与开发者/提供者无关，责任自负❗",
+    "bookSourceGroup": "🎨🔞",
+    "bookSourceName": "猕蛙",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.manwaku.com",
+    "customOrder": 15,
+    "enabled": false,
+    "enabledCookieJar": true,
+    "enabledExplore": false,
+    "exploreUrl": "@js:\nvar result = [];\nvar baseUrl = \"/api/cate\";\n\n// 动态获取标签\nvar tags = [];\nvar doc = org.jsoup.Jsoup.parse(java.ajax(source.key + '/cate'));\nvar tagContainers = doc.select('.tag-container').toArray();\nvar lastContainer = tagContainers[tagContainers.length - 1];\nvar tagElements = lastContainer.select('a');\n\n// 提取标签数据\nfor (var i = 0; i < tagElements.size(); i++) {\n    var element = tagElements.get(i);\n    tags.push({\n        value: element.attr('data-value'),\n        text: element.text()\n    });\n}\n\n// 排序选项\nconst sortOptions = [\n    { text: \"更新\", value: 0 },\n    { text: \"新作\", value: 1 },\n    { text: \"热门\", value: 3 },\n    { text: \"畅销\", value: 2 },\n    { text: \"收藏\", value: 4 }\n];\n\n// 创建分类项\nvar createCategory = (title, tag, sort) => {\n    const body = {\n        page: { page: \"{{page}}\", pageSize: 36 },\n        category: \"comic\",\n        sort: sort,\n        comic: { status: -1, day: 0, tag: tag },\n        video: { year: 0, typeId: 0, typeId1: 0, area: \"\", lang: \"\", status: -1, day: 0 },\n        novel: { status: -1, day: 0, sortId: 0 }\n    };\n    \n    // 构建URL，包含标签值\n    const url = baseUrl + (tag ? \"/\" + tag : \"\") + \",\" + JSON.stringify({\n        body: JSON.stringify(body).replace('\"{{page}}\"', '{{page}}'),\n        method: \"POST\",\n        headers: {\n            \"X-Requested-With\": \"XMLHttpRequest\",\n            \"Content-Type\": \"application/json\",\n            \"authHeader\": source.getLoginHeader() || \"\"\n        }\n    });\n    \n    result.push({\n        title: title,\n        url: url,\n        style: {\n            layout_flexGrow: 1,\n            layout_flexBasisPercent: 0.25\n        }\n    });\n};\n\n// 生成分类\nsortOptions.forEach(so => {\n    // 添加排序标题\n    result.push({\n        title: so.text,\n        url: \"\",\n        style: { \n            layout_flexGrow: 1, \n            layout_flexBasisPercent: 1 \n        }\n    });\n\n    // 添加该排序下的所有标签\n    tags.forEach(tag => {\n        createCategory(tag.text, tag.value, so.value);\n    });\n});\n\nJSON.stringify(result);",
+    "header": "@js:\nJSON.stringify({\n\"cache-control\": \"no-cache\",\n\"Accept-Language\": \"zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7\",\n\"sec-ch-ua\": \"Android\",\n\"User-Agent\": \"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Mobile Safari/537.36 EdgA/127.0.0.0\"\n})",
+    "lastUpdateTime": "1756052250572",
+    "loginUi": "[\n    {\n    \t\"name\": \"用户名\", \n    \t\"type\": \"text\"\n    \t},\n    {\n    \t\"name\": \"密码\", \n    \"type\": \"text\"\n    },\n   {\n       \"name\": \"随机注册\",\n       \"type\": \"button\",\n       \"action\": \"register()\",\n       \"style\": {\n           \"layout_flexGrow\": 1,\n           \"layout_flexBasisPercent\": 0.25\n       }\n   }\n]",
+    "loginUrl": "function register() {\n    const regUrl = `${baseUrl.replace(/\\/+$/,'').replace(/[^\\w.:\\/-]/g,'')}/api/user/register`.replace(/\\/+/gi, \"/\");\n    \n    const randomUsername = generateRandomString(8); // 随机用户名\n    const randomPassword = generateRandomString(10); // 随机密码\n    \n    const domains = [\"qq.com\", \"gmail.com\", \"163.com\", \"outlook.com\"]; // 邮箱池\n    const randomDomain = domains[Math.floor(Math.random() * domains.length)]; // 随机选择邮箱域名：生成0到domains.length-1的随机索引\n    \n    const randomEmail = generateRealisticEmail(randomDomain); // 随机邮箱\n    const randomNickname = generateRandomString(6); // 随机昵称\n    \n    const registerParams = {\n        method: \"POST\",\n        headers: {\"Content-Type\": \"application/json\", \"x-requested-with\": \"XMLHttpRequest\"},\n        body: JSON.stringify({\n        \tusername: randomUsername, password: randomPassword, \n        \temail: randomEmail,\n        \tnickname: randomNickname})\n    };\n    \n    java.log(\"尝试注册: \" + registerParams.body);\n    const response = java.post(regUrl, registerParams.body, registerParams.headers);\n    const body = response.body();\n    \n    try {\n        const result = JSON.parse(body);\n        if (result.code === 200) {\n            const token = result.data.token;\n            const authHeader = JSON.stringify({Authorization: `Bearer ${token}`, Cookie: `authToken=${token}`});\n            source.putLoginInfo(JSON.stringify({\"用户名\": randomUsername, \"密码\": randomPassword}));\n            java.longToast(\"注册成功\");\n            return source.putLoginHeader(authHeader);\n        } else {\n            throw Error(result.msg || \"注册失败\");\n        }\n    } catch (e) {\n        java.log(\"注册失败: \" + e.message + \", 响应: \" + body);\n        throw Error(\"注册失败\");\n    }\n}\n\nfunction generateRandomString(length, includeNumbers = true) {\n    const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';\n    let result = '';\n    for (let i = 0; i < length; i++) result += chars[Math.floor(Math.random() * chars.length)];\n    return result;\n}\n\nfunction generateRealisticEmail(domain) {\n    let username;\n    switch (domain) {\n        case \"qq.com\":\n            username = Math.floor(100000000 + Math.random() * 900000000).toString();\n            break;\n            \n        case \"163.com\":\n            username = generateRandomString(6 + Math.floor(Math.random() * 4), true);\n            if (Math.random() > 0.6) username = username.slice(0, 3) + '_' + username.slice(3);\n            break;\n            \n        case \"outlook.com\":\n            username = generateRandomString(6 + Math.floor(Math.random() * 4), true);\n            if (Math.random() > 0.7) username = username.slice(0, 3) + '.' + username.slice(3);\n            break;\n            \n        default:\n            username = generateRandomString(7 + Math.floor(Math.random() * 5), true);\n            break;\n    }\n    \n    return username + \"@\" + domain;\n}\n\nfunction login() {\n    const loginUrl = `${baseUrl.replace(/\\/+$/,'').replace(/[^\\w.:\\/-]/g,'')}/api/user/login`.replace(/\\/+/gi, \"/\");\n    const user = source.getLoginInfoMap();\n    const loginParams = {\n        method: \"POST\",\n        headers: {\"Content-Type\": \"application/json\", \"x-requested-with\": \"XMLHttpRequest\"},\n        body: JSON.stringify({username: user.get(\"用户名\"), password: user.get(\"密码\")})\n    };\n    \n    const response = java.post(loginUrl, loginParams.body, loginParams.headers);\n    const body = response.body();\n    \n    try {\n        const result = JSON.parse(body);\n        if (result.code === 200 && result.msg === \"Login successful\") {\n            const token = result.data.token;\n            return source.putLoginHeader(JSON.stringify({Authorization: `Bearer ${token}`, Cookie: `authToken=${token}`}));\n        } else {\n            throw Error(result.msg || \"登录失败\");\n        }\n    } catch (e) {\n        java.log(\"登录失败: \" + e.message);\n        throw Error(\"登录失败\");\n    }\n}",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "$..author||$.data.author",
+      "coverUrl": "$.data.cover||$..cover",
+      "intro": "$..intro||$.data.intro",
+      "kind": "$.data.tags||$..tags",
+      "name": "$.data.title||$..title",
+      "tocUrl": "/api/comic/chapter?comicId={$..id}&page=1&pageSize=20"
+    },
+    "ruleContent": {
+      "content": "@js:\nvar imgs = JSON.parse(src).data.images;\nimgs.map($=>`<img src=\"${$.url}\">`).join(\"\\n\")",
+      "imageStyle": "FULL",
+      "nextContentUrl": "@js:\nvar pageUrls = [];\ntry {\n  var rawData = result || \"{}\";\n  if (typeof rawData !== \"string\") rawData = JSON.stringify(rawData);\n  var Data = JSON.parse(rawData).data;\n  var pageSize = Data.pagination?.page_size;\n  var total = Data.pagination?.total;\n  var totalPages = Math.ceil(total / pageSize);\n\n  for (var i = 2; i <= totalPages; i++) {\n    pageUrls.push(baseUrl.replace(/page=\\d+/, `page=${i}`));\n  }\n} catch (e) {\n  java.log(\"解析错误: \" + e.message);\n  pageUrls = [];\n}\npageUrls;"
+    },
+    "ruleExplore": {
+      "author": "$.author",
+      "bookList": "$.data.list[*]",
+      "bookUrl": "/api{{$.url}}",
+      "coverUrl": "$.pic",
+      "intro": "$.intro",
+      "kind": "$.tags",
+      "name": "$.title"
+    },
+    "ruleSearch": {
+      "author": "$.author",
+      "bookList": "$.data.list[*]",
+      "bookUrl": "/api/comic/{{$.id}}",
+      "coverUrl": "$.cover",
+      "intro": "$.description",
+      "kind": "$.tags",
+      "name": "$.title"
+    },
+    "ruleToc": {
+      "chapterList": "$.data[*]",
+      "chapterName": "$.title",
+      "chapterUrl": "/api/comic/image/{{$.id}}?page=1&page_size=60",
+      "isVip": "$.isVip",
+      "nextTocUrl": "@js:\nvar pageUrls = [];\n try {\n   var rawData = result || \"{}\";\n   if (typeof rawData !== \"string\") rawData = JSON.stringify(rawData);\n   var result = JSON.parse(rawData);\n   var total = result.pagination?.total;\n   var pageSize = result.pagination?.size;\n   var totalPages = Math.ceil(total / pageSize);\n   for (var i = 2; i <= totalPages; i++) {\n     pageUrls.push(baseUrl.replace(/page=\\d+/,`page=${i}`));\n   }\n } catch (e) {\n   java.log(\"解析错误: \" + e.message);\n   pageUrls = [];\n }\n pageUrls;"
+    },
+    "searchUrl": "/api/search?keyword={{key}}&type=mh&page={{page}}&pageSize=20",
+    "weight": 0
+  },
+  {
     "bookSourceGroup": "✍🏻自制",
     "bookSourceName": "爱下书小说网",
     "bookSourceType": 0,
@@ -40,150 +186,106 @@
     "weight": 0
   },
   {
-    "bookSourceComment": "// Error: 搜索目录失效, 发现目录失效\n\n网站在墙内（无法登录，部分作者的文章看不到，需要可以fq访问esjzone.cc）",
-    "bookSourceGroup": "搜索目录失效,good,发现目录失效,轻小说",
-    "bookSourceName": "ESJ Zone@zone",
+    "bookSourceComment": "25-04-05 靈狐 制\n25-08-18 修复正文解密\n\n部分书详情页封面无法访问可使用搜索封面规则",
+    "bookSourceGroup": "🎉 精选",
+    "bookSourceName": "3A小说",
     "bookSourceType": 0,
-    "bookSourceUrl": "https://www.esjzone.one/",
-    "customOrder": 0,
+    "bookSourceUrl": "https://www.aaawz.cc",
+    "customOrder": -92867,
     "enabled": true,
     "enabledCookieJar": false,
-    "enabledExplore": true,
-    "exploreUrl": "[{\"title\":\"全部\",\"url\":\"\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":1}},\n{\"title\":\"最新更新\",\"url\":\"/list-01/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n{\"title\":\"最新上架\",\"url\":\"/list-02/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n{\"title\":\"最高评分\",\"url\":\"/list-03/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n{\"title\":\"最多观看\",\"url\":\"/list-04/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n{\"title\":\"最多文章\",\"url\":\"/list-05/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n{\"title\":\"最多讨论\",\"url\":\"/list-06/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n{\"title\":\"最多收藏\",\"url\":\"/list-07/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n{\"title\":\"最多字数\",\"url\":\"/list-08/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n{\"title\":\"原創\",\"url\":\"\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":1}},\n{\"title\":\"最新更新\",\"url\":\"/list-21/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n{\"title\":\"最新上架\",\"url\":\"/list-22/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n{\"title\":\"最高评分\",\"url\":\"/list-23/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n{\"title\":\"最多观看\",\"url\":\"/list-24/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n{\"title\":\"最多文章\",\"url\":\"/list-25/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n{\"title\":\"最多讨论\",\"url\":\"/list-26/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n{\"title\":\"最多收藏\",\"url\":\"/list-27/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n{\"title\":\"最多字数\",\"url\":\"/list-28/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n{\"title\":\"日輕\",\"url\":\"\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":1}},\n{\"title\":\"最新更新\",\"url\":\"/list-11/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n{\"title\":\"最新上架\",\"url\":\"/list-12/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n{\"title\":\"最高评分\",\"url\":\"/list-13/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n{\"title\":\"最多观看\",\"url\":\"/list-14/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n{\"title\":\"最多文章\",\"url\":\"/list-15/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n{\"title\":\"最多讨论\",\"url\":\"/list-16/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n{\"title\":\"最多收藏\",\"url\":\"/list-17/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n{\"title\":\"最多字数\",\"url\":\"/list-18/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n{\"title\":\"韓輕\",\"url\":\"\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":1}},\n{\"title\":\"最新更新\",\"url\":\"/list-31/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n{\"title\":\"最新上架\",\"url\":\"/list-32/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n{\"title\":\"最高评分\",\"url\":\"/list-33/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n{\"title\":\"最多观看\",\"url\":\"/list-34/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n{\"title\":\"最多文章\",\"url\":\"/list-35/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n{\"title\":\"最多讨论\",\"url\":\"/list-36/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n{\"title\":\"最多收藏\",\"url\":\"/list-37/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n{\"title\":\"最多字数\",\"url\":\"/list-38/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n{\"title\":\"R18\",\"url\":\"\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":1}},\n{\"title\":\"最新更新\",\"url\":\"/tags-01/R18/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n{\"title\":\"最新上架\",\"url\":\"/tags-02/R18/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n{\"title\":\"最高评分\",\"url\":\"/tags-03/R18/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n{\"title\":\"最多观看\",\"url\":\"/tags-04/R18/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n{\"title\":\"最多文章\",\"url\":\"/tags-05/R18/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n{\"title\":\"最多讨论\",\"url\":\"/tags-06/R18/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n{\"title\":\"最多收藏\",\"url\":\"/tags-07/R18/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n{\"title\":\"最多字数\",\"url\":\"/tags-08/R18/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}}]",
-    "lastUpdateTime": "1756016288361",
-    "loginUrl": "https://www.esjzone.one/my/profile.html",
-    "respondTime": 185203,
+    "enabledExplore": false,
+    "header": "@js:JSON.stringify({\n  'Accept': \"application/json, text/plain, */*\",\n  'origin': source.key,\n  'referer': source.key+\"/\",\n  'accept-language': \"zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7\"\n})",
+    "jsLib": "function decompressFromBase64(input) {\n    if (input == null) return '';\n    if (input === '') return null;\n\n    const base64Alphabet = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=\";\n    const lookup = {};\n    for (let i = 0; i < base64Alphabet.length; i++) {\n        lookup[base64Alphabet.charAt(i)] = i;\n    }\n    function getValue(char) {\n        return lookup[char];\n    }\n\n    function decompress(length, resetValue, getNextValue) {\n        const dictionary = [];\n        let dictSize = 4;\n        let bits = 3;\n        let result = [];\n        let data = { val: getNextValue(0), position: resetValue, index: 1 };\n\n        // 读取初始控制代码（2 位）\n        let res = 0;\n        let maxPower = Math.pow(2, 2);\n        let power = 1;\n        while (power != maxPower) {\n            let bit = data.val & data.position;\n            data.position >>= 1;\n            if (data.position == 0) {\n                data.position = resetValue;\n                if (data.index > length) return '';\n                data.val = getNextValue(data.index++);\n            }\n            res |= (bit > 0 ? 1 : 0) * power;\n            power <<= 1;\n        }\n\n        let next;\n        switch (res) {\n            case 0: // 8 位字符\n                res = 0;\n                maxPower = Math.pow(2, 8);\n                power = 1;\n                while (power != maxPower) {\n                    let bit = data.val & data.position;\n                    data.position >>= 1;\n                    if (data.position == 0) {\n                        data.position = resetValue;\n                        if (data.index > length) return '';\n                        data.val = getNextValue(data.index++);\n                    }\n                    res |= (bit > 0 ? 1 : 0) * power;\n                    power <<= 1;\n                }\n                next = String.fromCharCode(res);\n                break;\n            case 1: // 16 位字符\n                res = 0;\n                maxPower = Math.pow(2, 16);\n                power = 1;\n                while (power != maxPower) {\n                    let bit = data.val & data.position;\n                    data.position >>= 1;\n                    if (data.position == 0) {\n                        data.position = resetValue;\n                        if (data.index > length) return '';\n                        data.val = getNextValue(data.index++);\n                    }\n                    res |= (bit > 0 ? 1 : 0) * power;\n                    power <<= 1;\n                }\n                next = String.fromCharCode(res);\n                break;\n            case 2: // 结束\n                return '';\n        }\n\n        // 初始化字典\n        dictionary[0] = '';\n        dictionary[1] = '';\n        dictionary[2] = '';\n        dictionary[3] = next;\n        let w = next;\n        result.push(next);\n\n        // 主解压循环\n        while (data.index <= length) {\n            let code = 0;\n            maxPower = Math.pow(2, bits);\n            power = 1;\n            while (power != maxPower) {\n                let bit = data.val & data.position;\n                data.position >>= 1;\n                if (data.position == 0) {\n                    data.position = resetValue;\n                    if (data.index > length) break;\n                    data.val = getNextValue(data.index++);\n                }\n                code |= (bit > 0 ? 1 : 0) * power;\n                power <<= 1;\n            }\n\n            if (data.index > length && code === 0) break;\n\n            switch (next = code) {\n                case 0: // 新 8 位字符\n                    res = 0;\n                    maxPower = Math.pow(2, 8);\n                    power = 1;\n                    while (power != maxPower) {\n                        let bit = data.val & data.position;\n                        data.position >>= 1;\n                        if (data.position == 0) {\n                            data.position = resetValue;\n                            if (data.index > length) return result.join('');\n                            data.val = getNextValue(data.index++);\n                        }\n                        res |= (bit > 0 ? 1 : 0) * power;\n                        power <<= 1;\n                    }\n                    dictionary[dictSize++] = String.fromCharCode(res);\n                    next = dictSize - 1;\n                    break;\n                case 1: // 新 16 位字符\n                    res = 0;\n                    maxPower = Math.pow(2, 16);\n                    power = 1;\n                    while (power != maxPower) {\n                        let bit = data.val & data.position;\n                        data.position >>= 1;\n                        if (data.position == 0) {\n                            data.position = resetValue;\n                            if (data.index > length) return result.join('');\n                            data.val = getNextValue(data.index++);\n                        }\n                        res |= (bit > 0 ? 1 : 0) * power;\n                        power <<= 1;\n                    }\n                    dictionary[dictSize++] = String.fromCharCode(res);\n                    next = dictSize - 1;\n                    break;\n                case 2: // 结束\n                    return result.join('');\n            }\n\n            if (dictSize - 1 >= Math.pow(2, bits) - 1) bits++;\n\n            let entry;\n            if (dictionary[next]) {\n                entry = dictionary[next];\n            } else if (next === dictSize) {\n                entry = w + w.charAt(0);\n            } else {\n                return null;\n            }\n\n            result.push(entry);\n            dictionary[dictSize++] = w + entry.charAt(0);\n            w = entry;\n\n            if (dictSize - 1 >= Math.pow(2, bits) - 1) bits++;\n        }\n\n        return result.join('');\n    }\n\n    return decompress(input.length, 32, (index) => getValue(input.charAt(index)));\n}",
+    "lastUpdateTime": "1756047901346",
+    "loginCheckJs": "let url = result.url()\nlet body = result.body()\nif(url.includes('-chapter-')){\n let data = java.base64DecodeToByteArray(body)\n let iv = data.slice(0,16)\n let x = java.createSymmetricCrypto('AES/CBC/PKCS7Padding',java.strToBytes('123#2^0@0vm@08.b5%$1[A]1&4115s(('), iv)\n body = x.decryptStr(data.slice(16, data.length))\n}\nPackages.io.legado.app.help.http.StrResponse(url, decompressFromBase64(String(body).replace(/\\s/g,'')))",
+    "respondTime": 8850,
     "ruleBookInfo": {
-      "author": "ul.list-unstyled@li.1@a@text",
-      "canReName": "1",
-      "coverUrl": ".product-gallery@img@src",
-      "intro": "<br>{{@@section.m-t-20@a.tag@text##(^|[\\n])##🏷️}}\n{{'&lrm;'}}\n{{@@div.description@html}}",
-      "kind": "{{@@ul.list-unstyled@li.0@text##類型.\\s}},{{@@ul.list-unstyled@li.-2@text##更新日期.\\s}},{{@@.hidden-xs@div.display-3@text##$##分}}",
-      "lastChapter": "#chapterList@a.-1@p@text&&.list-unstyled@li.-2@text##更新日期.\\s",
-      "name": "h2@text",
-      "wordCount": "span#txt@text##\\D"
+      "author": "author",
+      "coverUrl": "imgurl",
+      "intro": "intro",
+      "kind": "lastupdate@js:java.timeFormat(result[0]*1000)",
+      "lastChapter": "{{$.lastchapter}}·{{java.timeFormat(java.getString('$.lastupdate')*1000)}}",
+      "name": "articlename",
+      "tocUrl": "/api-chapterlist-{{$.tid}}-{{$.siteid}}"
     },
     "ruleContent": {
-      "content": "div.forum-content@html"
+      "content": "@js:result"
     },
     "ruleExplore": [],
     "ruleSearch": {
-      "author": ".card-author@a@text",
-      "bookList": "div.col-lg-3",
-      "bookUrl": ".card-title@a@href",
-      "checkKeyWord": "勇者",
-      "coverUrl": "div.lazyload@html##.*\"(.*)\".*##$1",
-      "kind": "{{@@div.card-other.1@div.2@text##\\D}}个收藏,{{@@div.card-other.2@div.2@text##\\D}}条留言",
-      "lastChapter": ".card-ep@a@text",
-      "name": ".card-title@a@text",
-      "wordCount": "div.card-other.0@div.column.1@text##\\D"
+      "author": "author##<\\/?em>",
+      "bookList": "data.books",
+      "bookUrl": "/api-info-{{$.tid}}-{{$.siteid}}",
+      "coverUrl": "tid@js:let sid = java.getString('siteid');\n'/bookimg/'+sid+'/'+result%100+'/'+result+'.jpg'",
+      "kind": "lastupdate",
+      "lastChapter": "lastchapter&&lastupdate##\\n##·",
+      "name": "articlename##<\\/?em>"
     },
     "ruleToc": {
-      "chapterList": "#chapterList@a[data-title], p.non, summary",
-      "chapterName": "text",
-      "chapterUrl": "href",
-      "isVolume": "p.non@text||summary@text"
+      "chapterList": "*",
+      "chapterName": "title",
+      "chapterUrl": "{{baseUrl.replace('list-','-')}}-{{$.cid}}",
+      "updateTime": "{{java.timeFormat(java.getString('$.update')*1000)}}更新 {{$.wordNum}}字"
     },
-    "searchUrl": "/tags-01/{{key}}/{{page}}.html",
+    "searchUrl": "/api-search,{\n  \"method\": \"POST\",\n  \"body\": 'keyword={{key}}&page={{page}}&size=10'\n}",
     "weight": 0
   },
   {
-    "bookSourceName": "笔趣阁",
+    "bookSourceComment": "/*\n\t无法搜索，只能把小说详情页的链接url添加“书架”左上角的“添加网址”。\n\t\n\t\n搜索有验证是否真人。\n\n\nhttps://www.69yd.top/articlecategroy/1xh8.html\n\n*/",
+    "bookSourceGroup": "🎉 精选",
+    "bookSourceName": "69阅读69yd",
     "bookSourceType": 0,
-    "bookSourceUrl": "https://m.37dda36.cfd/",
-    "customOrder": 0,
+    "bookSourceUrl": "https://www.69yd.top",
+    "customOrder": -92869,
     "enabled": true,
     "enabledCookieJar": true,
     "enabledExplore": true,
-    "exploreUrl": "地图::/map/<,index_{{page}}.html>",
-    "lastUpdateTime": "1756043288334",
+    "exploreUrl": "排行榜\n人气最高::/api/list/0/0/1/1.json\n",
+    "header": "{'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36','Referer':'https://www.69yd.top/','sec-fetch-mode':'cors'}",
+    "lastUpdateTime": "1756167923766",
+    "loginUi": "",
+    "loginUrl": "https://www.69yd.top/login.html",
     "respondTime": 180000,
     "ruleBookInfo": {
-      "author": ".dd_box[0]@tag.span[0]@text",
-      "coverUrl": ".cover@tag.img@src",
-      "intro": ".book_about@tag.dd@text##展开全部>>",
-      "kind": ".dd_box[0]@tag.span[1]@text",
-      "lastChapter": ".oninfo@tag.a",
-      "name": ".name@text",
-      "tocUrl": ".book_more@tag.a@href",
-      "wordCount": ".dd_box[1]@tag.span[1]@text"
+      "author": " class.text-base.0@a@text",
+      "canReName": "",
+      "coverUrl": "w-full h-full object-cover@src",
+      "intro": "id.book-description@text",
+      "kind": " class.text-base.1@a@text",
+      "name": "class.w-2/3 md:w-2/3 lg:w-4/5@h1@text",
+      "tocUrl": "class.mt-6 flex items-center space-x-4@data-id\n<js>\nresult = \"/api/articleitems/\"+ result +\".json\";\n</js>",
+      "wordCount": "class.flex items-center space-x-2 text-base@span.0@text"
     },
     "ruleContent": {
-      "content": ".Readarea@html##请收藏：https://m.(.*?).cfd.*|（温馨提示：请关闭畅读或阅读模式，否则内容无法正常显示）",
-      "nextContentUrl": ".Readpage@tag.a[2]@href",
-      "replaceRegex": "",
-      "sourceRegex": ""
+      "content": " class.dlcss@text",
+      "imageStyle": "",
+      "title": "main@header@h2@text"
     },
     "ruleExplore": {
-      "author": "tag.em@text",
-      "bookList": "tag.li||.image",
-      "bookUrl": "tag.a@href",
-      "coverUrl": "tag.img@src",
-      "intro": "",
-      "kind": ".rate@text",
-      "name": "tag.a@text||tag.img@alt"
+      "author": "author",
+      "bookList": "data",
+      "bookUrl": "infourl",
+      "coverUrl": "coverUrl",
+      "intro": "description",
+      "kind": "categoryName",
+      "name": "title",
+      "wordCount": "wordCount"
     },
     "ruleSearch": {
-      "bookList": "",
-      "name": ""
+      "author": "author",
+      "bookList": "results",
+      "bookUrl": "infourl",
+      "intro": "description",
+      "name": "title"
     },
     "ruleToc": {
-      "chapterList": ".book_last@tag.a!0",
-      "chapterName": "text",
-      "chapterUrl": "href"
+      "chapterList": "-items",
+      "chapterName": "cn",
+      "chapterUrl": "/article/{{$.cid}}.html",
+      "formatJs": ""
     },
-    "searchUrl": "",
-    "weight": 0
-  },
-  {
-    "bookSourceComment": "可免费看UAA小说，但最新三章节需要VIP才能看",
-    "bookSourceGroup": "自用",
-    "bookSourceName": "夜读阁",
-    "bookSourceType": 0,
-    "bookSourceUrl": "https://www.yeduge.com",
-    "customOrder": -1,
-    "enabled": true,
-    "enabledCookieJar": true,
-    "enabledExplore": true,
-    "exploreUrl": "[{\"title\":\"历史\",\"url\":\"/cat/7/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},{\"title\":\"穿越\",\"url\":\"/cat/14/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},{\"title\":\"同人\",\"url\":\"/cat/21/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},{\"title\":\"武侠\",\"url\":\"/cat/28/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},{\"title\":\"校园\",\"url\":\"/cat/35/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},{\"title\":\"都市\",\"url\":\"/cat/42/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},{\"title\":\"乱伦\",\"url\":\"/cat/49/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},{\"title\":\"科幻\",\"url\":\"/cat/56/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},{\"title\":\"奇幻\",\"url\":\"/cat/63/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},{\"title\":\"玄幻\",\"url\":\"/cat/70/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},{\"title\":\"系统\",\"url\":\"/cat/77/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},{\"title\":\"乡村\",\"url\":\"/cat/84/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},{\"title\":\"异能\",\"url\":\"/cat/91/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},{\"title\":\"明星\",\"url\":\"/cat/98/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},{\"title\":\"贤者\",\"url\":\"/cat/105/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},{\"title\":\"贤者小说\",\"url\":\"/cat/112/{{page}}.html\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}}]",
-    "lastUpdateTime": "1755943082061",
-    "loginUi": "[\n    {\n        \"name\": \"账号\",\n        \"type\": \"text\"\n    },\n    {\n        \"name\": \"密码\",\n        \"type\": \"password\"\n    },\n    {\n        \"name\": \"登录\",\n        \"type\": \"button\",\n        \"action\": \"login()\",\n        \"style\":{\n        \t\"layout_flexGrow\":1,\n        \"layout_flexBasisPercent\":0.2\n        }\n    },\n    {\n    \t   \"name\":\"注册\",\n    \t   \"type\": \"button\",\n    \t   \"action\": \"register()\",\n    \t   \"style\":{\n    \t   \t\"layout_flexGrow\":1,\n    \t   \t\"layout_flexBasisPercent\":0.2\n    \t   \t}\n    \t} \n]",
-    "loginUrl": "info=source.getLoginInfoMap();\n\nfunction login() {\n    var url = \"https://www.yeduge.com/api/login.php\";\n    var headers = {\n  \"body\":`username=${info.get(\"账号\")}&password=${info.get(\"密码\")}`,\n  \"method\": \"POST\"\n}\n data=java.ajax(url+\",\"+JSON.stringify(headers));\n    data.includes(\"true\")?java.longToast(\"登陆成功\"):java.longToast((JSON.parse(data)).message)\n}\nfunction register() {\n\tvar url = \"https://www.yeduge.com/api/register.php\";\n    var headers = {\n  \"body\": `username=${info.get(\"账号\")}&password=${info.get(\"密码\")}`,\n  \"method\": \"POST\"\n}\n data=java.ajax(url+\",\"+JSON.stringify(headers));\n    data.includes(\"true\")?java.longToast(\"注册成功\"):java.longToast((JSON.parse(data)).message)\n\t}",
-    "respondTime": 180000,
-    "ruleBookInfo": {
-      "author": ".info@p.0@text",
-      "coverUrl": ".cover@img@src",
-      "intro": ".desc@text",
-      "kind": ".info@p.2@text##分类：",
-      "lastChapter": "class.right@text",
-      "name": ".info@h1@text"
-    },
-    "ruleContent": {
-      "content": ".content@all"
-    },
-    "ruleExplore": {
-      "author": "span@text",
-      "bookList": "class.novel-list@a",
-      "bookUrl": "a@href",
-      "coverUrl": "img@data-src",
-      "name": "h4@text"
-    },
-    "ruleSearch": {
-      "author": "class.author@text",
-      "bookList": "section",
-      "bookUrl": "a@href",
-      "checkKeyWord": "淫书生",
-      "coverUrl": "img@src",
-      "intro": "class.desc@text",
-      "name": "class.title@text"
-    },
-    "ruleToc": {
-      "chapterList": ".chapter-list@a",
-      "chapterName": "h4@text",
-      "chapterUrl": "href",
-      "isVip": "small@text<js>result==\"VIP\"</js>"
-    },
-    "searchUrl": "https://www.yeduge.com/search/?q={{key}}&page={page}}",
+    "searchUrl": "<js>if(java.ajax(\"https://www.69yd.top/search.html?q=\").match(/^<!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</)){java.longToast('请根据网页提示点击勾选「确认您是真人」来通过人机验证，如果无限循环请查看源注释说明。');java.startBrowserAwait(\"https://www.69yd.top/search.html?q=\",'人机验证');};</js>/api/search,{\n  \"method\": \"POST\",\n  \"body\": 'q={{key}}'\n}",
     "weight": 0
   },
   {
@@ -249,65 +351,6 @@
     "weight": 0
   },
   {
-    "bookSourceComment": "//2025.5.20 ◎夜泽川◎\n//2025.8.3 修复 ◎夜泽川◎\n//2025.8.21 添加账号登录，内置一个公共账号（输入框置空直接点击登陆即可） ◎夜泽川◎",
-    "bookSourceGroup": "自制,漫画",
-    "bookSourceName": "🥝猕猴桃漫画",
-    "bookSourceType": 2,
-    "bookSourceUrl": "https://www.mwwz.cc",
-    "customOrder": 0,
-    "enabled": true,
-    "enabledCookieJar": true,
-    "enabledExplore": true,
-    "exploreUrl": "@js:\nvar result = [];\nvar push = (title, tag, p, size) => result.push({\n    title: title,\n    url: `{{Url()}}/api${p}` + \",\" + JSON.stringify({\n  \"body\": `{\\\"page\\\":{\\\"page\\\":{{page}},\\\"pageSize\\\":10},\\\"category\\\":\\\"comic\\\",\\\"sort\\\":0,\\\"comic\\\":{\\\"status\\\":-1,\\\"day\\\":0,\\\"tag\\\":\\\"${tag}\\\"},\\\"video\\\":{\\\"year\\\":0,\\\"typeId\\\":0,\\\"typeId1\\\":0,\\\"area\\\":\\\"\\\",\\\"lang\\\":\\\"\\\",\\\"status\\\":-1,\\\"day\\\":0},\\\"novel\\\":{\\\"status\\\":-1,\\\"day\\\":0,\\\"sortId\\\":0}}`,\n  \"method\": \"POST\"\n}),\n    style: {\n        layout_flexGrow: 1,\n        layout_flexBasisPercent: size\n    }\n});\nvar tags = org.jsoup.Jsoup.parse(java.ajax(Url() + '/cate')).select('.tag-container').toArray().at(-1).select('a');\nfor (let i in tags) {\n\tlet size = i == 0 ? 1 : 0.25;\n\tpush(tags[i].text(), tags[i].attr('data-value'), tags[i].attr('href'), size);\n}\nJSON.stringify(result);",
-    "header": "{\"User-Agent\":\"Mozilla/5.0 (Linux; Android 9) Mobile Safari/537.36\",\"Referer\":\"https://www.mhtmh.com\"}",
-    "jsLib": "function Url() {\n    const { source, java } = this;\n    var original = {\n        \"sourceurl\": \"https://www.mhtmh.com\",\n        \"Urls\": []\n    };\n    if (source.getVariable() == '') {\n        source.setVariable(JSON.stringify(original, null, \"\\t\"));\n        java.toast('已初始化');\n    }\n    return JSON.parse(source.getVariable()).sourceurl;\n}",
-    "lastUpdateTime": "1755779395401",
-    "loginUi": "[\n    {\n        \"name\": \"获取站源\",\n        \"type\": \"button\",\n        \"action\": \"getUrl()\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 1\n        }\n    },\n    {\n        \"name\": \"①\",\n        \"type\": \"button\",\n        \"action\": \"setUrl(0)\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.2\n        }\n    },\n    {\n        \"name\": \"②\",\n        \"type\": \"button\",\n        \"action\": \"setUrl(1)\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.2\n        }\n    },\n    {\n        \"name\": \"③\",\n        \"type\": \"button\",\n        \"action\": \"setUrl(2)\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.2\n        }\n    },\n    {\n        \"name\": \"④\",\n        \"type\": \"button\",\n        \"action\": \"setUrl(3)\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.2\n        }\n    },\n    {\n        \"name\": \"用户名（3-50个字符）\",\n        \"type\": \"text\"\n    },\n    {\n        \"name\": \"邮箱（注册填入）\",\n        \"type\": \"text\"\n    },\n    {\n        \"name\": \"密码（6-20个字符）\",\n        \"type\": \"password\"\n    },\n    {\n        \"name\": \"注册\",\n        \"type\": \"button\",\n        \"action\": \"register()\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.2\n        }\n    },\n    {\n        \"name\": \"登录\",\n        \"type\": \"button\",\n        \"action\": \"Login()\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.2\n        }\n    },\n    {\n        \"name\": \"登出\",\n        \"type\": \"button\",\n        \"action\": \"LoginOut()\",\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": 0.2\n        }\n    }\n]",
-    "loginUrl": "Url();\nfunction getUrl() {\n    try {\n        let urls = Array.from(org.jsoup.Jsoup.parse(java.get(\"https://www.su7.la/\", {}).body()).select('.cards a'), x => x.attr('href'));\n        if (urls.length === 0) throw new Error('未获取到站源');\n        let data = JSON.parse(source.getVariable());\n        data.Urls = urls;\n        source.setVariable(JSON.stringify(data, null, \"\\t\"));\n        java.toast(`获取到${urls.length}个站源\\n${urls.join('\\n')}`);\n    } catch (e) {\n        java.log(e.message)\n        java.toast('获取失败，请检查网络');\n    }\n}\n\nfunction setUrl(n) {\n    let data = JSON.parse(source.getVariable());\n    if (n + 1 > data.Urls.length) return java.toast(`暂时没有站源${n + 1}`);\n    data.sourceurl = data.Urls[n];\n    source.setVariable(JSON.stringify(data, null, \"\\t\"));\n    java.toast(`当前站源已切换到：\\n${data.Urls[n]}`);\n}\n\nfunction login() {}\n\nfunction Login() {\n    let username = String(result?.[\"用户名（3-50个字符）\"] ?? '') || \"axb\";\n    let password = String(result?.[\"密码（6-20个字符）\"] ?? '') || \"123456789@\";\n    let url = `${Url()}/api/user/login`;\n    try {\n        let response = JSON.parse(java.post(url, JSON.stringify({\n            username,\n            password\n        }), {\n            \"x-requested-with\": \"XMLHttpRequest\",\n            \"Content-Type\": \"application/json\"\n        }).body());\n        if (!/successful/.test(response.msg)) return java.toast(response.msg);\n        let token = response.data.token;\n        source.putLoginHeader(JSON.stringify({\n            \"Authorization\": \"Bearer \" + token,\n            \"Cookie\": \"authToken=\" + token\n        }));\n        java.toast(`\\n用户：${username}\\n登录成功！`);\n    } catch (e) {\n        java.log(e.message);\n        java.toast('请求失败，请检查网络状况！');\n    }\n}\n\nfunction LoginOut() {\n    source.removeLoginHeader();\n    cookie.removeCookie(Url());\n    java.toast('登出成功！');\n}\n\nfunction register() {\n    let username = result?.[\"用户名（3-50个字符）\"] ?? '';\n    let password = result?.[\"密码（6-20个字符）\"] ?? '';\n    let email = result?.[\"邮箱（注册填入）\"] ?? '';\n    if (!String(username) || !String(password) || !String(email)) return java.toast('请填入必要数据');\n    if (String(username).length < 3 || String(username).length > 50) return java.toast('用户名不符合要求');\n    if (String(password).length < 6 || String(password).length > 20) return java.toast('密码不符合要求');\n    try {\n        let url = `${Url()}/api/user/register`;\n        let body = JSON.stringify({\n            username,\n            password,\n            email,\n            \"nickname\": username\n        });\n        let response = JSON.parse(java.post(url, body, {\n            \"x-requested-with\": \"XMLHttpRequest\",\n            \"Content-Type\": \"application/json\"\n        }).body());\n        if (!/successful/.test(response.msg)) return java.toast(response.msg);\n        java.log(`\\n用户名：${username}\\n注册邮箱：${email}\\n密码：${password}`);\n        let token = response.data.token;\n        source.putLoginInfo(JSON.stringify(result));\n        source.putLoginHeader(JSON.stringify({\n            \"Authorization\": \"Bearer \" + token,\n            \"Cookie\": \"authToken=\" + token\n        }));\n        java.toast(`\\n用户：${username}\\n注册并登录成功！\\n用户数据已打印至源日志`);\n    } catch (e) {\n        java.log(e.message);\n        java.toast('请求失败，请检查网络状况！');\n    }\n}",
-    "respondTime": 180000,
-    "ruleBookInfo": {
-      "author": "$.author",
-      "coverUrl": "$.cover",
-      "init": "$.data",
-      "intro": "@js:\nvar $ = result;\n`&nbsp;&nbsp;当前站源：${JSON.parse(source.getVariable()).sourceurl}\\n上架时间：${java.timeFormat($.createTime * 1000)}\\n更新时间：${java.timeFormat($.editTime * 1000)}\\n简介：${$.intro}`;",
-      "kind": "@js:var $ = result;\n$.tags + ',' + java.timeFormat($.editTime * 1000);",
-      "name": "$.title",
-      "tocUrl": "{{Url()}}/comic/{{$.id}}"
-    },
-    "ruleContent": {
-      "content": "@js:var imglist = JSON.parse(src).data.images\nresult = imglist.map(x => `<img src=\"${x.url}\">`).join('\\n');",
-      "imageStyle": "FULL",
-      "nextContentUrl": "@js:var pageList = [];\nlet Data = JSON.parse(src).data.pagination;\nvar page = Math.ceil(Data.total / Data.page_size);\nfor (let i = 2;i <= page;i++) {\npageList.push(baseUrl.replace(\"page=1\",`page=${i}`));\n}\npageList;"
-    },
-    "ruleExplore": {
-      "author": "$.author",
-      "bookList": "$.data.list[*]",
-      "bookUrl": "{{Url()}}/api/comic/{{$.url##[^\\d]}}",
-      "coverUrl": "$.pic",
-      "intro": "$.intro",
-      "kind": "$.tags",
-      "name": "$.title"
-    },
-    "ruleSearch": {
-      "author": "$.author",
-      "bookList": "$.data.list[*]",
-      "bookUrl": "{{Url()}}/api/comic/{{$.id}}",
-      "coverUrl": "$.cover",
-      "intro": "$.description",
-      "kind": "@js:var $ = result;\n$.tags + ',' + java.timeFormat($.editTime * 1000);",
-      "name": "$.title"
-    },
-    "ruleToc": {
-      "chapterList": "#chapter-grid-container a",
-      "chapterName": "[class$=\"name\"]@text",
-      "chapterUrl": "href##(\\d+)$##/api/comic/image/$1?page=1###",
-      "preUpdateJs": "var sourceUL = Url();\nif (!String(book.bookUrl).includes(sourceUL)) {\n  book.bookUrl = String(book.bookUrl).replace(/https?:\\/\\/[^\\/]+/,sourceUL);\n  book.tocUrl = String(book.tocUrl).replace(/https?:\\/\\/[^\\/]+/,sourceUL);\n  java.toast(\"\\n检测到切换源站，已更新目录链接。\");\n   java.refreshTocUrl();\n}",
-      "updateTime": "span@text##\\n##|"
-    },
-    "searchUrl": "{{Url()}}/api/search?keyword={{key}}&type=mh&page={{page}}&pageSize=20",
-    "weight": 0
-  },
-  {
     "bookSourceComment": "{\"禁漫0\":{\"siteName\":\"禁漫\",\"siteId\":\"b57cf40c-9c40-49aa-97b7-f75d2c4de388\",\"createTime\":1756015908131,\"modifiedTime\":1756088834483,\"host\":\"https://xman7.org\",\"level\":999,\"httpHeaders\":\"{\\\"User-Agent\\\":\\\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36\\\"}\",\"enable\":true,\"siteType\":0,\"switchLongPressWithList\":false,\"switchNetworkAdapter\":false,\"searchRule\":{\"requestUrl\":\"/cata.php?key=$keyWord&submit=\",\"list\":\"//ul[@class=\\\"vodlist vodlist_wi clearfix\\\"]/li\",\"title\":\"//li/a/@title\",\"cover\":\"//li/a/@data-original\",\"detailUrl\":\"//center/a[1]/@href\"},\"detailRule\":{\"title\":\"//h1/text()\",\"cover\":\"//div[@class=\\\"content_thumb fl\\\"]/a/@data-original\",\"author\":\"//div[@class=\\\"content_detail content_min fl\\\"]//li[2]/span/a/text()\"},\"chapterRule\":{\"list\":\"//ul[@class=\\\"content_playlist list_scroll clearfix\\\"]/li\",\"title\":\"//li/a/text()\",\"url\":\"//li/a/@href\"},\"contentRule\":{\"content\":\"//body/div[2]/center[3]/div/img/@data-original\",\"preLoad\":true},\"discoverRules\":[{\"name\":\"按时间全部\",\"index\":2,\"searchRule\":{\"requestUrl\":\"@js:\\nrl =\\\"/mcata/\\\"+params.filters.filter+\\\"/ob/time/st/all/page/\\\"+params.pageIndex\\nreturn rl\",\"list\":\"//ul[@class=\\\"vodlist vodlist_wi clearfix\\\"]/li\",\"title\":\"//li/a/@title\",\"author\":\"//li/div/center[2]/text()\",\"cover\":\"//li/a/@data-original\",\"detailUrl\":\"//center/a[1]/@href\",\"moreKeys\":\"{\\\"requestFilters\\\":\\\"韩漫::韩漫\\\\n日漫::%E6%97%A5%E6%BC%AB\\\\n3D::3D%E6%BC%AB%E7%94%BB\\\\n真人::%E7%9C%9F%E4%BA%BA%E7%BE%8E%E5%A5%B3\\\\n单本::%E5%8D%95%E6%9C%AC\\\"}\",\"displayType\":6}},{\"name\":\"按时间完结\",\"index\":2,\"searchRule\":{\"requestUrl\":\"@js:\\nreturn {\\n \\\"url\\\": \\\"/mcata/\\\"+params.filters.filter+\\\"/ob/time/st/completed/page/\\\"+params.pageIndex\\n}\",\"list\":\"//ul[@class=\\\"vodlist vodlist_wi clearfix\\\"]/li\",\"title\":\"//li/a/@title\",\"author\":\"//li/div/center[2]/text()\",\"cover\":\"//li/a/@data-original\",\"detailUrl\":\"//center/a[1]/@href\",\"moreKeys\":\"{\\\"requestFilters\\\":\\\"韩漫::韩漫\\\\n日漫::%E6%97%A5%E6%BC%AB\\\\n3D::3D%E6%BC%AB%E7%94%BB\\\\n真人::%E7%9C%9F%E4%BA%BA%E7%BE%8E%E5%A5%B3\\\\n单本::%E5%8D%95%E6%9C%AC\\\"}\",\"displayType\":6}},{\"name\":\"按时间未完\",\"index\":2,\"searchRule\":{\"requestUrl\":\"@js:\\nreturn {\\n \\\"url\\\": \\\"/mcata/\\\"+params.filters.filter+\\\"/ob/time/st/serialized/page/\\\"+params.pageIndex\\n}\",\"list\":\"//ul[@class=\\\"vodlist vodlist_wi clearfix\\\"]/li\",\"title\":\"//li/a/@title\",\"author\":\"//li/div/center[2]/text()\",\"cover\":\"//li/a/@data-original\",\"detailUrl\":\"//center/a[1]/@href\",\"moreKeys\":\"{\\\"requestFilters\\\":\\\"韩漫::韩漫\\\\n日漫::%E6%97%A5%E6%BC%AB\\\\n3D::3D%E6%BC%AB%E7%94%BB\\\\n真人::%E7%9C%9F%E4%BA%BA%E7%BE%8E%E5%A5%B3\\\\n单本::%E5%8D%95%E6%9C%AC\\\"}\",\"displayType\":6}},{\"name\":\"按热度全部\",\"index\":3,\"searchRule\":{\"requestUrl\":\"@js:\\nreturn {\\n \\\"url\\\": \\\"/mcata/\\\"+params.filters.filter+\\\"/ob/hits/st/all/page/\\\"+params.pageIndex\\n}\",\"list\":\"//ul[@class=\\\"vodlist vodlist_wi clearfix\\\"]/li\",\"title\":\"//li/a/@title\",\"author\":\"//li/div/center[2]/text()\",\"cover\":\"//li/a/@data-original\",\"detailUrl\":\"//center/a[1]/@href\",\"moreKeys\":\"{\\\"requestFilters\\\":\\\"韩漫::韩漫\\\\n日漫::%E6%97%A5%E6%BC%AB\\\\n3D::3D%E6%BC%AB%E7%94%BB\\\\n真人::%E7%9C%9F%E4%BA%BA%E7%BE%8E%E5%A5%B3\\\\n单本::%E5%8D%95%E6%9C%AC\\\"}\",\"displayType\":6}},{\"name\":\"按热度完结\",\"index\":4,\"searchRule\":{\"requestUrl\":\"@js:\\nreturn {\\n \\\"url\\\": \\\"/mcata/\\\"+params.filters.filter+\\\"/ob/hits/st/completed/page/\\\"+params.pageIndex\\n}\",\"list\":\"//ul[@class=\\\"vodlist vodlist_wi clearfix\\\"]/li\",\"title\":\"//li/a/@title\",\"author\":\"//li/div/center[2]/text()\",\"cover\":\"//li/a/@data-original\",\"detailUrl\":\"//center/a[1]/@href\",\"moreKeys\":\"{\\\"requestFilters\\\":\\\"韩漫::韩漫\\\\n日漫::%E6%97%A5%E6%BC%AB\\\\n3D::3D%E6%BC%AB%E7%94%BB\\\\n真人::%E7%9C%9F%E4%BA%BA%E7%BE%8E%E5%A5%B3\\\\n单本::%E5%8D%95%E6%9C%AC\\\"}\",\"displayType\":6}},{\"name\":\"按热度未完\",\"index\":5,\"searchRule\":{\"requestUrl\":\"@js:\\nreturn {\\n \\\"url\\\": \\\"/mcata/\\\"+params.filters.filter+\\\"/ob/hits/st/serialized/page/\\\"+params.pageIndex\\n}\",\"list\":\"//ul[@class=\\\"vodlist vodlist_wi clearfix\\\"]/li\",\"title\":\"//li/a/@title\",\"author\":\"//li/div/center[2]/text()\",\"cover\":\"//li/a/@data-original\",\"detailUrl\":\"//center/a[1]/@href\",\"moreKeys\":\"{\\\"requestFilters\\\":\\\"韩漫::韩漫\\\\n日漫::%E6%97%A5%E6%BC%AB\\\\n3D::3D%E6%BC%AB%E7%94%BB\\\\n真人::%E7%9C%9F%E4%BA%BA%E7%BE%8E%E5%A5%B3\\\\n单本::%E5%8D%95%E6%9C%AC\\\"}\",\"displayType\":6}}]}}",
     "bookSourceGroup": "",
     "bookSourceName": "禁漫",
@@ -357,106 +400,104 @@
     "weight": 0
   },
   {
-    "bookSourceComment": "'https://www.mhtmh.org\n'https://www.mhtmh.com\n'https://www.manwaku.com\n'https://www.mwmw.cc\n//建议注册或登录使用\n//随机注册也可以\n//\t注册或登录后请重新刷新发现\n//❗免责声明：  \n本工具/代码/内容仅供学习交流使用，严禁用于任何非法用途。使用者应严格遵守所在国家或地区的法律法规，任何因滥用或违规使用导致的后果均与开发者/提供者无关，责任自负❗",
-    "bookSourceGroup": "🎨🔞",
-    "bookSourceName": "猕蛙",
+    "bookSourceComment": "//❗免责声明：  \n本工具/代码/内容仅供学习交流使用，严禁用于任何非法用途。使用者应严格遵守所在国家或地区的法律法规，任何因滥用或违规使用导致的后果均与开发者/提供者无关，责任自负❗",
+    "bookSourceGroup": "🔞",
+    "bookSourceName": "UXX",
     "bookSourceType": 0,
-    "bookSourceUrl": "https://www.manwaku.com",
-    "customOrder": 15,
+    "bookSourceUrl": "https://www.uxxtv.com/",
+    "customOrder": 16,
     "enabled": false,
     "enabledCookieJar": true,
     "enabledExplore": false,
-    "exploreUrl": "@js:\nvar result = [];\nvar baseUrl = \"/api/cate\";\n\n// 动态获取标签\nvar tags = [];\nvar doc = org.jsoup.Jsoup.parse(java.ajax(source.key + '/cate'));\nvar tagContainers = doc.select('.tag-container').toArray();\nvar lastContainer = tagContainers[tagContainers.length - 1];\nvar tagElements = lastContainer.select('a');\n\n// 提取标签数据\nfor (var i = 0; i < tagElements.size(); i++) {\n    var element = tagElements.get(i);\n    tags.push({\n        value: element.attr('data-value'),\n        text: element.text()\n    });\n}\n\n// 排序选项\nconst sortOptions = [\n    { text: \"更新\", value: 0 },\n    { text: \"新作\", value: 1 },\n    { text: \"热门\", value: 3 },\n    { text: \"畅销\", value: 2 },\n    { text: \"收藏\", value: 4 }\n];\n\n// 创建分类项\nvar createCategory = (title, tag, sort) => {\n    const body = {\n        page: { page: \"{{page}}\", pageSize: 36 },\n        category: \"comic\",\n        sort: sort,\n        comic: { status: -1, day: 0, tag: tag },\n        video: { year: 0, typeId: 0, typeId1: 0, area: \"\", lang: \"\", status: -1, day: 0 },\n        novel: { status: -1, day: 0, sortId: 0 }\n    };\n    \n    // 构建URL，包含标签值\n    const url = baseUrl + (tag ? \"/\" + tag : \"\") + \",\" + JSON.stringify({\n        body: JSON.stringify(body).replace('\"{{page}}\"', '{{page}}'),\n        method: \"POST\",\n        headers: {\n            \"X-Requested-With\": \"XMLHttpRequest\",\n            \"Content-Type\": \"application/json\",\n            \"authHeader\": source.getLoginHeader() || \"\"\n        }\n    });\n    \n    result.push({\n        title: title,\n        url: url,\n        style: {\n            layout_flexGrow: 1,\n            layout_flexBasisPercent: 0.25\n        }\n    });\n};\n\n// 生成分类\nsortOptions.forEach(so => {\n    // 添加排序标题\n    result.push({\n        title: so.text,\n        url: \"\",\n        style: { \n            layout_flexGrow: 1, \n            layout_flexBasisPercent: 1 \n        }\n    });\n\n    // 添加该排序下的所有标签\n    tags.forEach(tag => {\n        createCategory(tag.text, tag.value, so.value);\n    });\n});\n\nJSON.stringify(result);",
-    "header": "@js:\nJSON.stringify({\n\"cache-control\": \"no-cache\",\n\"Accept-Language\": \"zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7\",\n\"sec-ch-ua\": \"Android\",\n\"User-Agent\": \"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Mobile Safari/537.36 EdgA/127.0.0.0\"\n})",
-    "lastUpdateTime": "1756052250572",
-    "loginUi": "[\n    {\n    \t\"name\": \"用户名\", \n    \t\"type\": \"text\"\n    \t},\n    {\n    \t\"name\": \"密码\", \n    \"type\": \"text\"\n    },\n   {\n       \"name\": \"随机注册\",\n       \"type\": \"button\",\n       \"action\": \"register()\",\n       \"style\": {\n           \"layout_flexGrow\": 1,\n           \"layout_flexBasisPercent\": 0.25\n       }\n   }\n]",
-    "loginUrl": "function register() {\n    const regUrl = `${baseUrl.replace(/\\/+$/,'').replace(/[^\\w.:\\/-]/g,'')}/api/user/register`.replace(/\\/+/gi, \"/\");\n    \n    const randomUsername = generateRandomString(8); // 随机用户名\n    const randomPassword = generateRandomString(10); // 随机密码\n    \n    const domains = [\"qq.com\", \"gmail.com\", \"163.com\", \"outlook.com\"]; // 邮箱池\n    const randomDomain = domains[Math.floor(Math.random() * domains.length)]; // 随机选择邮箱域名：生成0到domains.length-1的随机索引\n    \n    const randomEmail = generateRealisticEmail(randomDomain); // 随机邮箱\n    const randomNickname = generateRandomString(6); // 随机昵称\n    \n    const registerParams = {\n        method: \"POST\",\n        headers: {\"Content-Type\": \"application/json\", \"x-requested-with\": \"XMLHttpRequest\"},\n        body: JSON.stringify({\n        \tusername: randomUsername, password: randomPassword, \n        \temail: randomEmail,\n        \tnickname: randomNickname})\n    };\n    \n    java.log(\"尝试注册: \" + registerParams.body);\n    const response = java.post(regUrl, registerParams.body, registerParams.headers);\n    const body = response.body();\n    \n    try {\n        const result = JSON.parse(body);\n        if (result.code === 200) {\n            const token = result.data.token;\n            const authHeader = JSON.stringify({Authorization: `Bearer ${token}`, Cookie: `authToken=${token}`});\n            source.putLoginInfo(JSON.stringify({\"用户名\": randomUsername, \"密码\": randomPassword}));\n            java.longToast(\"注册成功\");\n            return source.putLoginHeader(authHeader);\n        } else {\n            throw Error(result.msg || \"注册失败\");\n        }\n    } catch (e) {\n        java.log(\"注册失败: \" + e.message + \", 响应: \" + body);\n        throw Error(\"注册失败\");\n    }\n}\n\nfunction generateRandomString(length, includeNumbers = true) {\n    const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';\n    let result = '';\n    for (let i = 0; i < length; i++) result += chars[Math.floor(Math.random() * chars.length)];\n    return result;\n}\n\nfunction generateRealisticEmail(domain) {\n    let username;\n    switch (domain) {\n        case \"qq.com\":\n            username = Math.floor(100000000 + Math.random() * 900000000).toString();\n            break;\n            \n        case \"163.com\":\n            username = generateRandomString(6 + Math.floor(Math.random() * 4), true);\n            if (Math.random() > 0.6) username = username.slice(0, 3) + '_' + username.slice(3);\n            break;\n            \n        case \"outlook.com\":\n            username = generateRandomString(6 + Math.floor(Math.random() * 4), true);\n            if (Math.random() > 0.7) username = username.slice(0, 3) + '.' + username.slice(3);\n            break;\n            \n        default:\n            username = generateRandomString(7 + Math.floor(Math.random() * 5), true);\n            break;\n    }\n    \n    return username + \"@\" + domain;\n}\n\nfunction login() {\n    const loginUrl = `${baseUrl.replace(/\\/+$/,'').replace(/[^\\w.:\\/-]/g,'')}/api/user/login`.replace(/\\/+/gi, \"/\");\n    const user = source.getLoginInfoMap();\n    const loginParams = {\n        method: \"POST\",\n        headers: {\"Content-Type\": \"application/json\", \"x-requested-with\": \"XMLHttpRequest\"},\n        body: JSON.stringify({username: user.get(\"用户名\"), password: user.get(\"密码\")})\n    };\n    \n    const response = java.post(loginUrl, loginParams.body, loginParams.headers);\n    const body = response.body();\n    \n    try {\n        const result = JSON.parse(body);\n        if (result.code === 200 && result.msg === \"Login successful\") {\n            const token = result.data.token;\n            return source.putLoginHeader(JSON.stringify({Authorization: `Bearer ${token}`, Cookie: `authToken=${token}`}));\n        } else {\n            throw Error(result.msg || \"登录失败\");\n        }\n    } catch (e) {\n        java.log(\"登录失败: \" + e.message);\n        throw Error(\"登录失败\");\n    }\n}",
+    "exploreUrl": "全部视频::/type/1/{{page}}.html\nvip视频::/type/5/{{page}}.html\n全部小说::/type/2/{{page}}.html\n全部有声::/type/3/{{page}}.html\n全部漫画::/type/4/{{page}}.html",
+    "header": "@js:\nJSON.stringify({\n  'User-Agent': java.getWebViewUA(),\n  'sec-ch-ua-platform': \"\\\"Android\\\"\",\n  'origin': baseUrl,\n  'x-requested-with': \"cn.mujiankeji.mbrowser\",\n  'Referer': baseUrl,\n  'Accept-language': \"zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7\"\n})",
+    "lastUpdateTime": "1756361946125",
+    "loginUi": "[\n  {\n    \t\"name\": \"账号\", \n    \t\"type\": \"text\"\n    \t},\n    {\n    \t\"name\": \"密码\", \n    \"type\": \"text\"\n    },\n    {\n    \t\"name\": \"签到\", \n    \"type\": \"button\",\n    \"action\": \"signIn()\"\n    \t},\n    \t{\n    \t\"name\": \"用户信息\", \n    \"type\": \"button\",\n    \"action\": \"getUserInfo()\"\n    \t}\n    \t\n]",
+    "loginUrl": "function login() {\n    var user = source.getLoginInfoMap();\n    var loginParams = \"name=\" + encodeURIComponent(user.get(\"账号\")) + \"&pass=\" + encodeURIComponent(user.get(\"密码\"));\n    var headers = {\"Content-Type\": \"application/x-www-form-urlencoded\", \"token\": \"\"};\n    \n    var req = java.post(baseUrl + \"user/login/save\", loginParams, headers);\n    var body = JSON.parse(req.body());\n    \n    if (body.result === \"success\") {\n          var cs = Array.from(req.cookies(), function(pair) { return pair[0] + \"=\" + pair[1]; }).join(\";\");\n        source.setVariable(cs);\n        return source.putLoginHeader(JSON.stringify({Cookie: cs}));\n    } else {\n        java.log(\"登录失败，响应内容: \" + response.body());\n        throw Error(\"登录失败\");\n    }\n}\n\nfunction signIn() {\n  var log = (msg) => {\n  \tif(msg==null) return;\n    java.longToast(msg);\n    return java.log(msg);\n  };\n  var qd = java.ajax(baseUrl + '/?d=user&c=ajax&m=qd');\n  var data = JSON.parse(qd), \n  zt = data.zt, str = data.str;\n  //log(qd)\n  if(zt==\"ok\"){\n    return log(\"签到成功！\");\n  }else if(zt==\"yes\"){\n    return log(\"今日已签到\");\n  }else if(zt==\"no\"){\n    log(\"签到失败！\\n未登录或\" + str);\n  }\n}\n\nfunction getUserInfo() {\n    var html = java.ajax(baseUrl + \"/?d=user\");\n    \n    var nickMatch = html.match(/<div class=\"account_box\">\\s*<div>([^<]+)<\\/div>/);\n    var levelMatch = html.match(/<p>([^<]+会员)<\\/p>/);\n    var coinMatch = html.match(/<p>金币：(\\d+)个<\\/p>/);\n\n    var nick = nickMatch ? nickMatch[1].trim() : \"未知\";\n    var level = levelMatch ? levelMatch[1].trim() : \"未知\";\n    var coins = coinMatch ? coinMatch[1].trim() : \"0\";\n\n    java.longToast(`昵称：${nick}；会员等级：${level}；金币总数：${coins}`);\n}",
     "respondTime": 180000,
     "ruleBookInfo": {
-      "author": "$..author||$.data.author",
-      "coverUrl": "$.data.cover||$..cover",
-      "intro": "$..intro||$.data.intro",
-      "kind": "$.data.tags||$..tags",
-      "name": "$.data.title||$..title",
-      "tocUrl": "/api/comic/chapter?comicId={$..id}&page=1&pageSize=20"
+      "author": ".item.-2@text",
+      "coverUrl": ".cover.0@img@src",
+      "intro": ".brief@text",
+      "kind": ".item.-3@text&&.update_state@text&&.score_box@text&&.props_box@text",
+      "lastChapter": ".item.-4 @text##最新章节：",
+      "name": "h1@text"
     },
     "ruleContent": {
-      "content": "@js:\nvar imgs = JSON.parse(src).data.images;\nimgs.map($=>`<img src=\"${$.url}\">`).join(\"\\n\")",
+      "content": "@js:\nif (/m3u8/.test(result)) { \n    // 自动购买程序\n    user = java.ajax(`${source.key}?d=user&c=ajax&m=ulog`);\n    let id = String(baseUrl).match(/play\\/(\\d+)\\//)?.[1] || null;\n    url = `${source.key}?c=play&m=buy&id=${id}`;\n    buy = java.ajax(url);\n    last = java.ajax(`${source.key}?c=play&m=bfq&id=${id}&zu=0&ji=0`);\n    \n    // 处理简介文本（换行优化）\n    let intro = (`{{book.intro}}`).replace(/\\s+/g, '\\n');\n\n    // 获取视频直链\n    videoUrl = String(java.getString('#mui-player@src', result)) || String(java.getString('iframe@src', java.ajax(book.origin+java.getString(\".player script@src\", result)))).replace(/\\\\\\\"/g, \"\");\n   \n    // 构建播放器HTML\n    function buildPlayerHtml(videoSource, fallbackIframe = '') {\n        return `\n        <html>\n        <head>\n            <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\">\n            <title>{{book.name}}</title>\n            <style>\n                body {\n                    margin: 0;\n                    padding: 0;\n                    font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif;\n                    background: #f5f5f5;\n                    color: #333;\n                }\n                .header {\n                    padding: 15px;\n                    background: linear-gradient(135deg, #6e48aa, #9d50bb);\n                    color: white;\n                    text-align: center;\n                    font-size: 1.2em;\n                    box-shadow: 0 2px 5px rgba(0,0,0,0.1);\n                }\n                .video-container {\n                    width: 100%;\n                    background: #000;\n                    position: relative;\n                    min-height: 300px;\n                }\n                video {\n                    width: 100%;\n                    height: 50%;\n                    display: block;\n                }\n                .info-panel {\n                    padding: 15px;\n                    background: white;\n                    margin: 10px;\n                    border-radius: 10px;\n                    box-shadow: 0 2px 10px rgba(0,0,0,0.05);\n                }\n                .info-item {\n                    margin: 10px 0;\n                    font-size: 0.95em;\n                }\n                .info-label {\n                    font-weight: bold;\n                    color: #6e48aa;\n                }\n                .seek-feedback {\n                    position: fixed;\n                    top: 50%;\n                    left: 50%;\n                    transform: translate(-50%, -50%);\n                    background: rgba(0,0,0,0.7);\n                    color: white;\n                    padding: 10px 20px;\n                    border-radius: 20px;\n                    font-size: 16px;\n                    display: none;\n                    z-index: 100;\n                }\n                .fallback-notice {\n                    padding: 10px;\n                    background: #ffeb3b;\n                    color: #333;\n                    text-align: center;\n                    font-size: 14px;\n                }\n            </style>\n        </head>\n        <body>\n            <div class=\"header\">{{book.name}}</div>\n            <div class=\"seek-feedback\" id=\"seekFeedback\"></div>\n            <div class=\"video-container\">\n                ${videoSource}\n                ${fallbackIframe ? `<div class=\"fallback-notice\">视频加载失败，已切换备用播放器</div>` : ''}\n                ${fallbackIframe}\n            </div>\n            <div class=\"info-panel\">\n                <div class=\"info-item\">\n                    <span class=\"info-label\">👤 作者：</span>{{book.author}}\n                </div>\n                <div class=\"info-item\">\n                    <span class=\"info-label\">🔖 分类：</span>{{book.kind}}\n                </div>\n                <div class=\"info-item\">\n                    <span class=\"info-label\">📝 简介：</span>${intro}\n                </div>\n            </div>\n\n            <script>\n                // 检测视频是否可播放\n                function checkVideoPlayable() {\n                    const video = document.getElementById('video');\n                    if (!video) return true;\n                    \n                    return new Promise((resolve) => {\n                        video.addEventListener('error', () => {\n                            resolve(false);\n                        });\n                        \n                        // 设置超时检测\n                        setTimeout(() => {\n                            if (video.readyState === 0) {\n                                resolve(false);\n                            } else {\n                                resolve(true);\n                            }\n                        }, 3000);\n                    });\n                }\n                \n                // 初始化播放器\n                async function initPlayer() {\n                    const video = document.getElementById('video');\n                    const fallbackIframe = document.getElementById('fallbackIframe');\n                    \n                    if (video) {\n                        const canPlay = await checkVideoPlayable();\n                        if (!canPlay && fallbackIframe) {\n                            video.style.display = 'none';\n                            fallbackIframe.style.display = 'block';\n                        }\n                    }\n                    \n                    // 添加控制逻辑\n                    setupVideoControls();\n                }\n                \n                // 视频控制逻辑\n                function setupVideoControls() {\n                    const video = document.getElementById('video');\n                    if (!video) return;\n                    \n                    const seekFeedback = document.getElementById('seekFeedback');\n                    let touchStartX = 0;\n                    let touchStartTime = 0;\n                    let isSeeking = false;\n                    let seekTimeout;\n\n                    // 长按滑动快进（左滑后退，右滑前进）\n                    video.addEventListener('touchstart', (e) => {\n                        if (e.touches.length === 1) {\n                            touchStartX = e.touches[0].clientX;\n                            touchStartTime = video.currentTime;\n                            isSeeking = true;\n                        }\n                    });\n\n                    video.addEventListener('touchmove', (e) => {\n                        if (!isSeeking || !video.duration || e.touches.length !== 1) return;\n                        \n                        const touchX = e.touches[0].clientX;\n                        const deltaX = touchX - touchStartX;\n                        const seekDistance = deltaX / window.innerWidth;\n                        const seekAmount = seekDistance * 30;\n                        \n                        let newTime = touchStartTime + seekAmount;\n                        newTime = Math.max(0, Math.min(newTime, video.duration));\n                        video.currentTime = newTime;\n                        \n                        seekFeedback.textContent = (seekAmount > 0 ? '⏩ +' : '⏪ ') + \n                            Math.abs(seekAmount).toFixed(1) + 's';\n                        seekFeedback.style.display = 'block';\n                        \n                        clearTimeout(seekTimeout);\n                        seekTimeout = setTimeout(() => {\n                            seekFeedback.style.display = 'none';\n                        }, 1000);\n                        \n                        e.preventDefault();\n                    });\n\n                    video.addEventListener('touchend', () => {\n                        isSeeking = false;\n                        clearTimeout(seekTimeout);\n                        setTimeout(() => {\n                            seekFeedback.style.display = 'none';\n                        }, 1000);\n                    });\n\n                    // 双击暂停/播放\n                    let lastTap = 0;\n                    video.addEventListener('touchend', (e) => {\n                        const currentTime = new Date().getTime();\n                        const tapLength = currentTime - lastTap;\n                        \n                        if (tapLength < 300 && tapLength > 0) {\n                            video.paused ? video.play() : video.pause();\n                            e.preventDefault();\n                        }\n                        lastTap = currentTime;\n                    });\n                }\n                \n                // 初始化\n                window.addEventListener('DOMContentLoaded', initPlayer);\n            </script>\n        </body>\n        </html>\n        `;\n    }\n\n    // 构建主播放器和备用播放器\n    const mainPlayer = `\n        <video id=\"video\" controls poster=\"{{book.coverUrl}}\">\n            <source src=\"${videoUrl}\" type=\"video/mp4\">\n            您的浏览器不支持视频播放\n        </video>`;\n    \n    // 获取备用iframe地址\n    const iframeSrc = String(java.getString('iframe@src', java.ajax(book.origin+java.getString(\".player script@src\", result)))).replace(/\\\\\\\"/g, \"\");\n    const fallbackPlayer = iframeSrc ? `\n        <iframe id=\"fallbackIframe\" src=\"${iframeSrc}\" style=\"width:100%; height:100%; min-height:400px; border:none; display:none;\"></iframe>\n    ` : '';\n    \n    // 构建完整HTML\n    b64 = java['base64Encode'](buildPlayerHtml(mainPlayer, fallbackPlayer));\n    \n    // 在浏览器中打开\n    dataUrl = 'data:text/html;base64,' + b64;\n    java['startBrowser'](dataUrl, '{{book.name}}');\n    java['toast']('视频加载中...');\n\n    // 返回结果\n    '【刷新正文】播放✅\\n🎬 视频已加载\\n🔗 直链: ' + videoUrl + (iframeSrc ? '\\n🔧 备用播放器已准备' : '');\n\n} else if(result.includes('mp3')){\n  // 获取MP3直链\n    let mp3Url = java.getString('audio@src');\n    \n    // 构建播放页面\n    b64 = java['base64Encode'](`\n        <html>\n        <head>\n            <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\">\n            <title>{{book.name}}</title>\n            <style>\n                body {\n                    margin: 0;\n                    padding: 0;\n                    font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif;\n                    background: #f5f5f5;\n                    color: #333;\n                }\n                .header {\n                    padding: 15px;\n                    background: linear-gradient(135deg, #6e48aa, #9d50bb);\n                    color: white;\n                    text-align: center;\n                    font-size: 1.2em;\n                    box-shadow: 0 2px 5px rgba(0,0,0,0.1);\n                }\n                .audio-container {\n                    width: 100%;\n                    padding: 20px;\n                    background: white;\n                    margin-top: 10px;\n                }\n                audio {\n                    width: 100%;\n                }\n                .info-panel {\n                    padding: 15px;\n                    background: white;\n                    margin: 10px;\n                    border-radius: 10px;\n                    box-shadow: 0 2px 10px rgba(0,0,0,0.05);\n                }\n                .info-item {\n                    margin: 10px 0;\n                    font-size: 0.95em;\n                }\n                .info-label {\n                    font-weight: bold;\n                    color: #6e48aa;\n                }\n                .cover-img {\n                    width: 100%;\n                    max-height: 300px;\n                    object-fit: contain;\n                    margin-bottom: 15px;\n                }\n            </style>\n        </head>\n        <body>\n            <div class=\"header\">{{book.name}}</div>\n            <div class=\"audio-container\">\n                <img src=\"{{book.coverUrl}}\" class=\"cover-img\" onerror=\"this.style.display='none'\">\n                <audio controls autoplay>\n                    <source src=\"${mp3Url}\" type=\"audio/mpeg\">\n                    您的浏览器不支持音频元素\n                </audio>\n            </div>\n            <div class=\"info-panel\">\n                <div class=\"info-item\">\n                    <span class=\"info-label\">👤 作者：</span>{{book.author}}\n                </div>\n                <div class=\"info-item\">\n                    <span class=\"info-label\">🔖 分类：</span>{{book.kind}}\n                </div>\n                <div class=\"info-item\">\n                    <span class=\"info-label\">📝 简介：</span>{{book.intro}}\n                </div>\n            </div>\n        </body>\n        </html>\n    `);\n\n    // 在浏览器中打开\n    dataUrl = 'data:text/html;base64,' + b64;\n    java['startBrowser'](dataUrl, '{{book.name}}');\n    java['toast']('音频加载中...');\n    \n    // 返回结果\n    '【刷新正文】播放\\n✅MP3直链:\\n' + mp3Url;\n    }  else {\n    var $ = (e) => java.getElement(e);\n    $.get = (link) => java.get(book.origin + link, {Referer:baseUrl}).body();\n    let data = eval(src.match(/\\$.get\\(\"[^\"]+\"/).toString()+\")\");\n    java.htmlFormat(data);\n} ",
       "imageStyle": "FULL",
-      "nextContentUrl": "@js:\nvar pageUrls = [];\ntry {\n  var rawData = result || \"{}\";\n  if (typeof rawData !== \"string\") rawData = JSON.stringify(rawData);\n  var Data = JSON.parse(rawData).data;\n  var pageSize = Data.pagination?.page_size;\n  var total = Data.pagination?.total;\n  var totalPages = Math.ceil(total / pageSize);\n\n  for (var i = 2; i <= totalPages; i++) {\n    pageUrls.push(baseUrl.replace(/page=\\d+/, `page=${i}`));\n  }\n} catch (e) {\n  java.log(\"解析错误: \" + e.message);\n  pageUrls = [];\n}\npageUrls;"
+      "replaceRegex": "##(A.*V|有.*声|最.*新|收.*藏|更.*多|永.*久|要.*撸).*com"
     },
     "ruleExplore": {
-      "author": "$.author",
-      "bookList": "$.data.list[*]",
-      "bookUrl": "/api{{$.url}}",
-      "coverUrl": "$.pic",
-      "intro": "$.intro",
-      "kind": "$.tags",
-      "name": "$.title"
+      "author": ".author.0@text",
+      "bookList": ".video_li||.audio_li",
+      "bookUrl": "a@href",
+      "coverUrl": ".cover@img@src",
+      "kind": ".view@text&&.state@text",
+      "name": "a@title"
     },
     "ruleSearch": {
-      "author": "$.author",
-      "bookList": "$.data.list[*]",
-      "bookUrl": "/api/comic/{{$.id}}",
-      "coverUrl": "$.cover",
-      "intro": "$.description",
-      "kind": "$.tags",
-      "name": "$.title"
+      "author": ".author.0@text",
+      "bookList": ".video_li||.audio_li",
+      "bookUrl": "a@href##.*/play/(\\d+)/\\d+/\\d+\\.html##/show/$1.html###",
+      "coverUrl": ".cover@img@src",
+      "kind": ".view@text&&.state@text",
+      "name": "a@title"
     },
     "ruleToc": {
-      "chapterList": "$.data[*]",
-      "chapterName": "$.title",
-      "chapterUrl": "/api/comic/image/{{$.id}}?page=1&page_size=60",
-      "isVip": "$.isVip",
-      "nextTocUrl": "@js:\nvar pageUrls = [];\n try {\n   var rawData = result || \"{}\";\n   if (typeof rawData !== \"string\") rawData = JSON.stringify(rawData);\n   var result = JSON.parse(rawData);\n   var total = result.pagination?.total;\n   var pageSize = result.pagination?.size;\n   var totalPages = Math.ceil(total / pageSize);\n   for (var i = 2; i <= totalPages; i++) {\n     pageUrls.push(baseUrl.replace(/page=\\d+/,`page=${i}`));\n   }\n } catch (e) {\n   java.log(\"解析错误: \" + e.message);\n   pageUrls = [];\n }\n pageUrls;"
+      "chapterList": ".menu>a",
+      "chapterName": "text",
+      "chapterUrl": "href"
     },
-    "searchUrl": "/api/search?keyword={{key}}&type=mh&page={{page}}&pageSize=20",
+    "searchUrl": "/?c=search&wd={{encodeURI(key)}}&sort=addtime&order=desc&page={{page}}",
     "weight": 0
   },
   {
-    "bookSourceComment": "25-04-05 靈狐 制\n25-08-18 修复正文解密\n\n部分书详情页封面无法访问可使用搜索封面规则",
-    "bookSourceGroup": "🎉 精选",
-    "bookSourceName": "3A小说",
+    "bookSourceName": "笔趣阁",
     "bookSourceType": 0,
-    "bookSourceUrl": "https://www.aaawz.cc",
-    "customOrder": -92867,
+    "bookSourceUrl": "https://m.2ee7613564.cfd/",
+    "customOrder": 0,
     "enabled": true,
-    "enabledCookieJar": false,
-    "enabledExplore": false,
-    "header": "@js:JSON.stringify({\n  'Accept': \"application/json, text/plain, */*\",\n  'origin': source.key,\n  'referer': source.key+\"/\",\n  'accept-language': \"zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7\"\n})",
-    "jsLib": "function decompressFromBase64(input) {\n    if (input == null) return '';\n    if (input === '') return null;\n\n    const base64Alphabet = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=\";\n    const lookup = {};\n    for (let i = 0; i < base64Alphabet.length; i++) {\n        lookup[base64Alphabet.charAt(i)] = i;\n    }\n    function getValue(char) {\n        return lookup[char];\n    }\n\n    function decompress(length, resetValue, getNextValue) {\n        const dictionary = [];\n        let dictSize = 4;\n        let bits = 3;\n        let result = [];\n        let data = { val: getNextValue(0), position: resetValue, index: 1 };\n\n        // 读取初始控制代码（2 位）\n        let res = 0;\n        let maxPower = Math.pow(2, 2);\n        let power = 1;\n        while (power != maxPower) {\n            let bit = data.val & data.position;\n            data.position >>= 1;\n            if (data.position == 0) {\n                data.position = resetValue;\n                if (data.index > length) return '';\n                data.val = getNextValue(data.index++);\n            }\n            res |= (bit > 0 ? 1 : 0) * power;\n            power <<= 1;\n        }\n\n        let next;\n        switch (res) {\n            case 0: // 8 位字符\n                res = 0;\n                maxPower = Math.pow(2, 8);\n                power = 1;\n                while (power != maxPower) {\n                    let bit = data.val & data.position;\n                    data.position >>= 1;\n                    if (data.position == 0) {\n                        data.position = resetValue;\n                        if (data.index > length) return '';\n                        data.val = getNextValue(data.index++);\n                    }\n                    res |= (bit > 0 ? 1 : 0) * power;\n                    power <<= 1;\n                }\n                next = String.fromCharCode(res);\n                break;\n            case 1: // 16 位字符\n                res = 0;\n                maxPower = Math.pow(2, 16);\n                power = 1;\n                while (power != maxPower) {\n                    let bit = data.val & data.position;\n                    data.position >>= 1;\n                    if (data.position == 0) {\n                        data.position = resetValue;\n                        if (data.index > length) return '';\n                        data.val = getNextValue(data.index++);\n                    }\n                    res |= (bit > 0 ? 1 : 0) * power;\n                    power <<= 1;\n                }\n                next = String.fromCharCode(res);\n                break;\n            case 2: // 结束\n                return '';\n        }\n\n        // 初始化字典\n        dictionary[0] = '';\n        dictionary[1] = '';\n        dictionary[2] = '';\n        dictionary[3] = next;\n        let w = next;\n        result.push(next);\n\n        // 主解压循环\n        while (data.index <= length) {\n            let code = 0;\n            maxPower = Math.pow(2, bits);\n            power = 1;\n            while (power != maxPower) {\n                let bit = data.val & data.position;\n                data.position >>= 1;\n                if (data.position == 0) {\n                    data.position = resetValue;\n                    if (data.index > length) break;\n                    data.val = getNextValue(data.index++);\n                }\n                code |= (bit > 0 ? 1 : 0) * power;\n                power <<= 1;\n            }\n\n            if (data.index > length && code === 0) break;\n\n            switch (next = code) {\n                case 0: // 新 8 位字符\n                    res = 0;\n                    maxPower = Math.pow(2, 8);\n                    power = 1;\n                    while (power != maxPower) {\n                        let bit = data.val & data.position;\n                        data.position >>= 1;\n                        if (data.position == 0) {\n                            data.position = resetValue;\n                            if (data.index > length) return result.join('');\n                            data.val = getNextValue(data.index++);\n                        }\n                        res |= (bit > 0 ? 1 : 0) * power;\n                        power <<= 1;\n                    }\n                    dictionary[dictSize++] = String.fromCharCode(res);\n                    next = dictSize - 1;\n                    break;\n                case 1: // 新 16 位字符\n                    res = 0;\n                    maxPower = Math.pow(2, 16);\n                    power = 1;\n                    while (power != maxPower) {\n                        let bit = data.val & data.position;\n                        data.position >>= 1;\n                        if (data.position == 0) {\n                            data.position = resetValue;\n                            if (data.index > length) return result.join('');\n                            data.val = getNextValue(data.index++);\n                        }\n                        res |= (bit > 0 ? 1 : 0) * power;\n                        power <<= 1;\n                    }\n                    dictionary[dictSize++] = String.fromCharCode(res);\n                    next = dictSize - 1;\n                    break;\n                case 2: // 结束\n                    return result.join('');\n            }\n\n            if (dictSize - 1 >= Math.pow(2, bits) - 1) bits++;\n\n            let entry;\n            if (dictionary[next]) {\n                entry = dictionary[next];\n            } else if (next === dictSize) {\n                entry = w + w.charAt(0);\n            } else {\n                return null;\n            }\n\n            result.push(entry);\n            dictionary[dictSize++] = w + entry.charAt(0);\n            w = entry;\n\n            if (dictSize - 1 >= Math.pow(2, bits) - 1) bits++;\n        }\n\n        return result.join('');\n    }\n\n    return decompress(input.length, 32, (index) => getValue(input.charAt(index)));\n}",
-    "lastUpdateTime": "1756047901346",
-    "loginCheckJs": "let url = result.url()\nlet body = result.body()\nif(url.includes('-chapter-')){\n let data = java.base64DecodeToByteArray(body)\n let iv = data.slice(0,16)\n let x = java.createSymmetricCrypto('AES/CBC/PKCS7Padding',java.strToBytes('123#2^0@0vm@08.b5%$1[A]1&4115s(('), iv)\n body = x.decryptStr(data.slice(16, data.length))\n}\nPackages.io.legado.app.help.http.StrResponse(url, decompressFromBase64(String(body).replace(/\\s/g,'')))",
-    "respondTime": 8850,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "地图::/map/{{page}}.html",
+    "lastUpdateTime": "1756305252262",
+    "respondTime": 180000,
     "ruleBookInfo": {
-      "author": "author",
-      "coverUrl": "imgurl",
-      "intro": "intro",
-      "kind": "lastupdate@js:java.timeFormat(result[0]*1000)",
-      "lastChapter": "{{$.lastchapter}}·{{java.timeFormat(java.getString('$.lastupdate')*1000)}}",
-      "name": "articlename",
-      "tocUrl": "/api-chapterlist-{{$.tid}}-{{$.siteid}}"
+      "author": ".dd_box[0]@tag.span[0]@text",
+      "coverUrl": ".cover@tag.img@src",
+      "intro": ".book_about@tag.dd@text##展开全部>>",
+      "kind": ".dd_box[0]@tag.span[1]@text",
+      "lastChapter": ".oninfo@tag.a",
+      "name": ".name@text",
+      "tocUrl": ".book_more@tag.a@href",
+      "wordCount": ".dd_box[1]@tag.span[1]@text"
     },
     "ruleContent": {
-      "content": "@js:result"
+      "content": ".Readarea@html##请收藏：https://m.(.*?).cfd.*|（温馨提示：请关闭畅读或阅读模式，否则内容无法正常显示）",
+      "nextContentUrl": ".Readpage@tag.a[2]@href",
+      "replaceRegex": "",
+      "sourceRegex": ""
     },
-    "ruleExplore": [],
+    "ruleExplore": {
+      "author": "tag.em@text",
+      "bookList": "tag.li||.image",
+      "bookUrl": "tag.a@href",
+      "coverUrl": "tag.img@src",
+      "intro": "",
+      "kind": ".rate@text",
+      "name": "tag.a@text||tag.img@alt"
+    },
     "ruleSearch": {
-      "author": "author##<\\/?em>",
-      "bookList": "data.books",
-      "bookUrl": "/api-info-{{$.tid}}-{{$.siteid}}",
-      "coverUrl": "tid@js:let sid = java.getString('siteid');\n'/bookimg/'+sid+'/'+result%100+'/'+result+'.jpg'",
-      "kind": "lastupdate",
-      "lastChapter": "lastchapter&&lastupdate##\\n##·",
-      "name": "articlename##<\\/?em>"
+      "bookList": "",
+      "name": ""
     },
     "ruleToc": {
-      "chapterList": "*",
-      "chapterName": "title",
-      "chapterUrl": "{{baseUrl.replace('list-','-')}}-{{$.cid}}",
-      "updateTime": "{{java.timeFormat(java.getString('$.update')*1000)}}更新 {{$.wordNum}}字"
+      "chapterList": ".book_last@tag.a!0",
+      "chapterName": "text",
+      "chapterUrl": "href"
     },
-    "searchUrl": "/api-search,{\n  \"method\": \"POST\",\n  \"body\": 'keyword={{key}}&page={{page}}&size=10'\n}",
+    "searchUrl": "",
     "weight": 0
   }
 ]

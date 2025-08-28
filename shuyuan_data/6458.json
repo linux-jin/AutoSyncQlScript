@@ -2,13 +2,13 @@
   {
     "bookSourceName": "笔趣阁",
     "bookSourceType": 0,
-    "bookSourceUrl": "https://m.37dda36.cfd/",
+    "bookSourceUrl": "https://m.2ee7613564.cfd/",
     "customOrder": 0,
     "enabled": true,
     "enabledCookieJar": true,
     "enabledExplore": true,
-    "exploreUrl": "地图::/map/<,index_{{page}}.html>",
-    "lastUpdateTime": "1756043288334",
+    "exploreUrl": "地图::/map/{{page}}.html",
+    "lastUpdateTime": "1756305252262",
     "respondTime": 180000,
     "ruleBookInfo": {
       "author": ".dd_box[0]@tag.span[0]@text",

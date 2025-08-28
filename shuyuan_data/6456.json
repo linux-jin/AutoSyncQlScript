@@ -1,0 +1,59 @@
+[
+  {
+    "bookSourceComment": "/*\n\t无法搜索，只能把小说详情页的链接url添加“书架”左上角的“添加网址”。\n\t\n\t\n搜索有验证是否真人。\n\n\nhttps://www.69yd.top/articlecategroy/1xh8.html\n\n*/",
+    "bookSourceGroup": "🎉 精选",
+    "bookSourceName": "69阅读69yd",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.69yd.top",
+    "customOrder": -92869,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "排行榜\n人气最高::/api/list/0/0/1/1.json\n",
+    "header": "{'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36','Referer':'https://www.69yd.top/','sec-fetch-mode':'cors'}",
+    "lastUpdateTime": "1756167923766",
+    "loginUi": "",
+    "loginUrl": "https://www.69yd.top/login.html",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": " class.text-base.0@a@text",
+      "canReName": "",
+      "coverUrl": "w-full h-full object-cover@src",
+      "intro": "id.book-description@text",
+      "kind": " class.text-base.1@a@text",
+      "name": "class.w-2/3 md:w-2/3 lg:w-4/5@h1@text",
+      "tocUrl": "class.mt-6 flex items-center space-x-4@data-id\n<js>\nresult = \"/api/articleitems/\"+ result +\".json\";\n</js>",
+      "wordCount": "class.flex items-center space-x-2 text-base@span.0@text"
+    },
+    "ruleContent": {
+      "content": " class.dlcss@text",
+      "imageStyle": "",
+      "title": "main@header@h2@text"
+    },
+    "ruleExplore": {
+      "author": "author",
+      "bookList": "data",
+      "bookUrl": "infourl",
+      "coverUrl": "coverUrl",
+      "intro": "description",
+      "kind": "categoryName",
+      "name": "title",
+      "wordCount": "wordCount"
+    },
+    "ruleSearch": {
+      "author": "author",
+      "bookList": "results",
+      "bookUrl": "infourl",
+      "intro": "description",
+      "name": "title"
+    },
+    "ruleToc": {
+      "chapterList": "-items",
+      "chapterName": "cn",
+      "chapterUrl": "/article/{{$.cid}}.html",
+      "formatJs": ""
+    },
+    "searchUrl": "<js>if(java.ajax(\"https://www.69yd.top/search.html?q=\").match(/^<!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</)){java.longToast('请根据网页提示点击勾选「确认您是真人」来通过人机验证，如果无限循环请查看源注释说明。');java.startBrowserAwait(\"https://www.69yd.top/search.html?q=\",'人机验证');};</js>/api/search,{\n  \"method\": \"POST\",\n  \"body\": 'q={{key}}'\n}",
+    "weight": 0
+  }
+]
