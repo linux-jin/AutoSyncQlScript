@@ -1,0 +1,52 @@
+[
+  {
+    "bookSourceComment": "① 发布页：https://jmcomicgo.me\n  \n②❗❗❗需要在登录页面获取网址❗❗❗\n\n③ 部分内容需要登录才会显示\n  \n④ 目录>章节URL规则，最后的数字可用1、2、3、4，代表站内分流线路",
+    "bookSourceGroup": "寿横大佬最新力作",
+    "bookSourceName": "🎨禁漫天堂[国内]",
+    "bookSourceType": 2,
+    "bookSourceUrl": "https://jmcomicgo.me",
+    "customOrder": -7,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "@js:\nlet URL =  source.getVariable()\n    let list = [],\n    push = (title, url, size) => list.push({\n        \"title\": title,\n        \"url\": url,\n        \"style\": {\n            \"layout_flexGrow\": 1,\n            \"layout_flexBasisPercent\": size\n        }\n    });\n    let _list = [[\"最新\", \"albums?o=mr&page=\"], [\"COS\", \"albums/another/sub/cosplay?page=\"], [\"3D\", \"search/photos?search_query=3D&page=\"]];\n    _list.map(([t, u]) => {\n    \t    push(t, `${URL}/${u}` + '{{page}}', 0.25);\n    \t});\n    push('👁‍🗨阅读排行榜👁‍🗨', '', 1);\n    let typeList = [[\"日榜\", \"&t=t\"], [\"周榜\", \"&t=w\"], [\"月榜\", \"&t=m\"],[\"总榜\", \"\"]];\n    typeList.map(([t, type]) => {\n    \t    push(t, `${URL}/albums?o=mv${type}&page=` + '{{page}}' , 0.25);\n    \t});\n    \tpush('♥️收藏排行榜♥️', '', 1);\n    \ttypeList.map(([t, type]) => {\n    \t    push(t, `${URL}/albums?o=mo${type}&page=` + '{{page}}', 0.25);\n    \t});\n    let sorts1 = [\"無修正\",\"劇情向\",\"青年漫\",\"校服\",\"純愛\",\"人妻\",\"教師\",\"百合\",\"Yaoi\",\"性轉\",\"NTR\",\"女裝\",\"癡女\",\"全彩\",\"女性向\",\"完結\",\"純愛\",\"禁漫漢化組\"];\n    let sorts2 = [\"御姐\",\"熟女\",\"萝莉\",\"巨乳\",\"貧乳\",\"女性支配\",\"教師\",\"女僕\",\"護士\",\"泳裝\",\"眼鏡\",\"連褲襪\",\"其他制服\",\"兔女郎\"];\n    let sorts3 = [\"群交\",\"足交\",\"束縛\",\"肛交\",\"阿黑顏\",\"藥物\",\"扶他\",\"調教\",\"野外露出\",\"催眠\",\"自慰\",\"觸手\",\"獸交\",\"亞人\",\"怪物女孩\",\"皮物\",\"附身\",\"ryona\",\"騎大車\"];\n    let sorts4 = [\"CG\",\"重口\",\"獵奇\",\"非H\",\"血腥暴力\",\"站長推薦\"];\n    const sortCriteria = [\n  { label: '🏷️标签---按时间🏷️', sort: 'mr' },\n  { label: '🏷️标签---按阅读🏷️', sort: 'mv' },\n  { label: '🏷️标签---按收藏🏷️', sort: 'mo' }\n];\nsortCriteria.forEach(({ label, sort }) => {\n  push(label, '', 1);\n  push('主题A漫','', 1)\n  sorts1.forEach(s => {\n    push(s, `${URL}/search/photos?search_query=${s}&o=${sort}&page=` + '{{page}}', 0.25\n    );\n  });\n  push('角色/扮演','', 1)\n  sorts2.forEach(s => {\n    push(s, `${URL}/search/photos?search_query=${s}&o=${sort}&page=` + '{{page}}', 0.25\n    );\n  });\n  push('特殊PLAY','', 1)\n  sorts3.forEach(s => {\n    push(s, `${URL}/search/photos?search_query=${s}&o=${sort}&page=` + '{{page}}', 0.25\n    );\n  });\n  push('其他','', 1)\n  sorts4.forEach(s => {\n    push(s, `${URL}/search/photos?search_query=${s}&o=${sort}&page=` + '{{page}}', 0.25\n    );\n  });\n});\nJSON.stringify(list);",
+    "header": "{\n\t\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0\",\n\t\"Referer\":\"https://18comic.vip/\"\n}",
+    "lastUpdateTime": "1756972549465",
+    "loginCheckJs": " var resultUrl = result.url();\n var resultCode = result.code();\n var resultBoDy = result.body();\n if (/_cf_|ge_ua|verify.php/ig.test(resultBoDy) ) {\n     if (key) {\n         url = baseUrl + java.ruleUrl;\n     }\n     cookie.removeCookie(baseUrl)\n     result = java.startBrowserAwait(resultUrl, \n     \t\"验证\", false);\n     //java.log(result.body())\n     //result = java.connect(resultUrl)\n }\nresult;",
+    "loginUi": "[ \n {\n        \"name\": \"账号\",\n        \"type\": \"text\"\n    },\n    {\n        \"name\": \"密码\",\n        \"type\": \"password\"\n    },\n    {\n    \t   \"name\": \"获取链接\",\n    \t   \"type\": \"button\",\n        \"action\": \"check()\"\n    \t}\n]",
+    "loginUrl": "function login() {\n\t\tresult = JSON.parse(source.getLoginInfo());\n\tvar username = result['账号'];\n\tvar password = result['密码'];\n\tvar options = {\n\t\tbody: `username=${username}&password=${password}&submit_login=1`,\n\t\tmethod: 'POST'\n\t}\n\tvar urls = java.ajax(`https://jmcomicgo.me`)\n\tvar url = urls.match(/china\"><span>(.*?)<\\/span>/)[1];\n\tsource.setVariable(url)\n\tjava.ajax(`${url}/login,${JSON.stringify(options)}`)\n\t}\nfunction check() {\n\tvar urls = java.ajax(`https://jmcomicgo.me`)\n\tvar url = urls.match(/china\"><span>(.*?)<\\/span>/)[1];\n\tjava.longToast(url)\n\tsource.setVariable(url)\n\t}",
+    "respondTime": 8217,
+    "ruleBookInfo": {
+      "author": ".tag-block.42@text",
+      "coverUrl": ".thumb-overlay.2@img@src",
+      "intro": "&nbsp;\n{{@@class.p-t-5 float-left@text##日期}}    {{@@class.p-t-5 float-right@text##日期}}\n{{@@class.col-xs-12 col-lg-7 nav-tab-content@class.p-t-5 p-b-5@text##叙述：|敘述：}}",
+      "kind": "sapn.tags a@text",
+      "name": "id.book-name@text",
+      "tocUrl": "baseUrl"
+    },
+    "ruleContent": {
+      "content": "{{@class.row thumb-overlay-albums@tag.img@data-original}}\n@js:result.split(\"\\n\").map(x=>'<img src=\"'+x+'\">').join(\"\\n\")",
+      "imageDecode": "var Magua = new JavaImporter();\nMagua.importPackage(\n    Packages.java.io,\n    Packages.android.graphics\n);\nwith(Magua){\n  let mac = src.match(/photos\\/(\\d+)?\\/(\\d+)?/);\n  let bookId = mac[1];\n  let imgId = mac[2];\n    if( src.search(\"gif\")!=-1||bookId < \"0\" ){\n      result;\n    } else {\n      if (Number(bookId) > 421925) {\n        let md5 = java.md5Encode((bookId + imgId));\n        let ascii = md5.substr(-1).charCodeAt(0);\n        var num = (ascii % 8 + 1) * 2;\n    } else if (Number(bookId) >= 268850) {\n        let md5 = java.md5Encode((bookId + imgId));\n        let ascii = md5.substr(-1).charCodeAt(0);\n        var num = (ascii % 10 + 1) * 2;\n    } else {\n        var num = 10;\n    }\nvar img = BitmapFactory.decodeByteArray(result, 0, result.length);\nvar height = img.getHeight();\nvar width = img.getWidth();\nvar y = Math.floor(height / num);\nvar remainder = height % num;\nvar newImg = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);\n    let canvas = new Canvas(newImg);\n    for (let i = 1; i <= num; i++) {\n        let h = i === num ? remainder : 0;\n        canvas.drawBitmap(Bitmap.createBitmap(img, 0, y * (i - 1), width, y + h), 0, height - y * i - h, null);\n    }\n    var newbit = new ByteArrayOutputStream();\n    newImg.compress(Bitmap.CompressFormat.PNG, 100, newbit);\n     newbit.toByteArray();\n      }\n}",
+      "imageStyle": "FULL"
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "author": ".title-truncate.1@text",
+      "bookList": ".p-b-15",
+      "bookUrl": "tag.a.0@href",
+      "coverUrl": "img@data-original||img@src",
+      "intro": ".video-title@text",
+      "kind": ".tag@text",
+      "name": ".video-title@text",
+      "wordCount": "span.0@text"
+    },
+    "ruleToc": {
+      "chapterList": "class.btn-toolbar.0@tag.a||.reading",
+      "chapterName": "text",
+      "chapterUrl": "href##(.*)##$1/?shunt=1",
+      "updateTime": "span@text"
+    },
+    "searchUrl": "{{source.getVariable()}}/search/photos?search_query={{key}}&search-type=photos&main_tag=0&page={{page}}",
+    "weight": 0
+  }
+]
