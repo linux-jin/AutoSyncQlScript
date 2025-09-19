@@ -1,0 +1,41 @@
+[
+  {
+    "bookSourceGroup": "醉予",
+    "bookSourceName": "顶点小说",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://m.dingdian888.com/",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "lastUpdateTime": "1758273944586",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "ul.p2.li.0@text##作者",
+      "coverUrl": "a.p1@img@src",
+      "intro": "class.jianjie@text",
+      "kind": "a.p2.li.1@text",
+      "tocUrl": "class.sort_two@hhref"
+    },
+    "ruleContent": {
+      "content": "id.neirong@div.5@textNodes",
+      "nextContentUrl": "text.下一页@href"
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "author": "a.1@text",
+      "bookList": "class.sort_two",
+      "bookUrl": "a.0@href",
+      "checkKeyWord": "沧元图",
+      "name": "a.0@text"
+    },
+    "ruleToc": {
+      "chapterList": "class.sort@li",
+      "chapterName": "tag.a@text",
+      "chapterUrl": "tag.a@href",
+      "nextTocUrl": "text.下一页@href"
+    },
+    "searchUrl": "https://m.dingdian888.com/waps.php,{\n  \"body\": \"s={{key}}&submit=\",\n  \"method\": \"POST\"\n}",
+    "weight": 0
+  }
+]
