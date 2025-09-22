@@ -1,0 +1,48 @@
+[
+  {
+    "bookSourceComment": "",
+    "bookSourceGroup": "自制",
+    "bookSourceName": "👀读书阁",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://m.spfcw.net/",
+    "customOrder": -263,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": false,
+    "lastUpdateTime": "1758288942449",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": ".synopsisArea_detail .author:contains(作者)@text##作者：",
+      "coverUrl": ".synopsisArea_detail img@src",
+      "intro": ".review p@text",
+      "kind": ".synopsisArea_detail .sort:contains(类别)@text##类别：",
+      "lastChapter": ".synopsisArea_detail .lastchapter:contains(最新章节) a@text",
+      "name": "header.channelHeader .title@text"
+    },
+    "ruleContent": {
+      "content": "id.chaptercontent@html##『加入书签，方便阅读』##",
+      "nextContentUrl": "id.pt_next@href",
+      "replaceRegex": ""
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "author": ".bookinfo .author:contains(作者)@text##作者：",
+      "bookList": ".bookbox",
+      "bookUrl": ".bookname a@href",
+      "checkKeyWord": "哈哈",
+      "coverUrl": ".bookimg img@src",
+      "intro": "",
+      "kind": ".bookinfo .author:contains(类型)@text##类型：",
+      "lastChapter": ".bookinfo .update:contains(最后章节) a@text",
+      "name": ".bookname a@text"
+    },
+    "ruleToc": {
+      "chapterList": "class.recommend.1@class.directoryArea@a",
+      "chapterName": "a@text",
+      "chapterUrl": "a@href",
+      "nextTocUrl": "id.indexselect@tag.option@value"
+    },
+    "searchUrl": "/search/, {\"method\": \"POST\", \"body\": \"searchkey={{key}}&submit=\"}",
+    "weight": 0
+  }
+]
