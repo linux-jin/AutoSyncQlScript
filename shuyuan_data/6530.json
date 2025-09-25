@@ -1,0 +1,53 @@
+[
+  {
+    "bookSourceGroup": "",
+    "bookSourceName": "卧龙小说",
+    "bookSourceType": 0,
+    "bookSourceUrl": "http://www.wolongxs.com",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "",
+    "lastUpdateTime": "1758727393523",
+    "respondTime": 3599,
+    "ruleBookInfo": {
+      "author": "[property=\"og:novel:author\"]@content",
+      "coverUrl": "[property=\"og:image\"]@content",
+      "intro": "[property=\"og:description\"]@content",
+      "kind": "[property=\"og:novel:category\"]@content",
+      "lastChapter": "[property=\"og:novel:latest_chapter_name\"]@content",
+      "name": "[property=\"og:title\"]@content",
+      "tocUrl": "<js>\nresult = String(baseUrl).replace(/.*\\/novel\\//g, '');\ntocUrl = String('http://www.wolongxs.com/home/chapter/lists/id/' + result)</js>",
+      "wordCount": ".icon-file-alt@text"
+    },
+    "ruleContent": {
+      "content": "#contentsource p@textNodes"
+    },
+    "ruleExplore": {
+      "author": "",
+      "bookList": "",
+      "bookUrl": "",
+      "coverUrl": "",
+      "kind": "",
+      "name": ""
+    },
+    "ruleSearch": {
+      "author": "span@text",
+      "bookList": ".searchresult",
+      "bookUrl": "h2@a@href",
+      "coverUrl": "img@src",
+      "intro": ".searchresult-info@p@text",
+      "kind": ".text-muted@a@text",
+      "name": "h2@text"
+    },
+    "ruleToc": {
+      "chapterList": ".chapters p",
+      "chapterName": ".chapterTitle a@text",
+      "chapterUrl": ".chapterTitle a@href",
+      "nextTocUrl": "option@value"
+    },
+    "searchUrl": "/search?keyword={{key}}",
+    "weight": 0
+  }
+]
