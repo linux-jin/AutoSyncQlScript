@@ -1,0 +1,46 @@
+[
+  {
+    "bookSourceComment": "源作者:qaz1749，该书源无发现功能，网站目前暂时不需要梯子，也没有机器人验证和登录要求",
+    "bookSourceGroup": "网文",
+    "bookSourceName": "新笔趣阁",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.biquges123.com",
+    "bookUrlPattern": "https://www.biquges123.com\\d+",
+    "customOrder": 1,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "lastUpdateTime": "1759264712653",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "class.info_ct@tag.div.2@text",
+      "coverUrl": "class.info_lt@tag.img@src",
+      "init": "tag.main",
+      "intro": "class.des@tag.span@text",
+      "kind": "class.bread@tag.a.1@text",
+      "lastChapter": "class.ud@tag.a@text",
+      "name": "class.info_title@text"
+    },
+    "ruleContent": {
+      "content": "class.article@html",
+      "nextContentUrl": "class.text_btn@tag.a.2@href",
+      "title": "class.text@tag.h1@text"
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "author": ".author@text",
+      "bookList": "class.hot_4@tag.li",
+      "bookUrl": "class.hot_4_item@tag.a@href",
+      "coverUrl": "class.cover@tag.img@src",
+      "intro": "class.hot_des@text",
+      "name": ".hot_name@text"
+    },
+    "ruleToc": {
+      "chapterList": "class.list@tag.li",
+      "chapterName": "tag.a@title",
+      "chapterUrl": "tag.a@href"
+    },
+    "searchUrl": "/search?keyword={{key}}&page={{page}}",
+    "weight": 0
+  }
+]

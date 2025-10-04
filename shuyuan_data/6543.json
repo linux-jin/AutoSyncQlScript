@@ -1,0 +1,47 @@
+[
+  {
+    "bookSourceComment": "其他源的小说内容错误，然后自己手写",
+    "bookSourceGroup": "ryw",
+    "bookSourceName": "ryw笔趣阁78",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.biquge78.cc",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "",
+    "lastUpdateTime": "1759304196420",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "p.booktag@a@text",
+      "intro": "p.bookintro@text",
+      "kind": "ol.breadcrumb@li.1@text",
+      "lastChapter": "a.bookchapter@text",
+      "name": "h1.booktitle@text",
+      "tocUrl": "div.list-chapterAll@dd@a@href",
+      "wordCount": "p.booktag@span.0@text"
+    },
+    "ruleContent": {
+      "content": "class.readcontent@tag.p@html",
+      "nextContentUrl": "id.linkNext@href"
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "author": "div.author.0@text",
+      "bookList": "div.bookbox",
+      "bookUrl": "a.del_but@href",
+      "checkKeyWord": "借剑",
+      "intro": "div.update@text",
+      "lastChapter": "div.cat@text",
+      "name": "h4.bookname@text"
+    },
+    "ruleToc": {
+      "chapterList": "#list-chapterAll@dd",
+      "chapterName": "tag.a@text",
+      "chapterUrl": "tag.a@href",
+      "preUpdateJs": ""
+    },
+    "searchUrl": "{{cookie.removeCookie(source.getKey())}}/search/,{\n\"method\": \"POST\",\n  \"body\": \"searchkey={{key}}\"\n}",
+    "weight": 0
+  }
+]
