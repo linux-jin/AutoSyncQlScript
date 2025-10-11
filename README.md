@@ -1,5 +1,6 @@
 | **项目名称** | **站点链接**                                                                                     |
 |--------------|--------------------------------------------------------------------------------------------------|
+| **发布页** | [![下载链接](https://img.shields.io/badge/下载-链接-blueviolet.svg?logo=hack-the-box)](http://fb.langge.cf) |
 | **番茄书院4.0** | [![下载链接](https://img.shields.io/badge/下载-链接-blueviolet.svg?logo=hack-the-box)](https://api.langge.cf) |
 | **番茄书院4.0** | [![下载链接](https://img.shields.io/badge/下载-链接-blueviolet.svg?logo=hack-the-box)](https://20.langge.tk) |
 | **QQ群组1**   | [![下载链接](https://img.shields.io/badge/下载-链接-blueviolet.svg?logo=hack-the-box)](https://qm.qq.com/q/ZLY2sXBGUY) |
