@@ -1,0 +1,50 @@
+[
+  {
+    "bookSourceComment": "搜索逻辑已完美修复，由AI助手与用户共同完成的王者最终版",
+    "bookSourceGroup": "自制,网络",
+    "bookSourceName": "TWKan[王者最终版]",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://twkan.com",
+    "bookUrlPattern": "https?:\\/\\/twkan\\.com\\/book\\/\\d+\\/?",
+    "customOrder": 18,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "@js:\nvar result = [];\nvar push = (title, url, size) => result.push({\n    title: java.t2s(title),\n    url: url && /_/.test(url) ? `/sort/${url}.html` : url,\n    style: {\n        layout_flexGrow: 1,\n        layout_flexBasisPercent: size\n    }\n});\n\npush(\"书籍分类\", null, 1);\n\nconst tag = org.jsoup.Jsoup.parse(Ajax(source.key + \"/sort\")).select('.container .row .col-md-2 a');\nconst sort = [\n    [\"全部\", \"0_0_0_0_0_0_1\"],\n    [\"连载\", \"0_0_0_0_0_1_1\"],\n    [\"全本\", \"0_0_0_0_0_2_1\"],\n    [\"最近更新\",\"0_0_0_0_2_0_1\"],\n    [\"最新入库\",\"0_0_0_0_3_0_1\"]\n];\n\nsort.forEach(([name, pattern]) => {\n    let Url = pattern.replace(/1$/, \"{{page}}\");\n    push(`༺ˇ»\\`ʚ  ${name}  ɞ´«ˇ༻`, Url, 1);\n    tag.toArray().forEach((e, i) => push(e.text(), (i+1)+Url.substring(1), 0.25));\n});\n\nJSON.stringify(result);",
+    "header": "{\"User-Agent\":\"Mozilla/5.0 (Linux; Android 9) Mobile Safari/537.36\"}",
+    "jsLib": "var Regex = /Just a moment|onloadTurnstileCallback/;\nfunction Ajax(url) {\n     const { java } = this;\n     let result = java.ajax(url);\n     let retryCount = 0;\n     const maxRetries = 3;\n     while (Regex.test(result) && retryCount < maxRetries) {\n      result = java.startBrowserAwait(url, \"验证\").body();\n     }\n     return result;\n}",
+    "loginCheckJs": "let original = result;\nlet url = result.url();\nlet ck = cookie.getCookie(url).split('; ').filter(item => !item.startsWith(\"jieqiVisitTime\")).join('; ');\ncookie.setCookie(url, ck);\nif (result.code() == 403) java.toast('服务器拒绝访问，请检查网络状况！');\nif (Regex.test(original.body())) {\n\t   cookie.removeCookie(url);\n    result = java.startBrowserAwait(url, \"验证\");\n    if (/onloadTurnstileCallback/.test(original.body())) {\n    java.initUrl();\n    result = java.getStrResponse(null, null, false);\n    }\n}\nresult;",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "meta[property=\"og:novel:author\"]@content",
+      "coverUrl": "meta[property=\"og:image\"]@content",
+      "intro": "meta[property=\"og:description\"]@content",
+      "kind": "meta[property=\"og:novel:category\"]@content,meta[property=\"og:novel:status\"]@content",
+      "lastChapter": "meta[property=\"og:novel:latest_chapter_name\"]@content",
+      "name": "meta[property=\"og:novel:book_name\"]@content",
+      "tocUrl": "{{book.bookUrl}}##/book/(\\d+).*##/ajax_novels/chapterlist/$1.html"
+    },
+    "ruleContent": {
+      "content": "#txtcontent0@html",
+      "nextContentUrl": ".page1 a.-1@href",
+      "title": ".txtnav h1@text"
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "author": ".labelbox label@text",
+      "bookList": ".newbox > ul > li",
+      "bookUrl": "h3 > a@href",
+      "coverUrl": "img@data-src",
+      "intro": "ol.ellipsis_2@text",
+      "name": "h3 > a@text"
+    },
+    "ruleToc": {
+      "chapterList": "li\n@js:\nresult.sort((a, b) => +a.attr('data-num') - +b.attr('data-num'));\nresult;",
+      "chapterName": "a@text",
+      "chapterUrl": "a@href"
+    },
+    "searchUrl": "https://twkan.com/search/{{key}}/{{page}}.html,{\"charset\": \"UTF-8\"}",
+    "weight": 0,
+    "lastUpdateTime": "1760250659203"
+  }
+]
