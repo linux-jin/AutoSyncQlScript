@@ -1,0 +1,53 @@
+[
+  {
+    "bookSourceComment": "",
+    "bookSourceGroup": "☣️senhora晋江",
+    "bookSourceName": "玩玩文学",
+    "bookSourceType": 0,
+    "bookSourceUrl": "http://wap.115wx.org/",
+    "bookUrlPattern": "http://\\w+.wap.115wx.org/",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "玄幻奇幻::/xuanhuan/?page={{page}}\n武侠仙侠::/xianxia/?page={{page}}\n都市言情::/dushi/?page={{page}}\n历史军事::/lishi/?page={{page}}\n科幻传奇::/kehuan/?page={{page}}\n恐怖灵异::/kongbu/?page={{page}}\n其他类型::/qita/?page={{page}}\n全本小说::/quanben/?page={{page}}",
+    "lastUpdateTime": "1760428171812",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": ".aut a@text",
+      "coverUrl": "img.0@src",
+      "intro": "❀{{@@.creat_time@text}}\n\n{{@@.book_desc@text}}\n\n##(^|[。！？]+[”」）】]?)##$1<br>",
+      "kind": "text.类别@text&&.state@text##类别：",
+      "lastChapter": ".h3_rf a.0@text",
+      "name": "h3.0@text",
+      "tocUrl": "text.更多章节@href",
+      "wordCount": "text.总字数@text&&.h3_rf new_time@text##总字数："
+    },
+    "ruleContent": {
+      "content": "#rd-txt@p@text@js:result+'⭐'",
+      "imageStyle": "",
+      "nextContentUrl": "@js:\nif (result.indexOf(\"next.png\") > -1) {\n\t\n\tcode = result.match(/eval\\(function(.*)\\);/)[0]\n\tcode = code.replace(/u[0-9a-f]{10,}/, 'uData')\n\teval(code)\n\t\t\n\tif(!uData.match('_')) {\n\t next = java.getElement(\"@@class.ud-link ud-link1@span@a\")\n\t uData = next.attr(\"href\")\n\t}\n\tuData\n}\n",
+      "replaceRegex": "##Ｘ更新最快|\\s*⭐\\s*|.*向你推荐他的其他[\\s\\S]+|.*你的朋友正在书荒.*\\s*|.*没看到本章.*\\s*|.*设置阅读页面.*",
+      "sourceRegex": ""
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "author": ".book-author@text",
+      "bookList": ".book-li",
+      "bookUrl": "a@href",
+      "checkKeyWord": "",
+      "coverUrl": "img@src",
+      "intro": ".book-intro@text",
+      "kind": ".sk_b_span@text",
+      "name": "h4@text",
+      "wordCount": ".tag-small blue@text"
+    },
+    "ruleToc": {
+      "chapterList": ".mulu_uld li a",
+      "chapterName": "text##\\>",
+      "chapterUrl": "href"
+    },
+    "searchUrl": "/search/,{\n  \"body\": \"_token=czdbLC7NvPHeEM6pLICmKYIMGJ3M00DwZ2QuyCi1&keyword={{key}}\",\n  \"charset\": \"UTF-8\",\n  \"method\": \"POST\"\n}",
+    "weight": 0
+  }
+]
