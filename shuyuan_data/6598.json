@@ -1,0 +1,45 @@
+[
+  {
+    "bookSourceName": "若读小说",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.shumiba.org",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "[\n  {\n    \"title\": \"爽文\",\n    \"url\": \"/sort/14/{{page}}.html\"\n  },\n  {\n    \"title\": \"乡村\",\n    \"url\": \"/sort/9/{{page}}.html\"\n  },\n  {\n    \"title\": \"校园\",\n    \"url\": \"/sort/15/{{page}}.html\"\n  },\n  {\n    \"title\": \"耽美\",\n    \"url\": \"/sort/8/{{page}}.html\"\n  },\n  {\n    \"title\": \"百合\",\n    \"url\": \"/sort/16/{{page}}.html\"\n  },\n  {\n    \"title\": \"玄幻\",\n    \"url\": \"/sort/1/{{page}}.html\"\n  },\n  {\n    \"title\": \"都市\",\n    \"url\": \"/sort/3/{{page}}.html\"\n  },\n  {\n    \"title\": \"仙侠\",\n    \"url\": \"/sort/2/{{page}}.html\"\n  },\n  {\n    \"title\": \"历史\",\n    \"url\": \"/sort/4/{{page}}.html\"\n  },\n  {\n    \"title\": \"游戏\",\n    \"url\": \"/sort/6/{{page}}.html\"\n  },\n  {\n    \"title\": \"科幻\",\n    \"url\": \"/sort/7/{{page}}.html\"\n  },\n  {\n    \"title\": \"悬疑\",\n    \"url\": \"/sort/10/{{page}}.html\"\n  },\n  {\n    \"title\": \"漫画\",\n    \"url\": \"/sort/12/{{page}}.html\"\n  },\n  {\n    \"title\": \"有声\",\n    \"url\": \"/sort/13/{{page}}.html\"\n  },\n  {\n    \"title\": \"穿越\",\n    \"url\": \"/sort/5/{{page}}.html\"\n  },\n  {\n    \"title\": \"其它\",\n    \"url\": \"/sort/11/{{page}}.html\"\n  }\n]",
+    "header": "{\"User-Agent\":\"Mozilla/5.0 (Linux; U; Android 13; zh-Hans-CN; PFJM10 Build/TP1A.220905.001) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/135.0.4896.58 Quark/6.13.6.581 Mobile Safari/537.36\",\"Accept-Language\":\"zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7\"}",
+    "lastUpdateTime": "1760764860314",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "[property=\"og:novel:author\"]@content",
+      "coverUrl": "[property=\"og:image\"]@content",
+      "intro": "[property=\"og:description\"]@content",
+      "kind": "[property~=category|status|update_time]@content",
+      "lastChapter": "[property~=las?test_chapter_name]@content",
+      "name": "[property=\"og:novel:book_name\"]@content",
+      "tocUrl": "text.目录@href"
+    },
+    "ruleContent": {
+      "content": "#article@p@html##本章未完.*",
+      "nextContentUrl": "#next_url@href\n@js:\nvar next=/_\\d+\\.html/.test(result) ? result : '';\nnext;"
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "author": "span.0@text",
+      "bookList": ".category-div",
+      "bookUrl": "a.0@href",
+      "coverUrl": "img@data-original",
+      "intro": ".indent@text",
+      "name": "a.1@text"
+    },
+    "ruleToc": {
+      "chapterList": ".info-chapters@a",
+      "chapterName": "text",
+      "chapterUrl": "href",
+      "nextTocUrl": "text.下一页@href"
+    },
+    "searchUrl": "/modules/article/search.php,{\n  \"body\": \"searchkey={{key}}&Submit=\",\n  \"method\": \"POST\"\n}",
+    "weight": 0
+  }
+]

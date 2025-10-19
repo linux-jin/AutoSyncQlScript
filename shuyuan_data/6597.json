@@ -1,0 +1,53 @@
+[
+  {
+    "bookSourceComment": "适配错落小说网，支持分类浏览、搜索、章节与正文抓取，已过滤基础广告",
+    "bookSourceGroup": "小说网站",
+    "bookSourceName": "错落小说网",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.cuoceng.com/",
+    "bookUrlPattern": "https://www.cuoceng.com/book/\\d+\\.html",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "玄幻奇幻::/book/type/1.html?page={{page}}\n武侠仙侠::/book/type/2.html?page={{page}}\n都市言情::/book/type/3.html?page={{page}}\n历史军事::/book/type/4.html?page={{page}}\n科幻游戏::/book/type/5.html?page={{page}}\n恐怖灵异::/book/type/6.html?page={{page}}\n女生言情::/book/type/7.html?page={{page}}\n全本小说::/book/type/9.html?page={{page}}",
+    "lastUpdateTime": "1760752307006",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": ".book-info:contains(作者) a@text",
+      "coverUrl": ".book-cover img@src",
+      "intro": ".book-desc@text##\\s*【.*】|\\s*错落小说网.*",
+      "kind": ".book-info:contains(类别) a@text##类别：",
+      "lastChapter": ".last-chapter a@text",
+      "name": ".book-title@text",
+      "tocUrl": ".book-info a:contains(目录)@href",
+      "wordCount": ".book-info:contains(字数)@text##字数："
+    },
+    "ruleContent": {
+      "content": ".content@text",
+      "imageStyle": "",
+      "nextContentUrl": ".next-chapter a@href",
+      "replaceRegex": "##错落小说网|\\s*本章未完，点击下一页继续阅读.*|\\s*\\(www\\.cuoceng\\.com\\).*|\\s*请记住本书首发域名.*",
+      "sourceRegex": ""
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "author": ".book-item .book-author@text",
+      "bookList": ".book-item",
+      "bookUrl": ".book-item h3 a@href",
+      "checkKeyWord": "",
+      "coverUrl": ".book-item .book-img img@src",
+      "intro": ".book-item .book-intro@text",
+      "kind": ".book-item .book-tag:contains(类型)@text",
+      "name": ".book-item h3 a@text",
+      "wordCount": ".book-item .book-tag:contains(字数)@text"
+    },
+    "ruleToc": {
+      "chapterList": ".chapter-list li a",
+      "chapterName": "@text",
+      "chapterUrl": "@href"
+    },
+    "searchUrl": "/book/so.html,{\n  \"method\": \"GET\",\n  \"params\": {\n    \"keyword\": \"{{key}}\",\n    \"o\": \"1\"\n  },\n  \"charset\": \"UTF-8\"\n}",
+    "weight": 0
+  }
+]

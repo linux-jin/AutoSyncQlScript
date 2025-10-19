@@ -1,0 +1,59 @@
+[
+  {
+    "bookSourceComment": "//By西瓜看书源 2024.12.20\n//网站：www.xiguaks.com\n//提供免费在线阅读小说",
+    "bookSourceName": "西瓜看书",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.xiguaks.com",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "exploreUrl": "[{\"title\":\"热门推荐\",\"url\":\"/\"},{\"title\":\"玄幻\",\"url\":\"/tags/xuanhuan/\"},{\"title\":\"都市\",\"url\":\"/tags/dushi/\"},{\"title\":\"言情\",\"url\":\"/tags/yanqing/\"},{\"title\":\"武侠\",\"url\":\"/tags/wuxia/\"},{\"title\":\"短篇\",\"url\":\"/article/\"},{\"title\":\"小说\",\"url\":\"/shuku/\"},{\"title\":\"推荐\",\"url\":\"/random/\"}]",
+    "lastUpdateTime": "1760792889338",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "p:contains(作者) a@text",
+      "coverUrl": "img@src",
+      "intro": "#desc@text",
+      "kind": "title@text",
+      "lastChapter": "a[href*=/segment/]:last@text",
+      "name": "h1@text",
+      "status": "p:contains(状态)@text",
+      "updateTime": "p:contains(更新时间)@text"
+    },
+    "ruleContent": {
+      "content": "#chapter-content@html",
+      "nextContentUrl": "a#next@href",
+      "webJs": "<js>\nvar content = result;\n// 移除广告\ncontent = content.replace(/<p>如果出现文字缺失[\\s\\S]*?<\\/p>/g, '');\ncontent = content.replace(/<p>海量小说[\\s\\S]*?<\\/p>/g, '');\ncontent = content.replace(/<p>沉浸式成人有声体验[\\s\\S]*?<\\/p>/g, '');\n// 移除脚本\ncontent = content.replace(/<script[^>]*>[\\s\\S]*?<\\/script>/g, '');\n// 移除字体图片\ncontent = content.replace(/<img src=\"\\/asset\\/fonts\\/\\d+\\.png\"[^>]*>/g, '');\nresult = content;\n</js>"
+    },
+    "ruleExplore": {
+      "author": "p:contains(作者) a@text",
+      "bookList": ".grid > div, .bg-white.p-2.rounded-lg",
+      "bookUrl": "h3 a@href||p.text-lg a@href",
+      "coverUrl": "img@src",
+      "intro": "p.line-clamp-4@text||p.text-gray-600.line-clamp-3@text",
+      "kind": "p:contains(状态)@text",
+      "lastChapter": "p:contains(最新) a@text",
+      "name": "h3 a@text||p.text-lg a@text",
+      "updateTime": "p:contains(时间)@text"
+    },
+    "ruleSearch": {
+      "author": "p:contains(作者) a@text",
+      "bookList": ".bg-white.p-2.rounded-lg.shadow",
+      "bookUrl": "h3 a@href",
+      "coverUrl": "img@src",
+      "intro": "p.text-gray-600.line-clamp-3@text",
+      "kind": "span:contains(状态)@text",
+      "lastChapter": "span:contains(章节)@text",
+      "name": "h3 a@text",
+      "updateTime": "span:contains(更新时间)@text"
+    },
+    "ruleToc": {
+      "chapterList": "a[href*=/segment/]",
+      "chapterName": "text",
+      "chapterUrl": "href"
+    },
+    "searchUrl": "https://www.xiguaks.com/search/?keyword={{key}}",
+    "weight": 0
+  }
+]
