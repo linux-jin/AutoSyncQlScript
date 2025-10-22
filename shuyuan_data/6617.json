@@ -1,0 +1,51 @@
+[
+  {
+    "bookSourceGroup": "星辰",
+    "bookSourceName": "冷冷文学",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www7.lenglengbb.com/",
+    "customOrder": 1,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "exploreUrl": "全部::/category/0/\n原创小说::/category/168326864887877/\n‎同‍‌‌人‍衍生::/category/168326864900166/\n‌P‍‍‌O‍‌1‌‎8‎‍::/category/168325583147077/\n都市::/category/4497418743879/\n玄幻::/category/4497418813510/\n现代言情::/category/123687453134919/\n古代言情::/category/123687453102149/\n科幻::/category/4497418604613/\n古言::/category/4497419206726/\n现言::/category/4497418784838/\n幻想言情::/category/123687453163590/\n历史::/category/4497418846278/\n悬疑::/category/4497418977350/\n游戏::/category/4497418752070/\n奇幻::/category/4497418838087/\n‎同‍‌‌人‍::/category/123687453151304/\n青春::/category/4497419108424/\n武侠::/category/4497418797126/\n仙侠::/category/4497418756166/\n轻小说::/category/4497418735686/\n幻情::/category/4497418879046/\n竞技::/category/123695583178826/\n军事::/category/4497419591752/\n现实::/category/4497419587654/\n体育::/category/4497418895432/\n纯爱::/category/10322166141000/\n短篇::/category/4497419214918/\n其他::/category/123687454683208/\n其它分类::/category/4497426522184/",
+    "header": "{\n  \"User-Agent\": \"Mozilla/5.0 (Linux; Android 8.1.0; JKM-AL00b Build/HUAWEIJKM-AL00b; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044807 Mobile Safari/537.36\"\n}",
+    "lastUpdateTime": "1761113251452",
+    "loginCheckJs": "if (result.body().includes(\"Just a moment\")) {\n\tjava.startBrowserAwait(result.url(), \"验证\")\n\t} else result",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "[property=\"og:novel:author\"]@content",
+      "coverUrl": "[property=\"og:image\"]@content",
+      "intro": "[property=\"og:description\"]@content",
+      "kind": "[property=\"og:novel:status\"]@content",
+      "lastChapter": "[property=\"og:novel:latest_chapter_name\"]@content",
+      "name": ".BGsectionOne-top@.title@text",
+      "tocUrl": "text.查看全部章节@href"
+    },
+    "ruleContent": {
+      "content": "@js:\nfunction d(a, b) {\n            b = java.md5Encode(b);\n            var d = b.substring(0, 16);\n            var e = b.substring(16);\n            return  java.createSymmetricCrypto(\"AES/CBC/PKCS7Padding\" ,e,d).decryptStr(a)\n            \n            //java.aesBase64DecodeToString(a,e,\"AES/CBC/PKCS5Padding\",d)\n            };\n           \ndecryptFunc = d;\n\neval(result.match(/((?:decryptFunc|d)\\(\"[\\s\\S]+?\"\\))\\)?;?/)[1])"
+    },
+    "ruleExplore": {
+      "author": "a.2@text",
+      "bookList": ".CGsectionTwo-right-content-unit",
+      "bookUrl": "a@href",
+      "intro": "p.-2@text##标签.*",
+      "lastChapter": "p.-1@text",
+      "name": "a.0@text"
+    },
+    "ruleSearch": {
+      "author": "span.-1@text",
+      "bookList": ".SHsectionThree-middle@p",
+      "bookUrl": "span.-2@a@href",
+      "name": "span.-2@a@text"
+    },
+    "ruleToc": {
+      "chapterList": "class.BCsectionTwo-top-chapter@li\n<js>\nlist = result.toArray();\ns = /originalOrder = .*?;/.test(src)?eval(src.match(/originalOrder = (.*?);/)[1]):result;\nl = [];\nif(/<li.*?\"\\d+\" .*?-[^\"]+=\"\\d+\">/.test(result)){\n\tnum = String(result).match(/<li.*?\"\\d+\" (.*?-[^\"]+)=\"\\d+\">/)[1];\n\tl = list.sort((a,b)=>a.attr(num)-b.attr(num));\n\t}else{\nfor(i in list){ l[s[i]] = list[i]};\n}\nl.join(\"\")\n</js>\ntag.a",
+      "chapterName": "<js>\ntry{\nresult = String(result);\n!/\\.html/.test(result)?result.match(/class=\"g\".*?=\"[a-zA-Z\\d\\+=\\/]{30,}?\".*?=\"(.*?)\"/)[1]:java.getString(\"@@data-real||text\");\n}catch(e){\n\tresult = result.match(/class=\"g\".*?=\"(.*?)\".*?=\"[a-zA-Z\\d\\+=\\/]{30,}?\"/)[1]\n\t}\n</js>",
+      "chapterUrl": "@href\n<js>\ntry{\nlet re = /class=\"g\" .*?=\"([a-zA-Z\\d\\+=\\/]{30,})\"/;\nresult = /\\.html/.test(result)?result:java.base64Decode(String(src).match(re)[1])\n}catch(e){}\n</js>",
+      "nextTocUrl": "text.下一页@href"
+    },
+    "searchUrl": "/search/{{key}}/{{page}}",
+    "weight": 0
+  }
+]
