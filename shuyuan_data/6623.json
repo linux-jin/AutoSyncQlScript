@@ -1,0 +1,64 @@
+[
+  {
+    "bookSourceComment": "部分章节可看",
+    "bookSourceName": "7点小说",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://7xdian.com",
+    "customOrder": 134,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "[\n{\"title\":\"✿男频✿\",\"url\":\"\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":1}},\n{\"title\":\"月票榜\",\"url\":\"https://m.qidian.com/majax/rank/yuepiaolist?gender=male&pageNum={{page}}&_csrfToken={{cookie.getKey(\\\"https://qidian.com\\\",\\\"_csrfToken\\\")}}\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"畅销榜\",\"url\":\"https://m.qidian.com/majax/rank/hotsaleslist?gender=male&pageNum={{page}}&_csrfToken={{cookie.getKey(\\\"https://qidian.com\\\",\\\"_csrfToken\\\")}}\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"阅读榜\",\"url\":\"https://m.qidian.com/majax/rank/readindexlist?gender=male&pageNum={{page}}&_csrfToken={{cookie.getKey(\\\"https://qidian.com\\\",\\\"_csrfToken\\\")}}\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"书友榜\",\"url\":\"https://m.qidian.com/majax/rank/newfanslist?gender=male&pageNum={{page}}&_csrfToken={{cookie.getKey(\\\"https://qidian.com\\\",\\\"_csrfToken\\\")}}\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"推荐榜\",\"url\":\"https://m.qidian.com/majax/rank/reclist?gender=male&pageNum={{page}}&_csrfToken={{cookie.getKey(\\\"https://qidian.com\\\",\\\"_csrfToken\\\")}}\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"更新榜\",\"url\":\"https://m.qidian.com/majax/rank/updatelist?gender=male&pageNum={{page}}&_csrfToken={{cookie.getKey(\\\"https://qidian.com\\\",\\\"_csrfToken\\\")}}\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"签约榜\",\"url\":\"https://m.qidian.com/majax/rank/signlist?gender=male&pageNum={{page}}&_csrfToken={{cookie.getKey(\\\"https://qidian.com\\\",\\\"_csrfToken\\\")}}\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"新书榜\",\"url\":\"https://m.qidian.com/majax/rank/newbooklist?gender=male&pageNum={{page}}&_csrfToken={{cookie.getKey(\\\"https://qidian.com\\\",\\\"_csrfToken\\\")}}\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"新人榜\",\"url\":\"https://m.qidian.com/majax/rank/newauthorlist?gender=male&pageNum={{page}}&_csrfToken={{cookie.getKey(\\\"https://qidian.com\\\",\\\"_csrfToken\\\")}}\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"三江推荐\",\"url\":\"https://m.qidian.com/webcommon/recommend/sanjiangList?pageNum={{page}}&_csrfToken={{cookie.getKey(\\\"https://qidian.com\\\",\\\"_csrfToken\\\")}}\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"新书强推\",\"url\":\"https://m.qidian.com/majax/recommend/strongreclist?gender=male&pageNum={{page}}&catId=-1&_csrfToken={{cookie.getKey(\\\"https://qidian.com\\\",\\\"_csrfToken\\\")}}\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"人气免费\",\"url\":\"https://m.qidian.com/majax/recommend/hotFreelist?gender=male&pageNum={{page}}&_csrfToken={{cookie.getKey(\\\"https://qidian.com\\\",\\\"_csrfToken\\\")}}\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"新书免费\",\"url\":\"https://m.qidian.com/majax/recommend/freeNewlist?gender=male&pageNum={{page}}&_csrfToken={{cookie.getKey(\\\"https://qidian.com\\\",\\\"_csrfToken\\\")}}\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"新书抢先\",\"url\":\"https://m.qidian.com/majax/recommend/newBooklist?gender=male&pageNum={{page}}&_csrfToken={{cookie.getKey(\\\"https://qidian.com\\\",\\\"_csrfToken\\\")}}\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}},\n{\"title\":\"畅销完本\",\"url\":\"https://m.qidian.com/majax/recommend/bestSelllist?gender=male&pageNum={{page}}&_csrfToken={{cookie.getKey(\\\"https://qidian.com\\\",\\\"_csrfToken\\\")}}\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.25}}]",
+    "lastUpdateTime": "1761196570699",
+    "loginUrl": "",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "class.detail__header@class.detail__header-detail__author-link@ownText",
+      "coverUrl": "https://bookcover.yuewen.com/qdbimg/349573/{{baseUrl.match(/(\\d+)/)[1]}}",
+      "intro": "🏷 简介：{{@@@css:p.detail__summary__content@text}}",
+      "kind": "id.monthTicket@text&&id.recTicket@text##张",
+      "lastChapter": "class.detail__chapters-latest@tag.a@text##最新章节",
+      "name": "class.detail__header@tag.h2@ownText",
+      "tocUrl": "",
+      "wordCount": ".count@em.0@text##$##字"
+    },
+    "ruleContent": {
+      "content": "<js>\nvar body=\"\";\nif(chapter.isVip()){\nbody=JSON.parse(result).data\n}else{\nvar cid=baseUrl.match(/\\d+\\/(\\d+)/)[1]\nbody=org.jsoup.Jsoup.parse(String(result)).select('main#c-'+cid).html();\n}\nbody\n</js>",
+      "imageStyle": "full"
+    },
+    "ruleExplore": {
+      "author": "$.bAuth",
+      "bookList": "$.data.records||$.data.list",
+      "bookUrl": "https://m.qidian.com/book/{{$.bid}}/",
+      "coverUrl": "https://bookcover.yuewen.com/qdbimg/349573/{{$.bid}}",
+      "intro": "$.desc||$.timeStr##(.*前)##$1更新",
+      "kind": "$.rankCnt&&$.cat&&$.subCat&&$.state",
+      "lastChapter": "$.lastVUCname",
+      "name": "$.bName",
+      "wordCount": "$.cnt"
+    },
+    "ruleSearch": {
+      "author": "@css:p[class^=_searchBookAuthor]@text",
+      "bookList": "@css:div.y-list__content>div.y-list__item",
+      "bookUrl": "##href=\"//m.qidian.com/chapter/(\\d+)/0/\"##https://m.qidian.com/book/$1/###",
+      "checkKeyWord": "",
+      "coverUrl": "##href=\"//m.qidian.com/chapter/(\\d+)/0/\"##https://bookcover.yuewen.com/qdbimg/349573/$1/180###",
+      "intro": "@css:p[class^=_searchBookDesc]@text",
+      "kind": "tag.div[-1]@tag.p@textNodes",
+      "lastChapter": "",
+      "name": "tag.h2@text",
+      "wordCount": ""
+    },
+    "ruleToc": {
+      "chapterList": "<js>\n var bookId=baseUrl.match(/(\\d+)/)[1]\n result=java.ajax(\"https://wxapp.qidian.com/api/book/categoryV2?bookId=\"+bookId+\"&_csrfToken=\")\n var charts=[];\nJSON.parse(result).data.vs.map(i=>{\ni.cs.map(o=>{\nvar chart={\"id\":o.id,\"title\":o.cN,\"v\":o.sS==0,\"t\":o.uT+ \"  \" + o.cnt +\"字\"}\nif(chart.v){\nchart.url=\"http://qd.yyhydb-123546.top/api/content/qd?bid=\"+bookId+\"&cid=\"+o.id+\"&ver=1&deviceId=\"+java.androidId()\n}else{\nchart.url=\"https://m.qidian.com/chapter/\"+bookId+\"/\"+o.id+\"/\"\n}\ncharts.push(chart);\n})\n})\n charts;\n</js>",
+      "chapterName": "title",
+      "chapterUrl": "url",
+      "isVip": "v",
+      "isVolume": "",
+      "preUpdateJs": "",
+      "updateTime": "t"
+    },
+    "searchUrl": "https://m.qidian.com/so/{{key}}.html?pageNum={{page}}",
+    "weight": 0
+  }
+]

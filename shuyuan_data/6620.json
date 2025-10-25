@@ -1,0 +1,43 @@
+[
+  {
+    "bookSourceName": "搜笔趣阁",
+    "bookSourceUrl": "https://www.sobqg.com",
+    "bookSourceType": 0,
+    "bookSourceGroup": "笔趣阁",
+    "loginUrl": "",
+    "loginUi": "",
+    "concurrentRate": "8",
+    "header": "{\\n  \\\"User-Agent\\\": \\\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36\\\"\\n}",
+    "searchUrl": "https://www.sobqg.com/search.php?keyword={{key}}",
+    "exploreUrl": "",
+    "enabled": true,
+    "enabledExplore": false,
+    "weight": 0,
+    "customOrder": 0,
+    "lastUpdateTime": "1761156342176",
+    "ruleSearch": {
+      "bookList": "class.book-list@tag.dl||class.list@tag.ul||class.hot@tag.ul",
+      "name": "tag.a.0@text",
+      "author": "tag.a.1@text",
+      "cover": "tag.img@src",
+      "detail": "tag.a.0@href"
+    },
+    "ruleBookInfo": {
+      "name": "class.book-title@tag.h1@text",
+      "author": "class.author@text##作者：",
+      "cover": "class.book-cover@tag.img@src",
+      "intro": "class.intro@text",
+      "status": "class.status@text",
+      "lastChapter": "class.last-chapter@tag.a@text",
+      "updateTime": "class.update-time@text"
+    },
+    "ruleToc": {
+      "chapterList": "class.chapter-list@tag.li||class.list@tag.dd",
+      "chapterName": "tag.a@text",
+      "chapterUrl": "tag.a@href"
+    },
+    "ruleContent": {
+      "content": "class.content@html##<script[^>]*>[\\\\s\\\\S]*?</script>|<div[^>]*class=\\\"ads*\\\"[^>]*>[\\\\s\\\\S]*?</div>"
+    }
+  }
+]
