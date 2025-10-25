@@ -7,6 +7,9 @@
 | **TG交流群** | [![下载链接](https://img.shields.io/badge/下载-链接-blueviolet.svg?logo=hack-the-box)](https://t.me/dahuilang888) |
 | **QQ频道** | [![下载链接](https://img.shields.io/badge/下载-链接-blueviolet.svg?logo=hack-the-box)](https://pd.qq.com/s/9r1k2ik49) |
 
+#### 🚩 IOS系统轻阅读后端：在发布页可以下载
+
+
 #### 🚩 IOS15.6-IOS18系统AppFlex安装香色闺阁方法：
 - AppFlex香色闺阁 [视频安装教程](https://m.bilibili.com/video/BV1Ap5xzeEZp?buvid=XX1513F1A6B023DEA52BDE909C516677A32C6&from_spmid=dt.space-dt.video.0&is_story_h5=false&mid=nAD513qeAumJfcSSsFjeOA%3D%3D&p=1&plat_id=116&share_from=ugc&share_medium=android&share_plat=android&share_session_id=b42fa7ba-e311-4cb1-a99b-f7d12d26f78b&share_source=WEIXIN&share_tag=s_i&spmid=united.player-video-detail.0.0&timestamp=1745238613&unique_k=Gb4G4mV&up_id=275649236) [图文安装教程](https://cloudmantoub.online/89/)
 
@@ -18,7 +21,7 @@ https://raw.githubusercontent.com/shidahuilang/shuyuan/refs/heads/shuyuan/大灰
 ```
 https://raw.githubusercontent.com/shidahuilang/shuyuan/refs/heads/shuyuan/用心读书app-大灰狼融合4.0.mrs
 ```
-#### 🚩 🍅 番茄融合 阅读/轻阅读/源阅：番茄，七猫，得间，塔读，QQ，小米，熊猫，起点(69/笔趣阁)，喜马拉雅、看书听书漫画短剧书源）：
+#### 🚩 🍅 番茄融合 阅读-轻阅读-源阅：番茄，七猫，得间，塔读，QQ，小米，熊猫，起点(69/笔趣阁)，喜马拉雅、看书听书漫画短剧书源）：
 ```
 https://raw.githubusercontent.com/shidahuilang/shuyuan/refs/heads/shuyuan/安卓阅读app-大灰狼融合4.0(完全版).json
 ```
