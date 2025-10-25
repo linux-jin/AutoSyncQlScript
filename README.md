@@ -18,7 +18,7 @@ https://raw.githubusercontent.com/shidahuilang/shuyuan/refs/heads/shuyuan/大灰
 ```
 https://raw.githubusercontent.com/shidahuilang/shuyuan/refs/heads/shuyuan/用心读书app-大灰狼融合4.0.mrs
 ```
-#### 🚩 🍅 番茄融合 阅读/源阅：番茄，七猫，得间，塔读，QQ，小米，熊猫，起点(69/笔趣阁)，喜马拉雅、看书听书漫画短剧书源）：
+#### 🚩 🍅 番茄融合 阅读/轻阅读/源阅：番茄，七猫，得间，塔读，QQ，小米，熊猫，起点(69/笔趣阁)，喜马拉雅、看书听书漫画短剧书源）：
 ```
 https://raw.githubusercontent.com/shidahuilang/shuyuan/refs/heads/shuyuan/安卓阅读app-大灰狼融合4.0(完全版).json
 ```
