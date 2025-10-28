@@ -1,0 +1,35 @@
+[
+  {
+    "bookSourceName": "大人漫画",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://darenmh.org/",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "[\n  {\n    \"title\": \"韩漫\",\n    \"url\": \"comics-catalog/韩漫/ob/time/st/all/page/{{page}}\",\n    \"style\": {\"layout_flexGrow\": 1}\n  },\n  {\n    \"title\": \"日漫\",\n    \"url\": \"comics-catalog/日漫/ob/time/st/all/page/{{page}}\",\n    \"style\": {\"layout_flexGrow\": 1}\n  },\n  {\n    \"title\": \"真人\",\n    \"url\": \"comics-catalog/真人/ob/time/st/all/page/{{page}}\",\n    \"style\": {\"layout_flexGrow\": 1}\n  },\n  {\n    \"title\": \"3D漫画\",\n    \"url\": \"comics-catalog/3D漫画/ob/time/st/all/page/{{page}}\",\n    \"style\": {\"layout_flexGrow\": 1}\n  },\n]",
+    "lastUpdateTime": "1761464443085",
+    "respondTime": 180000,
+    "ruleBookInfo": [],
+    "ruleContent": {
+      "content": "class.container@tag.center.3@html",
+      "imageStyle": "full"
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "bookList": "class.row@tag.li",
+      "bookUrl": "tag.a.1@href",
+      "checkKeyWord": "金手指",
+      "coverUrl": "tag.a.0@data-original",
+      "intro": "tag.div.-1@text",
+      "name": "tag.a.1@text"
+    },
+    "ruleToc": {
+      "chapterList": "id.hl-plays-list@tag.a",
+      "chapterName": "@title",
+      "chapterUrl": "@href"
+    },
+    "searchUrl": "comics-searching/{{key}}/page/{{page}}",
+    "weight": 0
+  }
+]

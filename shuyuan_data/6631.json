@@ -1,0 +1,36 @@
+[
+  {
+    "bookSourceComment": "若没有播放视频请使用浏览器打开",
+    "bookSourceName": "H动漫",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.hanime2.icu/",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "[\n  {\n    \"title\": \"里番\",\n    \"url\": \"search?genre=裏番&page={{page}},{'webView': true}\",\n    \"style\": {\"layout_flexGrow\": 1}\n  },\n  {\n    \"title\": \"泡面番\",\n    \"url\": \"search?genre=泡麵番&page={{page}},{'webView': true}\",\n    \"style\": {\"layout_flexGrow\": 1}\n  },\n  {\n    \"title\": \"Motion Anime\",\n    \"url\": \"search?genre=Motion Anime&page={{page}},{'webView': true}\",\n    \"style\": {\"layout_flexGrow\": 1}\n  },\n  {\n    \"title\": \"3D动画\",\n    \"url\": \"search?genre=3D動畫&page={{page}},{'webView': true}\",\n    \"style\": {\"layout_flexGrow\": 1}\n  },\n  {\n    \"title\": \"同人作品\",\n    \"url\": \"search?genre=同人作品&page={{page}},{'webView': true}\",\n    \"style\": {\"layout_flexGrow\": 1}\n  },\n  {\n    \"title\": \"MMD\",\n    \"url\": \"search?genre=MMD&page={{page}},{'webView': true}\",\n    \"style\": {\"layout_flexGrow\": 1}\n  },\n  {\n    \"title\": \"Cosplay\",\n    \"url\": \"search?genre=Cosplay&page={{page}},{'webView': true}\",\n    \"style\": {\"layout_flexGrow\": 1}\n  },\n  {\n    \"title\": \"最新\",\n    \"url\": \"search?page={{page}},{'webView': true}\",\n    \"style\": {\"layout_flexGrow\": 1}\n  },\n]",
+    "lastUpdateTime": "1761464051229",
+    "respondTime": 180000,
+    "ruleBookInfo": [],
+    "ruleContent": {
+      "content": "id.player@tag.source.0@src\n<js>java.startBrowser(result,'')</js>"
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "author": "class.card-mobile-user@text",
+      "bookList": "class.col-xs-6 col-sm-4 col-md-2 search-doujin-videos hidden-xs hover-lighter multiple-link-wrapper.!0||class.home-rows-videos-wrapper@tag.a.!0",
+      "bookUrl": "tag.a.0@href||@href\n<js>result+',{\"webView\": true}'</js>",
+      "checkKeyWord": "bible black",
+      "coverUrl": "img.1@src||img.src",
+      "intro": "class.card-mobile-duration.0@text",
+      "name": "class.card-mobile-title@text||class.home-rows-videos-title@text"
+    },
+    "ruleToc": {
+      "chapterList": "<js>[1]</js>",
+      "chapterName": "<js>book.name</js>",
+      "chapterUrl": ""
+    },
+    "searchUrl": "search?query={{key}}&page={{page}},{'webView': true}\n<js>result</js>",
+    "weight": 0
+  }
+]
