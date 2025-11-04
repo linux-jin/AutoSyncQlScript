@@ -51,50 +51,199 @@
     "weight": 0
   },
   {
-    "bookSourceComment": "适用于 sto55.com。完全按照用户截图中的XPath规则复刻。搜索为POST GBK编码。",
-    "bookSourceGroup": "自制,中文,XPath",
-    "bookSourceName": "STO55 (思兔) - 截图版",
+    "bookSourceComment": "//by戏精 \n//屏蔽了付费直播间 \n//阅读洛娅橙魔改版把类型改成视频，正文规则删掉就行\n//加入书架可以刷新主播是否在线",
+    "bookSourceGroup": "视频直播",
+    "bookSourceName": "VirtualTaboo直播",
     "bookSourceType": 0,
-    "bookSourceUrl": "https://www.sto55.com",
-    "bookUrlPattern": "https://www.sto55.com/book/\\d+/\\d+/?",
+    "bookSourceUrl": "https://zh.virtualtaboo.live",
     "customOrder": 0,
     "enabled": true,
-    "enabledExplore": false,
-    "header": "{\n  \"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36\"\n}",
-    "lastUpdateTime": "1761756369845",
-    "loginUrl": "",
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "exploreUrl": "[{\"title\":\"中文主播\",\"url\":\"https://zh.virtualtaboo.live/api/front/models?improveTs=false&removeShows=false&recInFeatured=false&limit=60&offset={{(page-1)*60}}&primaryTag=girls&filterGroupTags=%5B%5B%22tagLanguageChinese%22%5D%5D&sortBy=stripRanking&parentTag=tagLanguageChinese&nic=true&byw=false&rcmGrp=A&rbCnGr=true&prxCnGr=true&iem=false&mvPrm=false&uniq= \",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"日本主播\",\"url\":\"https://zh.virtualtaboo.live/api/front/models?improveTs=false&removeShows=false&recInFeatured=false&limit=60&offset={{(page-1)*60}}&primaryTag=girls&filterGroupTags=%5B%5B%22tagLanguageJapanese%22%5D%5D&sortBy=stripRanking&parentTag=tagLanguageJapanese&nic=true&byw=false&rcmGrp=A&rbCnGr=true&prxCnGr=true&iem=false&mvPrm=false&uniq= \",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"越南主播\",\"url\":\"https://zh.virtualtaboo.live/api/front/models?improveTs=false&removeShows=false&recInFeatured=false&limit=60&offset={{(page-1)*60}}&primaryTag=girls&filterGroupTags=%5B%5B%22tagLanguageVietnamese%22%5D%5D&sortBy=stripRanking&parentTag=tagLanguageVietnamese&nic=true&byw=false&rcmGrp=A&rbCnGr=true&prxCnGr=true&iem=false&mvPrm=false&uniq= \",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"韩国主播\",\"url\":\"https://zh.virtualtaboo.live/api/front/models?improveTs=false&removeShows=false&recInFeatured=false&limit=60&offset={{(page-1)*60}}&primaryTag=girls&filterGroupTags=%5B%5B%22tagLanguageKorean%22%5D%5D&sortBy=stripRanking&parentTag=tagLanguageKorean&nic=true&byw=false&rcmGrp=A&rbCnGr=true&prxCnGr=true&iem=false&mvPrm=false&uniq= \",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"俄罗斯主播\",\"url\":\"https://zh.virtualtaboo.live/api/front/models?improveTs=false&removeShows=false&recInFeatured=false&limit=60&offset={{(page-1)*60}}&primaryTag=girls&filterGroupTags=%5B%5B%22tagLanguageRussianSpeaking%22%5D%5D&sortBy=stripRanking&parentTag=tagLanguageRussianSpeaking&nic=true&byw=false&rcmGrp=A&rbCnGr=true&prxCnGr=true&iem=false&mvPrm=false&uniq= \",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"乌克兰主播\",\"url\":\"https://zh.virtualtaboo.live/api/front/models?improveTs=false&removeShows=false&recInFeatured=false&limit=60&offset={{(page-1)*60}}&primaryTag=girls&filterGroupTags=%5B%5B%22tagLanguageUkrainian%22%5D%5D&sortBy=stripRanking&parentTag=tagLanguageUkrainian&nic=true&byw=false&rcmGrp=A&rbCnGr=true&prxCnGr=true&iem=false&mvPrm=false&uniq= \",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"美国主播\",\"url\":\"https://zh.virtualtaboo.live/api/front/models?removeShows=false&recInFeatured=false&limit=60&offset={{(page-1)*60}}&primaryTag=girls&filterGroupTags=%5B%5B%22tagLanguageUSModels%22%5D%5D&sortBy=stripRanking&parentTag=tagLanguageUSModels&nic=true&byw=false&rcmGrp=A&rbCnGr=true&rbdCnGr=false&prxCnGr=true&iem=false&mvPrm=false&uniq= \",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"印度主播\",\"url\":\"https://zh.virtualtaboo.live/api/front/models?removeShows=false&recInFeatured=false&limit=60&offset={{(page-1)*60}}&primaryTag=girls&filterGroupTags=%5B%5B%22ethnicityIndian%22%5D%5D&sortBy=stripRanking&parentTag=ethnicityIndian&userRole=user&nic=true&byw=false&rcmGrp=A&rbCnGr=true&rbdCnGr=false&prxCnGr=true&iem=false&mvPrm=false&uniq= \",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"西班牙主播\",\"url\":\"https://zh.virtualtaboo.live/api/front/models?removeShows=false&recInFeatured=false&limit=60&offset={{(page-1)*60}}&primaryTag=girls&filterGroupTags=%5B%5B%22tagLanguageSpanishSpeaking%22%5D%5D&sortBy=stripRanking&parentTag=tagLanguageSpanishSpeaking&nic=true&byw=false&rcmGrp=A&rbCnGr=true&rbdCnGr=false&prxCnGr=true&iem=false&mvPrm=false&uniq= \",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"巴西主播\",\"url\":\"https://zh.virtualtaboo.live/api/front/models?removeShows=false&recInFeatured=false&limit=60&offset={{(page-1)*60}}&primaryTag=girls&filterGroupTags=%5B%5B%22tagLanguageBrazilian%22%5D%5D&sortBy=stripRanking&parentTag=tagLanguageBrazilian&nic=true&byw=false&rcmGrp=A&rbCnGr=true&rbdCnGr=false&prxCnGr=true&iem=false&mvPrm=false&uniq= \",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"哥伦比亚\",\"url\":\"https://zh.virtualtaboo.live/api/front/models?removeShows=false&recInFeatured=false&limit=60&offset={{(page-1)*60}}&primaryTag=girls&filterGroupTags=%5B%5B%22tagLanguageColombian%22%5D%5D&sortBy=stripRanking&parentTag=tagLanguageColombian&nic=true&byw=false&rcmGrp=A&rbCnGr=true&rbdCnGr=false&prxCnGr=true&iem=false&mvPrm=false&uniq= \",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"委内瑞拉\",\"url\":\"https://zh.virtualtaboo.live/api/front/models?removeShows=false&recInFeatured=false&limit=60&offset={{(page-1)*60}}&primaryTag=girls&filterGroupTags=%5B%5B%22tagLanguageVenezuelan%22%5D%5D&sortBy=stripRanking&parentTag=tagLanguageVenezuelan&nic=true&byw=false&rcmGrp=A&rbCnGr=true&rbdCnGr=false&prxCnGr=true&iem=false&mvPrm=false&uniq= \",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"英国主播\",\"url\":\"https://zh.virtualtaboo.live/api/front/models?removeShows=false&recInFeatured=false&limit=60&offset={{(page-1)*60}}&primaryTag=girls&filterGroupTags=%5B%5B%22tagLanguageUKModels%22%5D%5D&sortBy=stripRanking&parentTag=tagLanguageUKModels&nic=true&byw=false&rcmGrp=A&rbCnGr=true&rbdCnGr=false&prxCnGr=true&iem=false&mvPrm=false&uniq= \",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"法国主播\",\"url\":\"https://zh.virtualtaboo.live/api/front/models?removeShows=false&recInFeatured=false&limit=60&offset={{(page-1)*60}}&primaryTag=girls&filterGroupTags=%5B%5B%22tagLanguageFrench%22%5D%5D&sortBy=stripRanking&parentTag=tagLanguageFrench&nic=true&byw=false&rcmGrp=A&rbCnGr=true&rbdCnGr=false&prxCnGr=true&iem=false&mvPrm=false&uniq= \",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"德国主播\",\"url\":\"https://zh.virtualtaboo.live/api/front/models?removeShows=false&recInFeatured=false&limit=60&offset={{(page-1)*60}}&primaryTag=girls&filterGroupTags=%5B%5B%22tagLanguageGermanSpeaking%22%5D%5D&sortBy=stripRanking&parentTag=tagLanguageGermanSpeaking&nic=true&byw=false&rcmGrp=A&rbCnGr=true&rbdCnGr=false&prxCnGr=true&iem=false&mvPrm=false&uniq= \",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"意大利\",\"url\":\"https://zh.virtualtaboo.live/api/front/models?removeShows=false&recInFeatured=false&limit=60&offset={{(page-1)*60}}&primaryTag=girls&filterGroupTags=%5B%5B%22tagLanguageItalian%22%5D%5D&sortBy=stripRanking&parentTag=tagLanguageItalian&nic=true&byw=false&rcmGrp=A&rbCnGr=true&rbdCnGr=false&prxCnGr=true&iem=false&mvPrm=false&uniq= \",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"罗马尼亚\",\"url\":\"https://zh.virtualtaboo.live/api/front/models?removeShows=false&recInFeatured=false&limit=60&offset={{(page-1)*60}}&primaryTag=girls&filterGroupTags=%5B%5B%22tagLanguageRomanian%22%5D%5D&sortBy=stripRanking&parentTag=tagLanguageRomanian&nic=true&byw=false&rcmGrp=A&rbCnGr=true&rbdCnGr=false&prxCnGr=true&iem=false&mvPrm=false&uniq= \",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"非洲裔\",\"url\":\"https://zh.virtualtaboo.live/api/front/models?removeShows=false&recInFeatured=false&limit=60&offset={{(page-1)*60}}&primaryTag=girls&filterGroupTags=%5B%5B%22tagLanguageAfrican%22%5D%5D&sortBy=stripRanking&parentTag=tagLanguageAfrican&nic=true&byw=false&rcmGrp=A&rbCnGr=true&rbdCnGr=false&prxCnGr=true&iem=false&mvPrm=false&uniq= \",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"肯尼亚\",\"url\":\"https://zh.virtualtaboo.live/api/front/models?removeShows=false&recInFeatured=false&limit=60&offset={{(page-1)*60}}&primaryTag=girls&filterGroupTags=%5B%5B%22tagLanguageKenyan%22%5D%5D&sortBy=stripRanking&parentTag=tagLanguageKenyan&nic=true&byw=false&rcmGrp=A&rbCnGr=true&rbdCnGr=false&prxCnGr=true&iem=false&mvPrm=false&uniq= \",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}},\n{\"title\":\"南非人\",\"url\":\"https://zh.virtualtaboo.live/api/front/models?removeShows=false&recInFeatured=false&limit=60&offset={{(page-1)*60}}&primaryTag=girls&filterGroupTags=%5B%5B%22tagLanguageSouthAfrican%22%5D%5D&sortBy=stripRanking&parentTag=tagLanguageSouthAfrican&nic=true&byw=false&rcmGrp=A&rbCnGr=true&rbdCnGr=false&prxCnGr=true&iem=false&mvPrm=false&uniq= \",\"style\":{\"layout_flexBasisPercent\":0.25,\"layout_flexGrow\":1}}]",
+    "lastUpdateTime": "1762091880272",
+    "respondTime": 180000,
     "ruleBookInfo": {
-      "author": "//div[@id='info']/p[1]/text()##作者：",
-      "coverUrl": "//div[@id='fmimg']/img/@src",
-      "intro": "//div[@id='intro']/p[1]/html()",
-      "kind": "//div[@class='con_top']/a[2]/text()",
-      "lastChapter": "//div[@id='info']/p[4]/a/text()",
-      "name": "//div[@id='info']/h1/text()",
-      "tocUrl": ""
+      "author": "$.streamName",
+      "coverUrl": "https://img.doppiocdn.com/thumbs/{{result.snapshotTimestamp}}/{{result.streamName}}_webp",
+      "init": "$.item",
+      "name": "$.username",
+      "tocUrl": "https://zh.virtualtaboo.live/api/front/v1/broadcasts/{{$.username}}?uniq=",
+      "wordCount": "@js: ( ({ 'true': '在线', 'false': '离线' }[result.isLive] || result.isLive) )"
     },
     "ruleContent": {
-      "content": "//div[@id='content']@html",
-      "nextContentUrl": "//div[@class='bottem1']/a[text()='下一页']/@href",
-      "replaceRegex": "##(www.sto55.com|思兔阅读|.*请记住.*|.*最新网址.*|本章未完.*)"
+      "content": "<js> var result = chapter.url; var title = chapter.name; var htmlContent = '<html><head><meta name=\\\"viewport\\\" content=\\\"width=device-width\\\"><script src=\\\"https://cdn.jsdelivr.net/npm/hls.js@latest\\\"></script><style>body{margin:0;font-family:Arial,sans-serif;background:linear-gradient(135deg,#ece9e6,#ffffff);display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:20px;}.container{width:100%;max-width:800px;background:#fff;border-radius:10px;box-shadow:0 4px 8px rgba(0,0,0,0.1);overflow:hidden;margin-bottom:20px;}h3{margin:0;padding:10px 20px;font-size:0.9em;background:#333;color:#fff;border-radius:10px 10px 0 0;}.video-container{width:100%;background:#000;position:relative;}video{width:100%;height:auto;display:block;}.info-container{padding:20px;}.info-container p{margin:10px 0;color:#555;}.info-container p span{font-weight:bold;color:#000;}</style></head><body><div class=\\\"container\\\"><div class=\\\"video-container\\\"><video id=\\\"video\\\" src=\\\"' + result + '\\\" poster=\\\"{{book.coverUrl}}\\\" controls></video></div></div><div class=\\\"info-container\\\"><p>🕵 主播：<span>{{book.name}}</span></p><p>🔖 标签：<span>{{book.kind}}</span></p><p>🏷 简介：<span>{{book.intro}}</span></p></div><script>const video=document.getElementById(\\\"video\\\");let touchStartX=0;let touchStartY=0;let touchStartTime=0;let isLongPress=false;video.addEventListener(\\\"touchstart\\\",function(e){touchStartX=e.touches[0].clientX;touchStartY=e.touches[0].clientY;touchStartTime=Date.now();isLongPress=false;});video.addEventListener(\\\"touchmove\\\",function(e){var deltaX=e.touches[0].clientX-touchStartX;var deltaY=e.touches[0].clientY-touchStartY;if(Math.abs(deltaX)>Math.abs(deltaY)&&!isLongPress){var duration=video.duration;var seekTime=video.currentTime+deltaX/50;video.currentTime=Math.min(Math.max(seekTime,0),duration);}e.preventDefault();});video.addEventListener(\\\"touchend\\\",function(e){var touchEndTime=Date.now();var touchDuration=touchEndTime-touchStartTime;if(touchDuration>500){isLongPress=true;var deltaX=e.changedTouches[0].clientX-touchStartX;var duration=video.duration;var seekTime=video.currentTime+deltaX/100;video.currentTime=Math.min(Math.max(seekTime,0),duration);}else{isLongPress=false;}});var hlsUrl=\\\"' + result + '\\\";if(Hls.isSupported()){var hls=new Hls();hls.loadSource(hlsUrl);hls.attachMedia(video);}else if(video.canPlayType(\\\"application/vnd.apple.mpegurl\\\")){video.src=hlsUrl;}</script></body></html>'; var b64=java['base64Encode'](htmlContent); var dataUrl='data:text/html;base64,'+b64; if(chapter.index===book.durChapterIndex){java['startBrowser'](dataUrl,title);java['toast']('正在加载视频\\\\n视频加载较慢，请耐心等待');} '【刷新正文】播放\\\\n✅直链:\\\\n' + result; </js>"
+    },
+    "ruleExplore": {
+      "author": "$.streamName",
+      "bookList": "$.models",
+      "bookUrl": "https://zh.virtualtaboo.live/api/front/v1/broadcasts/{{$.username}}?uniq=",
+      "coverUrl": "@js:result.snapshotTimestamp && result.streamName ? 'https://img.doppiocdn.com/thumbs/' + result.snapshotTimestamp + '/' + result.streamName + '_webp' : result.snapshotUrl",
+      "intro": "$.groupShowTopic",
+      "kind": "@js: ( ({ 'public': '免费', 'groupShow': '收费' }[result.status] || result.status) + ' • ' + result.viewersCount + '人在看' )",
+      "name": "@js:\nif (\"{{$.status}}\"==\"public\"){result=\"{{$.username}}\"}else{result=\"\"}"
+    },
+    "ruleSearch": [],
+    "ruleToc": {
+      "chapterList": "$..item",
+      "chapterName": "@js: ( ({ 'true': '在线', 'false': '离线' }[result.isLive] || result.isLive)+({ 'public': '免费', 'groupShow': '收费' }[result.status] || result.status) )",
+      "chapterUrl": "https://edge-hls.growcdnssedge.com/hls/{{$.streamName}}/master/{{$.streamName}}_480p.m3u8"
+    },
+    "weight": 0
+  },
+  {
+    "bookSourceGroup": "析",
+    "bookSourceName": "群U聚合",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://jican.x7go.top",
+    "customOrder": -1,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "eventListener": false,
+    "jsLib": "function getHost() {\n  return \"https://jican.x7go.top\"\n}",
+    "lastUpdateTime": "1762070247711",
+    "loginUi": "[{\"name\": \"书旗\",\"type\": \"button\",\"action\": \"书旗()\",\"style\": {\"layout_flexGrow\": 1,\"layout_flexBasisPercent\":0.2}},{\"name\": \"猫眼\",\"type\": \"button\",\"action\": \"猫眼()\",\"style\": {\"layout_flexGrow\": 1,\"layout_flexBasisPercent\":0.2}},{\"name\": \"塔读\",\"type\": \"button\",\"action\": \"塔读()\",\"style\": {\"layout_flexGrow\": 1,\"layout_flexBasisPercent\":0.2}},{\"name\": \"QQ浏览器\",\"type\": \"button\",\"action\": \"QQ浏览器()\",\"style\": {\"layout_flexGrow\": 1,\"layout_flexBasisPercent\":0.2}},{\"name\": \"七猫\",\"type\": \"button\",\"action\": \"七猫()\",\"style\": {\"layout_flexGrow\": 1,\"layout_flexBasisPercent\":0.2}},{\"name\": \"百度\",\"type\": \"button\",\"action\": \"百度()\",\"style\": {\"layout_flexGrow\": 1,\"layout_flexBasisPercent\":0.2}},{\"name\": \"酷我\",\"type\": \"button\",\"action\": \"酷我()\",\"style\": {\"layout_flexGrow\": 1,\"layout_flexBasisPercent\":0.2}},{\"name\": \"番薯\",\"type\": \"button\",\"action\": \"番薯()\",\"style\": {\"layout_flexGrow\": 1,\"layout_flexBasisPercent\":0.2}}]",
+    "loginUrl": "function 书旗() {\n    source.setVariable('书旗');\n    java.toast(\"已切换书旗来源\");\n}\n\nfunction 猫眼() {\n    source.setVariable('猫眼');\n    java.toast(\"已切换猫眼来源\");\n}\n\nfunction 塔读() {\n    source.setVariable('塔读');\n    java.toast(\"已切换塔读来源\");\n}\n\nfunction QQ浏览器() {\n    source.setVariable('QQ浏览器');\n    java.toast(\"已切换到QQ浏览器来源\");\n}\n\nfunction 七猫() {\n    source.setVariable('七猫');\n    java.toast(\"已切换七猫来源\");\n}\n\nfunction 百度() {\n    source.setVariable('百度');\n    java.toast(\"已切换百度来源\");\n}\n\nfunction 酷我() {\n    source.setVariable('酷我');\n    java.toast(\"已切换酷我来源\");\n}\n\nfunction 番薯() {\n    source.setVariable('番薯');\n    java.toast(\"已切换番薯来源\");\n}",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "$.result.author",
+      "coverUrl": "$.result.cover_url",
+      "intro": "$.result.abstract",
+      "kind": "$.result.source",
+      "name": "$.result.title"
+    },
+    "ruleContent": {
+      "content": "$..content"
     },
     "ruleExplore": [],
     "ruleSearch": {
-      "author": ".//div[@class='author']/text()##作者：",
-      "bookList": "//div[@class='bookbox']",
-      "bookUrl": ".//div[@class='bookname']/a/@href",
-      "coverUrl": ".//div[@class='bookimg']/a/img/@src",
-      "intro": ".//div[@class='intro']/text()",
-      "kind": ".//div[@class='cat']/text()##\\[|\\]",
-      "lastChapter": ".//div[@class='update']/a/text()",
-      "name": ".//div[@class='bookname']/a/text()"
+      "author": "$.author",
+      "bookList": "$.results",
+      "bookUrl": "https://jican.x7go.top/detail?book_id={{$.book_id}}&source={{$.source}}",
+      "checkKeyWord": "诡秘之主",
+      "coverUrl": "$.cover_url",
+      "intro": "$.abstract",
+      "kind": "$.source",
+      "name": "$.title"
     },
     "ruleToc": {
-      "chapterList": "//div[@id='list']/dl/dd",
-      "chapterName": ".//a/text()",
-      "chapterUrl": ".//a/@href",
-      "nextTocUrl": "//a[text()='下一页']/@href"
+      "chapterList": "$.result.chapters<js>java.put('book_id', java.getString('$.result.book_id')); java.put('source', java.getString('$.result.source')); result</js>",
+      "chapterName": "$.title",
+      "chapterUrl": "<js>var host = getHost(); \nvar bookId = java.get('book_id'); \nvar sourceVal = java.get('source'); \nvar itemId = java.getString('$.item_id'); \nhost + '/content?book_id=' + bookId + '&item_id=' + itemId + '&source=' + encodeURIComponent(sourceVal);</js>"
     },
-    "searchUrl": "/search.php,{\n  \"method\": \"POST\",\n  \"body\": \"searchkey={{key}}&page={{page}}\",\n  \"charset\": \"gbk\"\n}",
+    "searchUrl": "@js:\n(function() {\n    var sourceVal = '全部';\n    try {\n        var userSource = source.getVariable();\n        if (userSource != null && String(userSource).length > 0) {\n            sourceVal = userSource;\n        }\n    } catch (e) {\n        java.log('获取用户来源失败，使用默认值');\n    }\n    return getHost() + '/search?q={{key}}&source=' + encodeURIComponent(sourceVal);\n})();\n",
+    "weight": 0
+  },
+  {
+    "bookSourceGroup": "✦优",
+    "bookSourceName": "森林ᵐᵘ -",
+    "bookSourceType": 0,
+    "bookSourceUrl": "http://23.224.242.55/",
+    "customOrder": 2,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": false,
+    "lastUpdateTime": "1762004233601",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "[property=\"og:novel:author\"]@content",
+      "coverUrl": "[property=\"og:image\"]@content",
+      "intro": "[property=\"og:novel:update_time\"]@content&&\n[property=\"og:description\"]@content@js:'更新时间：'+result",
+      "kind": "[property~=category|status|tags]@content",
+      "lastChapter": "[property~=las?test_chapter_name]@content",
+      "name": "[property=\"og:novel:book_name\"]@content"
+    },
+    "ruleContent": {
+      "content": "#content@html",
+      "nextContentUrl": "text.下一@a[href*=\"_\"]@href",
+      "replaceRegex": "##（本章未完，请点击下一页继续阅读）|.* \\(第\\d/\\d页\\)"
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "author": ".s4@text",
+      "bookList": ".txt-list li!0",
+      "bookUrl": "a.0@href",
+      "coverUrl": "a.0@href\n@js:\nvar match = result.match(/(\\d+)(?=[^\\d]*$)/);\nvar id = match ? match[1] : '';\nvar iid = parseInt(id / 1000);\n'/files/article/image/' + iid + '/' + id + '/' + id + 's.jpg';",
+      "kind": ".s1@text##[\\[\\]]",
+      "lastChapter": ".s3@text",
+      "name": "a.0@text"
+    },
+    "ruleToc": {
+      "chapterList": ".section-box a",
+      "chapterName": "text",
+      "chapterUrl": "href",
+      "nextTocUrl": "option@value"
+    },
+    "searchUrl": "/ar.php?keyWord={{key}}",
+    "weight": 0
+  },
+  {
+    "bookSourceComment": "",
+    "bookSourceGroup": "",
+    "bookSourceName": "✨ 阅文集团聚合",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://yuewen.com",
+    "customOrder": 200,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": false,
+    "exploreUrl": "",
+    "header": "",
+    "jsLib": "const encryptKeys = {\n  headers: {\n    QDSign: {\n      key: \"{1dYgqE)h9,R)hKqEcv4]k[h\",\n      iv: \"01234567\"\n    },\n    QDInfo: {\n      key: \"0821CAAD409B84020821CAAD\",\n      iv: String.fromCharCode(0, 0, 0, 0, 0, 0, 0, 0)\n    }\n  }\n}\n\nfunction getDeviceId(java, source) {\n  if (!java || !source) {\n    java = this.java\n    source = this.source\n  }\n  let sVar = JSON.parse(!Packages.android.text.TextUtils.isEmpty(source.getVariable()) ? source.getVariable() : \"{}\")\n  if (!sVar.deviceid) {\n    let temp = \"\"\n    let chr = \"0123456789abcdef\".split(\"\")\n    for (let i = 0; i < 16; i++) { temp = temp + chr[Math.floor(Math.random() * chr.length)]}\n    java.log(temp)\n    sVar.deviceid = temp\n    source.setVariable(JSON.stringify(sVar, null, 2))\n    return temp\n  }\n  return sVar.deviceid\n}\n\nfunction QDSign(path, params, page, dmode) {\n  /*\n     为保护作者人身氨醛，本函数不包含付费正文的核心请求头检查，只有基础过检测\n    \t 基本够正常使用，如果你有实力可以把其他头(gorgon一类的)自己补全\n  */\n  const { java, source } = this\n  let a = params.sort().join(\"&\").replace(/\\$page/gi, page)\n  let t = Date.now()\n\n  // Sign参数\n  let sign = \"Rv1rPTnczce|\" + t + \"||||||\" + java.md5Encode(a.toLowerCase())\n  let Sign = java.tripleDESEncodeBase64Str(sign, encryptKeys.headers.QDSign.key, \"CBC\", \"PKCS5Padding\", encryptKeys.headers.QDSign.iv)\n\n  // Info参数\n  let id = getDeviceId(java, source)\n  let info = id + \"||||||1||999|\" + t\n  let Info = java.tripleDESEncodeBase64Str(info, encryptKeys.headers.QDInfo.key, \"CBC\", \"PKCS5Padding\", encryptKeys.headers.QDInfo.iv)\n\n  if (dmode) {\n    return {\n      url: \"https://druidv6.if.qidian.com/argus/api/\" + path + \"?\" + a,\n      headers: {\n        QDSign: Sign,\n        QDInfo: Info,\n        tstamp: String(t)\n      }\n    }\n  }\n  // Url拼接\n  return \"https://druidv6.if.qidian.com/argus/api/\" + path + \"?\" + a + \",\" + JSON.stringify({\n    headers: {\n      QDSign: Sign,\n      QDInfo: Info,\n      tstamp: String(t)\n    }\n  })\n}\n\nvar ji = new JavaImporter()\nji.importPackage(Packages.okhttp3)\nwith(ji) {\n  function getBytes(url, headers) {\n    let client = new OkHttpClient()\n\n    let requestBuilder = new Request.Builder()\n      .url(url)\n      .get()\n\n    // 添加请求头\n    for (let headerName in headers) {\n      requestBuilder.addHeader(headerName, headers[headerName])\n    }\n\n    let request = requestBuilder.build()\n    let response = client.newCall(request).execute()\n\n    try {\n      // 处理响应\n      let responseBody = response.body().bytes()\n      return responseBody\n    } finally {\n      response.close()\n    }\n  }\n}\n\nfunction dContentQD(cid, body) {\n  const { java, source } = this\n  let aid = getDeviceId(java, source)\n  let sha1 = \"0\" + aid + cid + \"2EEE1433A152E84B3756301D8FA3E69A\"\n  let key0 = java.HMacBase64(sha1, \"HMAC-SHA1\", aid).slice(0, -4)\n  let key1 = java.base64Decode(\"BjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2Ng==\")\n  let key2 = java.md5Encode(key1 + key0 + aid)\n  let key3 = java.hexDecodeToByteArray(\"6c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c\" + key2)\n\n  let md5 = Packages.cn.hutool.crypto.digest.DigestUtil.md5(key3)\n  let B = Packages.android.util.Base64\n  let key = B.encodeToString(md5, B.NO_WRAP)\n  let iv = java.base64Decode(\"AAAAAAAAAAA=\")\n\n  return java.createSymmetricCrypto(\"DESede/CBC/PKCS5Padding\", key0, iv).decryptStr(java.createSymmetricCrypto(\"DESede/CBC/PKCS5Padding\", key, iv).decrypt(Array.from(body).slice(8, -16)))\n}\n\nfunction getLoginHeader() {\n  const { source } = this\n  return JSON.parse(!Packages.android.text.TextUtils.isEmpty(source.getLoginHeader()) ? source.getLoginHeader().slice(0, -1) : \"{}\")\n}\n\nfunction putLoginHeader(data) {\n  const { source } = this\n  source.putLoginHeader(\n    JSON.stringify(data) + \"_\" // prevent default: 防止阅读将登录头数据加到请求头里\n  )\n}",
+    "lastUpdateTime": "1762224496004",
+    "loginUi": "[\n{\n  type: \"button\",\n  name: \"                               起点相关                                 \",\n  action: \"empty()\"\n},\n{\n  type: \"button\",\n\tname: \"       [浏览器登录]       \",\n\taction: \"proxyExcWrapper(browserLogin)\"\n},\n{\n  type: \"button\",\n\tname: \"      [凭据登录]       \",\n\taction: \"proxyExcWrapper(tokenLogin)\"\n},\n{\n  type: \"text\",\n  name: \"ywguid\"\n},\n{\n  type: \"password\",\n  name: \"ywkey\"\n}\n]",
+    "loginUrl": "<js>\nfunction browserLogin() {\n  try {\n    java.startBrowserAwait(\n      \"https://qidian.com\", \n      \"登录\"\n    )\n  } catch (e) {}\n  let ywkey = cookie.getKey(\"qidian.com\", \"ywkey\")\n  let ywguid = cookie.getKey(\"qidian.com\", \"ywguid\")\n  putLoginHeader({\n  \t  guid: ywguid,\n  \t  key: ywkey\n  })\n  cookie.removeCookie(\"qidian.com\")\n  // java.toast(\"没做完:(\")\n}\n\nfunction login() {}\n\nfunction tokenLogin() {\n  if (source.getLoginInfoMap() == null) {\n    java.toast(\"未获取到LoginInfoMap，请尝试重新打开登录UI再按一遍\")\n  }\n  putLoginHeader({\n    guid: source.getLoginInfoMap()[\"ywguid\"],\n    key: source.getLoginInfoMap()[\"ywkey\"]\n  })\n  java.toast(\"凭据保存成功\")\n}\n\nfunction proxyExcWrapper(fun) {\n  try {\n    fun()\n  } catch (e) {\n    java.log(e.toString() + \"\\n\" + e.stack)\n  }\n}\n\nfunction empty() {\n  java.toast(\"别点了，用来看的\")\n}\n</js>",
+    "respondTime": 1436,
+    "ruleBookInfo": {
+      "author": "Author",
+      "coverUrl": "https://bookcover.yuewen.com/qdbimg/349573/{{$.BookId}}/600.webp",
+      "init": "<js>\nvar Regs = [/bookId=(\\d+)/i, /\\.com\\D+?\\/(\\d+)/i, /(\\d+)/i];\nvar bookId = \"\";\nfor (let Reg of Regs) {\n    let mat = baseUrl.match(Reg);\n    if (mat) {\n        bookId = mat[1];\n        break;\n    }\n}\njava.ajax(QDSign(\"v2/bookdetail/get\", [\n    \"bookId=\" + bookId\n]))\n</js>\n$.Data",
+      "intro": "<p>{{$.Description}}",
+      "kind": "{{java.getString(\"$..IsInBlackList\")==1?\"非限免\":\"限免\"}}|{{$.BookStatus##完本##完结}}|{{String(java.timeFormat(java.getString(\"LastVipChapterUpdateTime\")==0?java.getString(\"LastChapterUpdateTime\"):java.getString(\"LastVipChapterUpdateTime\"))).replace(/\\s*\\d+:\\d+/,\"\")}}\n{{(java.getString(\"$.WordsCnt\")/10000).toFixed(1)+\"万\"}}\n{{$.CategoryName}}|{{$.SubCategoryName}}\n<js>##(?m)\\|$</js>",
+      "lastChapter": "{{$.LastVipUpdateChapterName||$.LastUpdateChapterName}}",
+      "name": "BookName",
+      "tocUrl": "BookId\n<js>java.base64Encode(result)</js>\ndata:bookId;base64,{{result}},{\"type\":\"ywc\"}",
+      "wordCount": ""
+    },
+    "ruleContent": {
+      "content": "<js>\nlet info = JSON.parse(java.hexDecodeToString(result))\n\nlet content = \"\"\nlet header = getLoginHeader()\n\nswitch (info.source) {\n  case \"qd\":\n    let bid = java.hexDecodeToString(java.ajax(book.tocUrl))\n    let cid = info.cid\n    if (info.isVip) {\n      let url = `https://static.yesui.me/api/content.php?bookId=${bid}&chapterId=${cid}`\n      java.log(url)\n      result=java.ajax(url)\n      java.log(result)\n      content=JSON.parse(result).content\n      \n    } else {\n      let request = QDSign(\"v2/bookcontent/safegetcontent\", [\n        \"bookId=\" + bid,\n        \"chapterId=\" + cid\n      ], \"\", true)\n\n      let body = getBytes(request.url, request.headers)\n      let decrypt = dContentQD(cid, body)\n      let raw = JSON.parse(decrypt)\n      let cArr = raw.Content.split(\"\\r\\n\")\n      let blocks = {}\n      for (let i of raw.Blocks) {\n        blocks[i.Sort] = i\n      }\n      for (let i = 0; i < cArr.length; i++) {\n        content += cArr[i] + \"\\n\"\n        if (blocks[i + 1] && blocks[i + 1].Type == \"image\") content += `<img src=\"${blocks[i + 1].Url}\">\\n`\n      }\n    }\n}\n\ncontent\n</js>",
+      "imageStyle": "FULL",
+      "replaceRegex": ""
+    },
+    "ruleExplore": {
+      "author": "",
+      "bookList": "",
+      "bookUrl": "",
+      "coverUrl": "",
+      "intro": "",
+      "kind": "",
+      "name": "",
+      "wordCount": ""
+    },
+    "ruleSearch": {
+      "author": "AuthorName||Author",
+      "bookList": ".BookCard&&Data.Books&&Data.Data.Items||Data.RankBookList",
+      "bookUrl": "https://druid.if.qidian.com/argus/api/v2/bookdetail/get?bookId={{$.BookId}}",
+      "checkKeyWord": "",
+      "coverUrl": "https://bookcover.yuewen.com/qdbimg/349573/{{$.BookId}}/600.webp",
+      "intro": "Description||Desc",
+      "kind": "{{$.ActionStatusString||$.BookStatus##完本##完结}}\n{{(java.getString(\"$.WordsCount\")/10000).toFixed(1)+\"万\"}}\n{{$.CategoryName}}|{{$.SubCategoryName}}\n<js>##(?m)\\|$</js>",
+      "lastChapter": "",
+      "name": "BookName",
+      "wordCount": ""
+    },
+    "ruleToc": {
+      "chapterList": "@js:\nbookId = java.hexDecodeToString(result);\n$ = JSON.parse(java.ajax(QDSign(\"v1/chapterlist/chapterlist\", [\n    \"bookId=\" + bookId\n])))[\"Data\"];\nv_Names = {};\nc_Array = [];\nc_Json = {};\n\n\nfunction b64Url(item_id) {\n    return `data:chapterId;base64,${java.base64Encode(item_id)},{\"type\":\"ywc\"}`;\n}\n\n\nfunction push(vc, a, b, c, d, e, f) {\n    let list = c_Json[vc];\n    if(!list) c_Json[vc] = list = [];\n    // if (!e==1 || false) return\n    list.push({\n        \"ChapterName\": a || \"\",\n        \"isVolume\": b || false,\n        \"chapterUrl\": c ? b64Url(\n          JSON.stringify({\n            source: \"qd\",\n            cid: c || null,\n            isVip: e==1 || false,\n            isPay: f==1 || false,\n            ccid: null,\n            cbid: null\n          })) : \"\",\n        \"ChapterInfo\": d || \"\",\n        \"isVip\": e==1 || false,\n        \"isPay\": f==1 || false\n    });\n}\n\n\nlet t_List = $.Volumes;\nfor (let $$ of t_List) {\n\t  let Vc = $$.VolumeCode;\n    v_Names[Vc] = $$.VolumeName;\n    c_Json[Vc] = [];\n    if (t_List.length > 1) {\n        push(Vc, $$.VolumeName, true);\n    }\n}\n\n\nt_List = $.Chapters.slice(1);\nfor (let $$ of t_List) {\n    let c_name = v_Names[$$.Vc] || \"未知分卷\";\n    let c_time = java.timeFormatUTC($$.T, 'yyyy-MM-dd HH:mm:ss', 12);\n    let c_word = $$.W + \"字\";\n    let c_info = [c_name, c_time, c_word].join(\"丨\");\n    push($$.Vc, $$.N, false, $$.C, c_info, $$.V, $$.P);\n}\n\n\nfor(let i in c_Json){\nc_Array = c_Array.concat(c_Json[i]);\n}\nc_Array;",
+      "chapterName": "ChapterName",
+      "chapterUrl": "chapterUrl",
+      "isPay": "isPay",
+      "isVip": "isVip",
+      "isVolume": "isVolume",
+      "preUpdateJs": "",
+      "updateTime": "ChapterInfo"
+    },
+    "searchUrl": "@js:\nQDSign(\"v1/booksearch/searchbooks\", [\n    \"keyword=\" + java.key,\n    \"pageIndex=\" + page,\n    \"pageSize=20\"\n])",
     "weight": 0
   },
   {
@@ -161,45 +310,162 @@
     "weight": 0
   },
   {
-    "bookSourceComment": "2025/5/13\nby天天的鸟蛋蛋 \n2025/10/2 辞&柚屿&小寒&另一个书友圈 技术指导 CJ’sPig算法提供 天天的鸟蛋蛋 解密\n2025/10/29 库存 合并方法jslib ",
-    "bookSourceName": "（favcomic）喜漫漫画",
-    "bookSourceType": 2,
-    "bookSourceUrl": "https://www.favcomic.net",
-    "coverDecodeJs": "decode(result);",
-    "customOrder": 9,
+    "bookSourceComment": "-原作者：酷安 转义字符\n-雨落星辰添加发现规则\n书源问题反馈：961955482",
+    "bookSourceGroup": "星辰",
+    "bookSourceName": "笔下文学",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.bxwxw7.com",
+    "customOrder": 1,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "exploreUrl": "@js:\nvar result = [];\nvar push = function(title, url, size) {\nresult.push({\"title\": title, \"url\": url, \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": size}});\n};\nvar tagUrl = source.key;\nvar tag = java.ajax(tagUrl);\nvar tagList = org.jsoup.Jsoup.parse(tag).select(\".bx-qkan-pyrl-5f2w li  a\");\nvar tagSize = 0.4;\npush(\"分类\", null, 1);\nfor (var i = 0; i < tagList.length - 1; i++) {\nvar title = tagList[i].text();\nvar url = String(tagList[i].attr(\"href\")).replace(/(\\d+)(?!.*\\d)/, \"{{page}}\");\ntitle = String(title).replace(/\\s/g, \"\");\npush(title, url, tagSize);\n}\nvar spaceLength = tagList.length % 2;\nfor (i = 0; i < spaceLength; i++) {\npush(\"{{——}}\", null, tagSize);\n}\nJSON.stringify(result);",
+    "lastUpdateTime": "1762071852801",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "[property=\"og:novel:author\"]@content",
+      "coverUrl": "[property=\"og:image\"]@content",
+      "intro": "[property=\"og:description\"]@content",
+      "kind": "[property=\"og:novel:status\"]@content&&[property=\"og:novel:category\"]@content&&[property=\"og:novel:update_time\"]@content",
+      "lastChapter": "[property=\"og:novel:latest_chapter_name\"]@content",
+      "name": "[property=\"og:title\"]@content"
+    },
+    "ruleContent": {
+      "content": "#booktxt@html",
+      "nextContentUrl": "text.下一页@href"
+    },
+    "ruleExplore": {
+      "author": ".btm@text",
+      "bookList": ".item",
+      "bookUrl": "a@href",
+      "coverUrl": "img@data-original",
+      "name": "a@title"
+    },
+    "ruleSearch": {
+      "author": ".btm@textNodes",
+      "bookList": ".item",
+      "bookUrl": "dt@a@href",
+      "coverUrl": "img@data-original",
+      "kind": "em@text",
+      "name": "dt@a@text"
+    },
+    "ruleToc": {
+      "chapterList": "#newlist dd a",
+      "chapterName": "text",
+      "chapterUrl": "href||onclick\n@js:\nread=(x,y)=>\"/article/\"+x+\"/\"+y+\".html\"\nresult.includes(\"article\")?result:eval(result)"
+    },
+    "searchUrl": "/search/,{\n  \"body\": \"searchkey={{key}}\",\n  \"method\": \"POST\"\n}",
+    "weight": 0
+  },
+  {
+    "bookSourceName": "83中文S",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.83zws.com",
+    "bookUrlPattern": "https?://www.83zws.com/book/\\d+/\\d+/",
+    "customOrder": 5,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": false,
+    "header": "{\"User-Agent\": \"Mozilla/5.0 (Linux; Android 9) Mobile Safari/537.36\"}",
+    "lastUpdateTime": "1762250888053",
+    "respondTime": 1862,
+    "ruleBookInfo": {
+      "author": "id.info@tag.p.0@tag.a.0@text",
+      "coverUrl": "id.fmimg@tag.img@data-original",
+      "baseCoverUrl": "",
+      "intro": "id.intro@textNodes",
+      "kind": "class.con_top@tag.a.1@text",
+      "lastChapter": "id.info@tag.p.2@tag.a.0@text",
+      "name": "id.info@tag.h1@text"
+    },
+    "ruleContent": {
+      "content": "id.booktxt@tag.p@textNodes##本章未完，点击下一页继续阅读。|83中文网最新网址www.*com",
+      "nextContentUrl": "text.下一页@href",
+      "baseNextContentUrl": "https://www.83zws.com"
+    },
+    "ruleExplore": {
+      "bookList": "class.r.0@tag.li",
+      "name": "class.s2.0@text",
+      "author": "class.s5.0@text",
+      "kind": "class.s1.0@text",
+      "bookUrl": "class.s2.0@tag.a.0@href"
+    },
+    "ruleReview": [],
+    "ruleSearch": {
+      "author": "class.btm@tag.a.0@text",
+      "bookList": "class.item",
+      "bookUrl": "tag.dl@tag.dt.0@tag.a.0@href",
+      "baseBookUrl": "https://www.83zws.com",
+      "coverUrl": "class.image@tag.a.0@tag.img@data-original",
+      "baseCoverUrl": "",
+      "intro": "tag.dl@tag.dd.0@textNodes",
+      "name": "tag.dl@tag.dt.0@tag.a.0@text",
+      "wordCount": "class.btm@tag.em.0@text"
+    },
+    "ruleToc": {
+      "chapterList": "id.list@tag.dl@tag.a!0:1:2:3:4:5:6:7",
+      "chapterName": "tag.dd@text",
+      "chapterUrl": "href",
+      "baseChapterUrl": "https://www.83zws.com"
+    },
+    "searchUrl": "https://www.83zws.com/soso/",
+    "method": "POST",
+    "body": {
+      "searchkey": "{{keyword}}"
+    },
+    "weight": 0,
+    "exploreUrl": "玄幻::/sort/1_{{page}}/\n武侠::/sort/2_{{page}}/\n都市::/sort/3_{{page}}/\n历史::/sort/4_{{page}}/\n科幻::/sort/5_{{page}}/\n游戏::/sort/6_{{page}}/\n女生::/sort/9_{{page}}/\n其他::/sort/10_{{page}}/"
+  },
+  {
+    "bookSourceComment": "补全发现规则，有问题交流群反馈：961955482",
+    "bookSourceGroup": "星辰",
+    "bookSourceName": "秋风书屋",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.qiufengshuwu.com",
+    "bookUrlPattern": "https?://www.qiufengshuwu.com/book/\\d+.html",
+    "customOrder": 516,
     "enabled": true,
     "enabledCookieJar": true,
     "enabledExplore": true,
-    "header": "{\n  \"User-Agent\": \"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36 EdgA/137.0.0.0\",\n  \"accept-language\": \"zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7,zh-TW;q=0.6,zh-HK;q=0.5\"\n}",
-    "jsLib": "\n;(function CW(Uc,Uu,GG,Ce,ee,iC,OX,cG,Xf,u,el){function HX(ci,Kc){var Kb=ci^Kc,CU=Uu[Kb],KG=66666-Kb,WH=[],Ob=el[KG];if(Ob!==\\u0075\\u006e\\u0064\\u0065\\u0066\\u0069\\u006e\\u0065\\u0064)return Ob;for(var Wl=0;Wl<CU.\\u006c\\u0065\\u006e\\u0067\\u0074\\u0068;)OX(WH,CU[Wl]-Wl++-Kc);return el[KG]=Xf(WH)}(function Ui(e,uu,cb,eG,Hb){uu=uu||[],cb=cb||[],eG=eG||[];for(var uf=cb.\\u006c\\u0065\\u006e\\u0067\\u0074\\u0068,Wu,cH;cH=Uc[e++];)if(cH<30){if(cH>22)25>cH?23<cH?cb[++uf+cH++-26]=new(Ce(cb[uf-- -2])):u(cb[(uf+=24)+cH-50],cb[++uf+cH-50],{\\u0067\\u0065\\u0074:cb[(uf-=28)+2],\\u0063\\u006f\\u006e\\u0066\\u0069\\u0067\\u0075\\u0072\\u0061\\u0062\\u006c\\u0065:!0,\\u0065\\u006e\\u0075\\u006d\\u0065\\u0072\\u0061\\u0062\\u006c\\u0065:!0}):cH-->26?cH>27?cb[++uf+cH-- -29]=\\u006b\\u0065\\u0079:cH--<27?cb[uf-cH--+17]=function(lH,fe,eH,ic,eU,Cc,Wc,iU){var Ki=cG(eG,[uu]);return function XG(){var Ub=\\u0061\\u0072\\u0067\\u0075\\u006d\\u0065\\u006e\\u0074\\u0073.\\u006c\\u0065\\u006e\\u0067\\u0074\\u0068>fe.\\u006c\\u0065\\u006e\\u0067\\u0074\\u0068?fe.\\u006c\\u0065\\u006e\\u0067\\u0074\\u0068:\\u0061\\u0072\\u0067\\u0075\\u006d\\u0065\\u006e\\u0074\\u0073.\\u006c\\u0065\\u006e\\u0067\\u0074\\u0068,Oe=[];for(var Wl=0;Wl<Ub;Wl++)Oe[fe[Wl]]=\\u0061\\u0072\\u0067\\u0075\\u006d\\u0065\\u006e\\u0074\\u0073[Wl];return Cc&&(Oe[ic]=\\u0061\\u0072\\u0067\\u0075\\u006d\\u0065\\u006e\\u0074\\u0073),eH&&(Oe[iU]=this),Wc&&u(Oe,eU,{\\u0076\\u0061\\u006c\\u0075\\u0065:XG,\\u0077\\u0072\\u0069\\u0074\\u0061\\u0062\\u006c\\u0065:!1}),Ui(lH,Oe,[],Ki)}}(cb[--uf-cH++ +17],cb[uf- --cH+18],cb[--uf-2],cb[uf-cH+21],cb[(uf+=126)-++cH-100],cb[--uf+cH-154],cb[--uf-124],cb[(uf-=129)-++cH+30]):cb[uf++-cH+26]=uu[Uc[e++]^- --cH+64097+e]:cH<25?cb[uf++ +cH-- -24]=Uc[e++]-(cH--+9507+e):cb[++uf-++cH+25]=Uc[e++]^cH--+22412+e;else if(9>cH)7<cH?cb[(uf+=--cH)-8]=\\u006b\\u0065\\u0079=cb[(uf-=7)-cH++ +6]:5<cH?6>--cH?cb[uf--+1]=Uc[cb[(uf+=3)+--cH-6]=Uc[e++]-(-cH--+56238+e),e++]-(cH--+35935+e):cb[uf--+cH-- -8]=ee(cb[++uf+cH-- -6],[cb[--uf-1]])(HX(Uc[e++]^-cH++ +31821+e,Uc[e++]^cH+48187+e)):4<++cH?5<cH?cb[++uf-++cH+6]=Uu[Uc[e++]^- --cH+e]:\\u004f\\u0062\\u006a\\u0065\\u0063\\u0074.\\u006b\\u0065\\u0079\\u0073(cb[uf--+--cH-7]).\\u006d\\u0061\\u0070(function(e){cb[uf].\\u0069\\u006e\\u0064\\u0065\\u0078\\u004f\\u0066(e)<0&&(cb[uf-1][e]=cb[uf-2][e])}):cH++<3?cb[uf++ +--cH-2]=null:cH>4?cb[uf++- --cH+4]={}[[]]:cb[++uf+cH-- -8]=ee(cb[uf-- -cH++],[cb[(uf-=89)+86]])(cb[(uf+=87)+cH++-3]);else if(16>cH)11>cH?++cH>10?cb[(uf-=21)+19]=iC(cb[++uf-cH++ +30],cb[(uf+=19)+cH-13])()():cb[uf++ +cH++-10]=-(Uc[e++]-(--cH+11319+e)):cH>12?14>cH?cb[(uf-=87)+85]=uu[cb[uf+cH+72]]=cb[(uf+=86)+ ++cH-14]:cH++>14?cb[uf-2]+=cb[uf--+cH-17]:cb[++uf+ ++cH-17]=Uu[Uc[e++]^--cH+e]:cH++>11?cb[++uf+ ++cH-20]=iC(cb[--uf-++cH+11],cb[--uf-++cH+12],cb[--uf+ ++cH-18],cb[(uf+=cH--)-17])()(uu[cb[(uf-=19)-cH--+19]]):cb[uf+cH-14]=cb[(uf-=cH--)+10]>=cb[uf+=11];else if(cH<18)cH<17?cb[++uf+ ++cH-18]=\\u0064\\u0065\\u0063\\u006f\\u0064\\u0065\\u0053\\u0069\\u006d\\u0070\\u006c\\u0065:cb[++uf-cH+16]=HX(Uc[e++]^-cH+24378+e,Uc[e++]^-++cH+33637+e);else if(18>--cH)cb[uf++-1]=uu[cb[--uf+cH++-18]];else if(18<cH){if(cH-->20)cb[(uf+=108)-++cH-87]=cb[(uf-=107)-cH--+19];else if(19>cH)cb[(uf+=85)-cH-- -69]=iC(cb[(uf+=88)-174],cb[(uf-=174)+ ++cH-19])(Uc[e++]-(cH++ +60417+e))();else return cb[--uf+cH-19];}else cb[uf++-cH+18]=\\u0049\\u006e\\u0070\\u0075\\u0074\\u0053\\u0074\\u0072\\u0065\\u0061\\u006d;}else if(cH<58){if(cH>51)cH<54?cH<53?uu[cb[uf-2]]=cb[(uf-=2)-cH--+53]:cb[uf+cH-55]=Ce(cb[(uf-=--cH)+51],cb[(uf+=51)+cH-- -53],HX(Uc[e++]^-cH++ +52286+e,Uc[e++]^-cH+32645+e))():54<--cH?cH<56?cb[uf-- -3]=iC(cb[(uf+=--cH)-55])(cb[uf-- -cH-2],cb[(uf-=54)- --cH+54])():cb[uf++ + ++cH-57]=void 0:53<cH?cb[uf++ +cH-54]=\\u0063:cb[uf++-8]=function(eU,fe,ic,Cc,lH,eH,Wc,iU){var Ki=cG(eG,[uu]);return function XG(){var Ub=\\u0061\\u0072\\u0067\\u0075\\u006d\\u0065\\u006e\\u0074\\u0073.\\u006c\\u0065\\u006e\\u0067\\u0074\\u0068>fe.\\u006c\\u0065\\u006e\\u0067\\u0074\\u0068?fe.\\u006c\\u0065\\u006e\\u0067\\u0074\\u0068:\\u0061\\u0072\\u0067\\u0075\\u006d\\u0065\\u006e\\u0074\\u0073.\\u006c\\u0065\\u006e\\u0067\\u0074\\u0068,Oe=[];for(var Wl=0;Wl<Ub;Wl++)Oe[fe[Wl]]=\\u0061\\u0072\\u0067\\u0075\\u006d\\u0065\\u006e\\u0074\\u0073[Wl];return Cc&&(Oe[ic]=\\u0061\\u0072\\u0067\\u0075\\u006d\\u0065\\u006e\\u0074\\u0073),eH&&(Oe[iU]=this),Wc&&u(Oe,eU,{\\u0076\\u0061\\u006c\\u0075\\u0065:XG,\\u0077\\u0072\\u0069\\u0074\\u0061\\u0062\\u006c\\u0065:!1}),Ui(lH,Oe,[],Ki)}}(cb[uf-- -cH++ +51],cb[++uf-8],cb[uf++ +cH++-60],cb[++uf-9],cb[uf-11],cb[(uf-=++cH)+49],cb[(uf-=15)-cH++ +122],cb[(uf+=61)-cH--+61]);else if(cH<38)33>cH?cH++>31?cb[--uf-++cH+33]=uu[cb[uf++ +cH-35]]=uu[cb[uf--+cH-35]]:31<cH?--uf:cb[uf++-cH--+31]=\\u0061:cH++<35?35>cH?cb[uf-- -3][cb[(uf-=cH++)+33]]=cb[(uf+=32)+--cH-32]:cb[e++,--uf]||(e=Uc[--e]^--cH+34275+ ++e):cH>37?cb[e++,--uf]||(e=Uc[--e]^-cH++ +3153+ ++e):37>cH?cb[uf++ +cH-36]=Uc[e++]^++cH+31327+e:cb[--uf-cH+36]=cb[uf--+cH-38][cb[++uf-cH--+37]]=Uc[e++]-(-++cH+22502+e);else if(45>cH)++cH<41?cH>39?uf--:cb[uf--+cH++-40]=\\u0064\\u0065\\u0063\\u006f\\u0064\\u0065\\u0053\\u0069\\u006d\\u0070\\u006c\\u0065=cb[uf++-cH--+40]:cH>42?44>cH?cb[(uf+=104)- --cH-64]=cb[(uf-=++cH)-63]===cb[(uf-=62)+cH++-43]:cH<45?cb[--uf+cH-- -44]=\\u0061=cb[++uf-1]:cb[uf++ +cH-45]=null:41<cH?cb[(uf+=107)+ ++cH-152]=delete cb[++uf+cH++-153][cb[(uf-=109)-cH+44]]:e=Uc[Wu=e,e++]^cH+54069+e;else if(cH<47){if(cH<46)cb[++uf-cH+45]=Uc[cb[++uf+--cH-46]=HX(Uc[e++]^47817+e,Uc[e++]^41303+e),e++]-(cH--+37253+e);else return Hb.\\u0048\\u0065=0;}else--cH>47?49>cH?cb[uf++-cH+48]=\\u0050\\u0061\\u0063\\u006b\\u0061\\u0067\\u0065\\u0073:cH>49?cb[++uf-3]=cb[(uf-=72)-cH--+119][cb[uf+=70]]:cb[uf++ +cH-- -51]=cb[uf--+cH++-51]instanceof cb[--uf]:cH<47?cb[++uf-cH+44]=\\u0063=cb[uf-- - --cH+43]:cb[++uf-cH--+46]=Uc[e++]-(- --cH+e);}else if(++cH<87){if(cH>80)cH<83?81>--cH?cb[uf++-++cH+80]=\\u0062=cb[uf--+cH-83]:cb[uf++-1]=\\u0064\\u0065\\u0063\\u006f\\u0064\\u0065=cb[uf-- -++cH+80]:83<--cH?84<cH++?cb[(uf+=91)+ ++cH-180]+=cb[(uf-=92)-cH++ +87]:cb[++uf- --cH+83]=\\u0042\\u0079\\u0074\\u0065\\u0041\\u0072\\u0072\\u0061\\u0079\\u004f\\u0075\\u0074\\u0070\\u0075\\u0074\\u0053\\u0074\\u0072\\u0065\\u0061\\u006d:82<cH?cb.\\u006c\\u0065\\u006e\\u0067\\u0074\\u0068=--uf-++cH+85:cb[(uf-=cH--)+81]=uu[cb[(uf+=82)-cH+80]];else if(73<cH)77<cH--?78>cH?cb[uf++-cH+76]=+cb[--uf-++cH+77]:78<cH?cb[(uf-=cH--)+75]=Ce(cb[uf--+cH-- -2],cb[(uf-=++cH)+154],cb[uf-cH--+234]-cb[(uf+=155)- --cH+78])():cb[cb[++uf-cH+77]=[],(uf-=++cH)+79]=cb[(uf+=80)-cH++ +77]:--cH<74?cH>72?cb[uf++ +--cH-72]=!{}:cb[uf++ +cH-74]=cb[uf--+--cH-74][cb[uf-- - --cH+69]]:cH>74?eG[eG.\\u006c\\u0065\\u006e\\u0067\\u0074\\u0068-cb[++uf+cH++-77]][cb[(uf-=cH)+73]]=cb[uf--+cH-5].\\u0073\\u006c\\u0069\\u0063\\u0065(cb[(uf-=++cH)+150],cb[(uf+=149)-cH+77].\\u006c\\u0065\\u006e\\u0067\\u0074\\u0068):cb[(uf+=55)-55]=cb[(uf-=54)+ ++cH-77];else if(66<cH){if(cH<69)68>cH?cb[--uf-2]=iC(cb[uf- --cH+65],cb[(uf+=81)+cH-- -149],cb[(uf-=82)+cH++-64])()(Uc[e++]-(--cH+34674+e)):cb[uf++- --cH+66]=cb[--uf-cH--+66][HX(Uc[e++]^-cH--+4982+e,Uc[e++]^cH--+4778+e)];else if(70>cH)e=Uc[Wu=e,e++]^-++cH+3372+e;else if(cH<71)cb[uf--+cH-- -70]=cb[(uf+=2)-++cH+67];else if(cH>72)cb[uf-cH+72]=\\u006b\\u0065\\u0079=cb[uf+cH-74];else if(cH<72)try{var eQ=cb[--uf-cH+68],cK=cb[--uf+cH-- -72],ef=cb[(uf-=cH)+70],fU=cb[(uf+=68)+--cH-66],eC={\\u0048\\u0065:1},Ob=Ui(e,uu,[],eG,eC);if(eC.\\u0048\\u0065)return Ob;if(eC.\\u0051!==void 0)if(eQ=eC.\\u0051,eC.\\u0066\\u0075>1)return Hb.\\u0051=eQ,Hb.\\u0066\\u0075=--eC.\\u0066\\u0075,Hb.\\u0048\\u0065=0}catch(HH){uu[fU]=HH,eC={\\u0048\\u0065:1},Ob=Ui(cK,uu,[],eG,eC);if(eC.\\u0048\\u0065)return Ob;if(eC.\\u0051!==\\u0075\\u006e\\u0064\\u0065\\u0066\\u0069\\u006e\\u0065\\u0064)if(eQ=eC.\\u0051,eC.\\u0066\\u0075>1)return Hb.\\u0051=eQ,Hb.\\u0066\\u0075=--eC.\\u0066\\u0075,Hb.\\u0048\\u0065=0}finally{eC={\\u0048\\u0065:1},Ob=Ui(ef,uu,[],eG,eC);if(eC.\\u0048\\u0065)return Hb&&(Hb.\\u0048\\u0065=1),Ob;if(eC.\\u0051!==\\u0075\\u006e\\u0064\\u0065\\u0066\\u0069\\u006e\\u0065\\u0064){if(eQ=eC.\\u0051,eC.\\u0066\\u0075>1)return Hb.\\u0051=eQ,Hb.\\u0066\\u0075=--eC.\\u0066\\u0075,Hb.\\u0048\\u0065=0;return Ui(eQ,uu,[],eG)}e=eQ}else cb[(uf+=89)-91]=uu[cb[uf-- -cH++-19]]=cb[(uf-=89)-cH--+73];}else cH>65?cb[uf++ +--cH-68]=eG[eG.\\u006c\\u0065\\u006e\\u0067\\u0074\\u0068-cb[uf+cH-- -68]][cb[++uf-5]]=cb[(uf-=4)+cH-63]:62>cH?60>cH?cb[uf+--cH-60]=cb[uf++-cH++ +56][cb[(uf-=2)-cH+59]]=Uc[e++]-(- --cH+9863+e):cH<61?cb[(uf+=--cH)-60]=\\u0049\\u006e\\u0070\\u0075\\u0074\\u0053\\u0074\\u0072\\u0065\\u0061\\u006d=cb[(uf-=59)+ ++cH-61]:cb[uf++ +cH++-61]=HX(Uc[e++]^-cH--+e,Uc[e++]^-cH+e):++cH<65?63<cH?cb[--uf-cH--+63]=cb[uf-- -1].\\u0073\\u006c\\u0069\\u0063\\u0065(cb[uf++ +1],cb[uf-++cH+63].\\u006c\\u0065\\u006e\\u0067\\u0074\\u0068):cb[uf- --cH+61]=-cb[uf- --cH+60]:--cH>64?cb[uf++-cH++ +65]=uu[Uc[e++]^++cH+15739+e]:uu[cb[++uf+cH++-66]]=cb[uf+ ++cH-70].\\u0073\\u006c\\u0069\\u0063\\u0065(cb[++uf- --cH+61],cb[uf-=5].\\u006c\\u0065\\u006e\\u0067\\u0074\\u0068);}else cH>105?112<cH?uu[cb[(uf+=115)-++cH-3]]=cb[(uf-=117)+cH-- -113]:cH<109?107<cH?uu[cb[uf-- - --cH+106]]=cb[++uf+ ++cH-111].\\u0073\\u006c\\u0069\\u0063\\u0065(cb[uf-++cH+107],cb[(uf-=3)-cH--+109].\\u006c\\u0065\\u006e\\u0067\\u0074\\u0068):106<cH?cb[uf++-cH++ +107]=Uu[Uc[e++]^-cH--+e]:cb[uf-cH--+106]=cb[++uf-cH+102]:cH--<111?107<--cH?cb[(uf-=3)-cH+107]=iC(cb[(uf-=cH++)+108],cb[++uf+ ++cH-4])(cb[(uf-=--cH)+217],cb[(uf+=216)-cH+111])():cb[uf--+--cH-108]=cb[uf--+cH-- -107]>cb[++uf+cH++-105]:111>cH?cb[uf+cH-- -113]=iC(cb[++uf+ ++cH-113],cb[uf++-cH--+106])()(cb[(uf-=4)-cH+110]):cb[uf++-cH+111]=GG:--cH>98?102<cH?104>cH?cb[uf++ +--cH-105]=eG[eG.\\u006c\\u0065\\u006e\\u0067\\u0074\\u0068-cb[uf+cH-- -104]][cb[++uf+cH-105]]=cb[(uf-=4)-1]:cb[(uf+=18)+cH-124]=cb[--uf+--cH-122]!==cb[(uf-=18)-cH++ +103]:101<cH?cb.\\u0073\\u0070\\u006c\\u0069\\u0063\\u0065(uf+ ++cH-106,0,cb[uf++ +cH-- -104]):++cH>101?cb[uf++ +--cH-101]=\\u0062:100<cH?cb[uf--+cH++-102]=\\u0042\\u0079\\u0074\\u0065\\u0041\\u0072\\u0072\\u0061\\u0079\\u004f\\u0075\\u0074\\u0070\\u0075\\u0074\\u0053\\u0074\\u0072\\u0065\\u0061\\u006d=cb[++uf-1]:cb[(uf-=++cH)+97]=ee(cb[uf++ +cH-- -3],[cb[uf++- --cH+195]])(cb[uf-- -cH+196],cb[(uf+=97)-cH--+101]):cH-->92?cH<94?cH>92?cb[uf++]=!1:cb.\\u0073\\u0070\\u006c\\u0069\\u0063\\u0065(uf-cH--+89,0,cb[++uf-cH--+89]):95>cH?cb[uf++ + ++cH-95]=\\u0053\\u0074\\u0072\\u0069\\u006e\\u0067:cH<96?cb[uf++-cH--+95]=[]:cH>96?cb[++uf- --cH+93]=cb[++uf-cH++ +92]!=cb[(uf-=3)+cH++-97]:cb[uf++-cH--+96]=Uc[e++]^+e:cH<87?84<--cH?cb[uf++-++cH+83]=Ce(cb[uf++ +cH-89],cb[uf-5],uu[cb[(uf-=4)+1]])():cb[--uf+cH++-86]=iC(cb[(uf+=cH)-86])(cb[(uf-=cH++)-2],cb[--uf+ ++cH-86],HX(Uc[e++]^-cH--+65324+e,Uc[e++]^cH++ +52344+e))():88<cH?cH-->90?cb[--uf-2]=new(ee(cb[(uf+=cH)-92],[null,cb[uf-91],cb[(uf-=91)+1]])):cH<89?cb[uf-- -cH++ +86]=delete cb[--uf- --cH+88][cb[++uf]]:cb[(uf-=cH)+87]|=cb[(uf+=88)+cH++-89]:cH<88?cb[++uf-7]=new cb[(uf+=cH--)-94](cb[uf-- -++cH-6],cb[uf-cH-4],cb[(uf-=113)+cH++-64],cb[++uf-++cH+112],cb[(uf+=20)+--cH-84]):cb[(uf-=96)-cH--+182]=new(Ce(cb[--uf+cH--+8],null,cb[(uf+=96)+cH-86]))})(327)})([1,21,46,46,40,54212,39,6,56249,35949,18,40,53779,35,31420,78,25,9548,40,54002,6,56256,35961,25,9555,68,3369,6,56264,35977,82,68,3172,16,53,27821,57329,80,40,54090,6,56276,35981,54,38,68,3262,28,64122,75,17,62368,12133,40,53809,73,67,36521,36576,17,33190,23891,40,53998,79,21,56,75,40,54042,28,64158,22,17,39575,18038,68,3532,67,40506,40578,17,49851,7777,40,54110,73,10,13,9,11421,68,3276,34,34771,25,9636,84,40,54054,83,28,64162,21,46,40,54217,73,25,9646,87,71,68,3388,52,6,56363,36057,40,53824,6,56356,36061,27,81,68,3432,56,112,6,56378,36084,40,53944,6,56370,36076,25,9672,40,54163,56,21,21,35,31670,26,22586,35,31513,40,54126,25,9686,70,6,56405,36099,40,53829,21,40,54414,40,54316,45,59531,61962,37471,18,68,3205,57,43,83,1,16,17,40854,17481,40,54563,56,47,3,72,39,30,68,3242,67,40375,40442,17,38249,20099,68,3361,78,6,56435,36147,40,54592,3,47,39,1,16,17,56204,81,40,54402,25,9746,66,34973,13,68,3525,67,58398,58324,26,22805,68,3340,24,52,25,9769,40,54606,73,67,16092,14631,59,68,3451,58,10056,83,25,9776,40,54480,73,29,86,57646,54079,68,3479,39,64,16072,19,50,40,54329,28,64344,75,17,54079,14163,68,3490,101,85,55,85,8,40,54482,68,3437,25,9823,12,22,17,56888,14848,68,3693,25,9821,27,68,3657,68,3984,51,64,16111,75,17,21151,46684,40,54747,18,75,67,29684,29620,68,3874,2,43,3,80,39,1,68,3588,25,9858,87,83,68,3789,40,54462,26,22655,78,25,9862,40,54365,6,56570,36275,25,9869,68,3867,51,20,60779,25,9877,68,3586,82,22,67,24717,24664,40,54372,22,67,38638,38447,10,40,54652,33,6,56599,36304,40,54656,73,100,3,59,39,49,68,3600,22,67,12458,12398,25,9928,68,3609,36,22854,83,25,9919,68,3705,25,9931,32,39,25,9932,40,54443,98,37,3494,25,9943,68,3916,18,75,67,12491,12431,40,54317,95,75,17,58316,2016,68,4013,73,7,46965,30588,22,40,54740,3,100,39,49,17,60772,2235,40,54565,112,40,54430,25,9972,40,54430,18,67,39244,39188,13,40,54751],[[36392,36384,36406,36386],[40495,40502],[57092,57148,57144,57130,57095,57145,57146,57130,57155,57114,57153,57153,57150,57156,57156,57124,57158,57157,57145,57142,57155],[11079,11117,11120,11126,11126,11094,11128,11127,11115,11112,11125],[49285,49320,49276,49332,49289],[41142,41166,41160,41197,41215,41189],[34009,34037,33956,33975,33993],[45950,45938,45935,45939],[26635,26631,26623,26635,26621],[33521,33517,33473,33529,33525,33511,33476,33526,33527,33511,33536],[50780,50782,50781,50752,50780,50736,50792,50788,50774,50789],[8009,8009,7996,7972,7984],[9340,9334,9332,9327,9330],[29815,29831,29819,29816,29836,29822,29805,29844,29833,29834,29827,29843,29842,29834,29829,29798,29846,29854,29846,29851,29847],[21558,21563,21578,21543,21564,21564,21566,21547,21581,21577,21570,21587,21558,21586,21604,21608,21609,21615,21621,21615],[48853,48855,48854,48870,48878,48870,48875],[44384,44382,44379,44377,44389],[],[61580,61569,61585],[33659,33672,33670,33669,33628,33666,33660,33678,33632,33677,33667,33669],[13120,13126,13120,13138,13092,13137,13127,13129,13094,13146],[36544,36550,36545,36551]],function(){return typeof \\u0067\\u006c\\u006f\\u0062\\u0061\\u006c\\u0054\\u0068\\u0069\\u0073===\"undefined\"&&(\\u0067\\u006c\\u006f\\u0062\\u0061\\u006c\\u0054\\u0068\\u0069\\u0073=typeof \\u0077\\u0069\\u006e\\u0064\\u006f\\u0077===\"undefined\"?typeof \\u0067\\u006c\\u006f\\u0062\\u0061\\u006c!==\"undefined\"?\\u0067\\u006c\\u006f\\u0062\\u0061\\u006c:this:\\u0077\\u0069\\u006e\\u0064\\u006f\\u0077),typeof \\u0065\\u0078\\u0070\\u006f\\u0072\\u0074\\u0073===\"undefined\"||(\\u0067\\u006c\\u006f\\u0062\\u0061\\u006c\\u0054\\u0068\\u0069\\u0073.\\u0065\\u0078\\u0070\\u006f\\u0072\\u0074\\u0073=\\u0065\\u0078\\u0070\\u006f\\u0072\\u0074\\u0073),typeof \\u0072\\u0065\\u0071\\u0075\\u0069\\u0072\\u0065===\"undefined\"||(\\u0067\\u006c\\u006f\\u0062\\u0061\\u006c\\u0054\\u0068\\u0069\\u0073.\\u0072\\u0065\\u0071\\u0075\\u0069\\u0072\\u0065=\\u0072\\u0065\\u0071\\u0075\\u0069\\u0072\\u0065),typeof \\u006d\\u006f\\u0064\\u0075\\u006c\\u0065===\"undefined\"||(\\u0067\\u006c\\u006f\\u0062\\u0061\\u006c\\u0054\\u0068\\u0069\\u0073.\\u006d\\u006f\\u0064\\u0075\\u006c\\u0065=\\u006d\\u006f\\u0064\\u0075\\u006c\\u0065),typeof \\u005f\\u005f\\u0066\\u0069\\u006c\\u0065\\u006e\\u0061\\u006d\\u0065===\"undefined\"||(\\u0067\\u006c\\u006f\\u0062\\u0061\\u006c\\u0054\\u0068\\u0069\\u0073.\\u005f\\u005f\\u0066\\u0069\\u006c\\u0065\\u006e\\u0061\\u006d\\u0065=\\u005f\\u005f\\u0066\\u0069\\u006c\\u0065\\u006e\\u0061\\u006d\\u0065),typeof \\u005f\\u005f\\u0064\\u0069\\u0072\\u006e\\u0061\\u006d\\u0065===\"undefined\"||(\\u0067\\u006c\\u006f\\u0062\\u0061\\u006c\\u0054\\u0068\\u0069\\u0073.\\u005f\\u005f\\u0064\\u0069\\u0072\\u006e\\u0061\\u006d\\u0065=\\u005f\\u005f\\u0064\\u0069\\u0072\\u006e\\u0061\\u006d\\u0065),\\u0067\\u006c\\u006f\\u0062\\u0061\\u006c\\u0054\\u0068\\u0069\\u0073}(),\\u004f\\u0062\\u006a\\u0065\\u0063\\u0074.\\u0063\\u0061\\u006c\\u006c.\\u0062\\u0069\\u006e\\u0064(\\u0041\\u0072\\u0072\\u0061\\u0079.\\u0062\\u0069\\u006e\\u0064),\\u0041\\u0072\\u0072\\u0061\\u0079.\\u0061\\u0070\\u0070\\u006c\\u0079.\\u0062\\u0069\\u006e\\u0064(\\u004e\\u0075\\u006d\\u0062\\u0065\\u0072.\\u0062\\u0069\\u006e\\u0064),\\u004e\\u0075\\u006d\\u0062\\u0065\\u0072.\\u0062\\u0069\\u006e\\u0064.\\u0062\\u0069\\u006e\\u0064(\\u004f\\u0062\\u006a\\u0065\\u0063\\u0074.\\u0062\\u0069\\u006e\\u0064),\\u004f\\u0062\\u006a\\u0065\\u0063\\u0074.\\u0063\\u0061\\u006c\\u006c.\\u0062\\u0069\\u006e\\u0064([].\\u0070\\u0075\\u0073\\u0068),\\u0041\\u0072\\u0072\\u0061\\u0079.\\u0063\\u0061\\u006c\\u006c.\\u0062\\u0069\\u006e\\u0064([].\\u0063\\u006f\\u006e\\u0063\\u0061\\u0074),\\u004e\\u0075\\u006d\\u0062\\u0065\\u0072.\\u0061\\u0070\\u0070\\u006c\\u0079.\\u0062\\u0069\\u006e\\u0064(\\u0053\\u0074\\u0072\\u0069\\u006e\\u0067.\\u0066\\u0072\\u006f\\u006d\\u0043\\u0068\\u0061\\u0072\\u0043\\u006f\\u0064\\u0065,null),\\u004f\\u0062\\u006a\\u0065\\u0063\\u0074.\\u0064\\u0065\\u0066\\u0069\\u006e\\u0065\\u0050\\u0072\\u006f\\u0070\\u0065\\u0072\\u0074\\u0079,[]);",
-    "lastUpdateTime": "1761673083181",
-    "loginUrl": "https://www.favcomic.net",
-    "respondTime": 180000,
+    "exploreUrl": "@js:\nvar result = [];\nvar push = function(title, url, size) {\nresult.push({\"title\": title, \"url\": url, \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": size}});\n};\nvar tagUrl = source.key+\"/sort/1_1/\";\nvar tag = java.ajax(tagUrl);\nvar tagList = org.jsoup.Jsoup.parse(tag).select(\".menu_nav li  a\");\nvar tagSize = 0.4;\npush(\"分类\", null, 1);\nfor (var i = 0; i < tagList.length - 1; i++) {\nvar title = tagList[i].text();\nvar url = String(tagList[i].attr(\"href\")).replace(/(\\d+)(?!.*\\d)/, \"{{page}}\");\ntitle = String(title).replace(/\\s/g, \"\");\npush(title, url, tagSize);\n}\nvar spaceLength = tagList.length % 2;\nfor (i = 0; i < spaceLength; i++) {\npush(\"{{——}}\", null, tagSize);\n}\nJSON.stringify(result);",
+    "header": "{\"User-Agent\": \"Mozilla/5.0 (Linux; Android 9) Mobile Safari/537.36\"}",
+    "lastUpdateTime": "1762004965600",
+    "respondTime": 7790,
     "ruleBookInfo": {
-      "author": ".author.0@a@text",
-      "coverUrl": "[property$=image]@content",
-      "intro": "<br>\n{{@@.translation_agency_box@text}}\n<br>\n简介：\n{{@@[property$=description]@content}}\n<br>",
-      "name": ".info_box@h1@text"
+      "author": ".infotype a.0@text",
+      "coverUrl": ".infohead img@src",
+      "intro": "#intro p@text",
+      "kind": ".infotype p.1:3:2@text\n##作品类型：|作品状态：|更新时间：",
+      "lastChapter": ".list_xm li.0@text",
+      "name": "h3.0@text",
+      "tocUrl": "text.章节目录@href"
     },
     "ruleContent": {
-      "content": "<js>\nvar match = src.match(/\"images\":\\s*(\\[[^\\]]*?\\])/);\nvar data = [];\nif (match) {\n    var arrStr = match[1];\n    try {\n        \n        data = JSON.parse(arrStr.replace(/'/g, '\"'));\n    } catch (e) {\n        \n        data = eval(arrStr);\n    }\n}\nvar imgTags = data.map(item => `<img src=\"https://ccdeoo.ykxbo.cn/file/e-media/app${item}\">`).join('\\n');\nimgTags;\n</js>",
-      "imageDecode": "decode(result);"
+      "content": "#novelcontent p@html"
     },
-    "ruleExplore": [],
-    "ruleSearch": {
-      "author": ".txt@text",
-      "bookList": ".comic_list@.comic_li",
+    "ruleExplore": {
+      "author": ".p3@text||a.2@text",
+      "bookList": ".article||.full_content",
       "bookUrl": "a@href",
-      "coverUrl": ".cover_box@img@data-src",
-      "kind": ".brief_box@img@alt",
-      "name": "a@text"
+      "coverUrl": "img@data-src",
+      "intro": "p.simple@text",
+      "kind": ".p1@text##\\[|\\]",
+      "name": ".p2@text||a.1@text"
+    },
+    "ruleSearch": {
+      "author": "span@text",
+      "bookList": "p.sone",
+      "bookUrl": "a.0@href",
+      "checkKeyWord": "剑来",
+      "kind": "0",
+      "name": "a.0@text"
     },
     "ruleToc": {
-      "chapterList": ".right_box:nth-child(2)@a",
-      "chapterName": ".title@text",
-      "chapterUrl": "href"
+      "chapterList": ".chapters li",
+      "chapterName": "text",
+      "chapterUrl": "a@href"
     },
-    "searchUrl": "https://www.favcomic.net/search?keyword={{key}}",
+    "searchUrl": "https://www.qiufengshuwu.com/s.html,{\n  \"body\": \"s={{key}}&type=articlename\",\n  \"charset\": \"GBK\",\n  \"method\": \"POST\"\n}",
     "weight": 0
   }
 ]
