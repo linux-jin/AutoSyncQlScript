@@ -2,8 +2,8 @@
 |--------------|--------------------------------------------------------------------------------------------------|
 | **永久发布页** | [![下载链接](https://img.shields.io/badge/下载-链接-blueviolet.svg?logo=hack-the-box)](http://fb.langge.cf) |
 | **聚合书院4.0** | [![下载链接](https://img.shields.io/badge/下载-链接-blueviolet.svg?logo=hack-the-box)](https://api.langge.cf) |
-| **QQ群组1**   | [![下载链接](https://img.shields.io/badge/下载-链接-blueviolet.svg?logo=hack-the-box)](https://qm.qq.com/q/ZLY2sXBGUY) |
-| **QQ群组2**   | [![下载链接](https://img.shields.io/badge/下载-链接-blueviolet.svg?logo=hack-the-box)](https://qm.qq.com/q/bxJNo8LP6U) |
+| **QQ群组2**   | [![下载链接](https://img.shields.io/badge/下载-链接-blueviolet.svg?logo=hack-the-box)](https://qm.qq.com/q/ZLY2sXBGUY) |
+| **QQ群组3**   | [![下载链接](https://img.shields.io/badge/下载-链接-blueviolet.svg?logo=hack-the-box)](https://qm.qq.com/q/AmapLggTYY) |
 | **TG交流群** | [![下载链接](https://img.shields.io/badge/下载-链接-blueviolet.svg?logo=hack-the-box)](https://t.me/dahuilang888) |
 | **QQ频道** | [![下载链接](https://img.shields.io/badge/下载-链接-blueviolet.svg?logo=hack-the-box)](https://pd.qq.com/s/9r1k2ik49) |
 
