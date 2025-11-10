@@ -1,0 +1,46 @@
+[
+  {
+    "bookSourceComment": "最新地址发布页 xiaohuangshu.me\n永久地址(墙) xchina.co",
+    "bookSourceGroup": "🔞柳树",
+    "bookSourceName": "🔞柳树小黄书图片",
+    "bookSourceType": 2,
+    "bookSourceUrl": "https://xchina001.site#图片",
+    "customOrder": 1,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "COS::/photos/album-5/{{page}}.html",
+    "lastUpdateTime": "1762740019837",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "@css:.info-card.photo-detail .item:nth-of-type(4) .text@text@js:result ? result.split('\\n')[0].trim() : \"无\"",
+      "intro": ".info-card.photo-detail@.item@.text.0@text",
+      "kind": "@css:.info-card.photo-detail .item:nth-of-type(6) .text@text",
+      "name": "@css:.info-card.photo-detail .item:nth-of-type(1) .text@text@js:result ? result.split('\\n')[0].trim() : \"无\"",
+      "wordCount": "@css:.info-card.photo-detail .item:nth-of-type(8) .text@text@js:result ? result.split('\\n')[0].trim() : \"无\""
+    },
+    "ruleContent": {
+      "content": "html@html"
+    },
+    "ruleExplore": {
+      "bookList": "@css:.list.photo-list .item.photo",
+      "bookUrl": "@css:.text > .title > a@href",
+      "intro": "@css:.text > .subs@text",
+      "name": "@css:.text > .title > a@text"
+    },
+    "ruleSearch": {
+      "bookList": "@css:.list.photo-list .item.photo",
+      "bookUrl": "@css:.text > .title > a@href",
+      "checkKeyWord": "黑丝",
+      "intro": "@css:.text > .subs@text",
+      "name": "@css:.text > .title > a@text"
+    },
+    "ruleToc": {
+      "chapterList": "@css:.list.photo-items .item.photo-image",
+      "chapterName": ".tags@text",
+      "chapterUrl": "a@href"
+    },
+    "searchUrl": "/photos/keyword-{{key}}/{{page}}.html",
+    "weight": 0
+  }
+]

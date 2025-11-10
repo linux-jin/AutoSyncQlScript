@@ -1,0 +1,41 @@
+[
+  {
+    "bookSourceComment": "天天的鸟蛋蛋 2025/9/30",
+    "bookSourceName": "学外漫画",
+    "bookSourceType": 2,
+    "bookSourceUrl": "https://www.xwmanhua.com",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "jsLib": "var unpack = function(p, a, c, k, e, d) {\n    e = function(c) {\n        return c.toString(36);\n    };\n    if (!''.replace(/^/, String)) {\n        while (c--) {\n            d[e(c)] = k[c] || e(c);\n        }\n        k = [function(e) {\n            return d[e];\n        }];\n        e = function() {\n            return '\\\\w+';\n        };\n        c = 1;\n    }\n    while (c--) {\n        if (k[c]) {\n            p = p.replace(new RegExp('\\\\b' + e(c) + '\\\\b', 'g'), k[c]);\n        }\n    }\n    return p;\n};",
+    "lastUpdateTime": "1762590186449",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": ".shuxin@dd.0@text",
+      "coverUrl": "img@src",
+      "init": "#setnmh-bookms",
+      "intro": "《{{@@.bookname@text}}》\n标签：{{@@.tags@a@text##\\s##,}}\n{{@@.shuxin@dd@html}}\n简介：\n{{@@.ms@html}}",
+      "kind": ".tags@a@text",
+      "name": ".bookname@text"
+    },
+    "ruleContent": {
+      "content": "<js>\nvar evalStr=src.match(/(eval.*\\)\\))/)[1]\nvar match = evalStr.match(/eval\\(function\\(p,a,c,k,e,d\\)\\{.*?\\}\\('(.*?)',(\\d+),(\\d+),'(.*?)'\\.split\\('\\|'\\)/);\n    var p = match[1];        \n    var a = parseInt(match[2]);\n    var c = parseInt(match[3]); \n    var k = match[4].split('|');     \n    var result = unpack(p, a, c, k, undefined, {});\n    eval(result);\n    var imgTags = picTree.map(item => `<img src=\"${item}\">`).join('\\n');\nimgTags;\n    </js>"
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "bookList": ".col-lg-2",
+      "bookUrl": "a@href",
+      "checkKeyWord": "爸妈来自二次元",
+      "coverUrl": "img@data-original",
+      "name": "a@text"
+    },
+    "ruleToc": {
+      "chapterList": "-#ul_chapter1@li@a",
+      "chapterName": "text",
+      "chapterUrl": "href"
+    },
+    "searchUrl": "/search?types=comic&searhword={{key}}",
+    "weight": 0
+  }
+]
