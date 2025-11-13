@@ -1,0 +1,35 @@
+[
+  {
+    "bookSourceGroup": "柳树🌇图片",
+    "bookSourceName": "girl的热爱|柳树🌇图片",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://girldreamy.com",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "COS::https://girldreamy.com/page/2/?s=%E8%95%BE%E4%B8%9D",
+    "lastUpdateTime": "1762951232353",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "kind": ".elementor-post-info__terms-list@text",
+      "name": "h1@text"
+    },
+    "ruleContent": {
+      "content": "@css:p img@html"
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "bookList": ".elementor-post__card",
+      "bookUrl": "h2@a@href",
+      "coverUrl": "@css:div img@src",
+      "name": "h2@text"
+    },
+    "ruleToc": {
+      "chapterList": "h1",
+      "chapterName": "h1@text"
+    },
+    "searchUrl": "https://girldreamy.com/page/{{page}}/?s={{key}}",
+    "weight": 0
+  }
+]
