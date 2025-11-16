@@ -1,0 +1,39 @@
+[
+  {
+    "bookSourceComment": "搜索是数字",
+    "bookSourceGroup": "小书源🈲柳树外",
+    "bookSourceName": "调戏调戏🈲🈲外",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.txtxi.com",
+    "customOrder": -1,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "处女::https://www.txtxi.com/tags/100307-{{page}}.html",
+    "lastUpdateTime": "1763088065823",
+    "respondTime": 180000,
+    "ruleBookInfo": [],
+    "ruleContent": {
+      "content": ".text@html"
+    },
+    "ruleExplore": {
+      "bookList": "div@ul@a",
+      "bookUrl": "a@href",
+      "intro": ".intro@text",
+      "name": ".title.0@textNodes##\\\\d+章\\\\s+",
+      "wordCount": ".title@span@textNodes"
+    },
+    "ruleSearch": {
+      "bookList": "div@ul@a",
+      "bookUrl": "a@href",
+      "name": ".title.0@textNodes##\\\\d+章\\\\s+",
+      "wordCount": ".title@span@textNodes"
+    },
+    "ruleToc": {
+      "chapterList": "h1",
+      "chapterName": "h1@text"
+    },
+    "searchUrl": "处女::https://www.txtxi.com/tags/{{key}}-{{page}}.html",
+    "weight": 0
+  }
+]

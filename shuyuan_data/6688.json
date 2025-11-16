@@ -1,0 +1,39 @@
+[
+  {
+    "bookSourceName": "拇指姑娘",
+    "bookSourceType": 4,
+    "bookSourceUrl": "https://110v.zmgnx.xyz/",
+    "customButton": false,
+    "customOrder": 348,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "eventListener": false,
+    "exploreUrl": "激情动漫::/?fenlei=激情动漫&p={{page}}\n抽吸::/?fenlei=抽吸&p={{page}}\n　　直播::/?fenlei=直播&p={{page}}\n　　辣妈::/?fenlei=辣妈&p={{page}}\n　　老男人::/?fenlei=老男人&p={{page}}\n　　主导::/?fenlei=主导&p={{page}}\n　　兔女郎::/?fenlei=兔女郎&p={{page}}\n　　袜子::/?fenlei=袜子&p={{page}}\n　　拉丁::/?fenlei=拉丁&p={{page}}\n　　黑人::/?fenlei=黑人&p={{page}}\n　　裙子::/?fenlei=裙子&p={{page}}\n　　四人组::/?fenlei=四人组&p={{page}}\n　　恋足癖::/?fenlei=恋足癖&p={{page}}\n　　老师::/?fenlei=老师&p={{page}}\n　　抖阴视频::/?fenlei=抖阴视频&p={{page}}\n　　国产传媒::/?fenlei=国产传媒&p={{page}}\n　　萝莉少女::/?fenlei=萝莉少女&p={{page}}\n　　日本有码::/?fenlei=日本有码&p={{page}}\n　　女优明星::/?fenlei=女优明星&p={{page}}\n　　强奸乱伦::/?fenlei=强奸乱伦&p={{page}}\n　　中文字幕::/?fenlei=中文字幕&p={{page}}\n　　日本无码::/?fenlei=日本无码&p={{page}}\n　　SM调教::/?fenlei=SM调教&p={{page}}\n　　网曝黑料::/?fenlei=网曝黑料&p={{page}}\n　　强奸乱伦::/?fenlei=强奸乱伦&p={{page}}\n　　国产视频::/?fenlei=国产视频&p={{page}}\n　　国产主播::/?fenlei=国产主播&p={{page}}",
+    "header": "{\n\t\"User-Agent\": \"Mozilla/5.0 (Linux; Android 9) Mobile Safari/537.36\",\"referer\": \"{{baseUrl}}\"\n\t}",
+    "lastUpdateTime": "1763241461970",
+    "respondTime": 180000,
+    "ruleBookInfo": [],
+    "ruleContent": {
+      "content": "iframe@src##m3u8=(.*)&.*##$1##"
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "author": ".title@text",
+      "bookList": "li!0:1:2:3:4:5:6:7:8:9:10:11:12:13:14:15:16:17:18:19:20:21:22:23:24:25:26:27:28:29:30:31:32:33:34:35:36:37:38:39:40:41:42:43:44:45:46:47:48:49:50:51:52:53:54:55:56:57:58:59:60:61:62:63:64:65:66:67:68:69:70:71:72:73:74:75:76:77:78:79:80:81:82:83:-1",
+      "bookUrl": "/js/js.php?did={{@a.0@href##play-(.*)-1-.html##$1##}}&src=1",
+      "checkKeyWord": "妹妹",
+      "coverUrl": "img@src",
+      "intro": "all",
+      "kind": ".fenlei@a@text",
+      "name": ".titles@a@text",
+      "wordCount": ".hd@text"
+    },
+    "ruleToc": {
+      "chapterList": "@js:[{\"name\":book.name}]",
+      "chapterName": "name"
+    },
+    "searchUrl": "/?search={{key}}&p={{page}}",
+    "weight": 0
+  }
+]

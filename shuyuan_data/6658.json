@@ -1,0 +1,47 @@
+[
+  {
+    "bookSourceGroup": "析",
+    "bookSourceName": "群U聚合",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://jican.x7go.top",
+    "customOrder": -1,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "eventListener": false,
+    "jsLib": "function getHost() {\n  return \"https://jican.x7go.top\"\n}",
+    "lastUpdateTime": "1763201996592",
+    "loginUi": "[{\"name\": \"全部\",\"type\": \"button\",\"action\": \"全部()\",\"style\": {\"layout_flexGrow\": 1,\"layout_flexBasisPercent\":0.25}},{\"name\": \"番茄\",\"type\": \"button\",\"action\": \"番茄()\",\"style\": {\"layout_flexGrow\": 1,\"layout_flexBasisPercent\":0.25}},{\"name\": \"番茄短剧\",\"type\": \"button\",\"action\": \"番茄短剧()\",\"style\": {\"layout_flexGrow\": 1,\"layout_flexBasisPercent\":0.25}},{\"name\": \"七猫\",\"type\": \"button\",\"action\": \"七猫()\",\"style\": {\"layout_flexGrow\": 1,\"layout_flexBasisPercent\":0.25}},{\"name\": \"七猫短剧\",\"type\": \"button\",\"action\": \"七猫短剧()\",\"style\": {\"layout_flexGrow\": 1,\"layout_flexBasisPercent\":0.25}},{\"name\": \"米读\",\"type\": \"button\",\"action\": \"米读()\",\"style\": {\"layout_flexGrow\": 1,\"layout_flexBasisPercent\":0.25}},{\"name\": \"塔读\",\"type\": \"button\",\"action\": \"塔读()\",\"style\": {\"layout_flexGrow\": 1,\"layout_flexBasisPercent\":0.25}},{\"name\": \"书旗\",\"type\": \"button\",\"action\": \"书旗()\",\"style\": {\"layout_flexGrow\": 1,\"layout_flexBasisPercent\":0.25}},{\"name\": \"晋江\",\"type\": \"button\",\"action\": \"晋江()\",\"style\": {\"layout_flexGrow\": 1,\"layout_flexBasisPercent\":0.25}},{\"name\": \"百度\",\"type\": \"button\",\"action\": \"百度()\",\"style\": {\"layout_flexGrow\": 1,\"layout_flexBasisPercent\":0.25}},{\"name\": \"酷我\",\"type\": \"button\",\"action\": \"酷我()\",\"style\": {\"layout_flexGrow\": 1,\"layout_flexBasisPercent\":0.25}},{\"name\": \"QQ浏览器\",\"type\": \"button\",\"action\": \"QQ浏览器()\",\"style\": {\"layout_flexGrow\": 1,\"layout_flexBasisPercent\":0.25}},{\"name\": \"番薯\",\"type\": \"button\",\"action\": \"番薯()\",\"style\": {\"layout_flexGrow\": 1,\"layout_flexBasisPercent\":0.25}},{\"name\": \"福利小说\",\"type\": \"button\",\"action\": \"福利小说()\",\"style\": {\"layout_flexGrow\": 1,\"layout_flexBasisPercent\":0.25}},{\"name\": \"福瑞小说\",\"type\": \"button\",\"action\": \"福瑞小说()\",\"style\": {\"layout_flexGrow\": 1,\"layout_flexBasisPercent\":0.25}},{\"name\": \"猫眼\",\"type\": \"button\",\"action\": \"猫眼()\",\"style\": {\"layout_flexGrow\": 1,\"layout_flexBasisPercent\":0.25}},{\"name\": \"追更人\",\"type\": \"button\",\"action\": \"追更人()\",\"style\": {\"layout_flexGrow\": 1,\"layout_flexBasisPercent\":0.25}},{\"name\": \"爱下电子书\",\"type\": \"button\",\"action\": \"爱下电子书()\",\"style\": {\"layout_flexGrow\": 1,\"layout_flexBasisPercent\":0.25}},{\"name\": \"速读谷\",\"type\": \"button\",\"action\": \"速读谷()\",\"style\": {\"layout_flexGrow\": 1,\"layout_flexBasisPercent\":0.25}},{\"name\": \"老福特\",\"type\": \"button\",\"action\": \"老福特()\",\"style\": {\"layout_flexGrow\": 1,\"layout_flexBasisPercent\":0.25}}]",
+    "loginUrl": "function 全部() {\n    source.setVariable('全部');\n    java.toast(\"已切换到全部来源\");\n}\n\nfunction 番茄() {\n    source.setVariable('番茄');\n    java.toast(\"已切换番茄来源\");\n}\n\nfunction 番茄短剧() {\n    source.setVariable('番茄短剧');\n    java.toast(\"已切换番茄短剧来源\");\n}\n\nfunction 七猫() {\n    source.setVariable('七猫');\n    java.toast(\"已切换七猫来源\");\n}\n\nfunction 七猫短剧() {\n    source.setVariable('七猫短剧');\n    java.toast(\"已切换七猫短剧来源\");\n}\n\nfunction 米读() {\n    source.setVariable('米读');\n    java.toast(\"已切换米读来源\");\n}\n\nfunction 塔读() {\n    source.setVariable('塔读');\n    java.toast(\"已切换塔读来源\");\n}\n\nfunction 书旗() {\n    source.setVariable('书旗');\n    java.toast(\"已切换书旗来源\");\n}\n\nfunction 晋江() {\n    source.setVariable('晋江');\n    java.toast(\"已切换晋江来源\");\n}\n\nfunction 百度() {\n    source.setVariable('百度');\n    java.toast(\"已切换百度来源\");\n}\n\nfunction 酷我() {\n    source.setVariable('酷我');\n    java.toast(\"已切换酷我来源\");\n}\n\nfunction QQ浏览器() {\n    source.setVariable('QQ浏览器');\n    java.toast(\"已切换到QQ浏览器来源\");\n}\n\nfunction 番薯() {\n    source.setVariable('番薯');\n    java.toast(\"已切换番薯来源\");\n}\n\nfunction 福利小说() {\n    source.setVariable('福利小说');\n    java.toast(\"已切换福利小说来源\");\n}\n\nfunction 福瑞小说() {\n    source.setVariable('福瑞小说');\n    java.toast(\"已切换福瑞小说来源\");\n}\n\nfunction 猫眼() {\n    source.setVariable('猫眼');\n    java.toast(\"已切换猫眼来源\");\n}\n\nfunction 追更人() {\n    source.setVariable('追更人');\n    java.toast(\"已切换追更人来源\");\n}\n\nfunction 爱下电子书() {\n    source.setVariable('爱下电子书');\n    java.toast(\"已切换爱下电子书来源\");\n}\n\nfunction 速读谷() {\n    source.setVariable('速读谷');\n    java.toast(\"已切换速读谷来源\");\n}\n\nfunction 老福特() {\n    source.setVariable('老福特');\n    java.toast(\"已切换老福特来源\");\n}",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "$.result.author",
+      "coverUrl": "$.result.cover_url",
+      "intro": "$.result.abstract",
+      "kind": "$.result.source",
+      "name": "$.result.title",
+      "tocUrl": "https://jican.x7go.top/catalog?book_id={{$.result.book_id}}&source={{$.result.source}}"
+    },
+    "ruleContent": {
+      "content": "@js:\nvar json = JSON.parse(result);\nvar content = json.data[0].content;\nif(content && content.startsWith('https://')) {\n    // 如果是视频链接\n    if(book.durChapterIndex == chapter.index) {\n        java.startBrowser(content.replace(/\\\\/g, ''), chapter.title);\n        java.toast('正在加载视频\\n视频加载较慢，请耐心等待');\n    }\n    result = '【刷新正文】播放\\n✅直链:\\n' + content;\n} else {\n    result = content;\n}\nresult"
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "author": "$.author",
+      "bookList": "$.results",
+      "bookUrl": "https://jican.x7go.top/detail?book_id={{$.book_id}}&source={{$.source}}",
+      "checkKeyWord": "诡秘之主",
+      "coverUrl": "$.cover_url",
+      "intro": "$.abstract",
+      "kind": "$.source",
+      "name": "$.title"
+    },
+    "ruleToc": {
+      "chapterList": "$.chapters<js>java.put('book_id', java.getString('$.book_id')); java.put('source', java.getString('$.source')); result</js>",
+      "chapterName": "$.title",
+      "chapterUrl": "<js>var host = getHost(); \nvar bookId = java.get('book_id'); \nvar sourceVal = java.get('source'); \nvar itemId = java.getString('$.item_id'); \nhost + '/content?book_id=' + bookId + '&item_id=' + itemId + '&source=' + encodeURIComponent(sourceVal);</js>"
+    },
+    "searchUrl": "@js:\n(function() {\n    var sourceVal = '全部';\n    try {\n        var userSource = source.getVariable();\n        if (userSource != null && String(userSource).length > 0) {\n            sourceVal = userSource;\n        }\n    } catch (e) {\n        java.log('获取用户来源失败，使用默认值');\n    }\n    return getHost() + '/search?q={{key}}&source=' + encodeURIComponent(sourceVal);\n})();\n",
+    "weight": 0
+  }
+]

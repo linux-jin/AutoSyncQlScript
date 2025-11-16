@@ -1,0 +1,52 @@
+[
+  {
+    "bookSourceName": "30读书",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.30dushu.com/",
+    "customOrder": 5,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "exploreUrl": "全部::https://www.30dushu.com/cate/0-1.html&&玄幻魔法::https://www.30dushu.com/cate/1-1.html&&武侠修真::https://www.30dushu.com/cate/2-1.html&&都市言情::https://www.30dushu.com/cate/3-1.html&&历史军事::https://www.30dushu.com/cate/4-1.html&&游戏竞技::https://www.30dushu.com/cate/5-1.html&&科幻灵异::https://www.30dushu.com/cate/6-1.html&&纯爱同人::https://www.30dushu.com/cate/7-1.html&&女生言情::https://www.30dushu.com/cate/8-1.html&&二次元::https://www.30dushu.com/cate/9-1.html&&其他::https://www.30dushu.com/cate/10-1.html",
+    "lastUpdateTime": "1763286718531",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "text.👤@text",
+      "coverUrl": "img@src",
+      "intro": ".detail-book-intro.0@text",
+      "kind": "text.📚@text",
+      "lastChapter": ".detail-chapter-title@text",
+      "name": "h1@text",
+      "tocUrl": ".detail-book-actions>a.1@href",
+      "wordCount": "text.📖@text"
+    },
+    "ruleContent": {
+      "content": "p@text",
+      "title": "h1@text"
+    },
+    "ruleExplore": {
+      "author": "p@text",
+      "bookList": ".book-card",
+      "bookUrl": "a.0@href",
+      "coverUrl": "img@src",
+      "name": "h3@text"
+    },
+    "ruleSearch": {
+      "author": "text.👤@text",
+      "bookList": ".modern-search-item",
+      "bookUrl": "a.0@href",
+      "coverUrl": "img@src",
+      "intro": ".modern-book-desc@text",
+      "kind": "text.📚@text",
+      "name": ".modern-book-title@text",
+      "wordCount": "text.📖@text"
+    },
+    "ruleToc": {
+      "chapterList": ".modern-chapter-item",
+      "chapterName": "a@text",
+      "chapterUrl": "a@href"
+    },
+    "searchUrl": "/search/?searchkey={{key}}",
+    "weight": 0
+  }
+]

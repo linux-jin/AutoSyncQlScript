@@ -1,0 +1,52 @@
+[
+  {
+    "bookSourceComment": "//❗免责声明：  \n本工具/代码/内容仅供学习交流使用，严禁用于任何非法用途。使用者应严格遵守所在国家或地区的法律法规，任何因滥用或违规使用导致的后果均与开发者/提供者无关，责任自负❗",
+    "bookSourceName": "笔趣阁xin",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.biquge.xin",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "exploreUrl": "@js:\nfunction biquge() {\n\t    let disc = []\n    let url = baseUrl.replaceAll(/[^\\w]+$/gi, '');\n  let tagHtml = java.ajax(`${url}/category.html`);\n    let doc = org.jsoup.Jsoup.parse(tagHtml);\n  let tags = doc.select(\".tar a\");\n  Array.from(tags).forEach(a => {\n     disc.push({\n      title: String(a.ownText().trim()).replace(/查看所有|>>/g, \"\"),\n      url: String(a.attr(\"href\")).replace(/\\/category\\/([^\\/]+)\\.html$/, '/category/$1/{{page}}.html'),\n      style: {\n        layout_flexGrow: 1,\n        layout_flexBasisPercent: 0.25\n      }\n    });\n  });\n  \n  let taml = java.ajax(`${url}/top.html`);\n    let dc = org.jsoup.Jsoup.parse(taml);\n        let tas = dc.select(\".topindex .card\");\n    Array.from(tas).forEach(x => {\n        let name = x.select(\"h3\").text(),\n            link = x.select(\".tar a\").attr(\"href\");\n        disc.push({\n            title: name,\n            url: String(link).replace(/\\/top\\/([^\\/]+)\\.html$/, '/top/$1/{{page}}.html'),\n            style: {\n                layout_flexGrow: 1,\n                layout_flexBasisPercent: 0.25\n            }\n        });\n    });\n  \n  \n  disc.push({\n    title: \"全本小说\",\n    url: \"/over/{{page}}.html\",\n    style: {layout_flexGrow: 1, layout_flexBasisPercent: 0.25}\n  },\n  {\n    title: \"最近更新\",\n    url: \"/top/lastupdate/{{page}}.html\",\n    style: {layout_flexBasisPercent: 1, layout_flexGrow: 1}\n  });\n  \n  \n      return JSON.stringify(disc);\n}\nbiquge();",
+    "header": "@js:\nJSON.stringify({\n\t\t\"X-Requested-With\": \"mark.via\",\n\t\t\"Cache-control\": \"no-store\",\n\t\t\"Referer\": baseUrl,\n\"Accept-Language\": \"zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7\",\n\"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36\"\n})",
+    "lastUpdateTime": "1763126777291",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "li.18@a@text",
+      "coverUrl": "img.1@src",
+      "intro": ".novelintro@p@text",
+      "kind": "li.16@a@text",
+      "lastChapter": "{{@@li.23@a@text}}·{{@@li.24@text##更新：}}",
+      "name": "h1@text",
+      "wordCount": "li.20:21:22@text"
+    },
+    "ruleContent": {
+      "content": "#chaptercontent@p@html"
+    },
+    "ruleExplore": {
+      "author": "span.1@a@text",
+      "bookList": "ul.librarylist li",
+      "bookUrl": "a@href",
+      "intro": ".intro@text",
+      "lastChapter": "p.-1@text##最新章节[:：]",
+      "name": "span@text"
+    },
+    "ruleSearch": {
+      "author": "span.1@a@text",
+      "bookList": "ul.librarylist li",
+      "bookUrl": "a@href",
+      "coverUrl": "img@src",
+      "intro": ".intro@text",
+      "lastChapter": "p.-1@text##最新章节[:：]",
+      "name": "span@text"
+    },
+    "ruleToc": {
+      "chapterList": "ul.three li a",
+      "chapterName": "text##【正.*广】",
+      "chapterUrl": "href"
+    },
+    "searchUrl": "/search/result.html?searchtype=novelname&searchkey={{encodeURIComponent(key)}}",
+    "weight": 0
+  }
+]
