@@ -1,7 +1,7 @@
 | **项目名称** | **站点链接**                                                                                     |
 |--------------|--------------------------------------------------------------------------------------------------|
 | **永久发布页** | [![下载链接](https://img.shields.io/badge/下载-链接-blueviolet.svg?logo=hack-the-box)](http://vip.gyks.cf) |
-| **聚合书源4.0** | [![下载链接](https://img.shields.io/badge/下载-链接-blueviolet.svg?logo=hack-the-box)](https://v1.gyks.cf) |
+| **聚合书源4.0** | [![下载链接](https://img.shields.io/badge/下载-链接-blueviolet.svg?logo=hack-the-box)](https://v1.gyks.cf/online_search) |
 | **QQ群组**   | [![下载链接](https://img.shields.io/badge/下载-链接-blueviolet.svg?logo=hack-the-box)](https://qm.qq.com/q/QrkY0onbAi) |
 | **QQ频道**   | [![下载链接](https://img.shields.io/badge/下载-链接-blueviolet.svg?logo=hack-the-box)](https://pd.qq.com/s/en1ixsg5w) |
 | **TG交流群** | [![下载链接](https://img.shields.io/badge/下载-链接-blueviolet.svg?logo=hack-the-box)](https://t.me/qingtian618_novel) |
