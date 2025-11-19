@@ -1,0 +1,41 @@
+[
+  {
+    "bookSourceComment": "因为网站采用 gb2312 编码  我不会\n搜索请在网站搜索，然后复制搜索链接中的\n第二页链接\nhttps://www.gcwdp.com/plus/search.php?keyword=%C3%C3%C3%C3&searchtype=titlekeyword&channeltype=17&orderby=&kwtype=0&pagesize=20&typeid=0&TotalResult=200&PageNo=2\n\n取其中的 keyword=%C3%C3%C3%C3\n中的 %C3%C3%C3%C3\n这个就是搜索关键词\n\n请更新到 3.25.1119版本才可\nhttps://www.123865.com/s/XuwAjv-rajsd\n\n视频播放请右上角┇ 选择 其他播放器打开",
+    "bookSourceName": "广场舞地盘",
+    "bookSourceType": 4,
+    "bookSourceUrl": "请看源介绍",
+    "customButton": false,
+    "customOrder": 349,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "eventListener": false,
+    "exploreUrl": "香儿::/html/38771_{{page}}.html\n天使::/wudui/zhuanshutianshi/index_706_{{page}}.html\n开心::/html/39537_{{page}}.html",
+    "header": "{\n\t\"User-Agent\": \"Mozilla/5.0 (Linux; Android 9) Mobile Safari/537.36\",\"referer\": \"{{baseUrl}}\"\n\t}",
+    "lastUpdateTime": "1763512841620",
+    "respondTime": 180000,
+    "ruleBookInfo": [],
+    "ruleContent": {
+      "content": "video@src"
+    },
+    "ruleExplore": {
+      "author": "img@data-original##allimg/(.*)/.*.jpg##$1##",
+      "bookList": ".ff ul li",
+      "bookUrl": "a@href\n<js>java.ajax(\"https://www.gcwdp.com/\"+result)</js>##'haokan','(.*?)'##/js/haokanpc.php?vid=$1##",
+      "coverUrl": "img@data-original",
+      "name": "img@alt"
+    },
+    "ruleSearch": {
+      "bookList": ".ffso2 ul li",
+      "bookUrl": "a@href\n<js>java.ajax(\"https://www.gcwdp.com/\"+result)</js>##'haokan','(.*?)'##/js/haokanpc.php?vid=$1##",
+      "checkKeyWord": "%C3%C3%C3%C3",
+      "name": "a@text"
+    },
+    "ruleToc": {
+      "chapterList": "@js:[{\"name\":book.name}]",
+      "chapterName": "name"
+    },
+    "searchUrl": "/plus/search.php?keyword={{key}}&searchtype=titlekeyword&channeltype=17&orderby=&kwtype=0&pagesize=20&typeid=0&TotalResult=200&PageNo={{page}}",
+    "weight": 0
+  }
+]

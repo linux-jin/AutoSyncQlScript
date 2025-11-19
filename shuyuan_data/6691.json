@@ -1,0 +1,36 @@
+[
+  {
+    "bookSourceName": "🔞拇指姑娘",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://110v.zmgnx.xyz/",
+    "customOrder": 348,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "@js:\nconst fenlei = \"国产视频\\n中文字幕\\n国产传媒\\n日本有码\\n日本无码\\n欧美无码\\n强奸乱伦\\n制服诱惑\\n国产主播\\n激情动漫\\n明星换脸\\n女优明星\\n网曝黑料\\n伦理三级\\nAV解说\\nSM调教\\n萝莉少女\\n极品媚黑\\n女同性恋\\n网红头条\\n人妖系列\\n韩国主播\\nVR视角\"\nconst tags = \"萌妹\\n滥交\\n淫叫\\n色女\\n吃奶\\n约草\\n射精\\n娇喘\\n情色\\n约操\\n女孩\\n唇钉\\n开房\\n销魂\\n鲍鱼\\n炮友\\n骑乘\\n唇钉\\n调教\\n开房\\n主播\\n呻吟\\n无套\\n约草\\n口爆\"\n\nlet list = []\nconst push = (title, url, basis=0.29) => {\n  list.push({\n    title,\n    url,\n    style: {\n      \"layout_flexGrow\": 0,\n      \"layout_flexBasisPercent\": basis\n    }\n  })\n}\n  \npush(\"分类\", \"\", 1)\npush(\"全部\", \"/?video={{page}}.html\")\nfenlei.split(\"\\n\").forEach(fl =>\n  push(fl, `/?fenlei=${fl}&p={{page}}`)\n)\npush(\"标签\", \"\", 1)\ntags.split(\"\\n\").forEach(tag =>\n  push(tag, `/?tag=${tag}&p={{page}}`)\n)\n\nJSON.stringify(list)",
+    "header": "{\n\t\"User-Agent\": \"Mozilla/5.0 (Linux; Android 9) Mobile Safari/537.36\",\"Referer\": \"{{baseUrl}}\"\n\t}",
+    "lastUpdateTime": "1763307892661",
+    "respondTime": 180000,
+    "ruleBookInfo": [],
+    "ruleContent": {
+      "content": "@js:\nlet playUrl = result?.match(/http.*?index\\.m3u8/)?.[0]\nif(playUrl){\n  java.startBrowser(playUrl, chapter.title)\n  java.toast('正在加载视频\\n视频加载较慢，请耐心等待')\n' 【刷新正文】或【点击章节链接】跳转播放\\n不要相信且不要点击视频里的任何广告，🔗直链:\\n'+playUrl+'\\n<img src=\"{{book.coverUrl}}\">'\n} else {\n\t \"抱歉，没有解析到播放链接，可能网络卡顿，稍后再试\"\n}",
+      "imageStyle": "FULL"
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "bookList": ".thumbs_list>li||.responsiveListing>li:not([id])",
+      "bookUrl": "/js/js.php?did={{@@img@data-id}}&src=1",
+      "coverUrl": "img@data-original",
+      "kind": ".fenlei,.time@text",
+      "lastChapter": ".hd@text",
+      "name": "a.titles@text"
+    },
+    "ruleToc": {
+      "chapterList": "@js:[{\"name\":book.name, \"url\": baseUrl}]",
+      "chapterName": "name",
+      "chapterUrl": "url"
+    },
+    "searchUrl": "/?search={{key}}&p={{page}}",
+    "weight": 0
+  }
+]

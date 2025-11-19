@@ -1,0 +1,48 @@
+[
+  {
+    "bookSourceName": "霹雳书坊",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.pilisf.com/",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "男频::https://www.pilisf.com/sort/1_{{page}}/&&女频::https://www.pilisf.com/sort/2_{{page}}/&&中国文学::https://www.pilisf.com/sort/3_{{page}}/&&外国文学::https://www.pilisf.com/sort/4_{{page}}/&&轻小说::https://www.pilisf.com/sort/5_{{page}}/&&百合::https://www.pilisf.com/sort/6_{{page}}/&&耽美::https://www.pilisf.com/sort/7_{{page}}/&&网盘资源::https://www.pilisf.com/sort/8_{{page}}/",
+    "lastUpdateTime": "1763495105008",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": ".infotype@a@text",
+      "coverUrl": ".infohead@img@src",
+      "intro": ".intro@p.0@text",
+      "kind": ".infotype@p.1@text##作品类型：",
+      "lastChapter": ".list_xm@li.0@text",
+      "name": ".cataloginfo@h3@text",
+      "tocUrl": ".infolink@a.1@href"
+    },
+    "ruleContent": {
+      "content": ".novelcontent@text",
+      "title": "h1@text"
+    },
+    "ruleExplore": {
+      "author": ".content@a.1@text",
+      "bookList": ".article",
+      "bookUrl": ".content@a.0@href",
+      "coverUrl": ".article@a.0@img@data-src",
+      "intro": ".content@.simple@text",
+      "name": ".content@a.0@text"
+    },
+    "ruleSearch": {
+      "author": ".sone@a.1@text",
+      "bookList": ".sone",
+      "bookUrl": ".sone@a.0@href",
+      "name": ".sone@a.0@text"
+    },
+    "ruleToc": {
+      "chapterList": "li",
+      "chapterName": "a@text",
+      "chapterUrl": "a@href"
+    },
+    "searchUrl": "/s.php,{\n\"charset\":\"gbk\",\n\"method\":\"post\",\n\"body\":\"s={{key}}&type=articlename\"\n}",
+    "weight": 0
+  }
+]
