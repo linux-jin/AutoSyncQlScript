@@ -1,0 +1,48 @@
+[
+  {
+    "bookSourceName": "小故事书源",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://storynook.cn/",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "睡前故事::https://storynook.cn/story/list/1/{{page}}/&&儿童故事::https://storynook.cn/story/list/2/{{page}}/&&格林故事::https://storynook.cn/story/list/3/{{page}}/&&民间故事::https://storynook.cn/story/list/4/{{page}}/&&益智故事::https://storynook.cn/story/list/5/{{page}}/&&历史故事::https://storynook.cn/story/list/6/{{page}}/&&寓言故事::https://storynook.cn/story/list/7/{{page}}/&&经典故事::https://storynook.cn/story/list/8/{{page}}/&&成语故事::https://storynook.cn/story/list/9/{{page}}/&&童话作文::https://storynook.cn/story/list/10/{{page}}/&&恐怖故事::https://storynook.cn/story/list/11/{{page}}/&&知乎故事::https://storynook.cn/story/list/12/{{page}}/&&聊斋志异::https://storynook.cn/story/list/13/{{page}}/&&规则怪谈::https://storynook.cn/story/list/14/{{page}}/&&推理故事::https://storynook.cn/story/list/15/{{page}}/",
+    "lastUpdateTime": "1763732778859",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": ".story-author@text",
+      "coverUrl": ".story-cover@img@src",
+      "intro": ".story-intro@text",
+      "kind": ".story-cate@text",
+      "lastChapter": ".last-chapter@text",
+      "name": ".story-title@h1@text",
+      "tocUrl": ".story-toc@a@href"
+    },
+    "ruleContent": {
+      "content": ".story-content@p@text",
+      "title": ".chapter-title@h2@text"
+    },
+    "ruleExplore": {
+      "author": ".story-item@.author@text",
+      "bookList": ".story-list",
+      "bookUrl": ".story-item@a@href",
+      "coverUrl": ".story-item@img@data-src",
+      "intro": ".story-item@.intro@text",
+      "name": ".story-item@.title@text"
+    },
+    "ruleSearch": {
+      "author": ".search-result@.author@text",
+      "bookList": ".search-list",
+      "bookUrl": ".search-result@a@href",
+      "name": ".search-result@.title@text"
+    },
+    "ruleToc": {
+      "chapterList": "#chapter-list@li",
+      "chapterName": "a@text",
+      "chapterUrl": "a@href"
+    },
+    "searchUrl": "/search,{\n\"method\":\"get\",\n\"params\":{\n\"q\":\"{{key}}\"\n}\n}",
+    "weight": 0
+  }
+]

@@ -1,0 +1,46 @@
+[
+  {
+    "bookSourceComment": "build 2025-11-22\n雨落星辰\n失效反馈：961955482\n网页版本，只能看前20章，适合找书然后换源看，群里有去广告版本",
+    "bookSourceGroup": "星辰",
+    "bookSourceName": "追书神器",
+    "bookSourceType": 0,
+    "bookSourceUrl": "http://zhuishushenqi.com/",
+    "customOrder": 2,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "@js:\nvar result = [];\nvar push = function(title, url, size) {\nresult.push({\"title\": title, \"url\": url, \"style\": {\"layout_flexGrow\": 1, \"layout_flexBasisPercent\": size}});\n};\nvar tagUrl = source.key;\nvar tag = java.ajax(tagUrl);\nvar tagList = org.jsoup.Jsoup.parse(tag).select(\".category-list a\");\nvar tagSize = 0.4;\npush(\"分类\", null, 1);\nfor (var i = 0; i < tagList.length; i++) {\nvar title = org.jsoup.Jsoup.parse(tagList[i]).select(\".name\").text();\nvar url = String(tagList[i].attr(\"href\")) + \"&page={{page}}\"\ntitle = String(title).replace(/\\s/g, \"\");\npush(title, url, tagSize);\n}\nJSON.stringify(result);",
+    "lastUpdateTime": "1763788580268",
+    "respondTime": 180000,
+    "ruleBookInfo": [],
+    "ruleContent": {
+      "content": ".inner-text@html"
+    },
+    "ruleExplore": {
+      "author": ".author@span.0@text",
+      "bookList": ".books-list@a",
+      "bookUrl": "href",
+      "coverUrl": "img@src",
+      "intro": ".desc@text",
+      "kind": ".author@span.-1@text",
+      "name": "h4@text"
+    },
+    "ruleSearch": {
+      "author": ".author@span.0@text",
+      "bookList": ".books-list@.book",
+      "bookUrl": "data-href",
+      "checkKeyWord": "剑来",
+      "coverUrl": "img@src",
+      "intro": ".desc@text",
+      "kind": ".author@span.-1@text",
+      "name": ".name@text"
+    },
+    "ruleToc": {
+      "chapterList": "class.chapter-list.-1@li",
+      "chapterName": "a@text##^(.*?)第",
+      "chapterUrl": "a@href"
+    },
+    "searchUrl": "https://www.zhuishushenqi.com/search?val={{key}}",
+    "weight": 0
+  }
+]

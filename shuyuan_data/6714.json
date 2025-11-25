@@ -1,0 +1,48 @@
+[
+  {
+    "bookSourceName": "句子控",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.juzikong.com/",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "名言::https://www.juzikong.com/mingyan/list_{{page}}.html&&句子::https://www.juzikong.com/juzi/list_{{page}}.html&&美文::https://www.juzikong.com/meiwen/list_{{page}}.html&&故事::https://www.juzikong.com/gushi/list_{{page}}.html",
+    "lastUpdateTime": "1763730325109",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": ".author-info@a@text",
+      "coverUrl": ".article-cover@img@src",
+      "intro": ".article-intro@text",
+      "kind": ".category-tag@a@text",
+      "lastChapter": ".latest-chapter@a@text",
+      "name": ".article-title@h1@text",
+      "tocUrl": ".chapter-list-link@href"
+    },
+    "ruleContent": {
+      "content": ".article-content@p@text",
+      "title": ".content-title@h1@text"
+    },
+    "ruleExplore": {
+      "author": ".list-item@.author@text",
+      "bookList": ".article-list",
+      "bookUrl": ".list-item@a@href",
+      "coverUrl": ".list-item@img@data-src",
+      "intro": ".list-item@.summary@text",
+      "name": ".list-item@.title@text"
+    },
+    "ruleSearch": {
+      "author": ".search-result-item@.author@text",
+      "bookList": ".search-results",
+      "bookUrl": ".search-result-item@a@href",
+      "name": ".search-result-item@.title@text"
+    },
+    "ruleToc": {
+      "chapterList": ".chapter-item",
+      "chapterName": "a@text",
+      "chapterUrl": "a@href"
+    },
+    "searchUrl": "/search.php,{\n\"charset\":\"utf-8\",\n\"method\":\"get\",\n\"body\":\"keyword={{key}}\"\n}",
+    "weight": 0
+  }
+]
