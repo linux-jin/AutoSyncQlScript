@@ -5,10 +5,10 @@
     "bookSourceUrl": "https://www.30dushu.com/",
     "customOrder": 6,
     "enabled": true,
-    "enabledCookieJar": true,
+    "enabledCookieJar": false,
     "enabledExplore": true,
-    "exploreUrl": "全部::https://www.30dushu.com/cate/0-{page}.html&&玄幻魔法::https://www.30dushu.com/cate/1-{page}.html&&武侠修真::https://www.30dushu.com/cate/2-1.html&&都市言情::https://www.30dushu.com/cate/3-1.html&&历史军事::https://www.30dushu.com/cate/4-1.html&&游戏竞技::https://www.30dushu.com/cate/5-1.html&&科幻灵异::https://www.30dushu.com/cate/6-1.html&&纯爱同人::https://www.30dushu.com/cate/7-1.html&&女生言情::https://www.30dushu.com/cate/8-1.html&&二次元::https://www.30dushu.com/cate/9-1.html&&其他::https://www.30dushu.com/cate/10-1.html",
-    "lastUpdateTime": "1763845111088",
+    "exploreUrl": "全部::https://www.30dushu.com/cate/0-{{page}}.html&&玄幻魔法::https://www.30dushu.com/cate/1-{{page}}.html&&武侠修真::https://www.30dushu.com/cate/2-{{page}}.html&&都市言情::https://www.30dushu.com/cate/3-{{page}}.html&&历史军事::https://www.30dushu.com/cate/4-{{page}}.html&&游戏竞技::https://www.30dushu.com/cate/5-{{page}}.html&&科幻灵异::https://www.30dushu.com/cate/6-{{page}}.html&&纯爱同人::https://www.30dushu.com/cate/7-{{page}}.html&&女生言情::https://www.30dushu.com/cate/8-{{page}}.html&&二次元::https://www.30dushu.com/cate/9-{{page}}.html&&其他::https://www.30dushu.com/cate/10-{{page}}.html",
+    "lastUpdateTime": "1764079579539",
     "respondTime": 180000,
     "ruleBookInfo": {
       "author": "text.👤@text",
