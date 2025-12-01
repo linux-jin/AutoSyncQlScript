@@ -1,0 +1,48 @@
+[
+  {
+    "bookSourceComment": "00shu小说网书源，编码GBK，适配章节/搜索/详情解析",
+    "bookSourceGroup": "CSS; 正则",
+    "bookSourceName": "00shu小说",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.00shu.la",
+    "bookUrlPattern": "",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledExplore": false,
+    "exploreUrl": "",
+    "lastUpdateTime": "1764478609406",
+    "loginUrl": "",
+    "ruleBookInfo": {
+      "author": "##:author\"[^\"]+\"([^\"]*)##$1###",
+      "coverUrl": "##og:image\"[^\"]+\"([^\"]*)##$1###",
+      "intro": "##:description\"[^\"]+\"([\\w\\W]*?)\"/##$1###",
+      "kind": "##:category\"[^\"]+\"([^\"]*)##$1###",
+      "lastChapter": "##_chapter_name\"[^\"]+\"([^\"]*)##$1###",
+      "name": "##:book_name\"[^\"]+\"([^\"]*)##$1###",
+      "tocUrl": ""
+    },
+    "ruleContent": {
+      "content": "@css:#content p@textNodes##广告|弹窗|手机阅读|记住网址|<!\\[CDATA\\[|\\]\\]>",
+      "nextContentUrl": ""
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "author": "@css:.s2>a@text",
+      "bookList": "@css:div.result-list>ul>li",
+      "bookUrl": "@css:.s1>a@href",
+      "coverUrl": "@css:.s3>img@src",
+      "intro": "@css:.s4@text",
+      "kind": "@css:.s5@text",
+      "lastChapter": "@css:.s6@text",
+      "name": "@css:.s1>a@text"
+    },
+    "ruleToc": {
+      "chapterList": "-:<li><a[^\"]+\"([^\"]*)\">([^<]*)",
+      "chapterName": "$2",
+      "chapterUrl": "$1",
+      "nextTocUrl": ""
+    },
+    "searchUrl": "/search.aspx?key={{key}}&page={{page}},{\"charset\": \"gbk\"}",
+    "weight": 0
+  }
+]
