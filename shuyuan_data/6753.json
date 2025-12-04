@@ -1,0 +1,58 @@
+[
+  {
+    "bookSourceComment": "kuronavi漫画raw源，提供日本漫画raw资源",
+    "bookSourceGroup": "漫画,日漫,Raw",
+    "bookSourceName": "kuronavi漫画raw",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://kuronavi.blog",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "热门::https://kuronavi.blog/hot\n最新更新::https://kuronavi.blog/search/manga?status=-1&sort=15\n排行榜::https://kuronavi.blog/search/manga?status=-1&sort=10\n完結済み::https://kuronavi.blog/search/manga?status=2&sort=30",
+    "header": "{\n\"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36\"\n}",
+    "lastUpdateTime": "1764767810570",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": ".author .col-xs-8@text##更新中",
+      "coverUrl": ".col-image img@src",
+      "intro": ".detail-content p@text",
+      "kind": ".kind .col-xs-8@text",
+      "lastChapter": ".list-chapter ul li:first-child .chapter a@text",
+      "name": ".title-detail@text"
+    },
+    "ruleContent": {
+      "content": ".page-chapter img@html",
+      "nextContentUrl": ""
+    },
+    "ruleExplore": {
+      "author": "class.author@text||更新中",
+      "bookList": ".item",
+      "bookUrl": "figcaption h3 a@href",
+      "coverUrl": ".image img@src",
+      "kind": ".box_tootip p:contains(ジャンル)@text##ジャンル:",
+      "lastChapter": ".chapter a:first@text",
+      "name": "figcaption h3 a@text"
+    },
+    "ruleSearch": {
+      "author": "class.author@text||更新中",
+      "bookList": ".item",
+      "bookUrl": "figcaption h3 a@href",
+      "coverUrl": ".image img@src",
+      "intro": ".box_tootip .box_text p@text",
+      "kind": ".box_tootip p:contains(ジャンル)@text##ジャンル:",
+      "lastChapter": ".chapter a:first@text",
+      "name": "figcaption h3 a@text"
+    },
+    "ruleToc": {
+      "chapterList": "-#nt_listchapter nav ul li",
+      "chapterName": ".chapter a@text",
+      "chapterUrl": "a@href",
+      "formatJs": "",
+      "preUpdateJs": "",
+      "updateTime": ".col-xs-4@text"
+    },
+    "searchUrl": "https://kuronavi.blog/search/manga?keyword={{key}}",
+    "weight": 0
+  }
+]
