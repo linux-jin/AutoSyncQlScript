@@ -1,0 +1,45 @@
+[
+  {
+    "bookSourceComment": "by天天的鸟蛋蛋",
+    "bookSourceName": "亲亲小说qinqinxiaoshuo",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.qinqinxiaoshuo.cc",
+    "customButton": false,
+    "customOrder": 21,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "eventListener": false,
+    "header": "{\"User-Agent\":\"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36 EdgA/130.0.0.0\"}",
+    "lastUpdateTime": "1765038307874",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "[property$=author]@content",
+      "coverUrl": "[property$=image]@content",
+      "intro": "[property$=description]@content",
+      "kind": "[property~=category|status|update_time]@content",
+      "lastChapter": "[property$=latest_chapter_name]@content",
+      "name": "[property$=book_name]@content"
+    },
+    "ruleContent": {
+      "content": "<js>\ntry{\nform=java.getElement(\"#content label\")\ntxt=java.getElement(\"#content [class=001] p\")\nwhile (form!=\"\"){\n\tcode=String(java.getString(\"strong@textNodes\",form)).trim()\n\tjava.log(code)\n\tresult=java.ajax(`${baseUrl},{\"body\":\"captcha=${code}\",\"method\":\"POST\"}`)\n\tjava.setContent(result)\n\tform=java.getElement(\"#article form\")\n\t}\nb64=result.match(/atob\\('([^']+)'\\)/)[1]\nif(result.match(/'aes'\\s*===\\s*'aes'/)){\n\tkey=result.match(/CryptoJS\\.enc\\.Base64\\.parse\\('([^']+)'\\)/)[1]\n\t\n\ttxt+=java.createSymmetricCrypto(\"AES/ECB/Pkcs7Padding\", java.base64DecodeToByteArray(key)).decryptStr(b64)\n\t}else{\n\t\ttxt+=java.base64Decode(b64)\n\t\t\n\t\t}\nresult=txt}catch{result=\"\\n这章正文不存在！！！\\n换一章！！！\\n或者\\n换本书！！！\\n或者\\n换源！！！\"}\n</js>\n",
+      "nextContentUrl": "text.下一页@href"
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "author": "a.2@text",
+      "bookList": "<js>\nvar cf=/_cf_/.test(src);\nif(cf){\n\tcookie.removeCookie(source.getKey());\n\tvar x=java.get(\"url\");\n\tb=java.startBrowserAwait(x,\n\t\t\"验证\");\n\t//b=java.webView(null,x,null)\n\t//b=java.ajax(x)\n\tresult=b;\n\t}\n\t\tresult;\n\n</js>\ntbody@tr",
+      "bookUrl": "a.0@href",
+      "kind": "td.-1@text",
+      "lastChapter": "a.1@text",
+      "name": "a.0@text"
+    },
+    "ruleToc": {
+      "chapterList": "#play_0@ul@li@a",
+      "chapterName": "text",
+      "chapterUrl": "href"
+    },
+    "searchUrl": "@js:\n\nvar su=source.key,\nso=su+\"/search/,\";\nbody=\"searchkey=\"+key;\nvar option={\n  \"body\": String(body),\n  \"method\": \"POST\",\n  \"webView\": true\n};\nvar head=JSON.parse(source.header);\noption.headers=head;\nvar post=JSON.stringify(option);\njava.put(\"url\",String(so+post))",
+    "weight": 0
+  }
+]
