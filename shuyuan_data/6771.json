@@ -1,0 +1,37 @@
+[
+  {
+    "bookSourceComment": "适配600小说网（600zz.com），支持搜索/目录/正文，2025年12月测试可用",
+    "bookSourceGroup": "聚合站",
+    "bookSourceName": "600小说网",
+    "bookSourceType": 0,
+    "bookSourceUrl": "http://www.600zz.com",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledExplore": false,
+    "enabledCookie": false,
+    "ruleBookInfo": {
+      "author": "css:.info .small a:eq(0)@@text",
+      "coverUrl": "css:.img_in img@@src",
+      "intro": "css:#intro@@text"
+    },
+    "ruleContent": {
+      "content": "css:#content@@html#p",
+      "nextContentUrl": ""
+    },
+    "ruleSearch": {
+      "author": "css:.author@@text",
+      "bookList": "css:#nr dl",
+      "bookUrl": "dt a@href",
+      "lastChapter": "css:.update a@@text",
+      "name": "dt a@@text"
+    },
+    "ruleToc": {
+      "chapterList": "css:#list dd",
+      "chapterName": "a@@text",
+      "chapterUrl": "a@href"
+    },
+    "searchUrl": "/modules/article/search.php?searchkey={{key}}",
+    "weight": 0,
+    "lastUpdateTime": "1765354522699"
+  }
+]

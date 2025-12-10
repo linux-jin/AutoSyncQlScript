@@ -1,0 +1,38 @@
+[
+  {
+    "bookSourceComment": "顶点小说 · 同步起点/纵横热门书 · 无弹窗 · 2025年12月实测可用",
+    "bookSourceGroup": "主流聚合源",
+    "bookSourceName": "顶点小说",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.dingdian6.com",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledExplore": false,
+    "enabledCookie": false,
+    "httpUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+    "ruleBookInfo": {
+      "author": "css:#info p a@@text",
+      "coverUrl": "css:#fmimg img@@src",
+      "intro": "css:#intro@@text"
+    },
+    "ruleContent": {
+      "content": "css#content@@html#p",
+      "nextContentUrl": ""
+    },
+    "ruleSearch": {
+      "author": "css:.author@@text",
+      "bookList": "css:.search-list li",
+      "bookUrl": "h3 a@href",
+      "lastChapter": "css:.update a@@text",
+      "name": "h3 a@@text"
+    },
+    "ruleToc": {
+      "chapterList": "css#list dd",
+      "chapterName": "a@@text",
+      "chapterUrl": "a@href"
+    },
+    "searchUrl": "/search.php?keyword={{key}}",
+    "weight": 0,
+    "lastUpdateTime": "1765355512256"
+  }
+]
