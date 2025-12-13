@@ -1,0 +1,44 @@
+[
+  {
+    "bookSourceName": "小说520",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.xs520.com/",
+    "customOrder": 2,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "lastUpdateTime": "1765533654695",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": ".info@li.0@a@text",
+      "coverUrl": "img@src",
+      "intro": "id.intro_pc@text##简介：",
+      "kind": ".title@a.1@text",
+      "lastChapter": ".info@.col-12.1@a@text",
+      "name": ".info@h1@text"
+    },
+    "ruleContent": {
+      "content": ".font_max@text##第\\([1-3]+/3\\)页",
+      "nextContentUrl": "text.下一章@href",
+      "title": "h1@text"
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "author": ".book_other.0@text",
+      "bookList": ".box@.col-md-6",
+      "bookUrl": "a@href",
+      "coverUrl": "img@src",
+      "kind": "h3@text##(?<!\\[)[\\u4e00-\\u9fa5]+(?!\\])",
+      "lastChapter": ".book_other.3@text##最新章节",
+      "name": "h3@text##[\\[\\u4e00-\\u9fa5]+\\]"
+    },
+    "ruleToc": {
+      "chapterList": ".book_list2@li",
+      "chapterName": "a@text",
+      "chapterUrl": "a@href",
+      "nextTocUrl": ".page-link.0@text##.*\\/(\\d+)$##$1\n@js:\nres = JSON.parse(result)\nlist = [];\nfor (var i = 2; i <= res; i++) {\n\tlist.push(baseUrl.replace(/$/,\"index_\" + i + \".html\")); \n}\nlist;"
+    },
+    "searchUrl": "/search.php?q={{key}}",
+    "weight": 0
+  }
+]
