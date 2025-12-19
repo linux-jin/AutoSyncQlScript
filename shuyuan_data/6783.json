@@ -1,0 +1,41 @@
+[
+  {
+    "bookSourceName": "爱下电子书",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://ixdzs.tw/",
+    "customButton": false,
+    "customOrder": 1,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "eventListener": false,
+    "lastUpdateTime": "1766094604269",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "tocUrl": "{{java.put(\"url\",baseUrl);\n\t\"https://ixdzs.tw/novel/clist/\"}},{\n  \"body\": \"bid={{baseUrl.match(/(\\d+).$/)[1]}}\",\n  \"method\": \"POST\"\n}"
+    },
+    "ruleContent": {
+      "content": ".page-content@p@text"
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "author": ".bauthor@a@text",
+      "bookList": ".burl",
+      "bookUrl": ".bname@a@href",
+      "coverUrl": ".l-img@img@src",
+      "intro": ".l-p2@text",
+      "kind": ".lz@text&&.l-time@text",
+      "lastChapter": ".l-last@a@text",
+      "name": ".bname@a@text",
+      "wordCount": ".size@text"
+    },
+    "ruleToc": {
+      "chapterList": "$.data",
+      "chapterName": "$.title",
+      "chapterUrl": "@get:{url}p{{$.ordernum}}.html",
+      "isVolume": "$.ctype"
+    },
+    "searchUrl": "https://ixdzs.tw/bsearch?q={{key}}",
+    "weight": 0
+  }
+]
