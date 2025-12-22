@@ -7,9 +7,14 @@
 | **TG交流群** | [![下载链接](https://img.shields.io/badge/下载-链接-blueviolet.svg?logo=hack-the-box)](https://t.me/qingtian618_novel) |
 | **TG频道** | [![下载链接](https://img.shields.io/badge/下载-链接-blueviolet.svg?logo=hack-the-box)](https://t.me/qingtian_novel) |
 
-#### 🚩 IOS系统轻阅读后端：在发布页可以下载
-
-
+#### 🚩 IOS软件下载安装：
+```
+https://raw.githubusercontent.com/shidahuilang/shuyuan/refs/heads/shuyuan/大灰狼聚合书库.ipa
+``` 
+#### 🚩 安卓软件下载安装：
+```
+https://raw.githubusercontent.com/shidahuilang/shuyuan/refs/heads/shuyuan/大灰狼聚合书库.APK
+``` 
 #### 🚩 IOS15.6-IOS18系统AppFlex安装香色闺阁方法：
 - AppFlex香色闺阁 [视频安装教程](https://m.bilibili.com/video/BV1Ap5xzeEZp?buvid=XX1513F1A6B023DEA52BDE909C516677A32C6&from_spmid=dt.space-dt.video.0&is_story_h5=false&mid=nAD513qeAumJfcSSsFjeOA%3D%3D&p=1&plat_id=116&share_from=ugc&share_medium=android&share_plat=android&share_session_id=b42fa7ba-e311-4cb1-a99b-f7d12d26f78b&share_source=WEIXIN&share_tag=s_i&spmid=united.player-video-detail.0.0&timestamp=1745238613&unique_k=Gb4G4mV&up_id=275649236) [图文安装教程](https://cloudmantoub.online/89/)
 
