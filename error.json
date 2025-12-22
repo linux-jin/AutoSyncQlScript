@@ -1,101 +1,133 @@
 [
   {
-    "bookSourceName": "ESJ Zone",
+    "ruleExplore": {
+      "author": "tag.li.1@text##作者：",
+      "bookList": "class.novel_cell",
+      "intro": "tag.li.2@text##簡介：",
+      "coverUrl": "amp-img@src",
+      "kind": "",
+      "bookUrl": "tag.a.0@href",
+      "name": "h3@text"
+    },
     "bookSourceType": 0,
-    "bookSourceUrl": "https://www.esjzone.cc",
-    "bookUrlPattern": "https?://www.esjzone.one/detail/.*",
-    "customButton": false,
-    "customOrder": 0,
-    "enabled": true,
-    "enabledCookieJar": true,
-    "enabledExplore": true,
-    "eventListener": false,
-    "exploreUrl": "@js:\nresult=[\n  {\n    'title': '>> 个人中心 <<',\n    'url': \"\",\n    'style':{\n      layout_flexGrow:1,\n      layout_flexBasisPercent:1\n    }\n  },\n  {\n    'title': \"我的收藏\",\n    'url': `/my/favorite`,\n    'style':{\n      layout_flexGrow:2,\n      layout_flexBasisPercent:0.25\n    \t}\n  },\n  {\n    'title': \"观看记录\",\n    'url': `/my/view`,\n    'style':{\n      layout_flexGrow:2,\n      layout_flexBasisPercent:0.25\n    \t}\n  }\n]\nhtml=org.jsoup.Jsoup.parse(java.ajax(source.bookSourceUrl+\"/list-01/\"))\ncategorys=html.select(\"#category option\")\nsortings=html.select(\"#sorting option\")\ncategorys.forEach(category => {\n  result.push({\n    'title': '>> ' + java.t2s(category.text()) + ' <<',\n    'url': \"\",\n    'style':{\n      layout_flexGrow:1,\n      layout_flexBasisPercent:1\n    }\n  })\n  sortings.forEach(sorting => {\n    result.push({\n      'title': java.t2s(sorting.text()),\n      'url':`/list-${category.attr('value')}${sorting.attr('value')}/{{page}}.html`,\n      'style':{\n        layout_flexGrow:2,\n        layout_flexBasisPercent:0.25\n      \t}\n    })\n  })\n})\nJSON.stringify(result)",
-    "lastUpdateTime": "1765653374081",
-    "loginUrl": "/my/profile.html",
-    "respondTime": 180000,
-    "ruleBookInfo": {
-      "author": "class.list-unstyled mb-2 book-detail@tag.li.1@tag.a@text\n@js:\njava.t2s(result)",
-      "canReName": "true",
-      "coverUrl": "@css:div.col-md-3 > div > a > img@src",
-      "intro": "{{@@section.m-t-20@a.tag@text##(^|[\\n])##🏷️}}\n{{'&lrm;'}}\n{{@@div.description@html}}\n@js:\njava.t2s(result)",
-      "kind": "关注：{{@css:.book-detail label:has(.icon-eye)@text}},喜欢：{{@css:.book-detail label:has(.icon-heart)@text}}\n{{@@class.list-unstyled mb-2 book-detail@tag.li.-2@text##.+: }}\n{{@@class.list-unstyled mb-2 book-detail@tag.li.-1@text## .+}}",
-      "lastChapter": "@css:div[id = chapterList] >a:last-child@text\n@js:\njava.t2s(result)",
-      "name": "@css:div.col-md-9.book-detail > h2@text\n@js:\njava.t2s(result)",
-      "wordCount": "@css: .book-detail label:has(.icon-file-text)@text##,##"
-    },
-    "ruleContent": {
-      "content": "@css:div.forum-content.mt-3,div[class =d_post_content j_d_post_content]@all\n@js:\njava.t2s(result)"
-    },
-    "ruleExplore": [],
     "ruleSearch": {
-      "author": "class.card-author@tag.a@text\n@js:\njava.t2s(result)",
-      "bookList": "div.col-lg-3.col-md-4.col-sm-3.col-xs-6",
-      "bookUrl": "@css:div> div > div > h5 > a, .product-title > a@href",
-      "coverUrl": "class.main-img@class.lazyload@data-src\n@js:\nresult.match(\"empty\") ? \"\" : result",
-      "intro": "class.book-ep@div.-1@text\n@js:\njava.t2s(result)",
-      "kind": "{{@css:.column:has(.icon-star-s)@text}},关注：{{@css:.column:has(.icon-eye)@text}},喜欢：{{@css:.column:has(.icon-heart)@text}},羽毛：{{@css:.column:has(.icon-feather)@text}},评论：{{@css:.column:has(.icon-message-square)@text}}##(\\([^()]+)##星$1人\n@js:\n!!result.split(\",\")[0] ? result : java.getString(\"class.book-update@text\")",
-      "lastChapter": "@css:div>div>div[class=card-ep mt-2], .book-ep a@text\n@js:\njava.t2s(result)",
-      "name": "@css: .card-title a, .product-title@text\n@js:\njava.t2s(result)",
-      "wordCount": "@css: .column:has(.icon-file-text)@text##,##"
+      "author": "tag.li.1@text",
+      "bookList": "class.pure-u-1-1 pure-u-xl-1-3 pure-u-lg-1-3 pure-u-md-1-2 novel_cell",
+      "intro": "tag.li.2@text",
+      "coverUrl": "amp-img@src",
+      "kind": "",
+      "bookUrl": "tag.a@href",
+      "name": "h3@text"
     },
+    "bookUrlPattern": "https://ttks\\.tw/novel/chapters/.+?/index\\.html",
+    "respondTime": 180000,
+    "ruleContent": {
+      "content": "class.content@p@textNodes",
+      "replaceRegex": "##【記住.*超靠譜 】|天天看小說.+超靠譜"
+    },
+    "searchUrl": "/novel/search?q={{key}}",
+    "weight": 0,
+    "enabledExplore": true,
+    "bookSourceComment": "",
     "ruleToc": {
-      "chapterList": "#chapterList@a[data-title], p.non, summary",
-      "chapterName": "text\n@js:\njava.t2s(result)",
+      "chapterName": "text",
       "chapterUrl": "href",
-      "isVolume": "p.non@text||summary@text"
+      "chapterList": "class.chapters_frame@class.pure-g@class.chapter_cell@tag.a"
     },
-    "searchUrl": "https://www.esjzone.one/tags/{{key}}",
-    "weight": 0
+    "enabled": true,
+    "bookSourceUrl": "https://ttks.tw/",
+    "lastUpdateTime": "1766204923645",
+    "bookSourceName": "天天看小说🪜",
+    "exploreUrl": "連載::/novel/class/lianzai\n玄幻::/novel/class/xuanhuan\n都市::/novel/class/dushi\n仙俠::/novel/class/wuxia\n言情::/novel/class/yaniqng\n遊戲::/novel/class/youxi\n科幻::/novel/class/kehuan\n懸疑::/novel/class/kongbu\n靈異::/novel/class/lingyi\n軍事::/novel/class/lishi\n現言::/novel/class/tongren\n其它::/novel/class/qita",
+    "customOrder": 19,
+    "ruleBookInfo": {
+      "author": "tag.li.2@a@text",
+      "tocUrl": "baseUrl",
+      "lastChapter": "class.near_chapter@all",
+      "intro": "p@text",
+      "coverUrl": "class.novel_info@amp-img@src",
+      "kind": "tag.li.2@text##類別：",
+      "name": "h1@text"
+    }
   },
   {
-    "bookSourceGroup": "R18漫画",
-    "bookSourceName": "🎨禁漫天堂",
-    "bookSourceType": 2,
-    "bookSourceUrl": "https://18comic.vip",
-    "customButton": false,
-    "customOrder": 1,
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.weituishu.com",
+    "bookSourceName": "微推书-基础版",
+    "bookSourceGroup": "测试",
+    "bookSourceComment": "基础功能测试",
+    "header": "{\"User-Agent\": \"Mozilla/5.0\"}",
+    "searchUrl": "/search.html?s={{key}}",
+    "exploreUrl": "/",
     "enabled": true,
-    "enabledCookieJar": true,
     "enabledExplore": true,
-    "eventListener": false,
-    "header": "{\n\t\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 Edg/141.0.0.0\",\n\"Referer\":\"https://18comic.vip/\"\n}",
-    "jsLib": "function Get(e) {\n    var $this = this;\n    var java = $this.java;\n    var source = $this.source;\n    var cookie = $this.cookie;\n    var get = JSON.parse(source.getVariable());\n    return get[e];\n}",
-    "lastUpdateTime": "1765652456170",
-    "respondTime": 180000,
+    "ruleSearch": {
+      "bookList": "class.item_img",
+      "name": "class.phb_info>h3>a@text",
+      "author": "class.phb_info>h3>a@data-original-title##.*/\\s*(.*)##",
+      "bookUrl": "class.image>a@href",
+      "coverUrl": "class.image>img@src"
+    },
+    "ruleExplore": {
+      "list": "class.item_img",
+      "name": "class.phb_info>h3>a@text",
+      "author": "class.phb_info>h3>a@data-original-title##.*/\\s*(.*)##",
+      "bookUrl": "class.image>a@href",
+      "coverUrl": "class.image>img@src"
+    },
     "ruleBookInfo": {
-      "author": "{{@@.phone-author-tag@text}}",
-      "coverUrl": ".thumb-overlay.2@img@src",
-      "init": "<js>\nurl = baseUrl\nvar num = baseUrl.indexOf(\"novel\") !== -1 ? 1 : 2;\njava.put(\"btype\",num);\nresult\n</js>",
-      "intro": " {{@@class.train-number@text}}\n{{@@class.intro-collapse-content@text}}\n{{@@class.p-t-5 float-left@text##日期}}    {{@@class.p-t-5 float-right@text##日期}}\n{{@@class.col-xs-12 col-lg-7 nav-tab-content@class.p-t-5 p-b-5@text##叙述：|敘述：}}",
-      "kind": "@js:\nvar text;\nif (baseUrl.indexOf('novel') !== -1){\n\ttext=java.getString('span[data-type=tags]@a@text');\n}else {\n\ttext=java.getString('#intro-block@[data-type=tags]@a@text');\n}\ntext;",
-      "name": "{{@@h1@text}}",
-      "tocUrl": "baseUrl",
-      "wordCount": "{{@class.train-number@text}}"
+      "name": "class.phb_info>h3>a@text",
+      "author": "class.phb_info>h3>a@data-original-title##.*/\\s*(.*)##",
+      "coverUrl": "class.image>img@src",
+      "tocUrl": "<js>baseUrl.replace(/book\\/(\\d+)/, '/book/$1/index.html')</js>"
+    },
+    "ruleToc": {
+      "chapterList": "li",
+      "chapterName": "a@text",
+      "chapterUrl": "a@href"
     },
     "ruleContent": {
-      "content": "{{@class.novel-content@html}}\n{{@class.row thumb-overlay-albums@tag.img@data-original}}\n@js:var url = baseUrl\nif(baseUrl.indexOf(\"novel\") !== -1){\n\tresult\n\t} else {\n        var lines = result.split(\"\\n\");\n        var newLines = [];\n        for (var i = 0; i < lines.length; i++) {\n            newLines.push('<img src=\"' + lines[i] + '\">');\n        }\n        newLines.join(\"\\n\")\n}",
-      "imageDecode": "if (src.search(\"qyyuapi.com\") != -1) {\n    result;\n} else {\n    var Magua = new JavaImporter();\n    Magua.importPackage(Packages.java.io, Packages.android.graphics);\n    with(Magua) {\n        let mac = src.match(/photos\\/(\\d+)?\\/(\\d+)?/);\n        let bookId = mac[1];\n        let imgId = mac[2];\n        if (src.search(\"gif\") != -1 || Number(bookId) < 220980) {\n            result;\n        } else {\n            if (Number(bookId) > 421925) {\n                let md5 = java.md5Encode((bookId + imgId));\n                let ascii = md5.substr( - 1).charCodeAt(0);\n                var num = (ascii % 8 + 1) * 2;\n            } else if (Number(bookId) >= 268850) {\n                let md5 = java.md5Encode((bookId + imgId));\n                let ascii = md5.substr( - 1).charCodeAt(0);\n                var num = (ascii % 10 + 1) * 2;\n            } else {\n                var num = 10;\n            }\n            var img = BitmapFactory.decodeByteArray(result, 0, result.length);\n            var height = img.getHeight();\n            var width = img.getWidth();\n            var y = Math.floor(height / num);\n            var remainder = height % num;\n            var newImg = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);\n            let canvas = new Canvas(newImg);\n            for (let i = 1; i <= num; i++) {\n                let h = i === num ? remainder: 0;\n                canvas.drawBitmap(Bitmap.createBitmap(img, 0, y * (i - 1), width, y + h), 0, height - y * i - h, null);\n            }\n            var newbit = new ByteArrayOutputStream();\n            newImg.compress(Bitmap.CompressFormat.PNG, 100, newbit);\n            newbit.toByteArray();\n        }\n    }\n}",
-      "imageStyle": "FULL"
+      "content": "<js>\nvar html=java.ajax(baseUrl);\nhtml.replace(/<[^>]+>/g,' ').replace(/\\s+/g,' ').trim();\n</js>"
+    },
+    "lastUpdateTime": "1766202489396"
+  },
+  {
+    "bookSourceName": "必去读书库",
+    "bookSourceType": 0,
+    "bookSourceUrl": "http://m.biqugei.org",
+    "customButton": false,
+    "customOrder": 922,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": false,
+    "eventListener": false,
+    "header": "{\n  \"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko, By Black Prism) Chrome/99.0 Safari/537.36\"\n}",
+    "lastUpdateTime": "1766178686452",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "tocUrl": "a.ptm-btn-outlined@href"
+    },
+    "ruleContent": {
+      "content": "div.chaptercontent@html",
+      "nextContentUrl": "a.ptm-btn-primary:contains(下一页)@href",
+      "replaceRegex": "##最新网址：m\\.biqugei\\.org|第[一二三四五六七八九十百千万零\\d]+章[^\\n\\r]*|[一二三四五六七八九十百千万零\\d]+：[^\\n\\r]*|\\d+[^\\n\\r（]*（[^）]*）|\\d+[^\\n\\r\\d（]{2,}|\\(第\\d+/\\d+页\\)|（本章未完，请点击下一页继续阅读）##"
     },
     "ruleExplore": [],
     "ruleSearch": {
-      "author": "@js:\nvar text;\nif (baseUrl.indexOf('novel') !== -1){\n\ttext=java.getString('.title-truncate.2@text');\n}else {\n\ttext=java.getString('.title-truncate.1@text');\n}\ntext;",
-      "bookList": ".row.m-0 > .list-col",
-      "bookUrl": "tag.a.0@href",
-      "coverUrl": "img@data-original||img@src",
-      "intro": ".video-title@text",
-      "kind": ".tag@text",
-      "lastChapter": "@js:\nvar text;\nif (baseUrl.indexOf('novel') !== -1){\n\ttext=java.getString('.title-truncate.1@text');\n}else {\n\ttext=java.getString('');\n}\ntext;",
-      "name": "@js:\nif (baseUrl.match(/novel_watchlist/)){\ntext=java.getString('.title-truncate@text');\n} else if (baseUrl.match(/favorite/)){\ntext=java.getString('.image-item-text@text');\n}else {\ntext=java.getString('.video-title@text');\n}\ntext;",
-      "wordCount": "span.0@text##^##👍🏻"
+      "author": "div.pt-info:contains(作者:) a@text",
+      "bookList": "div.baseinfo",
+      "bookUrl": "@href",
+      "coverUrl": "div.baseinfo img@src",
+      "kind": "div.pt-info:contains(分类:) a@text",
+      "name": "h1.pt-name a@text"
     },
     "ruleToc": {
-      "chapterList": "id.episode-block@class.episode@tag.a||class.read-block.0@tag.a",
-      "chapterName": "text",
-      "chapterUrl": "a@href"
+      "chapterList": "ul.ptm-list-view li",
+      "chapterName": "a@text",
+      "chapterUrl": "a@href",
+      "nextTocUrl": ".ptm-card-footer a:contains(下一页)@href"
     },
-    "searchUrl": "https://18comic.vip/search/photos?search_query={{key}}&main_tag=0&o=mr&t=a",
+    "searchUrl": "http://m.biqugei.org/search.html?searchkey={{key}}",
     "weight": 0
   },
   {
