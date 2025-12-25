@@ -1,0 +1,99 @@
+[
+  {
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://m.baicaolu.com",
+    "bookSourceName": "百草露小说",
+    "bookSourceGroup": "小说网站",
+    "bookSourceComment": "全本小说全文阅读，最新热门网络小说免费阅读",
+    "loginUrl": "",
+    "header": "{\"User-Agent\": \"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36\"}",
+    "bookUrlPattern": "",
+    "searchUrl": "/search.html, {\"method\": \"POST\", \"body\": \"s={{key}}\"}",
+    "exploreUrl": "/::封面推荐||/::玄幻修真||/::重生穿越||/::都市科幻||/::恐怖灵异||/::女生言情||/::综合其他",
+    "enabled": true,
+    "enabledExplore": true,
+    "weight": 0,
+    "customOrder": 0,
+    "lastUpdateTime": "1766418277673",
+    "respondTime": 0,
+    "ruleSearch": {
+      "bookList": "dl.rec-focus-book, dl.sort-book-first, ul.sort-book-list li",
+      "name": "h2>a@text||h4>a@text||a@text",
+      "author": "dd>p:first-child@text##作者：\\s*(.*)##||span@text",
+      "bookUrl": "dt>a@href||dt>a@href||a@href",
+      "coverUrl": "dt>img@src||dt>img@src",
+      "intro": "dd>p:last-child@text"
+    },
+    "ruleExplore": {
+      "封面推荐": {
+        "list": "dl.rec-focus-book",
+        "name": "h2>a@text",
+        "author": "dd>p:first-child@text##作者：\\s*(.*)##",
+        "bookUrl": "dt>a@href",
+        "coverUrl": "dt>img@src",
+        "intro": "dd>p:last-child@text"
+      },
+      "玄幻修真": {
+        "list": ".wrap-box:nth-of-type(2) .sort-book-first, .wrap-box:nth-of-type(2) .sort-book-list li",
+        "name": "h4>a@text||a@text",
+        "author": "dd>p:first-child@text##作者：\\s*(.*)##||span@text",
+        "bookUrl": "dt>a@href||a@href",
+        "coverUrl": "dt>img@src"
+      },
+      "重生穿越": {
+        "list": ".wrap-box:nth-of-type(3) .sort-book-first, .wrap-box:nth-of-type(3) .sort-book-list li",
+        "name": "h4>a@text||a@text",
+        "author": "dd>p:first-child@text##作者：\\s*(.*)##||span@text",
+        "bookUrl": "dt>a@href||a@href",
+        "coverUrl": "dt>img@src"
+      },
+      "都市科幻": {
+        "list": ".wrap-box:nth-of-type(4) .sort-book-first, .wrap-box:nth-of-type(4) .sort-book-list li",
+        "name": "h4>a@text||a@text",
+        "author": "dd>p:first-child@text##作者：\\s*(.*)##||span@text",
+        "bookUrl": "dt>a@href||a@href",
+        "coverUrl": "dt>img@src"
+      },
+      "恐怖灵异": {
+        "list": ".wrap-box:nth-of-type(5) .sort-book-first, .wrap-box:nth-of-type(5) .sort-book-list li",
+        "name": "h4>a@text||a@text",
+        "author": "dd>p:first-child@text##作者：\\s*(.*)##||span@text",
+        "bookUrl": "dt>a@href||a@href",
+        "coverUrl": "dt>img@src"
+      },
+      "女生言情": {
+        "list": ".wrap-box:nth-of-type(6) .sort-book-first, .wrap-box:nth-of-type(6) .sort-book-list li",
+        "name": "h4>a@text||a@text",
+        "author": "dd>p:first-child@text##作者：\\s*(.*)##||span@text",
+        "bookUrl": "dt>a@href||a@href",
+        "coverUrl": "dt>img@src"
+      },
+      "综合其他": {
+        "list": ".wrap-box:nth-of-type(7) .sort-book-first, .wrap-box:nth-of-type(7) .sort-book-list li",
+        "name": "h4>a@text||a@text",
+        "author": "dd>p:first-child@text##作者：\\s*(.*)##||span@text",
+        "bookUrl": "dt>a@href||a@href",
+        "coverUrl": "dt>img@src"
+      }
+    },
+    "ruleBookInfo": {
+      "name": "h2>a@text||h4>a@text||h1@text",
+      "author": "dd>p:first-child@text##作者：\\s*(.*)##",
+      "coverUrl": "dt>img@src",
+      "intro": "dd>p:last-child@text",
+      "tocUrl": "dt>a@href||a@href",
+      "lastChapter": "",
+      "updateTime": ""
+    },
+    "ruleToc": {
+      "chapterList": ".listmain dd a, .chapterlist a, ul.list a",
+      "chapterName": "@text",
+      "chapterUrl": "@href",
+      "updateTime": "",
+      "nextTocUrl": "a:contains(下一页)@href||a:contains(下一章)@href"
+    },
+    "ruleContent": {
+      "content": "div.content@html||div#content@html||div.novel-content@html##<script[^>]*>.*?</script>|<style[^>]*>.*?</style>|<div[^>]*class=\"ads[^\"]*\"[^>]*>.*?</div>|<a[^>]*>.*?</a>|<img[^>]*>|&nbsp;"
+    }
+  }
+]
