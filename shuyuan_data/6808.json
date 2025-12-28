@@ -1,0 +1,44 @@
+[
+  {
+    "ruleSearch": {
+      "name": "h3@a@text",
+      "author": "p@a@text",
+      "kind": "span:nth-of-type(2)@text",
+      "wordCount": "",
+      "intro": "",
+      "bookUrl": "",
+      "lastChapter": "li:nth-of-type(1)@a@text",
+      "bookList": "div.item",
+      "coverUrl": ".item@img@text"
+    },
+    "ruleBookInfo": {
+      "intro": "div.des@text",
+      "name": "h1@text",
+      "author": ".booktxt@a@text",
+      "kind": ".booktxt@p:nth-of-type(2)@text",
+      "wordCount": ".booktxt@p:nth-of-type(4)@text",
+      "lastChapter": "h3@a@text",
+      "tocUrl": "#list@a@href",
+      "coverUrl": ".bookdetail@img"
+    },
+    "ruleToc": {
+      "chapterList": "#list@li",
+      "chapterName": "@a@text",
+      "chapterUrl": "@a@href",
+      "preUpdateJs": ""
+    },
+    "ruleContent": {
+      "content": "div.con@text",
+      "nextContentUrl": "span:nth-of-type(2)@a@href",
+      "sourceRegex": ""
+    },
+    "ruleReview": [],
+    "ruleExplore": [],
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.bqquge.com",
+    "bookSourceName": "笔趣阁",
+    "header": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "searchUrl": "/so/{{key}}",
+    "lastUpdateTime": "1766741268140"
+  }
+]
