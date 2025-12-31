@@ -1,0 +1,52 @@
+[
+  {
+    "bookSourceGroup": "漫画,🌸漫画",
+    "bookSourceName": "🌸Hitomi漫",
+    "bookSourceType": 2,
+    "bookSourceUrl": "https://hitomi.si/",
+    "customOrder": 450,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "[\n  {\n    \"title\": \"🔖首页🔖\",\n    \"url\": \"\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 1\n    }\n  },\n  {\n    \"title\": \"今日热门\",\n    \"url\": \"https://hitomi.si/\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.3\n    }\n  },\n  {\n    \"title\": \"最近更新\",\n    \"url\": \"https://hitomi.si/spa/latest-manga?page={{page}}\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.3\n    }\n  },\n  {\n    \"title\": \"汉化\",\n    \"url\": \"https://hitomi.si/spa/language/chinese?page={{page}}\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.3\n    }\n  },\n  {\n    \"title\": \"🔖类别🔖\",\n    \"url\": \"\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 1\n    }\n  },\n  {\n    \"title\": \"doujinshi\",\n    \"url\": \"https://hitomi.si/spa/category/doujinshi?page={{page}}\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.3\n    }\n  },\n  {\n    \"title\": \"manga\",\n    \"url\": \"https://hitomi.si/spa/category/manga?page={{page}}\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.3\n    }\n  },\n  {\n    \"title\": \"🔖标签🔖\",\n    \"url\": \"\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 1\n    }\n  },\n  {\n    \"title\": \"BigBreasts\",\n    \"url\": \"https://hitomi.si/spa/genre/145?sort=most_viewed&status=&page={{page}}\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.3\n    }\n  },\n  {\n    \"title\": \"SoleMan\",\n    \"url\": \"https://hitomi.si/spa/genre/157?sort=most_viewed&status=&page={{page}}\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.3\n    }\n  },\n  {\n    \"title\": \"SoleFemale\",\n    \"url\": \"https://hitomi.si/spa/genre/232?sort=most_viewed&status=&page={{page}}\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.3\n    }\n  },\n  {\n    \"title\": \"Netorare\",\n    \"url\": \"https://hitomi.si/spa/genre/300?sort=most_viewed&status=&page={{page}}\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.3\n    }\n  },\n  {\n    \"title\": \"FullColor\",\n    \"url\": \"https://hitomi.si/spa/genre/2472?sort=most_viewed&status=&page={{page}}\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.23\n    }\n  },\n  {\n    \"title\": \"Schoolgirl Uniform\",\n    \"url\": \"https://hitomi.si/spa/genre/186?sort=most_viewed&status=&page={{page}}\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.3\n    }\n  },\n  {\n    \"title\": \"Huge Breasts\",\n    \"url\": \"https://hitomi.si/spa/genre/317?sort=most_viewed&status=&page={{page}}\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.3\n    }\n  },\n  {\n    \"title\": \"Blowjob\",\n    \"url\": \"https://hitomi.si/spa/genre/232?sort=most_viewed&status=&page={{page}}\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.3\n    }\n  },\n  {\n    \"title\": \"TallGirl\",\n    \"url\": \"https://hitomi.si/spa/genre/2702?sort=most_viewed&status=&page={{page}}\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.3\n    }\n  },\n  {\n    \"title\": \"BlackMail\",\n    \"url\": \"https://hitomi.si/spa/genre/2729?sort=most_viewed&status=&page={{page}}\",\n    \"style\": {\n      \"layout_flexGrow\": 1,\n      \"layout_flexBasisPercent\": 0.3\n    }\n  }\n]",
+    "header": "{\n\t\"Cookie\":\"read=1\"\n}",
+    "lastUpdateTime": "1766938929185",
+    "loginUi": "[\n    {\n        \"name\": \"账号\",\n        \"type\": \"text\"\n    },\n    {\n        \"name\": \"密码\",\n        \"type\": \"password\"\n    }\n]",
+    "loginUrl": "<js>\nvar login = () => {\n    var username = source.getLoginInfoMap().get(\"账号\");\n    var password = source.getLoginInfoMap().get(\"密码\");\n    var res = java.post(\n      'https://hitomi.si/auth/login',\n        JSON.stringify({\n            username: username,\n            password: password,\n        }),\n        {\"Content-Type\": \"application/json\"}\n    );\n    source.putLoginHeader(JSON.stringify({\n        Authorization: `Bearer ${res.body()}`\n    }));\n}\nlogin();\n</js>",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "$.authors[0].author_name",
+      "coverUrl": "$.detail.manga_cover_img",
+      "intro": "$.detail.manga_description",
+      "kind": "$.detail.category",
+      "name": "$.detail.manga_name@js:\nvar title = \"\";\nif(result.indexOf(\"|\")!==-1){\n  var splits =  result.split(\"|\");\n  title = splits.reverse().join(\"|\");\n}else{\n  title = result;\n}\ntitle;",
+      "tocUrl": "https://hitomi.si/mangazine/si{$.detail.manga_id}"
+    },
+    "ruleContent": {
+      "content": ".chapter-imgs .chapter-img img@data-url\n@js: \nconst server = java.getString(\"//a[@id='change1']/@data-server\"); \n\nresult.split(\"\\n\").map(x=>'<img src=\"'+server+x+'\">').join(\"\\n\")",
+      "imageStyle": "FULL"
+    },
+    "ruleExplore": {
+      "bookList": "//ul[@class='splide__list']/li||$.manga_list",
+      "bookUrl": "//div[@class='r-img']/a/@href||https://hitomi.si/spa/manga/{$.manga_id}",
+      "coverUrl": "//div[@class='r-img']//img/@src||$.manga_cover_img",
+      "kind": "//div[@class='lang']/a/@title||$.language",
+      "name": "a@text||$.manga_name"
+    },
+    "ruleSearch": {
+      "bookList": "$.manga_list@js:\nvar booklist =[]\nfor(var i=0;i<result.length;i++){\n\tif(result[i].language&&result[i].language==\"chinese\"){\n\t\tbooklist.push(result[i])\n\t\t}\n\t}\nbooklist",
+      "bookUrl": "https://hitomi.si/spa/manga/{$.manga_id}",
+      "checkKeyWord": "姐姐",
+      "coverUrl": "$.manga_cover_img",
+      "kind": "Hitomi漫,{$.language}",
+      "name": "$.manga_name@js:\nvar title = \"\";\nif(result.indexOf(\"|\")!==-1){\n  var splits =  result.split(\"|\");\n  title = splits.reverse().join(\"|\");\n}else{\n  title = result;\n}\ntitle;"
+    },
+    "ruleToc": {
+      "chapterList": "//div[@class='preview-imgs']/ul/li[1]\n@js: [result]",
+      "chapterName": "//a[@class='__link']/img/@alt@js:'全话阅读'",
+      "chapterUrl": "//a[@class='__link']/@href"
+    },
+    "searchUrl": "/spa/search?query={{key}}&page={{page}}",
+    "weight": 50
+  }
+]
