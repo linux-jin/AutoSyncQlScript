@@ -686,6 +686,18 @@ class ShuyuanCrawler:
         self.clean_old_files(directory='shuyuan_data', root_dir=root_dir)
         self.clean_old_files(directory='shuyuans_data', root_dir=root_dir)
         
+        # 删除根目录的旧 JSON 文件
+        old_json_files = ['shuyuan_data.json', 'shuyuans_data.json', 'book.json']
+        for filename in old_json_files:
+            file_path = os.path.join(root_dir, filename)
+            if os.path.exists(file_path):
+                try:
+                    os.remove(file_path)
+                    logging.info(f"🗑️  删除旧文件: {filename}")
+                except Exception as e:
+                    logging.error(f"❌ 删除文件失败 ({filename}): {e}")
+
+        
         # 处理所有URL (重构后的统一逻辑)
         for url in self.urls:
             self.process_urls(url, root_dir)
