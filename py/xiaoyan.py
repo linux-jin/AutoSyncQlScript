@@ -30,7 +30,7 @@ class BookChecker:
             with open(self.file, mode='r', encoding='utf-8') as f:
                 return json.loads(f.read())
 
-    def check(self, abook, timeout=3):
+    def check(self, abook, timeout=6):
         headers = {
             'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.1823.58'
         }
