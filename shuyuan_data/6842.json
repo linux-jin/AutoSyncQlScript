@@ -1,0 +1,57 @@
+[
+  {
+    "bookSourceComment": "build 2026-1-10\n雨落星辰\n失效反馈：961955482",
+    "bookSourceGroup": "盗版,星辰",
+    "bookSourceName": "汉书书",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://m.hanshubooks.com/",
+    "customOrder": 1,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "@js:\nconst createItem = (t, u, p) => ({ title: t, url: u || \"\", style: { layout_flexGrow: 1, layout_flexBasisPercent: p } });\nconst dataList = [createItem(\"排行榜\", \"\", 1)];\n\n// 提取排行榜公共前缀\nconst rankPrefix = \"/top/rankings/\";\n[\n  [\"日点击榜\", \"dayvisit\"],\n  [\"周点击榜\", \"weekvisit\"],\n  [\"月点击榜\", \"monthvisit\"],\n  [\"总点击榜\", \"allvisit\"],\n  [\"日推荐榜\", \"dayvote\"],\n  [\"周推荐榜\", \"weekvote\"],\n  [\"月推荐榜\", \"monthvote\"],\n  [\"总推荐榜\", \"allvote\"],\n  [\"总收藏榜\", \"goodnum\"],\n  [\"字数排行\", \"size\"],\n  [\"最新入库\", \"postdate\"],\n  [\"最近更新\", \"lastupdate\"]\n].forEach(([t, path]) => dataList.push(createItem(t, `${rankPrefix}${path}/{{page}}.shtml`, 0.25)));\n\ndataList.push(createItem(\"书库\", \"\", 1));\n\n// 提取书库公共前缀\nconst bookPrefix = \"/typeinfo/type-\";\n[\n  [\"玄幻魔法\", 1],\n  [\"武侠修真\", 2],\n  [\"都市言情\", 3],\n  [\"历史军事\", 4],\n  [\"网游竞技\", 5],\n  [\"科幻小说\", 6],\n  [\"恐怖灵异\", 7],\n  [\"其他小说\", 8]\n].forEach(([t, type]) => dataList.push(createItem(t, `${bookPrefix}${type}/{{page}}-pg.shtml`, 0.25)));\n// 单独处理完结小说（路径无规律）\ndataList.push(createItem(\"完结小说\", \"/completepage/read-1-final.shtml\", 0.5));\n\nJSON.stringify(dataList, null, 2);\n",
+    "header": "@js:\nJSON.stringify({\n\"User-Agent\": java.getWebViewUA()\n})",
+    "lastUpdateTime": "1768028671129",
+    "loginCheckJs": "if (result.body().includes(\"Just a moment\")) {\n\tjava.startBrowserAwait(result.url(), \"验证\")\n\t} else result",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "[property=\"og:novel:author\"]@content",
+      "coverUrl": "[property=\"og:image\"]@content",
+      "intro": "[property=\"og:description\"]@content",
+      "kind": "[property=\"og:novel:status\"]@content&&[property=\"og:novel:category\"]@content&&[property=\"og:novel:update_time\"]@content",
+      "lastChapter": "[property=\"og:novel:latest_chapter_name\"]",
+      "name": "[property=\"og:novel:book_name\"]@content"
+    },
+    "ruleContent": {
+      "content": ".content@html",
+      "nextContentUrl": "text.下一页@href"
+    },
+    "ruleExplore": {
+      "author": "span.1@text##\\|(.*)",
+      "bookList": ".app_listBlock_con@ul@li",
+      "bookUrl": "a@href",
+      "coverUrl": "img@src",
+      "intro": "span.-2@text",
+      "kind": "span.1@text##(.*)\\|",
+      "name": "img@title"
+    },
+    "ruleSearch": {
+      "author": "span.1@text##\\|(.*)",
+      "bookList": "<js>\nurl = `${source.key}s.php,{\n  \"body\": \"keyword=${java.get(\"key\")}&code=${java.getVerificationCode(source.key+'searchcode.php?'+Date.now())}\",\n  \"method\": \"POST\"\n}`\njava.log(url)\njava.ajax(url)\n</js>\n.app_listBlock_con@ul@li",
+      "bookUrl": "a.0@href",
+      "checkKeyWord": "苟在初圣",
+      "coverUrl": "img@src",
+      "intro": "span.-2@text",
+      "kind": "span.1@text##(.*)\\|",
+      "name": "img@title"
+    },
+    "ruleToc": {
+      "chapterList": ".app_catalogList2 ul li a",
+      "chapterName": "text",
+      "chapterUrl": "href",
+      "nextTocUrl": "select@option!0@value"
+    },
+    "searchUrl": "@js:\njava.put(\"key\", key)\n\"https://m.hanshubooks.com/topsort/\"",
+    "weight": 0
+  }
+]
