@@ -1,0 +1,47 @@
+[
+  {
+    "bookSourceName": "顶点小说ddxsmf",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.ddxsmf.com",
+    "customOrder": 1,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "玄幻::/sort/1_{{page}}.html\n修真::/sort/2_{{page}}.html\n都市::/sort/3_{{page}}.html\n穿越::/sort/4_{{page}}.html\n网游::/sort/5_{{page}}.html\n科幻::/sort/6_{{page}}.html\n灵异::/sort/7_{{page}}.html\n其他::/sort/8_{{page}}.html\n排行榜::/paihang.html",
+    "lastUpdateTime": "1768296059359",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": ".booknav2 > p[2]@text",
+      "coverUrl": ".bookimg2 > img@src",
+      "intro": ".navtxt > p",
+      "name": ".booknav2 > h1@text"
+    },
+    "ruleContent": {
+      "content": ".txtnav@html",
+      "title": "h1@text"
+    },
+    "ruleExplore": {
+      "author": ".newnav label[1]@text",
+      "bookList": "#article_list_content > li",
+      "bookUrl": ".newnav > h3 > a@href",
+      "coverUrl": ".imgbox > img@src",
+      "intro": ".newnav > .ellipsis_2@text",
+      "kind": ".newnav label[2]@text",
+      "lastChapter": ".newnav > .zxzj a@text",
+      "name": ".newnav > h3 > a@text"
+    },
+    "ruleSearch": {
+      "bookList": "#b_results > li",
+      "bookUrl": "h2>a@href",
+      "lastChapter": ".b_lineclamp2@text",
+      "name": "h2>a@text"
+    },
+    "ruleToc": {
+      "chapterList": "ul > ul > .col-3",
+      "chapterName": "a>span@text",
+      "chapterUrl": "a@href"
+    },
+    "searchUrl": "https://cn.bing.com/search?q=site:www.ddxsmf.com%20{{key}}",
+    "weight": 0
+  }
+]
