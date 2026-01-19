@@ -24,8 +24,10 @@ jobs:
       - name: 运行脚本
         run: python py/shuyuan.py && python py/xiaoyan.py
         env:
-          SHUYUAN_URL: ${{ secrets.SHUYUAN_URL }}
-          SHUYUANS_URL: ${{ secrets.SHUYUANS_URL }}
+          SHUYUAN_URL: ${{ vars.SHUYUAN_URL || secrets.SHUYUAN_URL }}
+          SHUYUANS_URL: ${{ vars.SHUYUANS_URL || secrets.SHUYUANS_URL }}
+          SHUYUAN_FALLBACK_URL: ${{ vars.SHUYUAN_FALLBACK_URL || secrets.SHUYUAN_FALLBACK_URL }}
+          SHUYUANS_FALLBACK_URL: ${{ vars.SHUYUANS_FALLBACK_URL || secrets.SHUYUANS_FALLBACK_URL }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
 
