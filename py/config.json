@@ -6,5 +6,9 @@
   "retry_delay": 1,
   "max_workers": 5,
   "log_level": "INFO",
-  "ssl_verify": true
+  "ssl_verify": true,
+  "fallback_urls": {
+    "shuyuan": [],
+    "shuyuans": []
+  }
 }

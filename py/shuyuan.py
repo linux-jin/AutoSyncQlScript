@@ -181,9 +181,40 @@ class Config:
                 "  Linux/Mac: export SHUYUANS_URL=\"your-url-here\""
             )
         
+        # 获取备用URL(从环境变量或配置文件)
+        # 优先使用环境变量,其次使用配置文件
+        shuyuan_fallback = os.getenv('SHUYUAN_FALLBACK_URL')
+        shuyuans_fallback = os.getenv('SHUYUANS_FALLBACK_URL')
+        
+        fallback_config = self.config.get('fallback_urls', {})
+        
+        # 构建完整的URL列表 (主URL + 备用URLs)
+        shuyuan_urls = [shuyuan_url]
+        # 环境变量优先
+        if shuyuan_fallback:
+            shuyuan_urls.append(shuyuan_fallback)
+        # 配置文件作为补充
+        elif 'shuyuan' in fallback_config and isinstance(fallback_config['shuyuan'], list):
+            shuyuan_urls.extend(fallback_config['shuyuan'])
+        
+        shuyuans_urls = [shuyuans_url]
+        # 环境变量优先
+        if shuyuans_fallback:
+            shuyuans_urls.append(shuyuans_fallback)
+        # 配置文件作为补充
+        elif 'shuyuans' in fallback_config and isinstance(fallback_config['shuyuans'], list):
+            shuyuans_urls.extend(fallback_config['shuyuans'])
+        
+        # 保存URL列表映射
+        self.config['url_lists'] = {
+            'shuyuan': shuyuan_urls,
+            'shuyuans': shuyuans_urls
+        }
+        
+        # 保持向后兼容
         self.config['urls'] = [shuyuan_url, shuyuans_url]
         
-
+        # 从第一个URL提取基础域名
         from urllib.parse import urlparse
         parsed_url = urlparse(shuyuan_url)
         self.config['base_url'] = f"{parsed_url.scheme}://{parsed_url.netloc}"
@@ -192,21 +223,24 @@ class Config:
         
         time_ranges = {}
         
-
+        # 为所有URL配置时间范围
         shuyuan_days = self.config.get('shuyuan_data', 5)
         if isinstance(shuyuan_days, int) and shuyuan_days > 0:
-            time_ranges[shuyuan_url] = [1, shuyuan_days]
+            for url in shuyuan_urls:
+                time_ranges[url] = [1, shuyuan_days]
         else:
             logging.warning(f"⚠️  shuyuan_data 配置错误,使用默认值 5天")
-            time_ranges[shuyuan_url] = [1, 5]
+            for url in shuyuan_urls:
+                time_ranges[url] = [1, 5]
         
-
         shuyuans_days = self.config.get('shuyuans_data', 5)
         if isinstance(shuyuans_days, int) and shuyuans_days > 0:
-            time_ranges[shuyuans_url] = [1, shuyuans_days]
+            for url in shuyuans_urls:
+                time_ranges[url] = [1, shuyuans_days]
         else:
             logging.warning(f"⚠️  shuyuans_data 配置错误,使用默认值 5天")
-            time_ranges[shuyuans_url] = [1, 5]
+            for url in shuyuans_urls:
+                time_ranges[url] = [1, 5]
         
         self.config['time_ranges'] = time_ranges
         self.config['output_dirs'] = {
@@ -216,7 +250,11 @@ class Config:
         
         logging.info(f"📋 配置处理完成:")
         logging.info(f"  - shuyuan_url: {shuyuan_url} (时间范围: {time_ranges[shuyuan_url]})")
+        if len(shuyuan_urls) > 1:
+            logging.info(f"    备用地址: {len(shuyuan_urls) - 1} 个")
         logging.info(f"  - shuyuans_url: {shuyuans_url} (时间范围: {time_ranges[shuyuans_url]})")
+        if len(shuyuans_urls) > 1:
+            logging.info(f"    备用地址: {len(shuyuans_urls) - 1} 个")
     
     def _apply_env_overrides(self):
         """应用环境变量覆盖配置"""
@@ -301,20 +339,21 @@ class ShuyuanCrawler:
         self.config = config
         self.stats = stats
         self.urls = config.get('urls', [])
+        self.url_lists = config.get('url_lists', {})
         self.time_ranges = config.get('time_ranges', {})
         self.timeout = config.get('request_timeout', 10)
         self.ssl_verify = config.get('ssl_verify', True)
         self.max_retries = config.get('max_retries', 3)
         self.retry_delay = config.get('retry_delay', 1)
         
-
+        # 基础URL (从第一个URL提取)
         self.base_url = config.get('base_url', '')
         
-
+        # Session复用
         self.session = requests.Session()
         self.session.verify = self.ssl_verify
         
-
+        # 连接池优化
         adapter = requests.adapters.HTTPAdapter(
             pool_connections=10,
             pool_maxsize=20,
@@ -323,18 +362,157 @@ class ShuyuanCrawler:
         self.session.mount('http://', adapter)
         self.session.mount('https://', adapter)
         
-
+        # 去重集合
         self.downloaded_urls: Set[str] = set()
         self.url_hashes: Set[str] = set()
         self.book_names: Set[str] = set()
         
-
+        # 并发控制
         self.max_workers = config.get('max_workers', 5)
     
-    @retry_on_failure(max_retries=3, delay=1)
+    def _try_urls_with_fallback(self, url_list: List[str], operation_name: str = "操作") -> Tuple[Optional[Any], str]:
+        """
+        使用备用URL机制尝试操作
+        
+        Args:
+            url_list: URL列表 (主URL + 备用URLs)
+            operation_name: 操作名称(用于日志)
+            
+        Returns:
+            (解析结果, 成功的URL) 元组,如果所有URL都失败则返回 (None, '')
+        """
+        last_error = None
+        
+        for i, url in enumerate(url_list):
+            try:
+                if i > 0:
+                    logging.info(f"🔄 切换到备用URL [{i}]: {url}")
+                
+                # 尝试解析页面
+                result = self._parse_page_internal(url)
+                
+                if i > 0:
+                    logging.info(f"✅ 备用URL [{i}] 连接成功")
+                
+                return result, url
+                
+            except Exception as e:
+                last_error = e
+                if i < len(url_list) - 1:
+                    logging.warning(f"⚠️  URL [{i}] {operation_name}失败: {e}, 尝试下一个备用地址...")
+                else:
+                    logging.error(f"❌ 所有URL均失败,最后错误: {e}")
+                    self.stats.add_failure(f"所有URL {operation_name}失败: {e}")
+        
+        return None, ''
+    
+    def _parse_page_internal(self, url: str) -> List[Tuple[str, datetime.date]]:
+        """
+        解析页面获取相关链接(内部方法,带重试)
+        
+        Args:
+            url: 页面URL
+            
+        Returns:
+            (JSON URL, 日期) 元组列表
+        """
+        for attempt in range(self.max_retries):
+            try:
+                response = self.session.get(url, timeout=self.timeout)
+                if response.status_code != 200:
+                    error_msg = f"访问 {url} 失败: HTTP {response.status_code}"
+                    if attempt < self.max_retries - 1:
+                        logging.warning(f"⚠️  {error_msg}, 重试中...")
+                        time.sleep(self.retry_delay * (2 ** attempt))
+                        continue
+                    else:
+                        raise Exception(error_msg)
+                
+                soup = BeautifulSoup(response.text, 'html.parser')
+                relevant_links = []
+                today = datetime.today().date()
+                
+                # 从URL提取基础域名
+                from urllib.parse import urlparse
+                parsed = urlparse(url)
+                base_url = f"{parsed.scheme}://{parsed.netloc}"
+                
+                for div in soup.find_all('div', class_='layui-col-xs12 layui-col-sm6 layui-col-md4'):
+                    link = div.find('a', href=True)
+                    date_element = div.find('p', class_='m-right')
+                    
+                    if link and date_element:
+                        href = link['href']
+                        link_date_str = date_element.text.strip()
+                        
+                        # 解析相对时间
+                        match = re.search(r'(\d+)(天前|小时前|分钟前)', link_date_str)
+                        if match:
+                            value, unit = match.group(1, 2)
+                            if unit in ['分钟前', '小时前']:
+                                days_ago = 1
+                            else:
+                                days_ago = int(value)
+                            
+                            link_date = today - timedelta(days=days_ago)
+                            time_range = self.time_ranges.get(url, (0, float('inf')))
+                            
+                            if time_range[0] <= days_ago <= time_range[1]:
+                                json_url = f'{base_url}{href.replace("content", "json")}'
+                                relevant_links.append((json_url, link_date))
+                        else:
+                            # 解析绝对时间
+                            link_date = None
+                            
+                            try:
+                                link_date = datetime.strptime(link_date_str, "%Y/%m/%d")
+                            except ValueError:
+                                pass
+                            
+                            if not link_date:
+                                try:
+                                    link_date = datetime.strptime(link_date_str, "%m/%d %H:%M")
+                                    link_date = link_date.replace(year=today.year)
+                                except ValueError:
+                                    pass
+                            
+                            if not link_date:
+                                try:
+                                    link_date = datetime.strptime(link_date_str, "%Y-%m-%d")
+                                except ValueError:
+                                    pass
+                            
+                            if link_date:
+                                time_range = self.time_ranges.get(url, (0, float('inf')))
+                                days_diff = (today - link_date.date()).days
+                                
+                                if time_range[0] <= days_diff <= time_range[1]:
+                                    json_url = f'{base_url}{href.replace("content", "json")}'
+                                    relevant_links.append((json_url, link_date.date()))
+                                else:
+                                    logging.debug(f"⏭️  跳过超出范围的日期: {link_date_str} ({days_diff}天前)")
+                            else:
+                                warning_msg = f"未知日期格式: {link_date_str}"
+                                logging.warning(f"⚠️  {warning_msg}")
+                                self.stats.add_warning(warning_msg)
+                
+                self.stats.pages_parsed += 1
+                logging.info(f"✅ 从 {url} 解析到 {len(relevant_links)} 个链接")
+                return relevant_links
+                
+            except Exception as e:
+                if attempt < self.max_retries - 1:
+                    wait_time = self.retry_delay * (2 ** attempt)
+                    logging.warning(f"⚠️  解析失败,{wait_time}秒后重试 ({attempt + 1}/{self.max_retries}): {e}")
+                    time.sleep(wait_time)
+                else:
+                    raise
+        
+        return []
+    
     def parse_page(self, url: str) -> List[Tuple[str, datetime.date]]:
         """
-        解析页面获取相关链接
+        解析页面获取相关链接(公共接口)
         
         Args:
             url: 页面URL
@@ -344,85 +522,13 @@ class ShuyuanCrawler:
         """
         logging.info(f"🔍 开始解析页面: {url}")
         
-        response = self.session.get(url, timeout=self.timeout)
-        if response.status_code != 200:
-            error_msg = f"访问 {url} 失败: HTTP {response.status_code}"
+        try:
+            return self._parse_page_internal(url)
+        except Exception as e:
+            error_msg = f"解析页面失败: {e}"
             logging.error(f"❌ {error_msg}")
             self.stats.add_warning(error_msg)
             return []
-        
-        soup = BeautifulSoup(response.text, 'html.parser')
-        relevant_links = []
-        today = datetime.today().date()
-        
-        for div in soup.find_all('div', class_='layui-col-xs12 layui-col-sm6 layui-col-md4'):
-            link = div.find('a', href=True)
-            date_element = div.find('p', class_='m-right')
-            
-            if link and date_element:
-                href = link['href']
-                link_date_str = date_element.text.strip()
-                
-
-                match = re.search(r'(\d+)(天前|小时前|分钟前)', link_date_str)
-                if match:
-                    value, unit = match.group(1, 2)
-                    if unit in ['分钟前', '小时前']:
-                        days_ago = 1
-                    else:
-                        days_ago = int(value)
-                    
-                    link_date = today - timedelta(days=days_ago)
-                    time_range = self.time_ranges.get(url, (0, float('inf')))
-                    
-                    if time_range[0] <= days_ago <= time_range[1]:
-                        json_url = f'{self.base_url}{href.replace("content", "json")}'
-                        relevant_links.append((json_url, link_date))
-                else:
-
-                    link_date = None
-                    
-
-                    try:
-                        link_date = datetime.strptime(link_date_str, "%Y/%m/%d")
-                    except ValueError:
-                        pass
-                    
-
-                    if not link_date:
-                        try:
-                            link_date = datetime.strptime(link_date_str, "%m/%d %H:%M")
-                            link_date = link_date.replace(year=today.year)
-                        except ValueError:
-                            pass
-                    
-
-                    if not link_date:
-                        try:
-                            link_date = datetime.strptime(link_date_str, "%Y-%m-%d")
-                        except ValueError:
-                            pass
-                    
-                    if link_date:
-
-                        time_range = self.time_ranges.get(url, (0, float('inf')))
-                        days_diff = (today - link_date.date()).days
-                        
-                        if time_range[0] <= days_diff <= time_range[1]:
-                            json_url = f'{self.base_url}{href.replace("content", "json")}'
-                            relevant_links.append((json_url, link_date.date()))
-                        else:
-
-                            logging.debug(f"⏭️  跳过超出范围的日期: {link_date_str} ({days_diff}天前)")
-                    else:
-
-                        warning_msg = f"未知日期格式: {link_date_str}"
-                        logging.warning(f"⚠️  {warning_msg}")
-                        self.stats.add_warning(warning_msg)
-        
-        self.stats.pages_parsed += 1
-        logging.info(f"✅ 从 {url} 解析到 {len(relevant_links)} 个链接")
-        return relevant_links
     
     @retry_on_failure(max_retries=3, delay=1)
     def get_redirected_url(self, url: str) -> Optional[str]:
@@ -625,20 +731,27 @@ class ShuyuanCrawler:
         except OSError as e:
             logging.error(f"美化JSON文件失败 ({full_path}): {e}")
     
-    def process_urls(self, url: str, root_dir: str = ''):
+    def process_urls(self, url_key: str, root_dir: str = ''):
         """
-        处理URL列表(统一的URL处理逻辑) - 支持并发下载
+        处理URL列表(统一的URL处理逻辑) - 支持备用URL和并发下载
         
         Args:
-            url: 页面URL
+            url_key: URL类型键 ('shuyuan' 或 'shuyuans')
             root_dir: 根目录
         """
-        logging.info(f"🚀 开始处理URL: {url}")
+        url_list = self.url_lists.get(url_key, [])
         
-        json_urls = self.parse_page(url)
+        if not url_list:
+            logging.error(f"❌ 未找到URL配置: {url_key}")
+            return
+        
+        logging.info(f"🚀 开始处理 {url_key} (主URL + {len(url_list) - 1} 个备用)")
+        
+        # 使用备用URL机制解析页面
+        json_urls, successful_url = self._try_urls_with_fallback(url_list, "页面解析")
         
         if not json_urls:
-            logging.warning(f"⚠️  未找到任何JSON链接: {url}")
+            logging.error(f"❌ 所有URL均无法解析: {url_key}")
             return
         
         total_urls = len(json_urls)
@@ -698,9 +811,10 @@ class ShuyuanCrawler:
                     logging.error(f"❌ 删除文件失败 ({filename}): {e}")
 
         
-        # 处理所有URL (重构后的统一逻辑)
-        for url in self.urls:
-            self.process_urls(url, root_dir)
+        # 处理所有URL (使用备用URL机制)
+        for url_key in ['shuyuan', 'shuyuans']:
+            if url_key in self.url_lists:
+                self.process_urls(url_key, root_dir)
         
         # 合并各目录的JSON文件
         for dir_name in ['shuyuan_data', 'shuyuans_data']:
