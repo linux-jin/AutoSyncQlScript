@@ -186,6 +186,12 @@ class Config:
         shuyuan_fallback = os.getenv('SHUYUAN_FALLBACK_URL')
         shuyuans_fallback = os.getenv('SHUYUANS_FALLBACK_URL')
         
+        # 调试日志
+        if shuyuan_fallback:
+            logging.info(f"🔧 检测到备用URL环境变量 SHUYUAN_FALLBACK_URL: {shuyuan_fallback}")
+        if shuyuans_fallback:
+            logging.info(f"🔧 检测到备用URL环境变量 SHUYUANS_FALLBACK_URL: {shuyuans_fallback}")
+        
         fallback_config = self.config.get('fallback_urls', {})
         
         # 构建完整的URL列表 (主URL + 备用URLs)
@@ -204,6 +210,15 @@ class Config:
         # 配置文件作为补充
         elif 'shuyuans' in fallback_config and isinstance(fallback_config['shuyuans'], list):
             shuyuans_urls.extend(fallback_config['shuyuans'])
+        
+        # 调试日志 - 显示构建的URL列表
+        logging.info(f"📋 构建的URL列表:")
+        logging.info(f"  - shuyuan: {len(shuyuan_urls)} 个URL (主URL + {len(shuyuan_urls)-1} 个备用)")
+        for i, url in enumerate(shuyuan_urls):
+            logging.info(f"    [{i}] {url}")
+        logging.info(f"  - shuyuans: {len(shuyuans_urls)} 个URL (主URL + {len(shuyuans_urls)-1} 个备用)")
+        for i, url in enumerate(shuyuans_urls):
+            logging.info(f"    [{i}] {url}")
         
         # 保存URL列表映射
         self.config['url_lists'] = {
