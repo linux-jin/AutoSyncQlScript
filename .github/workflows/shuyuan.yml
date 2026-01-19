@@ -40,6 +40,7 @@ jobs:
             echo "📝 没有文件变化,跳过提交"
           else
             git commit -m "书源|自动更新"
+            git pull --rebase origin shuyuan
             git push
             echo "✅ 文件已提交并推送"
           fi
