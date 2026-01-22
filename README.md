@@ -62,7 +62,7 @@ https://raw.githubusercontent.com/shidahuilang/shuyuan/shuyuan/good.json
 ```
 https://raw.githubusercontent.com/shidahuilang/shuyuan/shuyuan/jinghua.json
 ```
-#### 🚩 TTS-在线语音包生成[点我](https://tts.228088.xyz)
+#### 🚩 TTS-在线语音包生成[点我](https://tts.yfi.moe/ra?api-site=https%3A%2F%2Ftts.228088.xyz%2F)
 详见[文档](https://github.com/shidahuilang/shuyuan/blob/shuyuan/doc.md)
 #### 🚩 TTS-70种语音包
 ```
