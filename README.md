@@ -22,7 +22,7 @@ https://raw.githubusercontent.com/shidahuilang/shuyuan/refs/heads/shuyuan/大灰
 ```
 https://raw.githubusercontent.com/shidahuilang/shuyuan/refs/heads/shuyuan/大灰狼订阅源.json
 ```  
-#### 🚩 🍅 番茄融合 用心读书：番茄，七猫，得间，塔读，QQ，小米，熊猫，起点(69/笔趣阁)，喜马拉雅，看书，听书）：ios商店搜索用心读书，用这个邀请码可以优惠10元 IH53Uxuk
+#### 🚩 🍅 番茄融合 用心读书：番茄，七猫，得间，塔读，QQ，小米，熊猫，起点(69/笔趣阁)，喜马拉雅，看书，听书）：ios商店搜索用心读书，用这个邀请码可以优惠10元 HCC0kl0j
 ```
 https://raw.githubusercontent.com/shidahuilang/shuyuan/refs/heads/shuyuan/用心读书app-大灰狼融合4.0.mrs
 ```
