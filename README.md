@@ -1,11 +1,11 @@
 | **项目名称** | **站点链接**                                                                                     |
 |--------------|--------------------------------------------------------------------------------------------------|
-| **永久发布页** | [![下载链接](https://img.shields.io/badge/下载-链接-blueviolet.svg?logo=hack-the-box)](http://vip.gyks.cf) |
-| **聚合书源4.0** | [![下载链接](https://img.shields.io/badge/下载-链接-blueviolet.svg?logo=hack-the-box)](https://v1.gyks.cf/online_search) |
-| **QQ群组**   | [![下载链接](https://img.shields.io/badge/下载-链接-blueviolet.svg?logo=hack-the-box)](https://qm.qq.com/q/QrkY0onbAi) |
-| **QQ频道**   | [![下载链接](https://img.shields.io/badge/下载-链接-blueviolet.svg?logo=hack-the-box)](https://pd.qq.com/s/en1ixsg5w) |
-| **TG交流群** | [![下载链接](https://img.shields.io/badge/下载-链接-blueviolet.svg?logo=hack-the-box)](https://t.me/qingtian618_novel) |
-| **TG频道** | [![下载链接](https://img.shields.io/badge/下载-链接-blueviolet.svg?logo=hack-the-box)](https://t.me/qingtian_novel) |
+| **永久发布页** | [![下载链接](https://img.shields.io/badge/下载-链接-blueviolet.svg?logo=hack-the-box)](http://svip.langge.cf) |
+| **聚合书院4.0** | [![下载链接](https://img.shields.io/badge/下载-链接-blueviolet.svg?logo=hack-the-box)](https://api.langge.cf/online_search) |
+| **QQ群组2**   | [![下载链接](https://img.shields.io/badge/下载-链接-blueviolet.svg?logo=hack-the-box)](https://qm.qq.com/q/ZLY2sXBGUY) |
+| **QQ群组3**   | [![下载链接](https://img.shields.io/badge/下载-链接-blueviolet.svg?logo=hack-the-box)](https://qm.qq.com/q/AmapLggTYY) |
+| **TG交流群** | [![下载链接](https://img.shields.io/badge/下载-链接-blueviolet.svg?logo=hack-the-box)](https://t.me/dahuilang888) |
+| **QQ频道** | [![下载链接](https://img.shields.io/badge/下载-链接-blueviolet.svg?logo=hack-the-box)](https://pd.qq.com/s/9r1k2ik49) |
 
 #### 🚩 IOS软件下载安装：
 ```
@@ -18,29 +18,29 @@ https://raw.githubusercontent.com/shidahuilang/shuyuan/refs/heads/shuyuan/大灰
 #### 🚩 IOS15.6-IOS18系统AppFlex安装香色闺阁方法：
 - AppFlex香色闺阁 [视频安装教程](https://m.bilibili.com/video/BV1Ap5xzeEZp?buvid=XX1513F1A6B023DEA52BDE909C516677A32C6&from_spmid=dt.space-dt.video.0&is_story_h5=false&mid=nAD513qeAumJfcSSsFjeOA%3D%3D&p=1&plat_id=116&share_from=ugc&share_medium=android&share_plat=android&share_session_id=b42fa7ba-e311-4cb1-a99b-f7d12d26f78b&share_source=WEIXIN&share_tag=s_i&spmid=united.player-video-detail.0.0&timestamp=1745238613&unique_k=Gb4G4mV&up_id=275649236) [图文安装教程](https://cloudmantoub.online/89/)
 
-#### 🚩 🍅 晴天订阅源
+#### 🚩 🍅 大灰狼订阅源
 ```
-https://raw.githubusercontent.com/shidahuilang/shuyuan/refs/heads/shuyuan/晴天订阅源.json
+https://raw.githubusercontent.com/shidahuilang/shuyuan/refs/heads/shuyuan/大灰狼订阅源.json
 ```  
 #### 🚩 🍅 番茄融合 用心读书：番茄，七猫，得间，塔读，QQ，小米，熊猫，起点(69/笔趣阁)，喜马拉雅，看书，听书）：ios商店搜索用心读书，用这个邀请码可以优惠10元 IH53Uxuk
 ```
-https://raw.githubusercontent.com/shidahuilang/shuyuan/refs/heads/shuyuan/用心读书app-晴天融合4.0.mrs
+https://raw.githubusercontent.com/shidahuilang/shuyuan/refs/heads/shuyuan/用心读书app-大灰狼融合4.0.mrs
 ```
 #### 🚩 🍅 番茄融合 阅读-轻阅读-源阅：番茄，七猫，得间，塔读，QQ，小米，熊猫，起点(69/笔趣阁)，喜马拉雅、看书听书漫画短剧书源）：
 ```
-https://raw.githubusercontent.com/shidahuilang/shuyuan/refs/heads/shuyuan/安卓阅读app-晴天融合4.0(完全版).json
+https://raw.githubusercontent.com/shidahuilang/shuyuan/refs/heads/shuyuan/安卓阅读app-大灰狼融合4.0(完全版).json
 ```
 #### 🚩🍅 番茄七猫等IOS书源：（读不舍手+千阅+源阅读+花火阅读）
 ```
-https://raw.githubusercontent.com/shidahuilang/shuyuan/refs/heads/shuyuan/读不舍手app-晴天融合4.0(兼容版).json
+https://raw.githubusercontent.com/shidahuilang/shuyuan/refs/heads/shuyuan/读不舍手app-大灰狼融合4.0(兼容版).json
 ```
 #### 🚩 🍅 番茄融合香色闺阁书源：看书、听书、漫画、短剧（正文页面右上角站点登录即可）
 ```
-https://github.com/shidahuilang/shuyuan/blob/shuyuan/香色闺阁app-晴天融合4.0.xbs
+https://github.com/shidahuilang/shuyuan/blob/shuyuan/香色闺阁app-大灰狼融合4.0.xbs
 ```
 #### 🚩 🍅 番茄融合益达书源：看书、听书、漫画、短剧
 ```
-https://raw.githubusercontent.com/shidahuilang/shuyuan/refs/heads/shuyuan/你的益达app-晴天融合4.0.yds
+https://raw.githubusercontent.com/shidahuilang/shuyuan/refs/heads/shuyuan/你的益达app-大灰狼融合4.0.yds
 ```
 
 **自动更新时间** 2026-01-22 18:32:39 CST+0800
