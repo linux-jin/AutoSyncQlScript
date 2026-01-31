@@ -1,0 +1,57 @@
+[
+  {
+    "ruleExplore": {
+      "author": "tag.span.0@text",
+      "bookList": ".category-div",
+      "lastChapter": "",
+      "intro": ".intro@text",
+      "kind": "",
+      "coverUrl": "img@src",
+      "bookUrl": "a@href",
+      "name": "h3@text"
+    },
+    "bookSourceType": 0,
+    "ruleSearch": {
+      "author": "tag.span.0@text",
+      "bookList": ".category-div",
+      "lastChapter": "",
+      "intro": ".intro@text",
+      "kind": "",
+      "coverUrl": "img@data-original",
+      "bookUrl": "a@href",
+      "name": "h3@text"
+    },
+    "ruleBookInfo": {
+      "coverUrl": "",
+      "author": "",
+      "kind": "",
+      "wordCount": "",
+      "intro": "",
+      "lastChapter": ""
+    },
+    "bookUrlPattern": "https://www.sudugu.c/\\d+/",
+    "respondTime": 2273,
+    "ruleContent": {
+      "content": "#article@p@text",
+      "nextContentUrl": "text.下一页@href",
+      "replaceRegex": "##\\s*({{ book.durChapterTitle }}|.*作者：.*|PS：.*求推荐！|PS：.*求收藏！|感谢.*打赏.*|感谢.*推荐票.*|感谢.*月票.*|（.*月票.*）|（为大家的.*票加更.*）|第二更在.*|为防止采集.*支持！|网址：sudugu\\.com|必应.*速读谷|loadAdv.*)\\s*"
+    },
+    "searchUrl": "/search/,{\n    \"body\": \"searchkey={{key}}\",\n    \"method\": \"POST\"\n}",
+    "weight": 0,
+    "enabledExplore": true,
+    "bookSourceComment": "",
+    "ruleToc": {
+      "chapterUrl": "href",
+      "chapterList": "class.info-chapters.1@a",
+      "nextTocUrl": "",
+      "chapterName": "text"
+    },
+    "enabled": true,
+    "bookSourceUrl": "http://www.sudugu.co",
+    "lastUpdateTime": "1769820576276",
+    "bookSourceName": "速读谷伪",
+    "bookSourceGroup": "小说",
+    "customOrder": -1,
+    "exploreUrl": "玄幻魔法::/fenlei/1/{{page}}/\n武侠修真::/fenlei/2/{{page}}/\n都市言情::/fenlei/3/{{page}}/\n历史军事::/fenlei/4/{{page}}/\n科幻灵异::/fenlei/5/{{page}}/\n诸天无限::/fenlei/6/{{page}}/\n悬疑小说::/fenlei/7/{{page}}/\n体育小说::/fenlei/8/{{page}}/\n游戏小说::/fenlei/9/{{page}}/\n综合其他::/fenlei/10/{{page}}/"
+  }
+]
