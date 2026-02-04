@@ -1,0 +1,45 @@
+[
+  {
+    "bookSourceName": "龙头小说",
+    "bookSourceType": 0,
+    "bookSourceUrl": "http://m.ltxs.la/",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": false,
+    "lastUpdateTime": "1770029312115",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "class.fix@p.0@text##作者：",
+      "coverUrl": "img@src",
+      "intro": "class.m-desc xs-show@text##简介: ",
+      "kind": "class.fix@p.1@text##类别：",
+      "lastChapter": "class.fix@p.5@text##最新章节：",
+      "name": "class.layout-tit.1@text##最新章节",
+      "tocUrl": ""
+    },
+    "ruleContent": {
+      "content": ".content@textNodes",
+      "nextContentUrl": "class.m-bottom-opt@a.3@href",
+      "replaceRegex": "##（本章未完，请点击下一页继续阅读）\\s",
+      "title": "h1@title@text"
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "author": "class.s4@text",
+      "bookList": "class.txt-list-row5@li:not(:first-child)",
+      "bookUrl": "class.s2@a@href",
+      "kind": "class.s1@text",
+      "lastChapter": "class.s3@text",
+      "name": "class.s2@text"
+    },
+    "ruleToc": {
+      "chapterList": "class.section-box.1@li",
+      "chapterName": "a@text",
+      "chapterUrl": "a@href",
+      "nextTocUrl": "class.listpage@a.-1@href"
+    },
+    "searchUrl": "http://m.ltxs.la/ar.php?keyWord={{key}}",
+    "weight": 0
+  }
+]
