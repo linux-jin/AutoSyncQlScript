@@ -1,0 +1,54 @@
+[
+  {
+    "bookSourceGroup": "🔞小说",
+    "bookSourceName": "🔞完本小说网",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.finalbooks.work",
+    "customButton": false,
+    "customOrder": 49,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "eventListener": false,
+    "exploreUrl": "@js:\nconst list = [];\nconst push = (title, url, size) => list.push({\n    title,\n    url,\n    style: {\n        layout_flexGrow: 0,\n        layout_flexBasisPercent: size\n    }\n});\n\nvar $ = org.jsoup.Jsoup.parse;\nvar tags = $(java.ajax(source.key + \"/category/\"))\n  .select('.CGsectionTwo-left a')\n  .toArray()\n  .map(tag => {\n    let title = String(tag.text()).trim();\n    let url = String(tag.attr('href')).match(/(\\d+)/)?.[1];\n    return title ? [title, url] :  null;\n  })\n  .filter(Boolean);\n\n[\n    [\"༺ˇ»`ʚ  分类  ɞ´«ˇ༻\", \"/category/\"],\n    [\"༺ˇ»`ʚ  总榜  ɞ´«ˇ༻\", \"/rank/all/\"],\n    [\"༺ˇ»`ʚ  周榜  ɞ´«ˇ༻\", \"/rank/\"],\n    [\"༺ˇ»`ʚ  月榜  ɞ´«ˇ༻\", \"/rank/month/\"],\n    [\"༺ˇ»`ʚ  全本  ɞ´«ˇ༻\", \"/category/finish/\"]\n].forEach(item => {\n  push(item[0], null, 1);\n  tags.forEach((tag, index) => {\n    let url = item[1] + tag[1] + \"/{{page}}.html\";\n    push(tag[0], url, (index ? 0.2 : 1));\n  });\n});\nJSON.stringify(list);",
+    "header": "{\"Referer\":\"https://www.finalbooks.work/\",\"User-Agent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36\"}",
+    "lastUpdateTime": "1770562647768",
+    "loginUrl": "/",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "[property=\"og:novel:author\"]@content",
+      "coverUrl": "[property=\"og:image\"]@content",
+      "intro": "#intro .BGsectionTwo-bottom@html##简介：",
+      "kind": "[property=\"og:novel:category\"]@content&&\n[property=\"og:novel:status\"]@content&&\n[property=\"og:novel:update_time\"]@content",
+      "name": "[property$=book_name]@content",
+      "tocUrl": "{{baseUrl}}catalog/"
+    },
+    "ruleContent": {
+      "content": "@js:\nfunction d(d, b) {\n  b = java.md5Encode(b)\n  let iv = b.substring(0, 16)\n  let key = b.substring(16)\n  return java.createSymmetricCrypto(\"AES/CBC/PKCS5Padding\", key, iv).decryptStr(d)\n}\n\nfunction html(content){\n  return java.getString(\"p@html\", content)\n}\n\nconst encrypted = result.match(/html\\(d.*;/)[0]\neval(encrypted)"
+    },
+    "ruleExplore": {
+      "author": ".b@text",
+      "bookList": ".sectionTwo-content li&&.CGsectionTwo-right-content-unit",
+      "bookUrl": ".book_img_name a@href&&.title@href",
+      "coverUrl": "img@_src",
+      "intro": "//p[3]/text()",
+      "lastChapter": "//p[4]/text()##最近更新",
+      "name": ".book_img_name a@text&&.title@text"
+    },
+    "ruleSearch": {
+      "author": "//span[3]/a/text()",
+      "bookList": "//div[@class=\"SHsectionThree-middle\"]/p",
+      "bookUrl": "//span[2]/a/@href",
+      "kind": "//span[1]/a/text()",
+      "name": "//span[2]/a/text()"
+    },
+    "ruleToc": {
+      "chapterList": "@js:\nfunction tryDecodeAsUrl(val) {\n    try {\n        val = String(val).trim();\n        let decoded = java.base64Decode(val);\n        if (decoded && /\\/\\d+\\.html$/.test(decoded)) {\n            return decoded;\n        }\n    } catch (e) {}\n    return null;\n}\n\nfunction isLikelyTitle(val) {\n    return /[\\u4e00-\\u9fa5]|^[\\d\\.]+$/.test(val);\n}\n\nconst doc = org.jsoup.Jsoup.parse(result);\nconst lis = doc.select(\"ol li\");\nconst chapterData = [];\n\nlis.forEach(function(li) {\n    let a = li.selectFirst(\"a\");\n    if (!a) return;\n\n    let allAttrs = [];\n    [li, a].forEach(function(el) {\n        let attrs = el.attributes();\n        for (let i = 0; i < attrs.size(); i++) {\n            let attr = attrs.asList().get(i);\n            let key = String(attr.getKey());\n            let val = String(attr.getValue());\n            if (key.startsWith(\"data-\")) {\n                allAttrs.push({ key: key, val: val });\n            }\n        }\n    });\n\n    let intValues = [];\n    let strValues = [];\n    allAttrs.forEach(function(item) {\n        let num = parseInt(item.val, 10);\n        if (!isNaN(num) && String(num) === item.val) {\n            intValues.push(num);\n        } else {\n            strValues.push(item.val);\n        }\n    });\n    let url = null;\n    allAttrs.some(function(item) {\n        let u = tryDecodeAsUrl(item.val);\n        if (u) {\n            url = u;\n            return true;\n        }\n        return false;\n    });\n    if (!url) return;\n\n    let title = null;\n    strValues.some(function(val) {\n        if (isLikelyTitle(val)) {\n            title = val;\n            return true;\n        }\n        return false;\n    });\n\n    chapterData.push({ url: url, title: title, intValues: intValues });\n});\n\nfunction sortChapters(data) {\n  // 检测是否全局严格递增\n  const isStrictlyIncreasing = (arr, idx) => {\n    for (let i = 1; i < arr.length; i++) {\n      if (arr[i].intValues[idx] <= arr[i-1].intValues[idx]) {\n        return false;\n      }\n    }\n    return true;\n  };\n\n  // 确定排序索引：递增列是显示序号，另一列用于排序\n  let sortIndex;\n  if (isStrictlyIncreasing(data, 0)) {\n    sortIndex = 1; // 第0列递增，按第1列排序\n  } else if (isStrictlyIncreasing(data, 1)) {\n    sortIndex = 0; // 第1列递增，按第0列排序\n  } else {\n    // 兜底：如果都不递增，默认按第1列排序\n    sortIndex = 1;\n  }\n\n  // 排序并移除 intValues\n  return data\n    .sort((a, b) => a.intValues[sortIndex] - b.intValues[sortIndex])\n    .map(({ url, title }) => ({ url, title }));\n}\n\nsortChapters(chapterData);",
+      "chapterName": "title",
+      "chapterUrl": "url",
+      "nextTocUrl": "@js:\nconst pages = [];\nlet end = java.getString('#end@href');\nlet num = +end.match(/(\\d+)\\.html/)[1] || 0;\nfor (let i = 2; i <= num; i++) {\n  pages.push(book.tocUrl + i + \".html\");\n}\n\npages"
+    },
+    "searchUrl": "/search/{{key}}/{{page}}",
+    "weight": 0
+  }
+]
