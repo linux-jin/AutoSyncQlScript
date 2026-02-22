@@ -1,0 +1,63 @@
+[
+  {
+    "bookSourceComment": "fix：该网站手机版目录有问题，改成PC版\n测试：第一次在发现写下拉按钮，不保证都能正常使用，若不正常去发现删掉相关代码",
+    "bookSourceGroup": "小说",
+    "bookSourceName": "笔下文学",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.bxwx.co/",
+    "bookUrlPattern": "https://www.bxwx.co/b/\\d+/\\d+/",
+    "customButton": false,
+    "customOrder": 2,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "eventListener": false,
+    "exploreUrl": "@js:\nconst list = [];\nconst push = (title, url, size) =>\n  list.push({\n    title,\n    url,\n    style: {layout_flexBasisPercent: size}\n  });\n  \nconst fl = \"分类::\\n玄幻奇幻::/bsort1/\\n武侠仙侠::/bsort2/\\n都市生活::/bsort3/\\n历史军事::/bsort4/\\n游戏竞技::/bsort5/\\n科幻未来::/bsort6/\\n恐怖悬疑::/bsort7/\\n其他类型::/bsort8/\\n古代言情::/bsort9/\\n现代言情::/bsort10/\\n幻想奇缘::/bsort11/\\n游戏情缘::/bsort12/\\n浪漫青春::/bsort13/\\n言情美文::/bsort14/\\n科幻灵异::/bsort15/\\n其他类型::/bsort16/\";\n\nfl.split(\"\\n\").forEach(x=>{\n  let [title, url] = x.split(\"::\");\n  push(title, url, url ? 0.29 : 1)\n})\n\nvar rank = \"完结榜 - 男生小说::\\n玄幻奇幻::/full/xuanhuan/\\n武侠仙侠::/full/wuxia/\\n都市生活::/full/dushi/\\n历史军事::/full/lishi/\\n游戏竞技::/full/youxi/\\n科幻未来::/full/kehuan/\\n恐怖悬疑::/full/xuanyi/\\n其他类型::/full/qita/\\n古代言情::/full/guyan/\\n完结榜 - 女生小说::\\n现代言情::/full/xianyan/\\n幻想奇缘::/full/huanqing/\\n游戏情缘::/full/zongcai/\\n浪漫青春::/full/qingchun/\\n言情美文::/full/wangluo/\\n科幻灵异::/full/mmkehuan/\\n其他类型::/full/mmqita/\";\n\n//若不能正常使用，删掉下面代码\nconst rankMap = {\n\t 热门榜: \"/btopallvisit/0/{{page}}.htm\",\n  推荐榜: \"/btopallvote/0/{{page}}.htm\",\n  收藏榜: \"/btopgoodnum/0/{{page}}.htm\",\n  完结榜: \"\"\n}\n\nlist.push({\n        \"title\": \"选择榜单\",\n        \"type\": \"select\",\n        \"action\": \"java.refreshExplore()\",\n        \"chars\": Object.keys(rankMap),\n        \"default\": \"完结榜\",\n        \"style\": {\n            \"layout_flexBasisPercent\": 1\n        }\n})\n\nlet input = String(infoMap[\"选择榜单\"]);\nif(input == \"完结榜\"){\n  rank.split(\"\\n\").forEach(x=>{\n    let [title, url] = x.split(\"::\");\n    push(title, url, url ? 0.29 : 1)\n  })\n} else {\n  push(input, rankMap[input], 0.9)\n}\ninfoMap.save();\n//若不正常，删掉上述代码\n\nJSON.stringify(list)",
+    "header": "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/525.13 (KHTML, like Gecko) Chrome/0.2.149.29 Safari/525.13",
+    "lastUpdateTime": "1771745813447",
+    "loginUrl": "/",
+    "respondTime": 181822,
+    "ruleBookInfo": {
+      "author": "[property$=author]@content",
+      "coverUrl": "[property=\"og:url\"]@content@js:\nlet ids = result.match(/b\\/(\\d+)\\/(\\d+)\\/$/);\nif(ids){\n\t let [, sid, id] = ids;\n\t `https://img.71bxwx.com//files/article/image/${sid}/${id}/${id}s.jpg`\n}",
+      "intro": "#bookintro@html",
+      "kind": "[property~=category|status|update_time]@content##小说|T.*",
+      "lastChapter": "[property$=latest_chapter_name]@content",
+      "name": "[property$=book_name]@content",
+      "tocUrl": "[property$=read_url]@content",
+      "wordCount": "li:contains(字 数：) span@text"
+    },
+    "ruleContent": {
+      "content": "#content@html##.*请大家收藏：.*",
+      "imageStyle": "full",
+      "nextContentUrl": "text.下一页@href"
+    },
+    "ruleExplore": {
+      "author": ".s4@text",
+      "bookList": ".l ul li||.novelslist2 ul li~li",
+      "bookUrl": ".s2 a@href",
+      "coverUrl": "a.0@href@js:\nlet ids = result.match(/b\\/(\\d+)\\/(\\d+)\\/$/);\nif(ids){\n\t let [, sid, id] = ids;\n\t `https://img.71bxwx.com//files/article/image/${sid}/${id}/${id}s.jpg`\n}",
+      "kind": ".s1@text&&.s5,.s6,.s7@text##\\[|\\]",
+      "lastChapter": ".s3 a@text",
+      "name": ".s2 a@text"
+    },
+    "ruleSearch": {
+      "author": "class.book_other.0@tag.span.0@text",
+      "bookList": "id.sitembox@dl",
+      "bookUrl": "dd@h3@a@href",
+      "coverUrl": "img@src##http.*co/##https://img.71bxwx.com/",
+      "intro": "class.book_des.0@text",
+      "kind": "class.book_other.0@tag.span.2@text",
+      "lastChapter": "class.book_other.1@tag.a@text",
+      "name": "h3@a@text",
+      "wordCount": "class.book_other.0@tag.span.3@text"
+    },
+    "ruleToc": {
+      "chapterList": "dt:contains(章节列表) ~ dd a",
+      "chapterName": "text",
+      "chapterUrl": "href"
+    },
+    "searchUrl": "{{cookie.removeCookie(source.key)}}\n/search.html,{\n  \"body\": \"searchtype=all&&369koolearn={{key}}\",\n  \"method\": \"POST\"\n}",
+    "weight": 0
+  }
+]
