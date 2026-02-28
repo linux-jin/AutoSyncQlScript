@@ -1,0 +1,24 @@
+[
+  {
+    "bookSourceComment": "仅支持洛雅橙改版阅读最新测试版3.26.022606及以上版本 https://github.com/Luoyacheng/legado \n\n不知道干嘛，做着玩的，可以配合订阅源打开这个订阅源管理器，这样隐藏订阅也可以打开订阅了，初次使用要配合web服务拉取。",
+    "bookSourceName": "订阅源",
+    "bookSourceType": 0,
+    "bookSourceUrl": "订阅源",
+    "customButton": false,
+    "customOrder": 0,
+    "enabled": false,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "eventListener": false,
+    "exploreUrl": "@js:\ntry{\nlet all = [];\nlet 展开符 = \"↓\";\nlet 收起符 = \"↑\";\nlet rssData = JSON.parse(String(source.getVariable()) || \"{}\");\n\n//一行个数\nlet num = 3;\nlet d = {\n    1: 1,\n    2: 0.4,\n    3: 0.25,\n    4: 0.2,\n    5: 0.15,\n    7: 0.1,\n    10: 0.05\n};\n\nlet push = (title, url, num, g,action) =>{\n    num = Number(num ?? 3);\n    if(num!=0){\n        num = num<1?num:d[num];\n    }\n\tlet j = {\n    title: title,\n    url: url,\n    style: {\n        layout_flexGrow: g == 0 ? g : 1,\n        layout_flexBasisPercent: num                           \n    }\n  }\n  if(num===0){\n      delete j.style.layout_flexBasisPercent\n  }\n     if(action){\n         j.action = action.action;\n         j.name = action.name;\n         j.type = action.type;\n         j.chars = action.chars;\n         j.viewName = action.viewName;\n         j.default = action.default;      \n         j.style.layout_justifySelf = action.style;\n         j.style.layout_wrapBefore = action.wrap;\n     }  \n     all.push(j)\t\n} \n\nlet rssUrl = infoMap[\"rssUrl\"];\n\n\npush(\"订阅源管理器\",\"\",1,1,{\n    type:\"button\",\n    action:`checkRss()`\n});\n\npush(\"url\",\"\",0.7,1,{\n    type:\"text\",\n    viewName:\"'网络导入链接'\",\n    action:\"java.refreshExplore();\",\n    default: \"\"\n});\n\npush(\"导入\",\"\",0.2,1,{\n    type:\"button\",\n    action:`getSource(\"${infoMap['url']}\");`\n});\n\npush(\"rssUrl\",\"\",0.7,1,{\n    type:\"text\",\n    viewName:\"'请打开web服务，输入web服务地址'\",\n    default:rssData.rssUrl ?? \"\"\n});\n\npush(\"ok\",\"\",0.2,1,{\n    type:\"button\",\n    viewName:\"'拉取'\",\n    action:`getRssSource(\"${rssUrl}\");`\n});\n\nlet groups = rssData.groups ?? [];\nlet webs = rssData.webs ?? [];\ngroups.forEach(x=>{\n    push(\"📁\"+x.name,\"\",1,1,{\n        \"type\": \"toggle\",\n        \"chars\": [展开符, 收起符],\n        \"action\":\"source.refreshExplore();java.refreshExplore();\",\n        \"default\": infoMap[\"📁\"+x.name] || 展开符\n     });\n     \n     let findwebs = webs.filter(web => \n    web.group?.some(item => item === x.id)\n);\n\n\nif(String(infoMap[\"📁\"+x.name]) === 展开符 || !infoMap[\"📁\"+x.name]){\n     if(x.id===\"-2\")findwebs=webs;\n     findwebs.forEach(web=>{\n         let url = JSON.stringify(web.url);\n         if(web.url !== \"订阅源管理器\"){\n             push(web.name.trim(),\"\",0,1,{\n                 type:\"button\",\n                 \"action\":`java.open(\"rss\",null,null,${url})`\n              });\n        }\n     })\n}\n});\n\ninfoMap.save();\nJSON.stringify(all)\n\n}catch(e){\n    java.toast(\"出错\")\n}",
+    "jsLib": "function checkRss(){\n\tconst {cache,java} = this;\n\tjava.open(\"rss\",null,null,\"订阅源管理器\");\n\tPackages.java.lang.Thread.sleep(1500);\n  if(!cache.get(\"rssset\")){\n            let u = `legado://import/rssSource?src=http://www.yckceo.com/yuedu/rss/json/id/708.json`;\n            java.openUrl(u)\n      }\n}\n\n\nfunction getSource(url){\n\tconst {java} = this;\n\turl = \"legado://import?src=\"+encodeURIComponent(url);\n\tjava.openUrl(url)\n\t}\n\nfunction getRssSource(rssUrl){\n\tconst {java,source} = this;\n    try{\n\tlet url = rssUrl+\"/getRssSources\";\n\tlet rssData = JSON.parse(java.ajax(url)).data;\n\tlet data = {};\n\tlet webs = [];\n\tlet groups = [];\n\trssData.forEach(x=>{\n  \t\tlet web = {};\n          let index = x.name;\n          let r = x;\n          web.name = r.sourceName.replace(/\\n/g,'');\n          web.url = r.sourceUrl;\n          web.group = (r.sourceGroup?r.sourceGroup.split(\",\"):\"\") || [\"-1\"]\n          \n          web.group.forEach(groupItem => {\n              if (!groups.some(group => group.id === groupItem)) {\n                  groups.push({\n                      id: groupItem,\n                      s: 1,\n                      name: groupItem!==\"-1\"?groupItem:\"未分组\"\n                     });\n                 }\n           });\n        webs.push(web);\n    });\n        if(!groups.find(x=>x.id===\"-1\"))\n        groups.push({id:\"-1\",name:\"未分组\",s:1});\n        groups.push({id:\"-2\",name:\"全部\",s:1})\n        data.webs = webs;\n        data.groups = groups;\n        data.rssUrl = rssUrl;\n        source.putVariable(JSON.stringify(data));\n        java.refreshExplore();\n        }catch(e){\n            java.log(e)\n        }\n}",
+    "lastUpdateTime": "1772162637043",
+    "respondTime": 180000,
+    "ruleBookInfo": [],
+    "ruleContent": [],
+    "ruleExplore": [],
+    "ruleSearch": [],
+    "ruleToc": [],
+    "weight": 0
+  }
+]
