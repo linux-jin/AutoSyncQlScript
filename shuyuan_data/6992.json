@@ -1,0 +1,39 @@
+[
+  {
+    "bookSourceComment": "没有发现",
+    "bookSourceName": "爱丽丝",
+    "bookSourceType": 0,
+    "bookSourceUrl": "#",
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "lastUpdateTime": "1772306868279",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "coverUrl": "tag.img[1]@src",
+      "intro": "class.jianjie@text##(内容简介：\\t*?|爱丽丝书屋所有小说中出现的人物均为18岁以上的成人，若有不妥之处，仅是文学创作效果)",
+      "tocUrl": "class.tabtitle@tag.a@href"
+    },
+    "ruleContent": {
+      "content": "{{@class.read-content j_readContent user_ad_content@text## 　　##\n}}"
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "author": "tag.a[1]@text",
+      "bookList": "class.list-group-item",
+      "bookUrl": "tag.a[0]@href",
+      "checkKeyWord": "姐姐",
+      "intro": "class.content-txt@text",
+      "kind": "class.text-muted[2]@tag.a@text###",
+      "name": "tag.a[0]@text##[0-9]+\\."
+    },
+    "ruleToc": {
+      "chapterList": "class.mulu_list@tag.li",
+      "chapterName": "tag.a@text",
+      "chapterUrl": "tag.a@href"
+    },
+    "searchUrl": "@js:\nconst lineUrl = cache.get(\"Alice\")\nlet Url;\nif(!lineUrl){\n   const data = java.ajax(\"https://爱国.asw3.cc/\");\n   Url = data.match(/id: '1'[\\s\\S]*?targetHref: '(https:\\/\\/[^']+)'/)[1];\n   cache.put(\"Alice\", Url, 60);\n}else {\n   Url = lineUrl;\n}\nconst searchUrl = Url + \"/search.html?q=\" + key + \"&f=_all&sort=relevance&p=\" + String(page) + \"&serialize=\";\njava.log(searchUrl);\n",
+    "weight": 0
+  }
+]
