@@ -1,0 +1,38 @@
+[
+  {
+    "bookSourceName": "肉文小说",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.xn--7dv141d.com/",
+    "customButton": false,
+    "customOrder": 3,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "eventListener": false,
+    "lastUpdateTime": "1772377751937",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "name": "class.booktitle@text",
+      "wordCount": "class.booktag@tag.span@text"
+    },
+    "ruleContent": {
+      "content": "class.readcontent@html"
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "author": "class.author@text",
+      "bookList": "class.bookbox",
+      "bookUrl": "class.bookname@tag.a@href",
+      "checkKeyWord": "我的",
+      "lastChapter": "class.cat@tag.a@text",
+      "name": "class.bookname@text"
+    },
+    "ruleToc": {
+      "chapterList": "class.book chapterlist@tag.div@dd",
+      "chapterName": "tag.dd@text",
+      "chapterUrl": "tag.dd@tag.a@href"
+    },
+    "searchUrl": "{{cookie.removeCookie(source.key)}}\n/search/,{\n  \"body\": \"searchkey={{key}}&searchtype=all&Submit=\",\n  \"method\": \"POST\"\n}",
+    "weight": 0
+  }
+]

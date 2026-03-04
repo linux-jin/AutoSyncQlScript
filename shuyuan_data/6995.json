@@ -1,0 +1,44 @@
+[
+  {
+    "bookSourceGroup": "BB小说",
+    "bookSourceName": "BB成人小说",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://bbxxxx.com",
+    "customButton": false,
+    "customOrder": 40,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "eventListener": false,
+    "lastUpdateTime": "1772378013355",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "tag.p.0@text",
+      "coverUrl": "class.cover@tag.img@src",
+      "intro": "class.desc@text",
+      "kind": "tag.p.2@text",
+      "lastChapter": "class.novel-list@a.-1@text",
+      "name": "tag.h1@text"
+    },
+    "ruleContent": {
+      "content": "class.article@tag.p@html"
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "author": "class.meta@text",
+      "bookList": "class.novel-item",
+      "bookUrl": "class.info@tag.a@href",
+      "checkKeyWord": "我的",
+      "coverUrl": "tag.a@img@data-src",
+      "intro": "class.desc@text",
+      "name": "class.info@tag.a@text"
+    },
+    "ruleToc": {
+      "chapterList": "class.novel-list@a",
+      "chapterName": "a@text",
+      "chapterUrl": "a@href"
+    },
+    "searchUrl": "/search/?q={{key}}",
+    "weight": 0
+  }
+]

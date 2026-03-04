@@ -1,0 +1,63 @@
+[
+  {
+    "bookSourceComment": "目录标识为⭐的表示服务器缓存（目前已清空数据库缓存，且请求免费章不计入缓存）\n登录注册token即可成为免费用户\n免费用户可请求七天外章节\n以上请求皆为限免内容\n每日请求次数限制：未知，原作者未公布具体限制，过于频繁或过多会拉黑\n认准X-API：QD\nps:该书源非破解，仅供参考与学习",
+    "bookSourceGroup": "正版系列专用",
+    "bookSourceName": "起点读书X-QD",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://api-x.shrtxs.cn/qd/",
+    "customButton": false,
+    "customOrder": 3,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "eventListener": false,
+    "exploreUrl": "<js>\nif (cache.get(\"fx\")=='female'){\nresult=java.ajax('http://static.yesui.me/api/2.php?gender=0')\n}else{\tresult=java.ajax('http://static.yesui.me/api/2.php?gender=1')\n\t}result\n</js>",
+    "jsLib": "function Map(e) {\n  var java = this.java;\n  var source = this.source;\n  var cookie = this.cookie;\n  var cache = this.cache;\n  var infomap = source.getLoginInfoMap();\n  var map = (infomap !== null && infomap.get(e) && String(infomap.get(e)).length > 0) ? infomap.get(e) : '';\n  return String(map);\n}",
+    "lastUpdateTime": "1772449233988",
+    "loginUi": "[\n{\n\t\"name\":\"Token\",\n\t\"type\":\"text\"\n\t},\n\t{\n    \"name\": \"注册获取Token\",\n    \"type\": \"button\",\n    \"action\": \"zc()\"\n },\n{\n  \t \"name\":\"切换发现样式\",\"type\":\"button\",\n  \t \"action\":\"fx()\"\n  \t}\n]",
+    "loginUrl": "function login(){}\nfunction zc() { java.startBrowserAwait(\"https://api-x.shrtxs.cn/qd/login.php\",\"登录界面\")\n}\nfunction fx(){\n\tfx = cache.get(\"fx\") !== null && cache.get(\"fx\") !== undefined ? cache.get(\"fx\") : \"male\";\n    if (fx == \"male\") {\n        cache.put(\"fx\", \"female\");\n        java.toast(\"已切换至女频发现，请刷新\");\n    } else if (fx == \"female\") {\n        cache.put(\"fx\", \"male\");\n        java.toast(\"已切换至男频发现，请刷新\");\n    }\n\t}",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "AuthorInfo.Author",
+      "coverUrl": "https://qidian.qpic.cn/qdbimg/349573/{{$.BaseBookInfo.BookId}}/600",
+      "init": "<js>\nbookId = java.hexDecodeToString(result);\nurl = 'https://api-x.shrtxs.cn/qd/detail.php?bookId=' + bookId;\nresult = java.ajax(url)\n</js>\n$.Data",
+      "intro": "<br>⭐ 书籍是否限免：{{java.getString(\"$..IsInBlackList\")==1?\"非限免\":\"限免\"}}\n🆔 书号：{{$.BaseBookInfo.BookId}}\n💯 等级：{{$.AuthorInfo.AuthorLevel}}\n🕰 开坑：{{$.BaseBookInfo.JoinTimeCopyRight##上架}}\n🏷️ 标签：{{$.BaseBookInfo.BookUgcTag..TagName||$.QQ.tag##\\s|\\|##，}}\n✨ 角色：{{$.RoleInfo.RoleList..RoleName##\\s##，}}{{'\\n&lrm;\\n'}}\n📜 简介：{{$.BaseBookInfo.Description}}",
+      "kind": "{{java.getString(\"$..IsInBlackList\")==1?\"非限免\":\"限免\"}}|{{$.BaseBookInfo.BookStatus##完本##完结}}|{{String(java.timeFormat(java.getString(\"BaseBookInfo.ChapterInfo.LastVipChapterUpdateTime\")==0?java.getString(\".BaseBookInfo.ChapterInfo.LastChapterUpdateTime\"):java.getString(\".BaseBookInfo.ChapterInfo.LastVipChapterUpdateTime\"))).replace(/\\s*\\d+:\\d+/,\"\")}}\n{{(java.getString(\"$.BaseBookInfo.WordsCnt\")/10000).toFixed(1)+\"万\"}}\n{{$.BaseBookInfo.CategoryName}}|{{$.BaseBookInfo.SubCategoryName}}\n<js>##(?m)\\|$</js>",
+      "lastChapter": "{{$.BaseBookInfo.ChapterInfo.LastVipUpdateChapterName||$.BaseBookInfo.ChapterInfo.LastUpdateChapterName}}",
+      "name": "BaseBookInfo.BookName",
+      "tocUrl": ".BaseBookInfo.BookId\n<js>java.base64Encode(result)</js>\ndata:bookId;base64,{{result}},{\"type\":\"X-QD\"}"
+    },
+    "ruleContent": {
+      "content": "<js>\nbid=JSON.parse(java.hexDecodeToString(result)).bookId\ncid=JSON.parse(java.hexDecodeToString(result)).chapterId\npid=JSON.parse(java.hexDecodeToString(result)).mid\nvip=JSON.parse(java.hexDecodeToString(result)).vip\nt=JSON.parse(java.hexDecodeToString(result)).time\ntoken=Map('Token')\nurl = \"https://api-x.shrtxs.cn/qd/content.php?token=\" + token +\"&v=\" + vip + \"&t=\" + t + \"&bookId=\" + bid + \"&chapterId=\" + cid + (pid ? \"&pid=\" + pid : \"\");\nc=JSON.parse(java.ajax(url)).content\n</js>"
+    },
+    "ruleExplore": {
+      "author": "AuthorName||Author",
+      "bookList": "$.Data.Items..Items[*]||$.Data.Data.Items||$.Data.BookInfos",
+      "bookUrl": "BookId\n@js:\n`data:;base64,${java.base64Encode(result)},{\"type\":\"X-QD\"}`;",
+      "coverUrl": "https://qidian.qpic.cn/qdbimg/349573/{{$.BookId}}/600",
+      "intro": "Description||Desc",
+      "kind": "{{$.ActionStatusString||$.BookStatus##完本##完结}}\n{{(java.getString(\"$.WordsCount\")/10000).toFixed(1)+\"万\"}}\n{{$.CategoryName}}|{{$.SubCategoryName}}\n<js>##(?m)\\|$</js>",
+      "name": "BookName"
+    },
+    "ruleSearch": {
+      "author": "AuthorName",
+      "bookList": "$.Data.CardList[*].Body[*].ItemData",
+      "bookUrl": "$.BookId\n@js:\n`data:bookId;base64,${java.base64Encode(result)},{\"type\":\"X-QD\"}`;",
+      "coverUrl": "https://qidian.qpic.cn/qdbimg/349573/{{$.BookId}}/600",
+      "intro": "Description",
+      "kind": "{{$.ActionStatusString||$.BookStatus##完本##完结}}\n{{(java.getString(\"$.WordsCount\")/10000).toFixed(1)+\"万\"}}\n{{$.CategoryName}}|{{$.SubCategoryName}}\n<js>##(?m)\\|$</js>",
+      "name": "BookName"
+    },
+    "ruleToc": {
+      "chapterList": "@js:\nbookId = java.hexDecodeToString(result);\nurl = 'https://api-x.shrtxs.cn/qd/catalog.php?bookId=' + bookId;\nJSON.parse(java.ajax(url)).data;",
+      "chapterName": "N",
+      "chapterUrl": "C",
+      "isPay": "P",
+      "isVip": "V",
+      "isVolume": "Vo",
+      "updateTime": "T"
+    },
+    "searchUrl": "{{source.key}}/search.php?keyword={{key}}&page={{page}}",
+    "weight": 0
+  }
+]
