@@ -1,0 +1,49 @@
+[
+  {
+    "bookSourceGroup": "R18",
+    "bookSourceName": "BB成人小说",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://bbxxxx.com",
+    "customOrder": -99979,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "<js>\n(() => {\n    // 1. 获取网页源码\n    let html = java.ajax(\"https://bbxxxx.com/\"); \n    let list = [\n        {\n            \"title\": \"最新\",\n            \"url\": \"https://bbxxxx.com/rank/new/\",\n            \"style\": {\n                \"layout_flexGrow\": 1,\n                \"layout_flexBasisPercent\": 0.25\n            }\n        },\n        {\n            \"title\": \"热门\",\n            \"url\": \"https://bbxxxx.com/rank/hot/\",\n            \"style\": {\n                \"layout_flexGrow\": 1,\n                \"layout_flexBasisPercent\": 0.25\n            }\n        },\n        {\n            \"title\": \"完本\",\n            \"url\": \"https://bbxxxx.com/rank/complete/\",\n            \"style\": {\n                \"layout_flexGrow\": 1,\n                \"layout_flexBasisPercent\": 0.25\n            }\n        }\n    ];\n    \n    // --- 提取分类 (Category) ---\n    list.push({\n        \"title\": \"分类\",\n        \"url\": \"\",\n        \"style\": { \"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 1 }\n    })\n       // 匹配格式如: <a href=\"/tag/8/\">调教</a>\n    let reg1 = /<a href=\"(\\/category\\/\\d+\\/)\">(.*?)<\\/a>/g;\n    let match1;\n    \n    while ((match1 = reg1.exec(html)) !== null) {\n        list.push({\n            \"title\": match1[2],\n            \"url\": match1[1] + \",{\\\"webView\\\":true}\", // 如果需要翻页，可以在此基础上修改\n            \"style\": {\n                \"layout_flexGrow\": 1,\n                \"layout_flexBasisPercent\": 0.2\n            }\n        });\n    }\n    // --- 提取标签 (Tag) ---\n    list.push({\n        \"title\": \"标签\",\n        \"url\": \"\",\n        \"style\": { \"layout_flexGrow\": 1, \"layout_flexBasisPercent\": 1 }\n    });\n    // 匹配格式如: <a href=\"/tag/8/\">调教</a>\n    let reg = /<a href=\"(\\/tag\\/\\d+\\/)\">(.*?)<\\/a>/g;\n    let match;\n    \n    while ((match = reg.exec(html)) !== null) {\n        list.push({\n            \"title\": match[2],\n            \"url\": match[1] + \",{\\\"webView\\\":true}\", // 如果需要翻页，可以在此基础上修改\n            \"style\": {\n                \"layout_flexGrow\": 1,\n                \"layout_flexBasisPercent\": 0.2\n            }\n        });\n    }\n    \n    return JSON.stringify(list);\n})()\n</js>\n",
+    "lastUpdateTime": "1772642174228",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "tag.p.0@text",
+      "coverUrl": "class.cover@tag.img@src",
+      "intro": "class.desc@text",
+      "kind": "tag.p.2@text",
+      "lastChapter": "class.novel-list@a.-1@text",
+      "name": "tag.h1@text"
+    },
+    "ruleContent": {
+      "content": "class.article@tag.p@html"
+    },
+    "ruleExplore": {
+      "author": ".text-muted@text",
+      "bookList": ".novel-list a",
+      "bookUrl": "a@href",
+      "coverUrl": "a.details@href##a@href",
+      "name": "h4@text"
+    },
+    "ruleSearch": {
+      "author": "class.meta@text",
+      "bookList": "class.novel-item",
+      "bookUrl": "class.info@tag.a@href",
+      "checkKeyWord": "我的",
+      "coverUrl": "tag.a@img@data-src",
+      "intro": "class.desc@text",
+      "name": "class.info@tag.a@text"
+    },
+    "ruleToc": {
+      "chapterList": "class.novel-list@a",
+      "chapterName": "a@text",
+      "chapterUrl": "a@href"
+    },
+    "searchUrl": "/search/?q={{key}}",
+    "weight": 0
+  }
+]

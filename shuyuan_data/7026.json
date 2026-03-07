@@ -1,0 +1,71 @@
+[
+  {
+    "bookSourceComment": "// Error: org.mozilla.javascript.EcmaError: SyntaxError: Unexpected token: < (<Unknown source>#3) in <Unknown source> at line number 3\n\n记得登陆",
+    "bookSourceGroup": "起点柳树",
+    "bookSourceName": "起点中文·书架➕起点加入书架-阅读登录-全部加入书架-起点书架前100本书移动到其他分组-重复就可以全部加入书架-换源QQ浏览器>换其他源",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://m.qidian.com#我的书架",
+    "customOrder": -5,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "[\n{\"title\":\"我的书架\",\"url\":\"https://my.qidian.com/bookcase?page={{page}}&_csrfToken={{cookie.getKey(\\\"https://qidian.com\\\",\\\"_csrfToken\\\")}}\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":1}},{\"title\":\"最近移动\",\"url\":\"https://my.qidian.com/bookcase/27022871?page={{page}}&_csrfToken={{cookie.getKey(\\\"https://qidian.com\\\",\\\"_csrfToken\\\")}}\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":1}},\n]",
+    "header": "",
+    "lastUpdateTime": "1772838438514",
+    "loginUi": "",
+    "loginUrl": "https://www.qidian.com/all/",
+    "respondTime": 182364,
+    "ruleBookInfo": {
+      "author": "class.detail__header-detail__author@a@textNodes",
+      "canReName": "",
+      "coverUrl": "[property$=image]@content##^##https:",
+      "downloadUrls": "",
+      "init": "",
+      "intro": "class.item.1@html&&class.detail__summary auto-tr auto-click-tr@html##([。！？”])##$1\n$1",
+      "kind": "{{@@.detail__header-detail__time@text##更新时间\\s*##}}{{@@[property$=description]@html##------.*?------|\\<br\\/?>|\\<p[^>]*>|\\<\\/p>##\n##\\s*\\(.*?\\)$##}}\"",
+      "lastChapter": "{{@@[property$=chapter_name]@content##正文卷.|正文.|VIP卷.|默认卷.|卷_|VIP章节.|免费章节.|章节目录.|最新章节.|[\\(（【].*?[求含理更谢乐发推票盟补加字].*?[】）\\)]}}･{{@@[property$=update_time]@content##\\s.*}}@js:result\n.replace(\"••\",\"\")\n.replace(/^(\\d+).第/,'第')\n.replace(/^(\\d+)[、．]第.+章/,'第$1章')\n.replace(/^(\\d+)、\\d+、/,'第$1章 ')\n.replace(/^(\\d+)、\\d+/,'第$1章')\n.replace(/^(第.+章)\\s?\\d+/,'$1')\n.replace(/^(\\d+)、/,'第$1章 ')\n.replace(/^(第.+章)\\s?第.+章/,'$1')\n.replace(/第\\s(.+)\\s章/,'第$1章')\n.replace(/.*(chapter|Chapter)\\s?(\\d+)\\s?/,'$1 $2 ')\n.replace(/\\(.+\\)/,'')\n.replace(/\\[|。/,'')\n.replace(/第([零一二两三四五六七八九十百千]+)章/g,java.toNumChapter(result))\n##(章)([^\\s]+)(\\s·)##$1 $2$3",
+      "name": "class.detail__header-detail__title@text",
+      "tocUrl": "https://vipreader.qidian.com/ajax/book/category?_csrfToken={{cookie.getKey(\"https://qidian.com\",\"_csrfToken\")}}&bookId={{baseUrl.match(/book\\/(\\d+)/)[1];}}",
+      "wordCount": "class.detail__header-detail__line@text##.*\\/.*|\\|.*|\\n"
+    },
+    "ruleContent": {
+      "content": "class.read-content@class.content-wrap@text||class.read-content@p@text",
+      "imageStyle": "full"
+    },
+    "ruleExplore": {
+      "author": "class.name.0@text||td.col4@text||tag.a.2@text||tag.span@text",
+      "bookList": ".book-img-text li||tbody tr||class.book-img-text@tag.li||class.book-list-wrap@class.book-list@tag.li\n##$.data.records",
+      "bookUrl": "##data-bid=\"([^\"]+)\"##https://m.qidian.com/book/$1###||h2@a@href||h4@a@href||td.col2@b@tag.a!-2@href",
+      "coverUrl": "##data-bid=\"([^\"]+)\"##https://bookcover.yuewen.com/qdbimg/349573/$1/180###||.book-img-box img@src",
+      "intro": ".intro@textNodes",
+      "kind": "class.author@tag.a!0@text||tag.a.0@text||.author@text||td.col2@b@tag.a!-1@text\n<js>\nString(result).replace(/.+?\\|\\s*/, '').replace(/\\]/, '').replace(/\\s*\\|\\s*/g, ',');\n</js>##「|」|\\[",
+      "lastChapter": "a.blue@text",
+      "name": "h2@a@text||h4 a@text||td.col2@b@tag.a!-2@text||tag.a.1@text",
+      "wordCount": "class.total@update@span@text"
+    },
+    "ruleReview": [],
+    "ruleSearch": {
+      "author": "class._searchBookAuthor_otrkq_613@text",
+      "bookList": "class.y-list__item",
+      "bookUrl": "{{@@a.0@href##chapter##book}}##\\/0\\/##.html",
+      "checkKeyWord": "我的模拟",
+      "coverUrl": "img@data-src##\\/180$##\\/600",
+      "intro": "class._searchBookDesc_otrkq_521@text",
+      "kind": "class.tags_1lmme_700@text",
+      "lastChapter": "",
+      "name": "h2@text",
+      "wordCount": "class._tags_otrkq_700@p.-1@text"
+    },
+    "ruleToc": {
+      "chapterList": "<js>\nlet free = source.getVariable() == \"1\"\nlet data = JSON.parse(result).data\nlet bid = baseUrl.match(/bookId=(\\d+)/)[1]\nlet chapterList = []\ndata['vs'].forEach(list => {\n  chapterList.push({\n    name: String(list.vN),\n    voltype: true\n  })\n  list['cs'].forEach(chapter => {\n    let isVip = chapter.sS!=\"1\" && !free ? \"🔒\":\"\"\n    let href = `https://vipreader.qidian.com/chapter/${bid}/${chapter.id}/`\n    let url = list.hS == true || free ? `${href},{'webView': true}` : href\n    chapterList.push({\n      name: String(isVip+chapter.cN).trim().replace(/^(\\d+)(?![\\s\\d卷部章节回.])/, '$1 ').replace(/\\s+/g, \" \"),\n      url: url,\n      info: `更新时间: ${chapter.uT} 字数: ${chapter.cnt}`,\n      voltype: false\n    })\n  })\n})\nchapterList\n</js>",
+      "chapterName": "name",
+      "chapterUrl": "url",
+      "isVip": "",
+      "isVolume": "voltype",
+      "preUpdateJs": "java.refreshTocUrl()",
+      "updateTime": "info"
+    },
+    "searchUrl": "https://m.qidian.com/soushu/{{key}}.html?pageNum={{page}}",
+    "weight": 0
+  }
+]

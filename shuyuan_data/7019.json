@@ -1,0 +1,55 @@
+[
+  {
+    "bookSourceComment": "首次导入可能无法显示发现列表，尝试选择一下漫画，大概率会刷新出来，日志显示infoMap取不到值，我也不明白为什么会取值失败",
+    "bookSourceGroup": "🔞",
+    "bookSourceName": "🔞夜读集 [小说/漫画] (有VIP章节)",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.yeduji.com",
+    "customButton": false,
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "eventListener": false,
+    "exploreUrl": "@js:\nconst myFx = {\n\t \"小说\": [{\n\t \t  \"content\": \"最新::new\\n热门::hot\\n完本::complete\\n免费::free\",\n\t \t  \"tpl\": \"/rank/$$/{{page}}.html\",\n\t \t  \"size\": 0.2\n\t \t},{\n\t \t\t\"title\": \"分类\",\n\t \t  \"content\": \"历史::13\\n穿越::26\\n同人::39\\n武侠::52\\n校园::65\\n都市::78\\n乱伦::91\\n科幻::104\\n奇幻::117\\n玄幻::130\\n系统::143\\n乡村::156\\n异能::169\\n明星::182\\n贤者::195\\n贤者小说::208\",\n\t \t  \"tpl\":\"/cat/$$/{{page}}.html\",\n\t \t  \"size\": 0.2\n\t \t},{\n\t \t\t\"title\": \"标签\",\n\t \t\t\"content\": \"调教::52\\n剧情::104\\n制服::260\\n榨精::130\\n丝袜::247\\n人妻::234\\n熟女::221\\n反差::117\\n凌辱::299\\nNTR::195\\n性奴::143\\n后宫::169\\n痴女::312\\n适合女生::39\\n爽文::637\\n肉便器::325\\n淫堕::156\\n纯爱::286\\n猎艳::819\\n1v1::520\\n母子::208\\n群交::338\\nNP::13\\n强奸::468\\n露出::481\\n道具::351\\nSM::676\\n异世界::884\\n骨科::806\\n女性视角::624\\n催眠::858\\n绿母::715\\n小马拉大车::455\\n甜文::793\\n百合::546\\n母女花::585\\n异种族::403\\n绿奴::377\\n出轨::663\\nNTL::988\\n萝莉::429\\n手枪文::754\\n校花::364\\n重口::949\\n目前犯::871\\nFuta::975\\n父女::1027\\n性转::273\\n经典::1079\\n微重口::442\\n足交::728\\n淫妻::702\\n捆绑::507\\n异国::1131\\n虐心::533\\n灵异::182\\n暗黑::559\\n姐妹花::390\\n好文笔::780\\n破处::845\\n下克上::416\\n浪漫::1170\\n媚黑::598\\n恋足::1092\\n受孕::1235\\n逆推::936\\n无绿::962\\n官场::78\\n人兽::689\\n虐主::1300\\n药物::494\\n改造::910\\n触手::650\\n快穿::91\\n微肉::1066\\n全家桶::741\\n产奶::1157\\nHE::1014\\n复仇::572\\n伪娘::1040\\n末世::611\\n交换伴侣::1001\\n公媳::1222\\n暴虐::897\\n隐奸::923\\n种马::1248\\n粗口::1183\\n监禁::65\\n耽美::1118\\nSC::1053\\n病娇::26\\n有父::1196\\n搞笑::832\\n逆NTR::767\\nAI辅助::1261\\n人妖::1105\\n狗血::1313\\n白虎::1144\\nBE::1209\\n扩张::1326\",\n\t \t\t\"tpl\": \"/tag/$$/{{page}}.html\",\n\t \t\t\"size\": 0.2\n\t }],\n\t \"漫画\": [{\n\t \t  \"content\": \"最新::new\\n热门::hot\\n完本::complete\",\n\t \t  \"tpl\": \"/comic/rank/$$/{{page}}.html\"\n\t \t},{\n\t \t\t\"title\": \"分类\",\n\t \t  \"content\": \"剧情::13\\n调教::26\\n校园::39\\n爱情::52\\n乱伦::65\\n奇幻::78\\nBL::91\",\n\t \t  \"tpl\": \"/comic/category/$$/{{page}}.html\",\n\t \t  \"size\": 0.2\n\t \t},{\n\t \t\t\"title\": \"标签\",\n\t \t  \"content\": \"巨乳大奶::91\\n熟女人妻::52\\n女学生::13\\nOL::26\\n不伦::117\\n青年::39\\n职场::65\\n女教师::78\\n女仆::104\\n全彩::273\\n剧情向::169\\n后宫::143\\n妖精::130\\n内射::156\\n御姐女王::195\\n高潮潮吹::234\\n姊妹::182\\n黑丝丝袜::208\\n母亲::221\\n性玩具::247\\n露出::260\",\n\t \t  \"tpl\": \"/comic/tag/$$/{{page}}.html\"\n\t \t}]\n}\n\nconst list = [];\nconst push = (title,url,size) => list.push({\n\t title,\n\t url,\n\t style: {layout_flexBasisPercent: size}\n});\n\nconst sourceType = Object.keys(myFx);\nlist.push({\n\t \"title\": \"sel\",\n\t \"viewName\": \"'选择 [小说 / 漫画]'\",\n\t \"type\": \"select\",\n\t \"action\": \"java.refreshExplore()\",\n\t \"chars\": sourceType,\n\t \"default\": sourceType[0],\n\t \"style\": {\"layout_flexBasisPercent\": 1}\n})\n\nlet mySelect = infoMap[\"sel\"];\ntry{\n  myFx[String(mySelect)].forEach(fx => {\n\t   let {title, content, tpl, size} = fx;\n\t   if(title) push(title, \"\", 1);\n\t   content.split(\"\\n\").forEach(x => {\n      let [n, u] = x.split(\"::\");\n      push(n, tpl.replace(\"$$\", u), size??0.29)\n\t   })\n  })\n}catch(e){java.longToast(\"\\n若没有发现列表，点击下拉列表选择漫画试试\")}\n\ninfoMap.save();\n\nJSON.stringify(list)",
+    "lastUpdateTime": "1772689662132",
+    "loginUi": "[\n  {\n    \"name\": \"账号\", \n   \t\"type\": \"text\"\n  },\n  {\n    \"name\": \"密码\", \n    \"type\": \"password\"\n  },\n  {\n    \"name\": \"登录\",\n    \"type\": \"button\",\n    \"action\": \"login()\",\n    \"style\": {\n      \"layout_flexBasisPercent\": 1\n    }\n  }\n]",
+    "loginUrl": "function login() {\n    try {\n        let url = baseUrl.replace(/\\/+$/, '').replace(/[^\\w.:/-]/g, '');\n        let ur = source.getLoginInfoMap();\n        let params = `username=${ur.get(\"账号\")}&password=${ur.get(\"密码\")}`;\n        let r = java.post(`${url}/api/login.php`, params, {});\n        let resp = JSON.parse(r.body());\n        if (resp.success) {\n            let cookies = Array.from(r.cookies(), \n    ([k, v]) => `${k}=${v}`).join(';');\n            return source.putLoginHeader(JSON.stringify({Cookie: cookies}));\n        } else {\n            throw new Error(`登录失败: ${resp.message || '未知错误'}`);\n        }\n    } catch (e) {\n        java.log(`登录异常: ${e.message}\\n请求参数: ${params}`);\n    }\n}",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": ".info@dl.0@dd@text",
+      "coverUrl": ".detail .cover img@src",
+      "intro": ".desc-content@html",
+      "kind": "dt:contains(状态)+dd@text&&\ndt:contains(分类)+dd>a@text&&\ndt:contains(标签)+dd>a@text&&\ndt:contains(更新时间)+dd@text",
+      "lastChapter": "dt:contains(最新章节)+dd@text",
+      "name": "h1@text",
+      "tocUrl": "{{baseUrl}}list/"
+    },
+    "ruleContent": {
+      "content": ".content@html"
+    },
+    "ruleExplore": {
+      "author": "span@text",
+      "bookList": ".novel-list > a",
+      "bookUrl": "href",
+      "coverUrl": "img@data-src",
+      "name": "h4@text"
+    },
+    "ruleSearch": {
+      "author": "span@text",
+      "bookList": ".novel-item",
+      "bookUrl": ".title@href",
+      "coverUrl": "img@data-src",
+      "intro": "p@text",
+      "name": ".title@text"
+    },
+    "ruleToc": {
+      "chapterList": ".chapter-list > a@js:\nbook.type = /comic/.test(baseUrl) ? 64 : 8;\nresult",
+      "chapterName": "h4@text",
+      "chapterUrl": "href",
+      "isVip": "small@text@js: result == \"VIP\""
+    },
+    "searchUrl": "/search/?q={{key}}&page={{page}}",
+    "weight": 0
+  }
+]
