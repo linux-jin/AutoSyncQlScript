@@ -1,0 +1,48 @@
+[
+  {
+    "bookSourceComment": "by阿鬼",
+    "bookSourceGroup": "⭐频道所求",
+    "bookSourceName": "小原小说",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://m.s1wl.com/",
+    "bookUrlPattern": "https?://m.s1wl.com/book/\\d+_\\d+/",
+    "customButton": false,
+    "customOrder": 0,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "eventListener": false,
+    "lastUpdateTime": "1772882344733",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "@get:{a}##作者：",
+      "coverUrl": "@get:{i}",
+      "init": "@put:{\"n\":\".book-details@div[0]@text\",\n\"a\":\".book-details@div[2]@text\",\n\"c\":\".book-details@div[3]@a@text\",\n\"l\":\".book-details@div[4]@a@text\",\n\"i\":\".book-info@img@src\",\n\"d\":\"book-info-description@p@text\"}",
+      "intro": "@get:{d}",
+      "kind": "@get:{c}",
+      "lastChapter": "@get:{l}",
+      "name": "@get:{n}"
+    },
+    "ruleContent": {
+      "content": "#chapterContent@html",
+      "nextContentUrl": "text.下一页@href",
+      "replaceRegex": "##\\s本章.*\\s*"
+    },
+    "ruleExplore": [],
+    "ruleSearch": {
+      "author": ".book-author@text",
+      "bookList": ".book-item",
+      "bookUrl": "a@href",
+      "coverUrl": ".book-cover@img@src",
+      "intro": ".book-descristion@text",
+      "name": ".book-title@text"
+    },
+    "ruleToc": {
+      "chapterList": ".chapter-list li a",
+      "chapterName": "text",
+      "chapterUrl": "href"
+    },
+    "searchUrl": "https://m.s1wl.com/sou?wd={{key}}",
+    "weight": 0
+  }
+]

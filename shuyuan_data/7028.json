@@ -1,0 +1,58 @@
+[
+  {
+    "bookSourceComment": "由雨落星辰ai生成，ai地址【ima知识库】开源阅读助手 https://ima.qq.com/wiki/?shareId=7cccd0573f64fe67a4d7c4b05ce801e5cd8daadc9c9dc26e755528eaa5a2439b",
+    "bookSourceName": "古代小说",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.gudaibook1.com",
+    "concurrentRate": "3",
+    "customButton": false,
+    "customOrder": 1,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "eventListener": false,
+    "exploreUrl": "完本小说::/quanben\n玄幻小说::/xuanhuan\n修真小说::/xiuzhen\n都市小说::/dushi\n历史小说::/lishi\n网游小说::/wangyou\n科幻小说::/kehuan\n女频小说::/nvpin",
+    "header": "{\"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\", \"Content-Type\": \"application/x-www-form-urlencoded\", \"Origin\": \"https://www.gudaibook1.com\", \"Referer\": \"https://www.gudaibook1.com/\"}",
+    "lastUpdateTime": "1772901568793",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": ".book-stats b:eq(0) a@text",
+      "coverUrl": ".book-img a img@src",
+      "intro": ".book-intro@text##重回.*?简介：|最新章节：.*",
+      "kind": ".book-stats b:eq(1) a@text",
+      "lastChapter": ".book-intro a@text",
+      "name": ".book-title h1@text"
+    },
+    "ruleContent": {
+      "content": "#BookText p@text##喜欢《.*?》，请收藏我们网站：.*|本章未完，点击下一页继续阅读|转码声明：.*|古代小说所有内容使用搜索引擎转码技术抓取自网络.*|Powered by YGBOOK.*|网站地图|　+|\\s{4,}|\\[\\d{2}:\\d{2}\\.\\d{3}\\]|└",
+      "nextContentUrl": "{{@text.下一页@href}},{\"webView\": true}"
+    },
+    "ruleExplore": {
+      "author": ".book_other:eq(0) span:eq(0) a@text",
+      "bookList": "#sitebox dl",
+      "bookUrl": "dt a@href",
+      "coverUrl": "dt a img@src",
+      "intro": ".book_des@text",
+      "kind": ".book_other:eq(0) span:eq(2) a@text",
+      "lastChapter": ".book_other:eq(1) a@text",
+      "name": "dd h3 a@text"
+    },
+    "ruleSearch": {
+      "author": ".book_other:eq(0) span:eq(0) a@text",
+      "bookList": "#sitebox dl",
+      "bookUrl": "dt a@href",
+      "coverUrl": "dt a img@src",
+      "intro": ".book_des@text",
+      "kind": ".book_other:eq(0) span:eq(2) a@text",
+      "lastChapter": ".book_other:eq(1) a@text",
+      "name": "dd h3 a@text"
+    },
+    "ruleToc": {
+      "chapterList": ".chapterlist dd",
+      "chapterName": "a@text",
+      "chapterUrl": "{{@a@href}},{\"webView\": true}"
+    },
+    "searchUrl": "/home/search,{\"method\": \"POST\", \"body\": \"action=search&q={{key}}\"}",
+    "weight": 0
+  }
+]
